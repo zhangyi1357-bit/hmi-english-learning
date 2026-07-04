@@ -22,6 +22,14 @@ const elements = {
 };
 
 async function loadNotes() {
+  if (Array.isArray(window.HMI_NOTES)) {
+    state.notes = window.HMI_NOTES;
+    state.active = state.notes[0];
+    renderDateOptions();
+    render();
+    return;
+  }
+
   const response = await fetch("data/hmi-notes.json", { cache: "no-store" });
   if (!response.ok) {
     throw new Error("Unable to load learning notes.");

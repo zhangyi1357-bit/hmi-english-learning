@@ -1,0 +1,141 @@
+window.HMI_NOTES = [
+  {
+    "id": "2026-07-04-context-aware-cockpit",
+    "date": "2026-07-04",
+    "title": "Context-aware cockpit interaction for safer decisions",
+    "topic": "情境感知座舱交互",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天聚焦智能座舱如何根据驾驶状态、环境信息和用户意图调整界面优先级，适合积累设计评审和方案汇报表达。",
+    "words": [
+      {
+        "term": "context-aware interface",
+        "phonetic": "/ˈkɑːntekst əˈwer ˈɪntərfeɪs/",
+        "meaning": "情境感知界面；能根据用户状态、环境和任务动态调整的界面",
+        "example": "A context-aware interface can reduce visual demand when the vehicle enters a complex junction.",
+        "chineseExample": "当车辆进入复杂路口时，情境感知界面可以降低视觉负担。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员工作负荷；驾驶中认知、视觉和操作压力的总和",
+        "example": "The team measured driver workload before adding another layer of alerts.",
+        "chineseExample": "团队在增加另一层提醒之前，先测量了驾驶员工作负荷。"
+      },
+      {
+        "term": "glanceability",
+        "phonetic": "/ˌɡlænsəˈbɪləti/",
+        "meaning": "一瞥可读性；用户短暂扫视即可理解信息的能力",
+        "example": "Glanceability is critical for speed, range, and navigation prompts.",
+        "chineseExample": "车速、续航和导航提示的一瞥可读性非常关键。"
+      },
+      {
+        "term": "interaction priority",
+        "phonetic": "/ˌɪntərˈækʃn praɪˈɔːrəti/",
+        "meaning": "交互优先级；不同功能、提示或任务在界面中的优先顺序",
+        "example": "Interaction priority should change when a safety-critical event is detected.",
+        "chineseExample": "当检测到安全关键事件时，交互优先级应该发生变化。"
+      },
+      {
+        "term": "takeover request",
+        "phonetic": "/ˈteɪkoʊvər rɪˈkwest/",
+        "meaning": "接管请求；自动驾驶或辅助驾驶系统要求驾驶员接管控制的提示",
+        "example": "A takeover request must be clear across visual, auditory, and haptic channels.",
+        "chineseExample": "接管请求必须在视觉、听觉和触觉通道上都足够清晰。"
+      },
+      {
+        "term": "multimodal feedback",
+        "phonetic": "/ˌmʌltiˈmoʊdl ˈfiːdbæk/",
+        "meaning": "多模态反馈；通过视觉、声音、触觉等多个通道提供反馈",
+        "example": "Multimodal feedback helps users confirm an action without staring at the screen.",
+        "chineseExample": "多模态反馈帮助用户在不盯着屏幕的情况下确认操作。"
+      },
+      {
+        "term": "information hierarchy",
+        "phonetic": "/ˌɪnfərˈmeɪʃn ˈhaɪərɑːrki/",
+        "meaning": "信息层级；界面信息按重要性和使用频率组织的结构",
+        "example": "The information hierarchy separates driving-critical data from comfort controls.",
+        "chineseExample": "信息层级把驾驶关键数据和舒适性控制区分开来。"
+      },
+      {
+        "term": "cognitive friction",
+        "phonetic": "/ˈkɑːɡnətɪv ˈfrɪkʃn/",
+        "meaning": "认知阻力；用户理解、判断或完成任务时遇到的额外心理成本",
+        "example": "Ambiguous icons create cognitive friction during time-sensitive tasks.",
+        "chineseExample": "含义模糊的图标会在时间敏感任务中制造认知阻力。"
+      },
+      {
+        "term": "progressive disclosure",
+        "phonetic": "/prəˈɡresɪv dɪsˈkloʊʒər/",
+        "meaning": "渐进披露；按需展示信息，避免一次性暴露过多选项",
+        "example": "Progressive disclosure keeps advanced settings available but out of the main driving view.",
+        "chineseExample": "渐进披露让高级设置保持可用，但不占据主要驾驶视图。"
+      },
+      {
+        "term": "safety-critical alert",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl əˈlɜːrt/",
+        "meaning": "安全关键提醒；与碰撞、接管、系统失效等高风险情境相关的提示",
+        "example": "A safety-critical alert should never compete visually with entertainment content.",
+        "chineseExample": "安全关键提醒不应该在视觉上与娱乐内容竞争。"
+      }
+    ],
+    "longReadings": [
+      {
+        "text": "A well-designed intelligent cockpit does not simply place more functions on a larger screen. It understands the driving context and changes the interface according to what matters most at that moment. When the car is cruising on an open road, the system can keep navigation, range, and media controls visible but calm. When the vehicle approaches a dense intersection, the cockpit should reduce secondary choices, highlight lane guidance, and make safety-related alerts easier to perceive at a glance. For an HMI designer, the key question is not whether a feature is impressive, but whether it supports the driver with the right level of attention. Voice interaction, touch controls, steering-wheel shortcuts, and haptic feedback should work together as one interaction system. If the driver needs to confirm a command, the feedback should be immediate and understandable without forcing a long visual check. This is why information hierarchy, glanceability, and multimodal feedback are not decorative details. They are design decisions that shape trust, workload, and safety inside the vehicle.",
+        "translation": "一个优秀的智能座舱并不是简单地把更多功能放到更大的屏幕上。它要理解驾驶情境，并根据当下最重要的事情调整界面。当车辆在开阔道路巡航时，系统可以让导航、续航和媒体控制保持可见但不打扰。当车辆接近复杂路口时，座舱应该减少次要选项，突出车道引导，让安全相关提醒更容易被一眼识别。对 HMI 设计师来说，关键问题不是功能是否炫酷，而是它是否用合适的注意力成本支持驾驶员。语音、触控、方向盘快捷操作和触觉反馈应该共同组成一个交互系统。如果驾驶员需要确认指令，反馈应当即时且易懂，而不是迫使用户长时间看屏幕。因此，信息层级、一瞥可读性和多模态反馈不是装饰细节，而是影响车内信任、负荷和安全的设计决策。",
+        "source": {
+          "label": "参考：A Brief Survey on Interactive Automotive UI",
+          "url": "https://arxiv.org/abs/2105.14465"
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "It understands the driving context and changes the interface according to what matters most at that moment.",
+        "structure": "主语 It + 并列谓语 understands / changes + 宾语 context / interface + according to 引导依据。",
+        "focus": "driving context 表示驾驶情境；what matters most 表示最重要的事情。",
+        "pattern": "The system changes X according to Y. 可用于描述自适应界面逻辑。"
+      },
+      {
+        "sentence": "The cockpit should reduce secondary choices, highlight lane guidance, and make safety-related alerts easier to perceive at a glance.",
+        "structure": "should + 三个并列动词 reduce / highlight / make，表达设计策略组合。",
+        "focus": "secondary choices 是次要选项；at a glance 是一眼即可。",
+        "pattern": "The interface should reduce A, highlight B, and make C easier to perceive."
+      },
+      {
+        "sentence": "The key question is not whether a feature is impressive, but whether it supports the driver with the right level of attention.",
+        "structure": "not whether..., but whether... 对比句型，用于强调设计判断标准。",
+        "focus": "impressive 强调视觉或技术冲击；right level of attention 强调合适注意力成本。",
+        "pattern": "The key question is not whether X, but whether Y."
+      },
+      {
+        "sentence": "They are design decisions that shape trust, workload, and safety inside the vehicle.",
+        "structure": "主句 They are design decisions + that 定语从句说明影响对象。",
+        "focus": "shape 在这里是影响、塑造；trust, workload, and safety 是设计评审常用维度。",
+        "pattern": "These are design decisions that shape A, B, and C."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "先读英文术语和音标，再用中文解释回忆含义。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "detail": "第一遍慢读理解，第二遍按意群跟读，第三遍尽量连贯复述。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "6 分钟",
+        "detail": "重点练习 not whether..., but whether... 和 reduce A, highlight B, make C easier to perceive。"
+      },
+      {
+        "title": "口头改写",
+        "time": "5 分钟",
+        "detail": "用今天词汇描述一个车机首页或导航提醒的优化方案。"
+      }
+    ],
+    "videos": []
+  }
+];
