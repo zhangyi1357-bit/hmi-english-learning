@@ -1,6 +1,7 @@
 const state = {
   notes: [],
   active: null,
+  dictionary: new Map(),
 };
 
 const elements = {
@@ -53,6 +54,7 @@ function renderDateOptions() {
 function render() {
   const note = state.active;
   if (!note) return;
+  state.dictionary = buildDictionary(note);
 
   elements.todayHero.innerHTML = `
     <p class="eyebrow">${escapeHtml(note.date)}</p>
@@ -68,22 +70,37 @@ function render() {
   elements.wordCount.textContent = `${note.words.length} 个可点击词汇`;
   elements.wordGrid.innerHTML = "";
   note.words.forEach((word) => {
-    const button = document.createElement("button");
-    button.className = "wordButton";
-    button.type = "button";
-    button.innerHTML = `
+    const card = document.createElement("article");
+    card.className = "wordButton";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.innerHTML = `
       <strong>${escapeHtml(word.term)}</strong>
       <span>${escapeHtml(word.phonetic)}</span>
       <p>${escapeHtml(word.meaning)}</p>
+      <div class="wordExample">
+        <b>例句</b>
+        <p>${renderClickableText(word.example)}</p>
+        <small>${escapeHtml(word.chineseExample)}</small>
+      </div>
     `;
-    button.addEventListener("click", () => openWord(word));
-    elements.wordGrid.append(button);
+    card.addEventListener("click", (event) => {
+      if (event.target.closest(".inlineWord")) return;
+      openWord(word);
+    });
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openWord(word);
+      }
+    });
+    elements.wordGrid.append(card);
   });
 
   const reading = note.longReadings[0];
   elements.readingMeta.textContent = reading.source?.label || "原创跟读文本";
   elements.readingBlock.innerHTML = `
-    <p class="readingText">${escapeHtml(reading.text)}</p>
+    <p class="readingText">${renderClickableText(reading.text)}</p>
     <p class="translation">${escapeHtml(reading.translation)}</p>
     ${renderSource(reading.source)}
   `;
@@ -91,7 +108,7 @@ function render() {
   elements.breakdownList.innerHTML = note.sentenceBreakdowns
     .map((item) => `
       <article class="breakdownItem">
-        <p><strong>Sentence</strong>：${escapeHtml(item.sentence)}</p>
+        <p><strong>Sentence</strong>：${renderClickableText(item.sentence)}</p>
         <p><strong>Structure</strong>：${escapeHtml(item.structure)}</p>
         <p><strong>Focus</strong>：${escapeHtml(item.focus)}</p>
         <p><strong>Pattern</strong>：${escapeHtml(item.pattern)}</p>
@@ -113,11 +130,75 @@ function renderSource(source) {
 
 function openWord(word) {
   elements.dialogTerm.textContent = word.term;
-  elements.dialogPhonetic.textContent = word.phonetic;
-  elements.dialogMeaning.textContent = word.meaning;
-  elements.dialogExample.textContent = word.example;
-  elements.dialogChineseExample.textContent = word.chineseExample;
+  elements.dialogPhonetic.textContent = word.phonetic || "/待补充/";
+  elements.dialogMeaning.textContent = word.meaning || "这个词还没有收录在当天词库里。";
+  elements.dialogExample.textContent = word.example || "This word will be added to the daily glossary when it appears in a key sentence.";
+  elements.dialogChineseExample.textContent = word.chineseExample || "当这个词出现在重点句中时，会补充到每日词库。";
   elements.dialog.showModal();
+}
+
+function openTerm(term) {
+  const key = normalizeTerm(term);
+  const word = state.dictionary.get(key) || buildFallbackWord(term);
+  openWord(word);
+}
+
+function buildDictionary(note) {
+  const dictionary = new Map();
+  [...(note.words || []), ...(note.glossary || [])].forEach((entry) => {
+    if (!entry?.term) return;
+    addEntry(dictionary, entry.term, entry);
+    entry.term
+      .split(/[\s/-]+/)
+      .filter((part) => part.length > 2)
+      .forEach((part) => addEntry(dictionary, part, {
+        ...entry,
+        term: part,
+        meaning: `${part}：来自短语 “${entry.term}”。${entry.meaning}`,
+      }));
+  });
+  COMMON_WORDS.forEach((entry) => addEntry(dictionary, entry.term, entry));
+  return dictionary;
+}
+
+function addEntry(dictionary, term, entry) {
+  dictionary.set(normalizeTerm(term), entry);
+}
+
+function normalizeTerm(term = "") {
+  return String(term)
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9-]+/g, " ")
+    .trim();
+}
+
+function buildFallbackWord(term) {
+  return {
+    term,
+    phonetic: "/待补充/",
+    meaning: "这个词暂未收录在今天的详细词库里。每日更新任务会优先补充长文和例句里的重点词。",
+    example: `${term} appears in today's HMI learning context.`,
+    chineseExample: `${term} 出现在今天的 HMI 学习语境中。`,
+  };
+}
+
+function renderClickableText(text = "") {
+  const source = String(text);
+  const parts = [];
+  let cursor = 0;
+  const pattern = /[A-Za-z][A-Za-z'-]*/g;
+  let match;
+
+  while ((match = pattern.exec(source))) {
+    parts.push(escapeHtml(source.slice(cursor, match.index)));
+    const word = match[0];
+    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(word)}">${escapeHtml(word)}</button>`);
+    cursor = match.index + word.length;
+  }
+
+  parts.push(escapeHtml(source.slice(cursor)));
+  return parts.join("");
 }
 
 function escapeHtml(value = "") {
@@ -136,6 +217,87 @@ elements.dialog.addEventListener("click", (event) => {
     elements.dialog.close();
   }
 });
+
+document.addEventListener("click", (event) => {
+  const target = event.target.closest(".inlineWord");
+  if (!target) return;
+  event.preventDefault();
+  event.stopPropagation();
+  openTerm(target.dataset.term);
+});
+
+const COMMON_WORDS = [
+  {
+    term: "interface",
+    phonetic: "/ˈɪntərfeɪs/",
+    meaning: "界面；用户与系统交互的可见或可操作层。",
+    example: "The interface should keep critical driving information easy to scan.",
+    chineseExample: "界面应让关键驾驶信息易于扫视。"
+  },
+  {
+    term: "vehicle",
+    phonetic: "/ˈviːəkl/",
+    meaning: "车辆；汽车或交通工具。",
+    example: "The vehicle status should be visible without extra navigation.",
+    chineseExample: "车辆状态应无需额外跳转就能看见。"
+  },
+  {
+    term: "driver",
+    phonetic: "/ˈdraɪvər/",
+    meaning: "驾驶员。",
+    example: "The driver needs clear feedback after each command.",
+    chineseExample: "驾驶员在每次指令后都需要清晰反馈。"
+  },
+  {
+    term: "screen",
+    phonetic: "/skriːn/",
+    meaning: "屏幕；车机、中控、仪表或 HUD 的显示区域。",
+    example: "The screen should not show too many choices while driving.",
+    chineseExample: "驾驶时屏幕不应显示过多选项。"
+  },
+  {
+    term: "system",
+    phonetic: "/ˈsɪstəm/",
+    meaning: "系统；由界面、功能、反馈和逻辑组成的整体。",
+    example: "The system adapts its layout to the driving context.",
+    chineseExample: "系统会根据驾驶情境调整布局。"
+  },
+  {
+    term: "feedback",
+    phonetic: "/ˈfiːdbæk/",
+    meaning: "反馈；系统对用户操作给出的回应。",
+    example: "Immediate feedback helps the user confirm the action.",
+    chineseExample: "即时反馈帮助用户确认操作。"
+  },
+  {
+    term: "navigation",
+    phonetic: "/ˌnævɪˈɡeɪʃn/",
+    meaning: "导航；路线、转向、车道和目的地相关信息。",
+    example: "Navigation prompts should be glanceable at intersections.",
+    chineseExample: "路口处的导航提示应具备一瞥可读性。"
+  },
+  {
+    term: "control",
+    phonetic: "/kənˈtroʊl/",
+    meaning: "控制项；用于调节或操作功能的入口。",
+    example: "Frequently used controls should be easy to reach.",
+    chineseExample: "高频控制项应容易触达。"
+  },
+  {
+    term: "attention",
+    phonetic: "/əˈtenʃn/",
+    meaning: "注意力；驾驶员用于观察、判断和操作的心理资源。",
+    example: "The design should protect the driver's attention.",
+    chineseExample: "设计应保护驾驶员注意力。"
+  },
+  {
+    term: "safety",
+    phonetic: "/ˈseɪfti/",
+    meaning: "安全；避免风险、误操作和注意力分散的设计目标。",
+    example: "Safety should guide the priority of cockpit alerts.",
+    chineseExample: "安全应指导座舱提醒的优先级。"
+  }
+];
 
 loadNotes().catch((error) => {
   document.body.innerHTML = `<main class="layout"><section class="hero"><h1>内容加载失败</h1><p>${escapeHtml(error.message)}</p></section></main>`;

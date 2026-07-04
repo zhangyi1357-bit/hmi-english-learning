@@ -169,6 +169,53 @@ select {
   font-size: 14px;
 }
 
+.wordExample {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.wordExample b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 13px;
+}
+
+.wordExample p {
+  margin-bottom: 6px;
+  color: #273448;
+}
+
+.wordExample small {
+  color: var(--muted);
+}
+
+.inlineWord {
+  display: inline;
+  margin: 0;
+  padding: 0 1px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 118, 110, 0.28);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.inlineWord:hover,
+.inlineWord:focus-visible {
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--accent-strong);
+  outline: 2px solid rgba(15, 118, 110, 0.18);
+}
+
 .readingSection article,
 .breakdownItem,
 .practiceList li {

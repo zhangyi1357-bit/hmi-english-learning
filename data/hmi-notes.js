@@ -78,6 +78,267 @@ window.HMI_NOTES = [
         "chineseExample": "安全关键提醒不应该在视觉上与娱乐内容竞争。"
       }
     ],
+    "glossary": [
+      {
+        "term": "well-designed",
+        "phonetic": "/ˌwel dɪˈzaɪnd/",
+        "meaning": "设计良好的；经过清晰目标和使用场景验证的",
+        "example": "A well-designed cockpit reduces unnecessary steps.",
+        "chineseExample": "设计良好的座舱会减少不必要的操作步骤。"
+      },
+      {
+        "term": "intelligent",
+        "phonetic": "/ɪnˈtelɪdʒənt/",
+        "meaning": "智能的；能根据情境、数据或用户意图做出响应的",
+        "example": "An intelligent system can adapt to the driving context.",
+        "chineseExample": "智能系统可以适应驾驶情境。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/ˈkɑːkpɪt/",
+        "meaning": "座舱；驾驶员和乘员与车辆系统交互的空间",
+        "example": "The cockpit combines displays, controls, and feedback.",
+        "chineseExample": "座舱整合了显示、控制和反馈。"
+      },
+      {
+        "term": "function",
+        "phonetic": "/ˈfʌŋkʃn/",
+        "meaning": "功能；系统提供给用户完成任务的能力",
+        "example": "Every function should have a clear user value.",
+        "chineseExample": "每个功能都应该有清晰的用户价值。"
+      },
+      {
+        "term": "larger",
+        "phonetic": "/ˈlɑːrdʒər/",
+        "meaning": "更大的；尺寸或范围更大",
+        "example": "A larger screen does not automatically improve usability.",
+        "chineseExample": "更大的屏幕并不一定自动提升可用性。"
+      },
+      {
+        "term": "understand",
+        "phonetic": "/ˌʌndərˈstænd/",
+        "meaning": "理解；识别用户意图、任务或情境",
+        "example": "The system should understand what the driver is trying to do.",
+        "chineseExample": "系统应该理解驾驶员想要完成什么。"
+      },
+      {
+        "term": "driving",
+        "phonetic": "/ˈdraɪvɪŋ/",
+        "meaning": "驾驶；与车辆行驶和道路环境相关的活动",
+        "example": "Driving tasks must remain the primary focus.",
+        "chineseExample": "驾驶任务必须始终是主要关注点。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "情境；影响交互判断的环境、任务和用户状态",
+        "example": "Context determines which information should be shown first.",
+        "chineseExample": "情境决定哪些信息应该优先展示。"
+      },
+      {
+        "term": "according",
+        "phonetic": "/əˈkɔːrdɪŋ/",
+        "meaning": "根据；依据某个条件或规则",
+        "example": "The layout changes according to speed and road complexity.",
+        "chineseExample": "布局会根据车速和道路复杂度变化。"
+      },
+      {
+        "term": "moment",
+        "phonetic": "/ˈmoʊmənt/",
+        "meaning": "时刻；某个具体时间点或交互发生的瞬间",
+        "example": "At that moment, the warning should be more prominent.",
+        "chineseExample": "在那个时刻，警告应该更加突出。"
+      },
+      {
+        "term": "cruising",
+        "phonetic": "/ˈkruːzɪŋ/",
+        "meaning": "巡航；车辆以较稳定状态行驶",
+        "example": "When cruising, the interface can stay calm and minimal.",
+        "chineseExample": "巡航时，界面可以保持克制和简洁。"
+      },
+      {
+        "term": "range",
+        "phonetic": "/reɪndʒ/",
+        "meaning": "续航里程；车辆还能行驶的距离",
+        "example": "Range should be visible without distracting the driver.",
+        "chineseExample": "续航信息应可见但不分散驾驶员注意力。"
+      },
+      {
+        "term": "media",
+        "phonetic": "/ˈmiːdiə/",
+        "meaning": "媒体；音乐、播客、视频等娱乐内容",
+        "example": "Media controls should not compete with safety alerts.",
+        "chineseExample": "媒体控制不应与安全提醒争夺注意力。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "可见的；用户无需搜索即可看到的",
+        "example": "Critical status should remain visible in the main view.",
+        "chineseExample": "关键状态应该在主视图中保持可见。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/kɑːm/",
+        "meaning": "平静的、克制的；不制造干扰的界面状态",
+        "example": "A calm interface helps drivers stay focused.",
+        "chineseExample": "克制平静的界面帮助驾驶员保持专注。"
+      },
+      {
+        "term": "approach",
+        "phonetic": "/əˈproʊtʃ/",
+        "meaning": "接近；车辆靠近某个位置或情境",
+        "example": "As the vehicle approaches a junction, guidance becomes more important.",
+        "chineseExample": "当车辆接近路口时，引导信息会变得更重要。"
+      },
+      {
+        "term": "dense",
+        "phonetic": "/dens/",
+        "meaning": "密集的；交通、信息或视觉元素较多的",
+        "example": "Dense traffic requires a simpler HMI layout.",
+        "chineseExample": "密集交通需要更简洁的 HMI 布局。"
+      },
+      {
+        "term": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "meaning": "路口；道路交汇处",
+        "example": "At an intersection, lane guidance should be easy to read.",
+        "chineseExample": "在路口，车道引导应该容易读取。"
+      },
+      {
+        "term": "secondary",
+        "phonetic": "/ˈsekənderi/",
+        "meaning": "次要的；相对于驾驶主任务不那么关键的",
+        "example": "Secondary choices should be reduced during complex driving.",
+        "chineseExample": "复杂驾驶时应减少次要选项。"
+      },
+      {
+        "term": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "meaning": "选项；用户可以选择的功能入口或操作",
+        "example": "Too many choices slow down decision-making.",
+        "chineseExample": "过多选项会拖慢决策。"
+      },
+      {
+        "term": "highlight",
+        "phonetic": "/ˈhaɪlaɪt/",
+        "meaning": "突出显示；让重要信息更醒目",
+        "example": "The system should highlight the next lane instruction.",
+        "chineseExample": "系统应该突出下一条车道指令。"
+      },
+      {
+        "term": "lane",
+        "phonetic": "/leɪn/",
+        "meaning": "车道",
+        "example": "Lane guidance helps the driver prepare earlier.",
+        "chineseExample": "车道引导帮助驾驶员更早做准备。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/ˈɡaɪdns/",
+        "meaning": "引导；帮助用户完成判断或行动的信息",
+        "example": "Clear guidance reduces uncertainty.",
+        "chineseExample": "清晰引导可以减少不确定性。"
+      },
+      {
+        "term": "perceive",
+        "phonetic": "/pərˈsiːv/",
+        "meaning": "感知、察觉；看见并理解信息",
+        "example": "Alerts should be easy to perceive at a glance.",
+        "chineseExample": "提醒应该能一眼被感知。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "一瞥；短暂扫视",
+        "example": "The driver should understand the warning with one glance.",
+        "chineseExample": "驾驶员应该能通过一瞥理解警告。"
+      },
+      {
+        "term": "designer",
+        "phonetic": "/dɪˈzaɪnər/",
+        "meaning": "设计师；负责定义体验、结构和交互的人",
+        "example": "The designer should consider workload, trust, and safety.",
+        "chineseExample": "设计师应考虑负荷、信任和安全。"
+      },
+      {
+        "term": "feature",
+        "phonetic": "/ˈfiːtʃər/",
+        "meaning": "功能特性；产品中可被用户使用或感知的能力",
+        "example": "A feature is valuable only when it supports the task.",
+        "chineseExample": "只有支持任务的功能才有价值。"
+      },
+      {
+        "term": "impressive",
+        "phonetic": "/ɪmˈpresɪv/",
+        "meaning": "令人印象深刻的；看起来很强或很炫的",
+        "example": "An impressive animation may still increase distraction.",
+        "chineseExample": "炫酷动画仍可能增加分心。"
+      },
+      {
+        "term": "support",
+        "phonetic": "/səˈpɔːrt/",
+        "meaning": "支持；帮助用户完成任务或降低负担",
+        "example": "The interface should support quick decisions.",
+        "chineseExample": "界面应该支持快速决策。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；通过说话完成输入或反馈的交互通道",
+        "example": "Voice interaction can reduce manual input.",
+        "chineseExample": "语音交互可以减少手动输入。"
+      },
+      {
+        "term": "haptic",
+        "phonetic": "/ˈhæptɪk/",
+        "meaning": "触觉的；通过震动、力反馈等触感传达信息的",
+        "example": "Haptic feedback confirms the action without a long visual check.",
+        "chineseExample": "触觉反馈无需长时间看屏即可确认操作。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "指令；用户发出的操作请求",
+        "example": "The command should be confirmed immediately.",
+        "chineseExample": "指令应该被即时确认。"
+      },
+      {
+        "term": "immediate",
+        "phonetic": "/ɪˈmiːdiət/",
+        "meaning": "即时的；没有明显延迟的",
+        "example": "Immediate feedback makes the interaction feel reliable.",
+        "chineseExample": "即时反馈会让交互更可靠。"
+      },
+      {
+        "term": "understandable",
+        "phonetic": "/ˌʌndərˈstændəbl/",
+        "meaning": "易懂的；不需要额外解释就能理解的",
+        "example": "Warnings must be understandable under time pressure.",
+        "chineseExample": "警告在时间压力下也必须易懂。"
+      },
+      {
+        "term": "decorative",
+        "phonetic": "/ˈdekəreɪtɪv/",
+        "meaning": "装饰性的；主要用于视觉美化而非功能支持的",
+        "example": "Decorative details should not hide important information.",
+        "chineseExample": "装饰细节不应遮挡重要信息。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户对系统可靠性和可预测性的判断",
+        "example": "Consistent feedback builds trust in the cockpit system.",
+        "chineseExample": "一致的反馈会建立用户对座舱系统的信任。"
+      },
+      {
+        "term": "workload",
+        "phonetic": "/ˈwɜːrkloʊd/",
+        "meaning": "负荷；完成任务需要投入的认知、视觉和操作资源",
+        "example": "A simpler flow reduces driver workload.",
+        "chineseExample": "更简单的流程会降低驾驶员负荷。"
+      }
+    ],
     "longReadings": [
       {
         "text": "A well-designed intelligent cockpit does not simply place more functions on a larger screen. It understands the driving context and changes the interface according to what matters most at that moment. When the car is cruising on an open road, the system can keep navigation, range, and media controls visible but calm. When the vehicle approaches a dense intersection, the cockpit should reduce secondary choices, highlight lane guidance, and make safety-related alerts easier to perceive at a glance. For an HMI designer, the key question is not whether a feature is impressive, but whether it supports the driver with the right level of attention. Voice interaction, touch controls, steering-wheel shortcuts, and haptic feedback should work together as one interaction system. If the driver needs to confirm a command, the feedback should be immediate and understandable without forcing a long visual check. This is why information hierarchy, glanceability, and multimodal feedback are not decorative details. They are design decisions that shape trust, workload, and safety inside the vehicle.",
