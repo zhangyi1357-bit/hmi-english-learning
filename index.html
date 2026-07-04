@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HMI 智能座舱英语学习</title>
+    <link rel="stylesheet" href="app/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Daily HMI English</p>
+        <h1>HMI 智能座舱英语学习</h1>
+      </div>
+      <select id="dateSelect" aria-label="选择学习日期"></select>
+    </header>
+
+    <main class="layout">
+      <section class="hero" id="todayHero"></section>
+
+      <section class="section">
+        <div class="sectionHeader">
+          <h2>专业词汇</h2>
+          <span id="wordCount"></span>
+        </div>
+        <div class="wordGrid" id="wordGrid"></div>
+      </section>
+
+      <section class="section readingSection">
+        <div class="sectionHeader">
+          <h2>长篇跟读</h2>
+          <span id="readingMeta"></span>
+        </div>
+        <article id="readingBlock"></article>
+      </section>
+
+      <section class="section">
+        <div class="sectionHeader">
+          <h2>句子拆解</h2>
+        </div>
+        <div class="breakdownList" id="breakdownList"></div>
+      </section>
+
+      <section class="section">
+        <div class="sectionHeader">
+          <h2>今日练习</h2>
+        </div>
+        <ol class="practiceList" id="practiceList"></ol>
+      </section>
+    </main>
+
+    <dialog id="wordDialog" class="wordDialog">
+      <button class="dialogClose" id="dialogClose" aria-label="关闭">×</button>
+      <p class="eyebrow" id="dialogPhonetic"></p>
+      <h3 id="dialogTerm"></h3>
+      <p class="meaning" id="dialogMeaning"></p>
+      <div class="exampleBox">
+        <p id="dialogExample"></p>
+        <p id="dialogChineseExample"></p>
+      </div>
+    </dialog>
+
+    <script src="app/main.js" type="module"></script>
+  </body>
+</html>
