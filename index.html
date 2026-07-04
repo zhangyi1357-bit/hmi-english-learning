@@ -12,7 +12,10 @@
         <p class="eyebrow">Daily HMI English</p>
         <h1>HMI 智能座舱英语学习</h1>
       </div>
-      <select id="dateSelect" aria-label="选择学习日期"></select>
+      <div class="topActions">
+        <select id="dateSelect" aria-label="选择学习日期"></select>
+        <button class="iconTextButton" id="refreshButton" type="button" title="刷新最新内容">刷新</button>
+      </div>
     </header>
 
     <main class="layout">
@@ -54,6 +57,10 @@
       <p class="eyebrow" id="dialogPhonetic"></p>
       <h3 id="dialogTerm"></h3>
       <p class="meaning" id="dialogMeaning"></p>
+      <div class="dialogActions">
+        <button class="iconTextButton" id="dialogSpeakTerm" type="button">播放单词</button>
+        <button class="iconTextButton" id="dialogSpeakExample" type="button">播放例句</button>
+      </div>
       <div class="exampleBox">
         <p id="dialogExample"></p>
         <p id="dialogChineseExample"></p>

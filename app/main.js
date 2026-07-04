@@ -6,6 +6,7 @@ const state = {
 
 const elements = {
   dateSelect: document.querySelector("#dateSelect"),
+  refreshButton: document.querySelector("#refreshButton"),
   todayHero: document.querySelector("#todayHero"),
   wordCount: document.querySelector("#wordCount"),
   wordGrid: document.querySelector("#wordGrid"),
@@ -20,6 +21,8 @@ const elements = {
   dialogMeaning: document.querySelector("#dialogMeaning"),
   dialogExample: document.querySelector("#dialogExample"),
   dialogChineseExample: document.querySelector("#dialogChineseExample"),
+  dialogSpeakTerm: document.querySelector("#dialogSpeakTerm"),
+  dialogSpeakExample: document.querySelector("#dialogSpeakExample"),
 };
 
 async function loadNotes() {
@@ -75,7 +78,10 @@ function render() {
     card.tabIndex = 0;
     card.setAttribute("role", "button");
     card.innerHTML = `
-      <strong>${escapeHtml(word.term)}</strong>
+      <div class="wordTopline">
+        <strong>${escapeHtml(word.term)}</strong>
+        <button class="speakButton" type="button" data-speak="${escapeHtml(word.term)}" title="播放词汇发音">播放</button>
+      </div>
       <span>${escapeHtml(word.phonetic)}</span>
       <p>${escapeHtml(word.meaning)}</p>
       <div class="wordExample">
@@ -85,6 +91,7 @@ function render() {
       </div>
     `;
     card.addEventListener("click", (event) => {
+      if (event.target.closest("[data-speak]")) return;
       if (event.target.closest(".inlineWord")) return;
       openWord(word);
     });
@@ -100,6 +107,10 @@ function render() {
   const reading = note.longReadings[0];
   elements.readingMeta.textContent = reading.source?.label || "原创跟读文本";
   elements.readingBlock.innerHTML = `
+    <div class="readingActions">
+      <button class="iconTextButton" type="button" data-speak-reading="true">播放全文</button>
+      <button class="iconTextButton secondary" type="button" data-stop-speaking="true">停止播放</button>
+    </div>
     <p class="readingText">${renderClickableText(reading.text)}</p>
     <p class="translation">${escapeHtml(reading.translation)}</p>
     ${renderSource(reading.source)}
@@ -134,6 +145,8 @@ function openWord(word) {
   elements.dialogMeaning.textContent = word.meaning || "这个词还没有收录在当天词库里。";
   elements.dialogExample.textContent = word.example || "This word will be added to the daily glossary when it appears in a key sentence.";
   elements.dialogChineseExample.textContent = word.chineseExample || "当这个词出现在重点句中时，会补充到每日词库。";
+  elements.dialog.dataset.term = word.term || "";
+  elements.dialog.dataset.example = word.example || "";
   elements.dialog.showModal();
 }
 
@@ -219,12 +232,68 @@ elements.dialog.addEventListener("click", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  const speakTarget = event.target.closest("[data-speak]");
+  if (speakTarget) {
+    event.preventDefault();
+    event.stopPropagation();
+    speakEnglish(speakTarget.dataset.speak);
+    return;
+  }
+
+  const readingTarget = event.target.closest("[data-speak-reading]");
+  if (readingTarget) {
+    event.preventDefault();
+    const reading = state.active?.longReadings?.[0];
+    speakEnglish(reading?.text || "");
+    return;
+  }
+
+  const stopTarget = event.target.closest("[data-stop-speaking]");
+  if (stopTarget) {
+    event.preventDefault();
+    stopSpeaking();
+    return;
+  }
+
   const target = event.target.closest(".inlineWord");
   if (!target) return;
   event.preventDefault();
   event.stopPropagation();
   openTerm(target.dataset.term);
 });
+
+elements.refreshButton.addEventListener("click", () => {
+  stopSpeaking();
+  const url = new URL(window.location.href);
+  url.searchParams.set("refresh", Date.now().toString());
+  window.location.replace(url.toString());
+});
+
+elements.dialogSpeakTerm.addEventListener("click", () => {
+  speakEnglish(elements.dialog.dataset.term || elements.dialogTerm.textContent);
+});
+
+elements.dialogSpeakExample.addEventListener("click", () => {
+  speakEnglish(elements.dialog.dataset.example || elements.dialogExample.textContent);
+});
+
+function speakEnglish(text = "") {
+  const cleanText = String(text).trim();
+  if (!cleanText || !("speechSynthesis" in window)) return;
+
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(cleanText);
+  utterance.lang = "en-US";
+  utterance.rate = cleanText.split(/\s+/).length > 12 ? 0.88 : 0.82;
+  utterance.pitch = 1;
+  window.speechSynthesis.speak(utterance);
+}
+
+function stopSpeaking() {
+  if ("speechSynthesis" in window) {
+    window.speechSynthesis.cancel();
+  }
+}
 
 const COMMON_WORDS = [
   {

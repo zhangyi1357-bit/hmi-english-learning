@@ -37,6 +37,38 @@ body {
   backdrop-filter: blur(14px);
 }
 
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.iconTextButton,
+.speakButton {
+  min-height: 36px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--accent-strong);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.iconTextButton:hover,
+.iconTextButton:focus-visible,
+.speakButton:hover,
+.speakButton:focus-visible {
+  border-color: var(--accent);
+  outline: 3px solid rgba(15, 118, 110, 0.16);
+}
+
+.iconTextButton.secondary {
+  color: var(--muted);
+}
+
 h1,
 h2,
 h3,
@@ -163,6 +195,20 @@ select {
   line-height: 1.25;
 }
 
+.wordTopline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.speakButton {
+  min-height: 30px;
+  padding: 5px 9px;
+  font-size: 12px;
+  flex: 0 0 auto;
+}
+
 .wordButton span,
 .wordButton p {
   color: var(--muted);
@@ -226,6 +272,14 @@ select {
 
 .readingSection article {
   padding: 20px;
+}
+
+.readingActions,
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
 .readingText {
@@ -339,7 +393,16 @@ select {
     flex-direction: column;
   }
 
+  .topActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
   select {
+    width: 100%;
+  }
+
+  .iconTextButton {
     width: 100%;
   }
 
