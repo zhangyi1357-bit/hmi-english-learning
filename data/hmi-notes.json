@@ -1,5 +1,398 @@
 [
   {
+    "id": "2026-07-05-privacy-aware-personalization",
+    "date": "2026-07-05",
+    "title": "Privacy-aware personalization in the intelligent cockpit",
+    "topic": "智能座舱个性化与隐私透明度",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语讨论座舱个性化、数据权限、用户信任和隐私透明度，适合用于产品方案、合规评审和跨团队沟通。",
+    "words": [
+      {
+        "term": "privacy-aware personalization",
+        "phonetic": "/ˈpraɪvəsi əˈwer ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "隐私感知的个性化；在尊重用户数据边界和授权的前提下提供定制体验",
+        "example": "Privacy-aware personalization adjusts the cockpit layout without exposing sensitive trip history.",
+        "chineseExample": "隐私感知的个性化可以调整座舱布局，同时不暴露敏感的行程历史。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/ɪkˈsplɪsɪt kənˈsent/",
+        "meaning": "明确同意；用户清楚知情并主动授权数据使用",
+        "example": "The vehicle should ask for explicit consent before sharing location-based preferences with cloud services.",
+        "chineseExample": "车辆在把基于位置的偏好分享给云服务前，应该请求用户明确同意。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集完成目标所必需的数据",
+        "example": "Data minimization keeps the recommendation engine focused on useful signals instead of collecting every interaction.",
+        "chineseExample": "数据最小化让推荐引擎聚焦有用信号，而不是收集每一次交互。"
+      },
+      {
+        "term": "preference profile",
+        "phonetic": "/ˈprefərəns ˈproʊfaɪl/",
+        "meaning": "偏好画像；记录用户常用设置、内容偏好和交互习惯的数据集合",
+        "example": "A preference profile can store climate settings, display themes, and preferred navigation views.",
+        "chineseExample": "偏好画像可以保存空调设置、显示主题和偏好的导航视图。"
+      },
+      {
+        "term": "permission dashboard",
+        "phonetic": "/pərˈmɪʃn ˈdæʃbɔːrd/",
+        "meaning": "权限看板；集中展示并管理数据权限的界面",
+        "example": "A permission dashboard helps drivers review which cockpit features can access contacts or location data.",
+        "chineseExample": "权限看板帮助驾驶员查看哪些座舱功能可以访问联系人或位置数据。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车辆或设备本地处理数据，减少上传需求",
+        "example": "On-device processing can recognize routine seat adjustments without sending raw behavior data to the cloud.",
+        "chineseExample": "端侧处理可以识别常规座椅调节，而不把原始行为数据发送到云端。"
+      },
+      {
+        "term": "contextual recommendation",
+        "phonetic": "/kənˈtekstʃuəl ˌrekəmenˈdeɪʃn/",
+        "meaning": "情境化推荐；根据当前任务、场景和用户偏好给出的建议",
+        "example": "A contextual recommendation should appear only when it supports the current driving task.",
+        "chineseExample": "情境化推荐只应在支持当前驾驶任务时出现。"
+      },
+      {
+        "term": "transparent control",
+        "phonetic": "/trænsˈpærənt kənˈtroʊl/",
+        "meaning": "透明控制；让用户清楚知道系统为何这样做，并能调整或关闭",
+        "example": "Transparent control explains why the cockpit suggests a route and lets the driver disable that signal.",
+        "chineseExample": "透明控制会解释座舱为何推荐某条路线，并允许驾驶员关闭该信号。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力、限制和数据使用形成准确预期",
+        "example": "Trust calibration prevents users from assuming that every personalized prompt is safety-critical.",
+        "chineseExample": "信任校准可以避免用户误以为每个个性化提示都与安全关键事件有关。"
+      },
+      {
+        "term": "reset pathway",
+        "phonetic": "/ˈriːset ˈpæθweɪ/",
+        "meaning": "重置路径；让用户删除、恢复或重新设置个人数据的操作流程",
+        "example": "A clear reset pathway is essential when a shared vehicle changes drivers.",
+        "chineseExample": "当共享车辆更换驾驶员时，清晰的重置路径非常重要。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "privacy",
+        "phonetic": "/ˈpraɪvəsi/",
+        "meaning": "隐私；用户对个人信息收集、使用和分享的控制权",
+        "example": "Privacy must be treated as part of the cockpit experience.",
+        "chineseExample": "隐私必须被视为座舱体验的一部分。"
+      },
+      {
+        "term": "personalization",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "个性化；根据用户偏好调整界面或服务",
+        "example": "Personalization should reduce effort, not create surprise.",
+        "chineseExample": "个性化应该减少操作成本，而不是制造意外。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、交互、感知和服务的车内数字空间",
+        "example": "The intelligent cockpit learns from repeated routines.",
+        "chineseExample": "智能座舱会从重复的日常习惯中学习。"
+      },
+      {
+        "term": "sensitive",
+        "phonetic": "/ˈsensətɪv/",
+        "meaning": "敏感的；涉及个人身份、位置或行为的信息属性",
+        "example": "Trip history is sensitive because it can reveal daily routines.",
+        "chineseExample": "行程历史是敏感信息，因为它可能揭示日常规律。"
+      },
+      {
+        "term": "trip history",
+        "phonetic": "/trɪp ˈhɪstəri/",
+        "meaning": "行程历史；车辆过去路线、目的地和出行时间记录",
+        "example": "Trip history should not be exposed in a shared profile.",
+        "chineseExample": "行程历史不应暴露在共享画像中。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "同意；用户对某项数据使用的授权",
+        "example": "Consent should be specific and easy to withdraw.",
+        "chineseExample": "同意应该具体，并且易于撤回。"
+      },
+      {
+        "term": "cloud service",
+        "phonetic": "/klaʊd ˈsɜːrvɪs/",
+        "meaning": "云服务；通过远程服务器提供的数据处理或功能服务",
+        "example": "A cloud service may improve recommendations but increases data exposure.",
+        "chineseExample": "云服务可能提升推荐效果，但也增加数据暴露。"
+      },
+      {
+        "term": "recommendation engine",
+        "phonetic": "/ˌrekəmenˈdeɪʃn ˈendʒɪn/",
+        "meaning": "推荐引擎；根据数据生成建议的算法模块",
+        "example": "The recommendation engine should use the least amount of data required.",
+        "chineseExample": "推荐引擎应使用完成任务所需的最少数据。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；用户与系统之间的操作和反馈过程",
+        "example": "Every interaction can become a data signal.",
+        "chineseExample": "每一次交互都可能成为数据信号。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/ˈsɪɡnəl/",
+        "meaning": "信号；可用于判断意图、状态或偏好的数据线索",
+        "example": "A useful signal should be connected to a clear user benefit.",
+        "chineseExample": "有用信号应该对应清晰的用户收益。"
+      },
+      {
+        "term": "profile",
+        "phonetic": "/ˈproʊfaɪl/",
+        "meaning": "画像；对用户偏好、状态或行为的结构化记录",
+        "example": "A profile must be easy to inspect and reset.",
+        "chineseExample": "画像必须易于查看和重置。"
+      },
+      {
+        "term": "climate setting",
+        "phonetic": "/ˈklaɪmət ˈsetɪŋ/",
+        "meaning": "空调设置；温度、风量和通风相关偏好",
+        "example": "Climate settings are common inputs for cockpit personalization.",
+        "chineseExample": "空调设置是座舱个性化的常见输入。"
+      },
+      {
+        "term": "display theme",
+        "phonetic": "/dɪˈspleɪ θiːm/",
+        "meaning": "显示主题；界面的颜色、亮度和视觉风格配置",
+        "example": "The display theme may change by driver profile.",
+        "chineseExample": "显示主题可能随驾驶员画像而变化。"
+      },
+      {
+        "term": "navigation view",
+        "phonetic": "/ˌnævɪˈɡeɪʃn vjuː/",
+        "meaning": "导航视图；地图、路线和引导信息的呈现方式",
+        "example": "A familiar navigation view helps the driver scan faster.",
+        "chineseExample": "熟悉的导航视图能帮助驾驶员更快扫视。"
+      },
+      {
+        "term": "permission",
+        "phonetic": "/pərˈmɪʃn/",
+        "meaning": "权限；系统访问某类数据或能力的许可",
+        "example": "Permission choices should be visible before a feature is enabled.",
+        "chineseExample": "功能启用前应该能看到权限选择。"
+      },
+      {
+        "term": "dashboard",
+        "phonetic": "/ˈdæʃbɔːrd/",
+        "meaning": "看板；集中展示状态、选项或指标的界面",
+        "example": "The dashboard summarizes active data permissions.",
+        "chineseExample": "看板汇总当前启用的数据权限。"
+      },
+      {
+        "term": "contacts",
+        "phonetic": "/ˈkɑːntækts/",
+        "meaning": "联系人；手机或账户中的通信对象信息",
+        "example": "Contacts require careful handling in a shared vehicle.",
+        "chineseExample": "联系人在共享车辆中需要谨慎处理。"
+      },
+      {
+        "term": "location data",
+        "phonetic": "/loʊˈkeɪʃn ˈdeɪtə/",
+        "meaning": "位置数据；车辆或用户所在地点、路线和停留点信息",
+        "example": "Location data can reveal home and work patterns.",
+        "chineseExample": "位置数据可能揭示家庭和工作规律。"
+      },
+      {
+        "term": "on-device",
+        "phonetic": "/ɑːn dɪˈvaɪs/",
+        "meaning": "端侧的；发生在本地设备或车辆内部的",
+        "example": "On-device analysis can reduce unnecessary cloud transfer.",
+        "chineseExample": "端侧分析可以减少不必要的云端传输。"
+      },
+      {
+        "term": "processing",
+        "phonetic": "/ˈprɑːsesɪŋ/",
+        "meaning": "处理；对数据进行计算、识别、存储或转换",
+        "example": "Processing should match the stated purpose.",
+        "chineseExample": "数据处理应与声明目的相匹配。"
+      },
+      {
+        "term": "raw behavior data",
+        "phonetic": "/rɔː bɪˈheɪvjər ˈdeɪtə/",
+        "meaning": "原始行为数据；未经聚合或脱敏的用户操作记录",
+        "example": "Raw behavior data may be more revealing than a simple preference.",
+        "chineseExample": "原始行为数据可能比简单偏好更能暴露用户信息。"
+      },
+      {
+        "term": "cloud",
+        "phonetic": "/klaʊd/",
+        "meaning": "云端；远程服务器和网络服务环境",
+        "example": "Not every cockpit decision needs the cloud.",
+        "chineseExample": "并非每个座舱决策都需要云端。"
+      },
+      {
+        "term": "contextual",
+        "phonetic": "/kənˈtekstʃuəl/",
+        "meaning": "情境化的；与当前环境、任务和用户状态相关的",
+        "example": "A contextual prompt should fit the driving moment.",
+        "chineseExample": "情境化提示应适合当下驾驶时刻。"
+      },
+      {
+        "term": "driving task",
+        "phonetic": "/ˈdraɪvɪŋ tæsk/",
+        "meaning": "驾驶任务；与安全驾驶、导航或车辆控制相关的当前任务",
+        "example": "A prompt should not interrupt the main driving task.",
+        "chineseExample": "提示不应打断主要驾驶任务。"
+      },
+      {
+        "term": "transparent",
+        "phonetic": "/trænsˈpærənt/",
+        "meaning": "透明的；用户能理解原因、范围和后果的",
+        "example": "Transparent logic improves user confidence.",
+        "chineseExample": "透明的逻辑会提升用户信心。"
+      },
+      {
+        "term": "disable",
+        "phonetic": "/dɪsˈeɪbl/",
+        "meaning": "禁用；关闭某项功能、信号或权限",
+        "example": "Drivers should be able to disable a nonessential data signal.",
+        "chineseExample": "驾驶员应该能够禁用非必要数据信号。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户对系统可靠性、意图和边界的判断",
+        "example": "Trust grows when the system explains its choices.",
+        "chineseExample": "当系统解释自己的选择时，信任会增加。"
+      },
+      {
+        "term": "calibration",
+        "phonetic": "/ˌkælɪˈbreɪʃn/",
+        "meaning": "校准；让判断或预期与实际能力相匹配",
+        "example": "Calibration keeps expectations realistic.",
+        "chineseExample": "校准让预期保持现实。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统向用户显示或播放的信息",
+        "example": "A personalized prompt should be easy to dismiss.",
+        "chineseExample": "个性化提示应该易于关闭。"
+      },
+      {
+        "term": "safety-critical",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl/",
+        "meaning": "安全关键的；与碰撞、接管或驾驶风险直接相关的",
+        "example": "Safety-critical alerts require a stronger priority than comfort suggestions.",
+        "chineseExample": "安全关键提醒应比舒适性建议拥有更高优先级。"
+      },
+      {
+        "term": "reset",
+        "phonetic": "/ˌriːˈset/",
+        "meaning": "重置；删除、恢复或重新配置系统状态",
+        "example": "Reset options should be visible before selling the vehicle.",
+        "chineseExample": "出售车辆前应能看到重置选项。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/ʃerd ˈviːəkl/",
+        "meaning": "共享车辆；由多个用户轮流使用的车辆",
+        "example": "A shared vehicle needs strong profile separation.",
+        "chineseExample": "共享车辆需要严格区分用户画像。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；控制或监督车辆的人",
+        "example": "The driver should remain in control of personal data choices.",
+        "chineseExample": "驾驶员应保持对个人数据选择的控制。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明系统行为的原因或依据",
+        "example": "The cockpit should explain why a preference was applied.",
+        "chineseExample": "座舱应解释为什么应用某个偏好。"
+      },
+      {
+        "term": "benefit",
+        "phonetic": "/ˈbenɪfɪt/",
+        "meaning": "收益；用户能感知到的价值或便利",
+        "example": "A data request needs a clear user benefit.",
+        "chineseExample": "数据请求需要清晰的用户收益。"
+      },
+      {
+        "term": "withdraw",
+        "phonetic": "/wɪðˈdrɔː/",
+        "meaning": "撤回；取消先前授予的同意或权限",
+        "example": "Users should be able to withdraw consent at any time.",
+        "chineseExample": "用户应该能够随时撤回同意。"
+      }
+    ],
+    "longReadings": [
+      {
+        "text": "Personalization can make an intelligent cockpit feel calm, familiar, and efficient, but it also changes the privacy responsibilities of the HMI team. A seat position, a favorite navigation view, a preferred temperature, or a repeated charging stop may look like small convenience data. Together, however, these signals can describe a driver's routine, relationships, and habits. A privacy-aware cockpit therefore needs more than a legal notice hidden in the settings menu. It should explain what data is used, why the data improves the experience, and whether the processing happens on the device or in the cloud. The interface should ask for explicit consent when a feature uses sensitive information such as contacts, location data, or trip history. It should also provide a simple permission dashboard where drivers can pause personalization, delete a profile, or reset the vehicle before sharing it with another person. Good personalization is not just accurate; it is understandable and reversible. When users can see the benefit, change the boundary, and withdraw consent without effort, the system feels less like surveillance and more like a respectful assistant. For HMI designers, privacy is not a separate compliance layer. It is part of interaction quality, trust calibration, and long-term user acceptance.",
+        "translation": "个性化可以让智能座舱显得平静、熟悉且高效，但它也改变了 HMI 团队在隐私方面的责任。座椅位置、常用导航视图、偏好的温度或重复出现的充电停靠点，看起来只是小型便利数据。然而，这些信号组合在一起，可能描述驾驶员的日常规律、人际关系和习惯。因此，隐私感知的座舱需要的不只是藏在设置菜单里的法律声明。它应该解释使用了什么数据、为什么这些数据能改善体验，以及处理发生在端侧还是云端。当功能使用联系人、位置数据或行程历史等敏感信息时，界面应该请求明确同意。它还应该提供简单的权限看板，让驾驶员暂停个性化、删除画像，或在与他人共享车辆前重置车辆。好的个性化不只是准确，还要易懂且可撤回。当用户能看到收益、改变边界并轻松撤回同意时，系统就不再像监控，而更像一个尊重人的助手。对 HMI 设计师来说，隐私不是独立的合规层，而是交互质量、信任校准和长期用户接受度的一部分。",
+        "source": {
+          "label": "参考：Analyzing Privacy Implications of Data Collection in Android Automotive OS",
+          "url": "https://arxiv.org/abs/2409.15561"
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Personalization can make an intelligent cockpit feel calm, familiar, and efficient, but it also changes the privacy responsibilities of the HMI team.",
+        "structure": "主语 Personalization + can make + 宾语 cockpit + feel 形容词组；but 连接转折，说明隐私责任。",
+        "focus": "calm, familiar, and efficient 描述体验价值；privacy responsibilities 表示隐私责任。",
+        "pattern": "X can make Y feel A, B, and C, but it also changes Z."
+      },
+      {
+        "sentence": "Together, however, these signals can describe a driver's routine, relationships, and habits.",
+        "structure": "Together 作状语，however 表转折；主语 these signals + can describe + 三个并列宾语。",
+        "focus": "signals 在这里指数据线索；routine, relationships, and habits 强调组合数据的敏感性。",
+        "pattern": "Together, these signals can describe A, B, and C."
+      },
+      {
+        "sentence": "It should explain what data is used, why the data improves the experience, and whether the processing happens on the device or in the cloud.",
+        "structure": "should explain 后接三个宾语从句：what / why / whether，适合描述透明度要求。",
+        "focus": "what data is used 说明范围；why...improves 说明价值；whether...on the device or in the cloud 说明处理位置。",
+        "pattern": "The interface should explain what X is used, why X helps, and whether Y happens locally or remotely."
+      },
+      {
+        "sentence": "Good personalization is not just accurate; it is understandable and reversible.",
+        "structure": "not just...; it is... 用分号连接评价标准升级，从准确性扩展到可理解和可撤回。",
+        "focus": "accurate 是准确；understandable 是易懂；reversible 是可撤回或可恢复。",
+        "pattern": "Good X is not just A; it is B and C."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 10 个核心术语，重点区分 consent、permission、profile、processing 的发音和含义。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "detail": "按意群跟读长文，遇到 what / why / whether 三连结构时放慢并重读。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "6 分钟",
+        "detail": "复述 4 个重点句型，尤其练习 Good X is not just A; it is B and C. 的评价表达。"
+      },
+      {
+        "title": "口头复述/改写",
+        "time": "6 分钟",
+        "detail": "用 privacy-aware personalization、explicit consent、permission dashboard 描述一个座舱账号登录或共享车辆重置方案。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-04-context-aware-cockpit",
     "date": "2026-07-04",
     "title": "Context-aware cockpit interaction for safer decisions",
