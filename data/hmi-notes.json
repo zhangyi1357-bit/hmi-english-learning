@@ -1,5 +1,406 @@
 [
   {
+    "id": "2026-07-06-multimodal-handoff",
+    "date": "2026-07-06",
+    "title": "Multimodal handoff between voice and touch in the intelligent cockpit",
+    "topic": "智能座舱语音与触控的多模态任务交接",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述语音、触控、视觉反馈和驾驶负荷之间的任务交接，适合用于座舱交互评审、原型讲解和安全体验讨论。",
+    "words": [
+      {
+        "term": "multimodal handoff",
+        "phonetic": "/ˌmʌltiˈmoʊdl ˈhændɔːf/",
+        "meaning": "多模态交接；在语音、触控、视觉或物理控制之间平滑转移任务的设计方式",
+        "example": "A multimodal handoff lets the driver start a destination search by voice and confirm the final route on the screen.",
+        "chineseExample": "多模态交接让驾驶员可以用语音开始目的地搜索，并在屏幕上确认最终路线。"
+      },
+      {
+        "term": "voice-first flow",
+        "phonetic": "/vɔɪs fɜːrst floʊ/",
+        "meaning": "语音优先流程；优先用语音完成输入，减少低价值触屏操作的交互路径",
+        "example": "A voice-first flow is useful when the driver needs to keep both hands near the steering wheel.",
+        "chineseExample": "当驾驶员需要双手靠近方向盘时，语音优先流程很有用。"
+      },
+      {
+        "term": "visual-manual demand",
+        "phonetic": "/ˈvɪʒuəl ˈmænjuəl dɪˈmænd/",
+        "meaning": "视觉-手动需求；某项交互对看屏幕和动手操作造成的负荷",
+        "example": "The design team reduced visual-manual demand by moving repeated climate adjustments into a short voice command.",
+        "chineseExample": "设计团队通过把重复的空调调节移到简短语音命令中，降低了视觉-手动需求。"
+      },
+      {
+        "term": "confirmation cue",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn kjuː/",
+        "meaning": "确认提示；用于告诉用户系统已理解、等待确认或即将执行的反馈信号",
+        "example": "A clear confirmation cue prevents the cockpit from executing a misunderstood command silently.",
+        "chineseExample": "清晰的确认提示可以避免座舱静默执行被误解的指令。"
+      },
+      {
+        "term": "fallback interaction",
+        "phonetic": "/ˈfɔːlbæk ˌɪntərˈækʃn/",
+        "meaning": "兜底交互；当首选交互方式失败或不适合时提供的备用操作路径",
+        "example": "Fallback interaction should be visible when speech recognition fails in a noisy cabin.",
+        "chineseExample": "当嘈杂座舱中语音识别失败时，兜底交互应该清晰可见。"
+      },
+      {
+        "term": "task continuity",
+        "phonetic": "/tæsk ˌkɑːntəˈnuːəti/",
+        "meaning": "任务连续性；用户切换输入方式后仍能保留上下文、进度和意图",
+        "example": "Task continuity means the search query remains on screen after the driver switches from voice to touch.",
+        "chineseExample": "任务连续性意味着驾驶员从语音切换到触控后，搜索词仍保留在屏幕上。"
+      },
+      {
+        "term": "glanceable feedback",
+        "phonetic": "/ˈɡlænsəbl ˈfiːdbæk/",
+        "meaning": "可扫视反馈；驾驶员短暂看一眼就能理解的状态或结果提示",
+        "example": "Glanceable feedback should summarize the command result without forcing the driver to read a long sentence.",
+        "chineseExample": "可扫视反馈应概括命令结果，而不是迫使驾驶员阅读长句。"
+      },
+      {
+        "term": "interaction recovery",
+        "phonetic": "/ˌɪntərˈækʃn rɪˈkʌvəri/",
+        "meaning": "交互恢复；在误识别、取消或中断后帮助用户回到可控状态的设计",
+        "example": "Interaction recovery gives the driver a safe way to edit the route instead of restarting the entire task.",
+        "chineseExample": "交互恢复为驾驶员提供安全修改路线的方法，而不必重新开始整个任务。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；用户理解、记忆和决策时消耗的心理资源",
+        "example": "The assistant should lower cognitive load by asking one concise question at a time.",
+        "chineseExample": "助手应该一次只问一个简洁问题，以降低认知负荷。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户知道系统当前处于监听、编辑、确认或执行等哪种状态",
+        "example": "Mode awareness is critical when the cockpit moves from passive listening to active route guidance.",
+        "chineseExample": "当座舱从被动监听进入主动路线引导时，模式感知非常关键。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "multimodal",
+        "phonetic": "/ˌmʌltiˈmoʊdl/",
+        "meaning": "多模态的；结合多种输入或输出方式的",
+        "example": "A multimodal cockpit combines speech, touch, visual feedback, and physical controls.",
+        "chineseExample": "多模态座舱结合语音、触控、视觉反馈和物理控制。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "交接；任务或控制权从一种方式转到另一种方式",
+        "example": "The handoff should preserve the driver intent.",
+        "chineseExample": "交接应保留驾驶员意图。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；通过说话完成输入或控制的方式",
+        "example": "Voice can reduce touch steps during driving.",
+        "chineseExample": "语音可以减少驾驶中的触控步骤。"
+      },
+      {
+        "term": "touch",
+        "phonetic": "/tʌtʃ/",
+        "meaning": "触控；通过屏幕或触摸区域进行操作",
+        "example": "Touch is efficient when choices need visual comparison.",
+        "chineseExample": "当选项需要视觉比较时，触控很高效。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；整合显示、感知、服务和交互的车内数字空间",
+        "example": "The intelligent cockpit should adapt to the driving context.",
+        "chineseExample": "智能座舱应适应驾驶情境。"
+      },
+      {
+        "term": "destination search",
+        "phonetic": "/ˌdestɪˈneɪʃn sɜːrtʃ/",
+        "meaning": "目的地搜索；查找导航目的地的任务",
+        "example": "Destination search often begins with an incomplete place name.",
+        "chineseExample": "目的地搜索经常从不完整的地点名称开始。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "路线；从当前位置到目的地的导航路径",
+        "example": "The route should be confirmed before guidance starts.",
+        "chineseExample": "路线应在导航开始前确认。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "屏幕；车内用于显示信息和操作界面的设备",
+        "example": "The screen should show only the most relevant next action.",
+        "chineseExample": "屏幕应只显示最相关的下一步操作。"
+      },
+      {
+        "term": "steering wheel",
+        "phonetic": "/ˈstɪrɪŋ wiːl/",
+        "meaning": "方向盘；驾驶员控制车辆方向的部件",
+        "example": "Hands should stay near the steering wheel during complex traffic.",
+        "chineseExample": "复杂交通中双手应靠近方向盘。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；与看屏幕、图标或道路有关的",
+        "example": "Visual feedback must be brief and easy to scan.",
+        "chineseExample": "视觉反馈必须简短且易扫视。"
+      },
+      {
+        "term": "manual",
+        "phonetic": "/ˈmænjuəl/",
+        "meaning": "手动的；需要手部操作的",
+        "example": "Manual input can distract the driver if it requires many taps.",
+        "chineseExample": "如果需要多次点击，手动输入可能分散驾驶员注意力。"
+      },
+      {
+        "term": "demand",
+        "phonetic": "/dɪˈmænd/",
+        "meaning": "需求；某项任务对注意力、时间或动作造成的负荷",
+        "example": "High demand tasks should wait until the vehicle is stopped.",
+        "chineseExample": "高负荷任务应等车辆停止后再进行。"
+      },
+      {
+        "term": "climate adjustment",
+        "phonetic": "/ˈklaɪmət əˈdʒʌstmənt/",
+        "meaning": "空调调节；温度、风量或出风模式的改变",
+        "example": "Climate adjustment is a common cockpit micro-task.",
+        "chineseExample": "空调调节是常见的座舱微任务。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "命令；用户要求系统执行的指令",
+        "example": "The command must be short enough for reliable recognition.",
+        "chineseExample": "命令必须足够简短，便于可靠识别。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；在执行前核对用户意图的步骤",
+        "example": "Confirmation is necessary before changing a route.",
+        "chineseExample": "更改路线前需要确认。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示；帮助用户理解状态或下一步的信号",
+        "example": "A cue can be visual, auditory, or haptic.",
+        "chineseExample": "提示可以是视觉、听觉或触觉的。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "执行；系统按用户意图完成动作",
+        "example": "The system should execute only after the driver confirms.",
+        "chineseExample": "系统应在驾驶员确认后才执行。"
+      },
+      {
+        "term": "misunderstood",
+        "phonetic": "/ˌmɪsʌndərˈstʊd/",
+        "meaning": "被误解的；系统没有正确理解输入",
+        "example": "A misunderstood command should be easy to correct.",
+        "chineseExample": "被误解的命令应易于修正。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "备用方案；主流程失败时使用的替代路径",
+        "example": "Fallback options prevent the user from getting stuck.",
+        "chineseExample": "备用选项防止用户卡住。"
+      },
+      {
+        "term": "speech recognition",
+        "phonetic": "/spiːtʃ ˌrekəɡˈnɪʃn/",
+        "meaning": "语音识别；系统把说话内容转成可处理文本或意图的能力",
+        "example": "Speech recognition can struggle with road noise.",
+        "chineseExample": "语音识别可能难以处理道路噪声。"
+      },
+      {
+        "term": "noisy cabin",
+        "phonetic": "/ˈnɔɪzi ˈkæbɪn/",
+        "meaning": "嘈杂座舱；存在风噪、路噪、乘客说话等干扰的车内环境",
+        "example": "A noisy cabin requires stronger recovery design.",
+        "chineseExample": "嘈杂座舱需要更强的恢复设计。"
+      },
+      {
+        "term": "continuity",
+        "phonetic": "/ˌkɑːntəˈnuːəti/",
+        "meaning": "连续性；任务在切换或中断后保持上下文的能力",
+        "example": "Continuity reduces repeated input.",
+        "chineseExample": "连续性减少重复输入。"
+      },
+      {
+        "term": "search query",
+        "phonetic": "/sɜːrtʃ ˈkwɪri/",
+        "meaning": "搜索词；用户用于查找信息的输入内容",
+        "example": "The search query should remain editable after voice input.",
+        "chineseExample": "语音输入后，搜索词应仍可编辑。"
+      },
+      {
+        "term": "glanceable",
+        "phonetic": "/ˈɡlænsəbl/",
+        "meaning": "可扫视的；短暂一看即可理解的",
+        "example": "Glanceable content supports quick decisions.",
+        "chineseExample": "可扫视内容支持快速决策。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统对用户动作给出的响应信息",
+        "example": "Feedback should show what changed and what remains pending.",
+        "chineseExample": "反馈应显示已改变内容和待处理内容。"
+      },
+      {
+        "term": "summarize",
+        "phonetic": "/ˈsʌməraɪz/",
+        "meaning": "概括；用更短的信息表达关键结果",
+        "example": "The interface should summarize the command result.",
+        "chineseExample": "界面应概括命令结果。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；用户与系统之间的输入、反馈和状态变化",
+        "example": "Every interaction should support the driving task.",
+        "chineseExample": "每次交互都应支持驾驶任务。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/rɪˈkʌvəri/",
+        "meaning": "恢复；从错误、中断或取消状态回到可控流程",
+        "example": "Recovery is part of a resilient cockpit experience.",
+        "chineseExample": "恢复是韧性座舱体验的一部分。"
+      },
+      {
+        "term": "edit",
+        "phonetic": "/ˈedɪt/",
+        "meaning": "编辑；修改已有输入或设置",
+        "example": "The driver may need to edit a recognized destination.",
+        "chineseExample": "驾驶员可能需要编辑已识别的目的地。"
+      },
+      {
+        "term": "restart",
+        "phonetic": "/ˌriːˈstɑːrt/",
+        "meaning": "重新开始；从头执行任务",
+        "example": "Restarting the task increases frustration and workload.",
+        "chineseExample": "重新开始任务会增加挫败感和工作负荷。"
+      },
+      {
+        "term": "cognitive",
+        "phonetic": "/ˈkɑːɡnətɪv/",
+        "meaning": "认知的；与理解、记忆和决策有关的",
+        "example": "Cognitive effort rises when the system asks several questions at once.",
+      "chineseExample": "当系统一次问多个问题时，认知负荷会上升。"
+      },
+      {
+        "term": "load",
+        "phonetic": "/loʊd/",
+        "meaning": "负荷；完成任务所需的资源压力",
+        "example": "Lower load helps the driver keep attention on the road.",
+        "chineseExample": "较低负荷帮助驾驶员把注意力保持在道路上。"
+      },
+      {
+        "term": "concise",
+        "phonetic": "/kənˈsaɪs/",
+        "meaning": "简洁的；用少量信息表达清楚",
+        "example": "A concise prompt is easier to understand while driving.",
+        "chineseExample": "简洁提示在驾驶中更容易理解。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/moʊd/",
+        "meaning": "模式；系统当前的工作状态",
+        "example": "The mode should be visible when voice input is active.",
+        "chineseExample": "语音输入启用时，模式应可见。"
+      },
+      {
+        "term": "awareness",
+        "phonetic": "/əˈwernəs/",
+        "meaning": "感知；用户对系统状态和变化的理解",
+        "example": "Awareness prevents surprise when the assistant starts guidance.",
+        "chineseExample": "当助手开始导航时，状态感知可以避免意外感。"
+      },
+      {
+        "term": "listening",
+        "phonetic": "/ˈlɪsənɪŋ/",
+        "meaning": "监听；系统正在接收语音输入的状态",
+        "example": "Listening indicators should not be ambiguous.",
+        "chineseExample": "监听指示不应含糊。"
+      },
+      {
+        "term": "route guidance",
+        "phonetic": "/ruːt ˈɡaɪdns/",
+        "meaning": "路线引导；导航系统提供的行驶提示",
+        "example": "Route guidance begins after the destination is confirmed.",
+        "chineseExample": "目的地确认后，路线引导开始。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing handoffs that respect driving attention",
+        "text": "A good intelligent cockpit does not force one interaction mode to handle every situation. Voice is powerful for quick intent, such as finding a nearby charger or changing the temperature, because it can keep the driver looking forward. Touch is still valuable when the driver needs to compare routes, review a list, or correct a recognized name. The design challenge is the handoff between these modes. If the driver says, \"Find a quiet cafe near the office,\" the screen should show a short ranked list, highlight the recognized query, and make the next action obvious. If recognition is uncertain, the cockpit should ask one concise confirmation question instead of opening a dense menu. During the handoff, task continuity matters: the query, filters, and previous choices should remain visible and editable. Feedback should be glanceable, with clear mode awareness for listening, editing, confirming, and executing. When the cabin is noisy or the command fails, fallback interaction must help the driver recover without restarting the task. A well-designed multimodal flow reduces visual-manual demand, lowers cognitive load, and gives the driver control over how to complete the same goal safely.",
+        "translation": "优秀的智能座舱不应该强迫一种交互模式处理所有场景。语音适合表达快速意图，例如查找附近充电站或调节温度，因为它能让驾驶员继续看向前方。触控在比较路线、查看列表或修正识别名称时仍然有价值。真正的设计挑战在于这些模式之间的交接。如果驾驶员说“查找办公室附近安静的咖啡馆”，屏幕应展示简短排序列表，突出已识别的查询，并让下一步动作清晰可见。如果识别不确定，座舱应提出一个简洁确认问题，而不是打开密集菜单。交接过程中，任务连续性很重要：查询、筛选条件和之前选择应保持可见且可编辑。反馈应可扫视，并清楚呈现监听、编辑、确认和执行等模式。当座舱嘈杂或命令失败时，兜底交互必须帮助驾驶员恢复任务，而不是从头再来。设计良好的多模态流程可以降低视觉-手动需求和认知负荷，并让驾驶员安全地选择完成同一目标的方式。",
+        "source": {
+          "label": "参考：Designing Touchscreen Menu Interfaces for In-Vehicle Infotainment Systems",
+          "url": "https://arxiv.org/abs/2404.11469"
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Voice is powerful for quick intent because it can keep the driver looking forward.",
+        "structure": "主句 Voice is powerful + 介词短语 for quick intent + because 原因状语从句。",
+        "focus": "用 because 解释为什么某种交互方式适合特定驾驶场景。",
+        "pattern": "X is powerful for Y because it can Z."
+      },
+      {
+        "sentence": "If recognition is uncertain, the cockpit should ask one concise confirmation question instead of opening a dense menu.",
+        "structure": "If 条件从句 + 主句 should ask + one concise confirmation question + instead of 动名词短语。",
+        "focus": "用 instead of 对比推荐方案和应避免方案，适合设计评审表达。",
+        "pattern": "If X is uncertain, the system should Y instead of Z."
+      },
+      {
+        "sentence": "During the handoff, task continuity matters: the query, filters, and previous choices should remain visible and editable.",
+        "structure": "时间/场景状语 During the handoff + 主句 + 冒号解释具体要求。",
+        "focus": "用冒号补充说明抽象设计原则的具体界面表现。",
+        "pattern": "During X, Y matters: A, B, and C should remain D."
+      },
+      {
+        "sentence": "A well-designed multimodal flow reduces visual-manual demand, lowers cognitive load, and gives the driver control.",
+        "structure": "主语 A well-designed multimodal flow + 三个并列谓语 reduces, lowers, and gives。",
+        "focus": "用并列动词总结设计价值，适合会议结论或方案汇报。",
+        "pattern": "A well-designed X reduces Y, lowers Z, and gives users control."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 handoff、fallback、feedback、confirmation 的含义和使用场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先慢速跟读全文，再用正常语速复述 voice、touch 和 handoff 三个核心段落。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "detail": "套用 4 个句型，分别替换成导航、空调、媒体和电话场景，练习设计评审表达。"
+      },
+      {
+        "title": "口头改写",
+        "time": "5-8 分钟",
+        "detail": "用自己的话说明一个“语音失败后切换到触控确认”的流程，至少使用 multimodal handoff、glanceable feedback 和 interaction recovery。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-05-privacy-aware-personalization",
     "date": "2026-07-05",
     "title": "Privacy-aware personalization in the intelligent cockpit",
