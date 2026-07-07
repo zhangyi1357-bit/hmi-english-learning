@@ -1,5 +1,399 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-07-notification-priority",
+    "date": "2026-07-07",
+    "title": "Notification priority and attention management in the intelligent cockpit",
+    "topic": "智能座舱通知优先级与驾驶注意力管理",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车载通知分级、打断控制、驾驶注意力和可扫视反馈，适合用于 HMI 评审、告警策略讨论和智能座舱信息架构沟通。",
+    "words": [
+      {
+        "term": "notification priority",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn praɪˈɔːrəti/",
+        "meaning": "通知优先级；根据安全性、时效性和用户任务对信息进行排序的规则",
+        "example": "Notification priority helps the cockpit decide whether a message should interrupt navigation or wait in the background.",
+        "chineseExample": "通知优先级帮助座舱判断一条消息应打断导航，还是在后台等待。"
+      },
+      {
+        "term": "attention management",
+        "phonetic": "/əˈtenʃn ˈmænɪdʒmənt/",
+        "meaning": "注意力管理；在驾驶任务和车载信息之间合理分配用户注意力的设计方法",
+        "example": "Attention management is essential when the interface shows alerts during a complex driving maneuver.",
+        "chineseExample": "当界面在复杂驾驶动作中显示告警时，注意力管理非常关键。"
+      },
+      {
+        "term": "interruptive alert",
+        "phonetic": "/ˌɪntəˈrʌptɪv əˈlɜːrt/",
+        "meaning": "打断式告警；主动吸引用户注意并中断当前任务的信息提示",
+        "example": "An interruptive alert should be reserved for urgent safety or system status changes.",
+        "chineseExample": "打断式告警应保留给紧急安全信息或系统状态变化。"
+      },
+      {
+        "term": "deferred notification",
+        "phonetic": "/dɪˈfɜːrd ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "延后通知；暂不打断驾驶任务、等到合适时机再呈现的信息",
+        "example": "A deferred notification can appear after the vehicle leaves a dense intersection.",
+        "chineseExample": "延后通知可以在车辆离开复杂路口后再出现。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员工作负荷；驾驶员在感知、判断和操作上承受的综合负担",
+        "example": "The cockpit should reduce nonessential prompts when driver workload is high.",
+        "chineseExample": "当驾驶员工作负荷较高时，座舱应减少非必要提示。"
+      },
+      {
+        "term": "context-aware timing",
+        "phonetic": "/ˈkɑːntekst əˈwer ˈtaɪmɪŋ/",
+        "meaning": "情境感知时机；根据道路、速度、任务和用户状态选择通知呈现时间",
+        "example": "Context-aware timing prevents a low-priority media suggestion from appearing during lane guidance.",
+        "chineseExample": "情境感知时机可以避免低优先级媒体推荐在车道引导期间出现。"
+      },
+      {
+        "term": "noncritical prompt",
+        "phonetic": "/ˌnɑːnˈkrɪtɪkl prɑːmpt/",
+        "meaning": "非关键提示；不影响安全或当前驾驶目标、可被延后处理的信息",
+        "example": "A noncritical prompt should stay quiet until the driver reaches a lower-demand moment.",
+        "chineseExample": "非关键提示应保持安静，直到驾驶员进入负荷较低的时刻。"
+      },
+      {
+        "term": "escalation rule",
+        "phonetic": "/ˌeskəˈleɪʃn ruːl/",
+        "meaning": "升级规则；当信息变得更紧急或多次未被处理时提高提示强度的规则",
+        "example": "The escalation rule changes a silent banner into an audible alert only when the issue becomes time-sensitive.",
+        "chineseExample": "升级规则只在问题变得有时效性时，才把静默横幅变成声音告警。"
+      },
+      {
+        "term": "glance duration",
+        "phonetic": "/ɡlæns duˈreɪʃn/",
+        "meaning": "扫视时长；驾驶员为了理解界面信息而离开道路视线的时间",
+        "example": "Short glance duration is a practical goal for notification copy, icon design, and placement.",
+        "chineseExample": "较短扫视时长是通知文案、图标设计和位置布局的实际目标。"
+      },
+      {
+        "term": "alert fatigue",
+        "phonetic": "/əˈlɜːrt fəˈtiːɡ/",
+        "meaning": "告警疲劳；过多或过弱相关的提示使用户开始忽视重要告警的现象",
+        "example": "Alert fatigue increases when every service message uses the same visual weight as a safety warning.",
+        "chineseExample": "当每条服务消息都使用和安全警告一样的视觉重量时，告警疲劳会增加。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "notification",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "通知；系统向用户传递的信息提示",
+        "example": "The notification should explain the next useful action.",
+        "chineseExample": "通知应说明下一步有用操作。"
+      },
+      {
+        "term": "priority",
+        "phonetic": "/praɪˈɔːrəti/",
+        "meaning": "优先级；决定信息先后和强弱的等级",
+        "example": "Priority affects timing, sound, and visual weight.",
+        "chineseExample": "优先级会影响时机、声音和视觉重量。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户用于观察、理解和决策的认知资源",
+        "example": "Driving attention should remain on the road.",
+        "chineseExample": "驾驶注意力应保持在道路上。"
+      },
+      {
+        "term": "management",
+        "phonetic": "/ˈmænɪdʒmənt/",
+        "meaning": "管理；对资源、流程或状态进行控制和安排",
+        "example": "Good management of alerts reduces unnecessary distraction.",
+        "chineseExample": "良好的告警管理可以减少不必要分心。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；整合显示、感知、服务和交互的车内数字空间",
+        "example": "The intelligent cockpit should adapt notifications to the driving context.",
+        "chineseExample": "智能座舱应根据驾驶情境调整通知。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/ˈmesɪdʒ/",
+        "meaning": "消息；需要传递给用户的一段信息",
+        "example": "A service message may wait until the trip is stable.",
+        "chineseExample": "服务消息可以等到行程稳定时再出现。"
+      },
+      {
+        "term": "interrupt",
+        "phonetic": "/ˌɪntəˈrʌpt/",
+        "meaning": "打断；中止用户当前注意或任务",
+        "example": "The system should not interrupt a lane change with a media tip.",
+        "chineseExample": "系统不应在变道时用媒体提示打断用户。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃn/",
+        "meaning": "导航；引导车辆到达目的地的功能",
+        "example": "Navigation instructions need clear priority near a junction.",
+        "chineseExample": "导航指令在路口附近需要清晰优先级。"
+      },
+      {
+        "term": "background",
+        "phonetic": "/ˈbækɡraʊnd/",
+        "meaning": "后台；不立即占用用户注意的位置或状态",
+        "example": "Low-priority notifications can remain in the background.",
+        "chineseExample": "低优先级通知可以留在后台。"
+      },
+      {
+        "term": "alert",
+        "phonetic": "/əˈlɜːrt/",
+        "meaning": "告警；提示风险、状态变化或需要处理的问题",
+        "example": "An alert should communicate urgency without creating panic.",
+        "chineseExample": "告警应传达紧急程度，但不制造恐慌。"
+      },
+      {
+        "term": "urgent",
+        "phonetic": "/ˈɜːrdʒənt/",
+        "meaning": "紧急的；需要立即关注或处理的",
+        "example": "Urgent warnings deserve stronger multimodal feedback.",
+        "chineseExample": "紧急警告需要更强的多模态反馈。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/ˈseɪfti/",
+        "meaning": "安全；避免风险和伤害的状态或目标",
+        "example": "Safety information should outrank comfort suggestions.",
+        "chineseExample": "安全信息应高于舒适性建议。"
+      },
+      {
+        "term": "system status",
+        "phonetic": "/ˈsɪstəm ˈsteɪtəs/",
+        "meaning": "系统状态；车辆或座舱功能当前是否正常、受限或需处理",
+        "example": "System status changes may require immediate driver awareness.",
+        "chineseExample": "系统状态变化可能需要驾驶员立即知晓。"
+      },
+      {
+        "term": "deferred",
+        "phonetic": "/dɪˈfɜːrd/",
+        "meaning": "延后的；被安排在稍后处理的",
+        "example": "Deferred content should still be easy to find later.",
+        "chineseExample": "延后的内容稍后仍应容易找到。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；汽车或其他交通工具",
+        "example": "The vehicle can delay prompts during demanding maneuvers.",
+        "chineseExample": "车辆可以在高负荷操作期间延后提示。"
+      },
+      {
+        "term": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "meaning": "路口；道路交汇、驾驶任务通常更复杂的位置",
+        "example": "A dense intersection is not a good moment for promotional content.",
+        "chineseExample": "复杂路口不适合展示推广内容。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员工作负荷；驾驶员在感知、判断和操作上承受的综合负担",
+        "example": "Driver workload rises when traffic, navigation, and alerts compete.",
+        "chineseExample": "当交通、导航和告警相互争夺注意时，驾驶员工作负荷会上升。"
+      },
+      {
+        "term": "nonessential",
+        "phonetic": "/ˌnɑːnɪˈsenʃl/",
+        "meaning": "非必要的；不是当前任务必须处理的",
+        "example": "Nonessential prompts can be muted while the car is merging.",
+        "chineseExample": "车辆并线时，非必要提示可以被静音。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户注意、确认或操作的信息",
+        "example": "A prompt should use direct language and one clear action.",
+        "chineseExample": "提示应使用直接语言和一个清晰动作。"
+      },
+      {
+        "term": "context-aware",
+        "phonetic": "/ˈkɑːntekst əˈwer/",
+        "meaning": "情境感知的；能根据环境和任务状态调整行为的",
+        "example": "Context-aware design changes the notification behavior by road condition.",
+        "chineseExample": "情境感知设计会根据道路状况改变通知行为。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；信息出现的时间点",
+        "example": "Timing can make the same message helpful or distracting.",
+        "chineseExample": "时机会让同一条消息变得有帮助或造成分心。"
+      },
+      {
+        "term": "media suggestion",
+        "phonetic": "/ˈmiːdiə səˈdʒestʃən/",
+        "meaning": "媒体推荐；音乐、电台或内容服务的推荐提示",
+        "example": "A media suggestion is usually lower priority than lane guidance.",
+        "chineseExample": "媒体推荐通常低于车道引导的优先级。"
+      },
+      {
+        "term": "lane guidance",
+        "phonetic": "/leɪn ˈɡaɪdns/",
+        "meaning": "车道引导；提示驾驶员选择正确车道的导航信息",
+        "example": "Lane guidance should stay visible before a complicated turn.",
+        "chineseExample": "复杂转弯前，车道引导应保持可见。"
+      },
+      {
+        "term": "lower-demand moment",
+        "phonetic": "/ˈloʊər dɪˈmænd ˈmoʊmənt/",
+        "meaning": "较低负荷时刻；驾驶任务较简单、较适合处理次要信息的时间点",
+        "example": "The assistant can surface reminders at a lower-demand moment.",
+        "chineseExample": "助手可以在较低负荷时刻呈现提醒。"
+      },
+      {
+        "term": "escalation",
+        "phonetic": "/ˌeskəˈleɪʃn/",
+        "meaning": "升级；提高提示强度、渠道或紧急程度",
+        "example": "Escalation should be based on risk, not impatience.",
+        "chineseExample": "升级应基于风险，而不是系统急于获得回应。"
+      },
+      {
+        "term": "rule",
+        "phonetic": "/ruːl/",
+        "meaning": "规则；定义系统何时做出某种行为的条件",
+        "example": "A rule can prevent repeated alerts from becoming noise.",
+        "chineseExample": "规则可以避免重复告警变成噪音。"
+      },
+      {
+        "term": "silent banner",
+        "phonetic": "/ˈsaɪlənt ˈbænər/",
+        "meaning": "静默横幅；不发声、以轻量视觉方式呈现的信息条",
+        "example": "A silent banner is suitable for a tire-pressure reminder that is not immediate.",
+        "chineseExample": "静默横幅适合显示并非立即紧急的胎压提醒。"
+      },
+      {
+        "term": "audible alert",
+        "phonetic": "/ˈɔːdəbl əˈlɜːrt/",
+        "meaning": "声音告警；通过声音吸引用户注意的提示",
+        "example": "An audible alert should be distinctive but not startling.",
+        "chineseExample": "声音告警应有辨识度，但不能令人惊吓。"
+      },
+      {
+        "term": "time-sensitive",
+        "phonetic": "/ˈtaɪm sensətɪv/",
+        "meaning": "有时效性的；需要在短时间内处理的",
+        "example": "Time-sensitive information can justify stronger interruption.",
+        "chineseExample": "有时效性的信息可以合理使用更强打断。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "扫视；短暂看一眼以获取信息",
+        "example": "A glance should be enough to understand the warning category.",
+        "chineseExample": "扫视一眼应足以理解警告类别。"
+      },
+      {
+        "term": "duration",
+        "phonetic": "/duˈreɪʃn/",
+        "meaning": "持续时间；某个动作或状态维持的时长",
+        "example": "Long duration away from the road increases risk.",
+        "chineseExample": "长时间离开道路视线会增加风险。"
+      },
+      {
+        "term": "copy",
+        "phonetic": "/ˈkɑːpi/",
+        "meaning": "文案；界面中用于说明、提示或引导的文字",
+        "example": "Notification copy should avoid vague verbs.",
+        "chineseExample": "通知文案应避免含糊动词。"
+      },
+      {
+        "term": "icon design",
+        "phonetic": "/ˈaɪkɑːn dɪˈzaɪn/",
+        "meaning": "图标设计；用视觉符号表达功能或状态的设计",
+        "example": "Icon design supports faster recognition under time pressure.",
+        "chineseExample": "图标设计支持用户在时间压力下更快识别。"
+      },
+      {
+        "term": "placement",
+        "phonetic": "/ˈpleɪsmənt/",
+        "meaning": "位置布局；元素在界面中的摆放位置",
+        "example": "Placement affects whether an alert is noticed without hiding the map.",
+        "chineseExample": "位置布局会影响告警是否被注意到，同时不遮挡地图。"
+      },
+      {
+        "term": "alert fatigue",
+        "phonetic": "/əˈlɜːrt fəˈtiːɡ/",
+        "meaning": "告警疲劳；过多提示导致用户忽视重要信息的现象",
+        "example": "Alert fatigue makes real warnings less effective.",
+        "chineseExample": "告警疲劳会让真正的警告效果变弱。"
+      },
+      {
+        "term": "visual weight",
+        "phonetic": "/ˈvɪʒuəl weɪt/",
+        "meaning": "视觉重量；界面元素吸引注意的强弱程度",
+        "example": "Visual weight should match the risk level of the message.",
+        "chineseExample": "视觉重量应匹配消息的风险等级。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Prioritizing notifications without stealing attention",
+        "text": "In an intelligent cockpit, a notification is not just a message; it is a request for attention. The HMI team should decide which requests deserve immediate interruption and which ones can wait. Safety warnings, system failures, and time-sensitive navigation instructions may need sound, color, and a clear next action. A music recommendation, a service promotion, or a general reminder should usually stay quiet when the driver is turning, merging, or approaching a dense intersection. Good notification design starts with priority, but it also depends on context-aware timing. The same low-battery phone reminder may be useful on a straight highway and distracting during lane guidance. Designers should define escalation rules so that a silent banner becomes an audible alert only when risk or urgency increases. They should also measure glance duration and reduce copy to the few words that support action. A review log can show which alerts were postponed, dismissed, or escalated during real trips. When every message looks urgent, drivers learn to ignore the interface. When priority, timing, and visual weight are aligned, the cockpit protects attention while still keeping the driver informed.",
+        "translation": "在智能座舱中，通知不只是一条消息，而是一次对注意力的请求。HMI 团队应判断哪些请求值得立即打断，哪些可以等待。安全警告、系统故障和有时效性的导航指令可能需要声音、颜色和清晰的下一步动作。音乐推荐、服务推广或普通提醒，在驾驶员转弯、并线或接近复杂路口时通常应保持安静。优秀的通知设计始于优先级，但也依赖情境感知时机。同一条手机低电量提醒，在笔直高速上可能有用，在车道引导期间则可能造成分心。设计师应定义升级规则，让静默横幅只在风险或紧急程度上升时变为声音告警。他们还应衡量扫视时长，并把文案压缩到能支持行动的少数词语。评审日志可以展示真实行程中哪些告警被延后、忽略或升级。当每条消息看起来都很紧急时，驾驶员会学会忽视界面。当优先级、时机和视觉重量保持一致时，座舱既能保护注意力，也能让驾驶员保持知情。",
+        "source": {
+          "label": "原创练习文本：基于车载 HMI 通知分级和注意力管理场景",
+          "url": ""
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "In an intelligent cockpit, a notification is not just a message; it is a request for attention.",
+        "structure": "地点状语 In an intelligent cockpit + not just...; it is... 用分号连接解释性并列句。",
+        "focus": "用 not just A; it is B 重新定义一个设计对象，适合评审开场。",
+        "pattern": "In X, Y is not just A; it is B."
+      },
+      {
+        "sentence": "The HMI team should decide which requests deserve immediate interruption and which ones can wait.",
+        "structure": "主句 The HMI team should decide + 两个 which 引导的宾语从句并列。",
+        "focus": "用 deserve interruption / can wait 表达通知分级判断。",
+        "pattern": "The team should decide which X deserve Y and which ones can Z."
+      },
+      {
+        "sentence": "The same low-battery phone reminder may be useful on a straight highway and distracting during lane guidance.",
+        "structure": "主语 The same reminder + may be + 两个并列表语 useful 和 distracting + 两个场景状语。",
+        "focus": "强调同一信息在不同驾驶情境下可能产生相反体验。",
+        "pattern": "The same X may be useful in A and distracting during B."
+      },
+      {
+        "sentence": "When priority, timing, and visual weight are aligned, the cockpit protects attention while still keeping the driver informed.",
+        "structure": "When 条件从句 + 主句 protects attention + while still doing 补充同步收益。",
+        "focus": "用 are aligned 总结多个设计变量一致时的整体价值。",
+        "pattern": "When A, B, and C are aligned, the system does X while still doing Y."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 10 个核心词，重点区分 notification priority、interruptive alert、deferred notification 和 escalation rule 的适用场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先逐句跟读英文长文，再用中文解释每一处与 safety、timing、visual weight 相关的设计判断。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "detail": "套用 4 个句型，把场景替换为导航提示、电话来电、充电提醒和媒体推荐，练习通知分级表达。"
+      },
+      {
+        "title": "口头复述",
+        "time": "5-8 分钟",
+        "detail": "用英语复述一套座舱通知策略，至少使用 attention management、context-aware timing、glance duration 和 alert fatigue。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-06-multimodal-handoff",
     "date": "2026-07-06",
     "title": "Multimodal handoff between voice and touch in the intelligent cockpit",
