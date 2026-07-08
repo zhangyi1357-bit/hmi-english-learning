@@ -1,5 +1,371 @@
 [
   {
+    "id": "2026-07-08-voice-confirmation-error-recovery",
+    "date": "2026-07-08",
+    "title": "Voice confirmation and error recovery in the intelligent cockpit",
+    "topic": "智能座舱语音确认与错误恢复",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车载语音确认、误识别处理、澄清追问和安全可控的错误恢复流程，适合用于语音 HMI 评审、座舱交互策略讨论和用户体验走查。",
+    "words": [
+      {
+        "term": "voice confirmation",
+        "phonetic": "/vɔɪs ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "语音确认；系统在执行关键操作前用语音或界面向用户确认意图",
+        "example": "Voice confirmation prevents the cockpit from executing a risky command after a possible recognition error.",
+        "chineseExample": "语音确认可以避免座舱在可能发生识别错误后执行高风险指令。"
+      },
+      {
+        "term": "error recovery",
+        "phonetic": "/ˈerər rɪˈkʌvəri/",
+        "meaning": "错误恢复；当系统理解、执行或反馈出错时帮助用户回到正确任务路径的机制",
+        "example": "Good error recovery gives the driver a simple way to correct the destination without restarting the whole flow.",
+        "chineseExample": "良好的错误恢复让驾驶员无需重启整个流程，也能用简单方式修正目的地。"
+      },
+      {
+        "term": "recognition confidence",
+        "phonetic": "/ˌrekəɡˈnɪʃn ˈkɑːnfɪdəns/",
+        "meaning": "识别置信度；语音系统判断自己识别结果可靠程度的评分或等级",
+        "example": "When recognition confidence is low, the assistant should ask a clarification question instead of acting immediately.",
+        "chineseExample": "当识别置信度较低时，助手应提出澄清问题，而不是立即执行。"
+      },
+      {
+        "term": "clarification prompt",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn prɑːmpt/",
+        "meaning": "澄清提示；系统请求用户补充、确认或选择意图的提示语",
+        "example": "A clarification prompt should mention the uncertain part of the command in plain language.",
+        "chineseExample": "澄清提示应使用清楚语言指出指令中不确定的部分。"
+      },
+      {
+        "term": "command disambiguation",
+        "phonetic": "/kəˈmænd ˌdɪsæmˌbɪɡjuˈeɪʃn/",
+        "meaning": "指令消歧；在多个可能意图之间帮助用户选择正确操作",
+        "example": "Command disambiguation is needed when “call Alex” matches several contacts in the phone book.",
+        "chineseExample": "当“给 Alex 打电话”匹配通讯录中的多个联系人时，就需要指令消歧。"
+      },
+      {
+        "term": "fallback interaction",
+        "phonetic": "/ˈfɔːlbæk ˌɪntərˈækʃn/",
+        "meaning": "兜底交互；语音失败后提供触控、方向盘按键或简化语音路径等替代方案",
+        "example": "The fallback interaction can move the user from voice input to a short tappable list on the center display.",
+        "chineseExample": "兜底交互可以把用户从语音输入转到中控屏上的短列表选择。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/ɪkˈsplɪsɪt kənˈsent/",
+        "meaning": "明确同意；用户清楚表达允许系统执行某项操作的确认",
+        "example": "Explicit consent is required before the assistant sends a message or changes a shared vehicle setting.",
+        "chineseExample": "在助手发送消息或修改共享车辆设置前，需要获得用户明确同意。"
+      },
+      {
+        "term": "auditory feedback",
+        "phonetic": "/ˈɔːdətɔːri ˈfiːdbæk/",
+        "meaning": "听觉反馈；通过提示音或语音回复让用户知道系统状态和结果",
+        "example": "Auditory feedback should be short enough to avoid covering important navigation guidance.",
+        "chineseExample": "听觉反馈应足够简短，避免覆盖重要导航引导。"
+      },
+      {
+        "term": "hands-free correction",
+        "phonetic": "/ˌhændz ˈfriː kəˈrekʃn/",
+        "meaning": "免手动纠错；用户无需触屏即可通过语音修正系统理解或执行结果",
+        "example": "Hands-free correction lets the driver say “no, the second option” while keeping eyes on the road.",
+        "chineseExample": "免手动纠错让驾驶员可以说“不，第二个选项”，同时保持视线在道路上。"
+      },
+      {
+        "term": "safe execution threshold",
+        "phonetic": "/seɪf ˌeksɪˈkjuːʃn ˈθreʃhoʊld/",
+        "meaning": "安全执行阈值；系统决定是否可直接执行语音指令的最低可靠性要求",
+        "example": "A safe execution threshold should be stricter for navigation changes than for opening a music playlist.",
+        "chineseExample": "导航变更的安全执行阈值应比打开音乐歌单更严格。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；用户通过说话进行输入的交互方式",
+        "example": "Voice input is useful when touch interaction is inconvenient.",
+        "chineseExample": "当触控交互不方便时，语音输入很有用。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；在行动前核对用户意图或系统结果",
+        "example": "Confirmation reduces the chance of an unintended action.",
+        "chineseExample": "确认可以降低非预期操作的概率。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "执行；让系统实际完成某项指令",
+        "example": "The assistant should not execute a critical command too early.",
+        "chineseExample": "助手不应过早执行关键指令。"
+      },
+      {
+        "term": "risky",
+        "phonetic": "/ˈrɪski/",
+        "meaning": "有风险的；可能影响安全、隐私或任务结果的",
+        "example": "A risky command needs a stronger confirmation step.",
+        "chineseExample": "有风险的指令需要更强的确认步骤。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "指令；用户要求系统完成的操作",
+        "example": "The command may include an action, object, and condition.",
+        "chineseExample": "指令可能包含动作、对象和条件。"
+      },
+      {
+        "term": "recognition",
+        "phonetic": "/ˌrekəɡˈnɪʃn/",
+        "meaning": "识别；系统把语音输入转换为可理解内容的过程",
+        "example": "Recognition can be affected by cabin noise.",
+        "chineseExample": "识别可能受到车内噪声影响。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对判断结果可靠性的估计",
+        "example": "Confidence should guide how assertive the response is.",
+        "chineseExample": "置信度应指导回复的确定程度。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；帮助用户完成车内任务的语音或智能系统",
+        "example": "The assistant should explain what it understood.",
+        "chineseExample": "助手应解释它理解了什么。"
+      },
+      {
+        "term": "clarification",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn/",
+        "meaning": "澄清；消除不确定理解的过程",
+        "example": "Clarification is better than silently choosing the wrong option.",
+        "chineseExample": "澄清比静默选择错误选项更好。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统引导用户下一步操作的话语或界面信息",
+        "example": "The prompt should be concise and specific.",
+        "chineseExample": "提示应简洁且具体。"
+      },
+      {
+        "term": "uncertain",
+        "phonetic": "/ʌnˈsɜːrtn/",
+        "meaning": "不确定的；系统无法可靠判断的",
+        "example": "The uncertain part of the sentence should be repeated back.",
+        "chineseExample": "句子中不确定的部分应被复述出来。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清楚直白的语言；避免技术术语的用户可理解表达",
+        "example": "Plain language helps the driver respond quickly.",
+        "chineseExample": "清楚直白的语言帮助驾驶员快速回应。"
+      },
+      {
+        "term": "disambiguation",
+        "phonetic": "/ˌdɪsæmˌbɪɡjuˈeɪʃn/",
+        "meaning": "消歧；从多个可能含义中确定正确含义",
+        "example": "Disambiguation is common in contact names and place names.",
+        "chineseExample": "消歧常见于联系人姓名和地点名称。"
+      },
+      {
+        "term": "contact",
+        "phonetic": "/ˈkɑːntækt/",
+        "meaning": "联系人；通讯录中的人或号码",
+        "example": "Several contacts may share the same first name.",
+        "chineseExample": "多个联系人可能拥有相同名字。"
+      },
+      {
+        "term": "phone book",
+        "phonetic": "/ˈfoʊn bʊk/",
+        "meaning": "通讯录；保存联系人信息的列表",
+        "example": "The phone book can create ambiguity for voice calls.",
+        "chineseExample": "通讯录可能给语音拨号带来歧义。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "兜底方案；主路径失败后的替代路径",
+        "example": "A fallback keeps the task moving after voice failure.",
+        "chineseExample": "兜底方案让语音失败后的任务仍能继续。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；用户与系统之间的输入、反馈和响应",
+        "example": "The interaction should match the driving context.",
+        "chineseExample": "交互应匹配驾驶情境。"
+      },
+      {
+        "term": "tappable",
+        "phonetic": "/ˈtæpəbl/",
+        "meaning": "可点击的；适合触摸选择的界面元素",
+        "example": "A tappable list should show only the most likely options.",
+        "chineseExample": "可点击列表应只显示最可能的选项。"
+      },
+      {
+        "term": "center display",
+        "phonetic": "/ˈsentər dɪˈspleɪ/",
+        "meaning": "中控屏；座舱中部用于显示和操作的屏幕",
+        "example": "The center display can support voice recovery with visual choices.",
+        "chineseExample": "中控屏可以用视觉选项支持语音恢复。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "同意；用户允许系统执行某项操作",
+        "example": "Consent should be explicit for privacy-related actions.",
+        "chineseExample": "涉及隐私的操作应获得明确同意。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/ʃerd ˈviːəkl/",
+        "meaning": "共享车辆；由多个用户共同使用的车辆",
+        "example": "Shared vehicle settings may affect the next driver.",
+        "chineseExample": "共享车辆设置可能影响下一位驾驶员。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/ˈsetɪŋ/",
+        "meaning": "设置；系统或车辆功能的配置项",
+        "example": "A setting change should be visible after completion.",
+        "chineseExample": "设置变更完成后应可见。"
+      },
+      {
+        "term": "auditory",
+        "phonetic": "/ˈɔːdətɔːri/",
+        "meaning": "听觉的；与声音感知相关的",
+        "example": "Auditory cues are useful when the driver cannot look down.",
+        "chineseExample": "当驾驶员不能低头看屏幕时，听觉提示很有用。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统对状态、进度或结果的回应",
+        "example": "Feedback tells the user whether the system is listening.",
+        "chineseExample": "反馈告诉用户系统是否正在聆听。"
+      },
+      {
+        "term": "navigation guidance",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈɡaɪdns/",
+        "meaning": "导航引导；路线、转向和车道相关提示",
+        "example": "Navigation guidance should not be masked by long speech.",
+        "chineseExample": "导航引导不应被过长语音遮盖。"
+      },
+      {
+        "term": "hands-free",
+        "phonetic": "/ˌhændz ˈfriː/",
+        "meaning": "免手动的；无需手部操作即可完成的",
+        "example": "Hands-free input supports safer correction while driving.",
+        "chineseExample": "免手动输入支持驾驶中的更安全纠错。"
+      },
+      {
+        "term": "correction",
+        "phonetic": "/kəˈrekʃn/",
+        "meaning": "纠错；修正系统误解或错误执行的动作",
+        "example": "Correction should be available immediately after a mismatch.",
+        "chineseExample": "出现不匹配后应立即提供纠错。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃn/",
+        "meaning": "选项；用户可以选择的候选结果",
+        "example": "The second option may be the correct destination.",
+        "chineseExample": "第二个选项可能是正确目的地。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种系统行为的最低或最高标准",
+        "example": "The threshold should vary by task risk.",
+        "chineseExample": "阈值应随任务风险变化。"
+      },
+      {
+        "term": "navigation change",
+        "phonetic": "/ˌnævɪˈɡeɪʃn tʃeɪndʒ/",
+        "meaning": "导航变更；对路线、目的地或途经点的修改",
+        "example": "A navigation change may require confirmation at high speed.",
+        "chineseExample": "高速行驶时，导航变更可能需要确认。"
+      },
+      {
+        "term": "playlist",
+        "phonetic": "/ˈpleɪlɪst/",
+        "meaning": "播放列表；音乐或媒体内容的队列",
+        "example": "Opening a playlist is usually a lower-risk command.",
+        "chineseExample": "打开播放列表通常是较低风险指令。"
+      },
+      {
+        "term": "mismatch",
+        "phonetic": "/ˈmɪsmætʃ/",
+        "meaning": "不匹配；用户意图与系统理解或结果不一致",
+        "example": "A mismatch should be easy to reverse.",
+        "chineseExample": "不匹配应容易撤回。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing voice recovery for driving contexts",
+        "source": {
+          "name": "Original practice text",
+          "url": ""
+        },
+        "text": "In an intelligent cockpit, a voice assistant should not treat every recognized phrase as an instruction that can be executed immediately. Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence. When the confidence score is high and the task is low risk, the system may act directly and provide brief auditory feedback. However, when a command changes navigation, sends a message, or adjusts a shared vehicle setting, the assistant should add a confirmation step. A good confirmation repeats only the critical part of the request, such as the destination, contact, or setting value, and asks the driver to approve it with a short answer. If the system is unsure, it should use a clarification prompt instead of a long apology. For example, it can say, “I found two contacts named Alex. Which one do you want to call?” The recovery path should also support hands-free correction, because the driver may not be able to touch the center display. If voice recovery fails twice, a fallback interaction can present a short tappable list when the driving workload is lower. The goal is not to make the assistant sound clever; the goal is to keep the task understandable, reversible, and safe.",
+        "translation": "在智能座舱中，语音助手不应把每一句识别到的话都当作可以立即执行的指令。车内噪声、相似联系人姓名、地区口音和不完整指令都会降低识别置信度。当置信度较高且任务风险较低时，系统可以直接执行并给出简短听觉反馈。但是，当指令会改变导航、发送消息或调整共享车辆设置时，助手应增加确认步骤。好的确认只复述请求中的关键部分，例如目的地、联系人或设置值，并让驾驶员用简短回答批准。如果系统不确定，应使用澄清提示，而不是冗长道歉。比如，它可以说：“我找到了两个叫 Alex 的联系人。你想打给哪一个？”恢复路径还应支持免手动纠错，因为驾驶员可能无法触摸中控屏。如果语音恢复连续失败两次，兜底交互可以在驾驶负荷较低时呈现简短可点击列表。目标不是让助手显得聪明，而是让任务保持可理解、可撤回且安全。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "When the confidence score is high and the task is low risk, the system may act directly and provide brief auditory feedback.",
+        "structure": "When + 条件从句, 主语 + may + 并列动词 act / provide。",
+        "focus": "用 confidence score 和 task risk 解释系统何时可以直接执行。",
+        "pattern": "When [system signal] is high and [task risk] is low, the system may [action] and [feedback]."
+      },
+      {
+        "sentence": "A good confirmation repeats only the critical part of the request and asks the driver to approve it with a short answer.",
+        "structure": "主语 + repeats only... + and asks...to approve...，两个动作并列描述确认策略。",
+        "focus": "强调确认不应复述全部内容，而应聚焦关键槽位。",
+        "pattern": "A good confirmation repeats only [critical item] and asks [user] to approve it with [simple response]."
+      },
+      {
+        "sentence": "If the system is unsure, it should use a clarification prompt instead of a long apology.",
+        "structure": "If 条件从句 + should use...instead of...，表达推荐做法和避免做法。",
+        "focus": "适合在评审中说明错误恢复文案应直接帮助用户继续任务。",
+        "pattern": "If [system] is unsure, it should use [helpful prompt] instead of [unhelpful response]."
+      },
+      {
+        "sentence": "The goal is not to make the assistant sound clever; the goal is to keep the task understandable, reversible, and safe.",
+        "structure": "not to..., the goal is to...，用对比结构明确设计目标。",
+        "focus": "说明智能座舱语音体验的核心不是拟人化，而是任务安全与可控。",
+        "pattern": "The goal is not to [surface quality]; the goal is to keep [task/system] [adjective list]."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "task": "朗读 10 个核心词汇，重点区分 confirmation、clarification、correction 和 recovery 的含义，并用每个词造一个座舱语音场景短句。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "task": "先听自己朗读一遍长文，再按句子分段跟读，注意 confidence score、low risk、fallback interaction 等短语的重音。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "task": "复述 4 条重点句结构，把 pattern 中的占位内容替换成导航、电话、空调或座椅设置场景。"
+      },
+      {
+        "title": "口头复述与改写",
+        "time": "6 分钟",
+        "task": "用英语向同事解释“语音助手误识别后应该如何恢复任务”，要求包含 confirmation、clarification prompt 和 hands-free correction。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-07-notification-priority",
     "date": "2026-07-07",
     "title": "Notification priority and attention management in the intelligent cockpit",
@@ -688,7 +1054,7 @@
         "phonetic": "/ˈkɑːɡnətɪv/",
         "meaning": "认知的；与理解、记忆和决策有关的",
         "example": "Cognitive effort rises when the system asks several questions at once.",
-      "chineseExample": "当系统一次问多个问题时，认知负荷会上升。"
+        "chineseExample": "当系统一次问多个问题时，认知负荷会上升。"
       },
       {
         "term": "load",
