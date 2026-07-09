@@ -228,6 +228,18 @@ select {
   font-size: 13px;
 }
 
+.wordExampleTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.wordExampleTopline b {
+  margin-bottom: 0;
+}
+
 .wordExample p {
   margin-bottom: 6px;
   color: #273448;

@@ -2,6 +2,7 @@ const state = {
   notes: [],
   active: null,
   dictionary: new Map(),
+  clickableTerms: [],
 };
 
 const elements = {
@@ -85,7 +86,10 @@ function render() {
       <span>${escapeHtml(word.phonetic)}</span>
       <p>${escapeHtml(word.meaning)}</p>
       <div class="wordExample">
-        <b>例句</b>
+        <div class="wordExampleTopline">
+          <b>例句</b>
+          <button class="speakButton" type="button" data-speak="${escapeHtml(word.example)}" title="播放完整例句">播放例句</button>
+        </div>
         <p>${renderClickableText(word.example)}</p>
         <small>${escapeHtml(word.chineseExample)}</small>
       </div>
@@ -143,7 +147,7 @@ function openWord(word) {
   elements.dialogTerm.textContent = word.term;
   elements.dialogPhonetic.textContent = word.phonetic || "/待补充/";
   elements.dialogMeaning.textContent = word.meaning || "这个词还没有收录在当天词库里。";
-  elements.dialogExample.textContent = word.example || "This word will be added to the daily glossary when it appears in a key sentence.";
+  elements.dialogExample.innerHTML = renderClickableText(word.example || "This word will be added to the daily glossary when it appears in a key sentence.");
   elements.dialogChineseExample.textContent = word.chineseExample || "当这个词出现在重点句中时，会补充到每日词库。";
   elements.dialog.dataset.term = word.term || "";
   elements.dialog.dataset.example = word.example || "";
@@ -161,16 +165,9 @@ function buildDictionary(note) {
   [...(note.words || []), ...(note.glossary || [])].forEach((entry) => {
     if (!entry?.term) return;
     addEntry(dictionary, entry.term, entry);
-    entry.term
-      .split(/[\s/-]+/)
-      .filter((part) => part.length > 2)
-      .forEach((part) => addEntry(dictionary, part, {
-        ...entry,
-        term: part,
-        meaning: `${part}：来自短语 “${entry.term}”。${entry.meaning}`,
-      }));
   });
   COMMON_WORDS.forEach((entry) => addEntry(dictionary, entry.term, entry));
+  state.clickableTerms = buildClickableTerms(dictionary);
   return dictionary;
 }
 
@@ -190,28 +187,89 @@ function buildFallbackWord(term) {
   return {
     term,
     phonetic: "/待补充/",
-    meaning: "这个词暂未收录在今天的详细词库里。每日更新任务会优先补充长文和例句里的重点词。",
-    example: `${term} appears in today's HMI learning context.`,
-    chineseExample: `${term} 出现在今天的 HMI 学习语境中。`,
+    meaning: "这个词或短语暂未收录在当前日期的词库里。后续每日更新会优先补齐长文和例句里的核心表达。",
+    example: `${term} appears in the HMI learning context.`,
+    chineseExample: `${term} 出现在 HMI 学习语境中。`,
   };
 }
 
 function renderClickableText(text = "") {
   const source = String(text);
+  const tokens = tokenizeText(source);
   const parts = [];
   let cursor = 0;
-  const pattern = /[A-Za-z][A-Za-z'-]*/g;
-  let match;
 
-  while ((match = pattern.exec(source))) {
-    parts.push(escapeHtml(source.slice(cursor, match.index)));
-    const word = match[0];
-    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(word)}">${escapeHtml(word)}</button>`);
-    cursor = match.index + word.length;
+  for (let index = 0; index < tokens.length; index += 1) {
+    const match = findClickableTerm(tokens, index, source);
+    if (!match) continue;
+
+    parts.push(escapeHtml(source.slice(cursor, match.start)));
+    const label = source.slice(match.start, match.end);
+    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(match.term)}">${escapeHtml(label)}</button>`);
+    cursor = match.end;
+    index += match.tokenCount - 1;
   }
 
   parts.push(escapeHtml(source.slice(cursor)));
   return parts.join("");
+}
+
+function buildClickableTerms(dictionary) {
+  return [...dictionary.values()]
+    .map((entry) => {
+      const tokens = normalizeTerm(entry.term).split(" ").filter(Boolean);
+      return { term: entry.term, tokens };
+    })
+    .filter((entry) => entry.tokens.length > 0)
+    .sort((a, b) => b.tokens.length - a.tokens.length || b.term.length - a.term.length);
+}
+
+function tokenizeText(text) {
+  const tokens = [];
+  const pattern = /[A-Za-z][A-Za-z'-]*/g;
+  let match;
+
+  while ((match = pattern.exec(text))) {
+    tokens.push({
+      text: match[0],
+      norm: normalizeTerm(match[0]),
+      start: match.index,
+      end: match.index + match[0].length,
+    });
+  }
+
+  return tokens;
+}
+
+function findClickableTerm(tokens, index, source) {
+  for (const entry of state.clickableTerms) {
+    if (!doesTermMatch(tokens, index, entry.tokens, source)) continue;
+    return {
+      term: entry.term,
+      tokenCount: entry.tokens.length,
+      start: tokens[index].start,
+      end: tokens[index + entry.tokens.length - 1].end,
+    };
+  }
+
+  return null;
+}
+
+function doesTermMatch(tokens, index, termTokens, source) {
+  if (index + termTokens.length > tokens.length) return false;
+
+  for (let offset = 0; offset < termTokens.length; offset += 1) {
+    const token = tokens[index + offset];
+    if (token.norm !== termTokens[offset]) return false;
+
+    if (offset > 0) {
+      const previous = tokens[index + offset - 1];
+      const separator = source.slice(previous.end, token.start);
+      if (!/^[\s-]+$/.test(separator)) return false;
+    }
+  }
+
+  return true;
 }
 
 function escapeHtml(value = "") {
@@ -365,6 +423,76 @@ const COMMON_WORDS = [
     meaning: "安全；避免风险、误操作和注意力分散的设计目标。",
     example: "Safety should guide the priority of cockpit alerts.",
     chineseExample: "安全应指导座舱提醒的优先级。"
+  },
+  {
+    term: "design",
+    phonetic: "/dɪˈzaɪn/",
+    meaning: "设计；为用户目标、使用情境和系统能力组织体验方案。",
+    example: "The design should make the next action clear.",
+    chineseExample: "设计应让下一步动作清晰。"
+  },
+  {
+    term: "context",
+    phonetic: "/ˈkɑːntekst/",
+    meaning: "情境；道路、任务、用户状态和系统状态的组合。",
+    example: "Context changes how the same message should be presented.",
+    chineseExample: "情境会改变同一消息的呈现方式。"
+  },
+  {
+    term: "risk",
+    phonetic: "/rɪsk/",
+    meaning: "风险；可能影响安全、理解或操作结果的情况。",
+    example: "The interface should make high-risk states easy to notice.",
+    chineseExample: "界面应让高风险状态容易被注意到。"
+  },
+  {
+    term: "alert",
+    phonetic: "/əˈlɜːrt/",
+    meaning: "提醒；用于引起注意或提示风险的信息。",
+    example: "An alert should explain what the driver should do next.",
+    chineseExample: "提醒应说明驾驶员下一步该做什么。"
+  },
+  {
+    term: "prompt",
+    phonetic: "/prɑːmpt/",
+    meaning: "提示；引导用户理解状态或完成下一步动作的信息。",
+    example: "The prompt should be short enough to understand at a glance.",
+    chineseExample: "提示应足够简短，能一眼理解。"
+  },
+  {
+    term: "confirm",
+    phonetic: "/kənˈfɜːrm/",
+    meaning: "确认；让用户明确同意、核对或完成某个动作。",
+    example: "The driver can confirm the destination by voice.",
+    chineseExample: "驾驶员可以通过语音确认目的地。"
+  },
+  {
+    term: "should",
+    phonetic: "/ʃʊd/",
+    meaning: "应该；用于表达设计建议、原则或评审结论。",
+    example: "The message should appear only when it is relevant.",
+    chineseExample: "这条消息应该只在相关时出现。"
+  },
+  {
+    term: "can",
+    phonetic: "/kæn/",
+    meaning: "可以；用于说明能力、可能性或设计效果。",
+    example: "Voice feedback can reduce visual demand.",
+    chineseExample: "语音反馈可以降低视觉需求。"
+  },
+  {
+    term: "when",
+    phonetic: "/wen/",
+    meaning: "当……时；用于连接场景条件和设计动作。",
+    example: "The system should simplify choices when the vehicle is moving.",
+    chineseExample: "车辆行驶时，系统应简化选项。"
+  },
+  {
+    term: "without",
+    phonetic: "/wɪˈðaʊt/",
+    meaning: "在不……的情况下；常用于表达设计约束。",
+    example: "The alert should create urgency without causing panic.",
+    chineseExample: "提醒应制造紧迫感，但不引发恐慌。"
   }
 ];
 
