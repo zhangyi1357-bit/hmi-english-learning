@@ -156,8 +156,14 @@ function openWord(word) {
 
 function openTerm(term) {
   const key = normalizeTerm(term);
-  const word = state.dictionary.get(key) || buildFallbackWord(term);
+  const word = findDictionaryEntry(key) || buildFallbackWord(term);
   openWord(word);
+}
+
+function findDictionaryEntry(key) {
+  return getDictionaryVariants(key)
+    .map((variant) => state.dictionary.get(variant))
+    .find(Boolean);
 }
 
 function buildDictionary(note) {
@@ -183,11 +189,38 @@ function normalizeTerm(term = "") {
     .trim();
 }
 
+function getDictionaryVariants(key) {
+  const variants = [key];
+  const words = key.split(" ");
+  const lastWord = words.at(-1) || "";
+
+  getWordVariants(lastWord)
+    .filter(Boolean)
+    .forEach((variant) => {
+      variants.push([...words.slice(0, -1), variant].join(" "));
+    });
+
+  return [...new Set(variants)];
+}
+
+function getWordVariants(word) {
+  const variants = [];
+
+  if (word.endsWith("ies") && word.length > 4) variants.push(`${word.slice(0, -3)}y`);
+  if (word.endsWith("ves") && word.length > 4) variants.push(`${word.slice(0, -3)}f`, `${word.slice(0, -3)}fe`);
+  if (word.endsWith("es") && word.length > 3) variants.push(word.slice(0, -1), word.slice(0, -2));
+  if (word.endsWith("s") && word.length > 3) variants.push(word.slice(0, -1));
+  if (word.endsWith("ing") && word.length > 5) variants.push(word.slice(0, -3), `${word.slice(0, -3)}e`);
+  if (word.endsWith("ed") && word.length > 4) variants.push(word.slice(0, -2), `${word.slice(0, -2)}e`);
+
+  return variants;
+}
+
 function buildFallbackWord(term) {
   return {
     term,
     phonetic: "/待补充/",
-    meaning: "这个词或短语暂未收录在当前日期的词库里。后续每日更新会优先补齐长文和例句里的核心表达。",
+    meaning: "这个词暂未收录在本地词库里。你仍然可以播放发音；后续每日更新会继续补齐高频单词和专业表达。",
     example: `${term} appears in the HMI learning context.`,
     chineseExample: `${term} 出现在 HMI 学习语境中。`,
   };
@@ -201,13 +234,18 @@ function renderClickableText(text = "") {
 
   for (let index = 0; index < tokens.length; index += 1) {
     const match = findClickableTerm(tokens, index, source);
-    if (!match) continue;
+    const clickable = match || {
+      term: tokens[index].text,
+      tokenCount: 1,
+      start: tokens[index].start,
+      end: tokens[index].end,
+    };
 
-    parts.push(escapeHtml(source.slice(cursor, match.start)));
-    const label = source.slice(match.start, match.end);
-    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(match.term)}">${escapeHtml(label)}</button>`);
-    cursor = match.end;
-    index += match.tokenCount - 1;
+    parts.push(escapeHtml(source.slice(cursor, clickable.start)));
+    const label = source.slice(clickable.start, clickable.end);
+    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(clickable.term)}">${escapeHtml(label)}</button>`);
+    cursor = clickable.end;
+    index += clickable.tokenCount - 1;
   }
 
   parts.push(escapeHtml(source.slice(cursor)));
@@ -353,6 +391,79 @@ function stopSpeaking() {
   }
 }
 
+const BASIC_WORDS = [
+  ["the", "/ðə/", "这个/该；英语中最常见的定冠词，用来指已知或特定对象。", "The system should explain the next action.", "系统应该解释下一步动作。"],
+  ["a", "/ə/", "一个；不定冠词，用来指单个但不特定的对象。", "A prompt should be easy to understand.", "一个提示应该容易理解。"],
+  ["an", "/ən/", "一个；用于元音音素前的不定冠词。", "An alert should match the risk level.", "一个提醒应该匹配风险等级。"],
+  ["and", "/ænd/", "和；用于连接并列信息。", "The screen shows speed and navigation.", "屏幕显示车速和导航。"],
+  ["or", "/ɔːr/", "或者；用于表示选择。", "The driver can confirm or cancel the action.", "驾驶员可以确认或取消该动作。"],
+  ["of", "/əv/", "……的；表示所属、组成或关系。", "The level of detail should match the task.", "细节程度应该匹配任务。"],
+  ["to", "/tuː/", "到；用于表示方向、目的或动作目标。", "The interface guides the driver to the next step.", "界面引导驾驶员进入下一步。"],
+  ["in", "/ɪn/", "在……中；表示位置、状态或场景。", "The warning appears in the driver display.", "警告出现在驾驶员显示区。"],
+  ["on", "/ɑːn/", "在……上；表示位置、设备或状态。", "The message appears on the center display.", "消息出现在中控屏上。"],
+  ["for", "/fɔːr/", "为了；表示目的、对象或适用场景。", "The flow is designed for quick confirmation.", "这个流程是为快速确认设计的。"],
+  ["from", "/frʌm/", "来自；表示来源、起点或差异。", "Feedback from the system should be clear.", "来自系统的反馈应该清晰。"],
+  ["with", "/wɪð/", "带有；和……一起；表示方式或伴随。", "The prompt works with voice feedback.", "该提示配合语音反馈工作。"],
+  ["by", "/baɪ/", "通过；表示方式、原因或执行者。", "The driver can respond by voice.", "驾驶员可以通过语音回应。"],
+  ["as", "/æz/", "作为；当……时；用于角色或比较。", "The alert acts as a safety reminder.", "该提醒作为安全提示。"],
+  ["is", "/ɪz/", "是；be 动词现在时，用于说明状态。", "The message is short and clear.", "这条消息简短清晰。"],
+  ["are", "/ɑːr/", "是；be 动词复数形式。", "The controls are easy to reach.", "这些控制项容易触达。"],
+  ["be", "/biː/", "是；成为；be 动词原形。", "The feedback should be noticeable.", "反馈应该能被注意到。"],
+  ["it", "/ɪt/", "它；指代前面提到的事物或系统。", "It should not distract the driver.", "它不应该分散驾驶员注意力。"],
+  ["this", "/ðɪs/", "这个；指当前正在讨论的对象。", "This flow reduces visual demand.", "这个流程降低视觉需求。"],
+  ["that", "/ðæt/", "那个；也可引导从句。", "The system shows that the command was recognized.", "系统显示指令已被识别。"],
+  ["these", "/ðiːz/", "这些；this 的复数。", "These cues help the driver recover.", "这些提示帮助驾驶员恢复状态。"],
+  ["they", "/ðeɪ/", "它们/他们；指代多个对象。", "They should appear only when relevant.", "它们应该只在相关时出现。"],
+  ["not", "/nɑːt/", "不；用于否定。", "The alert should not feel aggressive.", "提醒不应该让人感觉强硬。"],
+  ["if", "/ɪf/", "如果；用于表达条件。", "If the risk increases, the warning should escalate.", "如果风险增加，警告应该升级。"],
+  ["but", "/bʌt/", "但是；用于转折。", "The feature is useful, but it needs clear consent.", "这个功能有用，但需要清晰授权。"],
+  ["only", "/ˈoʊnli/", "只；仅仅。", "Only critical information should interrupt the driver.", "只有关键信息才应该打断驾驶员。"],
+  ["also", "/ˈɔːlsoʊ/", "也；此外。", "The system also provides voice feedback.", "系统也提供语音反馈。"],
+  ["because", "/bɪˈkɔːz/", "因为；用于说明原因。", "The prompt is delayed because the driver is turning.", "提示被延后，因为驾驶员正在转弯。"],
+  ["whether", "/ˈweðər/", "是否；用于表达不确定选择或判断。", "The cockpit decides whether to show the prompt now.", "座舱判断是否现在显示提示。"],
+  ["what", "/wʌt/", "什么；用于询问信息或引导从句。", "The driver should know what the system understood.", "驾驶员应该知道系统理解了什么。"],
+  ["why", "/waɪ/", "为什么；用于询问或说明原因。", "The message explains why the alert appeared.", "消息解释警告为什么出现。"],
+  ["which", "/wɪtʃ/", "哪一个；用于选择或限定。", "The UI shows which option is selected.", "界面显示哪个选项被选中。"],
+  ["may", "/meɪ/", "可能；可以；表示可能性或许可。", "The driver may miss a subtle warning.", "驾驶员可能会错过不明显的警告。"],
+  ["make", "/meɪk/", "使；制作；让某事发生。", "Clear labels make the flow easier to follow.", "清晰标签让流程更容易理解。"],
+  ["help", "/help/", "帮助；支持用户完成目标。", "Good feedback helps the driver recover.", "好的反馈帮助驾驶员恢复。"],
+  ["decide", "/dɪˈsaɪd/", "决定；在多个选项中作出判断。", "The system must decide when to interrupt.", "系统必须决定何时打断。"],
+  ["reduce", "/rɪˈduːs/", "减少；降低负荷、风险或干扰。", "Voice feedback can reduce visual demand.", "语音反馈可以降低视觉需求。"],
+  ["keep", "/kiːp/", "保持；使某状态持续。", "The layout should keep key information visible.", "布局应该保持关键信息可见。"],
+  ["ask", "/æsk/", "询问；请求用户确认或输入。", "The assistant can ask for confirmation.", "助手可以请求确认。"],
+  ["show", "/ʃoʊ/", "显示；把信息呈现给用户。", "The display should show the current mode.", "显示区应该显示当前模式。"],
+  ["use", "/juːz/", "使用；采用某种方式或功能。", "The driver can use voice control.", "驾驶员可以使用语音控制。"],
+  ["provide", "/prəˈvaɪd/", "提供；向用户给出信息或能力。", "The cockpit should provide clear feedback.", "座舱应该提供清晰反馈。"],
+  ["support", "/səˈpɔːrt/", "支持；帮助某任务或目标完成。", "The interface should support safe driving.", "界面应该支持安全驾驶。"],
+  ["clear", "/klɪr/", "清晰的；容易理解或识别的。", "A clear prompt reduces hesitation.", "清晰提示能减少犹豫。"],
+  ["simple", "/ˈsɪmpl/", "简单的；不复杂、易理解。", "Simple wording works better under pressure.", "压力下简单措辞效果更好。"],
+  ["short", "/ʃɔːrt/", "短的；简短的。", "A short message is easier to scan.", "简短消息更容易扫视。"],
+  ["good", "/ɡʊd/", "好的；有效、合适或高质量的。", "Good timing makes feedback more acceptable.", "好的时机让反馈更容易被接受。"],
+  ["useful", "/ˈjuːsfl/", "有用的；能帮助完成任务。", "The suggestion is useful only in the right context.", "建议只有在合适情境下才有用。"],
+  ["critical", "/ˈkrɪtɪkl/", "关键的；对安全或任务结果非常重要。", "Critical warnings need higher visual priority.", "关键警告需要更高视觉优先级。"],
+  ["current", "/ˈkɜːrənt/", "当前的；现在的。", "The current mode should be visible.", "当前模式应该可见。"],
+  ["same", "/seɪm/", "相同的；同一个。", "The same warning can feel different in another context.", "同一个警告在不同情境中感受会不同。"],
+  ["every", "/ˈevri/", "每一个；全部个体。", "Every interaction should have a clear purpose.", "每个交互都应该有清晰目的。"],
+  ["one", "/wʌn/", "一个；用于指代单个对象。", "One clear choice is better than many unclear options.", "一个清晰选择比多个模糊选项更好。"],
+  ["long", "/lɔːŋ/", "长的；持续时间或内容较多。", "A long explanation should not appear while driving.", "驾驶时不应出现长解释。"],
+  ["road", "/roʊd/", "道路；驾驶环境中的行驶空间。", "The driver should keep attention on the road.", "驾驶员应该把注意力保持在道路上。"],
+  ["task", "/tæsk/", "任务；用户要完成的目标或操作。", "The task should require as few steps as possible.", "任务应尽量少步骤完成。"],
+  ["action", "/ˈækʃn/", "动作；用户或系统执行的行为。", "The next action should be predictable.", "下一步动作应该可预测。"],
+  ["flow", "/floʊ/", "流程；用户完成任务的步骤路径。", "The flow should support quick recovery.", "流程应该支持快速恢复。"],
+  ["level", "/ˈlevl/", "级别；强度、层级或程度。", "The alert level should match the risk.", "提醒级别应该匹配风险。"],
+  ["need", "/niːd/", "需要；必要条件或用户需求。", "Drivers need clear feedback during transitions.", "驾驶员在切换期间需要清晰反馈。"],
+  ["enough", "/ɪˈnʌf/", "足够；达到需要的程度。", "The cue should be strong enough to notice.", "提示应该足够明显，能被注意到。"],
+  ["still", "/stɪl/", "仍然；表示状态持续。", "The feature should still work if cloud sync is off.", "云同步关闭时，该功能仍应可用。"],
+  ["before", "/bɪˈfɔːr/", "在……之前。", "The system should warn before the risk becomes critical.", "系统应在风险变关键前提醒。"],
+  ["after", "/ˈæftər/", "在……之后。", "Detailed information can appear after control is regained.", "详细信息可在重新控制后出现。"],
+  ["during", "/ˈdʊrɪŋ/", "在……期间。", "Noncritical prompts should be delayed during lane changes.", "变道期间应延后非关键提示。"],
+  ["while", "/waɪl/", "当……期间；同时。", "The interface should stay simple while driving.", "驾驶时界面应保持简单。"],
+  ["more", "/mɔːr/", "更多；更……。", "More information is not always better.", "更多信息并不总是更好。"],
+  ["high", "/haɪ/", "高的；强度、优先级或数量较高。", "High-priority alerts should be easy to notice.", "高优先级提醒应该容易被注意到。"],
+  ["low", "/loʊ/", "低的；强度、优先级或数量较低。", "Low-risk reminders can stay quiet.", "低风险提醒可以保持安静。"],
+  ["important", "/ɪmˈpɔːrtnt/", "重要的；值得优先考虑的。", "Important information should appear first.", "重要信息应该优先出现。"]
+];
+
 const COMMON_WORDS = [
   {
     term: "interface",
@@ -493,7 +604,14 @@ const COMMON_WORDS = [
     meaning: "在不……的情况下；常用于表达设计约束。",
     example: "The alert should create urgency without causing panic.",
     chineseExample: "提醒应制造紧迫感，但不引发恐慌。"
-  }
+  },
+  ...BASIC_WORDS.map(([term, phonetic, meaning, example, chineseExample]) => ({
+    term,
+    phonetic,
+    meaning,
+    example,
+    chineseExample,
+  }))
 ];
 
 loadNotes().catch((error) => {
