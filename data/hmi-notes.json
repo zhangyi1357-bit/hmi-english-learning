@@ -1,5 +1,392 @@
 [
   {
+    "id": "2026-07-09-driver-state-adaptive-feedback",
+    "date": "2026-07-09",
+    "title": "Driver state awareness and adaptive feedback in the intelligent cockpit",
+    "topic": "智能座舱驾驶员状态感知与自适应反馈",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述驾驶员状态感知、分心识别、疲劳提示和自适应反馈策略，适合用于智能座舱 HMI 评审、DMS 方案讨论和安全体验设计表达。",
+    "words": [
+      {
+        "term": "driver state awareness",
+        "phonetic": "/ˈdraɪvər steɪt əˈwernəs/",
+        "meaning": "驾驶员状态感知；系统理解驾驶员注意力、疲劳、视线和交互负荷的能力",
+        "example": "Driver state awareness helps the cockpit decide whether a prompt should be visual, auditory, or delayed.",
+        "chineseExample": "驾驶员状态感知帮助座舱判断提示应采用视觉、听觉还是延后呈现。"
+      },
+      {
+        "term": "adaptive feedback",
+        "phonetic": "/əˈdæptɪv ˈfiːdbæk/",
+        "meaning": "自适应反馈；系统根据驾驶场景和用户状态调整反馈强度、通道和时机",
+        "example": "Adaptive feedback can reduce visual messages when the driver is handling a complex maneuver.",
+        "chineseExample": "当驾驶员正在处理复杂操作时，自适应反馈可以减少视觉消息。"
+      },
+      {
+        "term": "attention monitoring",
+        "phonetic": "/əˈtenʃn ˈmɑːnɪtərɪŋ/",
+        "meaning": "注意力监测；通过视线、头部姿态或交互行为判断驾驶员是否关注道路",
+        "example": "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
+        "chineseExample": "注意力监测应支持安全决策，同时避免让驾驶员感觉被持续评判。"
+      },
+      {
+        "term": "drowsiness alert",
+        "phonetic": "/ˈdraʊzinəs əˈlɜːrt/",
+        "meaning": "疲劳提醒；当系统检测到困倦迹象时发出的安全提示",
+        "example": "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
+        "chineseExample": "疲劳提醒应足够清晰以打断风险状态，但也要保持克制，避免引发慌乱。"
+      },
+      {
+        "term": "gaze behavior",
+        "phonetic": "/ɡeɪz bɪˈheɪvjər/",
+        "meaning": "视线行为；驾驶员看路、看屏幕、扫视后视镜等视觉注意模式",
+        "example": "Gaze behavior can reveal whether a secondary task is pulling attention away from the road.",
+        "chineseExample": "视线行为可以反映次要任务是否正在把注意力从道路上拉走。"
+      },
+      {
+        "term": "interaction load",
+        "phonetic": "/ˌɪntərˈækʃn loʊd/",
+        "meaning": "交互负荷；完成一次座舱操作对注意力、记忆和手眼协调造成的压力",
+        "example": "The HMI team should lower interaction load when traffic density increases.",
+        "chineseExample": "当交通密度增加时，HMI 团队应降低交互负荷。"
+      },
+      {
+        "term": "context-sensitive timing",
+        "phonetic": "/ˈkɑːntekst ˈsensətɪv ˈtaɪmɪŋ/",
+        "meaning": "情境敏感的时机；根据道路、任务和用户状态选择合适的提示出现时间",
+        "example": "Context-sensitive timing prevents a non-urgent recommendation from appearing during lane guidance.",
+        "chineseExample": "情境敏感的时机可以避免非紧急推荐在车道引导期间出现。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级阶梯；提示从轻量视觉反馈逐步升级到声音、振动或强提醒的规则",
+        "example": "An escalation ladder keeps the first warning polite and reserves stronger signals for repeated risk.",
+        "chineseExample": "升级阶梯让第一次警告保持克制，并把更强信号留给重复风险。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力和限制形成合理预期",
+        "example": "Trust calibration improves when the cockpit explains why it changed the feedback level.",
+        "chineseExample": "当座舱解释为何改变反馈级别时，信任校准会更好。"
+      },
+      {
+        "term": "false positive",
+        "phonetic": "/ˌfɔːls ˈpɑːzətɪv/",
+        "meaning": "误报；系统把正常状态错误判断为风险状态",
+        "example": "Too many false positives can make drivers ignore future attention warnings.",
+        "chineseExample": "过多误报会让驾驶员忽略后续注意力警告。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；车辆的主要操作者",
+        "example": "The driver needs feedback that supports the driving task.",
+        "chineseExample": "驾驶员需要支持驾驶任务的反馈。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；某一时刻的条件或情况",
+        "example": "The system estimates the driver's current state.",
+        "chineseExample": "系统估计驾驶员当前状态。"
+      },
+      {
+        "term": "awareness",
+        "phonetic": "/əˈwernəs/",
+        "meaning": "感知；对情况的理解和觉察",
+        "example": "Awareness of workload helps the cockpit choose better timing.",
+        "chineseExample": "对负荷的感知帮助座舱选择更好的时机。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；能根据条件变化而调整的",
+        "example": "An adaptive interface changes its behavior with context.",
+        "chineseExample": "自适应界面会随情境改变行为。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统向用户传达状态、结果或下一步动作的信息",
+        "example": "Feedback should be noticeable without becoming distracting.",
+        "chineseExample": "反馈应可被注意到，但不能造成干扰。"
+      },
+      {
+        "term": "monitoring",
+        "phonetic": "/ˈmɑːnɪtərɪŋ/",
+        "meaning": "监测；持续观察状态或变化",
+        "example": "Monitoring supports timely safety interventions.",
+        "chineseExample": "监测支持及时的安全干预。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户分配给道路、界面或任务的认知资源",
+        "example": "Attention should stay focused on the road during critical moments.",
+        "chineseExample": "关键时刻注意力应保持在道路上。"
+      },
+      {
+        "term": "drowsiness",
+        "phonetic": "/ˈdraʊzinəs/",
+        "meaning": "困倦；疲劳导致的警觉性下降",
+        "example": "Drowsiness can slow a driver's reaction time.",
+        "chineseExample": "困倦会降低驾驶员反应速度。"
+      },
+      {
+        "term": "alert",
+        "phonetic": "/əˈlɜːrt/",
+        "meaning": "提醒；用于引起注意的警示信息",
+        "example": "An alert should explain what the driver should do next.",
+        "chineseExample": "提醒应说明驾驶员下一步该做什么。"
+      },
+      {
+        "term": "gaze",
+        "phonetic": "/ɡeɪz/",
+        "meaning": "凝视；眼睛注视的方向或区域",
+        "example": "Gaze data can show whether the driver is looking at the road.",
+        "chineseExample": "视线数据可以显示驾驶员是否在看道路。"
+      },
+      {
+        "term": "behavior",
+        "phonetic": "/bɪˈheɪvjər/",
+        "meaning": "行为；用户在系统或环境中的动作模式",
+        "example": "Repeated behavior patterns can guide interface adjustments.",
+        "chineseExample": "重复行为模式可以指导界面调整。"
+      },
+      {
+        "term": "load",
+        "phonetic": "/loʊd/",
+        "meaning": "负荷；任务对注意力和认知资源的需求",
+        "example": "High load requires simpler interface choices.",
+        "chineseExample": "高负荷需要更简单的界面选择。"
+      },
+      {
+        "term": "maneuver",
+        "phonetic": "/məˈnuːvər/",
+        "meaning": "驾驶操作；变道、转弯、并线等车辆动作",
+        "example": "A complex maneuver is a poor moment for a promotional message.",
+        "chineseExample": "复杂驾驶操作不适合展示促销消息。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；某个信息或动作出现的时间选择",
+        "example": "Good timing can make a warning easier to accept.",
+        "chineseExample": "好的时机能让警告更容易被接受。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "情境；道路、任务、用户状态和系统状态的组合",
+        "example": "Context changes the meaning of the same interface event.",
+        "chineseExample": "情境会改变同一界面事件的意义。"
+      },
+      {
+        "term": "escalation",
+        "phonetic": "/ˌeskəˈleɪʃn/",
+        "meaning": "升级；将提示强度或紧急程度提高",
+        "example": "Escalation is useful when a risk continues.",
+        "chineseExample": "当风险持续时，升级很有用。"
+      },
+      {
+        "term": "ladder",
+        "phonetic": "/ˈlædər/",
+        "meaning": "阶梯；按等级逐步变化的结构",
+        "example": "A ladder of signals makes the response predictable.",
+        "chineseExample": "信号阶梯让响应更可预测。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户相信系统可靠且可理解的程度",
+        "example": "Trust grows when warnings are accurate and useful.",
+        "chineseExample": "当警告准确且有用时，信任会增加。"
+      },
+      {
+        "term": "calibration",
+        "phonetic": "/ˌkælɪˈbreɪʃn/",
+        "meaning": "校准；让判断、阈值或预期保持合适水平",
+        "example": "Calibration prevents the system from overreacting.",
+        "chineseExample": "校准可以防止系统反应过度。"
+      },
+      {
+        "term": "false",
+        "phonetic": "/fɔːls/",
+        "meaning": "错误的；与真实情况不一致的",
+        "example": "A false warning can reduce confidence in the cockpit.",
+        "chineseExample": "错误警告会降低对座舱的信心。"
+      },
+      {
+        "term": "positive",
+        "phonetic": "/ˈpɑːzətɪv/",
+        "meaning": "阳性结果；系统判断某种状态存在",
+        "example": "A positive detection should still be checked against context.",
+        "chineseExample": "阳性检测结果仍应结合情境检查。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；可能导致安全或体验问题的情况",
+        "example": "Risk increases when the driver looks away too long.",
+        "chineseExample": "当驾驶员视线离开道路过久时，风险会上升。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；通过屏幕、图标、颜色或布局呈现的",
+        "example": "Visual feedback should remain glanceable.",
+        "chineseExample": "视觉反馈应保持可快速扫视。"
+      },
+      {
+        "term": "auditory",
+        "phonetic": "/ˈɔːdətɔːri/",
+        "meaning": "听觉的；通过声音或语音呈现的",
+        "example": "Auditory feedback can work when eyes must stay on the road.",
+        "chineseExample": "当视线必须留在道路上时，听觉反馈可以发挥作用。"
+      },
+      {
+        "term": "delayed",
+        "phonetic": "/dɪˈleɪd/",
+        "meaning": "延后的；推迟到更合适时机出现的",
+        "example": "A delayed prompt may be safer than an immediate prompt.",
+        "chineseExample": "延后提示可能比立即提示更安全。"
+      },
+      {
+        "term": "critical",
+        "phonetic": "/ˈkrɪtɪkl/",
+        "meaning": "关键的；对安全或任务成功非常重要的",
+        "example": "Critical moments require minimal interface demand.",
+        "chineseExample": "关键时刻需要最低界面需求。"
+      },
+      {
+        "term": "non-urgent",
+        "phonetic": "/ˌnɑːn ˈɜːrdʒənt/",
+        "meaning": "非紧急的；可以等待或稍后处理的",
+        "example": "A non-urgent tip should not interrupt lane guidance.",
+        "chineseExample": "非紧急提示不应打断车道引导。"
+      },
+      {
+        "term": "recommendation",
+        "phonetic": "/ˌrekəmenˈdeɪʃn/",
+        "meaning": "推荐；系统建议用户采取的可选动作",
+        "example": "The recommendation can wait until the road is simpler.",
+        "chineseExample": "推荐可以等到路况更简单时再出现。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明系统做出判断或调整的原因",
+        "example": "The cockpit should explain why an alert was escalated.",
+        "chineseExample": "座舱应解释为什么提醒被升级。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某个系统动作所需达到的条件水平",
+        "example": "The threshold for a safety alert should be carefully tuned.",
+        "chineseExample": "安全提醒的阈值应被仔细调校。"
+      },
+      {
+        "term": "ignore",
+        "phonetic": "/ɪɡˈnɔːr/",
+        "meaning": "忽略；不再注意或响应某个信息",
+        "example": "Drivers may ignore alerts that appear too often.",
+        "chineseExample": "驾驶员可能会忽略过于频繁的提醒。"
+      },
+      {
+        "term": "privacy",
+        "phonetic": "/ˈpraɪvəsi/",
+        "meaning": "隐私；个人数据和状态信息受到合理保护的权利",
+        "example": "Privacy controls should be visible when driver monitoring is enabled.",
+        "chineseExample": "启用驾驶员监测时，隐私控制应清晰可见。"
+      },
+      {
+        "term": "transparent",
+        "phonetic": "/trænsˈpærənt/",
+        "meaning": "透明的；系统逻辑、数据使用或限制容易被用户理解的",
+        "example": "Transparent wording helps users understand what the camera is checking.",
+        "chineseExample": "透明表述帮助用户理解摄像头正在检查什么。"
+      },
+      {
+        "term": "intervention",
+        "phonetic": "/ˌɪntərˈvenʃn/",
+        "meaning": "干预；系统主动介入以降低风险或改变行为",
+        "example": "An intervention should match the seriousness of the situation.",
+        "chineseExample": "干预应匹配情况的严重程度。"
+      },
+      {
+        "term": "fatigue",
+        "phonetic": "/fəˈtiːɡ/",
+        "meaning": "疲劳；长时间驾驶或休息不足造成的能力下降",
+        "example": "Fatigue detection can trigger a rest recommendation.",
+        "chineseExample": "疲劳检测可以触发休息建议。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing adaptive feedback for driver state",
+        "source": {
+          "name": "Original practice text",
+          "url": ""
+        },
+        "text": "An intelligent cockpit should respond not only to vehicle events, but also to the driver's current state. If the driver is looking at the road, speaking a short command, and driving on a quiet highway, the system can use a light visual confirmation or a brief tone. If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel. Driver state awareness is useful only when it leads to respectful feedback. The cockpit should not sound like it is blaming the driver, and it should not expose sensitive camera data without a clear reason. Instead, the HMI can explain the action in practical language: \"Traffic is complex, so I will show this reminder later.\" Designers should define an escalation ladder for attention and drowsiness alerts. A first signal may be a small icon, a repeated risk may trigger a tone, and a serious fatigue pattern may recommend a rest stop. The team also needs to manage false positives. If every glance away from the road becomes a warning, drivers will quickly ignore the system. Good adaptive feedback balances safety, privacy, timing, and trust.",
+        "translation": "智能座舱不应只响应车辆事件，也应响应驾驶员的当前状态。如果驾驶员正在看路、发出简短语音指令，并且车辆行驶在安静高速路上，系统可以使用轻量视觉确认或简短提示音。如果驾驶员正在看后视镜、进入环岛或表现出疲劳迹象，同一条消息可能需要延后、简化，或转移到听觉通道。驾驶员状态感知只有在带来尊重用户的反馈时才有价值。座舱不应听起来像在责备驾驶员，也不应在没有明确理由的情况下暴露敏感摄像头数据。相反，HMI 可以用实用语言解释动作：\"交通情况复杂，所以我稍后再显示这条提醒。\" 设计师应为注意力和疲劳提醒定义升级阶梯。第一次信号可以是小图标，重复风险可以触发提示音，严重疲劳模式可以建议休息站。团队还需要管理误报。如果每一次视线离开道路都变成警告，驾驶员很快会忽略系统。好的自适应反馈会平衡安全、隐私、时机和信任。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "An intelligent cockpit should respond not only to vehicle events, but also to the driver's current state.",
+        "structure": "主语 An intelligent cockpit + 情态动词 should + 谓语 respond + not only...but also... 并列介词短语。",
+        "focus": "not only...but also... 用于强调系统响应对象不只是车辆事件，也包括驾驶员状态。",
+        "pattern": "A system should respond not only to A, but also to B."
+      },
+      {
+        "sentence": "If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel.",
+        "structure": "If 条件从句列出三种驾驶状态，主句用 may need to be + 过去分词表达被动调整策略。",
+        "focus": "delayed, simplified, or moved 三个并列被动动作说明同一信息可根据场景调整。",
+        "pattern": "If the user is doing A, the message may need to be B, C, or D."
+      },
+      {
+        "sentence": "Driver state awareness is useful only when it leads to respectful feedback.",
+        "structure": "主语 Driver state awareness + 系表结构 is useful + only when 引导条件状语从句。",
+        "focus": "only when 限定价值成立的条件，适合表达 HMI 功能必须转化为体验收益。",
+        "pattern": "A feature is useful only when it leads to a better user outcome."
+      },
+      {
+        "sentence": "Good adaptive feedback balances safety, privacy, timing, and trust.",
+        "structure": "主语 Good adaptive feedback + 谓语 balances + 四个并列宾语。",
+        "focus": "balances 用于表达设计取舍，后接多个需要同时满足的目标。",
+        "pattern": "Good design balances A, B, C, and D."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 driver state awareness、adaptive feedback、attention monitoring、false positive 等词汇；每个词后复述英文例句，并用中文解释其座舱场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先完整听读长文，再按句跟读；重点放在 not only...but also...、If 条件句和 may need to be 的被动表达。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "detail": "选择 2 条 sentenceBreakdowns，把主语、谓语、条件从句和并列宾语标出来，再替换成自己的 DMS 或 HMI 评审句子。"
+      },
+      {
+        "title": "口头复述与改写",
+        "time": "5-8 分钟",
+        "detail": "用 60 秒说明一个疲劳提醒流程，至少使用 adaptive feedback、escalation ladder、false positive 和 trust calibration。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-08-voice-confirmation-error-recovery",
     "date": "2026-07-08",
     "title": "Voice confirmation and error recovery in the intelligent cockpit",
