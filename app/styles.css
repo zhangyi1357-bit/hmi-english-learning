@@ -274,6 +274,11 @@ select {
   outline: 2px solid rgba(15, 118, 110, 0.18);
 }
 
+.inlineWord.phraseWord {
+  background: rgba(15, 118, 110, 0.06);
+  text-decoration-color: rgba(180, 83, 9, 0.36);
+}
+
 .readingSection article,
 .breakdownItem,
 .practiceList li {

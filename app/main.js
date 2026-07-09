@@ -234,18 +234,21 @@ function renderClickableText(text = "") {
 
   for (let index = 0; index < tokens.length; index += 1) {
     const match = findClickableTerm(tokens, index, source);
-    const clickable = match || {
-      term: tokens[index].text,
-      tokenCount: 1,
-      start: tokens[index].start,
-      end: tokens[index].end,
-    };
+    const tokenCount = match?.tokenCount || 1;
 
-    parts.push(escapeHtml(source.slice(cursor, clickable.start)));
-    const label = source.slice(clickable.start, clickable.end);
-    parts.push(`<button class="inlineWord" type="button" data-term="${escapeHtml(clickable.term)}">${escapeHtml(label)}</button>`);
-    cursor = clickable.end;
-    index += clickable.tokenCount - 1;
+    for (let offset = 0; offset < tokenCount; offset += 1) {
+      const token = tokens[index + offset];
+      parts.push(escapeHtml(source.slice(cursor, token.start)));
+      const label = source.slice(token.start, token.end);
+      const phraseAttrs = match?.tokenCount > 1
+        ? ` data-phrase="${escapeHtml(match.term)}" title="所在短语：${escapeHtml(match.term)}"`
+        : "";
+      const phraseClass = match?.tokenCount > 1 ? " phraseWord" : "";
+      parts.push(`<button class="inlineWord${phraseClass}" type="button" data-term="${escapeHtml(token.text)}"${phraseAttrs}>${escapeHtml(label)}</button>`);
+      cursor = token.end;
+    }
+
+    index += tokenCount - 1;
   }
 
   parts.push(escapeHtml(source.slice(cursor)));
