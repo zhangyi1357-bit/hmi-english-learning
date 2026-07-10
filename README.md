@@ -13,7 +13,19 @@
 ## 校验
 
 ```bash
+node scripts/sync-data-js.mjs
 node scripts/validate-data.mjs
+node scripts/sync-local-dictionary.mjs
+```
+
+`sync-local-dictionary.mjs` 会扫描所有已发布文章和例句，把尚未收录的单词通过免费词典补入
+`data/local-dictionary.json` 和 `data/local-dictionary.js`。网站查询顺序为：当天专业词库、内置本地词库、
+浏览器免费在线查询；在线结果会缓存在当前设备中。
+
+需要用 ECDICT 重新生成当前全部历史词条时：
+
+```bash
+node scripts/import-ecdict.mjs --source=/path/to/ecdict.csv
 ```
 
 ## 发布

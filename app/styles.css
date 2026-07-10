@@ -371,6 +371,21 @@ select {
   background: rgba(24, 33, 47, 0.35);
 }
 
+.wordDialog .eyebrow {
+  text-transform: none;
+}
+
+.siteFooter {
+  padding: 18px clamp(18px, 4vw, 56px) 32px;
+  color: #54646d;
+  font-size: 13px;
+  text-align: center;
+}
+
+.siteFooter a {
+  color: #0b7167;
+}
+
 .dialogClose {
   position: absolute;
   top: 10px;

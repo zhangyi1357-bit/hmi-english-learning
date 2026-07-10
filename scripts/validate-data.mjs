@@ -17,6 +17,8 @@ const requiredWordFields = ["term", "phonetic", "meaning", "example", "chineseEx
 
 const raw = await readFile(new URL("../data/hmi-notes.json", import.meta.url), "utf8");
 const notes = JSON.parse(raw);
+const dictionaryRaw = await readFile(new URL("../data/local-dictionary.json", import.meta.url), "utf8");
+const localDictionary = JSON.parse(dictionaryRaw);
 
 if (!Array.isArray(notes) || notes.length === 0) {
   throw new Error("data/hmi-notes.json must contain at least one note.");
@@ -54,4 +56,40 @@ for (const note of notes) {
   }
 }
 
-console.log(`Validated ${notes.length} HMI English note(s).`);
+const coveredTerms = new Set(Object.keys(localDictionary));
+for (const note of notes) {
+  for (const entry of [...(note.words || []), ...(note.glossary || [])]) {
+    if (entry?.term) coveredTerms.add(normalizeTerm(entry.term));
+  }
+}
+
+for (const [term, entry] of Object.entries(localDictionary)) {
+  if (!Array.isArray(entry) || entry.length < 5 || !entry[0] || !entry[1] || !entry[3] || !entry[4]) {
+    throw new Error(`Local dictionary entry "${term}" is incomplete.`);
+  }
+}
+
+const uncovered = new Set();
+for (const note of notes) {
+  const texts = [
+    ...(note.words || []).map((word) => word.example),
+    ...(note.longReadings || []).map((reading) => reading.text),
+    ...(note.sentenceBreakdowns || []).map((item) => item.sentence),
+  ];
+  for (const text of texts) {
+    for (const match of String(text).matchAll(/[A-Za-z][A-Za-z'-]*/g)) {
+      const term = normalizeTerm(match[0]);
+      if (!coveredTerms.has(term)) uncovered.add(term);
+    }
+  }
+}
+
+if (uncovered.size > 0) {
+  throw new Error(`Local dictionary coverage is missing: ${[...uncovered].join(", ")}`);
+}
+
+console.log(`Validated ${notes.length} note(s) and ${Object.keys(localDictionary).length} local dictionary entries.`);
+
+function normalizeTerm(value = "") {
+  return String(value).toLowerCase().replace(/[’']/g, "").replace(/[^a-z0-9-]+/g, " ").trim();
+}

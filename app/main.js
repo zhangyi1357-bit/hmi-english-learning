@@ -151,13 +151,39 @@ function openWord(word) {
   elements.dialogChineseExample.textContent = word.chineseExample || "当这个词出现在重点句中时，会补充到每日词库。";
   elements.dialog.dataset.term = word.term || "";
   elements.dialog.dataset.example = word.example || "";
-  elements.dialog.showModal();
+  if (!elements.dialog.open) {
+    elements.dialog.showModal();
+  }
 }
 
-function openTerm(term) {
+async function openTerm(term) {
   const key = normalizeTerm(term);
-  const word = findDictionaryEntry(key) || buildFallbackWord(term);
-  openWord(word);
+  const word = findDictionaryEntry(key) || findCachedWord(key);
+
+  if (word) {
+    openWord({
+      ...word,
+      term,
+      example: word.example || findContextExample(term),
+      chineseExample: word.chineseExample || `在原文中，“${term}”表示“${word.meaning}”。`,
+    });
+    return;
+  }
+
+  openWord(buildLoadingWord(term));
+  const remoteWord = await lookupRemoteWord(term);
+  if (!remoteWord) {
+    if (normalizeTerm(elements.dialog.dataset.term) === key) {
+      openWord(buildFallbackWord(term));
+    }
+    return;
+  }
+
+  addEntry(state.dictionary, term, remoteWord);
+  cacheWord(key, remoteWord);
+  if (normalizeTerm(elements.dialog.dataset.term) === key) {
+    openWord(remoteWord);
+  }
 }
 
 function findDictionaryEntry(key) {
@@ -168,11 +194,23 @@ function findDictionaryEntry(key) {
 
 function buildDictionary(note) {
   const dictionary = new Map();
+  Object.entries(window.HMI_LOCAL_DICTIONARY || {}).forEach(([term, value]) => {
+    const [phonetic, meaning, partOfSpeech, example, chineseExample, sourceUrl] = value;
+    addEntry(dictionary, term, {
+      term,
+      phonetic,
+      meaning,
+      partOfSpeech,
+      example,
+      chineseExample,
+      sourceUrl,
+    });
+  });
+  COMMON_WORDS.forEach((entry) => addEntry(dictionary, entry.term, entry));
   [...(note.words || []), ...(note.glossary || [])].forEach((entry) => {
     if (!entry?.term) return;
     addEntry(dictionary, entry.term, entry);
   });
-  COMMON_WORDS.forEach((entry) => addEntry(dictionary, entry.term, entry));
   state.clickableTerms = buildClickableTerms(dictionary);
   return dictionary;
 }
@@ -212,18 +250,146 @@ function getWordVariants(word) {
   if (word.endsWith("s") && word.length > 3) variants.push(word.slice(0, -1));
   if (word.endsWith("ing") && word.length > 5) variants.push(word.slice(0, -3), `${word.slice(0, -3)}e`);
   if (word.endsWith("ed") && word.length > 4) variants.push(word.slice(0, -2), `${word.slice(0, -2)}e`);
+  if (word.endsWith("ly") && word.length > 4) variants.push(word.slice(0, -2));
+  if (word.endsWith("er") && word.length > 4) variants.push(word.slice(0, -2), `${word.slice(0, -1)}e`);
+  if (word.endsWith("est") && word.length > 5) variants.push(word.slice(0, -3), `${word.slice(0, -2)}e`);
+
+  const withoutIng = word.slice(0, -3);
+  if (word.endsWith("ing") && /(.)\1$/.test(withoutIng)) variants.push(withoutIng.slice(0, -1));
+  const withoutEd = word.slice(0, -2);
+  if (word.endsWith("ed") && /(.)\1$/.test(withoutEd)) variants.push(withoutEd.slice(0, -1));
 
   return variants;
 }
 
-function buildFallbackWord(term) {
+function buildLoadingWord(term) {
+  const example = findContextExample(term);
   return {
     term,
-    phonetic: "/待补充/",
-    meaning: "这个词暂未收录在本地词库里。你仍然可以播放发音；后续每日更新会继续补齐高频单词和专业表达。",
-    example: `${term} appears in the HMI learning context.`,
-    chineseExample: `${term} 出现在 HMI 学习语境中。`,
+    phonetic: "/正在查询/",
+    meaning: "正在从免费词典中查询中文意思、音标和例句……",
+    example,
+    chineseExample: "查询完成后，这里会显示对应的中文解释。",
   };
+}
+
+function buildFallbackWord(term) {
+  const example = findContextExample(term);
+  return {
+    term,
+    phonetic: "/暂无音标/",
+    meaning: "免费词典暂时没有返回这个词的释义。你仍然可以播放发音，网站会在后续每日更新中继续补齐。",
+    example,
+    chineseExample: `原文中包含 “${term}”；可结合上下文理解。`,
+  };
+}
+
+const REMOTE_CACHE_KEY = "hmi-dictionary-cache-v2";
+
+function findCachedWord(key) {
+  try {
+    const cache = JSON.parse(localStorage.getItem(REMOTE_CACHE_KEY) || "{}");
+    return cache[key] || null;
+  } catch {
+    return null;
+  }
+}
+
+function cacheWord(key, word) {
+  try {
+    const cache = JSON.parse(localStorage.getItem(REMOTE_CACHE_KEY) || "{}");
+    cache[key] = word;
+    const entries = Object.entries(cache);
+    const trimmed = entries.length > 300 ? Object.fromEntries(entries.slice(-300)) : cache;
+    localStorage.setItem(REMOTE_CACHE_KEY, JSON.stringify(trimmed));
+  } catch {
+    // Private browsing can disable localStorage; lookup still works for this session.
+  }
+}
+
+async function lookupRemoteWord(term) {
+  const query = String(term).trim();
+  if (!query) return null;
+
+  const dictionaryUrl = `https://freedictionaryapi.com/api/v1/entries/en/${encodeURIComponent(query)}?translations=true`;
+  const dictionaryData = await fetchJsonWithTimeout(dictionaryUrl).catch(() => null);
+  const entry = dictionaryData?.entries?.find((item) => item.language?.code === "en") || dictionaryData?.entries?.[0];
+  const sense = entry?.senses?.find((item) => item.examples?.length) || entry?.senses?.[0];
+  const phonetic = entry?.pronunciations?.find((item) => item.type === "ipa")?.text || "/暂无音标/";
+  const translationTerm = extractLemma(entry) || query;
+  const translationUrl = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(translationTerm)}&langpair=en%7Czh-CN`;
+  const translationData = await fetchJsonWithTimeout(translationUrl).catch(() => null);
+  const translatedText = translationData?.responseData?.translatedText?.trim();
+
+  if (!entry && !translatedText) return null;
+
+  const meaning = translatedText
+    ? `${formatPartOfSpeech(entry?.partOfSpeech)}${translatedText}`
+    : `${formatPartOfSpeech(entry?.partOfSpeech)}${sense?.definition || "可结合原文语境理解。"}`;
+  const example = sense?.examples?.[0] || findContextExample(query);
+
+  return {
+    term: query,
+    phonetic,
+    meaning,
+    example,
+    chineseExample: `在这句话中，“${query}”可理解为“${translatedText || meaning}”。`,
+    sourceUrl: dictionaryData?.source?.url || "https://freedictionaryapi.com/",
+  };
+}
+
+function extractLemma(entry) {
+  const formSense = entry?.senses?.find((sense) => sense.tags?.includes("form of"));
+  const match = formSense?.definition?.match(/\bof ([A-Za-z][A-Za-z'-]*)[.!;]?$/i);
+  return match?.[1] || "";
+}
+
+async function fetchJsonWithTimeout(url, timeout = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    if (!response.ok) throw new Error(`Dictionary lookup failed: ${response.status}`);
+    return await response.json();
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+function formatPartOfSpeech(value = "") {
+  const labels = {
+    noun: "名词：",
+    verb: "动词：",
+    adjective: "形容词：",
+    adverb: "副词：",
+    pronoun: "代词：",
+    preposition: "介词：",
+    conjunction: "连词：",
+    interjection: "感叹词：",
+    article: "冠词：",
+    determiner: "限定词：",
+    numeral: "数词：",
+  };
+  return labels[String(value).toLowerCase()] || "";
+}
+
+function findContextExample(term) {
+  const note = state.active;
+  const candidates = [
+    ...(note?.words || []).map((word) => word.example),
+    ...(note?.sentenceBreakdowns || []).map((item) => item.sentence),
+    ...(note?.longReadings || []).flatMap((reading) => splitSentences(reading.text)),
+  ].filter(Boolean);
+  const pattern = new RegExp(`(^|[^A-Za-z])${escapeRegExp(term)}(?=$|[^A-Za-z])`, "i");
+  return candidates.find((candidate) => pattern.test(candidate)) || `${term} appears in today's HMI learning text.`;
+}
+
+function splitSentences(text = "") {
+  return String(text).match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((item) => item.trim()) || [];
+}
+
+function escapeRegExp(value = "") {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function renderClickableText(text = "") {
