@@ -1,5 +1,546 @@
 [
   {
+    "id": "2026-07-10-visual-manual-demand-context-timing",
+    "date": "2026-07-10",
+    "title": "Visual-manual demand and context-sensitive timing in cockpit tasks",
+    "topic": "智能座舱任务的视觉-手动负荷与情境化时机",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车载任务的视觉-手动负荷、触控步骤、提示时机和低干扰交互策略，适合用于中控屏 UX 评审、驾驶分心分析和智能座舱 HMI 方案讨论。",
+    "words": [
+      {
+        "term": "visual-manual demand",
+        "phonetic": "/ˈvɪʒuəl ˈmænjuəl dɪˈmænd/",
+        "meaning": "视觉-手动负荷；完成任务时需要看屏幕并动手操作所造成的注意力和操作需求",
+        "example": "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
+        "chineseExample": "当驾驶员必须浏览长菜单并点击多个控件时，视觉-手动负荷会上升。"
+      },
+      {
+        "term": "glance duration",
+        "phonetic": "/ɡlæns duˈreɪʃn/",
+        "meaning": "扫视时长；驾驶员离开道路看向界面的一次视线停留时间",
+        "example": "Shorter glance duration helps drivers return attention to the road more quickly.",
+        "chineseExample": "更短的扫视时长帮助驾驶员更快把注意力回到道路上。"
+      },
+      {
+        "term": "touch target",
+        "phonetic": "/tʌtʃ ˈtɑːrɡɪt/",
+        "meaning": "触控目标；屏幕上可点击、滑动或按压的交互区域",
+        "example": "A larger touch target can reduce input errors on a bumpy road.",
+        "chineseExample": "更大的触控目标可以减少颠簸路面上的输入错误。"
+      },
+      {
+        "term": "task simplification",
+        "phonetic": "/tæsk ˌsɪmplɪfɪˈkeɪʃn/",
+        "meaning": "任务简化；减少步骤、选项或阅读量，让车载操作更容易完成",
+        "example": "Task simplification turns a deep settings path into one clear driving-mode shortcut.",
+        "chineseExample": "任务简化可以把较深的设置路径转成一个清晰的驾驶模式快捷入口。"
+      },
+      {
+        "term": "progressive disclosure",
+        "phonetic": "/prəˈɡresɪv dɪsˈkloʊʒər/",
+        "meaning": "渐进披露；先展示必要信息，在用户需要时再展开细节",
+        "example": "Progressive disclosure keeps advanced climate options hidden until the driver asks for them.",
+        "chineseExample": "渐进披露会把高级空调选项隐藏起来，直到驾驶员需要时再显示。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶工作负荷；交通、路况和驾驶任务对注意力造成的综合压力",
+        "example": "The interface should postpone nonessential input when driving workload is high.",
+        "chineseExample": "当驾驶工作负荷较高时，界面应推迟非必要输入。"
+      },
+      {
+        "term": "context-sensitive timing",
+        "phonetic": "/ˈkɑːntekst ˈsensətɪv ˈtaɪmɪŋ/",
+        "meaning": "情境敏感的时机；根据道路、任务和用户状态选择信息出现或操作可用的时间",
+        "example": "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
+        "chineseExample": "情境敏感的时机可以把个性化提示延后到车辆停止时再出现。"
+      },
+      {
+        "term": "interaction cost",
+        "phonetic": "/ˌɪntərˈækʃn kɔːst/",
+        "meaning": "交互成本；完成界面操作所需的时间、注意力、记忆和动作代价",
+        "example": "Interaction cost should be low for functions that drivers use during motion.",
+        "chineseExample": "车辆行驶中会使用的功能，其交互成本应该较低。"
+      },
+      {
+        "term": "eyes-off-road time",
+        "phonetic": "/aɪz ɔːf roʊd taɪm/",
+        "meaning": "离路视线时间；驾驶员视线离开道路的累计时间",
+        "example": "Reducing eyes-off-road time is a core goal for cockpit task design.",
+        "chineseExample": "减少离路视线时间是座舱任务设计的核心目标。"
+      },
+      {
+        "term": "low-distraction mode",
+        "phonetic": "/loʊ dɪˈstrækʃn moʊd/",
+        "meaning": "低干扰模式；在复杂驾驶情境下降低视觉信息、动画和输入步骤的界面模式",
+        "example": "Low-distraction mode can hide secondary widgets during dense urban driving.",
+        "chineseExample": "低干扰模式可以在密集城市驾驶时隐藏次要组件。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "visual-manual demand",
+        "phonetic": "/ˈvɪʒuəl ˈmænjuəl dɪˈmænd/",
+        "meaning": "视觉-手动负荷；看屏和动手操作共同产生的负荷",
+        "example": "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
+        "chineseExample": "当驾驶员必须浏览长菜单并点击多个控件时，视觉-手动负荷会上升。"
+      },
+      {
+        "term": "driver state awareness",
+        "phonetic": "/ˈdraɪvər steɪt əˈwernəs/",
+        "meaning": "驾驶员状态感知；理解驾驶员注意力、疲劳和任务负荷",
+        "example": "Driver state awareness helps the system choose a safer moment.",
+        "chineseExample": "驾驶员状态感知帮助系统选择更安全的时机。"
+      },
+      {
+        "term": "adaptive feedback",
+        "phonetic": "/əˈdæptɪv ˈfiːdbæk/",
+        "meaning": "自适应反馈；根据场景改变反馈通道、强度或时机",
+        "example": "Adaptive feedback can make a warning calmer when the risk is low.",
+        "chineseExample": "当风险较低时，自适应反馈可以让警告更克制。"
+      },
+      {
+        "term": "voice confirmation",
+        "phonetic": "/vɔɪs ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "语音确认；用语音复核命令或关键参数",
+        "example": "Voice confirmation is useful before sending a message or changing navigation.",
+        "chineseExample": "在发送消息或更改导航前，语音确认很有用。"
+      },
+      {
+        "term": "notification priority",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn praɪˈɔːrəti/",
+        "meaning": "通知优先级；判断消息是否应立即打断用户的等级规则",
+        "example": "Notification priority keeps minor messages from interrupting a difficult maneuver.",
+        "chineseExample": "通知优先级避免小消息打断困难驾驶操作。"
+      },
+      {
+        "term": "privacy-aware personalization",
+        "phonetic": "/ˈpraɪvəsi əˈwer ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "隐私感知的个性化；在说明和保护数据的前提下提供定制体验",
+        "example": "Privacy-aware personalization should explain what data is used.",
+        "chineseExample": "隐私感知的个性化应解释使用了哪些数据。"
+      },
+      {
+        "term": "context-sensitive timing",
+        "phonetic": "/ˈkɑːntekst ˈsensətɪv ˈtaɪmɪŋ/",
+        "meaning": "情境敏感的时机；按驾驶和用户状态选择出现时机",
+        "example": "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
+        "chineseExample": "情境敏感的时机可以把个性化提示延后到车辆停止时再出现。"
+      },
+      {
+        "term": "glance duration",
+        "phonetic": "/ɡlæns duˈreɪʃn/",
+        "meaning": "扫视时长；一次看向界面的时间长度",
+        "example": "Shorter glance duration helps drivers return attention to the road more quickly.",
+        "chineseExample": "更短的扫视时长帮助驾驶员更快把注意力回到道路上。"
+      },
+      {
+        "term": "touch target",
+        "phonetic": "/tʌtʃ ˈtɑːrɡɪt/",
+        "meaning": "触控目标；屏幕上可操作的点击区域",
+        "example": "A larger touch target can reduce input errors on a bumpy road.",
+        "chineseExample": "更大的触控目标可以减少颠簸路面上的输入错误。"
+      },
+      {
+        "term": "task simplification",
+        "phonetic": "/tæsk ˌsɪmplɪfɪˈkeɪʃn/",
+        "meaning": "任务简化；减少步骤和认知负担",
+        "example": "Task simplification turns a deep settings path into one clear shortcut.",
+        "chineseExample": "任务简化可以把较深设置路径转成一个清晰快捷入口。"
+      },
+      {
+        "term": "progressive disclosure",
+        "phonetic": "/prəˈɡresɪv dɪsˈkloʊʒər/",
+        "meaning": "渐进披露；逐步展示信息和选项",
+        "example": "Progressive disclosure keeps advanced options hidden until needed.",
+        "chineseExample": "渐进披露会把高级选项隐藏到需要时再显示。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶工作负荷；驾驶任务带来的综合压力",
+        "example": "The interface should postpone nonessential input when driving workload is high.",
+        "chineseExample": "驾驶工作负荷高时，界面应推迟非必要输入。"
+      },
+      {
+        "term": "interaction cost",
+        "phonetic": "/ˌɪntərˈækʃn kɔːst/",
+        "meaning": "交互成本；完成操作的注意力和动作代价",
+        "example": "Interaction cost should be low for functions used during motion.",
+        "chineseExample": "行驶中会用到的功能交互成本应较低。"
+      },
+      {
+        "term": "eyes-off-road time",
+        "phonetic": "/aɪz ɔːf roʊd taɪm/",
+        "meaning": "离路视线时间；视线离开道路的累计时间",
+        "example": "Reducing eyes-off-road time is a core goal for cockpit task design.",
+        "chineseExample": "减少离路视线时间是座舱任务设计的核心目标。"
+      },
+      {
+        "term": "low-distraction mode",
+        "phonetic": "/loʊ dɪˈstrækʃn moʊd/",
+        "meaning": "低干扰模式；减少视觉和操作干扰的界面状态",
+        "example": "Low-distraction mode can hide secondary widgets during dense urban driving.",
+        "chineseExample": "低干扰模式可以在密集城市驾驶时隐藏次要组件。"
+      },
+      {
+        "term": "cockpit task",
+        "phonetic": "/ˈkɑːkpɪt tæsk/",
+        "meaning": "座舱任务；用户在车内界面中完成的操作",
+        "example": "A cockpit task should be short while the vehicle is moving.",
+        "chineseExample": "车辆移动时，座舱任务应保持简短。"
+      },
+      {
+        "term": "center display",
+        "phonetic": "/ˈsentər dɪˈspleɪ/",
+        "meaning": "中控屏；车辆中央的信息和控制显示区域",
+        "example": "The center display should not require long reading during motion.",
+        "chineseExample": "中控屏不应在行驶中要求长时间阅读。"
+      },
+      {
+        "term": "quick action",
+        "phonetic": "/kwɪk ˈækʃn/",
+        "meaning": "快捷操作；能快速完成的高频功能入口",
+        "example": "A quick action can replace several menu steps.",
+        "chineseExample": "快捷操作可以替代多个菜单步骤。"
+      },
+      {
+        "term": "menu depth",
+        "phonetic": "/ˈmenjuː depθ/",
+        "meaning": "菜单深度；到达功能需要进入的层级数量",
+        "example": "High menu depth increases memory load.",
+        "chineseExample": "较高的菜单深度会增加记忆负荷。"
+      },
+      {
+        "term": "input error",
+        "phonetic": "/ˈɪnpʊt ˈerər/",
+        "meaning": "输入错误；用户点击、选择或输入时发生的错误",
+        "example": "Input error is more likely when touch targets are small.",
+        "chineseExample": "触控目标较小时更容易发生输入错误。"
+      },
+      {
+        "term": "bumpy road",
+        "phonetic": "/ˈbʌmpi roʊd/",
+        "meaning": "颠簸路面；会影响触控稳定性的道路状态",
+        "example": "A bumpy road makes precise tapping harder.",
+        "chineseExample": "颠簸路面会让精确点击更困难。"
+      },
+      {
+        "term": "dense urban driving",
+        "phonetic": "/dens ˈɜːrbən ˈdraɪvɪŋ/",
+        "meaning": "密集城市驾驶；交通参与者多、变化快的城市路况",
+        "example": "Dense urban driving leaves less attention for browsing.",
+        "chineseExample": "密集城市驾驶留给浏览界面的注意力更少。"
+      },
+      {
+        "term": "nonessential",
+        "phonetic": "/ˌnɑːnɪˈsenʃl/",
+        "meaning": "非必要的；不是当前安全或任务必须的",
+        "example": "Nonessential content can wait until the car stops.",
+        "chineseExample": "非必要内容可以等车辆停止后再显示。"
+      },
+      {
+        "term": "critical",
+        "phonetic": "/ˈkrɪtɪkl/",
+        "meaning": "关键的；对安全或任务成功很重要的",
+        "example": "Critical warnings should stay clear and visible.",
+        "chineseExample": "关键警告应保持清晰可见。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/klɪr/",
+        "meaning": "清晰的；容易理解和识别的",
+        "example": "Clear labels reduce hesitation.",
+        "chineseExample": "清晰标签可以减少犹豫。"
+      },
+      {
+        "term": "simple",
+        "phonetic": "/ˈsɪmpl/",
+        "meaning": "简单的；步骤少、理解成本低的",
+        "example": "Simple wording works better under pressure.",
+        "chineseExample": "压力下简单措辞效果更好。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/ˈjuːsfl/",
+        "meaning": "有用的；能帮助完成目标的",
+        "example": "A useful prompt appears at the right moment.",
+        "chineseExample": "有用的提示会在合适时机出现。"
+      },
+      {
+        "term": "helps",
+        "phonetic": "/helps/",
+        "meaning": "帮助；使某事更容易或更可靠",
+        "example": "A larger target helps the driver tap accurately.",
+        "chineseExample": "更大的目标帮助驾驶员准确点击。"
+      },
+      {
+        "term": "decide",
+        "phonetic": "/dɪˈsaɪd/",
+        "meaning": "决定；在多个选项中选择",
+        "example": "The system can decide whether to show the prompt now.",
+        "chineseExample": "系统可以决定是否现在显示提示。"
+      },
+      {
+        "term": "whether",
+        "phonetic": "/ˈweðər/",
+        "meaning": "是否；用于表达两个可能情况",
+        "example": "Designers should test whether the task can wait.",
+        "chineseExample": "设计师应测试该任务是否可以等待。"
+      },
+      {
+        "term": "because",
+        "phonetic": "/bɪˈkɔːz/",
+        "meaning": "因为；引出原因",
+        "example": "The prompt is delayed because traffic is complex.",
+        "chineseExample": "由于交通复杂，提示被延后。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/wen/",
+        "meaning": "当……时；表示时间或条件",
+        "example": "The system changes behavior when workload rises.",
+        "chineseExample": "当负荷升高时，系统会改变行为。"
+      },
+      {
+        "term": "during",
+        "phonetic": "/ˈdʊrɪŋ/",
+        "meaning": "在……期间；表示某段时间内",
+        "example": "Detailed settings should be hidden during motion.",
+        "chineseExample": "行驶期间应隐藏详细设置。"
+      },
+      {
+        "term": "while",
+        "phonetic": "/waɪl/",
+        "meaning": "当……的时候；强调同时发生",
+        "example": "The task should be short while the driver is moving.",
+        "chineseExample": "驾驶员行驶时，任务应简短。"
+      },
+      {
+        "term": "reduce",
+        "phonetic": "/rɪˈduːs/",
+        "meaning": "减少；降低数量、强度或负担",
+        "example": "Good layout can reduce visual search.",
+        "chineseExample": "良好布局可以减少视觉搜索。"
+      },
+      {
+        "term": "scan",
+        "phonetic": "/skæn/",
+        "meaning": "扫视；快速浏览以寻找信息",
+        "example": "Drivers should not scan a long list in traffic.",
+        "chineseExample": "驾驶员不应在交通中扫视长列表。"
+      },
+      {
+        "term": "tap",
+        "phonetic": "/tæp/",
+        "meaning": "轻点；用手指点击触控界面",
+        "example": "The driver can tap one shortcut instead of opening a submenu.",
+        "chineseExample": "驾驶员可以点击一个快捷入口，而不是打开子菜单。"
+      },
+      {
+        "term": "several",
+        "phonetic": "/ˈsevrəl/",
+        "meaning": "几个；多于两个但数量不大",
+        "example": "Several controls can be grouped into one mode.",
+        "chineseExample": "几个控件可以合并为一个模式。"
+      },
+      {
+        "term": "controls",
+        "phonetic": "/kənˈtroʊlz/",
+        "meaning": "控件；按钮、滑块、开关等交互元素",
+        "example": "Important controls should be easy to reach.",
+        "chineseExample": "重要控件应容易触达。"
+      },
+      {
+        "term": "return",
+        "phonetic": "/rɪˈtɜːrn/",
+        "meaning": "返回；回到原来的对象或状态",
+        "example": "The driver should return attention to the road quickly.",
+        "chineseExample": "驾驶员应快速把注意力回到道路上。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户分配给道路或界面的认知资源",
+        "example": "Attention is limited during complex traffic.",
+        "chineseExample": "复杂交通中注意力是有限的。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/roʊd/",
+        "meaning": "道路；车辆行驶环境",
+        "example": "The road should remain the main focus.",
+        "chineseExample": "道路应始终是主要关注点。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；智能座舱所在的移动平台",
+        "example": "The vehicle can wait to show secondary content.",
+        "chineseExample": "车辆可以等待再显示次要内容。"
+      },
+      {
+        "term": "stopped",
+        "phonetic": "/stɑːpt/",
+        "meaning": "停止的；车辆不再移动的状态",
+        "example": "Complex setup is safer when the vehicle is stopped.",
+        "chineseExample": "车辆停止时进行复杂设置更安全。"
+      },
+      {
+        "term": "moving",
+        "phonetic": "/ˈmuːvɪŋ/",
+        "meaning": "移动中的；车辆正在行驶",
+        "example": "Fewer choices are better when the car is moving.",
+        "chineseExample": "车辆移动时，更少选项更合适。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统给用户的信息或操作引导",
+        "example": "A prompt should not cover the map at a critical moment.",
+        "chineseExample": "提示不应在关键时刻遮挡地图。"
+      },
+      {
+        "term": "prompting",
+        "phonetic": "/ˈprɑːmptɪŋ/",
+        "meaning": "提示行为；系统发起引导、询问或提醒",
+        "example": "Prompting should match the driver situation.",
+        "chineseExample": "提示行为应匹配驾驶员情境。"
+      },
+      {
+        "term": "postpone",
+        "phonetic": "/poʊˈspoʊn/",
+        "meaning": "推迟；把某事延后到更合适的时间",
+        "example": "The assistant can postpone a survey request.",
+        "chineseExample": "助手可以推迟问卷请求。"
+      },
+      {
+        "term": "delay",
+        "phonetic": "/dɪˈleɪ/",
+        "meaning": "延后；不立即发生",
+        "example": "Delay the card until the lane change is complete.",
+        "chineseExample": "把卡片延后到变道完成后再显示。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/əˈveɪləbl/",
+        "meaning": "可用的；可以被访问或操作的",
+        "example": "Some options should be available only at a stop.",
+        "chineseExample": "某些选项应只在停车时可用。"
+      },
+      {
+        "term": "hidden",
+        "phonetic": "/ˈhɪdn/",
+        "meaning": "隐藏的；暂时不显示",
+        "example": "Advanced settings can stay hidden during driving.",
+        "chineseExample": "高级设置可以在驾驶时保持隐藏。"
+      },
+      {
+        "term": "secondary",
+        "phonetic": "/ˈsekənderi/",
+        "meaning": "次要的；优先级低于当前主任务的",
+        "example": "Secondary widgets should not compete with navigation.",
+        "chineseExample": "次要组件不应与导航争夺注意力。"
+      },
+      {
+        "term": "shortcut",
+        "phonetic": "/ˈʃɔːrtkʌt/",
+        "meaning": "快捷入口；减少路径和步骤的操作方式",
+        "example": "A shortcut can make a frequent task safer.",
+        "chineseExample": "快捷入口可以让高频任务更安全。"
+      },
+      {
+        "term": "settings path",
+        "phonetic": "/ˈsetɪŋz pæθ/",
+        "meaning": "设置路径；到达某项设置所经过的页面层级",
+        "example": "A long settings path is hard to use while driving.",
+        "chineseExample": "较长设置路径在驾驶时很难使用。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃn/",
+        "meaning": "选项；可供用户选择的项目",
+        "example": "Too many options increase decision time.",
+        "chineseExample": "过多选项会增加决策时间。"
+      },
+      {
+        "term": "target",
+        "phonetic": "/ˈtɑːrɡɪt/",
+        "meaning": "目标；用户需要点击或关注的对象",
+        "example": "The target should be large enough for quick input.",
+        "chineseExample": "目标应足够大，便于快速输入。"
+      },
+      {
+        "term": "demand",
+        "phonetic": "/dɪˈmænd/",
+        "meaning": "需求；任务对注意力或动作提出的要求",
+        "example": "High demand tasks should wait.",
+        "chineseExample": "高需求任务应该等待。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Reducing visual-manual demand in cockpit tasks",
+        "source": {
+          "name": "Original practice text",
+          "url": ""
+        },
+        "text": "In an intelligent cockpit, every screen task has a visual-manual demand. The driver must look, understand, decide, and often tap a control while the vehicle is still moving. A useful HMI does not ask for the same level of effort in every situation. When traffic is light and the road is straight, a short climate adjustment or media choice may be acceptable. When the driver is turning, merging, or following dense navigation guidance, the system should reduce options, postpone nonessential prompting, or move the task to voice. Designers can lower demand by using larger touch targets, clear labels, and quick actions for frequent tasks. They can also use progressive disclosure, so secondary settings stay hidden until the vehicle is stopped or the driver clearly asks for them. Context-sensitive timing is critical because a simple card can become distracting at the wrong moment. The team should review glance duration, eyes-off-road time, and input errors during real driving scenarios, not only in a static prototype. Privacy-aware personalization can help decide which shortcut appears first, but it should explain why the shortcut is shown. Good cockpit task design balances speed, clarity, safety, and trust. It helps the driver complete useful actions without making the interface compete with the road.",
+        "translation": "在智能座舱中，每一个屏幕任务都有视觉-手动负荷。驾驶员必须看、理解、决定，并且常常要在车辆仍在移动时点击控件。有用的 HMI 不会在所有情境下要求同样的努力程度。当交通较轻、道路笔直时，简短的空调调整或媒体选择可能可以接受。当驾驶员正在转弯、并线或跟随密集导航引导时，系统应减少选项、推迟非必要提示，或把任务转移到语音。设计师可以通过更大的触控目标、清晰标签和高频任务快捷入口来降低负荷。也可以使用渐进披露，让次要设置保持隐藏，直到车辆停止或驾驶员明确提出需求。情境敏感的时机很关键，因为一个简单卡片在错误时刻也会变得分心。团队应在真实驾驶场景中评审扫视时长、离路视线时间和输入错误，而不仅仅是在静态原型中评审。隐私感知的个性化可以帮助决定哪个快捷入口优先出现，但它应解释为什么显示该入口。好的座舱任务设计会平衡速度、清晰度、安全和信任。它帮助驾驶员完成有用操作，同时不让界面与道路争夺注意力。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "In an intelligent cockpit, every screen task has a visual-manual demand.",
+        "structure": "介词短语 In an intelligent cockpit 作场景状语，主语 every screen task + 谓语 has + 宾语 a visual-manual demand。",
+        "focus": "用 every 强调所有屏幕任务都需要评估负荷，visual-manual demand 是核心专业名词。",
+        "pattern": "In a cockpit, every task has a specific user demand."
+      },
+      {
+        "sentence": "When traffic is light and the road is straight, a short climate adjustment or media choice may be acceptable.",
+        "structure": "When 引导时间/条件从句，主句用 may be acceptable 表达有条件的可接受性。",
+        "focus": "may be acceptable 适合在评审中表达“不是绝对允许，而是取决于情境”。",
+        "pattern": "When context is A, a short task may be acceptable."
+      },
+      {
+        "sentence": "Designers can lower demand by using larger touch targets, clear labels, and quick actions for frequent tasks.",
+        "structure": "主语 Designers + 情态动词 can + 谓语 lower + 宾语 demand，by using 后接三个并列方法。",
+        "focus": "by using 用来说明设计手段，larger touch targets、clear labels、quick actions 是可替换的方法清单。",
+        "pattern": "Designers can lower demand by using A, B, and C."
+      },
+      {
+        "sentence": "Context-sensitive timing is critical because a simple card can become distracting at the wrong moment.",
+        "structure": "主句 Context-sensitive timing is critical + because 原因从句，说明为什么时机重要。",
+        "focus": "because 从句把抽象原则连接到具体风险：简单卡片也可能在错误时机造成分心。",
+        "pattern": "A design rule is critical because a small element can create risk at the wrong moment."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 visual-manual demand、glance duration、touch target、context-sensitive timing、eyes-off-road time；每个词后复述英文例句，并说出对应的座舱设计场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先完整听读长文，再按句跟读；重点练习 must look, understand, decide、When traffic is light、Designers can lower demand by using... 的节奏。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "detail": "选择 3 条 sentenceBreakdowns，标出主语、条件从句、because 原因从句和 by using 方法结构，再替换成自己的中控屏任务评审句。"
+      },
+      {
+        "title": "口头复述与改写",
+        "time": "5-8 分钟",
+        "detail": "用 60 秒说明如何降低一个空调或导航设置任务的视觉-手动负荷，至少使用 context-sensitive timing、touch target、progressive disclosure 和 low-distraction mode。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-09-driver-state-adaptive-feedback",
     "date": "2026-07-09",
     "title": "Driver state awareness and adaptive feedback in the intelligent cockpit",
