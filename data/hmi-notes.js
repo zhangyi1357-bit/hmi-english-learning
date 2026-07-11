@@ -1,5 +1,938 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-11-cross-screen-information-hierarchy",
+    "date": "2026-07-11",
+    "title": "Cross-screen information hierarchy and continuity in intelligent cockpits",
+    "topic": "智能座舱多屏信息层级与跨屏连续性",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述仪表屏、中控屏、HUD 与副驾屏之间的信息层级、任务转移、视觉一致性和跨屏连续性，适合用于智能座舱多屏 UX 评审和 HMI 方案汇报。",
+    "words": [
+      {
+        "term": "cross-screen continuity",
+        "phonetic": "/krɔːs skriːn ˌkɑːntəˈnuːəti/",
+        "meaning": "跨屏连续性；用户在多个座舱屏幕之间切换任务时，信息、状态和操作逻辑保持连贯",
+        "example": "Cross-screen continuity helps drivers understand why a navigation alert moves from the center display to the cluster.",
+        "chineseExample": "跨屏连续性帮助驾驶员理解为什么导航提醒会从中控屏转移到仪表屏。"
+      },
+      {
+        "term": "information hierarchy",
+        "phonetic": "/ˌɪnfərˈmeɪʃn ˈhaɪərɑːrki/",
+        "meaning": "信息层级；按照重要性、时效性和使用场景组织界面内容的结构",
+        "example": "A clear information hierarchy keeps speed, warnings, and route changes above entertainment details.",
+        "chineseExample": "清晰的信息层级会让车速、警告和路线变化优先于娱乐细节。"
+      },
+      {
+        "term": "display handoff",
+        "phonetic": "/dɪˈspleɪ ˈhændɔːf/",
+        "meaning": "屏幕交接；任务或提示从一个显示区域转移到另一个显示区域的过程",
+        "example": "The display handoff should preserve context when a parking view expands from the cluster to the center display.",
+        "chineseExample": "当泊车视图从仪表屏扩展到中控屏时，屏幕交接应保留上下文。"
+      },
+      {
+        "term": "primary display",
+        "phonetic": "/ˈpraɪmeri dɪˈspleɪ/",
+        "meaning": "主显示屏；在特定任务中承载最高优先级信息和关键操作的屏幕",
+        "example": "For lane guidance, the primary display may be the cluster rather than the passenger screen.",
+        "chineseExample": "对于车道引导，主显示屏可能是仪表屏，而不是副驾屏。"
+      },
+      {
+        "term": "secondary surface",
+        "phonetic": "/ˈsekənderi ˈsɜːrfɪs/",
+        "meaning": "次级显示表面；用于补充信息、预览或非关键操作的屏幕区域",
+        "example": "A secondary surface can show media artwork without competing with safety-critical content.",
+        "chineseExample": "次级显示表面可以展示媒体封面，同时不与安全关键内容竞争。"
+      },
+      {
+        "term": "context preservation",
+        "phonetic": "/ˈkɑːntekst ˌprezərˈveɪʃn/",
+        "meaning": "上下文保留；跨屏切换后继续呈现任务来源、当前状态和下一步操作",
+        "example": "Context preservation reduces confusion when the driver resumes a route search after a voice prompt.",
+        "chineseExample": "语音提示后驾驶员继续路线搜索时，上下文保留可以减少困惑。"
+      },
+      {
+        "term": "visual consistency",
+        "phonetic": "/ˈvɪʒuəl kənˈsɪstənsi/",
+        "meaning": "视觉一致性；不同屏幕在颜色、图标、文案和状态表达上保持统一",
+        "example": "Visual consistency makes the same climate state recognizable on the center display and the rear control panel.",
+        "chineseExample": "视觉一致性让同一个空调状态在中控屏和后排控制面板上都容易识别。"
+      },
+      {
+        "term": "attention routing",
+        "phonetic": "/əˈtenʃn ˈruːtɪŋ/",
+        "meaning": "注意力路由；把用户注意力引导到最合适的屏幕、通道或操作位置",
+        "example": "Attention routing should guide the driver toward the cluster for urgent driving information.",
+        "chineseExample": "注意力路由应把驾驶员引导到仪表屏查看紧急驾驶信息。"
+      },
+      {
+        "term": "status mirroring",
+        "phonetic": "/ˈsteɪtəs ˈmɪrərɪŋ/",
+        "meaning": "状态镜像；在多个屏幕上同步显示关键状态，避免用户误解系统当前动作",
+        "example": "Status mirroring can show that a phone call is active on both the center display and the passenger display.",
+        "chineseExample": "状态镜像可以在中控屏和副驾屏同时显示通话正在进行。"
+      },
+      {
+        "term": "spatial mapping",
+        "phonetic": "/ˈspeɪʃl ˈmæpɪŋ/",
+        "meaning": "空间映射；让屏幕位置、信息位置和车辆空间关系形成直观对应",
+        "example": "Spatial mapping helps users connect a left-side blind-spot warning with the left edge of the cluster.",
+        "chineseExample": "空间映射帮助用户把左侧盲区警告与仪表屏左边缘联系起来。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "cross-screen continuity",
+        "phonetic": "/krɔːs skriːn ˌkɑːntəˈnuːəti/",
+        "meaning": "跨屏连续性；多屏之间的信息和任务体验保持连贯",
+        "example": "Cross-screen continuity helps drivers understand why a navigation alert moves from the center display to the cluster.",
+        "chineseExample": "跨屏连续性帮助驾驶员理解为什么导航提醒会从中控屏转移到仪表屏。"
+      },
+      {
+        "term": "cross-screen",
+        "phonetic": "/krɔːs skriːn/",
+        "meaning": "跨屏的；涉及两个或更多显示区域",
+        "example": "A cross-screen pattern should feel predictable.",
+        "chineseExample": "跨屏模式应让人感觉可预测。"
+      },
+      {
+        "term": "continuity",
+        "phonetic": "/ˌkɑːntəˈnuːəti/",
+        "meaning": "连续性；体验或状态的连贯延续",
+        "example": "Continuity reduces the effort of switching displays.",
+        "chineseExample": "连续性降低切换屏幕的理解成本。"
+      },
+      {
+        "term": "information hierarchy",
+        "phonetic": "/ˌɪnfərˈmeɪʃn ˈhaɪərɑːrki/",
+        "meaning": "信息层级；按优先级组织信息的结构",
+        "example": "A clear information hierarchy keeps warnings above entertainment details.",
+        "chineseExample": "清晰的信息层级让警告优先于娱乐细节。"
+      },
+      {
+        "term": "hierarchy",
+        "phonetic": "/ˈhaɪərɑːrki/",
+        "meaning": "层级；按重要性排列的结构",
+        "example": "Hierarchy helps teams decide what appears first.",
+        "chineseExample": "层级帮助团队决定什么先出现。"
+      },
+      {
+        "term": "display handoff",
+        "phonetic": "/dɪˈspleɪ ˈhændɔːf/",
+        "meaning": "屏幕交接；内容或任务在屏幕间转移",
+        "example": "The display handoff should preserve context.",
+        "chineseExample": "屏幕交接应保留上下文。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "交接；任务控制权或信息焦点的转移",
+        "example": "A handoff needs a clear visual cue.",
+        "chineseExample": "交接需要清晰的视觉提示。"
+      },
+      {
+        "term": "primary display",
+        "phonetic": "/ˈpraɪmeri dɪˈspleɪ/",
+        "meaning": "主显示屏；承载关键任务的主要屏幕",
+        "example": "The cluster may become the primary display for lane guidance.",
+        "chineseExample": "仪表屏可能成为车道引导的主显示屏。"
+      },
+      {
+        "term": "secondary surface",
+        "phonetic": "/ˈsekənderi ˈsɜːrfɪs/",
+        "meaning": "次级显示表面；承载补充内容的屏幕区域",
+        "example": "A secondary surface can show media artwork.",
+        "chineseExample": "次级显示表面可以展示媒体封面。"
+      },
+      {
+        "term": "context preservation",
+        "phonetic": "/ˈkɑːntekst ˌprezərˈveɪʃn/",
+        "meaning": "上下文保留；切换后保持任务状态和来源清晰",
+        "example": "Context preservation reduces confusion after a voice prompt.",
+        "chineseExample": "上下文保留减少语音提示后的困惑。"
+      },
+      {
+        "term": "preservation",
+        "phonetic": "/ˌprezərˈveɪʃn/",
+        "meaning": "保留；维持某个信息或状态",
+        "example": "Preservation of context supports task recovery.",
+        "chineseExample": "上下文保留支持任务恢复。"
+      },
+      {
+        "term": "visual consistency",
+        "phonetic": "/ˈvɪʒuəl kənˈsɪstənsi/",
+        "meaning": "视觉一致性；颜色、图标、状态和文案保持统一",
+        "example": "Visual consistency makes the climate state recognizable.",
+        "chineseExample": "视觉一致性让空调状态更易识别。"
+      },
+      {
+        "term": "consistency",
+        "phonetic": "/kənˈsɪstənsi/",
+        "meaning": "一致性；规则和表现稳定统一",
+        "example": "Consistency helps drivers transfer learning across screens.",
+        "chineseExample": "一致性帮助驾驶员在屏幕间迁移经验。"
+      },
+      {
+        "term": "attention routing",
+        "phonetic": "/əˈtenʃn ˈruːtɪŋ/",
+        "meaning": "注意力路由；引导用户看向合适位置",
+        "example": "Attention routing should guide the driver toward urgent information.",
+        "chineseExample": "注意力路由应引导驾驶员查看紧急信息。"
+      },
+      {
+        "term": "routing",
+        "phonetic": "/ˈruːtɪŋ/",
+        "meaning": "路由；把信息或注意力导向目标位置",
+        "example": "Routing changes when workload is high.",
+        "chineseExample": "负荷高时路由会改变。"
+      },
+      {
+        "term": "status mirroring",
+        "phonetic": "/ˈsteɪtəs ˈmɪrərɪŋ/",
+        "meaning": "状态镜像；在多屏同步显示关键状态",
+        "example": "Status mirroring can show that a call is active.",
+        "chineseExample": "状态镜像可以显示通话正在进行。"
+      },
+      {
+        "term": "mirroring",
+        "phonetic": "/ˈmɪrərɪŋ/",
+        "meaning": "镜像；在另一处同步呈现相同状态",
+        "example": "Mirroring avoids conflicting system feedback.",
+        "chineseExample": "镜像避免系统反馈冲突。"
+      },
+      {
+        "term": "spatial mapping",
+        "phonetic": "/ˈspeɪʃl ˈmæpɪŋ/",
+        "meaning": "空间映射；让屏幕位置与车辆空间关系对应",
+        "example": "Spatial mapping links the warning with the left edge of the cluster.",
+        "chineseExample": "空间映射把警告与仪表屏左边缘联系起来。"
+      },
+      {
+        "term": "mapping",
+        "phonetic": "/ˈmæpɪŋ/",
+        "meaning": "映射；建立两个对象之间的对应关系",
+        "example": "Mapping makes an abstract alert easier to locate.",
+        "chineseExample": "映射让抽象提醒更容易定位。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "仪表屏；驾驶员前方显示速度、状态和驾驶信息的区域",
+        "example": "The cluster carries driving-critical information.",
+        "chineseExample": "仪表屏承载驾驶关键的信息。"
+      },
+      {
+        "term": "center display",
+        "phonetic": "/ˈsentər dɪˈspleɪ/",
+        "meaning": "中控屏；座舱中央的主要交互屏幕",
+        "example": "The center display is useful for route search and media control.",
+        "chineseExample": "中控屏适合路线搜索和媒体控制。"
+      },
+      {
+        "term": "head-up display",
+        "phonetic": "/hed ʌp dɪˈspleɪ/",
+        "meaning": "抬头显示；把关键信息投射到驾驶员视线附近",
+        "example": "A head-up display should show only the most time-critical content.",
+        "chineseExample": "抬头显示应只展示最具时效性的内容。"
+      },
+      {
+        "term": "passenger display",
+        "phonetic": "/ˈpæsəndʒər dɪˈspleɪ/",
+        "meaning": "副驾屏；面向前排乘客的显示屏",
+        "example": "The passenger display can support entertainment and trip planning.",
+        "chineseExample": "副驾屏可以支持娱乐和行程规划。"
+      },
+      {
+        "term": "rear control panel",
+        "phonetic": "/rɪr kənˈtroʊl ˈpænl/",
+        "meaning": "后排控制面板；后排乘客操作空调、座椅或媒体的屏幕",
+        "example": "The rear control panel should use the same climate terms.",
+        "chineseExample": "后排控制面板应使用相同的空调术语。"
+      },
+      {
+        "term": "urgent information",
+        "phonetic": "/ˈɜːrdʒənt ˌɪnfərˈmeɪʃn/",
+        "meaning": "紧急信息；需要立即理解和处理的信息",
+        "example": "Urgent information belongs near the driver sightline.",
+        "chineseExample": "紧急信息应靠近驾驶员视线。"
+      },
+      {
+        "term": "driving-critical",
+        "phonetic": "/ˈdraɪvɪŋ ˈkrɪtɪkl/",
+        "meaning": "驾驶关键的；直接影响驾驶安全或控制的信息",
+        "example": "Driving-critical warnings should not appear only on a distant screen.",
+        "chineseExample": "驾驶关键警告不应只出现在远处屏幕上。"
+      },
+      {
+        "term": "safety-critical",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl/",
+        "meaning": "安全关键的；与安全风险直接相关",
+        "example": "Safety-critical content needs strong priority.",
+        "chineseExample": "安全关键内容需要高优先级。"
+      },
+      {
+        "term": "task ownership",
+        "phonetic": "/tæsk ˈoʊnərʃɪp/",
+        "meaning": "任务归属；明确哪个屏幕负责当前任务",
+        "example": "Task ownership prevents duplicate controls from fighting for attention.",
+        "chineseExample": "任务归属避免重复控件争夺注意力。"
+      },
+      {
+        "term": "duplicate controls",
+        "phonetic": "/ˈduːplɪkət kənˈtroʊlz/",
+        "meaning": "重复控件；多个屏幕上功能相同或相近的控制项",
+        "example": "Duplicate controls need synchronized states.",
+        "chineseExample": "重复控件需要同步状态。"
+      },
+      {
+        "term": "synchronized state",
+        "phonetic": "/ˈsɪŋkrənaɪzd steɪt/",
+        "meaning": "同步状态；不同屏幕显示同一系统状态",
+        "example": "Synchronized state keeps passengers and drivers aligned.",
+        "chineseExample": "同步状态让乘客和驾驶员保持一致。"
+      },
+      {
+        "term": "route change",
+        "phonetic": "/ruːt tʃeɪndʒ/",
+        "meaning": "路线变化；导航路径或引导方向发生改变",
+        "example": "A route change should be visible in the cluster.",
+        "chineseExample": "路线变化应在仪表屏可见。"
+      },
+      {
+        "term": "lane guidance",
+        "phonetic": "/leɪn ˈɡaɪdəns/",
+        "meaning": "车道引导；提示驾驶员选择或保持正确车道的信息",
+        "example": "Lane guidance needs a stable position near the driving view.",
+        "chineseExample": "车道引导需要在驾驶视野附近保持稳定位置。"
+      },
+      {
+        "term": "parking view",
+        "phonetic": "/ˈpɑːrkɪŋ vjuː/",
+        "meaning": "泊车视图；用于泊车辅助的摄像头或环境显示",
+        "example": "A parking view may expand to the center display.",
+        "chineseExample": "泊车视图可以扩展到中控屏。"
+      },
+      {
+        "term": "route search",
+        "phonetic": "/ruːt sɜːrtʃ/",
+        "meaning": "路线搜索；查找目的地或导航路径的任务",
+        "example": "Route search often starts on the center display.",
+        "chineseExample": "路线搜索通常从中控屏开始。"
+      },
+      {
+        "term": "voice prompt",
+        "phonetic": "/vɔɪs prɑːmpt/",
+        "meaning": "语音提示；系统用语音引导用户确认或继续操作",
+        "example": "A voice prompt can explain the next step.",
+        "chineseExample": "语音提示可以解释下一步。"
+      },
+      {
+        "term": "visual cue",
+        "phonetic": "/ˈvɪʒuəl kjuː/",
+        "meaning": "视觉提示；用颜色、动效、位置或图标引导理解",
+        "example": "A visual cue shows where the task moved.",
+        "chineseExample": "视觉提示显示任务移动到了哪里。"
+      },
+      {
+        "term": "state indicator",
+        "phonetic": "/steɪt ˈɪndɪkeɪtər/",
+        "meaning": "状态指示器；显示系统当前状态的小型元素",
+        "example": "A state indicator can confirm that navigation is active.",
+        "chineseExample": "状态指示器可以确认导航正在进行。"
+      },
+      {
+        "term": "transition animation",
+        "phonetic": "/trænˈzɪʃn ˌænɪˈmeɪʃn/",
+        "meaning": "转场动画；用于表达界面或任务转移的动画",
+        "example": "A transition animation can make a display handoff understandable.",
+        "chineseExample": "转场动画可以让屏幕交接更容易理解。"
+      },
+      {
+        "term": "predictable placement",
+        "phonetic": "/prɪˈdɪktəbl ˈpleɪsmənt/",
+        "meaning": "可预测的位置；控件或信息稳定出现在用户预期的位置",
+        "example": "Predictable placement lowers search time.",
+        "chineseExample": "可预测的位置减少查找时间。"
+      },
+      {
+        "term": "search time",
+        "phonetic": "/sɜːrtʃ taɪm/",
+        "meaning": "查找时间；用户找到目标信息或控件所需时间",
+        "example": "Lower search time supports safer interaction.",
+        "chineseExample": "更低的查找时间支持更安全的交互。"
+      },
+      {
+        "term": "mental model",
+        "phonetic": "/ˈmentl ˈmɑːdl/",
+        "meaning": "心智模型；用户对系统如何工作的理解",
+        "example": "A stable mental model helps users predict screen behavior.",
+        "chineseExample": "稳定的心智模型帮助用户预测屏幕行为。"
+      },
+      {
+        "term": "interaction pattern",
+        "phonetic": "/ˌɪntərˈækʃn ˈpætərn/",
+        "meaning": "交互模式；可重复使用的操作和反馈规则",
+        "example": "The same interaction pattern should work across displays.",
+        "chineseExample": "相同交互模式应能跨屏使用。"
+      },
+      {
+        "term": "design review",
+        "phonetic": "/dɪˈzaɪn rɪˈvjuː/",
+        "meaning": "设计评审；团队检查方案逻辑和风险的过程",
+        "example": "A design review should include cross-screen scenarios.",
+        "chineseExample": "设计评审应包含跨屏场景。"
+      },
+      {
+        "term": "scenario walkthrough",
+        "phonetic": "/səˈnærioʊ ˈwɔːkθruː/",
+        "meaning": "场景走查；按真实任务流程检查体验",
+        "example": "A scenario walkthrough reveals broken continuity.",
+        "chineseExample": "场景走查会暴露连续性断点。"
+      },
+      {
+        "term": "broken continuity",
+        "phonetic": "/ˈbroʊkən ˌkɑːntəˈnuːəti/",
+        "meaning": "连续性断点；用户无法理解任务如何延续的地方",
+        "example": "Broken continuity appears when the next screen loses context.",
+        "chineseExample": "当下一个屏幕丢失上下文时，会出现连续性断点。"
+      },
+      {
+        "term": "competing display",
+        "phonetic": "/kəmˈpiːtɪŋ dɪˈspleɪ/",
+        "meaning": "竞争显示；与关键屏幕争夺注意力的显示内容",
+        "example": "A competing display can distract from a warning.",
+        "chineseExample": "竞争显示可能分散对警告的注意。"
+      },
+      {
+        "term": "destination detail",
+        "phonetic": "/ˌdestɪˈneɪʃn ˈdiːteɪl/",
+        "meaning": "目的地详情；导航目的地相关的补充信息",
+        "example": "Destination detail can stay on the center display.",
+        "chineseExample": "目的地详情可以留在中控屏。"
+      },
+      {
+        "term": "trip planning",
+        "phonetic": "/trɪp ˈplænɪŋ/",
+        "meaning": "行程规划；选择目的地、路线和停靠点的任务",
+        "example": "Trip planning can move to the passenger display when appropriate.",
+        "chineseExample": "合适时行程规划可以转到副驾屏。"
+      },
+      {
+        "term": "media artwork",
+        "phonetic": "/ˈmiːdiə ˈɑːrtwɜːrk/",
+        "meaning": "媒体封面；音乐、播客或视频内容的视觉封面",
+        "example": "Media artwork should not overpower route guidance.",
+        "chineseExample": "媒体封面不应压过路线引导。"
+      },
+      {
+        "term": "blind-spot warning",
+        "phonetic": "/blaɪnd spɑːt ˈwɔːrnɪŋ/",
+        "meaning": "盲区警告；提醒侧后方盲区风险的信息",
+        "example": "A blind-spot warning should align with vehicle direction.",
+        "chineseExample": "盲区警告应与车辆方向对齐。"
+      },
+      {
+        "term": "left edge",
+        "phonetic": "/left edʒ/",
+        "meaning": "左边缘；界面或屏幕的左侧边界",
+        "example": "The left edge can represent the left side of the vehicle.",
+        "chineseExample": "左边缘可以代表车辆左侧。"
+      },
+      {
+        "term": "recognizable",
+        "phonetic": "/ˈrekəɡnaɪzəbl/",
+        "meaning": "可识别的；容易看出其含义或状态",
+        "example": "The climate state should be recognizable across displays.",
+        "chineseExample": "空调状态在多屏上都应可识别。"
+      },
+      {
+        "term": "predictable",
+        "phonetic": "/prɪˈdɪktəbl/",
+        "meaning": "可预测的；用户能预期其位置或行为",
+        "example": "Predictable behavior builds trust.",
+        "chineseExample": "可预测行为建立信任。"
+      },
+      {
+        "term": "alignment",
+        "phonetic": "/əˈlaɪnmənt/",
+        "meaning": "对齐；信息、位置或规则保持协调一致",
+        "example": "Alignment between screens reduces interpretation effort.",
+        "chineseExample": "屏幕之间的对齐减少理解成本。"
+      },
+      {
+        "term": "above",
+        "phonetic": "/əˈbʌv/",
+        "meaning": "在……之上；优先于",
+        "example": "Warnings should appear above entertainment details.",
+        "chineseExample": "警告应优先于娱乐细节。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/prɪˈzɜːrv/",
+        "meaning": "保留；维持",
+        "example": "The interface should preserve context.",
+        "chineseExample": "界面应保留上下文。"
+      },
+      {
+        "term": "parking",
+        "phonetic": "/ˈpɑːrkɪŋ/",
+        "meaning": "泊车；停车相关的",
+        "example": "Parking information can move to the center display.",
+        "chineseExample": "泊车信息可以转移到中控屏。"
+      },
+      {
+        "term": "expands",
+        "phonetic": "/ɪkˈspændz/",
+        "meaning": "扩展；展开",
+        "example": "The parking view expands to a larger display.",
+        "chineseExample": "泊车视图扩展到更大的屏幕。"
+      },
+      {
+        "term": "primary",
+        "phonetic": "/ˈpraɪmeri/",
+        "meaning": "主要的；优先的",
+        "example": "The primary display owns the critical task.",
+        "chineseExample": "主显示屏负责关键任务。"
+      },
+      {
+        "term": "rather",
+        "phonetic": "/ˈræðər/",
+        "meaning": "而是；宁可",
+        "example": "The cluster may be primary rather than secondary.",
+        "chineseExample": "仪表屏可能是主要屏幕，而不是次级屏幕。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/ˈpæsəndʒər/",
+        "meaning": "乘客；副驾相关的",
+        "example": "The passenger display supports trip planning.",
+        "chineseExample": "副驾屏支持行程规划。"
+      },
+      {
+        "term": "surface",
+        "phonetic": "/ˈsɜːrfɪs/",
+        "meaning": "表面；显示区域",
+        "example": "A secondary surface can hold supporting content.",
+        "chineseExample": "次级显示表面可以承载辅助内容。"
+      },
+      {
+        "term": "artwork",
+        "phonetic": "/ˈɑːrtwɜːrk/",
+        "meaning": "封面图；视觉素材",
+        "example": "Media artwork should not compete with route guidance.",
+        "chineseExample": "媒体封面不应与路线引导竞争。"
+      },
+      {
+        "term": "competing",
+        "phonetic": "/kəmˈpiːtɪŋ/",
+        "meaning": "竞争的；争夺注意力的",
+        "example": "Competing content can distract the driver.",
+        "chineseExample": "竞争内容可能分散驾驶员注意力。"
+      },
+      {
+        "term": "confusion",
+        "phonetic": "/kənˈfjuːʒn/",
+        "meaning": "困惑；混淆",
+        "example": "Context preservation reduces confusion.",
+        "chineseExample": "上下文保留可以减少困惑。"
+      },
+      {
+        "term": "resumes",
+        "phonetic": "/rɪˈzuːmz/",
+        "meaning": "继续；恢复",
+        "example": "The driver resumes the task after a prompt.",
+        "chineseExample": "驾驶员在提示后继续任务。"
+      },
+      {
+        "term": "makes",
+        "phonetic": "/meɪks/",
+        "meaning": "使……变得；让",
+        "example": "Visual consistency makes the state recognizable.",
+        "chineseExample": "视觉一致性让状态容易识别。"
+      },
+      {
+        "term": "rear",
+        "phonetic": "/rɪr/",
+        "meaning": "后排的；后部的",
+        "example": "Rear controls should match the center display.",
+        "chineseExample": "后排控件应与中控屏匹配。"
+      },
+      {
+        "term": "panel",
+        "phonetic": "/ˈpænl/",
+        "meaning": "面板；控制板",
+        "example": "The rear control panel uses the same labels.",
+        "chineseExample": "后排控制面板使用相同标签。"
+      },
+      {
+        "term": "guide",
+        "phonetic": "/ɡaɪd/",
+        "meaning": "引导；指导",
+        "example": "The cue can guide the driver to the right screen.",
+        "chineseExample": "提示可以引导驾驶员看向正确屏幕。"
+      },
+      {
+        "term": "toward",
+        "phonetic": "/təˈwɔːrd/",
+        "meaning": "朝向；指向",
+        "example": "Attention routing points toward urgent information.",
+        "chineseExample": "注意力路由指向紧急信息。"
+      },
+      {
+        "term": "spatial",
+        "phonetic": "/ˈspeɪʃl/",
+        "meaning": "空间的；位置相关的",
+        "example": "Spatial mapping connects screen position with vehicle direction.",
+        "chineseExample": "空间映射把屏幕位置与车辆方向联系起来。"
+      },
+      {
+        "term": "connect",
+        "phonetic": "/kəˈnekt/",
+        "meaning": "连接；联系",
+        "example": "Users connect the warning with the vehicle side.",
+        "chineseExample": "用户把警告与车辆侧向联系起来。"
+      },
+      {
+        "term": "left-side",
+        "phonetic": "/left saɪd/",
+        "meaning": "左侧的",
+        "example": "A left-side warning should appear on the left edge.",
+        "chineseExample": "左侧警告应出现在左边缘。"
+      },
+      {
+        "term": "blind-spot",
+        "phonetic": "/blaɪnd spɑːt/",
+        "meaning": "盲区的；盲点相关的",
+        "example": "A blind-spot warning needs clear spatial mapping.",
+        "chineseExample": "盲区警告需要清晰的空间映射。"
+      },
+      {
+        "term": "left",
+        "phonetic": "/left/",
+        "meaning": "左侧；左边的",
+        "example": "The left edge can represent the left side.",
+        "chineseExample": "左边缘可以代表左侧。"
+      },
+      {
+        "term": "edge",
+        "phonetic": "/edʒ/",
+        "meaning": "边缘；边界",
+        "example": "The warning appears near the edge of the cluster.",
+        "chineseExample": "警告出现在仪表屏边缘附近。"
+      },
+      {
+        "term": "modern",
+        "phonetic": "/ˈmɑːdərn/",
+        "meaning": "现代的",
+        "example": "A modern cockpit may include several displays.",
+        "chineseExample": "现代座舱可能包含多块屏幕。"
+      },
+      {
+        "term": "contains",
+        "phonetic": "/kənˈteɪnz/",
+        "meaning": "包含；包括",
+        "example": "The cockpit contains multiple display areas.",
+        "chineseExample": "座舱包含多个显示区域。"
+      },
+      {
+        "term": "head-up",
+        "phonetic": "/hed ʌp/",
+        "meaning": "抬头的；靠近视线的",
+        "example": "A head-up display supports quick awareness.",
+        "chineseExample": "抬头显示支持快速感知。"
+      },
+      {
+        "term": "sometimes",
+        "phonetic": "/ˈsʌmtaɪmz/",
+        "meaning": "有时",
+        "example": "The cockpit sometimes includes a passenger display.",
+        "chineseExample": "座舱有时包含副驾屏。"
+      },
+      {
+        "term": "pixels",
+        "phonetic": "/ˈpɪksəlz/",
+        "meaning": "像素；屏幕显示单位",
+        "example": "More pixels do not automatically improve hierarchy.",
+        "chineseExample": "更多像素不会自动改善信息层级。"
+      },
+      {
+        "term": "deciding",
+        "phonetic": "/dɪˈsaɪdɪŋ/",
+        "meaning": "决定；判断",
+        "example": "Designers are deciding which screen owns the task.",
+        "chineseExample": "设计师正在判断哪块屏幕负责该任务。"
+      },
+      {
+        "term": "owns",
+        "phonetic": "/oʊnz/",
+        "meaning": "拥有；负责",
+        "example": "One screen owns the primary task at a given moment.",
+        "chineseExample": "某个时刻由一块屏幕负责主要任务。"
+      },
+      {
+        "term": "each",
+        "phonetic": "/iːtʃ/",
+        "meaning": "每个；各自",
+        "example": "Each screen should have a clear purpose.",
+        "chineseExample": "每块屏幕都应有清晰用途。"
+      },
+      {
+        "term": "close",
+        "phonetic": "/kloʊs/",
+        "meaning": "靠近的；接近的",
+        "example": "Critical content should stay close to the sightline.",
+        "chineseExample": "关键内容应靠近视线。"
+      },
+      {
+        "term": "sightline",
+        "phonetic": "/ˈsaɪtlaɪn/",
+        "meaning": "视线；视野方向",
+        "example": "The driver sightline should contain urgent information.",
+        "chineseExample": "驾驶员视线中应包含紧急信息。"
+      },
+      {
+        "term": "planning",
+        "phonetic": "/ˈplænɪŋ/",
+        "meaning": "规划；计划",
+        "example": "Trip planning can stay on a secondary surface.",
+        "chineseExample": "行程规划可以留在次级显示表面。"
+      },
+      {
+        "term": "live",
+        "phonetic": "/lɪv/",
+        "meaning": "存在于；放置在",
+        "example": "Destination details can live on the center display.",
+        "chineseExample": "目的地详情可以放在中控屏。"
+      },
+      {
+        "term": "displays",
+        "phonetic": "/dɪˈspleɪz/",
+        "meaning": "显示屏；显示",
+        "example": "Tasks may move between displays.",
+        "chineseExample": "任务可能在屏幕之间移动。"
+      },
+      {
+        "term": "transition",
+        "phonetic": "/trænˈzɪʃn/",
+        "meaning": "转场；过渡",
+        "example": "A transition can explain where the task moved.",
+        "chineseExample": "转场可以解释任务移动到了哪里。"
+      },
+      {
+        "term": "animation",
+        "phonetic": "/ˌænɪˈmeɪʃn/",
+        "meaning": "动画",
+        "example": "Animation should support understanding, not decoration.",
+        "chineseExample": "动画应支持理解，而不是装饰。"
+      },
+      {
+        "term": "indicator",
+        "phonetic": "/ˈɪndɪkeɪtər/",
+        "meaning": "指示器；提示标记",
+        "example": "A state indicator confirms the active mode.",
+        "chineseExample": "状态指示器确认当前模式。"
+      },
+      {
+        "term": "again",
+        "phonetic": "/əˈɡen/",
+        "meaning": "再次；重新",
+        "example": "The driver should not search again.",
+        "chineseExample": "驾驶员不应再次查找。"
+      },
+      {
+        "term": "different",
+        "phonetic": "/ˈdɪfrənt/",
+        "meaning": "不同的",
+        "example": "Different labels may create confusion.",
+        "chineseExample": "不同标签可能造成困惑。"
+      },
+      {
+        "term": "colors",
+        "phonetic": "/ˈkʌlərz/",
+        "meaning": "颜色",
+        "example": "Colors should carry the same meaning across displays.",
+        "chineseExample": "颜色在多屏上应承载相同含义。"
+      },
+      {
+        "term": "think",
+        "phonetic": "/θɪŋk/",
+        "meaning": "认为；以为",
+        "example": "Users may think the system changed modes.",
+        "chineseExample": "用户可能以为系统切换了模式。"
+      },
+      {
+        "term": "activities",
+        "phonetic": "/ækˈtɪvətiz/",
+        "meaning": "活动；任务行为",
+        "example": "Shared activities need status mirroring.",
+        "chineseExample": "共享活动需要状态镜像。"
+      },
+      {
+        "term": "duplicate",
+        "phonetic": "/ˈduːplɪkət/",
+        "meaning": "重复的；副本",
+        "example": "Duplicate controls need synchronized state.",
+        "chineseExample": "重复控件需要同步状态。"
+      },
+      {
+        "term": "synchronized",
+        "phonetic": "/ˈsɪŋkrənaɪzd/",
+        "meaning": "同步的",
+        "example": "Synchronized state prevents mismatch.",
+        "chineseExample": "同步状态避免不匹配。"
+      },
+      {
+        "term": "ownership",
+        "phonetic": "/ˈoʊnərʃɪp/",
+        "meaning": "归属；责任边界",
+        "example": "Task ownership clarifies which screen is responsible.",
+        "chineseExample": "任务归属明确哪块屏幕负责。"
+      },
+      {
+        "term": "tells",
+        "phonetic": "/telz/",
+        "meaning": "告诉；说明",
+        "example": "Good routing tells users where to look.",
+        "chineseExample": "好的路由告诉用户看哪里。"
+      },
+      {
+        "term": "teams",
+        "phonetic": "/tiːmz/",
+        "meaning": "团队",
+        "example": "Teams should test connected scenarios.",
+        "chineseExample": "团队应测试连贯场景。"
+      },
+      {
+        "term": "walk",
+        "phonetic": "/wɔːk/",
+        "meaning": "走查；逐步检查",
+        "example": "Teams walk through the main scenario.",
+        "chineseExample": "团队逐步走查主要场景。"
+      },
+      {
+        "term": "through",
+        "phonetic": "/θruː/",
+        "meaning": "通过；贯穿",
+        "example": "Walk through the task from start to finish.",
+        "chineseExample": "从开始到结束走查任务。"
+      },
+      {
+        "term": "incoming",
+        "phonetic": "/ˈɪnkʌmɪŋ/",
+        "meaning": "传入的；即将到来的",
+        "example": "Incoming calls can interrupt a route task.",
+        "chineseExample": "来电可能打断路线任务。"
+      },
+      {
+        "term": "calls",
+        "phonetic": "/kɔːlz/",
+        "meaning": "电话；呼叫",
+        "example": "Incoming calls need a clear priority.",
+        "chineseExample": "来电需要清晰优先级。"
+      },
+      {
+        "term": "interactions",
+        "phonetic": "/ˌɪntərˈækʃnz/",
+        "meaning": "交互；互动",
+        "example": "Passenger interactions may affect the shared display.",
+        "chineseExample": "乘客交互可能影响共享屏幕。"
+      },
+      {
+        "term": "connected",
+        "phonetic": "/kəˈnektɪd/",
+        "meaning": "连接的；连贯的",
+        "example": "Connected scenarios reveal cross-screen issues.",
+        "chineseExample": "连贯场景会暴露跨屏问题。"
+      },
+      {
+        "term": "purpose",
+        "phonetic": "/ˈpɜːrpəs/",
+        "meaning": "目的；用途",
+        "example": "Each screen has a purpose.",
+        "chineseExample": "每块屏幕都有用途。"
+      },
+      {
+        "term": "rebuild",
+        "phonetic": "/ˌriːˈbɪld/",
+        "meaning": "重建；重新建立",
+        "example": "Drivers should not rebuild the mental model while driving.",
+        "chineseExample": "驾驶员不应在行驶中重新建立心智模型。"
+      },
+      {
+        "term": "mental",
+        "phonetic": "/ˈmentl/",
+        "meaning": "心理的；心智的",
+        "example": "A mental model helps users predict behavior.",
+        "chineseExample": "心智模型帮助用户预测行为。"
+      },
+      {
+        "term": "model",
+        "phonetic": "/ˈmɑːdl/",
+        "meaning": "模型；模式",
+        "example": "The model should stay stable across screens.",
+        "chineseExample": "模型应在多屏之间保持稳定。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing hierarchy across cockpit displays",
+        "source": {
+          "name": "Original practice text",
+          "url": ""
+        },
+        "text": "A modern intelligent cockpit often contains a cluster, a center display, a head-up display, and sometimes a passenger display or rear control panel. The design challenge is not simply adding more pixels; it is deciding which screen owns each task at each moment. Cross-screen continuity starts with a clear information hierarchy. Driving-critical content, such as speed, lane guidance, and urgent warnings, should stay close to the driver sightline. Destination details, media artwork, and trip planning can live on a secondary surface when they do not compete with the road. When a task moves between displays, the interface should preserve context. A small transition animation, a repeated state indicator, or a short voice prompt can explain the display handoff without forcing the driver to search again. Visual consistency also matters. If climate status uses different colors or labels on the center display and rear control panel, users may think the system has changed modes. Status mirroring is useful for shared activities, but duplicate controls need synchronized state and clear task ownership. Good attention routing tells users where to look next and why. During design review, teams should walk through route changes, parking views, incoming calls, and passenger interactions as connected scenarios. The goal is a cockpit where each screen has a purpose, each handoff feels predictable, and the driver never has to rebuild the mental model while driving.",
+        "translation": "现代智能座舱通常包含仪表屏、中控屏、抬头显示，有时还包含副驾屏或后排控制面板。设计挑战并不只是增加更多像素，而是决定每个时刻由哪块屏幕负责哪个任务。跨屏连续性始于清晰的信息层级。车速、车道引导和紧急警告等驾驶关键内容应靠近驾驶员视线。目的地详情、媒体封面和行程规划可以放在次级显示表面上，前提是它们不与道路争夺注意力。当任务在屏幕之间移动时，界面应保留上下文。一个小的转场动画、重复的状态指示器或简短的语音提示，都可以解释屏幕交接，而不必迫使驾驶员重新查找。视觉一致性同样重要。如果空调状态在中控屏和后排控制面板上使用不同颜色或标签，用户可能会以为系统切换了模式。状态镜像适合共享活动，但重复控件需要同步状态和清晰的任务归属。好的注意力路由会告诉用户下一步该看哪里以及为什么。在设计评审中，团队应把路线变化、泊车视图、来电和乘客交互作为连接场景进行走查。目标是让座舱中的每块屏幕都有明确用途，每次交接都可预测，并且驾驶员在行驶中不必重新建立心智模型。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The design challenge is not simply adding more pixels; it is deciding which screen owns each task at each moment.",
+        "structure": "分号连接两个并列分句；not simply adding more pixels 否定表层目标，it is deciding... 强调真正设计问题。",
+        "focus": "which screen owns each task 用 owns 表达“任务归属”，适合多屏评审时说明责任边界。",
+        "pattern": "The design challenge is not simply A; it is deciding B."
+      },
+      {
+        "sentence": "Driving-critical content, such as speed, lane guidance, and urgent warnings, should stay close to the driver sightline.",
+        "structure": "主语 Driving-critical content 后用 such as 插入三个例子，should stay close to 表达位置原则。",
+        "focus": "such as 用来快速列举安全关键内容，should stay close to 表达设计建议而非绝对命令。",
+        "pattern": "Safety-critical content, such as A, B, and C, should stay close to the driver sightline."
+      },
+      {
+        "sentence": "When a task moves between displays, the interface should preserve context.",
+        "structure": "When 引导条件/时间从句，主句 the interface should preserve context 给出跨屏交接原则。",
+        "focus": "preserve context 是说明跨屏连续性的核心动词短语，可用于任务流和原型评审。",
+        "pattern": "When a task moves between channels, the interface should preserve context."
+      },
+      {
+        "sentence": "Status mirroring is useful for shared activities, but duplicate controls need synchronized state and clear task ownership.",
+        "structure": "but 连接转折关系：前半句说明状态镜像的价值，后半句补充重复控件的约束条件。",
+        "focus": "useful for... but... need... 适合表达“某设计有价值，但必须满足条件”。",
+        "pattern": "A feature is useful for shared activities, but repeated controls need synchronized state."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "detail": "朗读 cross-screen continuity、information hierarchy、display handoff、context preservation、attention routing；每个词后复述英文例句，并说出对应的座舱屏幕。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先完整听读长文，再按句跟读；重点练习 The design challenge is not simply...、When a task moves...、Good attention routing... 的停顿。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "5 分钟",
+        "detail": "选择 3 条 sentenceBreakdowns，标出 such as 插入语、When 条件从句、but 转折结构，再替换成自己的多屏 HMI 评审句。"
+      },
+      {
+        "title": "口头复述与改写",
+        "time": "5-8 分钟",
+        "detail": "用 60 秒说明导航提醒如何从中控屏交接到仪表屏或 HUD，至少使用 cross-screen continuity、primary display、visual cue 和 status mirroring。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-10-visual-manual-demand-context-timing",
     "date": "2026-07-10",
     "title": "Visual-manual demand and context-sensitive timing in cockpit tasks",
