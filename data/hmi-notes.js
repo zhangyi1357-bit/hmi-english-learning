@@ -1,5 +1,756 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-12-progressive-disclosure-driving-workload",
+    "date": "2026-07-12",
+    "title": "Progressive disclosure and driving workload control in intelligent cockpits",
+    "topic": "智能座舱渐进式披露与驾驶负荷控制",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱在复杂功能、导航提示、辅助驾驶和设置流程中逐步呈现信息，避免一次性暴露过多内容，并用驾驶负荷、时机和确认机制解释 HMI 决策。",
+    "words": [
+      {
+        "term": "progressive disclosure",
+        "phonetic": "/prəˈɡresɪv dɪsˈkloʊʒər/",
+        "meaning": "渐进式披露；先显示必要信息，再根据场景或用户意图逐步展示更多细节",
+        "example": "Progressive disclosure keeps the first climate prompt simple and reveals advanced options only after the driver asks for them.",
+        "chineseExample": "渐进式披露让第一个空调提示保持简单，只在驾驶员需要时再显示高级选项。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶员在感知、理解、决策和操作上承受的认知与操作压力",
+        "example": "The interface should reduce driving workload when traffic density increases near a complex junction.",
+        "chineseExample": "当复杂路口附近交通密度增加时，界面应降低驾驶负荷。"
+      },
+      {
+        "term": "layered prompt",
+        "phonetic": "/ˈleɪərd prɑːmpt/",
+        "meaning": "分层提示；把提示内容拆成主提示、补充说明和可选操作的呈现方式",
+        "example": "A layered prompt can show the urgent action first and move secondary details into an expandable panel.",
+        "chineseExample": "分层提示可以先显示紧急动作，把次要细节放入可展开面板。"
+      },
+      {
+        "term": "interaction timing",
+        "phonetic": "/ˌɪntərˈækʃn ˈtaɪmɪŋ/",
+        "meaning": "交互时机；系统选择何时打断、提醒、等待或延后操作的设计判断",
+        "example": "Interaction timing matters because a detailed menu is acceptable while parked but distracting during a merge.",
+        "chineseExample": "交互时机很重要，因为详细菜单在停车时可以接受，但在并线时会分散注意力。"
+      },
+      {
+        "term": "contextual reveal",
+        "phonetic": "/kənˈtekstʃuəl rɪˈviːl/",
+        "meaning": "情境化展开；根据当前任务、风险和用户动作显示额外信息",
+        "example": "Contextual reveal lets the system expose battery details after the driver selects an energy route.",
+        "chineseExample": "情境化展开让系统在驾驶员选择能耗路线后显示电池细节。"
+      },
+      {
+        "term": "safe glance",
+        "phonetic": "/seɪf ɡlæns/",
+        "meaning": "安全扫视；驾驶员能在短时间内读懂的界面信息呈现方式",
+        "example": "A safe glance uses short labels, stable placement, and clear contrast for the most time-sensitive message.",
+        "chineseExample": "安全扫视会用短标签、稳定位置和清晰对比呈现最有时效性的消息。"
+      },
+      {
+        "term": "cognitive pacing",
+        "phonetic": "/ˈkɑːɡnətɪv ˈpeɪsɪŋ/",
+        "meaning": "认知节奏控制；控制信息出现速度和数量，让用户有足够时间理解并行动",
+        "example": "Cognitive pacing prevents the cockpit from stacking three unrelated prompts during a lane change.",
+        "chineseExample": "认知节奏控制避免座舱在变道时叠加三个无关提示。"
+      },
+      {
+        "term": "deferred detail",
+        "phonetic": "/dɪˈfɜːrd dɪˈteɪl/",
+        "meaning": "延后细节；把非关键解释、设置或数据放到稍后可查看的位置",
+        "example": "Deferred detail keeps the warning concise while still allowing the driver to review the reason later.",
+        "chineseExample": "延后细节让警告保持简洁，同时仍允许驾驶员稍后查看原因。"
+      },
+      {
+        "term": "adaptive simplification",
+        "phonetic": "/əˈdæptɪv ˌsɪmplɪfɪˈkeɪʃn/",
+        "meaning": "自适应简化；系统根据速度、场景或负荷自动降低界面复杂度",
+        "example": "Adaptive simplification can hide nonessential controls when the vehicle enters heavy urban traffic.",
+        "chineseExample": "自适应简化可以在车辆进入拥堵城市交通时隐藏非必要控件。"
+      },
+      {
+        "term": "confirmation threshold",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈθreʃhoʊld/",
+        "meaning": "确认阈值；决定某个操作是否需要二次确认的风险、成本或可逆性标准",
+        "example": "The confirmation threshold should be higher for route cancellation than for changing cabin temperature.",
+        "chineseExample": "取消路线的确认阈值应高于调整座舱温度。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "progressive disclosure",
+        "phonetic": "/prəˈɡresɪv dɪsˈkloʊʒər/",
+        "meaning": "渐进式披露；逐步展示信息和功能",
+        "example": "Progressive disclosure keeps the first climate prompt simple.",
+        "chineseExample": "渐进式披露让第一个空调提示保持简单。"
+      },
+      {
+        "term": "progressive",
+        "phonetic": "/prəˈɡresɪv/",
+        "meaning": "渐进的；逐步推进的",
+        "example": "A progressive flow avoids sudden complexity.",
+        "chineseExample": "渐进流程避免突然增加复杂度。"
+      },
+      {
+        "term": "disclosure",
+        "phonetic": "/dɪsˈkloʊʒər/",
+        "meaning": "披露；信息的展示或说明",
+        "example": "Disclosure should match the driver's current need.",
+        "chineseExample": "信息披露应匹配驾驶员当前需求。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶中的认知和操作压力",
+        "example": "The interface should reduce driving workload.",
+        "chineseExample": "界面应降低驾驶负荷。"
+      },
+      {
+        "term": "workload",
+        "phonetic": "/ˈwɜːrkloʊd/",
+        "meaning": "工作负荷；完成任务所需的压力和 effort",
+        "example": "High workload changes how much detail a driver can process.",
+        "chineseExample": "高负荷会改变驾驶员能处理多少细节。"
+      },
+      {
+        "term": "layered prompt",
+        "phonetic": "/ˈleɪərd prɑːmpt/",
+        "meaning": "分层提示；按优先级拆分的提示",
+        "example": "A layered prompt can show the urgent action first.",
+        "chineseExample": "分层提示可以先显示紧急动作。"
+      },
+      {
+        "term": "layered",
+        "phonetic": "/ˈleɪərd/",
+        "meaning": "分层的；由多个层次组成",
+        "example": "Layered content gives users a clear path.",
+        "chineseExample": "分层内容给用户清晰路径。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户理解或行动的信息",
+        "example": "The prompt should use plain language.",
+        "chineseExample": "提示应使用直白语言。"
+      },
+      {
+        "term": "interaction timing",
+        "phonetic": "/ˌɪntərˈækʃn ˈtaɪmɪŋ/",
+        "meaning": "交互时机；系统呈现交互的时间点",
+        "example": "Interaction timing matters during a merge.",
+        "chineseExample": "并线时交互时机很重要。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；动作发生的时间安排",
+        "example": "Poor timing can make a useful message distracting.",
+        "chineseExample": "糟糕时机可能让有用消息变成干扰。"
+      },
+      {
+        "term": "contextual reveal",
+        "phonetic": "/kənˈtekstʃuəl rɪˈviːl/",
+        "meaning": "情境化展开；根据上下文显示更多内容",
+        "example": "Contextual reveal exposes details after a relevant choice.",
+        "chineseExample": "情境化展开会在相关选择后显示细节。"
+      },
+      {
+        "term": "contextual",
+        "phonetic": "/kənˈtekstʃuəl/",
+        "meaning": "情境化的；依赖当前上下文的",
+        "example": "Contextual information is easier to understand.",
+        "chineseExample": "情境化信息更容易理解。"
+      },
+      {
+        "term": "reveal",
+        "phonetic": "/rɪˈviːl/",
+        "meaning": "显示；展开；揭示",
+        "example": "The interface can reveal options step by step.",
+        "chineseExample": "界面可以逐步显示选项。"
+      },
+      {
+        "term": "safe glance",
+        "phonetic": "/seɪf ɡlæns/",
+        "meaning": "安全扫视；短时间内可读的视觉信息",
+        "example": "A safe glance depends on short labels.",
+        "chineseExample": "安全扫视依赖短标签。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "扫视；快速看一眼",
+        "example": "The driver needs one glance to understand the alert.",
+        "chineseExample": "驾驶员需要一眼看懂提醒。"
+      },
+      {
+        "term": "cognitive pacing",
+        "phonetic": "/ˈkɑːɡnətɪv ˈpeɪsɪŋ/",
+        "meaning": "认知节奏控制；控制信息输入速度",
+        "example": "Cognitive pacing prevents prompt overload.",
+        "chineseExample": "认知节奏控制避免提示过载。"
+      },
+      {
+        "term": "cognitive",
+        "phonetic": "/ˈkɑːɡnətɪv/",
+        "meaning": "认知的；与理解和判断有关",
+        "example": "Cognitive demand rises in dense traffic.",
+        "chineseExample": "密集交通中认知需求会上升。"
+      },
+      {
+        "term": "pacing",
+        "phonetic": "/ˈpeɪsɪŋ/",
+        "meaning": "节奏控制；控制出现速度",
+        "example": "Pacing helps users absorb one decision at a time.",
+        "chineseExample": "节奏控制帮助用户一次吸收一个决策。"
+      },
+      {
+        "term": "deferred detail",
+        "phonetic": "/dɪˈfɜːrd dɪˈteɪl/",
+        "meaning": "延后细节；稍后再呈现的补充信息",
+        "example": "Deferred detail keeps the warning concise.",
+        "chineseExample": "延后细节让警告保持简洁。"
+      },
+      {
+        "term": "deferred",
+        "phonetic": "/dɪˈfɜːrd/",
+        "meaning": "延后的；推迟处理的",
+        "example": "Deferred information can appear after the maneuver.",
+        "chineseExample": "延后信息可以在动作结束后出现。"
+      },
+      {
+        "term": "detail",
+        "phonetic": "/dɪˈteɪl/",
+        "meaning": "细节；具体说明或数据",
+        "example": "Too much detail can slow quick decisions.",
+        "chineseExample": "过多细节会拖慢快速决策。"
+      },
+      {
+        "term": "adaptive simplification",
+        "phonetic": "/əˈdæptɪv ˌsɪmplɪfɪˈkeɪʃn/",
+        "meaning": "自适应简化；根据场景自动降低复杂度",
+        "example": "Adaptive simplification hides nonessential controls.",
+        "chineseExample": "自适应简化会隐藏非必要控件。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；能根据条件变化",
+        "example": "Adaptive behavior should remain predictable.",
+        "chineseExample": "自适应行为仍应可预测。"
+      },
+      {
+        "term": "simplification",
+        "phonetic": "/ˌsɪmplɪfɪˈkeɪʃn/",
+        "meaning": "简化；减少复杂度",
+        "example": "Simplification is useful when attention is limited.",
+        "chineseExample": "注意力有限时，简化很有用。"
+      },
+      {
+        "term": "confirmation threshold",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈθreʃhoʊld/",
+        "meaning": "确认阈值；决定是否需要二次确认的标准",
+        "example": "The confirmation threshold rises with risk.",
+        "chineseExample": "确认阈值会随风险升高。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；让用户明确同意某项操作",
+        "example": "Confirmation prevents accidental cancellation.",
+        "chineseExample": "确认可以防止误取消。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种处理的标准",
+        "example": "The threshold depends on risk and reversibility.",
+        "chineseExample": "阈值取决于风险和可逆性。"
+      },
+      {
+        "term": "climate prompt",
+        "phonetic": "/ˈklaɪmət prɑːmpt/",
+        "meaning": "空调提示；关于温度、风量或空调设置的提醒",
+        "example": "A climate prompt should not block driving information.",
+        "chineseExample": "空调提示不应遮挡驾驶信息。"
+      },
+      {
+        "term": "advanced options",
+        "phonetic": "/ədˈvænst ˈɑːpʃnz/",
+        "meaning": "高级选项；更复杂或更细的设置",
+        "example": "Advanced options can stay behind a second tap.",
+        "chineseExample": "高级选项可以放在第二次点击之后。"
+      },
+      {
+        "term": "traffic density",
+        "phonetic": "/ˈtræfɪk ˈdensəti/",
+        "meaning": "交通密度；道路上车辆和事件的集中程度",
+        "example": "Traffic density affects how much information is safe.",
+        "chineseExample": "交通密度影响多少信息是安全的。"
+      },
+      {
+        "term": "complex junction",
+        "phonetic": "/kəmˈpleks ˈdʒʌŋkʃn/",
+        "meaning": "复杂路口；需要更多判断和操作的交叉区域",
+        "example": "A complex junction is not the right place for a long setup flow.",
+        "chineseExample": "复杂路口不适合长设置流程。"
+      },
+      {
+        "term": "urgent action",
+        "phonetic": "/ˈɜːrdʒənt ˈækʃn/",
+        "meaning": "紧急动作；需要立即处理的操作",
+        "example": "The urgent action should be visually dominant.",
+        "chineseExample": "紧急动作应在视觉上更突出。"
+      },
+      {
+        "term": "secondary details",
+        "phonetic": "/ˈsekənderi dɪˈteɪlz/",
+        "meaning": "次要细节；支持理解但不必立刻显示的信息",
+        "example": "Secondary details can move into an expandable panel.",
+        "chineseExample": "次要细节可以移到可展开面板。"
+      },
+      {
+        "term": "expandable panel",
+        "phonetic": "/ɪkˈspændəbl ˈpænl/",
+        "meaning": "可展开面板；点击后显示更多内容的区域",
+        "example": "An expandable panel keeps the base screen clean.",
+        "chineseExample": "可展开面板让基础界面保持干净。"
+      },
+      {
+        "term": "detailed menu",
+        "phonetic": "/dɪˈteɪld ˈmenjuː/",
+        "meaning": "详细菜单；包含较多设置和说明的菜单",
+        "example": "A detailed menu is better when the vehicle is parked.",
+        "chineseExample": "详细菜单更适合车辆停稳时使用。"
+      },
+      {
+        "term": "merge",
+        "phonetic": "/mɜːrdʒ/",
+        "meaning": "并线；车辆汇入或切换车道",
+        "example": "A merge requires quick visual attention.",
+        "chineseExample": "并线需要快速视觉注意。"
+      },
+      {
+        "term": "energy route",
+        "phonetic": "/ˈenərdʒi ruːt/",
+        "meaning": "能耗路线；考虑电量或能耗的路线方案",
+        "example": "An energy route may show charging and battery details.",
+        "chineseExample": "能耗路线可能显示充电和电池细节。"
+      },
+      {
+        "term": "battery details",
+        "phonetic": "/ˈbætəri dɪˈteɪlz/",
+        "meaning": "电池细节；关于电量、续航或能耗的数据",
+        "example": "Battery details are useful after route selection.",
+        "chineseExample": "路线选择后电池细节很有用。"
+      },
+      {
+        "term": "short labels",
+        "phonetic": "/ʃɔːrt ˈleɪblz/",
+        "meaning": "短标签；短而明确的界面文字",
+        "example": "Short labels help the driver read quickly.",
+        "chineseExample": "短标签帮助驾驶员快速阅读。"
+      },
+      {
+        "term": "stable placement",
+        "phonetic": "/ˈsteɪbl ˈpleɪsmənt/",
+        "meaning": "稳定位置；界面元素位置保持一致",
+        "example": "Stable placement supports faster recognition.",
+        "chineseExample": "稳定位置支持更快识别。"
+      },
+      {
+        "term": "clear contrast",
+        "phonetic": "/klɪr ˈkɑːntræst/",
+        "meaning": "清晰对比；让信息容易区分的视觉差异",
+        "example": "Clear contrast improves glanceability.",
+        "chineseExample": "清晰对比提升可扫视性。"
+      },
+      {
+        "term": "time-sensitive message",
+        "phonetic": "/taɪm ˈsensətɪv ˈmesɪdʒ/",
+        "meaning": "时效性消息；需要及时理解和响应的信息",
+        "example": "A time-sensitive message belongs near the driver display.",
+        "chineseExample": "时效性消息适合靠近驾驶员显示区。"
+      },
+      {
+        "term": "prompt overload",
+        "phonetic": "/prɑːmpt ˈoʊvərloʊd/",
+        "meaning": "提示过载；同时或连续出现过多提示",
+        "example": "Prompt overload reduces trust in the system.",
+        "chineseExample": "提示过载会降低对系统的信任。"
+      },
+      {
+        "term": "lane change",
+        "phonetic": "/leɪn tʃeɪndʒ/",
+        "meaning": "变道；车辆从一个车道切换到另一个车道",
+        "example": "A lane change is a poor moment for unrelated prompts.",
+        "chineseExample": "变道不是显示无关提示的好时机。"
+      },
+      {
+        "term": "nonessential controls",
+        "phonetic": "/ˌnɑːnɪˈsenʃl kənˈtroʊlz/",
+        "meaning": "非必要控件；当前任务中不关键的操作入口",
+        "example": "Nonessential controls can be hidden in heavy traffic.",
+        "chineseExample": "非必要控件可以在拥堵交通中隐藏。"
+      },
+      {
+        "term": "heavy urban traffic",
+        "phonetic": "/ˈhevi ˈɜːrbən ˈtræfɪk/",
+        "meaning": "拥堵城市交通；车辆密集且变化频繁的城市路况",
+        "example": "Heavy urban traffic increases visual and cognitive demand.",
+        "chineseExample": "拥堵城市交通会增加视觉和认知需求。"
+      },
+      {
+        "term": "route cancellation",
+        "phonetic": "/ruːt ˌkænsəˈleɪʃn/",
+        "meaning": "路线取消；停止当前导航路线",
+        "example": "Route cancellation should require a clear confirmation.",
+        "chineseExample": "路线取消应需要明确确认。"
+      },
+      {
+        "term": "cabin temperature",
+        "phonetic": "/ˈkæbɪn ˈtemprətʃər/",
+        "meaning": "座舱温度；车内温度设置或状态",
+        "example": "Cabin temperature can be changed with a low-friction control.",
+        "chineseExample": "座舱温度可以用低摩擦控件调整。"
+      },
+      {
+        "term": "reveals",
+        "phonetic": "/rɪˈviːlz/",
+        "meaning": "显示；展开；reveal 的第三人称单数",
+        "example": "The system reveals supporting detail only when needed.",
+        "chineseExample": "系统只在需要时展开支持性细节。"
+      },
+      {
+        "term": "expandable",
+        "phonetic": "/ɪkˈspændəbl/",
+        "meaning": "可展开的；可以显示更多内容的",
+        "example": "An expandable area can hold secondary information.",
+        "chineseExample": "可展开区域可以承载次要信息。"
+      },
+      {
+        "term": "detailed",
+        "phonetic": "/dɪˈteɪld/",
+        "meaning": "详细的；包含较多具体信息的",
+        "example": "Detailed settings are better when the car is parked.",
+        "chineseExample": "详细设置更适合车辆停稳时使用。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/pɑːrkt/",
+        "meaning": "已停稳的；处于停车状态的",
+        "example": "The vehicle is parked before the full setup flow appears.",
+        "chineseExample": "车辆停稳后才出现完整设置流程。"
+      },
+      {
+        "term": "battery",
+        "phonetic": "/ˈbætəri/",
+        "meaning": "电池；车辆能源相关部件",
+        "example": "Battery information supports an energy route decision.",
+        "chineseExample": "电池信息支持能耗路线决策。"
+      },
+      {
+        "term": "selects",
+        "phonetic": "/sɪˈlekts/",
+        "meaning": "选择；select 的第三人称单数",
+        "example": "The driver selects an energy route.",
+        "chineseExample": "驾驶员选择一条能耗路线。"
+      },
+      {
+        "term": "energy",
+        "phonetic": "/ˈenərdʒi/",
+        "meaning": "能量；车辆能耗或电量相关概念",
+        "example": "Energy data should appear after it becomes relevant.",
+        "chineseExample": "能耗数据应在相关时再出现。"
+      },
+      {
+        "term": "stable",
+        "phonetic": "/ˈsteɪbl/",
+        "meaning": "稳定的；位置或状态不频繁变化的",
+        "example": "Stable placement helps fast recognition.",
+        "chineseExample": "稳定位置帮助快速识别。"
+      },
+      {
+        "term": "contrast",
+        "phonetic": "/ˈkɑːntræst/",
+        "meaning": "对比；视觉元素之间的差异",
+        "example": "Contrast makes urgent information easier to read.",
+        "chineseExample": "对比让紧急信息更容易阅读。"
+      },
+      {
+        "term": "stacking",
+        "phonetic": "/ˈstækɪŋ/",
+        "meaning": "叠加；把多个内容堆在一起显示",
+        "example": "Stacking prompts can overload the driver.",
+        "chineseExample": "叠加提示可能让驾驶员过载。"
+      },
+      {
+        "term": "three",
+        "phonetic": "/θriː/",
+        "meaning": "三；数量词",
+        "example": "Three prompts are too many during a lane change.",
+        "chineseExample": "变道时三个提示太多。"
+      },
+      {
+        "term": "unrelated",
+        "phonetic": "/ˌʌnrɪˈleɪtɪd/",
+        "meaning": "无关的；与当前任务没有直接关系的",
+        "example": "Unrelated prompts should wait until the context is calmer.",
+        "chineseExample": "无关提示应等场景更平稳时再出现。"
+      },
+      {
+        "term": "allowing",
+        "phonetic": "/əˈlaʊɪŋ/",
+        "meaning": "允许；allow 的现在分词",
+        "example": "The design keeps the warning concise while allowing later review.",
+        "chineseExample": "设计让警告保持简洁，同时允许稍后查看。"
+      },
+      {
+        "term": "heavy",
+        "phonetic": "/ˈhevi/",
+        "meaning": "繁重的；密集的；程度较高的",
+        "example": "Heavy traffic increases workload.",
+        "chineseExample": "拥堵交通会增加负荷。"
+      },
+      {
+        "term": "higher",
+        "phonetic": "/ˈhaɪər/",
+        "meaning": "更高的；high 的比较级",
+        "example": "The threshold should be higher for risky actions.",
+        "chineseExample": "高风险操作的阈值应更高。"
+      },
+      {
+        "term": "cancellation",
+        "phonetic": "/ˌkænsəˈleɪʃn/",
+        "meaning": "取消；终止某项操作或服务",
+        "example": "Cancellation of navigation should be confirmed.",
+        "chineseExample": "取消导航应经过确认。"
+      },
+      {
+        "term": "cannot",
+        "phonetic": "/ˈkænɑːt/",
+        "meaning": "不能；无法",
+        "example": "The driver cannot evaluate every option at once.",
+        "chineseExample": "驾驶员无法一次评估所有选项。"
+      },
+      {
+        "term": "evaluate",
+        "phonetic": "/ɪˈvæljueɪt/",
+        "meaning": "评估；判断价值、风险或效果",
+        "example": "Drivers need time to evaluate a route change.",
+        "chineseExample": "驾驶员需要时间评估路线变化。"
+      },
+      {
+        "term": "decision",
+        "phonetic": "/dɪˈsɪʒn/",
+        "meaning": "决策；选择下一步动作",
+        "example": "The core decision should be visible first.",
+        "chineseExample": "核心决策应先可见。"
+      },
+      {
+        "term": "cancel",
+        "phonetic": "/ˈkænsl/",
+        "meaning": "取消；停止当前操作",
+        "example": "The driver can cancel or continue.",
+        "chineseExample": "驾驶员可以取消或继续。"
+      },
+      {
+        "term": "continue",
+        "phonetic": "/kənˈtɪnjuː/",
+        "meaning": "继续；保持当前流程",
+        "example": "Continue is a common primary action.",
+        "chineseExample": "继续是常见的主操作。"
+      },
+      {
+        "term": "then",
+        "phonetic": "/ðen/",
+        "meaning": "然后；表示下一步",
+        "example": "The interface shows the decision and then reveals detail.",
+        "chineseExample": "界面先显示决策，然后展开细节。"
+      },
+      {
+        "term": "supporting",
+        "phonetic": "/səˈpɔːrtɪŋ/",
+        "meaning": "支持性的；用于补充说明的",
+        "example": "Supporting detail can wait behind the first layer.",
+        "chineseExample": "支持性细节可以放在第一层之后。"
+      },
+      {
+        "term": "reroute",
+        "phonetic": "/ˌriːˈruːt/",
+        "meaning": "重规划路线；改变原导航路线",
+        "example": "A reroute should explain the delay and the benefit.",
+        "chineseExample": "路线重规划应说明延误和收益。"
+      },
+      {
+        "term": "recommended",
+        "phonetic": "/ˌrekəˈmendɪd/",
+        "meaning": "推荐的；系统建议采用的",
+        "example": "The recommended action should be easy to confirm.",
+        "chineseExample": "推荐动作应容易确认。"
+      },
+      {
+        "term": "button",
+        "phonetic": "/ˈbʌtn/",
+        "meaning": "按钮；可点击操作控件",
+        "example": "One clear button reduces hesitation.",
+        "chineseExample": "一个清晰按钮可以减少犹豫。"
+      },
+      {
+        "term": "impact",
+        "phonetic": "/ˈɪmpækt/",
+        "meaning": "影响；某项变化带来的结果",
+        "example": "Charging impact can stay in a secondary layer.",
+        "chineseExample": "充电影响可以留在第二层。"
+      },
+      {
+        "term": "toll",
+        "phonetic": "/toʊl/",
+        "meaning": "通行费；道路收费信息",
+        "example": "Toll information is useful but not always urgent.",
+        "chineseExample": "收费信息有用但不总是紧急。"
+      },
+      {
+        "term": "alternative",
+        "phonetic": "/ɔːlˈtɜːrnətɪv/",
+        "meaning": "备选的；可替代方案",
+        "example": "Alternative routes can appear after the main choice.",
+        "chineseExample": "备选路线可以在主选择之后出现。"
+      },
+      {
+        "term": "about",
+        "phonetic": "/əˈbaʊt/",
+        "meaning": "关于；涉及某个方面",
+        "example": "The approach is about timing and workload.",
+        "chineseExample": "这种方法涉及时机和负荷。"
+      },
+      {
+        "term": "simplicity",
+        "phonetic": "/sɪmˈplɪsəti/",
+        "meaning": "简洁；简单易懂的状态",
+        "example": "Visual simplicity supports quick understanding.",
+        "chineseExample": "视觉简洁支持快速理解。"
+      },
+      {
+        "term": "richer",
+        "phonetic": "/ˈrɪtʃər/",
+        "meaning": "更丰富的；包含更多内容的",
+        "example": "Richer settings can appear while parked.",
+        "chineseExample": "更丰富的设置可在停车时出现。"
+      },
+      {
+        "term": "explanations",
+        "phonetic": "/ˌekspləˈneɪʃnz/",
+        "meaning": "解释；说明原因或机制的内容",
+        "example": "Explanations help users trust automation.",
+        "chineseExample": "解释帮助用户信任自动化。"
+      },
+      {
+        "term": "simplify",
+        "phonetic": "/ˈsɪmplɪfaɪ/",
+        "meaning": "简化；降低复杂度",
+        "example": "The cockpit should simplify the interface in heavy traffic.",
+        "chineseExample": "座舱应在拥堵交通中简化界面。"
+      },
+      {
+        "term": "deferrable",
+        "phonetic": "/dɪˈfɜːrəbl/",
+        "meaning": "可延后的；不必立即处理的",
+        "example": "Useful but deferrable information can wait.",
+        "chineseExample": "有用但可延后的信息可以等待。"
+      },
+      {
+        "term": "disappear",
+        "phonetic": "/ˌdɪsəˈpɪr/",
+        "meaning": "消失；从界面上暂时移除",
+        "example": "Low-priority controls can disappear during riskier moments.",
+        "chineseExample": "低优先级控件可以在高风险时刻暂时消失。"
+      },
+      {
+        "term": "calmer",
+        "phonetic": "/ˈkɑːmər/",
+        "meaning": "更平稳的；压力更低的",
+        "example": "The system can show more detail when the context is calmer.",
+        "chineseExample": "场景更平稳时，系统可以显示更多细节。"
+      },
+      {
+        "term": "matching",
+        "phonetic": "/ˈmætʃɪŋ/",
+        "meaning": "匹配；让两者对应",
+        "example": "Matching information depth to risk protects attention.",
+        "chineseExample": "让信息深度匹配风险可以保护注意力。"
+      },
+      {
+        "term": "depth",
+        "phonetic": "/depθ/",
+        "meaning": "深度；信息详细程度",
+        "example": "Information depth should change with driving risk.",
+        "chineseExample": "信息深度应随驾驶风险变化。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "A layered cockpit flow",
+        "text": "Progressive disclosure is useful in an intelligent cockpit because the driver cannot evaluate every option at the same time. A good HMI starts with the core decision, such as confirm, cancel, or continue, and then reveals supporting detail only when the driver has enough time and attention. For example, a navigation reroute may first show the delay, the recommended action, and one clear confirmation button. Charging impact, toll information, and alternative routes can stay in a secondary layer until the driver asks for more. This approach is not only about visual simplicity. It is also about driving workload, interaction timing, and trust. When the vehicle is parked, the system can expose richer settings and explanations. During a merge, heavy traffic, or a lane change, the same system should simplify the interface and postpone nonessential choices. Designers need to define which information is safety critical, which information is useful but deferrable, and which information should disappear until the context is calmer. In a design review, you can say that progressive disclosure protects attention by matching information depth to driving risk, user intent, and available interaction time.",
+        "translation": "渐进式披露适合智能座舱，因为驾驶员无法同时评估所有选项。优秀的 HMI 会先呈现核心决策，例如确认、取消或继续，然后只在驾驶员有足够时间和注意力时再展开支持性细节。例如，导航重规划可以先显示延误、推荐动作和一个清晰的确认按钮；充电影响、收费信息和备选路线可以留在第二层，等驾驶员需要时再展开。这不仅是视觉简化，也与驾驶负荷、交互时机和信任有关。停车时系统可以展示更丰富的设置和解释；并线、拥堵或变道时，同一系统应简化界面并推迟非必要选择。设计师需要定义哪些信息安全关键，哪些信息有用但可延后，哪些信息应等场景更平稳时再出现。评审中可以说：渐进式披露通过让信息深度匹配驾驶风险、用户意图和可用交互时间来保护注意力。",
+        "source": {
+          "label": "原创学习文本：基于智能座舱 HMI 设计评审场景整理",
+          "url": ""
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A good HMI starts with the core decision and then reveals supporting detail only when the driver has enough time and attention.",
+        "structure": "主语 A good HMI + 谓语 starts with / reveals + 时间条件 only when...",
+        "focus": "用 starts with 和 then reveals 表达分层呈现逻辑。",
+        "pattern": "A good HMI starts with..., and then reveals... only when..."
+      },
+      {
+        "sentence": "This approach is not only about visual simplicity but also about driving workload, interaction timing, and trust.",
+        "structure": "This approach is not only about A but also about B, C, and D.",
+        "focus": "用 not only...but also... 把视觉设计上升到负荷、时机和信任层面。",
+        "pattern": "This approach is not only about..., but also about..."
+      },
+      {
+        "sentence": "During a merge, heavy traffic, or a lane change, the same system should simplify the interface and postpone nonessential choices.",
+        "structure": "场景状语 During... + 主语 the same system + should + 两个并列动词 simplify / postpone。",
+        "focus": "说明同一系统应根据驾驶场景调整信息复杂度。",
+        "pattern": "During..., the system should simplify... and postpone..."
+      },
+      {
+        "sentence": "Progressive disclosure protects attention by matching information depth to driving risk, user intent, and available interaction time.",
+        "structure": "主语 Progressive disclosure + 谓语 protects + by doing 说明方法。",
+        "focus": "用 by matching...to... 解释设计原则背后的原因。",
+        "pattern": "...protects attention by matching...to..."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 progressive disclosure、contextual reveal、deferred detail 和 adaptive simplification 的使用场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先完整播放或朗读长文，再逐句复述“先呈现核心决策，再展开支持细节”的逻辑。"
+      },
+      {
+        "title": "句型替换",
+        "time": "6 分钟",
+        "detail": "用 This approach is not only about...but also about... 描述一个导航、空调或辅助驾驶提示方案。"
+      },
+      {
+        "title": "评审表达",
+        "time": "6 分钟",
+        "detail": "用英语说明某个复杂设置为什么应在行驶中隐藏，并解释它与 driving workload、interaction timing 和 confirmation threshold 的关系。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-11-cross-screen-information-hierarchy",
     "date": "2026-07-11",
     "title": "Cross-screen information hierarchy and continuity in intelligent cockpits",
