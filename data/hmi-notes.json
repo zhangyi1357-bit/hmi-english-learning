@@ -1,5 +1,834 @@
 [
   {
+    "id": "2026-07-13-predictive-intent-user-agency",
+    "date": "2026-07-13",
+    "title": "Predictive intent and user agency in intelligent cockpits",
+    "topic": "智能座舱预测性意图与用户主导权",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱的主动建议、预测性意图、置信阈值和用户同意边界，重点表达系统如何在减少操作负担的同时保留用户主导权。",
+    "words": [
+      {
+        "term": "predictive intent",
+        "phonetic": "/prɪˈdɪktɪv ɪnˈtent/",
+        "meaning": "预测性意图；系统根据场景、历史行为和当前任务推测用户下一步需求",
+        "example": "Predictive intent helps the cockpit suggest the next action before the driver opens a menu.",
+        "chineseExample": "预测性意图帮助座舱在驾驶员打开菜单前建议下一步操作。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信阈值；系统决定是否主动推荐或执行动作所需达到的可信程度",
+        "example": "The assistant should speak only when its confidence threshold is high enough for the driving context.",
+        "chineseExample": "只有当置信阈值足以匹配驾驶场景时，助手才应主动发声。"
+      },
+      {
+        "term": "driver consent",
+        "phonetic": "/ˈdraɪvər kənˈsent/",
+        "meaning": "驾驶员同意；系统在执行个性化、自动化或数据相关动作前获得用户确认",
+        "example": "Driver consent is required before the cockpit changes a route, shares data, or applies a personal profile.",
+        "chineseExample": "座舱更改路线、共享数据或应用个人配置前需要驾驶员同意。"
+      },
+      {
+        "term": "explainable suggestion",
+        "phonetic": "/ɪkˈspleɪnəbl səˈdʒestʃən/",
+        "meaning": "可解释建议；系统说明推荐原因、依据和预期影响的提示方式",
+        "example": "An explainable suggestion tells the driver why the seat heating recommendation appears now.",
+        "chineseExample": "可解释建议会告诉驾驶员为什么现在出现座椅加热推荐。"
+      },
+      {
+        "term": "situational trigger",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl ˈtrɪɡər/",
+        "meaning": "情境触发条件；由位置、时间、天气、驾驶状态或任务阶段引发的系统动作条件",
+        "example": "A situational trigger can surface a charging reminder when range, weather, and destination all indicate risk.",
+        "chineseExample": "当续航、天气和目的地都显示风险时，情境触发条件可以呈现充电提醒。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能自主处理和必须交还用户确认之间的明确界限",
+        "example": "Clear automation boundaries prevent the cockpit from acting as if a recommendation were already approved.",
+        "chineseExample": "清晰的自动化边界能防止座舱把推荐当成已获批准的动作。"
+      },
+      {
+        "term": "proactive prompt",
+        "phonetic": "/proʊˈæktɪv prɑːmpt/",
+        "meaning": "主动提示；系统在用户明确请求前基于场景提供的简短建议或提醒",
+        "example": "A proactive prompt should be short, reversible, and easy to dismiss while driving.",
+        "chineseExample": "主动提示在驾驶中应简短、可撤销，并且容易忽略或关闭。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户理解、选择、修改或拒绝系统建议的能力",
+        "example": "User agency remains intact when the driver can review, accept, edit, or reject a cockpit suggestion.",
+        "chineseExample": "当驾驶员可以查看、接受、编辑或拒绝座舱建议时，用户主导权得以保留。"
+      },
+      {
+        "term": "contextual confidence",
+        "phonetic": "/kənˈtekstʃuəl ˈkɑːnfɪdəns/",
+        "meaning": "情境置信度；系统结合驾驶环境和用户意图后对某个判断的把握程度",
+        "example": "Contextual confidence should drop when the driver is in heavy traffic or gives ambiguous voice input.",
+        "chineseExample": "当驾驶员处于拥堵交通或发出模糊语音输入时，情境置信度应下降。"
+      },
+      {
+        "term": "reversible action",
+        "phonetic": "/rɪˈvɜːrsəbl ˈækʃn/",
+        "meaning": "可撤销动作；用户能轻松取消、恢复或修改的系统操作",
+        "example": "A reversible action is safer for proactive personalization than an irreversible setting change.",
+        "chineseExample": "相比不可逆的设置更改，可撤销动作更适合主动个性化。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "predictive intent",
+        "phonetic": "/prɪˈdɪktɪv ɪnˈtent/",
+        "meaning": "预测性意图；系统根据场景、历史行为和当前任务推测用户下一步需求",
+        "example": "Predictive intent helps the cockpit suggest the next action before the driver opens a menu.",
+        "chineseExample": "预测性意图帮助座舱在驾驶员打开菜单前建议下一步操作。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信阈值；系统决定是否主动推荐或执行动作所需达到的可信程度",
+        "example": "The assistant should speak only when its confidence threshold is high enough for the driving context.",
+        "chineseExample": "只有当置信阈值足以匹配驾驶场景时，助手才应主动发声。"
+      },
+      {
+        "term": "driver consent",
+        "phonetic": "/ˈdraɪvər kənˈsent/",
+        "meaning": "驾驶员同意；系统在执行个性化、自动化或数据相关动作前获得用户确认",
+        "example": "Driver consent is required before the cockpit changes a route, shares data, or applies a personal profile.",
+        "chineseExample": "座舱更改路线、共享数据或应用个人配置前需要驾驶员同意。"
+      },
+      {
+        "term": "explainable suggestion",
+        "phonetic": "/ɪkˈspleɪnəbl səˈdʒestʃən/",
+        "meaning": "可解释建议；系统说明推荐原因、依据和预期影响的提示方式",
+        "example": "An explainable suggestion tells the driver why the seat heating recommendation appears now.",
+        "chineseExample": "可解释建议会告诉驾驶员为什么现在出现座椅加热推荐。"
+      },
+      {
+        "term": "situational trigger",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl ˈtrɪɡər/",
+        "meaning": "情境触发条件；由位置、时间、天气、驾驶状态或任务阶段引发的系统动作条件",
+        "example": "A situational trigger can surface a charging reminder when range, weather, and destination all indicate risk.",
+        "chineseExample": "当续航、天气和目的地都显示风险时，情境触发条件可以呈现充电提醒。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能自主处理和必须交还用户确认之间的明确界限",
+        "example": "Clear automation boundaries prevent the cockpit from acting as if a recommendation were already approved.",
+        "chineseExample": "清晰的自动化边界能防止座舱把推荐当成已获批准的动作。"
+      },
+      {
+        "term": "proactive prompt",
+        "phonetic": "/proʊˈæktɪv prɑːmpt/",
+        "meaning": "主动提示；系统在用户明确请求前基于场景提供的简短建议或提醒",
+        "example": "A proactive prompt should be short, reversible, and easy to dismiss while driving.",
+        "chineseExample": "主动提示在驾驶中应简短、可撤销，并且容易忽略或关闭。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户理解、选择、修改或拒绝系统建议的能力",
+        "example": "User agency remains intact when the driver can review, accept, edit, or reject a cockpit suggestion.",
+        "chineseExample": "当驾驶员可以查看、接受、编辑或拒绝座舱建议时，用户主导权得以保留。"
+      },
+      {
+        "term": "contextual confidence",
+        "phonetic": "/kənˈtekstʃuəl ˈkɑːnfɪdəns/",
+        "meaning": "情境置信度；系统结合驾驶环境和用户意图后对某个判断的把握程度",
+        "example": "Contextual confidence should drop when the driver is in heavy traffic or gives ambiguous voice input.",
+        "chineseExample": "当驾驶员处于拥堵交通或发出模糊语音输入时，情境置信度应下降。"
+      },
+      {
+        "term": "reversible action",
+        "phonetic": "/rɪˈvɜːrsəbl ˈækʃn/",
+        "meaning": "可撤销动作；用户能轻松取消、恢复或修改的系统操作",
+        "example": "A reversible action is safer for proactive personalization than an irreversible setting change.",
+        "chineseExample": "相比不可逆的设置更改，可撤销动作更适合主动个性化。"
+      },
+      {
+        "term": "predictive",
+        "phonetic": "/prɪˈdɪktɪv/",
+        "meaning": "预测性的；基于数据或模式推测未来需求的",
+        "example": "Predictive features should still ask for confirmation.",
+        "chineseExample": "预测性功能仍应请求确认。"
+      },
+      {
+        "term": "intent",
+        "phonetic": "/ɪnˈtent/",
+        "meaning": "意图；用户想要完成的目标或下一步动作",
+        "example": "Intent is not always clear from repeated behavior.",
+        "chineseExample": "重复行为并不总能清楚说明意图。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某个判断或动作的最低标准",
+        "example": "The threshold should change with risk.",
+        "chineseExample": "阈值应随风险变化。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "同意；用户明确允许系统执行某项动作",
+        "example": "Consent protects trust in personalization.",
+        "chineseExample": "同意机制保护个性化中的信任。"
+      },
+      {
+        "term": "explainable",
+        "phonetic": "/ɪkˈspleɪnəbl/",
+        "meaning": "可解释的；用户能理解原因和依据的",
+        "example": "Explainable prompts reduce surprise.",
+        "chineseExample": "可解释提示减少意外感。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/səˈdʒestʃən/",
+        "meaning": "建议；系统提出但不强制执行的选项",
+        "example": "A suggestion should be easy to reject.",
+        "chineseExample": "建议应容易拒绝。"
+      },
+      {
+        "term": "situational",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl/",
+        "meaning": "情境相关的；由当前环境和任务决定的",
+        "example": "Situational cues shape the prompt timing.",
+        "chineseExample": "情境线索会影响提示时机。"
+      },
+      {
+        "term": "trigger",
+        "phonetic": "/ˈtrɪɡər/",
+        "meaning": "触发条件；引发系统提示或动作的条件",
+        "example": "The trigger should be visible to the user.",
+        "chineseExample": "触发条件应对用户可见。"
+      },
+      {
+        "term": "automation",
+        "phonetic": "/ˌɔːtəˈmeɪʃn/",
+        "meaning": "自动化；系统自动完成或辅助完成任务的能力",
+        "example": "Automation needs a clear handoff point.",
+        "chineseExample": "自动化需要清晰的交接点。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；系统权限或适用范围的限制",
+        "example": "A boundary tells the driver what the system will not do.",
+        "chineseExample": "边界告诉驾驶员系统不会做什么。"
+      },
+      {
+        "term": "proactive",
+        "phonetic": "/proʊˈæktɪv/",
+        "meaning": "主动的；在用户请求前提前提供帮助的",
+        "example": "Proactive help should not feel intrusive.",
+        "chineseExample": "主动帮助不应让人感觉被打扰。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；界面给出的简短信息或行动请求",
+        "example": "The prompt gives one clear next step.",
+        "chineseExample": "提示给出一个清晰的下一步。"
+      },
+      {
+        "term": "agency",
+        "phonetic": "/ˈeɪdʒənsi/",
+        "meaning": "主导权；用户能控制选择和结果的能力",
+        "example": "Agency is central to trust.",
+        "chineseExample": "主导权是信任的核心。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对判断结果的把握程度",
+        "example": "Confidence should be lower for ambiguous input.",
+        "chineseExample": "对于模糊输入，置信度应降低。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "可撤销的；可以恢复或取消的",
+        "example": "Reversible changes are easier to accept.",
+        "chineseExample": "可撤销更改更容易被接受。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；人与系统之间的信息和动作交换",
+        "example": "Interaction design must respect attention.",
+        "chineseExample": "交互设计必须尊重注意力。"
+      },
+      {
+        "term": "intelligent vehicle",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈviːəkl/",
+        "meaning": "智能汽车；具备感知、计算和交互能力的车辆",
+        "example": "An intelligent vehicle can adapt to driver routines.",
+        "chineseExample": "智能汽车可以适应驾驶员习惯。"
+      },
+      {
+        "term": "cold mornings",
+        "phonetic": "/koʊld ˈmɔːrnɪŋz/",
+        "meaning": "寒冷早晨；常用于描述座椅加热等场景触发条件",
+        "example": "Cold mornings can trigger a comfort suggestion.",
+        "chineseExample": "寒冷早晨可以触发舒适性建议。"
+      },
+      {
+        "term": "seat heating",
+        "phonetic": "/siːt ˈhiːtɪŋ/",
+        "meaning": "座椅加热；座舱舒适性功能之一",
+        "example": "Seat heating should remain under driver control.",
+        "chineseExample": "座椅加热应保留驾驶员控制。"
+      },
+      {
+        "term": "quieter route",
+        "phonetic": "/ˈkwaɪətər ruːt/",
+        "meaning": "更安静路线；噪声、拥堵或驾驶压力较低的路线",
+        "example": "A quieter route may be useful after work.",
+        "chineseExample": "下班后更安静路线可能有帮助。"
+      },
+      {
+        "term": "regular commute",
+        "phonetic": "/ˈreɡjələr kəˈmjuːt/",
+        "meaning": "固定通勤；用户反复出现的上下班出行模式",
+        "example": "A regular commute can reveal useful habits.",
+        "chineseExample": "固定通勤可以显示有用习惯。"
+      },
+      {
+        "term": "permission",
+        "phonetic": "/pərˈmɪʃn/",
+        "meaning": "许可；系统执行动作前获得的允许",
+        "example": "Permission is different from prediction.",
+        "chineseExample": "许可不同于预测。"
+      },
+      {
+        "term": "silently",
+        "phonetic": "/ˈsaɪləntli/",
+        "meaning": "静默地；不提示用户或不解释原因地",
+        "example": "The cockpit should not silently change personal settings.",
+        "chineseExample": "座舱不应静默更改个人设置。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/ˈwɜːrdɪŋ/",
+        "meaning": "措辞；界面提示的具体表达方式",
+        "example": "Small wording choices affect trust.",
+        "chineseExample": "细微措辞会影响信任。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户相信系统可靠、透明且可控的程度",
+        "example": "Trust grows when the system explains itself.",
+        "chineseExample": "当系统解释自身行为时，信任会增强。"
+      },
+      {
+        "term": "navigation shortcut",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈʃɔːrtkʌt/",
+        "meaning": "导航捷径；系统推荐的更快路线或操作路径",
+        "example": "A navigation shortcut may need confirmation.",
+        "chineseExample": "导航捷径可能需要确认。"
+      },
+      {
+        "term": "climate adjustment",
+        "phonetic": "/ˈklaɪmət əˈdʒʌstmənt/",
+        "meaning": "空调调节；温度、风量或舒适性设置的变化",
+        "example": "A climate adjustment has lower risk than data sharing.",
+        "chineseExample": "空调调节比数据共享风险更低。"
+      },
+      {
+        "term": "data-sharing action",
+        "phonetic": "/ˈdeɪtə ˈʃerɪŋ ˈækʃn/",
+        "meaning": "数据共享动作；向外部服务或账户发送数据的行为",
+        "example": "A data-sharing action requires explicit consent.",
+        "chineseExample": "数据共享动作需要明确同意。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；操作可能造成误解、打扰或安全问题的程度",
+        "example": "Risk determines how much confirmation is needed.",
+        "chineseExample": "风险决定需要多少确认。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清晰易懂的语言；避免术语和含糊表达的说明方式",
+        "example": "Plain language helps drivers understand the trigger.",
+        "chineseExample": "清晰易懂的语言帮助驾驶员理解触发条件。"
+      },
+      {
+        "term": "calendar timing",
+        "phonetic": "/ˈkælɪndər ˈtaɪmɪŋ/",
+        "meaning": "日程时间；由日历事件或时间安排产生的情境线索",
+        "example": "Calendar timing can support a route suggestion.",
+        "chineseExample": "日程时间可以支持路线建议。"
+      },
+      {
+        "term": "low battery",
+        "phonetic": "/loʊ ˈbætəri/",
+        "meaning": "低电量；车辆电池余量不足的状态",
+        "example": "Low battery can justify a charging reminder.",
+        "chineseExample": "低电量可以解释充电提醒。"
+      },
+      {
+        "term": "repeated behavior",
+        "phonetic": "/rɪˈpiːtɪd bɪˈheɪvjər/",
+        "meaning": "重复行为；用户多次出现的相同行动模式",
+        "example": "Repeated behavior is a signal, not full consent.",
+        "chineseExample": "重复行为是一种信号，不是完整同意。"
+      },
+      {
+        "term": "ambiguous voice input",
+        "phonetic": "/æmˈbɪɡjuəs vɔɪs ˈɪnpʊt/",
+        "meaning": "模糊语音输入；系统难以准确理解的语音命令",
+        "example": "Ambiguous voice input should trigger clarification.",
+        "chineseExample": "模糊语音输入应触发澄清。"
+      },
+      {
+        "term": "clarifying question",
+        "phonetic": "/ˈklærəfaɪɪŋ ˈkwestʃən/",
+        "meaning": "澄清问题；系统为确认用户意图而提出的问题",
+        "example": "A clarifying question is better than a risky assumption.",
+        "chineseExample": "澄清问题优于有风险的假设。"
+      },
+      {
+        "term": "neutral option",
+        "phonetic": "/ˈnuːtrəl ˈɑːpʃn/",
+        "meaning": "中性选项；不强迫用户接受系统判断的选择",
+        "example": "A neutral option lets the driver keep the current state.",
+        "chineseExample": "中性选项让驾驶员保持当前状态。"
+      },
+      {
+        "term": "next step",
+        "phonetic": "/nekst step/",
+        "meaning": "下一步；用户或系统接下来要执行的动作",
+        "example": "The interface should make the next step obvious.",
+        "chineseExample": "界面应让下一步显而易见。"
+      },
+      {
+        "term": "user control",
+        "phonetic": "/ˈjuːzər kənˈtroʊl/",
+        "meaning": "用户控制；用户能决定系统是否执行动作的能力",
+        "example": "User control is essential for proactive HMI.",
+        "chineseExample": "用户控制对主动式 HMI 至关重要。"
+      },
+      {
+        "term": "personal profile",
+        "phonetic": "/ˈpɜːrsənl ˈproʊfaɪl/",
+        "meaning": "个人配置；保存偏好、习惯和设置的数据集合",
+        "example": "A personal profile should not be applied without consent.",
+        "chineseExample": "个人配置不应在未经同意时应用。"
+      },
+      {
+        "term": "dismiss",
+        "phonetic": "/dɪsˈmɪs/",
+        "meaning": "关闭；忽略或移除提示",
+        "example": "The driver should be able to dismiss the prompt quickly.",
+        "chineseExample": "驾驶员应能快速关闭提示。"
+      },
+      {
+        "term": "intact",
+        "phonetic": "/ɪnˈtækt/",
+        "meaning": "保持完整的；未被削弱或破坏的",
+        "example": "User agency remains intact when choices are visible.",
+        "chineseExample": "当选择可见时，用户主导权保持完整。"
+      },
+      {
+        "term": "approve",
+        "phonetic": "/əˈpruːv/",
+        "meaning": "批准；确认允许系统执行",
+        "example": "The cockpit should not act before the driver approves.",
+        "chineseExample": "驾驶员批准前座舱不应执行。"
+      },
+      {
+        "term": "apply",
+        "phonetic": "/əˈplaɪ/",
+        "meaning": "应用；把设置或配置实际生效",
+        "example": "The system can apply the setting after confirmation.",
+        "chineseExample": "系统可在确认后应用设置。"
+      },
+      {
+        "term": "suggest",
+        "phonetic": "/səˈdʒest/",
+        "meaning": "建议；提出可选动作",
+        "example": "The cockpit can suggest a safer next step.",
+        "chineseExample": "座舱可以建议更安全的下一步。"
+      },
+      {
+        "term": "opens",
+        "phonetic": "/ˈoʊpənz/",
+        "meaning": "打开；进入菜单或功能",
+        "example": "The driver opens the menu only when needed.",
+        "chineseExample": "驾驶员只在需要时打开菜单。"
+      },
+      {
+        "term": "speak",
+        "phonetic": "/spiːk/",
+        "meaning": "说出；通过语音提示表达",
+        "example": "The assistant should speak at the right time.",
+        "chineseExample": "助手应在合适时机发声。"
+      },
+      {
+        "term": "its",
+        "phonetic": "/ɪts/",
+        "meaning": "它的；表示系统或车辆所属的属性",
+        "example": "The system explains its reason clearly.",
+        "chineseExample": "系统清楚解释它的原因。"
+      },
+      {
+        "term": "shares",
+        "phonetic": "/ʃerz/",
+        "meaning": "共享；发送或提供数据",
+        "example": "The vehicle shares data only with consent.",
+        "chineseExample": "车辆只在获得同意后共享数据。"
+      },
+      {
+        "term": "applies",
+        "phonetic": "/əˈplaɪz/",
+        "meaning": "应用；让设置生效",
+        "example": "The cockpit applies the profile after confirmation.",
+        "chineseExample": "座舱在确认后应用配置。"
+      },
+      {
+        "term": "personal",
+        "phonetic": "/ˈpɜːrsənl/",
+        "meaning": "个人的；与用户偏好或身份相关的",
+        "example": "Personal settings need clear control.",
+        "chineseExample": "个人设置需要清晰控制。"
+      },
+      {
+        "term": "heating",
+        "phonetic": "/ˈhiːtɪŋ/",
+        "meaning": "加热；提升温度的功能",
+        "example": "Heating can be suggested on cold mornings.",
+        "chineseExample": "寒冷早晨可以建议加热。"
+      },
+      {
+        "term": "now",
+        "phonetic": "/naʊ/",
+        "meaning": "现在；当前时刻",
+        "example": "The prompt explains why it appears now.",
+        "chineseExample": "提示解释为什么现在出现。"
+      },
+      {
+        "term": "weather",
+        "phonetic": "/ˈweðər/",
+        "meaning": "天气；影响驾驶和舒适性的环境条件",
+        "example": "Weather can trigger a cabin comfort suggestion.",
+        "chineseExample": "天气可以触发座舱舒适性建议。"
+      },
+      {
+        "term": "indicate",
+        "phonetic": "/ˈɪndɪkeɪt/",
+        "meaning": "表明；显示某种状态或风险",
+        "example": "Low range may indicate charging risk.",
+        "chineseExample": "低续航可能表明充电风险。"
+      },
+      {
+        "term": "boundaries",
+        "phonetic": "/ˈbaʊndəriz/",
+        "meaning": "边界；权限或适用范围的限制",
+        "example": "Automation boundaries must remain visible.",
+        "chineseExample": "自动化边界必须保持可见。"
+      },
+      {
+        "term": "prevent",
+        "phonetic": "/prɪˈvent/",
+        "meaning": "防止；避免问题发生",
+        "example": "Clear wording can prevent misunderstanding.",
+        "chineseExample": "清晰措辞可以防止误解。"
+      },
+      {
+        "term": "already",
+        "phonetic": "/ɔːlˈredi/",
+        "meaning": "已经；表示动作已发生",
+        "example": "The system should not assume approval already exists.",
+        "chineseExample": "系统不应假设批准已经存在。"
+      },
+      {
+        "term": "approved",
+        "phonetic": "/əˈpruːvd/",
+        "meaning": "已批准的；已被用户确认的",
+        "example": "An approved action can proceed safely.",
+        "chineseExample": "已批准动作可以安全继续。"
+      },
+      {
+        "term": "easy",
+        "phonetic": "/ˈiːzi/",
+        "meaning": "容易的；操作负担低的",
+        "example": "The prompt should be easy to dismiss.",
+        "chineseExample": "提示应容易关闭。"
+      },
+      {
+        "term": "accept",
+        "phonetic": "/əkˈsept/",
+        "meaning": "接受；同意系统建议",
+        "example": "The driver can accept the route suggestion.",
+        "chineseExample": "驾驶员可以接受路线建议。"
+      },
+      {
+        "term": "reject",
+        "phonetic": "/rɪˈdʒekt/",
+        "meaning": "拒绝；不同意系统建议",
+        "example": "The driver can reject the proactive prompt.",
+        "chineseExample": "驾驶员可以拒绝主动提示。"
+      },
+      {
+        "term": "drop",
+        "phonetic": "/drɑːp/",
+        "meaning": "下降；降低某个数值或等级",
+        "example": "Confidence should drop in uncertain contexts.",
+        "chineseExample": "在不确定场景中置信度应下降。"
+      },
+      {
+        "term": "safer",
+        "phonetic": "/ˈseɪfər/",
+        "meaning": "更安全的；风险更低的",
+        "example": "A reversible action is safer than an automatic change.",
+        "chineseExample": "可撤销动作比自动更改更安全。"
+      },
+      {
+        "term": "irreversible",
+        "phonetic": "/ˌɪrɪˈvɜːrsəbl/",
+        "meaning": "不可逆的；难以取消或恢复的",
+        "example": "Irreversible changes need stronger consent.",
+        "chineseExample": "不可逆更改需要更强的同意。"
+      },
+      {
+        "term": "helpful",
+        "phonetic": "/ˈhelpfl/",
+        "meaning": "有帮助的；能减少操作负担的",
+        "example": "A helpful cockpit still respects user choice.",
+        "chineseExample": "有帮助的座舱仍尊重用户选择。"
+      },
+      {
+        "term": "designed",
+        "phonetic": "/dɪˈzaɪnd/",
+        "meaning": "被设计的；按目标和约束规划的",
+        "example": "The flow is designed with clear limits.",
+        "chineseExample": "该流程按清晰边界设计。"
+      },
+      {
+        "term": "limits",
+        "phonetic": "/ˈlɪmɪts/",
+        "meaning": "限制；不能越过的范围",
+        "example": "Limits make automation easier to trust.",
+        "chineseExample": "限制让自动化更容易被信任。"
+      },
+      {
+        "term": "cold",
+        "phonetic": "/koʊld/",
+        "meaning": "寒冷的；温度较低的",
+        "example": "Cold weather can justify a heating suggestion.",
+        "chineseExample": "寒冷天气可以解释加热建议。"
+      },
+      {
+        "term": "mornings",
+        "phonetic": "/ˈmɔːrnɪŋz/",
+        "meaning": "早晨；一天开始的时间段",
+        "example": "Cold mornings are common comfort triggers.",
+        "chineseExample": "寒冷早晨是常见舒适性触发条件。"
+      },
+      {
+        "term": "quieter",
+        "phonetic": "/ˈkwaɪətər/",
+        "meaning": "更安静的；噪声或干扰更少的",
+        "example": "A quieter route may reduce stress.",
+        "chineseExample": "更安静路线可能降低压力。"
+      },
+      {
+        "term": "family",
+        "phonetic": "/ˈfæməli/",
+        "meaning": "家庭；亲属或家庭联系人",
+        "example": "The driver may call a family member during a commute.",
+        "chineseExample": "驾驶员可能在通勤中拨打家庭成员电话。"
+      },
+      {
+        "term": "member",
+        "phonetic": "/ˈmembər/",
+        "meaning": "成员；群体中的一个人",
+        "example": "A family member can appear in a calling suggestion.",
+        "chineseExample": "家庭成员可能出现在通话建议中。"
+      },
+      {
+        "term": "regular",
+        "phonetic": "/ˈreɡjələr/",
+        "meaning": "固定的；规律出现的",
+        "example": "Regular behavior can inform prediction.",
+        "chineseExample": "规律行为可以支持预测。"
+      },
+      {
+        "term": "commute",
+        "phonetic": "/kəˈmjuːt/",
+        "meaning": "通勤；上下班固定出行",
+        "example": "A commute pattern can shape cockpit suggestions.",
+        "chineseExample": "通勤模式可以影响座舱建议。"
+      },
+      {
+        "term": "yet",
+        "phonetic": "/jet/",
+        "meaning": "然而；用于转折",
+        "example": "The signal is useful, yet it is not consent.",
+        "chineseExample": "该信号有用，然而它不是同意。"
+      },
+      {
+        "term": "automatically",
+        "phonetic": "/ˌɔːtəˈmætɪkli/",
+        "meaning": "自动地；无需人工操作地",
+        "example": "The system should not automatically prove intent.",
+        "chineseExample": "系统不应自动证明意图。"
+      },
+      {
+        "term": "prove",
+        "phonetic": "/pruːv/",
+        "meaning": "证明；确认某事为真",
+        "example": "Repeated behavior does not prove consent.",
+        "chineseExample": "重复行为不能证明同意。"
+      },
+      {
+        "term": "prediction",
+        "phonetic": "/prɪˈdɪkʃn/",
+        "meaning": "预测；对未来需求或行为的判断",
+        "example": "Prediction must be separated from permission.",
+        "chineseExample": "预测必须与许可分开。"
+      },
+      {
+        "term": "outside",
+        "phonetic": "/ˌaʊtˈsaɪd/",
+        "meaning": "外面；车辆外部环境",
+        "example": "It is cold outside.",
+        "chineseExample": "外面很冷。"
+      },
+      {
+        "term": "would",
+        "phonetic": "/wʊd/",
+        "meaning": "会；用于礼貌询问或条件表达",
+        "example": "Would you like to turn on seat heating?",
+        "chineseExample": "你想打开座椅加热吗？"
+      },
+      {
+        "term": "turn",
+        "phonetic": "/tɜːrn/",
+        "meaning": "打开；切换功能状态",
+        "example": "The driver can turn on heating manually.",
+        "chineseExample": "驾驶员可以手动打开加热。"
+      },
+      {
+        "term": "difference",
+        "phonetic": "/ˈdɪfrəns/",
+        "meaning": "差异；两个设计选择之间的不同",
+        "example": "A small wording difference can change trust.",
+        "chineseExample": "细微措辞差异会改变信任。"
+      },
+      {
+        "term": "data-sharing",
+        "phonetic": "/ˈdeɪtə ˈʃerɪŋ/",
+        "meaning": "数据共享的；与数据发送相关的",
+        "example": "A data-sharing prompt requires explicit consent.",
+        "chineseExample": "数据共享提示需要明确同意。"
+      },
+      {
+        "term": "carry",
+        "phonetic": "/ˈkæri/",
+        "meaning": "带有；承载风险或影响",
+        "example": "Different actions carry different risks.",
+        "chineseExample": "不同动作带有不同风险。"
+      },
+      {
+        "term": "calendar",
+        "phonetic": "/ˈkælɪndər/",
+        "meaning": "日历；日程安排工具或时间线索",
+        "example": "Calendar events can support prediction.",
+        "chineseExample": "日历事件可以支持预测。"
+      },
+      {
+        "term": "offer",
+        "phonetic": "/ˈɔːfər/",
+        "meaning": "提供；给出选项",
+        "example": "The system can offer a neutral option.",
+        "chineseExample": "系统可以提供中性选项。"
+      },
+      {
+        "term": "neutral",
+        "phonetic": "/ˈnuːtrəl/",
+        "meaning": "中性的；不偏向某个决定的",
+        "example": "A neutral option avoids pressure.",
+        "chineseExample": "中性选项避免施压。"
+      },
+      {
+        "term": "clarifying",
+        "phonetic": "/ˈklærəfaɪɪŋ/",
+        "meaning": "用于澄清的；帮助确认含义的",
+        "example": "A clarifying question reduces ambiguity.",
+        "chineseExample": "澄清问题减少歧义。"
+      },
+      {
+        "term": "removing",
+        "phonetic": "/rɪˈmuːvɪŋ/",
+        "meaning": "移除；拿走或取消",
+        "example": "Do not improve convenience by removing control.",
+        "chineseExample": "不要通过移除控制来提升便利性。"
+      },
+      {
+        "term": "strongest",
+        "phonetic": "/ˈstrɔːŋɡəst/",
+        "meaning": "最强的；效果最佳的",
+        "example": "Predictive HMI is strongest when it preserves agency.",
+        "chineseExample": "预测式 HMI 在保留主导权时效果最佳。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Prediction is not permission",
+        "text": "Predictive cockpit interaction can make an intelligent vehicle feel helpful, but it must be designed with clear limits. The system may notice that the driver usually turns on seat heating on cold mornings, selects a quieter route after work, or calls a family member during a regular commute. These signals can support a proactive prompt, yet they do not automatically prove intent. A good HMI therefore separates prediction from permission. It can say, \"It is cold outside. Would you like to turn on seat heating?\" instead of silently changing the setting. The difference is small in wording but important for trust. Designers should define a confidence threshold for each suggestion, because a navigation shortcut, a climate adjustment, and a data-sharing action do not carry the same risk. The interface should also explain the situational trigger in plain language, such as weather, calendar timing, low battery, or repeated behavior. When confidence is low, the cockpit should wait, offer a neutral option, or ask a clarifying question. When confidence is high, it can make the next step easier without removing user agency. Predictive HMI is strongest when it reduces effort, keeps actions reversible, and makes every automation boundary visible.",
+        "translation": "预测式座舱交互可以让智能汽车显得更有帮助，但必须设计清晰边界。系统可能注意到驾驶员通常会在寒冷早晨打开座椅加热、下班后选择更安静路线，或在固定通勤中拨打家庭电话。这些信号可以支持主动提示，但并不自动证明意图。因此，好的 HMI 会把预测和许可分开。它可以说“外面很冷，要打开座椅加热吗？”而不是静默更改设置。措辞差别很小，但对信任很重要。设计师应为每类建议定义置信阈值，因为导航捷径、空调调节和数据共享动作的风险并不相同。界面还应使用清晰语言解释情境触发条件，例如天气、日程时间、低电量或重复行为。当置信度低时，座舱应等待、提供中性选项，或提出澄清问题。当置信度高时，它可以让下一步更容易，但不能移除用户主导权。预测式 HMI 最强的状态，是减少操作负担、保持动作可撤销，并让每条自动化边界可见。",
+        "source": "原创练习文本：基于智能座舱预测式交互、用户同意和可解释建议的通用设计原则编写。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Predictive cockpit interaction can make an intelligent vehicle feel helpful, but it must be designed with clear limits.",
+        "structure": "主语 Predictive cockpit interaction + 情态动词 can make... + 转折 but it must be designed...",
+        "focus": "用 can make...but it must... 表达主动智能带来的价值与边界。",
+        "pattern": "Predictive interaction can make..., but it must be designed with..."
+      },
+      {
+        "sentence": "These signals can support a proactive prompt, yet they do not automatically prove intent.",
+        "structure": "These signals + can support... + yet + they do not prove...",
+        "focus": "用 yet 区分行为信号和真实意图，适合解释系统不应过度推断。",
+        "pattern": "These signals can support..., yet they do not automatically prove..."
+      },
+      {
+        "sentence": "A good HMI therefore separates prediction from permission.",
+        "structure": "主语 A good HMI + 副词 therefore + 谓语 separates + A from B。",
+        "focus": "用 separates A from B 简洁说明设计原则。",
+        "pattern": "A good HMI separates... from..."
+      },
+      {
+        "sentence": "Predictive HMI is strongest when it reduces effort, keeps actions reversible, and makes every automation boundary visible.",
+        "structure": "主句 Predictive HMI is strongest + when 引导条件 + 三个并列动词 reduces / keeps / makes。",
+        "focus": "用三个并列动词总结预测式 HMI 的评价标准。",
+        "pattern": "Predictive HMI is strongest when it..., keeps..., and makes..."
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 words 中 10 个术语，重点区分 prediction、permission、consent 和 agency。",
+      "6 分钟：跟读长文，标记所有表达系统主动建议和用户确认边界的句子。",
+      "5 分钟：用 confidence threshold、situational trigger、reversible action 各造一个智能座舱评审句。",
+      "5-10 分钟：口头复述一个座椅加热或导航推荐场景，说明系统如何预测、解释、请求同意并保留撤销入口。"
+    ],
+    "videos": [
+      {
+        "title": "Practice without a fixed video source",
+        "url": "",
+        "note": "今天内容为原创跟读练习，未绑定可靠公开视频链接；可使用页面朗读按钮完成听说练习。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-12-progressive-disclosure-driving-workload",
     "date": "2026-07-12",
     "title": "Progressive disclosure and driving workload control in intelligent cockpits",
