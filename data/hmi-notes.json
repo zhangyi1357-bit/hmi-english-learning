@@ -1,5 +1,735 @@
 [
   {
+    "id": "2026-07-14-haptic-confirmation-glanceable-feedback",
+    "date": "2026-07-14",
+    "title": "Haptic confirmation and glanceable feedback in intelligent cockpits",
+    "topic": "智能座舱触觉确认与可扫视反馈",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱中的触觉确认、短时可扫视反馈、视觉负荷控制和跨模态确认，重点表达系统如何让驾驶员在不长时间离路注视的情况下理解操作结果。",
+    "words": [
+      {
+        "term": "haptic confirmation",
+        "phonetic": "/ˈhæptɪk ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "触觉确认；通过振动、轻触或阻尼变化提示用户操作已被系统接收",
+        "example": "Haptic confirmation tells the driver that the climate control has changed without requiring a long glance.",
+        "chineseExample": "触觉确认能在不要求长时间注视的情况下告诉驾驶员空调控制已改变。"
+      },
+      {
+        "term": "glanceable feedback",
+        "phonetic": "/ˈɡlænsəbl ˈfiːdbæk/",
+        "meaning": "可扫视反馈；驾驶员短暂看一眼即可理解的界面反馈",
+        "example": "Glanceable feedback should show the result, not a dense explanation.",
+        "chineseExample": "可扫视反馈应展示结果，而不是密集解释。"
+      },
+      {
+        "term": "tactile cue",
+        "phonetic": "/ˈtæktaɪl kjuː/",
+        "meaning": "触觉线索；通过触感变化传达状态、边界或确认信息的提示",
+        "example": "A tactile cue can confirm a steering-wheel shortcut while the driver's eyes stay on the road.",
+        "chineseExample": "触觉线索可以在驾驶员视线保持在道路上时确认方向盘快捷操作。"
+      },
+      {
+        "term": "visual load",
+        "phonetic": "/ˈvɪʒuəl loʊd/",
+        "meaning": "视觉负荷；界面对驾驶员视觉注意力造成的占用程度",
+        "example": "The team reduced visual load by pairing a short banner with a haptic pulse.",
+        "chineseExample": "团队通过将短横幅与触觉脉冲配对来降低视觉负荷。"
+      },
+      {
+        "term": "eyes-off-road time",
+        "phonetic": "/aɪz ɔːf roʊd taɪm/",
+        "meaning": "离路注视时间；驾驶员视线离开道路的持续时间",
+        "example": "A cockpit HMI should keep eyes-off-road time as short as possible during secondary tasks.",
+        "chineseExample": "在次级任务中，座舱 HMI 应尽可能缩短离路注视时间。"
+      },
+      {
+        "term": "micro-feedback",
+        "phonetic": "/ˈmaɪkroʊ ˈfiːdbæk/",
+        "meaning": "微反馈；小而及时的反馈，用于确认一次轻量操作或状态变化",
+        "example": "Micro-feedback is useful when a touch target is small or the cabin is noisy.",
+        "chineseExample": "当触控目标较小或车内较吵时，微反馈很有用。"
+      },
+      {
+        "term": "confirmation cue",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn kjuː/",
+        "meaning": "确认提示；表明系统已接收、执行或拒绝某个输入的提示",
+        "example": "A confirmation cue should match the importance of the action.",
+        "chineseExample": "确认提示应与操作的重要性相匹配。"
+      },
+      {
+        "term": "multimodal feedback",
+        "phonetic": "/ˌmʌltiˈmoʊdl ˈfiːdbæk/",
+        "meaning": "多模态反馈；同时或按需结合视觉、听觉、触觉等通道的反馈",
+        "example": "Multimodal feedback lets the cockpit confirm an action even when one channel is overloaded.",
+        "chineseExample": "即使某个通道负荷过高，多模态反馈也能让座舱确认操作。"
+      },
+      {
+        "term": "feedback hierarchy",
+        "phonetic": "/ˈfiːdbæk ˈhaɪərɑːrki/",
+        "meaning": "反馈层级；按风险、紧急程度和任务重要性组织反馈强度的规则",
+        "example": "A feedback hierarchy prevents every successful tap from feeling like an urgent alert.",
+        "chineseExample": "反馈层级能防止每次成功点击都像紧急警报。"
+      },
+      {
+        "term": "attention demand",
+        "phonetic": "/əˈtenʃn dɪˈmænd/",
+        "meaning": "注意力需求；某个提示或任务要求用户投入的认知和感知资源",
+        "example": "Designers should lower attention demand for frequent comfort adjustments.",
+        "chineseExample": "设计师应降低高频舒适性调节的注意力需求。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "haptic confirmation",
+        "phonetic": "/ˈhæptɪk ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "触觉确认；通过振动、轻触或阻尼变化提示用户操作已被系统接收",
+        "example": "Haptic confirmation tells the driver that the climate control has changed without requiring a long glance.",
+        "chineseExample": "触觉确认能在不要求长时间注视的情况下告诉驾驶员空调控制已改变。"
+      },
+      {
+        "term": "glanceable feedback",
+        "phonetic": "/ˈɡlænsəbl ˈfiːdbæk/",
+        "meaning": "可扫视反馈；驾驶员短暂看一眼即可理解的界面反馈",
+        "example": "Glanceable feedback should show the result, not a dense explanation.",
+        "chineseExample": "可扫视反馈应展示结果，而不是密集解释。"
+      },
+      {
+        "term": "tactile cue",
+        "phonetic": "/ˈtæktaɪl kjuː/",
+        "meaning": "触觉线索；通过触感变化传达状态、边界或确认信息的提示",
+        "example": "A tactile cue can confirm a steering-wheel shortcut while the driver's eyes stay on the road.",
+        "chineseExample": "触觉线索可以在驾驶员视线保持在道路上时确认方向盘快捷操作。"
+      },
+      {
+        "term": "visual load",
+        "phonetic": "/ˈvɪʒuəl loʊd/",
+        "meaning": "视觉负荷；界面对驾驶员视觉注意力造成的占用程度",
+        "example": "The team reduced visual load by pairing a short banner with a haptic pulse.",
+        "chineseExample": "团队通过将短横幅与触觉脉冲配对来降低视觉负荷。"
+      },
+      {
+        "term": "eyes-off-road time",
+        "phonetic": "/aɪz ɔːf roʊd taɪm/",
+        "meaning": "离路注视时间；驾驶员视线离开道路的持续时间",
+        "example": "A cockpit HMI should keep eyes-off-road time as short as possible during secondary tasks.",
+        "chineseExample": "在次级任务中，座舱 HMI 应尽可能缩短离路注视时间。"
+      },
+      {
+        "term": "micro-feedback",
+        "phonetic": "/ˈmaɪkroʊ ˈfiːdbæk/",
+        "meaning": "微反馈；小而及时的反馈，用于确认一次轻量操作或状态变化",
+        "example": "Micro-feedback is useful when a touch target is small or the cabin is noisy.",
+        "chineseExample": "当触控目标较小或车内较吵时，微反馈很有用。"
+      },
+      {
+        "term": "confirmation cue",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn kjuː/",
+        "meaning": "确认提示；表明系统已接收、执行或拒绝某个输入的提示",
+        "example": "A confirmation cue should match the importance of the action.",
+        "chineseExample": "确认提示应与操作的重要性相匹配。"
+      },
+      {
+        "term": "multimodal feedback",
+        "phonetic": "/ˌmʌltiˈmoʊdl ˈfiːdbæk/",
+        "meaning": "多模态反馈；同时或按需结合视觉、听觉、触觉等通道的反馈",
+        "example": "Multimodal feedback lets the cockpit confirm an action even when one channel is overloaded.",
+        "chineseExample": "即使某个通道负荷过高，多模态反馈也能让座舱确认操作。"
+      },
+      {
+        "term": "feedback hierarchy",
+        "phonetic": "/ˈfiːdbæk ˈhaɪərɑːrki/",
+        "meaning": "反馈层级；按风险、紧急程度和任务重要性组织反馈强度的规则",
+        "example": "A feedback hierarchy prevents every successful tap from feeling like an urgent alert.",
+        "chineseExample": "反馈层级能防止每次成功点击都像紧急警报。"
+      },
+      {
+        "term": "attention demand",
+        "phonetic": "/əˈtenʃn dɪˈmænd/",
+        "meaning": "注意力需求；某个提示或任务要求用户投入的认知和感知资源",
+        "example": "Designers should lower attention demand for frequent comfort adjustments.",
+        "chineseExample": "设计师应降低高频舒适性调节的注意力需求。"
+      },
+      {
+        "term": "haptic",
+        "phonetic": "/ˈhæptɪk/",
+        "meaning": "触觉的；与触摸、振动或力反馈相关的",
+        "example": "Haptic signals support eyes-forward interaction.",
+        "chineseExample": "触觉信号支持视线向前的交互。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；系统表明已收到或完成输入",
+        "example": "Confirmation can be visual, audible, or tactile.",
+        "chineseExample": "确认可以是视觉、听觉或触觉的。"
+      },
+      {
+        "term": "glanceable",
+        "phonetic": "/ˈɡlænsəbl/",
+        "meaning": "可扫视的；短暂一看即可理解的",
+        "example": "Glanceable content uses clear hierarchy.",
+        "chineseExample": "可扫视内容使用清晰层级。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统对用户输入或状态变化的回应",
+        "example": "Feedback closes the interaction loop.",
+        "chineseExample": "反馈闭合交互循环。"
+      },
+      {
+        "term": "tactile",
+        "phonetic": "/ˈtæktaɪl/",
+        "meaning": "触觉的；通过触感感知的",
+        "example": "Tactile design can reduce screen dependence.",
+        "chineseExample": "触觉设计可以减少屏幕依赖。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "线索；帮助用户理解状态或下一步动作的提示",
+        "example": "The cue should be easy to notice.",
+        "chineseExample": "线索应容易被注意到。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；与屏幕、图形或视线相关的",
+        "example": "Visual feedback must stay brief while driving.",
+        "chineseExample": "驾驶中视觉反馈必须保持简短。"
+      },
+      {
+        "term": "load",
+        "phonetic": "/loʊd/",
+        "meaning": "负荷；系统对感知或认知资源的占用",
+        "example": "High load can delay reaction.",
+        "chineseExample": "高负荷会延迟反应。"
+      },
+      {
+        "term": "eyes",
+        "phonetic": "/aɪz/",
+        "meaning": "眼睛；此处指驾驶员视觉注意力",
+        "example": "Eyes should return to the road quickly.",
+        "chineseExample": "视线应快速回到道路。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/roʊd/",
+        "meaning": "道路；驾驶员主要视觉关注区域",
+        "example": "Road attention has priority over menu reading.",
+        "chineseExample": "道路注意力优先于菜单阅读。"
+      },
+      {
+        "term": "time",
+        "phonetic": "/taɪm/",
+        "meaning": "时间；任务或注视持续的长度",
+        "example": "Time limits help evaluate distraction.",
+        "chineseExample": "时间限制有助于评估分心。"
+      },
+      {
+        "term": "micro",
+        "phonetic": "/ˈmaɪkroʊ/",
+        "meaning": "微小的；用于描述短小、轻量的交互反馈",
+        "example": "Micro patterns matter in daily driving.",
+        "chineseExample": "微小模式在日常驾驶中很重要。"
+      },
+      {
+        "term": "multimodal",
+        "phonetic": "/ˌmʌltiˈmoʊdl/",
+        "meaning": "多模态的；结合多个感知或输入通道的",
+        "example": "Multimodal design balances channels.",
+        "chineseExample": "多模态设计平衡多个通道。"
+      },
+      {
+        "term": "hierarchy",
+        "phonetic": "/ˈhaɪərɑːrki/",
+        "meaning": "层级；按重要性组织信息或反馈的结构",
+        "example": "Hierarchy makes alerts easier to compare.",
+        "chineseExample": "层级让警报更容易比较。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户用于感知、理解和行动的资源",
+        "example": "Attention is limited during driving.",
+        "chineseExample": "驾驶中的注意力是有限的。"
+      },
+      {
+        "term": "demand",
+        "phonetic": "/dɪˈmænd/",
+        "meaning": "需求；某个任务要求投入的资源量",
+        "example": "Low demand supports safer interaction.",
+        "chineseExample": "低需求支持更安全的交互。"
+      },
+      {
+        "term": "steering-wheel shortcut",
+        "phonetic": "/ˈstɪrɪŋ wiːl ˈʃɔːrtkʌt/",
+        "meaning": "方向盘快捷操作；通过方向盘按键快速执行功能",
+        "example": "A steering-wheel shortcut needs clear feedback.",
+        "chineseExample": "方向盘快捷操作需要清晰反馈。"
+      },
+      {
+        "term": "haptic pulse",
+        "phonetic": "/ˈhæptɪk pʌls/",
+        "meaning": "触觉脉冲；短促振动或触感反馈",
+        "example": "A haptic pulse can confirm a tap.",
+        "chineseExample": "触觉脉冲可以确认一次点击。"
+      },
+      {
+        "term": "short banner",
+        "phonetic": "/ʃɔːrt ˈbænər/",
+        "meaning": "短横幅提示；屏幕上简短、低干扰的状态提示",
+        "example": "A short banner can show the selected temperature.",
+        "chineseExample": "短横幅可以显示所选温度。"
+      },
+      {
+        "term": "touch target",
+        "phonetic": "/tʌtʃ ˈtɑːrɡɪt/",
+        "meaning": "触控目标；用户在屏幕或控件上点击的区域",
+        "example": "A small touch target needs stronger feedback.",
+        "chineseExample": "小触控目标需要更强反馈。"
+      },
+      {
+        "term": "cabin noise",
+        "phonetic": "/ˈkæbɪn nɔɪz/",
+        "meaning": "车内噪声；影响听觉反馈可感知性的声音环境",
+        "example": "Cabin noise can make audio confirmation unreliable.",
+        "chineseExample": "车内噪声会让声音确认不可靠。"
+      },
+      {
+        "term": "secondary task",
+        "phonetic": "/ˈsekənderi tæsk/",
+        "meaning": "次级任务；驾驶之外的导航、空调、媒体等操作",
+        "example": "A secondary task should not dominate attention.",
+        "chineseExample": "次级任务不应占用主要注意力。"
+      },
+      {
+        "term": "comfort adjustment",
+        "phonetic": "/ˈkʌmfərt əˈdʒʌstmənt/",
+        "meaning": "舒适性调节；座椅、空调、灯光等舒适功能调整",
+        "example": "Comfort adjustment should stay quick and reversible.",
+        "chineseExample": "舒适性调节应快速且可撤销。"
+      },
+      {
+        "term": "successful tap",
+        "phonetic": "/səkˈsesfl tæp/",
+        "meaning": "成功点击；触控输入被系统识别并执行",
+        "example": "A successful tap may only need a light pulse.",
+        "chineseExample": "成功点击可能只需要轻微脉冲。"
+      },
+      {
+        "term": "urgent alert",
+        "phonetic": "/ˈɜːrdʒənt əˈlɜːrt/",
+        "meaning": "紧急警报；需要立即注意和处理的高优先级提示",
+        "example": "An urgent alert deserves stronger feedback.",
+        "chineseExample": "紧急警报应获得更强反馈。"
+      },
+      {
+        "term": "interaction loop",
+        "phonetic": "/ˌɪntərˈækʃn luːp/",
+        "meaning": "交互闭环；用户输入、系统处理和反馈确认的完整过程",
+        "example": "The interaction loop ends when the driver understands the result.",
+        "chineseExample": "当驾驶员理解结果时，交互闭环才结束。"
+      },
+      {
+        "term": "eyes-forward interaction",
+        "phonetic": "/aɪz ˈfɔːrwərd ˌɪntərˈækʃn/",
+        "meaning": "视线向前交互；驾驶员尽量保持看路的交互方式",
+        "example": "Eyes-forward interaction is important for frequent controls.",
+        "chineseExample": "视线向前交互对高频控制很重要。"
+      },
+      {
+        "term": "screen dependence",
+        "phonetic": "/skriːn dɪˈpendəns/",
+        "meaning": "屏幕依赖；用户必须频繁查看屏幕才能完成任务的程度",
+        "example": "Lower screen dependence reduces distraction.",
+        "chineseExample": "降低屏幕依赖可以减少分心。"
+      },
+      {
+        "term": "channel",
+        "phonetic": "/ˈtʃænl/",
+        "meaning": "通道；视觉、听觉或触觉等信息传递路径",
+        "example": "Each channel has different limits.",
+        "chineseExample": "每个通道都有不同限制。"
+      },
+      {
+        "term": "overloaded",
+        "phonetic": "/ˌoʊvərˈloʊdɪd/",
+        "meaning": "过载的；信息或任务超出某个通道可处理能力的",
+        "example": "An overloaded channel needs support from another mode.",
+        "chineseExample": "过载通道需要另一种模式支持。"
+      },
+      {
+        "term": "result",
+        "phonetic": "/rɪˈzʌlt/",
+        "meaning": "结果；系统执行输入后的状态变化",
+        "example": "The result should be visible or felt.",
+        "chineseExample": "结果应可见或可感知。"
+      },
+      {
+        "term": "dense explanation",
+        "phonetic": "/dens ˌekspləˈneɪʃn/",
+        "meaning": "密集解释；信息量过大、不适合驾驶中阅读的说明",
+        "example": "A dense explanation belongs in a parked state.",
+        "chineseExample": "密集解释适合停车状态。"
+      },
+      {
+        "term": "importance",
+        "phonetic": "/ɪmˈpɔːrtns/",
+        "meaning": "重要性；动作或提示对安全、任务和用户目标的影响程度",
+        "example": "Importance guides feedback strength.",
+        "chineseExample": "重要性指导反馈强度。"
+      },
+      {
+        "term": "frequent",
+        "phonetic": "/ˈfriːkwənt/",
+        "meaning": "频繁的；经常发生或经常使用的",
+        "example": "Frequent actions need lightweight feedback.",
+        "chineseExample": "高频动作需要轻量反馈。"
+      },
+      {
+        "term": "climate control",
+        "phonetic": "/ˈklaɪmət kənˈtroʊl/",
+        "meaning": "空调控制；座舱温度、风量和模式相关控制",
+        "example": "Climate control is a common secondary task.",
+        "chineseExample": "空调控制是常见次级任务。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；智能座舱交互中的主要用户",
+        "example": "The driver needs confirmation without distraction.",
+        "chineseExample": "驾驶员需要无分心确认。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/ˈkɑːkpɪt/",
+        "meaning": "座舱；车辆内的人机交互空间",
+        "example": "The cockpit combines screens, voice, and touch.",
+        "chineseExample": "座舱结合屏幕、语音和触控。"
+      },
+      {
+        "term": "system",
+        "phonetic": "/ˈsɪstəm/",
+        "meaning": "系统；执行输入、处理状态并输出反馈的车载计算与交互系统",
+        "example": "The system should confirm meaningful changes.",
+        "chineseExample": "系统应确认有意义的变化。"
+      },
+      {
+        "term": "input",
+        "phonetic": "/ˈɪnpʊt/",
+        "meaning": "输入；用户通过触摸、语音、按键或手势发出的操作",
+        "example": "Input without feedback creates uncertainty.",
+        "chineseExample": "没有反馈的输入会产生不确定性。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃn/",
+        "meaning": "动作；系统执行的操作或用户发出的操作意图",
+        "example": "The action should match the feedback level.",
+        "chineseExample": "动作应匹配反馈等级。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；操作可能影响安全、注意力或用户信任的程度",
+        "example": "Risk determines how strong the cue should be.",
+        "chineseExample": "风险决定线索应有多强。"
+      },
+      {
+        "term": "priority",
+        "phonetic": "/praɪˈɔːrəti/",
+        "meaning": "优先级；信息或提示相对其他任务的重要顺序",
+        "example": "Priority keeps routine feedback calm.",
+        "chineseExample": "优先级让常规反馈保持克制。"
+      },
+      {
+        "term": "state change",
+        "phonetic": "/steɪt tʃeɪndʒ/",
+        "meaning": "状态变化；系统设置、模式或结果发生改变",
+        "example": "A state change needs clear confirmation.",
+        "chineseExample": "状态变化需要清晰确认。"
+      },
+      {
+        "term": "operational state",
+        "phonetic": "/ˌɑːpəˈreɪʃənl steɪt/",
+        "meaning": "运行状态；系统当前功能、模式或可用性的状态",
+        "example": "Operational state should be easy to verify.",
+        "chineseExample": "运行状态应容易确认。"
+      },
+      {
+        "term": "subtle vibration",
+        "phonetic": "/ˈsʌtl vaɪˈbreɪʃn/",
+        "meaning": "细微振动；低强度触觉反馈",
+        "example": "A subtle vibration can confirm a low-risk choice.",
+        "chineseExample": "细微振动可以确认低风险选择。"
+      },
+      {
+        "term": "audible tone",
+        "phonetic": "/ˈɔːdəbl toʊn/",
+        "meaning": "可听提示音；通过声音传达确认或提醒",
+        "example": "An audible tone may fail in loud conditions.",
+        "chineseExample": "嘈杂条件下可听提示音可能失效。"
+      },
+      {
+        "term": "low-risk choice",
+        "phonetic": "/loʊ rɪsk tʃɔɪs/",
+        "meaning": "低风险选择；对安全和任务影响较小的用户选择",
+        "example": "A low-risk choice needs modest feedback.",
+        "chineseExample": "低风险选择只需要适度反馈。"
+      },
+      {
+        "term": "high-risk warning",
+        "phonetic": "/haɪ rɪsk ˈwɔːrnɪŋ/",
+        "meaning": "高风险警告；与安全或紧急情况相关的强提醒",
+        "example": "A high-risk warning may combine channels.",
+        "chineseExample": "高风险警告可以结合多个通道。"
+      },
+      {
+        "term": "requiring",
+        "phonetic": "/rɪˈkwaɪərɪŋ/",
+        "meaning": "需要；require 的现在分词，表示某动作要求额外资源",
+        "example": "Requiring a long glance increases visual load.",
+        "chineseExample": "在这句话中，requiring 表示需要长时间注视。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃn/",
+        "meaning": "解释；对原因、结果或系统行为的说明",
+        "example": "A dense explanation is not suitable while driving.",
+        "chineseExample": "密集解释不适合驾驶中阅读。"
+      },
+      {
+        "term": "pairing",
+        "phonetic": "/ˈperɪŋ/",
+        "meaning": "配对；把两个反馈通道组合使用",
+        "example": "Pairing a banner with a pulse improves confirmation.",
+        "chineseExample": "把横幅和脉冲配对可以改善确认效果。"
+      },
+      {
+        "term": "pulse",
+        "phonetic": "/pʌls/",
+        "meaning": "脉冲；短促的振动或信号",
+        "example": "A short pulse can confirm a touch input.",
+        "chineseExample": "短促脉冲可以确认触控输入。"
+      },
+      {
+        "term": "match",
+        "phonetic": "/mætʃ/",
+        "meaning": "匹配；使提示强度与风险或重要性一致",
+        "example": "The cue should match the risk of the action.",
+        "chineseExample": "提示应与操作风险匹配。"
+      },
+      {
+        "term": "even",
+        "phonetic": "/ˈiːvn/",
+        "meaning": "即使；用于强调在某种条件下仍然成立",
+        "example": "The cockpit can confirm an action even when one channel is overloaded.",
+        "chineseExample": "即使某个通道过载，座舱也能确认操作。"
+      },
+      {
+        "term": "successful",
+        "phonetic": "/səkˈsesfl/",
+        "meaning": "成功的；输入被识别并产生预期结果的",
+        "example": "A successful tap should receive clear feedback.",
+        "chineseExample": "成功点击应获得清晰反馈。"
+      },
+      {
+        "term": "feeling",
+        "phonetic": "/ˈfiːlɪŋ/",
+        "meaning": "感觉；用户对提示强度或交互状态的主观感受",
+        "example": "Feedback should avoid feeling like an urgent alert.",
+        "chineseExample": "反馈应避免让人感觉像紧急警报。"
+      },
+      {
+        "term": "adjust",
+        "phonetic": "/əˈdʒʌst/",
+        "meaning": "调节；改变设置、参数或状态",
+        "example": "The driver may adjust climate control while monitoring traffic.",
+        "chineseExample": "驾驶员可能在观察交通时调节空调。"
+      },
+      {
+        "term": "requires",
+        "phonetic": "/rɪˈkwaɪərz/",
+        "meaning": "需要；require 的第三人称单数形式",
+        "example": "If every action requires a long glance, the interface creates distraction.",
+        "chineseExample": "如果每个动作都需要长时间注视，界面会造成分心。"
+      },
+      {
+        "term": "creates",
+        "phonetic": "/kriˈeɪts/",
+        "meaning": "造成；产生某种结果或影响",
+        "example": "The interface creates unnecessary visual load.",
+        "chineseExample": "界面造成不必要的视觉负荷。"
+      },
+      {
+        "term": "unnecessary",
+        "phonetic": "/ʌnˈnesəseri/",
+        "meaning": "不必要的；可通过更好设计避免的",
+        "example": "Unnecessary visual load should be removed from frequent tasks.",
+        "chineseExample": "高频任务中应去除不必要的视觉负荷。"
+      },
+      {
+        "term": "loop",
+        "phonetic": "/luːp/",
+        "meaning": "循环；此处指输入、处理、反馈构成的闭环",
+        "example": "Feedback closes the interaction loop.",
+        "chineseExample": "反馈闭合交互循环。"
+      },
+      {
+        "term": "subtle",
+        "phonetic": "/ˈsʌtl/",
+        "meaning": "细微的；不强烈但可被感知的",
+        "example": "A subtle vibration can confirm a low-risk choice.",
+        "chineseExample": "细微振动可以确认低风险选择。"
+      },
+      {
+        "term": "vibration",
+        "phonetic": "/vaɪˈbreɪʃn/",
+        "meaning": "振动；常见触觉反馈形式",
+        "example": "Vibration can work when audio is masked by cabin noise.",
+        "chineseExample": "当车内噪声掩盖声音时，振动仍可发挥作用。"
+      },
+      {
+        "term": "resistance",
+        "phonetic": "/rɪˈzɪstəns/",
+        "meaning": "阻尼；按键、旋钮或触控反馈中的阻力变化",
+        "example": "A change in button resistance can signal confirmation.",
+        "chineseExample": "按键阻尼变化可以传达确认。"
+      },
+      {
+        "term": "low-risk",
+        "phonetic": "/loʊ rɪsk/",
+        "meaning": "低风险的；对安全或任务影响较小的",
+        "example": "A low-risk comfort adjustment may need only micro-feedback.",
+        "chineseExample": "低风险舒适性调节可能只需要微反馈。"
+      },
+      {
+        "term": "high-risk",
+        "phonetic": "/haɪ rɪsk/",
+        "meaning": "高风险的；与安全或紧急状态关联更强的",
+        "example": "A high-risk warning should combine several cues.",
+        "chineseExample": "高风险警告应结合多个线索。"
+      },
+      {
+        "term": "combine",
+        "phonetic": "/kəmˈbaɪn/",
+        "meaning": "结合；把多个反馈通道或信息元素一起使用",
+        "example": "Designers can combine visual and tactile feedback.",
+        "chineseExample": "设计师可以结合视觉和触觉反馈。"
+      },
+      {
+        "term": "operational",
+        "phonetic": "/ˌɑːpəˈreɪʃənl/",
+        "meaning": "运行的；与系统当前工作状态相关的",
+        "example": "Glanceable feedback should show the operational state.",
+        "chineseExample": "可扫视反馈应展示运行状态。"
+      },
+      {
+        "term": "accepted",
+        "phonetic": "/əkˈseptɪd/",
+        "meaning": "已接受的；系统已接收并认可输入的状态",
+        "example": "The system accepted the input and changed the setting.",
+        "chineseExample": "系统已接受输入并改变设置。"
+      },
+      {
+        "term": "builds",
+        "phonetic": "/bɪldz/",
+        "meaning": "建立；build 的第三人称单数形式",
+        "example": "Good cockpit design builds a feedback hierarchy.",
+        "chineseExample": "优秀座舱设计会建立反馈层级。"
+      },
+      {
+        "term": "avoids",
+        "phonetic": "/əˈvɔɪdz/",
+        "meaning": "避免；avoid 的第三人称单数形式",
+        "example": "The design avoids silent changes.",
+        "chineseExample": "该设计避免静默变化。"
+      },
+      {
+        "term": "treating",
+        "phonetic": "/ˈtriːtɪŋ/",
+        "meaning": "对待；把某事物按某种方式处理",
+        "example": "Avoid treating every tap like an urgent alert.",
+        "chineseExample": "避免把每次点击都当作紧急警报。"
+      },
+      {
+        "term": "leave",
+        "phonetic": "/liːv/",
+        "meaning": "使处于某种状态；此处指让驾驶员不确定",
+        "example": "Silent changes leave the driver uncertain.",
+        "chineseExample": "静默改变会让驾驶员不确定。"
+      },
+      {
+        "term": "audio",
+        "phonetic": "/ˈɔːdioʊ/",
+        "meaning": "音频的；与声音提示或听觉反馈相关的",
+        "example": "Audio cues can support visual feedback.",
+        "chineseExample": "音频线索可以支持视觉反馈。"
+      },
+      {
+        "term": "cues",
+        "phonetic": "/kjuːz/",
+        "meaning": "线索；cue 的复数，指多个提示信号",
+        "example": "Haptic, visual, and audio cues work together.",
+        "chineseExample": "触觉、视觉和声音线索协同工作。"
+      },
+      {
+        "term": "closer",
+        "phonetic": "/ˈkloʊsər/",
+        "meaning": "更接近；close 的比较级",
+        "example": "The design keeps the driver's eyes closer to the road.",
+        "chineseExample": "该设计让驾驶员视线更接近道路。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Practice reading",
+        "text": "In an intelligent cockpit, feedback is not only a visual message on a screen. The driver may adjust climate control, accept a route suggestion, or use a steering-wheel shortcut while still monitoring traffic. If every action requires a long glance, the interface increases eyes-off-road time and creates unnecessary visual load. Haptic confirmation can close the interaction loop with a short pulse, a subtle vibration, or a change in button resistance. The key is to match the cue to the risk of the action. A low-risk comfort adjustment may need only micro-feedback, while a high-risk warning should combine a clear visual signal with an audible tone and stronger tactile feedback. Glanceable feedback should also show the operational state in plain language: what changed, whether the system accepted the input, and what the driver can do next. Good cockpit design builds a feedback hierarchy across channels. It avoids treating every successful tap like an urgent alert, but it also avoids silent changes that leave the driver uncertain. When haptic, visual, and audio cues work together, the cockpit can confirm actions quickly, reduce attention demand, and keep the driver's eyes closer to the road.",
+        "translation": "在智能座舱中，反馈不只是屏幕上的视觉信息。驾驶员可能在观察交通的同时调节空调、接受路线建议或使用方向盘快捷操作。如果每个动作都需要长时间注视，界面就会增加离路注视时间并造成不必要的视觉负荷。触觉确认可以通过短促脉冲、细微振动或按键阻尼变化来闭合交互循环。关键是让提示强度匹配操作风险。低风险舒适性调节可能只需要微反馈，而高风险警告应结合清晰视觉信号、可听提示音和更强触觉反馈。可扫视反馈还应使用清晰语言呈现运行状态：发生了什么变化、系统是否接受输入，以及驾驶员下一步可以做什么。优秀的座舱设计会跨通道建立反馈层级，既避免把每次成功点击都做成紧急警报，也避免静默改变让驾驶员不确定。当触觉、视觉和声音线索协同工作时，座舱可以快速确认操作、降低注意力需求，并让驾驶员视线更接近道路。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "If every action requires a long glance, the interface increases eyes-off-road time and creates unnecessary visual load.",
+        "structure": "If 条件从句 + 主句 the interface increases... and creates...",
+        "focus": "用 If...the interface... 说明交互设计导致驾驶负荷上升的因果关系。",
+        "pattern": "If every action requires..., the interface increases... and creates..."
+      },
+      {
+        "sentence": "The key is to match the cue to the risk of the action.",
+        "structure": "主语 The key + be 动词 + to do 不定式，match A to B 表示让 A 与 B 匹配。",
+        "focus": "用 match the cue to the risk 表达反馈强度应按风险分级。",
+        "pattern": "The key is to match... to..."
+      },
+      {
+        "sentence": "Good cockpit design builds a feedback hierarchy across channels.",
+        "structure": "主语 Good cockpit design + 谓语 builds + 宾语 a feedback hierarchy + 介词短语 across channels。",
+        "focus": "用 builds a hierarchy across channels 描述跨视觉、听觉、触觉的反馈组织方式。",
+        "pattern": "Good cockpit design builds... across..."
+      },
+      {
+        "sentence": "When haptic, visual, and audio cues work together, the cockpit can confirm actions quickly, reduce attention demand, and keep the driver's eyes closer to the road.",
+        "structure": "When 引导时间条件 + 主句中 can 后接三个并列动词 confirm / reduce / keep。",
+        "focus": "用三个并列动词总结多模态反馈的设计价值。",
+        "pattern": "When...work together, the cockpit can..., reduce..., and keep..."
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 words 中 10 个术语，重点区分 haptic、tactile、visual 和 multimodal。",
+      "6 分钟：跟读长文，标出所有描述反馈强度、注意力需求和离路注视时间的表达。",
+      "5 分钟：用 haptic confirmation、glanceable feedback、feedback hierarchy 各造一个座舱设计评审句。",
+      "5-10 分钟：口头复述一个空调或方向盘快捷操作场景，说明系统如何用触觉、视觉和声音完成确认。"
+    ],
+    "videos": [
+      {
+        "title": "Practice without a fixed video source",
+        "url": "",
+        "note": "今天内容为原创跟读练习，未绑定可靠公开视频链接；可使用页面朗读按钮完成听说练习。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-13-predictive-intent-user-agency",
     "date": "2026-07-13",
     "title": "Predictive intent and user agency in intelligent cockpits",
