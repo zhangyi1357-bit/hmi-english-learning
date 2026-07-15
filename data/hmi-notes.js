@@ -1,5 +1,938 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-15-context-aware-clarification",
+    "date": "2026-07-15",
+    "title": "Context-aware clarification for in-cabin assistants",
+    "topic": "车内 AI 助手的上下文感知澄清",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明车内 AI 助手在语音指令不完整或有歧义时，如何结合驾驶语境、对话状态、乘员角色和置信阈值进行低干扰澄清。",
+    "words": [
+      {
+        "term": "context-aware clarification",
+        "phonetic": "/ˈkɑːntekst əˈwer ˌklærəfɪˈkeɪʃn/",
+        "meaning": "上下文感知澄清；系统结合场景、任务和状态来确认用户意图的提问方式",
+        "example": "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
+        "chineseExample": "上下文感知澄清能帮助助手提出简短追问，而不是猜测驾驶员意图。"
+      },
+      {
+        "term": "in-cabin assistant",
+        "phonetic": "/ɪn ˈkæbɪn əˈsɪstənt/",
+        "meaning": "车内助手；在座舱内提供语音、信息、控制和服务支持的智能系统",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "车内助手应知道用户正在驾驶、停车，还是把控制权交给另一位乘客。"
+      },
+      {
+        "term": "dialogue state",
+        "phonetic": "/ˈdaɪəlɔːɡ steɪt/",
+        "meaning": "对话状态；系统记录当前轮次、槽位、上下文和未完成任务的内部状态",
+        "example": "The dialogue state keeps the destination request separate from a later climate command.",
+        "chineseExample": "对话状态会把目的地请求与之后的空调指令区分开。"
+      },
+      {
+        "term": "ambiguity resolution",
+        "phonetic": "/ˌæmbɪˈɡjuːəti ˌrezəˈluːʃn/",
+        "meaning": "歧义消解；当一句话可能有多种含义时，系统判断或询问正确意图的过程",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "当驾驶员在多个可控区域附近说“调凉一点”时，歧义消解是必要的。"
+      },
+      {
+        "term": "low-friction prompt",
+        "phonetic": "/loʊ ˈfrɪkʃn prɑːmpt/",
+        "meaning": "低摩擦提示；用最少认知负担引导用户完成确认或选择的提示",
+        "example": "A low-friction prompt offers two clear options instead of a long menu.",
+        "chineseExample": "低摩擦提示会提供两个清晰选项，而不是一长串菜单。"
+      },
+      {
+        "term": "turn-taking",
+        "phonetic": "/ˈtɜːrn ˌteɪkɪŋ/",
+        "meaning": "轮次交替；人机对话中用户和系统轮流说话、等待和接续的机制",
+        "example": "Good turn-taking prevents the assistant from speaking over the driver during a busy merge.",
+        "chineseExample": "良好的轮次交替能防止助手在驾驶员忙于并线时抢话。"
+      },
+      {
+        "term": "situational constraint",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl kənˈstreɪnt/",
+        "meaning": "情境约束；由车速、道路、驾驶负荷、乘员和系统状态形成的交互限制",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "情境约束可能会在车辆行驶时阻止复杂浏览任务。"
+      },
+      {
+        "term": "intent handover",
+        "phonetic": "/ɪnˈtent ˈhændoʊvər/",
+        "meaning": "意图交接；系统把未完成意图从一个通道、屏幕或乘员转移到另一个对象处理",
+        "example": "Intent handover lets a passenger finish a search that the driver started by voice.",
+        "chineseExample": "意图交接让乘客可以完成驾驶员通过语音发起的搜索。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信阈值；系统决定直接执行、澄清或拒绝请求的可信度边界",
+        "example": "The assistant should ask for confirmation when recognition falls below the confidence threshold.",
+        "chineseExample": "当识别结果低于置信阈值时，助手应请求确认。"
+      },
+      {
+        "term": "recoverable misunderstanding",
+        "phonetic": "/rɪˈkʌvərəbl ˌmɪsʌndərˈstændɪŋ/",
+        "meaning": "可恢复误解；系统理解错误但可通过提示、撤销或重新确认修正的情况",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "context-aware clarification",
+        "phonetic": "/ˈkɑːntekst əˈwer ˌklærəfɪˈkeɪʃn/",
+        "meaning": "上下文感知澄清；系统结合场景、任务和状态来确认用户意图的提问方式",
+        "example": "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
+        "chineseExample": "上下文感知澄清能帮助助手提出简短追问，而不是猜测驾驶员意图。"
+      },
+      {
+        "term": "in-cabin assistant",
+        "phonetic": "/ɪn ˈkæbɪn əˈsɪstənt/",
+        "meaning": "车内助手；在座舱内提供语音、信息、控制和服务支持的智能系统",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "车内助手应知道用户正在驾驶、停车，还是把控制权交给另一位乘客。"
+      },
+      {
+        "term": "dialogue state",
+        "phonetic": "/ˈdaɪəlɔːɡ steɪt/",
+        "meaning": "对话状态；系统记录当前轮次、槽位、上下文和未完成任务的内部状态",
+        "example": "The dialogue state keeps the destination request separate from a later climate command.",
+        "chineseExample": "对话状态会把目的地请求与之后的空调指令区分开。"
+      },
+      {
+        "term": "ambiguity resolution",
+        "phonetic": "/ˌæmbɪˈɡjuːəti ˌrezəˈluːʃn/",
+        "meaning": "歧义消解；当一句话可能有多种含义时，系统判断或询问正确意图的过程",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "当驾驶员在多个可控区域附近说“调凉一点”时，歧义消解是必要的。"
+      },
+      {
+        "term": "low-friction prompt",
+        "phonetic": "/loʊ ˈfrɪkʃn prɑːmpt/",
+        "meaning": "低摩擦提示；用最少认知负担引导用户完成确认或选择的提示",
+        "example": "A low-friction prompt offers two clear options instead of a long menu.",
+        "chineseExample": "低摩擦提示会提供两个清晰选项，而不是一长串菜单。"
+      },
+      {
+        "term": "turn-taking",
+        "phonetic": "/ˈtɜːrn ˌteɪkɪŋ/",
+        "meaning": "轮次交替；人机对话中用户和系统轮流说话、等待和接续的机制",
+        "example": "Good turn-taking prevents the assistant from speaking over the driver during a busy merge.",
+        "chineseExample": "良好的轮次交替能防止助手在驾驶员忙于并线时抢话。"
+      },
+      {
+        "term": "situational constraint",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl kənˈstreɪnt/",
+        "meaning": "情境约束；由车速、道路、驾驶负荷、乘员和系统状态形成的交互限制",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "情境约束可能会在车辆行驶时阻止复杂浏览任务。"
+      },
+      {
+        "term": "intent handover",
+        "phonetic": "/ɪnˈtent ˈhændoʊvər/",
+        "meaning": "意图交接；系统把未完成意图从一个通道、屏幕或乘员转移到另一个对象处理",
+        "example": "Intent handover lets a passenger finish a search that the driver started by voice.",
+        "chineseExample": "意图交接让乘客可以完成驾驶员通过语音发起的搜索。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信阈值；系统决定直接执行、澄清或拒绝请求的可信度边界",
+        "example": "The assistant should ask for confirmation when recognition falls below the confidence threshold.",
+        "chineseExample": "当识别结果低于置信阈值时，助手应请求确认。"
+      },
+      {
+        "term": "recoverable misunderstanding",
+        "phonetic": "/rɪˈkʌvərəbl ˌmɪsʌndərˈstændɪŋ/",
+        "meaning": "可恢复误解；系统理解错误但可通过提示、撤销或重新确认修正的情况",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
+      },
+      {
+        "term": "driving context",
+        "phonetic": "/ˈdraɪvɪŋ ˈkɑːntekst/",
+        "meaning": "驾驶语境；影响座舱交互决策的道路、速度、任务和注意力状态",
+        "example": "Driving context should shape how much detail the assistant speaks.",
+        "chineseExample": "驾驶语境应决定助手说出多少细节。"
+      },
+      {
+        "term": "conversation history",
+        "phonetic": "/ˌkɑːnvərˈseɪʃn ˈhɪstri/",
+        "meaning": "对话历史；系统用于理解当前请求的前序轮次和用户选择",
+        "example": "Conversation history helps the cockpit avoid asking the same question twice.",
+        "chineseExample": "对话历史帮助座舱避免重复询问同一问题。"
+      },
+      {
+        "term": "follow-up question",
+        "phonetic": "/ˈfɑːloʊ ʌp ˈkwestʃən/",
+        "meaning": "追问；系统为了消除歧义而提出的下一轮问题",
+        "example": "A follow-up question should be short enough for driving.",
+        "chineseExample": "追问应足够简短，适合驾驶场景。"
+      },
+      {
+        "term": "voice command",
+        "phonetic": "/vɔɪs kəˈmænd/",
+        "meaning": "语音指令；用户通过说话发出的控制或查询请求",
+        "example": "A voice command may still need confirmation in a safety-related task.",
+        "chineseExample": "安全相关任务中的语音指令仍可能需要确认。"
+      },
+      {
+        "term": "speech recognition",
+        "phonetic": "/spiːtʃ ˌrekəɡˈnɪʃn/",
+        "meaning": "语音识别；把用户语音转换为文本或意图的能力",
+        "example": "Speech recognition confidence can drop when the cabin is noisy.",
+        "chineseExample": "车内噪声较大时，语音识别置信度可能下降。"
+      },
+      {
+        "term": "task boundary",
+        "phonetic": "/tæsk ˈbaʊndəri/",
+        "meaning": "任务边界；用于区分当前任务、后续任务和不应合并请求的界限",
+        "example": "A clear task boundary prevents navigation and media requests from mixing.",
+        "chineseExample": "清晰的任务边界能防止导航和媒体请求混在一起。"
+      },
+      {
+        "term": "safety-critical action",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl ˈækʃn/",
+        "meaning": "安全关键操作；可能影响驾驶安全或车辆行为的操作",
+        "example": "A safety-critical action needs explicit confirmation.",
+        "chineseExample": "安全关键操作需要明确确认。"
+      },
+      {
+        "term": "explicit confirmation",
+        "phonetic": "/ɪkˈsplɪsɪt ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "明确确认；要求用户清楚表达同意、取消或选择的确认方式",
+        "example": "Explicit confirmation is safer than silent execution for ambiguous requests.",
+        "chineseExample": "对模糊请求而言，明确确认比静默执行更安全。"
+      },
+      {
+        "term": "silent execution",
+        "phonetic": "/ˈsaɪlənt ˌeksɪˈkjuːʃn/",
+        "meaning": "静默执行；系统不提示用户就直接执行命令",
+        "example": "Silent execution can surprise users when the request is uncertain.",
+        "chineseExample": "请求不确定时，静默执行可能让用户意外。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶员在当前场景中承担的认知、视觉和操作压力",
+        "example": "High driver workload calls for shorter prompts.",
+        "chineseExample": "驾驶员负荷高时需要更短的提示。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；理解、记忆和决策所需的心理资源",
+        "example": "Reducing cognitive load is essential for spoken interaction.",
+        "chineseExample": "降低认知负荷对语音交互很重要。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃn ˈbʌdʒɪt/",
+        "meaning": "注意力预算；用户在驾驶任务之外可分配给交互的有限注意力",
+        "example": "The assistant should respect the driver's attention budget.",
+        "chineseExample": "助手应尊重驾驶员有限的注意力预算。"
+      },
+      {
+        "term": "handover target",
+        "phonetic": "/ˈhændoʊvər ˈtɑːrɡɪt/",
+        "meaning": "交接目标；接收未完成任务的乘员、屏幕或交互通道",
+        "example": "The passenger display can become the handover target.",
+        "chineseExample": "乘客屏可以成为交接目标。"
+      },
+      {
+        "term": "passenger display",
+        "phonetic": "/ˈpæsɪndʒər dɪˈspleɪ/",
+        "meaning": "乘客屏；副驾或后排乘员使用的显示界面",
+        "example": "A passenger display can handle detailed browsing while driving.",
+        "chineseExample": "车辆行驶时，乘客屏可以处理详细浏览。"
+      },
+      {
+        "term": "multi-turn dialogue",
+        "phonetic": "/ˌmʌlti tɜːrn ˈdaɪəlɔːɡ/",
+        "meaning": "多轮对话；系统和用户通过多个轮次共同完成任务的对话",
+        "example": "Multi-turn dialogue should preserve the user's goal across interruptions.",
+        "chineseExample": "多轮对话应在中断后保留用户目标。"
+      },
+      {
+        "term": "context cue",
+        "phonetic": "/ˈkɑːntekst kjuː/",
+        "meaning": "上下文线索；帮助系统理解意图的场景信息",
+        "example": "Seat position can be a context cue for climate requests.",
+        "chineseExample": "座椅位置可以成为空调请求的上下文线索。"
+      },
+      {
+        "term": "disambiguation prompt",
+        "phonetic": "/ˌdɪsæmˌbɪɡjuˈeɪʃn prɑːmpt/",
+        "meaning": "消歧提示；用于区分多个可能意图的提示",
+        "example": "A disambiguation prompt should mention only the likely options.",
+        "chineseExample": "消歧提示应只提及可能的选项。"
+      },
+      {
+        "term": "fallback path",
+        "phonetic": "/ˈfɔːlbæk pæθ/",
+        "meaning": "兜底路径；系统无法理解或执行时提供的替代操作方式",
+        "example": "A fallback path lets the user choose manually.",
+        "chineseExample": "兜底路径让用户可以手动选择。"
+      },
+      {
+        "term": "error recovery",
+        "phonetic": "/ˈerər rɪˈkʌvəri/",
+        "meaning": "错误恢复；发现误解后帮助用户修正或撤销的交互机制",
+        "example": "Error recovery should be faster than starting over.",
+        "chineseExample": "错误恢复应比重新开始更快。"
+      },
+      {
+        "term": "audible summary",
+        "phonetic": "/ˈɔːdəbl ˈsʌməri/",
+        "meaning": "可听摘要；系统用简短语音总结理解结果或下一步动作",
+        "example": "An audible summary confirms the route before guidance starts.",
+        "chineseExample": "可听摘要会在导航开始前确认路线。"
+      },
+      {
+        "term": "visual confirmation",
+        "phonetic": "/ˈvɪʒuəl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "视觉确认；通过屏幕文字、图标或状态变化确认结果",
+        "example": "Visual confirmation should stay glanceable.",
+        "chineseExample": "视觉确认应保持可扫视。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；限制系统说出或显示敏感内容的规则",
+        "example": "A privacy boundary matters when passengers are present.",
+        "chineseExample": "乘客在场时，隐私边界很重要。"
+      },
+      {
+        "term": "shared cabin",
+        "phonetic": "/ʃerd ˈkæbɪn/",
+        "meaning": "共享座舱；多个乘员共同处于车内并可能听到或看到系统反馈的场景",
+        "example": "A shared cabin changes how the assistant reads personal information aloud.",
+        "chineseExample": "共享座舱会改变助手朗读个人信息的方式。"
+      },
+      {
+        "term": "minimal wording",
+        "phonetic": "/ˈmɪnɪməl ˈwɜːrdɪŋ/",
+        "meaning": "最少措辞；以尽量少的词完成提示、确认或反馈",
+        "example": "Minimal wording keeps the interaction calm.",
+        "chineseExample": "最少措辞能让交互保持克制。"
+      },
+      {
+        "term": "natural language",
+        "phonetic": "/ˈnætʃrəl ˈlæŋɡwɪdʒ/",
+        "meaning": "自然语言；用户日常说话方式，而非固定命令格式",
+        "example": "Natural language allows flexible requests but increases ambiguity.",
+        "chineseExample": "自然语言允许灵活请求，但也增加歧义。"
+      },
+      {
+        "term": "system initiative",
+        "phonetic": "/ˈsɪstəm ɪˈnɪʃətɪv/",
+        "meaning": "系统主动性；系统主动提问、建议或推进任务的程度",
+        "example": "System initiative should be lower when traffic is complex.",
+        "chineseExample": "交通复杂时，系统主动性应降低。"
+      },
+      {
+        "term": "user intent",
+        "phonetic": "/ˈjuːzər ɪnˈtent/",
+        "meaning": "用户意图；用户真正想完成的目标或动作",
+        "example": "User intent may be different from the literal sentence.",
+        "chineseExample": "用户意图可能不同于字面句子。"
+      },
+      {
+        "term": "recognition confidence",
+        "phonetic": "/ˌrekəɡˈnɪʃn ˈkɑːnfɪdəns/",
+        "meaning": "识别置信度；系统对语音识别或意图识别结果的可信程度",
+        "example": "Recognition confidence should influence whether the assistant asks again.",
+        "chineseExample": "识别置信度应影响助手是否再次询问。"
+      },
+      {
+        "term": "interaction loop",
+        "phonetic": "/ˌɪntərˈækʃn luːp/",
+        "meaning": "交互闭环；从用户输入到系统反馈再到用户理解的完整循环",
+        "example": "A good interaction loop makes the next step obvious.",
+        "chineseExample": "良好的交互闭环会让下一步很清楚。"
+      },
+      {
+        "term": "route selection",
+        "phonetic": "/ruːt sɪˈlekʃn/",
+        "meaning": "路线选择；在多个导航路径中选择目标路线",
+        "example": "Route selection should not demand long visual comparison while driving.",
+        "chineseExample": "驾驶中路线选择不应要求长时间视觉比较。"
+      },
+      {
+        "term": "climate zone",
+        "phonetic": "/ˈklaɪmət zoʊn/",
+        "meaning": "空调区域；车内可独立控制温度或风量的区域",
+        "example": "A climate zone can be linked to a specific seat.",
+        "chineseExample": "空调区域可以与特定座位关联。"
+      },
+      {
+        "term": "seat context",
+        "phonetic": "/siːt ˈkɑːntekst/",
+        "meaning": "座位上下文；乘员所在座位、姿态和控制权限信息",
+        "example": "Seat context helps resolve who asked for a temperature change.",
+        "chineseExample": "座位上下文有助于判断是谁要求调节温度。"
+      },
+      {
+        "term": "repair phrase",
+        "phonetic": "/rɪˈper freɪz/",
+        "meaning": "修正表达；用户用于纠正系统理解的简短表达",
+        "example": "A repair phrase such as 'no, the rear zone' should update the task.",
+        "chineseExample": "像“不，是后排区域”这样的修正表达应更新任务。"
+      },
+      {
+        "term": "confirmable action",
+        "phonetic": "/kənˈfɜːrməbl ˈækʃn/",
+        "meaning": "可确认操作；执行前可通过简短反馈让用户确认的操作",
+        "example": "A confirmable action gives the user a chance to stop an error.",
+        "chineseExample": "可确认操作给用户机会阻止错误。"
+      },
+      {
+        "term": "service request",
+        "phonetic": "/ˈsɜːrvɪs rɪˈkwest/",
+        "meaning": "服务请求；用户要求系统安排、查询或执行的服务类任务",
+        "example": "A service request may require account or location context.",
+        "chineseExample": "服务请求可能需要账号或位置上下文。"
+      },
+      {
+        "term": "location context",
+        "phonetic": "/loʊˈkeɪʃn ˈkɑːntekst/",
+        "meaning": "位置上下文；车辆位置、目的地、周边地点和路径信息",
+        "example": "Location context can narrow a restaurant search.",
+        "chineseExample": "位置上下文可以缩小餐厅搜索范围。"
+      },
+      {
+        "term": "confidence score",
+        "phonetic": "/ˈkɑːnfɪdəns skɔːr/",
+        "meaning": "置信分数；系统计算出的可信度数值",
+        "example": "A low confidence score should trigger clarification.",
+        "chineseExample": "低置信分数应触发澄清。"
+      },
+      {
+        "term": "driver distraction",
+        "phonetic": "/ˈdraɪvər dɪˈstrækʃn/",
+        "meaning": "驾驶员分心；交互或环境导致注意力偏离驾驶任务",
+        "example": "Driver distraction increases when prompts are too long.",
+        "chineseExample": "提示过长会增加驾驶员分心。"
+      },
+      {
+        "term": "on-road state",
+        "phonetic": "/ɑːn roʊd steɪt/",
+        "meaning": "在路状态；车辆处于行驶、并线、转弯等道路任务中的状态",
+        "example": "The on-road state should limit nonessential dialogue.",
+        "chineseExample": "在路状态应限制非必要对话。"
+      },
+      {
+        "term": "parked state",
+        "phonetic": "/pɑːrkt steɪt/",
+        "meaning": "停车状态；车辆已停稳，用户可承担更多交互负荷的状态",
+        "example": "A parked state allows richer menus and longer explanations.",
+        "chineseExample": "停车状态允许更丰富的菜单和更长解释。"
+      },
+      {
+        "term": "occupant role",
+        "phonetic": "/ˈɑːkjəpənt roʊl/",
+        "meaning": "乘员角色；驾驶员、前排乘客、后排乘客等在交互中的身份",
+        "example": "Occupant role affects which controls are available.",
+        "chineseExample": "乘员角色会影响哪些控制可用。"
+      },
+      {
+        "term": "system response",
+        "phonetic": "/ˈsɪstəm rɪˈspɑːns/",
+        "meaning": "系统响应；系统对用户输入给出的语音、视觉或动作反馈",
+        "example": "The system response should match the urgency of the request.",
+        "chineseExample": "系统响应应匹配请求的紧急程度。"
+      },
+      {
+        "term": "short prompt",
+        "phonetic": "/ʃɔːrt prɑːmpt/",
+        "meaning": "短提示；适合驾驶场景的简短问题或确认语",
+        "example": "A short prompt is easier to process under workload.",
+        "chineseExample": "在有负荷时，短提示更容易处理。"
+      },
+      {
+        "term": "manual control",
+        "phonetic": "/ˈmænjuəl kənˈtroʊl/",
+        "meaning": "手动控制；用户通过触控、旋钮或按键直接操作系统",
+        "example": "Manual control remains important when voice fails.",
+        "chineseExample": "语音失败时，手动控制仍然重要。"
+      },
+      {
+        "term": "spoken feedback",
+        "phonetic": "/ˈspoʊkən ˈfiːdbæk/",
+        "meaning": "语音反馈；系统通过说话提供确认、解释或下一步提示",
+        "example": "Spoken feedback should avoid private details in a shared cabin.",
+        "chineseExample": "共享座舱中，语音反馈应避免私人细节。"
+      },
+      {
+        "term": "context-aware",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“Context-aware”。",
+        "example": "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
+        "chineseExample": "在这句话中，“Context-aware”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "follow-up",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“follow-up”。",
+        "example": "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
+        "chineseExample": "在这句话中，“follow-up”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "guessing",
+        "phonetic": "/待查/",
+        "meaning": "猜测；在证据不足时推断",
+        "example": "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
+        "chineseExample": "在这句话中，“guessing”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "in-cabin",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“in-cabin”。",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "在这句话中，“in-cabin”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "know",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“know”。",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "在这句话中，“know”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/待查/",
+        "meaning": "已停车的；车辆停稳状态",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "在这句话中，“parked”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "handing",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“handing”。",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "在这句话中，“handing”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/待查/",
+        "meaning": "乘客；非驾驶乘员",
+        "example": "An in-cabin assistant should know whether the user is driving, parked, or handing control to another passenger.",
+        "chineseExample": "在这句话中，“passenger”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "dialogue",
+        "phonetic": "/待查/",
+        "meaning": "对话；系统和用户的交互轮次",
+        "example": "The dialogue state keeps the destination request separate from a later climate command.",
+        "chineseExample": "在这句话中，“dialogue”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "ambiguity",
+        "phonetic": "/待查/",
+        "meaning": "歧义；可能有多种理解的情况",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“Ambiguity”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "resolution",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“resolution”。",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“resolution”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "necessary",
+        "phonetic": "/待查/",
+        "meaning": "必要的；必须具备的",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“necessary”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "cooler",
+        "phonetic": "/待查/",
+        "meaning": "更凉的；温度更低的",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“cooler”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "controllable",
+        "phonetic": "/待查/",
+        "meaning": "可控制的；可以由系统或用户调节的",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“controllable”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "zones",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“zones”。",
+        "example": "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
+        "chineseExample": "在这句话中，“zones”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "low-friction",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“low-friction”。",
+        "example": "A low-friction prompt offers two clear options instead of a long menu.",
+        "chineseExample": "在这句话中，“low-friction”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "offers",
+        "phonetic": "/待查/",
+        "meaning": "提供；给出选项",
+        "example": "A low-friction prompt offers two clear options instead of a long menu.",
+        "chineseExample": "在这句话中，“offers”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "busy",
+        "phonetic": "/待查/",
+        "meaning": "忙碌的；驾驶任务负荷较高的",
+        "example": "Good turn-taking prevents the assistant from speaking over the driver during a busy merge.",
+        "chineseExample": "在这句话中，“busy”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "merge",
+        "phonetic": "/待查/",
+        "meaning": "并线；车辆汇入车流",
+        "example": "Good turn-taking prevents the assistant from speaking over the driver during a busy merge.",
+        "chineseExample": "在这句话中，“merge”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "situational",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“situational”。",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "在这句话中，“situational”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "constraint",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“constraint”。",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "在这句话中，“constraint”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "block",
+        "phonetic": "/待查/",
+        "meaning": "阻止；限制某项操作",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "在这句话中，“block”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "browsing",
+        "phonetic": "/待查/",
+        "meaning": "浏览；查看列表、内容或结果",
+        "example": "A situational constraint may block a complex browsing task while the vehicle is moving.",
+        "chineseExample": "在这句话中，“browsing”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "handover",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“handover”。",
+        "example": "Intent handover lets a passenger finish a search that the driver started by voice.",
+        "chineseExample": "在这句话中，“handover”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "finish",
+        "phonetic": "/待查/",
+        "meaning": "完成；结束任务",
+        "example": "Intent handover lets a passenger finish a search that the driver started by voice.",
+        "chineseExample": "在这句话中，“finish”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "started",
+        "phonetic": "/待查/",
+        "meaning": "开始；已经发起",
+        "example": "Intent handover lets a passenger finish a search that the driver started by voice.",
+        "chineseExample": "在这句话中，“started”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "falls",
+        "phonetic": "/待查/",
+        "meaning": "下降；低于某水平",
+        "example": "The assistant should ask for confirmation when recognition falls below the confidence threshold.",
+        "chineseExample": "在这句话中，“falls”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "below",
+        "phonetic": "/待查/",
+        "meaning": "低于；在某阈值以下",
+        "example": "The assistant should ask for confirmation when recognition falls below the confidence threshold.",
+        "chineseExample": "在这句话中，“below”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "recoverable",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“recoverable”。",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "在这句话中，“recoverable”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "misunderstanding",
+        "phonetic": "/待查/",
+        "meaning": "误解；系统或用户理解错误",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "在这句话中，“misunderstanding”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "accept",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“accept”。",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "在这句话中，“accept”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "heard",
+        "phonetic": "/待查/",
+        "meaning": "听到；系统识别到的内容",
+        "example": "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
+        "chineseExample": "在这句话中，“heard”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "isolated",
+        "phonetic": "/待查/",
+        "meaning": "孤立的；脱离上下文的",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“isolated”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "consider",
+        "phonetic": "/待查/",
+        "meaning": "考虑；纳入判断",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“consider”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "occupant",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“occupant”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“occupant”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "role",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“role”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“role”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "behind",
+        "phonetic": "/待查/",
+        "meaning": "在背后；作为判断依据",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“behind”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "safest",
+        "phonetic": "/待查/",
+        "meaning": "最安全的；风险最低的",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“safest”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "response",
+        "phonetic": "/待查/",
+        "meaning": "响应；系统反馈或动作",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“response”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "zone",
+        "phonetic": "/待查/",
+        "meaning": "区域；可独立控制的位置",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“zone”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "recent",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“recent”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“recent”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "conversation",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“conversation”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“conversation”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "summary",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“summary”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“summary”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "side",
+        "phonetic": "/待查/",
+        "meaning": "一侧；驾驶员侧或乘客侧",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“side”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "rear",
+        "phonetic": "/待查/",
+        "meaning": "后排的；车辆后部区域",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“rear”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "here",
+        "phonetic": "/待查/",
+        "meaning": "这里；在当前场景中",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“here”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/待查/",
+        "meaning": "措辞；系统说法",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“wording”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "minimal",
+        "phonetic": "/待查/",
+        "meaning": "最少的；尽量减少的",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“minimal”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "reading",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“reading”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“reading”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "aloud",
+        "phonetic": "/待查/",
+        "meaning": "出声地；以语音方式",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“aloud”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "comparison",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“comparison”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“comparison”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "unfinished",
+        "phonetic": "/待查/",
+        "meaning": "未完成的；仍需继续处理的",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“unfinished”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "failure",
+        "phonetic": "/待查/",
+        "meaning": "失败；未达到目标的结果",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“failure”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "repair",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“repair”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“repair”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "talk",
+        "phonetic": "/待查/",
+        "meaning": "说话；进行语音输出",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“talk”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "each",
+        "phonetic": "/待查/",
+        "meaning": "课堂词汇；在今日座舱语音交互语境中理解为“each”。",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“each”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "fit",
+        "phonetic": "/待查/",
+        "meaning": "适合；与场景匹配",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“fit”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "protect",
+        "phonetic": "/待查/",
+        "meaning": "保护；减少风险或负担",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“protect”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "give",
+        "phonetic": "/待查/",
+        "meaning": "给予；提供",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“give”可结合车内助手澄清场景理解。"
+      },
+      {
+        "term": "cancel",
+        "phonetic": "/待查/",
+        "meaning": "取消；停止或撤销操作",
+        "example": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "chineseExample": "在这句话中，“cancel”可结合车内助手澄清场景理解。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Practice reading",
+        "text": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "translation": "上下文感知的车内助手不应把每条语音指令都当作孤立句子处理。它必须考虑驾驶语境、对话状态、乘员角色，以及语音识别背后的置信分数。当驾驶员说“调凉一点”时，最安全的响应未必是静默执行。座舱应在改变设置前检查当前空调区域、最近对话历史、座位上下文和当前负荷。如果意图清晰且操作风险较低，简短的可听摘要和可扫视的视觉确认可能就足够。如果请求存在歧义，助手应提出低摩擦提示，例如“驾驶员侧还是后排区域？”良好的轮次交替在这里很重要：系统应在并线时等待，保持措辞最少，并避免大声朗读长菜单。对于需要浏览或比较的任务，意图交接可以把未完成请求转移到乘客屏或停车状态。可恢复误解并不是失败，只要用户能用修正表达快速纠正。设计目标不是让助手说更多话，而是让每个系统响应适合情境、保护注意力，并给用户一条清晰路径去确认、纠正或取消。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence.",
+        "structure": "主语 A context-aware in-cabin assistant + 情态动词 should not + 动词 treat + 宾语 every voice command + as 补足语。",
+        "focus": "用 should not treat...as... 表达设计原则：不要把语音命令当作脱离场景的孤立句。",
+        "pattern": "A context-aware...should not treat...as..."
+      },
+      {
+        "sentence": "If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?'",
+        "structure": "If 条件从句 + 主句 the assistant should ask... + such as 举例。",
+        "focus": "用 ambiguous 和 low-friction prompt 说明歧义场景下的低干扰追问方式。",
+        "pattern": "If the request is ambiguous, the assistant should ask..."
+      },
+      {
+        "sentence": "For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state.",
+        "structure": "For tasks that... 介词短语引出适用场景 + 主句 intent handover can move...to...or...",
+        "focus": "用 intent handover can move... 描述把复杂任务转移给乘客屏或停车状态。",
+        "pattern": "For tasks that need..., intent handover can move..."
+      },
+      {
+        "sentence": "The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
+        "structure": "The goal is to make... 后接三个并列动词 fit / protect / give，最后用 confirm / correct / cancel 表示用户控制权。",
+        "focus": "用并列动词总结车内助手澄清设计的价值：适配情境、保护注意力、保留用户控制。",
+        "pattern": "The goal is to make..., protect..., and give..."
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 words 中 10 个术语，重点区分 clarification、ambiguity、confidence 和 handover。",
+      "6 分钟：跟读长文，标出所有描述系统何时确认、追问、转移或取消的表达。",
+      "5 分钟：用 context-aware clarification、low-friction prompt、confidence threshold 各造一个设计评审句。",
+      "5-10 分钟：口头复述一个“调凉一点”或“找附近餐厅”的车内语音场景，说明助手如何根据驾驶语境提出澄清。"
+    ],
+    "videos": [
+      {
+        "title": "Practice without a fixed video source",
+        "url": "",
+        "note": "今天内容为原创跟读练习，未绑定可靠公开视频链接；可使用页面朗读按钮完成听说练习。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-14-haptic-confirmation-glanceable-feedback",
     "date": "2026-07-14",
     "title": "Haptic confirmation and glanceable feedback in intelligent cockpits",
