@@ -1,5 +1,966 @@
 [
   {
+    "id": "2026-07-16-driver-monitoring-handoff",
+    "date": "2026-07-16",
+    "title": "Driver monitoring handoff messages and trust calibration",
+    "topic": "驾驶员监测触发的接管提示与信任校准",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明驾驶员监测系统、接管提示、自动化边界和信任校准之间的关系，让辅助驾驶提示既及时又不过度惊吓用户。",
+    "words": [
+      {
+        "term": "driver monitoring system",
+        "phonetic": "/ˈdraɪvər ˈmɑːnɪtərɪŋ ˈsɪstəm/",
+        "meaning": "驾驶员监测系统；用于识别视线、姿态、困倦、分心和接管准备度的车内感知系统",
+        "example": "A driver monitoring system should trigger the handoff message before attention becomes unsafe.",
+        "chineseExample": "驾驶员监测系统应在注意力变得不安全之前触发接管提示。"
+      },
+      {
+        "term": "handoff message",
+        "phonetic": "/ˈhændɔːf ˈmesɪdʒ/",
+        "meaning": "接管提示；系统要求驾驶员重新关注道路、恢复控制或确认自动化状态的提示信息",
+        "example": "The handoff message must explain what changed and what the driver should do next.",
+        "chineseExample": "接管提示必须说明发生了什么变化，以及驾驶员下一步应该做什么。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力、限制和风险形成适当信任水平的设计过程",
+        "example": "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
+        "chineseExample": "信任校准能防止驾驶员在几次顺畅行程后过度信任自动化。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；自动驾驶或辅助驾驶功能能够可靠工作的条件与限制",
+        "example": "The interface should show the automation boundary when lane markings become unclear.",
+        "chineseExample": "当车道线变得不清晰时，界面应显示自动化边界。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员能否快速理解场景并恢复驾驶控制的状态",
+        "example": "Takeover readiness drops when the driver looks away for too long.",
+        "chineseExample": "当驾驶员长时间移开视线时，接管准备度会下降。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级梯度；提示从轻微提醒逐步升级到强提醒或安全策略的层级设计",
+        "example": "An escalation ladder can move from a soft tone to a visual warning and then to a takeover request.",
+        "chineseExample": "升级梯度可以从轻提示音逐步转为视觉警告，再转为接管请求。"
+      },
+      {
+        "term": "glance behavior",
+        "phonetic": "/ɡlæns bɪˈheɪvjər/",
+        "meaning": "视线扫视行为；驾驶员看向道路、屏幕、镜面或其他对象的模式",
+        "example": "Glance behavior helps the cockpit decide whether a spoken reminder is enough.",
+        "chineseExample": "视线扫视行为帮助座舱判断语音提醒是否足够。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户对当前自动化模式、控制主体和系统限制的理解",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "如果驾驶员无法判断谁在控制车速和转向，说明模式感知较弱。"
+      },
+      {
+        "term": "grace period",
+        "phonetic": "/ɡreɪs ˈpɪriəd/",
+        "meaning": "宽限时间；系统在升级提示或采取保护动作前留给用户恢复注意力的短时间窗口",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "短暂宽限时间让驾驶员有时间重新看向道路，而不会造成恐慌。"
+      },
+      {
+        "term": "re-engagement cue",
+        "phonetic": "/ˌriː ɪnˈɡeɪdʒmənt kjuː/",
+        "meaning": "重新参与线索；引导驾驶员把注意力和控制权带回驾驶任务的视觉、听觉或触觉提示",
+        "example": "A re-engagement cue should point to the driving task, not to a decorative animation.",
+        "chineseExample": "重新参与线索应指向驾驶任务，而不是装饰性动画。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "driver monitoring system",
+        "phonetic": "/ˈdraɪvər ˈmɑːnɪtərɪŋ ˈsɪstəm/",
+        "meaning": "驾驶员监测系统；用于识别视线、姿态、困倦、分心和接管准备度的车内感知系统",
+        "example": "A driver monitoring system should trigger the handoff message before attention becomes unsafe.",
+        "chineseExample": "驾驶员监测系统应在注意力变得不安全之前触发接管提示。"
+      },
+      {
+        "term": "handoff message",
+        "phonetic": "/ˈhændɔːf ˈmesɪdʒ/",
+        "meaning": "接管提示；系统要求驾驶员重新关注道路、恢复控制或确认自动化状态的提示信息",
+        "example": "The handoff message must explain what changed and what the driver should do next.",
+        "chineseExample": "接管提示必须说明发生了什么变化，以及驾驶员下一步应该做什么。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力、限制和风险形成适当信任水平的设计过程",
+        "example": "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
+        "chineseExample": "信任校准能防止驾驶员在几次顺畅行程后过度信任自动化。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；自动驾驶或辅助驾驶功能能够可靠工作的条件与限制",
+        "example": "The interface should show the automation boundary when lane markings become unclear.",
+        "chineseExample": "当车道线变得不清晰时，界面应显示自动化边界。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员能否快速理解场景并恢复驾驶控制的状态",
+        "example": "Takeover readiness drops when the driver looks away for too long.",
+        "chineseExample": "当驾驶员长时间移开视线时，接管准备度会下降。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级梯度；提示从轻微提醒逐步升级到强提醒或安全策略的层级设计",
+        "example": "An escalation ladder can move from a soft tone to a visual warning and then to a takeover request.",
+        "chineseExample": "升级梯度可以从轻提示音逐步转为视觉警告，再转为接管请求。"
+      },
+      {
+        "term": "glance behavior",
+        "phonetic": "/ɡlæns bɪˈheɪvjər/",
+        "meaning": "视线扫视行为；驾驶员看向道路、屏幕、镜面或其他对象的模式",
+        "example": "Glance behavior helps the cockpit decide whether a spoken reminder is enough.",
+        "chineseExample": "视线扫视行为帮助座舱判断语音提醒是否足够。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户对当前自动化模式、控制主体和系统限制的理解",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "如果驾驶员无法判断谁在控制车速和转向，说明模式感知较弱。"
+      },
+      {
+        "term": "grace period",
+        "phonetic": "/ɡreɪs ˈpɪriəd/",
+        "meaning": "宽限时间；系统在升级提示或采取保护动作前留给用户恢复注意力的短时间窗口",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "短暂宽限时间让驾驶员有时间重新看向道路，而不会造成恐慌。"
+      },
+      {
+        "term": "re-engagement cue",
+        "phonetic": "/ˌriː ɪnˈɡeɪdʒmənt kjuː/",
+        "meaning": "重新参与线索；引导驾驶员把注意力和控制权带回驾驶任务的视觉、听觉或触觉提示",
+        "example": "A re-engagement cue should point to the driving task, not to a decorative animation.",
+        "chineseExample": "重新参与线索应指向驾驶任务，而不是装饰性动画。"
+      },
+      {
+        "term": "assisted driving",
+        "phonetic": "/əˈsɪstɪd ˈdraɪvɪŋ/",
+        "meaning": "辅助驾驶；系统帮助控制速度、转向或车距但仍需要驾驶员监督",
+        "example": "Assisted driving still requires clear driver supervision.",
+        "chineseExample": "辅助驾驶仍需要清晰的驾驶员监督。"
+      },
+      {
+        "term": "attention required",
+        "phonetic": "/əˈtenʃn rɪˈkwaɪərd/",
+        "meaning": "需要注意；系统提示驾驶员必须重新关注驾驶任务",
+        "example": "Attention required messages should be brief and actionable.",
+        "chineseExample": "需要注意的提示应简短且可执行。"
+      },
+      {
+        "term": "long glance",
+        "phonetic": "/lɔːŋ ɡlæns/",
+        "meaning": "长时间扫视；视线离开关键驾驶区域过久",
+        "example": "A long glance away from the road can reduce takeover readiness.",
+        "chineseExample": "长时间离开道路的扫视会降低接管准备度。"
+      },
+      {
+        "term": "closed eyes",
+        "phonetic": "/kloʊzd aɪz/",
+        "meaning": "闭眼；驾驶员监测中的疲劳或失去注意力信号",
+        "example": "Closed eyes may trigger a stronger warning.",
+        "chineseExample": "闭眼可能触发更强提醒。"
+      },
+      {
+        "term": "head pose",
+        "phonetic": "/hed poʊz/",
+        "meaning": "头部姿态；用于判断驾驶员朝向和注意力状态的身体姿态信息",
+        "example": "Head pose helps estimate where the driver is looking.",
+        "chineseExample": "头部姿态帮助估计驾驶员正在看哪里。"
+      },
+      {
+        "term": "hands ready",
+        "phonetic": "/hændz ˈredi/",
+        "meaning": "双手准备就绪；驾驶员能够恢复方向盘控制的状态",
+        "example": "Hands ready status matters during a takeover request.",
+        "chineseExample": "接管请求期间双手准备状态很重要。"
+      },
+      {
+        "term": "sudden alarm",
+        "phonetic": "/ˈsʌdn əˈlɑːrm/",
+        "meaning": "突然警报；可能造成惊吓或过度压力的强提醒",
+        "example": "A sudden alarm can create panic if it is used too early.",
+        "chineseExample": "过早使用突然警报可能造成恐慌。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "直白语言；避免技术黑话、让用户快速理解的表达",
+        "example": "Plain language makes automation limits easier to understand.",
+        "chineseExample": "直白语言让自动化限制更容易理解。"
+      },
+      {
+        "term": "lane marking",
+        "phonetic": "/leɪn ˈmɑːrkɪŋ/",
+        "meaning": "车道线；辅助驾驶识别道路边界的重要视觉线索",
+        "example": "Unclear lane markings may define an automation boundary.",
+        "chineseExample": "不清晰车道线可能形成自动化边界。"
+      },
+      {
+        "term": "traffic complexity",
+        "phonetic": "/ˈtræfɪk kəmˈpleksəti/",
+        "meaning": "交通复杂度；道路参与者、速度变化和场景不确定性的综合程度",
+        "example": "Traffic complexity affects how early the cockpit asks for attention.",
+        "chineseExample": "交通复杂度影响座舱多早请求注意力。"
+      },
+      {
+        "term": "control confirmation",
+        "phonetic": "/kənˈtroʊl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "控制确认；驾驶员确认自己理解并接管控制的交互动作",
+        "example": "Control confirmation should be easy to perform.",
+        "chineseExample": "控制确认应容易执行。"
+      },
+      {
+        "term": "spoken cue",
+        "phonetic": "/ˈspoʊkən kjuː/",
+        "meaning": "语音线索；通过口播提醒用户注意或行动的信息",
+        "example": "A spoken cue can tell the driver why attention is needed.",
+        "chineseExample": "语音线索可以告诉驾驶员为什么需要注意。"
+      },
+      {
+        "term": "visual cue",
+        "phonetic": "/ˈvɪʒuəl kjuː/",
+        "meaning": "视觉线索；通过屏幕、图标或灯光呈现的提示",
+        "example": "A visual cue should remain glanceable during driving.",
+        "chineseExample": "视觉线索在驾驶中应保持可扫视。"
+      },
+      {
+        "term": "haptic pulse",
+        "phonetic": "/ˈhæptɪk pʌls/",
+        "meaning": "触觉脉冲；方向盘、座椅等设备发出的短促触觉提醒",
+        "example": "A haptic pulse can support urgent re-engagement.",
+        "chineseExample": "触觉脉冲可以支持紧急重新参与。"
+      },
+      {
+        "term": "wheel",
+        "phonetic": "/wiːl/",
+        "meaning": "方向盘；驾驶控制和触觉反馈的重要载体",
+        "example": "The wheel can deliver a haptic pulse.",
+        "chineseExample": "方向盘可以提供触觉脉冲。"
+      },
+      {
+        "term": "seat",
+        "phonetic": "/siːt/",
+        "meaning": "座椅；可用于乘员状态感知或触觉反馈的车内部件",
+        "example": "The seat can provide a subtle feedback pulse.",
+        "chineseExample": "座椅可以提供细微反馈脉冲。"
+      },
+      {
+        "term": "calm status",
+        "phonetic": "/kɑːm ˈsteɪtəs/",
+        "meaning": "平静状态；风险解除后系统回到低干扰反馈状态",
+        "example": "The cockpit should return to a calm status after recovery.",
+        "chineseExample": "恢复后座舱应回到平静状态。"
+      },
+      {
+        "term": "urgency",
+        "phonetic": "/ˈɜːrdʒənsi/",
+        "meaning": "紧迫性；提示要求用户立即行动的强度",
+        "example": "Urgency should increase only when risk remains high.",
+        "chineseExample": "只有风险仍高时才应提高紧迫性。"
+      },
+      {
+        "term": "step by step",
+        "phonetic": "/step baɪ step/",
+        "meaning": "逐步地；按清晰层级逐渐推进",
+        "example": "The warning should escalate step by step.",
+        "chineseExample": "警告应逐步升级。"
+      },
+      {
+        "term": "expected action",
+        "phonetic": "/ɪkˈspektɪd ˈækʃn/",
+        "meaning": "期望动作；系统希望用户立刻完成的具体行为",
+        "example": "The expected action must be visible and spoken clearly.",
+        "chineseExample": "期望动作必须清晰显示并说出。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户知道当前谁在控制车辆以及系统处于什么模式",
+        "example": "Mode awareness prevents confusion during assisted driving.",
+        "chineseExample": "模式感知能防止辅助驾驶期间的困惑。"
+      },
+      {
+        "term": "blaming the user",
+        "phonetic": "/ˈbleɪmɪŋ ðə ˈjuːzər/",
+        "meaning": "责备用户；用带有归咎感的语言解释问题",
+        "example": "Avoid blaming the user when attention drops.",
+        "chineseExample": "当注意力下降时，避免责备用户。"
+      },
+      {
+        "term": "driver engagement",
+        "phonetic": "/ˈdraɪvər ɪnˈɡeɪdʒmənt/",
+        "meaning": "驾驶员参与度；驾驶员持续理解道路和系统状态的程度",
+        "example": "Driver engagement should rise before a takeover.",
+        "chineseExample": "接管前驾驶员参与度应提高。"
+      },
+      {
+        "term": "right moment",
+        "phonetic": "/raɪt ˈmoʊmənt/",
+        "meaning": "正确时刻；提示出现最能帮助用户且干扰最小的时间点",
+        "example": "The right moment makes the message easier to accept.",
+        "chineseExample": "正确时刻让提示更容易被接受。"
+      },
+      {
+        "term": "system limit",
+        "phonetic": "/ˈsɪstəm ˈlɪmɪt/",
+        "meaning": "系统限制；自动化能力无法可靠覆盖的边界",
+        "example": "A system limit should be communicated honestly.",
+        "chineseExample": "系统限制应被诚实传达。"
+      },
+      {
+        "term": "honest automation",
+        "phonetic": "/ˈɑːnɪst ˌɔːtəˈmeɪʃn/",
+        "meaning": "诚实自动化；清楚表达能力与限制、不夸大可靠性的自动化体验",
+        "example": "Honest automation supports appropriate trust.",
+        "chineseExample": "诚实自动化支持适度信任。"
+      },
+      {
+        "term": "control state",
+        "phonetic": "/kənˈtroʊl steɪt/",
+        "meaning": "控制状态；当前车辆由系统或驾驶员控制的状态",
+        "example": "The control state should be visible at a glance.",
+        "chineseExample": "控制状态应一眼可见。"
+      },
+      {
+        "term": "attention drop",
+        "phonetic": "/əˈtenʃn drɑːp/",
+        "meaning": "注意力下降；驾驶员对道路或任务关注减少的状态",
+        "example": "An attention drop can trigger a re-engagement cue.",
+        "chineseExample": "注意力下降可能触发重新参与线索。"
+      },
+      {
+        "term": "warning hierarchy",
+        "phonetic": "/ˈwɔːrnɪŋ ˈhaɪərɑːrki/",
+        "meaning": "警告层级；不同风险等级对应的提醒强度和通道组合",
+        "example": "A warning hierarchy keeps alerts predictable.",
+        "chineseExample": "警告层级让提醒更可预测。"
+      },
+      {
+        "term": "takeover request",
+        "phonetic": "/ˈteɪkoʊvər rɪˈkwest/",
+        "meaning": "接管请求；系统要求驾驶员恢复控制的明确请求",
+        "example": "A takeover request should be direct and specific.",
+        "chineseExample": "接管请求应直接且具体。"
+      },
+      {
+        "term": "road attention",
+        "phonetic": "/roʊd əˈtenʃn/",
+        "meaning": "道路注意力；驾驶员对道路和交通场景的关注",
+        "example": "Road attention is the main target of the message.",
+        "chineseExample": "道路注意力是提示的主要目标。"
+      },
+      {
+        "term": "status recovery",
+        "phonetic": "/ˈsteɪtəs rɪˈkʌvəri/",
+        "meaning": "状态恢复；风险降低后系统返回正常反馈状态的过程",
+        "example": "Status recovery should be visible to the driver.",
+        "chineseExample": "状态恢复应对驾驶员可见。"
+      },
+      {
+        "term": "risk signal",
+        "phonetic": "/rɪsk ˈsɪɡnəl/",
+        "meaning": "风险信号；提示系统需要关注或升级的感知信号",
+        "example": "A risk signal should be checked against context.",
+        "chineseExample": "风险信号应结合上下文检查。"
+      },
+      {
+        "term": "driver supervision",
+        "phonetic": "/ˈdraɪvər ˌsuːpərˈvɪʒn/",
+        "meaning": "驾驶员监督；辅助驾驶期间驾驶员持续监控车辆与道路的责任",
+        "example": "Driver supervision remains important in assisted driving.",
+        "chineseExample": "辅助驾驶中驾驶员监督仍然重要。"
+      },
+      {
+        "term": "control handback",
+        "phonetic": "/kənˈtroʊl ˈhændbæk/",
+        "meaning": "控制交还；自动化把控制权交还给驾驶员的过程",
+        "example": "Control handback needs clear timing and wording.",
+        "chineseExample": "控制交还需要清晰时机和措辞。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/待查/",
+        "meaning": "提示信息；系统向用户传达的内容",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“message”可理解为“提示信息”。"
+      },
+      {
+        "term": "changed",
+        "phonetic": "/待查/",
+        "meaning": "发生变化；状态已不同",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“changed”可理解为“发生变化”。"
+      },
+      {
+        "term": "markings",
+        "phonetic": "/待查/",
+        "meaning": "标线；道路上的车道线等视觉标记",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“markings”可理解为“标线”。"
+      },
+      {
+        "term": "unclear",
+        "phonetic": "/待查/",
+        "meaning": "不清晰；难以可靠识别",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“unclear”可理解为“不清晰”。"
+      },
+      {
+        "term": "away",
+        "phonetic": "/待查/",
+        "meaning": "离开；从某对象移开",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“away”可理解为“离开”。"
+      },
+      {
+        "term": "time",
+        "phonetic": "/待查/",
+        "meaning": "时间；某个触发时刻",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“time”可理解为“时间”。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/待查/",
+        "meaning": "道路；驾驶注意力的主要对象",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“road”可理解为“道路”。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/待查/",
+        "meaning": "没有；避免某种负面方式",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“without”可理解为“没有”。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/待查/",
+        "meaning": "车辆；智能座舱和辅助驾驶系统所在的交通工具",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“vehicle”可理解为“车辆”。"
+      },
+      {
+        "term": "supports",
+        "phonetic": "/待查/",
+        "meaning": "支持；提供某项系统能力",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“supports”可理解为“支持”。"
+      },
+      {
+        "term": "understand",
+        "phonetic": "/待查/",
+        "meaning": "理解；知道当前状态或下一步要求",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“understand”可理解为“理解”。"
+      },
+      {
+        "term": "required",
+        "phonetic": "/待查/",
+        "meaning": "被需要的；必须发生的",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“required”可理解为“被需要的”。"
+      },
+      {
+        "term": "again",
+        "phonetic": "/待查/",
+        "meaning": "再次；重新回到某状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“again”可理解为“再次”。"
+      },
+      {
+        "term": "detect",
+        "phonetic": "/待查/",
+        "meaning": "检测；识别传感器或行为信号",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“detect”可理解为“检测”。"
+      },
+      {
+        "term": "glances",
+        "phonetic": "/待查/",
+        "meaning": "扫视；短时间视线移动",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“glances”可理解为“扫视”。"
+      },
+      {
+        "term": "closed",
+        "phonetic": "/待查/",
+        "meaning": "关闭的；在本文中指眼睛闭合",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“closed”可理解为“关闭的”。"
+      },
+      {
+        "term": "eyes",
+        "phonetic": "/待查/",
+        "meaning": "眼睛；驾驶员监测的重要信号来源",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“eyes”可理解为“眼睛”。"
+      },
+      {
+        "term": "unstable",
+        "phonetic": "/待查/",
+        "meaning": "不稳定的；状态或姿态持续变化",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“unstable”可理解为“不稳定的”。"
+      },
+      {
+        "term": "pose",
+        "phonetic": "/待查/",
+        "meaning": "姿态；身体或头部朝向状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“pose”可理解为“姿态”。"
+      },
+      {
+        "term": "hands",
+        "phonetic": "/待查/",
+        "meaning": "双手；驾驶控制准备度的关键线索",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“hands”可理解为“双手”。"
+      },
+      {
+        "term": "ready",
+        "phonetic": "/待查/",
+        "meaning": "准备好的；可以执行下一步动作",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“ready”可理解为“准备好的”。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/待查/",
+        "meaning": "控制；驾驶员或系统对车辆的操控权",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“control”可理解为“控制”。"
+      },
+      {
+        "term": "however",
+        "phonetic": "/待查/",
+        "meaning": "然而；引出设计上的限制或转折",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“however”可理解为“然而”。"
+      },
+      {
+        "term": "sound",
+        "phonetic": "/待查/",
+        "meaning": "听起来；也可指声音提示",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“sound”可理解为“听起来”。"
+      },
+      {
+        "term": "like",
+        "phonetic": "/待查/",
+        "meaning": "像；用于比较或举例",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“like”可理解为“像”。"
+      },
+      {
+        "term": "every",
+        "phonetic": "/待查/",
+        "meaning": "每次；每一个",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“every”可理解为“每次”。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/待查/",
+        "meaning": "信号；系统感知或判断出的状态变化",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“signal”可理解为“信号”。"
+      },
+      {
+        "term": "changes",
+        "phonetic": "/待查/",
+        "meaning": "变化；从一种状态转为另一种状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“changes”可理解为“变化”。"
+      },
+      {
+        "term": "starts",
+        "phonetic": "/待查/",
+        "meaning": "开始；作为设计流程的第一步",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“starts”可理解为“开始”。"
+      },
+      {
+        "term": "showing",
+        "phonetic": "/待查/",
+        "meaning": "显示；把信息呈现给用户",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“showing”可理解为“显示”。"
+      },
+      {
+        "term": "language",
+        "phonetic": "/待查/",
+        "meaning": "语言；提示使用的表达方式",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“language”可理解为“语言”。"
+      },
+      {
+        "term": "complex",
+        "phonetic": "/待查/",
+        "meaning": "复杂；需要更多判断和注意力",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“complex”可理解为“复杂”。"
+      },
+      {
+        "term": "needs",
+        "phonetic": "/待查/",
+        "meaning": "需要；系统要求某个动作或条件",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“needs”可理解为“需要”。"
+      },
+      {
+        "term": "confirm",
+        "phonetic": "/待查/",
+        "meaning": "确认；明确表达同意或接管",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“confirm”可理解为“确认”。"
+      },
+      {
+        "term": "combine",
+        "phonetic": "/待查/",
+        "meaning": "组合；把多个通道或元素一起使用",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“combine”可理解为“组合”。"
+      },
+      {
+        "term": "necessary",
+        "phonetic": "/待查/",
+        "meaning": "必要的；在风险较高时需要使用",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“necessary”可理解为“必要的”。"
+      },
+      {
+        "term": "pulse",
+        "phonetic": "/待查/",
+        "meaning": "脉冲；短促触觉或声音信号",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“pulse”可理解为“脉冲”。"
+      },
+      {
+        "term": "quickly",
+        "phonetic": "/待查/",
+        "meaning": "快速地；在短时间内完成动作",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“quickly”可理解为“快速地”。"
+      },
+      {
+        "term": "return",
+        "phonetic": "/待查/",
+        "meaning": "返回；回到之前或正常状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“return”可理解为“返回”。"
+      },
+      {
+        "term": "remains",
+        "phonetic": "/待查/",
+        "meaning": "保持；继续处于某状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“remains”可理解为“保持”。"
+      },
+      {
+        "term": "low",
+        "phonetic": "/待查/",
+        "meaning": "低；不足或风险较高的状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“low”可理解为“低”。"
+      },
+      {
+        "term": "increase",
+        "phonetic": "/待查/",
+        "meaning": "增加；提高强度或程度",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“increase”可理解为“增加”。"
+      },
+      {
+        "term": "matters",
+        "phonetic": "/待查/",
+        "meaning": "重要；对安全或任务结果有影响",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“matters”可理解为“重要”。"
+      },
+      {
+        "term": "expected",
+        "phonetic": "/待查/",
+        "meaning": "被期望的；系统希望用户执行的",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“expected”可理解为“被期望的”。"
+      },
+      {
+        "term": "keeps",
+        "phonetic": "/待查/",
+        "meaning": "保持；让某状态持续",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“keeps”可理解为“保持”。"
+      },
+      {
+        "term": "accurate",
+        "phonetic": "/待查/",
+        "meaning": "准确的；符合真实状态",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“accurate”可理解为“准确的”。"
+      },
+      {
+        "term": "create",
+        "phonetic": "/待查/",
+        "meaning": "制造；产生某种感受或结果",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“create”可理解为“制造”。"
+      },
+      {
+        "term": "fear",
+        "phonetic": "/待查/",
+        "meaning": "恐惧；强提醒可能造成的负面情绪",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“fear”可理解为“恐惧”。"
+      },
+      {
+        "term": "engaged",
+        "phonetic": "/待查/",
+        "meaning": "参与的；保持在任务中的",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“engaged”可理解为“参与的”。"
+      },
+      {
+        "term": "moment",
+        "phonetic": "/待查/",
+        "meaning": "时刻；提示出现的时间点",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“moment”可理解为“时刻”。"
+      },
+      {
+        "term": "feel",
+        "phonetic": "/待查/",
+        "meaning": "感觉；用户对系统行为的主观感受",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“feel”可理解为“感觉”。"
+      },
+      {
+        "term": "honest",
+        "phonetic": "/待查/",
+        "meaning": "诚实的；不夸大能力或隐藏限制",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“honest”可理解为“诚实的”。"
+      },
+      {
+        "term": "limits",
+        "phonetic": "/待查/",
+        "meaning": "限制；系统能力边界",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "chineseExample": "在今日接管提示语境中，“limits”可理解为“限制”。"
+      },
+      {
+        "term": "unsafe",
+        "phonetic": "/ˌʌnˈseɪf/",
+        "meaning": "不安全的；风险已经高于可接受水平",
+        "example": "A driver monitoring system should trigger the handoff message before attention becomes unsafe.",
+        "chineseExample": "在这句话中，“unsafe”表示注意力状态已经不安全。"
+      },
+      {
+        "term": "overtrusting",
+        "phonetic": "/ˌoʊvərˈtrʌstɪŋ/",
+        "meaning": "过度信任；对自动化能力形成高于实际能力的信任",
+        "example": "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
+        "chineseExample": "在这句话中，“overtrusting”表示驾驶员过度信任自动化。"
+      },
+      {
+        "term": "smooth",
+        "phonetic": "/smuːð/",
+        "meaning": "顺畅的；没有明显中断或问题的",
+        "example": "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
+        "chineseExample": "在这句话中，“smooth”表示行程很顺畅。"
+      },
+      {
+        "term": "readiness",
+        "phonetic": "/ˈredinəs/",
+        "meaning": "准备度；执行下一步动作的可用状态",
+        "example": "Takeover readiness drops when the driver looks away for too long.",
+        "chineseExample": "在这句话中，“readiness”表示接管准备度。"
+      },
+      {
+        "term": "drops",
+        "phonetic": "/drɑːps/",
+        "meaning": "下降；程度或水平降低",
+        "example": "Takeover readiness drops when the driver looks away for too long.",
+        "chineseExample": "在这句话中，“drops”表示准备度下降。"
+      },
+      {
+        "term": "soft",
+        "phonetic": "/sɔːft/",
+        "meaning": "轻柔的；提醒强度较低、不刺耳的",
+        "example": "An escalation ladder can move from a soft tone to a visual warning and then to a takeover request.",
+        "chineseExample": "在这句话中，“soft”表示提示音较轻柔。"
+      },
+      {
+        "term": "spoken",
+        "phonetic": "/ˈspoʊkən/",
+        "meaning": "口头的；通过语音说出的",
+        "example": "Glance behavior helps the cockpit decide whether a spoken reminder is enough.",
+        "chineseExample": "在这句话中，“spoken”表示通过语音说出的。"
+      },
+      {
+        "term": "weak",
+        "phonetic": "/wiːk/",
+        "meaning": "较弱的；不充分或不清晰的",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "在这句话中，“weak”表示模式感知不够清晰。"
+      },
+      {
+        "term": "tell",
+        "phonetic": "/tel/",
+        "meaning": "判断；分辨；说出",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "在这句话中，“tell”表示判断或分辨。"
+      },
+      {
+        "term": "who",
+        "phonetic": "/huː/",
+        "meaning": "谁；用于询问控制主体或责任主体",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "在这句话中，“who”用于说明谁在控制车辆。"
+      },
+      {
+        "term": "controlling",
+        "phonetic": "/kənˈtroʊlɪŋ/",
+        "meaning": "正在控制；对速度、转向或功能产生控制",
+        "example": "Mode awareness is weak if the driver cannot tell who is controlling speed and steering.",
+        "chineseExample": "在这句话中，“controlling”表示正在控制。"
+      },
+      {
+        "term": "grace",
+        "phonetic": "/ɡreɪs/",
+        "meaning": "宽限；给用户恢复注意力的短暂余量",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "在这句话中，“grace”表示宽限。"
+      },
+      {
+        "term": "period",
+        "phonetic": "/ˈpɪriəd/",
+        "meaning": "时间段；一个短暂窗口",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "在这句话中，“period”表示时间段。"
+      },
+      {
+        "term": "back",
+        "phonetic": "/bæk/",
+        "meaning": "回到；返回先前关注对象或状态",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "在这句话中，“back”表示重新看回道路。"
+      },
+      {
+        "term": "causing",
+        "phonetic": "/ˈkɔːzɪŋ/",
+        "meaning": "造成；引发某种结果",
+        "example": "A short grace period gives the driver time to look back at the road without causing panic.",
+        "chineseExample": "在这句话中，“causing”表示造成。"
+      },
+      {
+        "term": "re-engagement",
+        "phonetic": "/ˌriː ɪnˈɡeɪdʒmənt/",
+        "meaning": "重新参与；把注意力和控制带回驾驶任务",
+        "example": "A re-engagement cue should point to the driving task, not to a decorative animation.",
+        "chineseExample": "在这句话中，“re-engagement”表示重新参与驾驶任务。"
+      },
+      {
+        "term": "point",
+        "phonetic": "/pɔɪnt/",
+        "meaning": "指向；把用户注意力引导到某处",
+        "example": "A re-engagement cue should point to the driving task, not to a decorative animation.",
+        "chineseExample": "在这句话中，“point”表示指向。"
+      },
+      {
+        "term": "assisted",
+        "phonetic": "/əˈsɪstɪd/",
+        "meaning": "辅助的；由系统提供部分支持的",
+        "example": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again.",
+        "chineseExample": "在这句话中，“assisted”表示由系统辅助的。"
+      },
+      {
+        "term": "head",
+        "phonetic": "/hed/",
+        "meaning": "头部；驾驶员姿态监测的重要身体部位",
+        "example": "A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control.",
+        "chineseExample": "在这句话中，“head”表示头部。"
+      },
+      {
+        "term": "sudden",
+        "phonetic": "/ˈsʌdn/",
+        "meaning": "突然的；没有缓冲地出现",
+        "example": "However, the handoff message should not sound like a sudden alarm every time the signal changes.",
+        "chineseExample": "在这句话中，“sudden”表示突然的。"
+      },
+      {
+        "term": "alarm",
+        "phonetic": "/əˈlɑːrm/",
+        "meaning": "警报；强提醒信号",
+        "example": "However, the handoff message should not sound like a sudden alarm every time the signal changes.",
+        "chineseExample": "在这句话中，“alarm”表示警报。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Practice reading",
+        "text": "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
+        "translation": "当车辆支持辅助驾驶时，座舱必须帮助驾驶员理解什么时候需要重新注意驾驶。驾驶员监测系统可以检测长时间离开道路的视线、闭眼、不稳定的头部姿态，或尚未准备好控制车辆的双手。然而，接管提示不应在每次信号变化时都像突然警报一样响起。良好的信任校准首先要用直白语言显示自动化边界：车道线不清晰、交通复杂，或系统需要驾驶员确认控制权。界面应组合简短语音线索、可扫视视觉线索，并在必要时通过方向盘或座椅提供触觉脉冲。如果驾驶员快速看回道路，系统可以使用宽限时间并回到平静状态。如果接管准备度仍然较低，升级梯度应逐步提高紧迫性。提示必须说明发生了什么变化、为什么重要，以及现在期望什么动作。这能保持模式感知准确，同时不责备用户。目标不是制造恐惧，而是在正确时刻让驾驶员重新参与，并让自动化诚实呈现自身限制。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control.",
+        "structure": "主语 A driver monitoring system + can detect + 并列宾语 long glances / closed eyes / unstable head pose / hands + that 定语从句。",
+        "focus": "用 can detect 列举监测系统可识别的接管风险信号。",
+        "pattern": "A system can detect..., ..., or..."
+      },
+      {
+        "sentence": "Good trust calibration starts by showing the automation boundary in plain language.",
+        "structure": "主语 Good trust calibration + 谓语 starts + by doing 方式状语 + 宾语 the automation boundary。",
+        "focus": "用 starts by showing... 表达设计原则的第一步。",
+        "pattern": "Good...starts by showing..."
+      },
+      {
+        "sentence": "If takeover readiness remains low, an escalation ladder should increase urgency step by step.",
+        "structure": "If 条件从句 + 主句 an escalation ladder should increase... + step by step 方式状语。",
+        "focus": "用 remains low 和 should increase urgency 描述接管提示升级逻辑。",
+        "pattern": "If...remains low, ...should increase..."
+      },
+      {
+        "sentence": "The message has to say what changed, why it matters, and what action is expected now.",
+        "structure": "主语 The message + has to say + 三个并列宾语从句 what / why / what。",
+        "focus": "用 has to say 强调提示内容必须解释变化、原因和期望动作。",
+        "pattern": "The message has to say what..., why..., and what..."
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 10 个核心术语，重点区分 driver monitoring system、handoff message、trust calibration 和 takeover readiness。",
+      "7 分钟：跟读长文，标出所有描述提示触发、升级、恢复和解释原因的英文表达。",
+      "5 分钟：用 automation boundary、escalation ladder、grace period 各写一句设计评审句。",
+      "5-10 分钟：口头复述一个驾驶员长时间看向中控屏的场景，说明座舱如何逐步提醒并校准信任。"
+    ],
+    "videos": [
+      {
+        "title": "Practice without a fixed video source",
+        "url": "",
+        "note": "今天内容为原创跟读练习，未绑定可靠公开视频链接；可使用页面朗读按钮完成听说练习。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-15-context-aware-clarification",
     "date": "2026-07-15",
     "title": "Context-aware clarification for in-cabin assistants",
