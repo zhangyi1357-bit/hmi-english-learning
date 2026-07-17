@@ -1,5 +1,868 @@
 [
   {
+    "id": "2026-07-17-cabin-ai-intent-confirmation",
+    "date": "2026-07-17",
+    "title": "Intent confirmation and reversible actions for in-cabin AI assistants",
+    "topic": "车内 AI 助手的意图确认与可撤销动作",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车内大模型助手在执行座舱控制前确认用户意图、展示权限边界、提供撤销入口，并在误解发生后快速修复。",
+    "words": [
+      {
+        "term": "intent confirmation",
+        "phonetic": "/ɪnˈtent ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "意图确认；系统在执行车内操作前确认用户真实目标和关键条件的交互步骤",
+        "example": "Intent confirmation should repeat the target action, the affected setting, and the expected result.",
+        "chineseExample": "意图确认应复述目标动作、受影响的设置以及预期结果。"
+      },
+      {
+        "term": "reversible action",
+        "phonetic": "/rɪˈvɜːrsəbl ˈækʃn/",
+        "meaning": "可撤销动作；用户或系统可以轻松恢复到先前状态的操作",
+        "example": "A reversible action can use a short confirmation, while an irreversible action needs stronger consent.",
+        "chineseExample": "可撤销动作可以使用简短确认，而不可逆动作需要更强的同意。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；助手被允许读取、建议或执行车内功能的范围",
+        "example": "The permission boundary must be visible when the assistant asks to control comfort or safety settings.",
+        "chineseExample": "当助手请求控制舒适性或安全相关设置时，权限边界必须可见。"
+      },
+      {
+        "term": "undo affordance",
+        "phonetic": "/ʌnˈduː əˈfɔːrdns/",
+        "meaning": "撤销可供性；让用户明确知道某个操作可以被撤回的界面线索或控件",
+        "example": "An undo affordance reduces anxiety after the assistant changes a cabin setting.",
+        "chineseExample": "助手改变座舱设置后，撤销可供性能降低用户焦虑。"
+      },
+      {
+        "term": "confirmation prompt",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn prɑːmpt/",
+        "meaning": "确认提示；请求用户确认、修改或取消系统理解的短信息",
+        "example": "The confirmation prompt should avoid technical labels and ask for a simple yes or no response.",
+        "chineseExample": "确认提示应避免技术标签，并请求简单的是或否回答。"
+      },
+      {
+        "term": "execution threshold",
+        "phonetic": "/ˌeksɪˈkjuːʃn ˈθreʃhoʊld/",
+        "meaning": "执行阈值；系统从建议转为实际执行前必须满足的信心、风险和许可条件",
+        "example": "The execution threshold should rise when a command may affect visibility, speed, or driver attention.",
+        "chineseExample": "当指令可能影响可见性、速度或驾驶员注意力时，执行阈值应提高。"
+      },
+      {
+        "term": "contextual disambiguation",
+        "phonetic": "/kənˈtekstʃuəl ˌdɪsæmˌbɪɡjuˈeɪʃn/",
+        "meaning": "上下文消歧；利用位置、当前界面、乘员状态和历史操作澄清模糊命令",
+        "example": "Contextual disambiguation helps the assistant decide whether \"turn it down\" refers to volume or temperature.",
+        "chineseExample": "上下文消歧帮助助手判断“调低一点”指的是音量还是温度。"
+      },
+      {
+        "term": "system initiative",
+        "phonetic": "/ˈsɪstəm ɪˈnɪʃətɪv/",
+        "meaning": "系统主动性；助手主动提议、询问或执行下一步的程度",
+        "example": "System initiative is useful only when the next step is low risk and easy to reject.",
+        "chineseExample": "只有当下一步风险低且易于拒绝时，系统主动性才有价值。"
+      },
+      {
+        "term": "recoverable mistake",
+        "phonetic": "/rɪˈkʌvərəbl mɪˈsteɪk/",
+        "meaning": "可恢复错误；不会造成持久风险，且用户可以快速修正的系统误解或误操作",
+        "example": "A recoverable mistake should lead to repair language instead of a long apology.",
+        "chineseExample": "可恢复错误应触发修复性语言，而不是冗长道歉。"
+      },
+      {
+        "term": "driver agency",
+        "phonetic": "/ˈdraɪvər ˈeɪdʒənsi/",
+        "meaning": "驾驶员主导权；驾驶员能够理解、批准、拒绝或撤销系统行为的控制感",
+        "example": "Driver agency remains strong when the assistant explains why it is asking before it acts.",
+        "chineseExample": "当助手在执行前解释为什么要询问时，驾驶员主导权会保持较强。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "intent confirmation",
+        "phonetic": "/ɪnˈtent ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "意图确认；系统在执行车内操作前确认用户真实目标和关键条件的交互步骤",
+        "example": "Intent confirmation should repeat the target action, the affected setting, and the expected result.",
+        "chineseExample": "意图确认应复述目标动作、受影响的设置以及预期结果。"
+      },
+      {
+        "term": "reversible action",
+        "phonetic": "/rɪˈvɜːrsəbl ˈækʃn/",
+        "meaning": "可撤销动作；用户或系统可以轻松恢复到先前状态的操作",
+        "example": "A reversible action can use a short confirmation, while an irreversible action needs stronger consent.",
+        "chineseExample": "可撤销动作可以使用简短确认，而不可逆动作需要更强的同意。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；助手被允许读取、建议或执行车内功能的范围",
+        "example": "The permission boundary must be visible when the assistant asks to control comfort or safety settings.",
+        "chineseExample": "当助手请求控制舒适性或安全相关设置时，权限边界必须可见。"
+      },
+      {
+        "term": "undo affordance",
+        "phonetic": "/ʌnˈduː əˈfɔːrdns/",
+        "meaning": "撤销可供性；让用户明确知道某个操作可以被撤回的界面线索或控件",
+        "example": "An undo affordance reduces anxiety after the assistant changes a cabin setting.",
+        "chineseExample": "助手改变座舱设置后，撤销可供性能降低用户焦虑。"
+      },
+      {
+        "term": "confirmation prompt",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn prɑːmpt/",
+        "meaning": "确认提示；请求用户确认、修改或取消系统理解的短信息",
+        "example": "The confirmation prompt should avoid technical labels and ask for a simple yes or no response.",
+        "chineseExample": "确认提示应避免技术标签，并请求简单的是或否回答。"
+      },
+      {
+        "term": "execution threshold",
+        "phonetic": "/ˌeksɪˈkjuːʃn ˈθreʃhoʊld/",
+        "meaning": "执行阈值；系统从建议转为实际执行前必须满足的信心、风险和许可条件",
+        "example": "The execution threshold should rise when a command may affect visibility, speed, or driver attention.",
+        "chineseExample": "当指令可能影响可见性、速度或驾驶员注意力时，执行阈值应提高。"
+      },
+      {
+        "term": "contextual disambiguation",
+        "phonetic": "/kənˈtekstʃuəl ˌdɪsæmˌbɪɡjuˈeɪʃn/",
+        "meaning": "上下文消歧；利用位置、当前界面、乘员状态和历史操作澄清模糊命令",
+        "example": "Contextual disambiguation helps the assistant decide whether \"turn it down\" refers to volume or temperature.",
+        "chineseExample": "上下文消歧帮助助手判断“调低一点”指的是音量还是温度。"
+      },
+      {
+        "term": "system initiative",
+        "phonetic": "/ˈsɪstəm ɪˈnɪʃətɪv/",
+        "meaning": "系统主动性；助手主动提议、询问或执行下一步的程度",
+        "example": "System initiative is useful only when the next step is low risk and easy to reject.",
+        "chineseExample": "只有当下一步风险低且易于拒绝时，系统主动性才有价值。"
+      },
+      {
+        "term": "recoverable mistake",
+        "phonetic": "/rɪˈkʌvərəbl mɪˈsteɪk/",
+        "meaning": "可恢复错误；不会造成持久风险，且用户可以快速修正的系统误解或误操作",
+        "example": "A recoverable mistake should lead to repair language instead of a long apology.",
+        "chineseExample": "可恢复错误应触发修复性语言，而不是冗长道歉。"
+      },
+      {
+        "term": "driver agency",
+        "phonetic": "/ˈdraɪvər ˈeɪdʒənsi/",
+        "meaning": "驾驶员主导权；驾驶员能够理解、批准、拒绝或撤销系统行为的控制感",
+        "example": "Driver agency remains strong when the assistant explains why it is asking before it acts.",
+        "chineseExample": "当助手在执行前解释为什么要询问时，驾驶员主导权会保持较强。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；在车内理解请求并提供信息或控制支持的智能体",
+        "example": "The assistant should ask before it changes a sensitive setting.",
+        "chineseExample": "助手在改变敏感设置前应先询问。"
+      },
+      {
+        "term": "cabin setting",
+        "phonetic": "/ˈkæbɪn ˈsetɪŋ/",
+        "meaning": "座舱设置；温度、音量、座椅、灯光等车内配置",
+        "example": "A cabin setting change should be easy to review.",
+        "chineseExample": "座舱设置变化应易于查看。"
+      },
+      {
+        "term": "large language model",
+        "phonetic": "/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɑːdl/",
+        "meaning": "大语言模型；用于理解和生成自然语言的 AI 模型",
+        "example": "A large language model can make commands feel conversational.",
+        "chineseExample": "大语言模型能让指令更像自然对话。"
+      },
+      {
+        "term": "spoken request",
+        "phonetic": "/ˈspoʊkən rɪˈkwest/",
+        "meaning": "语音请求；用户通过语音提出的目标或指令",
+        "example": "A spoken request may omit the object or location.",
+        "chineseExample": "语音请求可能省略对象或位置。"
+      },
+      {
+        "term": "target action",
+        "phonetic": "/ˈtɑːrɡɪt ˈækʃn/",
+        "meaning": "目标动作；系统认为用户希望完成的具体操作",
+        "example": "The target action should be shown before execution.",
+        "chineseExample": "目标动作应在执行前显示。"
+      },
+      {
+        "term": "affected setting",
+        "phonetic": "/əˈfektɪd ˈsetɪŋ/",
+        "meaning": "受影响设置；即将被改变的功能或参数",
+        "example": "The affected setting is the rear climate zone.",
+        "chineseExample": "受影响设置是后排空调区域。"
+      },
+      {
+        "term": "expected result",
+        "phonetic": "/ɪkˈspektɪd rɪˈzʌlt/",
+        "meaning": "预期结果；操作完成后用户会感知到的变化",
+        "example": "The expected result should be concrete and measurable.",
+        "chineseExample": "预期结果应具体且可衡量。"
+      },
+      {
+        "term": "irreversible action",
+        "phonetic": "/ˌɪrɪˈvɜːrsəbl ˈækʃn/",
+        "meaning": "不可逆动作；不能轻松恢复或可能带来安全影响的操作",
+        "example": "An irreversible action requires explicit consent.",
+        "chineseExample": "不可逆动作需要明确同意。"
+      },
+      {
+        "term": "stronger consent",
+        "phonetic": "/ˈstrɔːŋɡər kənˈsent/",
+        "meaning": "更强同意；通过明确语言、二次确认或手动操作表达的授权",
+        "example": "Stronger consent is needed for safety-related changes.",
+        "chineseExample": "安全相关变化需要更强同意。"
+      },
+      {
+        "term": "sensitive setting",
+        "phonetic": "/ˈsensətɪv ˈsetɪŋ/",
+        "meaning": "敏感设置；可能影响安全、隐私或驾驶负荷的配置",
+        "example": "Visibility is a sensitive setting during night driving.",
+        "chineseExample": "夜间驾驶时，可见性是敏感设置。"
+      },
+      {
+        "term": "comfort setting",
+        "phonetic": "/ˈkʌmfərt ˈsetɪŋ/",
+        "meaning": "舒适性设置；温度、座椅、氛围灯等体验类配置",
+        "example": "Comfort settings can use lighter confirmation.",
+        "chineseExample": "舒适性设置可以使用较轻量的确认。"
+      },
+      {
+        "term": "safety setting",
+        "phonetic": "/ˈseɪfti ˈsetɪŋ/",
+        "meaning": "安全设置；会影响驾驶安全、辅助驾驶或可见性的配置",
+        "example": "Safety settings need conservative interaction rules.",
+        "chineseExample": "安全设置需要保守的交互规则。"
+      },
+      {
+        "term": "visible boundary",
+        "phonetic": "/ˈvɪzəbl ˈbaʊndəri/",
+        "meaning": "可见边界；用户能看见系统权限、能力或限制的界面表达",
+        "example": "A visible boundary prevents surprise automation.",
+        "chineseExample": "可见边界能防止令人意外的自动化。"
+      },
+      {
+        "term": "simple response",
+        "phonetic": "/ˈsɪmpl rɪˈspɑːns/",
+        "meaning": "简单回应；用户可用“是”“否”“取消”等低成本方式回答",
+        "example": "A simple response keeps the exchange quick.",
+        "chineseExample": "简单回应让交互保持快速。"
+      },
+      {
+        "term": "technical label",
+        "phonetic": "/ˈteknɪkl ˈleɪbl/",
+        "meaning": "技术标签；普通用户难以理解的系统术语或内部名称",
+        "example": "Avoid technical labels in a confirmation prompt.",
+        "chineseExample": "确认提示中应避免技术标签。"
+      },
+      {
+        "term": "confidence score",
+        "phonetic": "/ˈkɑːnfɪdəns skɔːr/",
+        "meaning": "置信分数；系统对自己理解是否正确的估计",
+        "example": "A low confidence score should trigger clarification.",
+        "chineseExample": "低置信分数应触发澄清。"
+      },
+      {
+        "term": "risk level",
+        "phonetic": "/rɪsk ˈlevl/",
+        "meaning": "风险等级；操作可能造成安全、隐私或体验问题的程度",
+        "example": "The risk level determines how much confirmation is required.",
+        "chineseExample": "风险等级决定需要多少确认。"
+      },
+      {
+        "term": "license condition",
+        "phonetic": "/ˈlaɪsns kənˈdɪʃn/",
+        "meaning": "许可条件；系统被允许执行某类动作前需要满足的授权条件",
+        "example": "License conditions should be stored transparently.",
+        "chineseExample": "许可条件应透明保存。"
+      },
+      {
+        "term": "visibility",
+        "phonetic": "/ˌvɪzəˈbɪləti/",
+        "meaning": "可见性；驾驶员看清道路、信息或界面的能力",
+        "example": "Visibility can be affected by lighting and display changes.",
+        "chineseExample": "可见性会受到灯光和显示变化影响。"
+      },
+      {
+        "term": "driver attention",
+        "phonetic": "/ˈdraɪvər əˈtenʃn/",
+        "meaning": "驾驶员注意力；驾驶员对道路、车辆和系统状态的关注程度",
+        "example": "Driver attention should not be pulled away during a complex merge.",
+        "chineseExample": "复杂并线时不应拉走驾驶员注意力。"
+      },
+      {
+        "term": "ambiguous command",
+        "phonetic": "/æmˈbɪɡjuəs kəˈmænd/",
+        "meaning": "模糊指令；对象、范围或意图不清楚的用户命令",
+        "example": "An ambiguous command needs clarification before execution.",
+        "chineseExample": "模糊指令在执行前需要澄清。"
+      },
+      {
+        "term": "current screen",
+        "phonetic": "/ˈkɜːrənt skriːn/",
+        "meaning": "当前屏幕；用户正在查看或交互的显示区域",
+        "example": "The current screen gives context to the assistant.",
+        "chineseExample": "当前屏幕为助手提供上下文。"
+      },
+      {
+        "term": "passenger state",
+        "phonetic": "/ˈpæsɪndʒər steɪt/",
+        "meaning": "乘员状态；乘员位置、活动、舒适需求或注意状态",
+        "example": "Passenger state can change the meaning of a request.",
+        "chineseExample": "乘员状态会改变请求含义。"
+      },
+      {
+        "term": "history",
+        "phonetic": "/ˈhɪstəri/",
+        "meaning": "历史记录；最近的命令、设置变化或用户偏好",
+        "example": "Recent history helps resolve repeated commands.",
+        "chineseExample": "近期历史帮助解析重复指令。"
+      },
+      {
+        "term": "volume",
+        "phonetic": "/ˈvɑːljuːm/",
+        "meaning": "音量；媒体、导航或提示声音的大小",
+        "example": "Volume is often changed by short spoken commands.",
+        "chineseExample": "音量常通过简短语音指令调整。"
+      },
+      {
+        "term": "temperature",
+        "phonetic": "/ˈtemprətʃər/",
+        "meaning": "温度；空调或座舱热舒适相关参数",
+        "example": "Temperature may refer to one zone or the whole cabin.",
+        "chineseExample": "温度可能指某一区域或整个座舱。"
+      },
+      {
+        "term": "low risk",
+        "phonetic": "/loʊ rɪsk/",
+        "meaning": "低风险；对安全、隐私和驾驶负荷影响较小",
+        "example": "Low risk changes can be faster.",
+        "chineseExample": "低风险变化可以更快。"
+      },
+      {
+        "term": "easy to reject",
+        "phonetic": "/ˈiːzi tu rɪˈdʒekt/",
+        "meaning": "易于拒绝；用户可以快速取消或否定系统建议",
+        "example": "System initiative should remain easy to reject.",
+        "chineseExample": "系统主动建议应保持易于拒绝。"
+      },
+      {
+        "term": "repair language",
+        "phonetic": "/rɪˈper ˈlæŋɡwɪdʒ/",
+        "meaning": "修复性语言；系统承认误解并提供下一步修正方式的表达",
+        "example": "Repair language should be short and specific.",
+        "chineseExample": "修复性语言应简短且具体。"
+      },
+      {
+        "term": "long apology",
+        "phonetic": "/lɔːŋ əˈpɑːlədʒi/",
+        "meaning": "冗长道歉；占用注意力但不能帮助用户修复问题的表达",
+        "example": "A long apology is not useful while driving.",
+        "chineseExample": "驾驶时冗长道歉没有帮助。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户对系统行为的理解、批准和控制能力",
+        "example": "User agency is preserved by clear choices.",
+        "chineseExample": "清晰选项能保留用户主导权。"
+      },
+      {
+        "term": "before it acts",
+        "phonetic": "/bɪˈfɔːr ɪt ækts/",
+        "meaning": "执行之前；系统真正改变状态前的时刻",
+        "example": "The assistant should explain before it acts.",
+        "chineseExample": "助手应在执行之前说明原因。"
+      },
+      {
+        "term": "natural language",
+        "phonetic": "/ˈnætʃrəl ˈlæŋɡwɪdʒ/",
+        "meaning": "自然语言；用户日常说话方式，而非命令代码",
+        "example": "Natural language makes cockpit interaction more flexible.",
+        "chineseExample": "自然语言让座舱交互更灵活。"
+      },
+      {
+        "term": "confirmation design",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn dɪˈzaɪn/",
+        "meaning": "确认设计；围绕确认时机、内容和强度的交互设计",
+        "example": "Confirmation design balances speed and safety.",
+        "chineseExample": "确认设计平衡速度与安全。"
+      },
+      {
+        "term": "control request",
+        "phonetic": "/kənˈtroʊl rɪˈkwest/",
+        "meaning": "控制请求；用户要求系统改变某个车辆或座舱状态的指令",
+        "example": "A control request should include a clear target.",
+        "chineseExample": "控制请求应包含清晰目标。"
+      },
+      {
+        "term": "review strip",
+        "phonetic": "/rɪˈvjuː strɪp/",
+        "meaning": "回顾条；短暂显示刚执行动作并提供撤销入口的界面区域",
+        "example": "The review strip can show what changed.",
+        "chineseExample": "回顾条可以显示发生了什么变化。"
+      },
+      {
+        "term": "cancel option",
+        "phonetic": "/ˈkænsl ˈɑːpʃn/",
+        "meaning": "取消选项；用户阻止或停止系统动作的明确入口",
+        "example": "A cancel option must be available during confirmation.",
+        "chineseExample": "确认期间必须提供取消选项。"
+      },
+      {
+        "term": "manual override",
+        "phonetic": "/ˈmænjuəl ˈoʊvərraɪd/",
+        "meaning": "手动覆盖；用户通过物理或屏幕控件直接接管系统设置",
+        "example": "Manual override should always remain available.",
+        "chineseExample": "手动覆盖应始终可用。"
+      },
+      {
+        "term": "short window",
+        "phonetic": "/ʃɔːrt ˈwɪndoʊ/",
+        "meaning": "短时间窗口；允许用户撤销或修正的有限时间段",
+        "example": "A short window for undo keeps the interaction lightweight.",
+        "chineseExample": "短时间撤销窗口让交互保持轻量。"
+      },
+      {
+        "term": "state change",
+        "phonetic": "/steɪt tʃeɪndʒ/",
+        "meaning": "状态变化；车辆、座舱或界面参数发生改变",
+        "example": "Every state change should be understandable.",
+        "chineseExample": "每个状态变化都应可理解。"
+      },
+      {
+        "term": "plain wording",
+        "phonetic": "/pleɪn ˈwɜːrdɪŋ/",
+        "meaning": "直白措辞；面向驾驶场景的简洁、非技术化表达",
+        "example": "Plain wording reduces cognitive load.",
+        "chineseExample": "直白措辞降低认知负荷。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；用户理解、判断和操作所需的心理资源",
+        "example": "High cognitive load makes confirmation slower.",
+        "chineseExample": "高认知负荷会让确认变慢。"
+      },
+      {
+        "term": "speech turn",
+        "phonetic": "/spiːtʃ tɜːrn/",
+        "meaning": "话轮；对话中用户或系统的一次发言",
+        "example": "Keep each speech turn short while the vehicle is moving.",
+        "chineseExample": "车辆行驶时，每个话轮都应简短。"
+      },
+      {
+        "term": "fallback path",
+        "phonetic": "/ˈfɔːlbæk pæθ/",
+        "meaning": "兜底路径；系统无法理解或执行时提供的替代操作方式",
+        "example": "A fallback path may route the user to manual controls.",
+        "chineseExample": "兜底路径可以把用户引导到手动控件。"
+      },
+      {
+        "term": "clarify",
+        "phonetic": "/ˈklærəfaɪ/",
+        "meaning": "澄清；询问更多信息以消除歧义",
+        "example": "The assistant should clarify before changing a risky setting.",
+        "chineseExample": "助手在改变风险设置前应先澄清。"
+      },
+      {
+        "term": "confirm",
+        "phonetic": "/kənˈfɜːrm/",
+        "meaning": "确认；用户明确同意或系统复述理解",
+        "example": "Confirm the zone before adjusting temperature.",
+        "chineseExample": "调节温度前先确认区域。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "执行；系统实际完成某项操作",
+        "example": "Execute the command only after consent.",
+        "chineseExample": "只有在同意后才执行指令。"
+      },
+      {
+        "term": "undo",
+        "phonetic": "/ʌnˈduː/",
+        "meaning": "撤销；恢复到操作前状态",
+        "example": "Undo gives the driver a quick recovery path.",
+        "chineseExample": "撤销为驾驶员提供快速恢复路径。"
+      },
+      {
+        "term": "reject",
+        "phonetic": "/rɪˈdʒekt/",
+        "meaning": "拒绝；用户明确不接受系统建议或动作",
+        "example": "The driver can reject the assistant suggestion.",
+        "chineseExample": "驾驶员可以拒绝助手建议。"
+      },
+      {
+        "term": "approve",
+        "phonetic": "/əˈpruːv/",
+        "meaning": "批准；用户明确允许系统继续执行",
+        "example": "Approve is clearer than a vague nod.",
+        "chineseExample": "明确批准比模糊点头更清楚。"
+      },
+      {
+        "term": "modify",
+        "phonetic": "/ˈmɑːdɪfaɪ/",
+        "meaning": "修改；调整系统理解的目标、范围或参数",
+        "example": "The user may modify the command before execution.",
+        "chineseExample": "用户可以在执行前修改指令。"
+      },
+      {
+        "term": "privacy",
+        "phonetic": "/ˈpraɪvəsi/",
+        "meaning": "隐私；用户数据、身份和行为信息的保护",
+        "example": "Privacy matters when the assistant uses personal history.",
+        "chineseExample": "当助手使用个人历史时，隐私很重要。"
+      },
+      {
+        "term": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "meaning": "舒适；座舱温度、姿态、声音和光线带来的体验状态",
+        "example": "Comfort can be improved without distracting the driver.",
+        "chineseExample": "可以在不分散驾驶员注意力的情况下改善舒适性。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/ˈseɪfti/",
+        "meaning": "安全；避免伤害、风险或驾驶任务受损的状态",
+        "example": "Safety should shape every execution threshold.",
+        "chineseExample": "安全应塑造每个执行阈值。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/ˈsetɪŋ/",
+        "meaning": "设置；可被查看或调整的系统参数",
+        "example": "The setting should show its current value.",
+        "chineseExample": "设置应显示当前值。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统向用户发出的短问题、说明或操作请求",
+        "example": "A prompt should be timely and specific.",
+        "chineseExample": "提示应及时且具体。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种系统行为的条件边界",
+        "example": "The threshold changes with risk.",
+        "chineseExample": "阈值会随风险变化。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；系统能力、权限或适用条件的限制",
+        "example": "A boundary should be visible in the interface.",
+        "chineseExample": "边界应在界面中可见。"
+      },
+      {
+        "term": "agency",
+        "phonetic": "/ˈeɪdʒənsi/",
+        "meaning": "主导权；用户能够理解并控制结果的能力",
+        "example": "Agency is essential in assisted driving.",
+        "chineseExample": "主导权在辅助驾驶中很重要。"
+      },
+      {
+        "term": "mistake",
+        "phonetic": "/mɪˈsteɪk/",
+        "meaning": "错误；系统理解或执行与用户目标不一致",
+        "example": "A mistake needs a quick repair path.",
+        "chineseExample": "错误需要快速修复路径。"
+      },
+      {
+        "term": "recoverable",
+        "phonetic": "/rɪˈkʌvərəbl/",
+        "meaning": "可恢复的；可以快速纠正且不造成长期影响",
+        "example": "Recoverable errors can use lighter messaging.",
+        "chineseExample": "可恢复错误可以使用更轻量的信息。"
+      },
+      {
+        "term": "initiative",
+        "phonetic": "/ɪˈnɪʃətɪv/",
+        "meaning": "主动性；系统主动推动对话或操作的程度",
+        "example": "Initiative should match user trust.",
+        "chineseExample": "主动性应匹配用户信任。"
+      },
+      {
+        "term": "disambiguation",
+        "phonetic": "/ˌdɪsæmˌbɪɡjuˈeɪʃn/",
+        "meaning": "消歧；从多个可能含义中确定正确含义",
+        "example": "Disambiguation prevents wrong control changes.",
+        "chineseExample": "消歧能防止错误控制变化。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "同意；用户允许系统读取信息或执行动作的明确授权",
+        "example": "Consent must be clear for sensitive actions.",
+        "chineseExample": "敏感动作的同意必须清楚。"
+      },
+      {
+        "term": "repeat",
+        "phonetic": "/rɪˈpiːt/",
+        "meaning": "重复；在确认中再次说出关键信息",
+        "example": "Do not repeat every detail during a short driving task.",
+        "chineseExample": "短驾驶任务中不要重复每个细节。"
+      },
+      {
+        "term": "affected",
+        "phonetic": "/əˈfektɪd/",
+        "meaning": "受影响的；被操作改变的",
+        "example": "The affected setting should be named clearly.",
+        "chineseExample": "受影响设置应被清楚命名。"
+      },
+      {
+        "term": "affordance",
+        "phonetic": "/əˈfɔːrdns/",
+        "meaning": "可供性；界面暗示可执行动作的线索",
+        "example": "An affordance tells the driver what can be done next.",
+        "chineseExample": "可供性告诉驾驶员下一步能做什么。"
+      },
+      {
+        "term": "anxiety",
+        "phonetic": "/æŋˈzaɪəti/",
+        "meaning": "焦虑；用户对系统动作不确定时产生的紧张感",
+        "example": "Undo can reduce anxiety after an automatic change.",
+        "chineseExample": "自动改变后，撤销可以降低焦虑。"
+      },
+      {
+        "term": "technical",
+        "phonetic": "/ˈteknɪkl/",
+        "meaning": "技术性的；偏系统内部或专业术语的",
+        "example": "Technical wording can slow down confirmation.",
+        "chineseExample": "技术性措辞会减慢确认。"
+      },
+      {
+        "term": "yes",
+        "phonetic": "/jes/",
+        "meaning": "是；用于明确确认的简短回答",
+        "example": "A yes response can approve a low risk action.",
+        "chineseExample": "“是”的回答可以批准低风险动作。"
+      },
+      {
+        "term": "rise",
+        "phonetic": "/raɪz/",
+        "meaning": "上升；提高到更高水平",
+        "example": "The threshold should rise when risk increases.",
+        "chineseExample": "风险增加时阈值应上升。"
+      },
+      {
+        "term": "affect",
+        "phonetic": "/əˈfekt/",
+        "meaning": "影响；改变某个状态或结果",
+        "example": "A command may affect driver attention.",
+        "chineseExample": "指令可能影响驾驶员注意力。"
+      },
+      {
+        "term": "down",
+        "phonetic": "/daʊn/",
+        "meaning": "向下；降低音量、温度或亮度等数值",
+        "example": "Turn it down may refer to volume or temperature.",
+        "chineseExample": "“调低一点”可能指音量或温度。"
+      },
+      {
+        "term": "refers",
+        "phonetic": "/rɪˈfɜːrz/",
+        "meaning": "指的是；关联到某个对象或含义",
+        "example": "The request refers to the front temperature zone.",
+        "chineseExample": "这个请求指的是前排温区。"
+      },
+      {
+        "term": "lead",
+        "phonetic": "/liːd/",
+        "meaning": "导致；引出某个结果或下一步",
+        "example": "A recoverable mistake should lead to repair language.",
+        "chineseExample": "可恢复错误应引出修复性语言。"
+      },
+      {
+        "term": "strong",
+        "phonetic": "/strɔːŋ/",
+        "meaning": "强的；明确且不易误解的",
+        "example": "Strong consent is required for sensitive settings.",
+        "chineseExample": "敏感设置需要强同意。"
+      },
+      {
+        "term": "acts",
+        "phonetic": "/ækts/",
+        "meaning": "执行；采取动作",
+        "example": "The assistant should explain before it acts.",
+        "chineseExample": "助手应在执行前解释。"
+      },
+      {
+        "term": "ai",
+        "phonetic": "/ˌeɪ ˈaɪ/",
+        "meaning": "人工智能；用于理解、推理或生成响应的系统能力",
+        "example": "AI can support natural cockpit dialogue.",
+        "chineseExample": "人工智能可以支持自然的座舱对话。"
+      },
+      {
+        "term": "natural",
+        "phonetic": "/ˈnætʃrəl/",
+        "meaning": "自然的；接近日常表达方式的",
+        "example": "Natural language can also create ambiguity.",
+        "chineseExample": "自然语言也会产生歧义。"
+      },
+      {
+        "term": "brightness",
+        "phonetic": "/ˈbraɪtnəs/",
+        "meaning": "亮度；显示或灯光的明暗程度",
+        "example": "Display brightness can affect night visibility.",
+        "chineseExample": "显示亮度会影响夜间可见性。"
+      },
+      {
+        "term": "form",
+        "phonetic": "/fɔːrm/",
+        "meaning": "表单；逐项填写或确认的信息结构",
+        "example": "A confirmation prompt should not feel like a form.",
+        "chineseExample": "确认提示不应像表单。"
+      },
+      {
+        "term": "smallest",
+        "phonetic": "/ˈsmɔːləst/",
+        "meaning": "最小的；确认负担最低但仍有效的",
+        "example": "Use the smallest useful check before execution.",
+        "chineseExample": "执行前使用最小但有用的检查。"
+      },
+      {
+        "term": "might",
+        "phonetic": "/maɪt/",
+        "meaning": "可能；表示不确定或条件性动作",
+        "example": "The assistant might ask for clarification.",
+        "chineseExample": "助手可能会请求澄清。"
+      },
+      {
+        "term": "lowering",
+        "phonetic": "/ˈloʊərɪŋ/",
+        "meaning": "正在降低；把某个参数调小",
+        "example": "Lowering the fan speed changes cabin comfort.",
+        "chineseExample": "降低风速会改变座舱舒适性。"
+      },
+      {
+        "term": "front",
+        "phonetic": "/frʌnt/",
+        "meaning": "前部的；靠近驾驶员和前排乘员的位置",
+        "example": "The front fan speed affects the driver first.",
+        "chineseExample": "前排风速会先影响驾驶员。"
+      },
+      {
+        "term": "fan",
+        "phonetic": "/fæn/",
+        "meaning": "风扇；空调出风或通风控制部件",
+        "example": "The fan speed is a common comfort setting.",
+        "chineseExample": "风速是常见舒适性设置。"
+      },
+      {
+        "term": "affects",
+        "phonetic": "/əˈfekts/",
+        "meaning": "影响；affect 的第三人称形式",
+        "example": "A lighting change affects visibility.",
+        "chineseExample": "灯光变化会影响可见性。"
+      },
+      {
+        "term": "raise",
+        "phonetic": "/reɪz/",
+        "meaning": "提高；增加阈值、音量或强度",
+        "example": "Raise the execution threshold for sensitive actions.",
+        "chineseExample": "对敏感动作提高执行阈值。"
+      },
+      {
+        "term": "approval",
+        "phonetic": "/əˈpruːvl/",
+        "meaning": "批准；用户明确允许系统继续",
+        "example": "Clear approval is needed before execution.",
+        "chineseExample": "执行前需要明确批准。"
+      },
+      {
+        "term": "strip",
+        "phonetic": "/strɪp/",
+        "meaning": "条状区域；界面中横向或窄幅的信息区域",
+        "example": "A review strip can provide undo after the action.",
+        "chineseExample": "回顾条可以在动作后提供撤销。"
+      },
+      {
+        "term": "fast",
+        "phonetic": "/fæst/",
+        "meaning": "快速的；减少等待或对话轮次的",
+        "example": "The pattern keeps the conversation fast.",
+        "chineseExample": "该模式让对话保持快速。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Follow-reading: confirming intent before the cockpit acts",
+        "text": "An in-cabin AI assistant can make vehicle interaction feel natural, but natural language also creates design risk. When a driver says, \"turn it down,\" the assistant may need to decide whether the request refers to media volume, cabin temperature, navigation voice, or display brightness. Good confirmation design does not repeat every detail like a form. It selects the smallest useful check before execution. For a low risk comfort setting, the assistant might say, \"Lowering the front fan speed. Say cancel to stop.\" For a sensitive setting that affects visibility or driver attention, the system should raise the execution threshold and ask for clear approval. The interface should also show the permission boundary: what the assistant can read, what it can suggest, and what it can change. After the action, a short review strip with an undo affordance helps preserve driver agency. If the assistant makes a recoverable mistake, repair language should be brief: \"I changed the volume, not the temperature. Undo?\" This pattern keeps the conversation fast while making state changes visible, reversible, and understandable. This keeps driver agency clear.",
+        "translation": "车内 AI 助手可以让车辆交互更自然，但自然语言也会带来设计风险。当驾驶员说“调低一点”时，助手可能需要判断请求指的是媒体音量、座舱温度、导航语音还是显示亮度。好的确认设计不会像表单一样重复所有细节，而是在执行前选择最小但有用的检查。对于低风险的舒适性设置，助手可以说：“正在降低前排风量，说取消即可停止。”对于影响可见性或驾驶员注意力的敏感设置，系统应提高执行阈值并请求明确批准。界面还应展示权限边界：助手可以读取什么、建议什么、改变什么。动作完成后，带撤销入口的短回顾条有助于保留驾驶员主导权。如果助手犯了可恢复错误，修复性语言应简短：“我改了音量，不是温度。要撤销吗？”这种模式让对话保持快速，同时让状态变化可见、可撤销、可理解。 这能让驾驶员主导权保持清晰。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Good confirmation design does not repeat every detail like a form.",
+        "translation": "好的确认设计不会像表单一样重复所有细节。",
+        "points": [
+          "Good confirmation design 是主语，强调确认流程本身的设计质量。",
+          "does not repeat every detail 表示避免逐项复述造成负担。",
+          "like a form 用类比说明过度确认会变得机械。"
+        ]
+      },
+      {
+        "sentence": "It selects the smallest useful check before execution.",
+        "translation": "它会在执行前选择最小但有用的检查。",
+        "points": [
+          "selects 表示系统主动选择确认强度。",
+          "the smallest useful check 指既够安全又不冗余的确认内容。",
+          "before execution 明确确认发生在真正改变状态之前。"
+        ]
+      },
+      {
+        "sentence": "The interface should also show the permission boundary: what the assistant can read, what it can suggest, and what it can change.",
+        "translation": "界面还应展示权限边界：助手可以读取什么、建议什么、改变什么。",
+        "points": [
+          "permission boundary 是核心名词，表示授权范围。",
+          "what it can read, suggest, and change 用并列结构拆解权限。",
+          "show 表示边界需要可见，而不是隐藏在系统内部。"
+        ]
+      },
+      {
+        "sentence": "This pattern keeps the conversation fast while making state changes visible, reversible, and understandable.",
+        "translation": "这种模式让对话保持快速，同时让状态变化可见、可撤销、可理解。",
+        "points": [
+          "keeps the conversation fast 表示保留语音交互效率。",
+          "while making 引出同时达成的设计目标。",
+          "visible, reversible, and understandable 是三个并列评价标准。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 words 中 10 个核心表达，重点区分 confirmation prompt、permission boundary 和 undo affordance。"
+      },
+      {
+        "title": "全文跟读",
+        "duration": "7 分钟",
+        "instruction": "跟读 long reading 两遍，第一遍保持连贯，第二遍在 confirmation design、execution threshold、repair language 处停顿复述中文含义。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "instruction": "用 “The assistant should ... before it acts” 和 “This pattern keeps ... while making ...” 各造 2 个智能座舱句子。"
+      },
+      {
+        "title": "场景复述",
+        "duration": "6 分钟",
+        "instruction": "用英文说明用户说 “turn it down” 后，系统如何判断对象、确认意图、执行动作并提供撤销入口。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: in-cabin AI assistant confirmation design",
+        "url": "https://www.youtube.com/results?search_query=in-cabin+AI+assistant+confirmation+design",
+        "note": "用于拓展检索相关演示；本课长文为原创练习文本，未编造外部来源链接。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-16-driver-monitoring-handoff",
     "date": "2026-07-16",
     "title": "Driver monitoring handoff messages and trust calibration",
