@@ -1,5 +1,844 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-18-multimodal-alert-escalation",
+    "date": "2026-07-18",
+    "title": "Multimodal alert escalation and de-escalation in intelligent cockpits",
+    "topic": "智能座舱多模态警告升级与降级",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在不同风险等级下组合视觉、语音和触觉提示，并根据驾驶员反应及时升级或降级警告强度。",
+    "words": [
+      {
+        "term": "alert escalation",
+        "phonetic": "/əˈlɜːrt ˌeskəˈleɪʃn/",
+        "meaning": "警告升级；当风险或无响应持续增加时，系统提高提示强度和显著性的策略",
+        "example": "Alert escalation should move from a visual cue to voice and haptic feedback when the driver does not respond.",
+        "chineseExample": "当驾驶员没有回应时，警告升级应从视觉线索转向语音和触觉反馈。"
+      },
+      {
+        "term": "de-escalation path",
+        "phonetic": "/ˌdiː ˌeskəˈleɪʃn pæθ/",
+        "meaning": "降级路径；风险降低或用户已接管后，系统逐步减弱提示的交互路径",
+        "example": "A clear de-escalation path prevents the cockpit from sounding urgent after the hazard is controlled.",
+        "chineseExample": "清晰的降级路径能避免危险已受控后座舱仍显得紧急。"
+      },
+      {
+        "term": "modality mix",
+        "phonetic": "/moʊˈdæləti mɪks/",
+        "meaning": "模态组合；视觉、听觉、语音、触觉等提示渠道的搭配方式",
+        "example": "The modality mix should match the urgency, driving workload, and available attention channel.",
+        "chineseExample": "模态组合应匹配紧急程度、驾驶负荷和可用注意力通道。"
+      },
+      {
+        "term": "urgency ladder",
+        "phonetic": "/ˈɜːrdʒənsi ˈlædər/",
+        "meaning": "紧急度阶梯；从提醒、警示到强制接管请求的分级提示体系",
+        "example": "An urgency ladder helps designers decide when a calm reminder must become an interruptive alert.",
+        "chineseExample": "紧急度阶梯帮助设计师判断平静提醒何时必须变成打断式警告。"
+      },
+      {
+        "term": "attention channel",
+        "phonetic": "/əˈtenʃn ˈtʃænl/",
+        "meaning": "注意力通道；用户接收信息的感官或认知路径，如视线、听觉或触觉",
+        "example": "If the visual attention channel is overloaded, the system should use sound or seat vibration.",
+        "chineseExample": "如果视觉注意力通道过载，系统应使用声音或座椅振动。"
+      },
+      {
+        "term": "false alarm tolerance",
+        "phonetic": "/fɔːls əˈlɑːrm ˈtɑːlərəns/",
+        "meaning": "误报警容忍度；用户能接受错误警告的程度，通常随提示强度升高而降低",
+        "example": "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
+        "chineseExample": "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+      },
+      {
+        "term": "takeover cue",
+        "phonetic": "/ˈteɪkoʊvər kjuː/",
+        "meaning": "接管线索；提示驾驶员需要重新控制车辆或确认自动化状态的信号",
+        "example": "A takeover cue should state the required action and the reason in one concise sentence.",
+        "chineseExample": "接管线索应在一句简洁的话中说明所需动作和原因。"
+      },
+      {
+        "term": "salience mapping",
+        "phonetic": "/ˈseɪliəns ˈmæpɪŋ/",
+        "meaning": "显著性映射；把风险等级映射到颜色、位置、声音和振动强度的方法",
+        "example": "Salience mapping keeps minor notices from competing with collision warnings.",
+        "chineseExample": "显著性映射避免轻微通知与碰撞警告争夺注意力。"
+      },
+      {
+        "term": "response latency",
+        "phonetic": "/rɪˈspɑːns ˈleɪtənsi/",
+        "meaning": "响应延迟；从系统提示发出到用户做出有效动作之间的时间",
+        "example": "Response latency can trigger escalation when the driver keeps looking away from the road.",
+        "chineseExample": "当驾驶员持续移开视线时，响应延迟可以触发警告升级。"
+      },
+      {
+        "term": "context gate",
+        "phonetic": "/ˈkɑːntekst ɡeɪt/",
+        "meaning": "上下文门控；根据速度、道路、自动化等级和驾驶员状态决定是否发出或抑制警告的逻辑",
+        "example": "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
+        "chineseExample": "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "alert escalation",
+        "phonetic": "/əˈlɜːrt ˌeskəˈleɪʃn/",
+        "meaning": "警告升级；当风险或无响应持续增加时，系统提高提示强度和显著性的策略",
+        "example": "Alert escalation should move from a visual cue to voice and haptic feedback when the driver does not respond.",
+        "chineseExample": "当驾驶员没有回应时，警告升级应从视觉线索转向语音和触觉反馈。"
+      },
+      {
+        "term": "de-escalation path",
+        "phonetic": "/ˌdiː ˌeskəˈleɪʃn pæθ/",
+        "meaning": "降级路径；风险降低或用户已接管后，系统逐步减弱提示的交互路径",
+        "example": "A clear de-escalation path prevents the cockpit from sounding urgent after the hazard is controlled.",
+        "chineseExample": "清晰的降级路径能避免危险已受控后座舱仍显得紧急。"
+      },
+      {
+        "term": "modality mix",
+        "phonetic": "/moʊˈdæləti mɪks/",
+        "meaning": "模态组合；视觉、听觉、语音、触觉等提示渠道的搭配方式",
+        "example": "The modality mix should match the urgency, driving workload, and available attention channel.",
+        "chineseExample": "模态组合应匹配紧急程度、驾驶负荷和可用注意力通道。"
+      },
+      {
+        "term": "urgency ladder",
+        "phonetic": "/ˈɜːrdʒənsi ˈlædər/",
+        "meaning": "紧急度阶梯；从提醒、警示到强制接管请求的分级提示体系",
+        "example": "An urgency ladder helps designers decide when a calm reminder must become an interruptive alert.",
+        "chineseExample": "紧急度阶梯帮助设计师判断平静提醒何时必须变成打断式警告。"
+      },
+      {
+        "term": "attention channel",
+        "phonetic": "/əˈtenʃn ˈtʃænl/",
+        "meaning": "注意力通道；用户接收信息的感官或认知路径，如视线、听觉或触觉",
+        "example": "If the visual attention channel is overloaded, the system should use sound or seat vibration.",
+        "chineseExample": "如果视觉注意力通道过载，系统应使用声音或座椅振动。"
+      },
+      {
+        "term": "false alarm tolerance",
+        "phonetic": "/fɔːls əˈlɑːrm ˈtɑːlərəns/",
+        "meaning": "误报警容忍度；用户能接受错误警告的程度，通常随提示强度升高而降低",
+        "example": "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
+        "chineseExample": "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+      },
+      {
+        "term": "takeover cue",
+        "phonetic": "/ˈteɪkoʊvər kjuː/",
+        "meaning": "接管线索；提示驾驶员需要重新控制车辆或确认自动化状态的信号",
+        "example": "A takeover cue should state the required action and the reason in one concise sentence.",
+        "chineseExample": "接管线索应在一句简洁的话中说明所需动作和原因。"
+      },
+      {
+        "term": "salience mapping",
+        "phonetic": "/ˈseɪliəns ˈmæpɪŋ/",
+        "meaning": "显著性映射；把风险等级映射到颜色、位置、声音和振动强度的方法",
+        "example": "Salience mapping keeps minor notices from competing with collision warnings.",
+        "chineseExample": "显著性映射避免轻微通知与碰撞警告争夺注意力。"
+      },
+      {
+        "term": "response latency",
+        "phonetic": "/rɪˈspɑːns ˈleɪtənsi/",
+        "meaning": "响应延迟；从系统提示发出到用户做出有效动作之间的时间",
+        "example": "Response latency can trigger escalation when the driver keeps looking away from the road.",
+        "chineseExample": "当驾驶员持续移开视线时，响应延迟可以触发警告升级。"
+      },
+      {
+        "term": "context gate",
+        "phonetic": "/ˈkɑːntekst ɡeɪt/",
+        "meaning": "上下文门控；根据速度、道路、自动化等级和驾驶员状态决定是否发出或抑制警告的逻辑",
+        "example": "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
+        "chineseExample": "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+      },
+      {
+        "term": "adaptive alert",
+        "phonetic": "/əˈdæptɪv əˈlɜːrt/",
+        "meaning": "自适应警告；根据场景、驾驶员状态和响应情况调整形式或强度的提示",
+        "example": "An adaptive alert changes its channel when the first signal is missed.",
+        "chineseExample": "自适应警告会在第一个信号被错过时改变提示通道。"
+      },
+      {
+        "term": "visual cue",
+        "phonetic": "/ˈvɪʒuəl kjuː/",
+        "meaning": "视觉线索；通过图标、文字、颜色或位置传达状态的信息",
+        "example": "A visual cue should be close to the area that needs attention.",
+        "chineseExample": "视觉线索应靠近需要关注的区域。"
+      },
+      {
+        "term": "haptic feedback",
+        "phonetic": "/ˈhæptɪk ˈfiːdbæk/",
+        "meaning": "触觉反馈；通过振动或力反馈传达系统状态或风险的提示",
+        "example": "Haptic feedback works well when the driver cannot spare a long glance.",
+        "chineseExample": "当驾驶员无法分出较长视线时，触觉反馈很有效。"
+      },
+      {
+        "term": "voice prompt",
+        "phonetic": "/vɔɪs prɑːmpt/",
+        "meaning": "语音提示；用 spoken language 给用户发出的指导或确认信息",
+        "example": "The voice prompt should name the hazard without adding unnecessary detail.",
+        "chineseExample": "语音提示应说明危险来源，而不增加不必要细节。"
+      },
+      {
+        "term": "auditory signal",
+        "phonetic": "/ˈɔːdətɔːri ˈsɪɡnəl/",
+        "meaning": "听觉信号；通过提示音、节奏或音色表达信息优先级的信号",
+        "example": "An auditory signal can reach the driver before a text label is read.",
+        "chineseExample": "听觉信号能在文字标签被读到之前触达驾驶员。"
+      },
+      {
+        "term": "status hint",
+        "phonetic": "/ˈsteɪtəs hɪnt/",
+        "meaning": "状态提示；低强度地告知系统状态或轻微变化的信息",
+        "example": "A status hint should not interrupt a navigation instruction.",
+        "chineseExample": "状态提示不应打断导航指令。"
+      },
+      {
+        "term": "interruptive alert",
+        "phonetic": "/ˌɪntəˈrʌptɪv əˈlɜːrt/",
+        "meaning": "打断式警告；需要立即抢占注意力的高显著性提示",
+        "example": "An interruptive alert is appropriate when delayed action could create danger.",
+        "chineseExample": "当延迟动作可能造成危险时，打断式警告是合适的。"
+      },
+      {
+        "term": "collision warning",
+        "phonetic": "/kəˈlɪʒn ˈwɔːrnɪŋ/",
+        "meaning": "碰撞警告；提醒用户存在碰撞风险的安全关键提示",
+        "example": "Collision warnings must be more salient than comfort notifications.",
+        "chineseExample": "碰撞警告必须比舒适性通知更显著。"
+      },
+      {
+        "term": "hazard alert",
+        "phonetic": "/ˈhæzərd əˈlɜːrt/",
+        "meaning": "危险警告；提示潜在危险或安全威胁的信息",
+        "example": "The hazard alert should stay active until the driver notices it or the risk disappears.",
+        "chineseExample": "危险警告应保持激活，直到驾驶员注意到它或风险消失。"
+      },
+      {
+        "term": "risk level",
+        "phonetic": "/rɪsk ˈlevl/",
+        "meaning": "风险等级；用于决定提示强度和响应要求的风险分层",
+        "example": "Risk level should be recalculated as traffic and driver state change.",
+        "chineseExample": "风险等级应随交通和驾驶员状态变化而重新计算。"
+      },
+      {
+        "term": "driver state",
+        "phonetic": "/ˈdraɪvər steɪt/",
+        "meaning": "驾驶员状态；注意力、疲劳、视线和操作准备度等状态信息",
+        "example": "Driver state can determine whether the next cue should be visual or haptic.",
+        "chineseExample": "驾驶员状态可决定下一条线索应为视觉还是触觉。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶任务占用用户感知、认知和动作资源的程度",
+        "example": "Driving workload rises when dense traffic requires constant scanning.",
+        "chineseExample": "当密集交通需要持续扫视时，驾驶负荷会上升。"
+      },
+      {
+        "term": "available attention",
+        "phonetic": "/əˈveɪləbl əˈtenʃn/",
+        "meaning": "可用注意力；用户在当前情境下还能分配给新信息的注意力资源",
+        "example": "Available attention is limited during lane changes.",
+        "chineseExample": "变道时可用注意力是有限的。"
+      },
+      {
+        "term": "glance behavior",
+        "phonetic": "/ɡlæns bɪˈheɪvjər/",
+        "meaning": "扫视行为；用户看向道路、仪表、中控或后视镜的视线模式",
+        "example": "Glance behavior reveals whether a dashboard message has been seen.",
+        "chineseExample": "扫视行为能显示仪表信息是否已被看到。"
+      },
+      {
+        "term": "road context",
+        "phonetic": "/roʊd ˈkɑːntekst/",
+        "meaning": "道路上下文；道路类型、交通密度、车道环境和周边风险信息",
+        "example": "Road context changes the acceptable timing for an alert.",
+        "chineseExample": "道路上下文会改变警告的可接受时机。"
+      },
+      {
+        "term": "automation level",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈlevl/",
+        "meaning": "自动化等级；车辆自动驾驶或辅助驾驶系统承担任务的程度",
+        "example": "The automation level affects how direct a takeover cue should be.",
+        "chineseExample": "自动化等级会影响接管线索应有多直接。"
+      },
+      {
+        "term": "priority queue",
+        "phonetic": "/praɪˈɔːrəti kjuː/",
+        "meaning": "优先级队列；按安全性、时效性和相关性排列待呈现信息的机制",
+        "example": "A priority queue prevents low-value messages from blocking safety alerts.",
+        "chineseExample": "优先级队列能避免低价值信息阻塞安全警告。"
+      },
+      {
+        "term": "suppression rule",
+        "phonetic": "/səˈpreʃn ruːl/",
+        "meaning": "抑制规则；在冲突或高负荷场景中隐藏、延迟或合并提示的规则",
+        "example": "A suppression rule can delay a noncritical reminder during a lane merge.",
+        "chineseExample": "抑制规则可以在并线期间延迟非关键提醒。"
+      },
+      {
+        "term": "cooldown period",
+        "phonetic": "/ˈkuːldaʊn ˈpɪriəd/",
+        "meaning": "冷却周期；一次警告后避免重复打扰的短时间窗口",
+        "example": "A cooldown period keeps the system from repeating the same low-risk alert too often.",
+        "chineseExample": "冷却周期避免系统过于频繁地重复同一个低风险警告。"
+      },
+      {
+        "term": "acknowledgement signal",
+        "phonetic": "/əkˈnɑːlɪdʒmənt ˈsɪɡnəl/",
+        "meaning": "确认信号；表明用户已看到、听到或处理警告的行为或输入",
+        "example": "An acknowledgement signal can be a steering correction or a button press.",
+        "chineseExample": "确认信号可以是方向修正或按钮点击。"
+      },
+      {
+        "term": "steering correction",
+        "phonetic": "/ˈstɪrɪŋ kəˈrekʃn/",
+        "meaning": "方向修正；驾驶员对转向输入的调整，常用于判断是否已响应警告",
+        "example": "A steering correction may allow the cockpit to reduce the warning level.",
+        "chineseExample": "方向修正可能允许座舱降低警告等级。"
+      },
+      {
+        "term": "seat vibration",
+        "phonetic": "/siːt vaɪˈbreɪʃn/",
+        "meaning": "座椅振动；通过座椅触觉刺激提示方向、风险或接管需求",
+        "example": "Seat vibration can indicate the side of a nearby hazard.",
+        "chineseExample": "座椅振动可以指示附近危险所在的一侧。"
+      },
+      {
+        "term": "tone pattern",
+        "phonetic": "/toʊn ˈpætərn/",
+        "meaning": "提示音模式；由节奏、频率和音色组成的听觉提示格式",
+        "example": "The tone pattern should be distinct from parking sensor beeps.",
+        "chineseExample": "提示音模式应区别于泊车雷达蜂鸣声。"
+      },
+      {
+        "term": "color coding",
+        "phonetic": "/ˈkʌlər ˈkoʊdɪŋ/",
+        "meaning": "颜色编码；用颜色表达状态、风险或优先级的设计方法",
+        "example": "Color coding must be supported by shape or text for accessibility.",
+        "chineseExample": "颜色编码必须由形状或文字辅助，以满足可访问性。"
+      },
+      {
+        "term": "safe transition",
+        "phonetic": "/seɪf trænˈzɪʃn/",
+        "meaning": "安全过渡；系统从一种驾驶或提示状态切换到另一种状态时保持可理解和可控",
+        "example": "A safe transition explains what changed and what the driver should do next.",
+        "chineseExample": "安全过渡会说明发生了什么变化以及驾驶员下一步应做什么。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户理解当前自动化、导航或座舱控制模式的能力",
+        "example": "Mode awareness improves when alerts use consistent labels across screens.",
+        "chineseExample": "当警告在多个屏幕上使用一致标签时，模式感知会提高。"
+      },
+      {
+        "term": "cross-screen consistency",
+        "phonetic": "/krɔːs skriːn kənˈsɪstənsi/",
+        "meaning": "跨屏一致性；仪表、中控、HUD 等屏幕在信息层级和措辞上的一致",
+        "example": "Cross-screen consistency helps the driver connect the sound with the visible warning.",
+        "chineseExample": "跨屏一致性帮助驾驶员把声音与可见警告联系起来。"
+      },
+      {
+        "term": "human factors",
+        "phonetic": "/ˈhjuːmən ˈfæktərz/",
+        "meaning": "人因；关于人的感知、认知、行为和限制如何影响系统设计的领域",
+        "example": "Human factors should guide the timing and intensity of every safety alert.",
+        "chineseExample": "人因应指导每个安全警告的时机和强度。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；理解、判断和记忆信息所需的心理资源",
+        "example": "Cognitive load increases when alerts use unfamiliar wording.",
+        "chineseExample": "当警告使用陌生措辞时，认知负荷会增加。"
+      },
+      {
+        "term": "message hierarchy",
+        "phonetic": "/ˈmesɪdʒ ˈhaɪərɑːrki/",
+        "meaning": "信息层级；不同信息按重要性、位置和呈现方式形成的优先结构",
+        "example": "Message hierarchy should put immediate safety information above comfort advice.",
+        "chineseExample": "信息层级应把即时安全信息置于舒适性建议之上。"
+      },
+      {
+        "term": "driver response",
+        "phonetic": "/ˈdraɪvər rɪˈspɑːns/",
+        "meaning": "驾驶员响应；驾驶员对提示作出的注视、确认、转向、制动或语音回应",
+        "example": "Driver response should be measured before the alert becomes more forceful.",
+        "chineseExample": "在警告变得更强之前，应先测量驾驶员响应。"
+      },
+      {
+        "term": "forceful alert",
+        "phonetic": "/ˈfɔːrsfl əˈlɜːrt/",
+        "meaning": "强提示；通过更高音量、更强振动或更突出视觉表现发出的警告",
+        "example": "A forceful alert needs a reliable trigger to avoid user distrust.",
+        "chineseExample": "强提示需要可靠触发条件，以避免用户不信任。"
+      },
+      {
+        "term": "controlled hazard",
+        "phonetic": "/kənˈtroʊld ˈhæzərd/",
+        "meaning": "已受控危险；风险已经降低到无需继续高强度警告的状态",
+        "example": "A controlled hazard should lead to a calmer status message.",
+        "chineseExample": "已受控危险应转为更平静的状态消息。"
+      },
+      {
+        "term": "nearby hazard",
+        "phonetic": "/ˈnɪrbaɪ ˈhæzərd/",
+        "meaning": "邻近危险；车辆附近可能影响安全的物体、车辆或道路事件",
+        "example": "A nearby hazard may require a directional cue.",
+        "chineseExample": "邻近危险可能需要方向性线索。"
+      },
+      {
+        "term": "directional cue",
+        "phonetic": "/dəˈrekʃənl kjuː/",
+        "meaning": "方向性线索；指示风险来自左侧、右侧、前方或后方的提示",
+        "example": "A directional cue reduces search time during a sudden warning.",
+        "chineseExample": "方向性线索能在突发警告中减少搜索时间。"
+      },
+      {
+        "term": "noncritical reminder",
+        "phonetic": "/ˌnɑːnˈkrɪtɪkl rɪˈmaɪndər/",
+        "meaning": "非关键提醒；不会立即影响安全、可延迟呈现的提示",
+        "example": "A noncritical reminder can wait until the lane merge is complete.",
+        "chineseExample": "非关键提醒可以等到并线完成后再出现。"
+      },
+      {
+        "term": "safety alert",
+        "phonetic": "/ˈseɪfti əˈlɜːrt/",
+        "meaning": "安全警告；与碰撞、接管、道路危险或驾驶安全直接相关的提示",
+        "example": "A safety alert should be brief, specific, and easy to act on.",
+        "chineseExample": "安全警告应简短、具体且易于执行。"
+      },
+      {
+        "term": "comfort notification",
+        "phonetic": "/ˈkʌmfərt ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "舒适性通知；关于空调、座椅、媒体或氛围灯等非安全功能的提示",
+        "example": "Comfort notifications should yield to active hazard alerts.",
+        "chineseExample": "舒适性通知应让位于正在生效的危险警告。"
+      },
+      {
+        "term": "concise sentence",
+        "phonetic": "/kənˈsaɪs ˈsentəns/",
+        "meaning": "简洁句；用最少必要词汇传达动作、原因或状态的句子",
+        "example": "A concise sentence is easier to understand during high workload driving.",
+        "chineseExample": "在高负荷驾驶中，简洁句更容易理解。"
+      },
+      {
+        "term": "unnecessary detail",
+        "phonetic": "/ʌnˈnesəseri ˈdiːteɪl/",
+        "meaning": "不必要细节；对当前决策没有帮助、反而增加负荷的信息",
+        "example": "Unnecessary detail should be removed from urgent voice prompts.",
+        "chineseExample": "紧急语音提示应去掉不必要细节。"
+      },
+      {
+        "term": "reliable trigger",
+        "phonetic": "/rɪˈlaɪəbl ˈtrɪɡər/",
+        "meaning": "可靠触发条件；足以支持系统发出更强警告的稳定证据或规则",
+        "example": "A reliable trigger combines sensor confidence with driver inattention.",
+        "chineseExample": "可靠触发条件会结合传感器置信度和驾驶员注意力缺失。"
+      },
+      {
+        "term": "active alert",
+        "phonetic": "/ˈæktɪv əˈlɜːrt/",
+        "meaning": "生效警告；当前正在显示、播放或振动的提示",
+        "example": "Only one active alert should dominate the cockpit at a time.",
+        "chineseExample": "同一时刻只应有一个生效警告主导座舱。"
+      },
+      {
+        "term": "traffic density",
+        "phonetic": "/ˈtræfɪk ˈdensəti/",
+        "meaning": "交通密度；车辆和行人等交通参与者在周围空间中的密集程度",
+        "example": "Traffic density affects how quickly an alert should escalate.",
+        "chineseExample": "交通密度会影响警告应多快升级。"
+      },
+      {
+        "term": "lane merge",
+        "phonetic": "/leɪn mɜːrdʒ/",
+        "meaning": "并线；车辆从一个车道并入另一车道的驾驶动作",
+        "example": "During a lane merge, the cockpit should avoid low-value prompts.",
+        "chineseExample": "并线期间，座舱应避免低价值提示。"
+      },
+      {
+        "term": "parking sensor",
+        "phonetic": "/ˈpɑːrkɪŋ ˈsensər/",
+        "meaning": "泊车传感器；用于检测车辆周边障碍物并发出提示的传感器",
+        "example": "Parking sensor beeps should not sound like forward collision alerts.",
+        "chineseExample": "泊车传感器蜂鸣声不应听起来像前向碰撞警告。"
+      },
+      {
+        "term": "accessibility",
+        "phonetic": "/əkˌsesəˈbɪləti/",
+        "meaning": "可访问性；让不同能力用户都能理解和使用界面的设计属性",
+        "example": "Accessibility requires more than color coding for critical alerts.",
+        "chineseExample": "可访问性要求关键警告不能只依赖颜色编码。"
+      },
+      {
+        "term": "de-escalation",
+        "phonetic": "/ˌdiː eskəˈleɪʃn/",
+        "meaning": "降级；降低提示强度或紧急程度的过程",
+        "example": "De-escalation is just as important because it prevents warning fatigue and protects trust.",
+        "chineseExample": "降级同样重要，因为它可以防止警告疲劳并保护信任。"
+      },
+      {
+        "term": "sounding",
+        "phonetic": "/ˈsaʊndɪŋ/",
+        "meaning": "听起来；发出声音或呈现某种语气",
+        "example": "A clear de-escalation path prevents the cockpit from sounding urgent after the hazard is controlled.",
+        "chineseExample": "清晰的降级路径能避免危险已受控后座舱仍显得紧急。"
+      },
+      {
+        "term": "hazard",
+        "phonetic": "/ˈhæzərd/",
+        "meaning": "危险；可能造成安全风险的对象或情况",
+        "example": "The hazard alert should stay active until the driver notices it or the risk disappears.",
+        "chineseExample": "危险警告应保持激活，直到驾驶员注意到它或风险消失。"
+      },
+      {
+        "term": "controlled",
+        "phonetic": "/kənˈtroʊld/",
+        "meaning": "受控的；风险已被管理或降低",
+        "example": "A controlled hazard should lead to a calmer status message.",
+        "chineseExample": "已受控危险应转为更平静的状态消息。"
+      },
+      {
+        "term": "modality",
+        "phonetic": "/moʊˈdæləti/",
+        "meaning": "模态；信息呈现或交互输入输出的感官通道",
+        "example": "The current modality mix is justified by risk and driver state.",
+        "chineseExample": "当前模态组合由风险和驾驶员状态来证明其合理性。"
+      },
+      {
+        "term": "mix",
+        "phonetic": "/mɪks/",
+        "meaning": "组合；多个元素或通道的搭配",
+        "example": "The modality mix should match the urgency and available attention channel.",
+        "chineseExample": "模态组合应匹配紧急程度和可用注意力通道。"
+      },
+      {
+        "term": "tolerance",
+        "phonetic": "/ˈtɑːlərəns/",
+        "meaning": "容忍度；用户可接受某类体验或错误的程度",
+        "example": "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
+        "chineseExample": "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+      },
+      {
+        "term": "loud",
+        "phonetic": "/laʊd/",
+        "meaning": "响亮的；声音强度高的",
+        "example": "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
+        "chineseExample": "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+      },
+      {
+        "term": "hint",
+        "phonetic": "/hɪnt/",
+        "meaning": "提示；低强度的信息线索",
+        "example": "A status hint should not interrupt a navigation instruction.",
+        "chineseExample": "状态提示不应打断导航指令。"
+      },
+      {
+        "term": "salience",
+        "phonetic": "/ˈseɪliəns/",
+        "meaning": "显著性；信息吸引注意力的强度",
+        "example": "The system should reduce salience quickly and return to a calmer status hint.",
+        "chineseExample": "系统应快速降低显著性并回到更平静的状态提示。"
+      },
+      {
+        "term": "minor",
+        "phonetic": "/ˈmaɪnər/",
+        "meaning": "轻微的；重要性或风险较低的",
+        "example": "Salience mapping keeps minor notices from competing with collision warnings.",
+        "chineseExample": "显著性映射避免轻微通知与碰撞警告争夺注意力。"
+      },
+      {
+        "term": "notices",
+        "phonetic": "/ˈnoʊtɪsɪz/",
+        "meaning": "通知；系统发出的状态或提醒信息",
+        "example": "Salience mapping keeps minor notices from competing with collision warnings.",
+        "chineseExample": "显著性映射避免轻微通知与碰撞警告争夺注意力。"
+      },
+      {
+        "term": "collision",
+        "phonetic": "/kəˈlɪʒn/",
+        "meaning": "碰撞；车辆或物体之间的冲突接触",
+        "example": "Collision warnings must be more salient than comfort notifications.",
+        "chineseExample": "碰撞警告必须比舒适性通知更显著。"
+      },
+      {
+        "term": "latency",
+        "phonetic": "/ˈleɪtənsi/",
+        "meaning": "延迟；从事件发生到响应出现之间的时间",
+        "example": "Response latency can trigger escalation when the driver keeps looking away from the road.",
+        "chineseExample": "当驾驶员持续移开视线时，响应延迟可以触发警告升级。"
+      },
+      {
+        "term": "gate",
+        "phonetic": "/ɡeɪt/",
+        "meaning": "门控；决定信息是否通过或触发的条件机制",
+        "example": "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
+        "chineseExample": "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+      },
+      {
+        "term": "suppress",
+        "phonetic": "/səˈpres/",
+        "meaning": "抑制；暂时隐藏、延迟或阻止信息呈现",
+        "example": "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
+        "chineseExample": "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+      },
+      {
+        "term": "seatbelt",
+        "phonetic": "/ˈsiːtbelt/",
+        "meaning": "安全带；约束乘员身体的车辆安全装置",
+        "example": "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
+        "chineseExample": "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+      },
+      {
+        "term": "louder",
+        "phonetic": "/ˈlaʊdər/",
+        "meaning": "更响的；声音强度更高的",
+        "example": "A multimodal alert system should not simply become louder whenever risk increases.",
+        "chineseExample": "多模态警告系统不应在风险增加时只是简单变得更响。"
+      },
+      {
+        "term": "whenever",
+        "phonetic": "/wenˈevər/",
+        "meaning": "每当；无论何时",
+        "example": "The cockpit should not simply become louder whenever risk increases.",
+        "chineseExample": "座舱不应在风险增加时只是简单变得更响。"
+      },
+      {
+        "term": "least",
+        "phonetic": "/liːst/",
+        "meaning": "最少的；程度最低的",
+        "example": "The design goal is to guide attention through the least disruptive channel.",
+        "chineseExample": "设计目标是通过干扰最小的通道来引导注意力。"
+      },
+      {
+        "term": "disruptive",
+        "phonetic": "/dɪsˈrʌptɪv/",
+        "meaning": "干扰性的；会打断用户当前任务的",
+        "example": "The design goal is to guide attention through the least disruptive channel.",
+        "chineseExample": "设计目标是通过干扰最小的通道来引导注意力。"
+      },
+      {
+        "term": "produce",
+        "phonetic": "/prəˈduːs/",
+        "meaning": "产生；导致某个结果出现",
+        "example": "The channel can still produce a timely driver response.",
+        "chineseExample": "这个通道仍能产生及时的驾驶员响应。"
+      },
+      {
+        "term": "timely",
+        "phonetic": "/ˈtaɪmli/",
+        "meaning": "及时的；在需要的时间内发生的",
+        "example": "The channel can still produce a timely driver response.",
+        "chineseExample": "这个通道仍能产生及时的驾驶员响应。"
+      },
+      {
+        "term": "begin",
+        "phonetic": "/bɪˈɡɪn/",
+        "meaning": "开始；作为第一步出现",
+        "example": "A low risk notice may begin as a visual cue near the relevant display area.",
+        "chineseExample": "低风险通知可以从相关显示区域附近的视觉线索开始。"
+      },
+      {
+        "term": "relevant",
+        "phonetic": "/ˈreləvənt/",
+        "meaning": "相关的；与当前任务或信息直接有关的",
+        "example": "A visual cue may appear near the relevant display area.",
+        "chineseExample": "视觉线索可以出现在相关显示区域附近。"
+      },
+      {
+        "term": "area",
+        "phonetic": "/ˈeriə/",
+        "meaning": "区域；界面或空间中的一部分",
+        "example": "A low risk notice may begin near the relevant display area.",
+        "chineseExample": "低风险通知可以从相关显示区域附近开始。"
+      },
+      {
+        "term": "exceeds",
+        "phonetic": "/ɪkˈsiːdz/",
+        "meaning": "超过；高于某个阈值或限制",
+        "example": "If response latency exceeds a defined threshold, the cockpit can add another signal.",
+        "chineseExample": "如果响应延迟超过已定义阈值，座舱可以加入另一种信号。"
+      },
+      {
+        "term": "defined",
+        "phonetic": "/dɪˈfaɪnd/",
+        "meaning": "已定义的；事先规定或明确说明的",
+        "example": "A defined threshold makes escalation easier to test.",
+        "chineseExample": "已定义阈值让警告升级更容易测试。"
+      },
+      {
+        "term": "directional",
+        "phonetic": "/dəˈrekʃənl/",
+        "meaning": "方向性的；指向某个方向或来源的",
+        "example": "The cockpit can add directional seat vibration.",
+        "chineseExample": "座舱可以加入方向性座椅振动。"
+      },
+      {
+        "term": "justified",
+        "phonetic": "/ˈdʒʌstɪfaɪd/",
+        "meaning": "有依据的；能被证据或理由支持的",
+        "example": "Each step should explain why the current modality mix is justified.",
+        "chineseExample": "每一步都应解释为什么当前模态组合是有依据的。"
+      },
+      {
+        "term": "once",
+        "phonetic": "/wʌns/",
+        "meaning": "一旦；当某个条件已经发生后",
+        "example": "Once the driver acknowledges the message, the system should reduce salience quickly.",
+        "chineseExample": "一旦驾驶员确认信息，系统应快速降低显著性。"
+      },
+      {
+        "term": "acknowledges",
+        "phonetic": "/əkˈnɑːlɪdʒɪz/",
+        "meaning": "确认；表示已经看到、听到或理解",
+        "example": "Once the driver acknowledges the message, the system should reduce salience quickly.",
+        "chineseExample": "一旦驾驶员确认信息，系统应快速降低显著性。"
+      },
+      {
+        "term": "corrects",
+        "phonetic": "/kəˈrekts/",
+        "meaning": "修正；调整到更合适或更安全的状态",
+        "example": "The system can de-escalate after the driver corrects steering.",
+        "chineseExample": "驾驶员修正方向后，系统可以降级。"
+      },
+      {
+        "term": "disappears",
+        "phonetic": "/ˌdɪsəˈpɪrz/",
+        "meaning": "消失；不再存在或不再可见",
+        "example": "The alert can fade when the hazard disappears.",
+        "chineseExample": "当危险消失时，警告可以淡出。"
+      },
+      {
+        "term": "suppression",
+        "phonetic": "/səˈpreʃn/",
+        "meaning": "抑制；对提示进行隐藏、延迟或降级",
+        "example": "Designers should define suppression rules for low-value reminders.",
+        "chineseExample": "设计师应为低价值提醒定义抑制规则。"
+      },
+      {
+        "term": "notifications",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃnz/",
+        "meaning": "通知；向用户呈现的系统信息",
+        "example": "Comfort notifications should yield to active hazard alerts.",
+        "chineseExample": "舒适性通知应让位于正在生效的危险警告。"
+      },
+      {
+        "term": "low-value",
+        "phonetic": "/loʊ ˈvæljuː/",
+        "meaning": "低价值的；对当前驾驶任务帮助较小的",
+        "example": "Low-value reminders should not compete with active safety alerts.",
+        "chineseExample": "低价值提醒不应与正在生效的安全警告竞争。"
+      },
+      {
+        "term": "reminders",
+        "phonetic": "/rɪˈmaɪndərz/",
+        "meaning": "提醒；帮助用户记住某个状态或动作的信息",
+        "example": "Low-value reminders should not compete with active safety alerts.",
+        "chineseExample": "低价值提醒不应与正在生效的安全警告竞争。"
+      },
+      {
+        "term": "best",
+        "phonetic": "/best/",
+        "meaning": "最佳的；最符合目标或标准的",
+        "example": "The best experience feels firm but controlled.",
+        "chineseExample": "最佳体验应坚定但可控。"
+      },
+      {
+        "term": "firm",
+        "phonetic": "/fɜːrm/",
+        "meaning": "坚定的；明确而不含糊的",
+        "example": "The best experience feels firm but controlled.",
+        "chineseExample": "最佳体验应坚定但可控。"
+      },
+      {
+        "term": "gets",
+        "phonetic": "/ɡets/",
+        "meaning": "变得；进入某种状态",
+        "example": "The cockpit gets stronger when evidence shows the driver needs help.",
+        "chineseExample": "当证据表明驾驶员需要帮助时，座舱提示会变强。"
+      },
+      {
+        "term": "evidence",
+        "phonetic": "/ˈevɪdəns/",
+        "meaning": "证据；支持系统判断的事实或信号",
+        "example": "The cockpit gets stronger when evidence shows the driver needs help.",
+        "chineseExample": "当证据表明驾驶员需要帮助时，座舱提示会变强。"
+      },
+      {
+        "term": "soon",
+        "phonetic": "/suːn/",
+        "meaning": "很快；在短时间内",
+        "example": "The cockpit gets quieter as soon as the situation is stable.",
+        "chineseExample": "一旦情况稳定，座舱提示就会很快变安静。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing escalation without creating noise",
+        "text": "A multimodal alert system in an intelligent cockpit should not simply become louder whenever risk increases. The design goal is to guide attention through the least disruptive channel that can still produce a timely driver response. A low risk notice may begin as a visual cue near the relevant display area. If traffic density rises, the driver looks away, or response latency exceeds a defined threshold, the cockpit can add an auditory signal, a short voice prompt, or directional seat vibration. Each step on the urgency ladder should explain what changed, what action is required, and why the current modality mix is justified. De-escalation is just as important. Once the driver acknowledges the message, corrects steering, or the hazard disappears, the system should reduce salience quickly and return to a calmer status hint. This prevents warning fatigue and protects trust. Designers should also define suppression rules so that comfort notifications and low-value reminders do not compete with active safety alerts. The best experience feels firm but controlled: the cockpit gets stronger when evidence shows the driver needs help, and it gets quieter as soon as the situation is stable.",
+        "translation": "智能座舱中的多模态警告系统不应在风险增加时只是简单变得更响。设计目标是用干扰最小、但仍能及时促成驾驶员响应的通道来引导注意力。低风险通知可以从相关显示区域附近的视觉线索开始。如果交通密度升高、驾驶员移开视线，或响应延迟超过既定阈值，座舱可以加入听觉信号、简短语音提示或方向性座椅振动。紧急度阶梯上的每一步都应解释发生了什么变化、需要什么动作，以及为什么当前模态组合是合理的。降级同样重要。一旦驾驶员确认信息、修正方向，或危险消失，系统应快速降低显著性并回到更平静的状态提示。这可以防止警告疲劳并保护信任。设计师还应定义抑制规则，避免舒适性通知和低价值提醒与正在生效的安全警告竞争。最佳体验应坚定但可控：当证据表明驾驶员需要帮助时，座舱变得更强；当情况稳定后，它会立即安静下来。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The design goal is to guide attention through the least disruptive channel that can still produce a timely driver response.",
+        "translation": "设计目标是通过干扰最小、但仍能产生及时驾驶员响应的通道来引导注意力。",
+        "points": [
+          "The design goal is to... 用于说明设计目标。",
+          "the least disruptive channel 表示“干扰最小的通道”。",
+          "that can still produce... 是定语从句，说明这个通道仍必须有效。"
+        ]
+      },
+      {
+        "sentence": "If response latency exceeds a defined threshold, the cockpit can add an auditory signal, a short voice prompt, or directional seat vibration.",
+        "translation": "如果响应延迟超过已定义阈值，座舱可以加入听觉信号、简短语音提示或方向性座椅振动。",
+        "points": [
+          "If... exceeds... 用于描述触发条件。",
+          "a defined threshold 表示预先定义的阈值。",
+          "add A, B, or C 清楚列出可升级的模态选择。"
+        ]
+      },
+      {
+        "sentence": "De-escalation is just as important because it prevents warning fatigue and protects trust.",
+        "translation": "降级同样重要，因为它可以防止警告疲劳并保护信任。",
+        "points": [
+          "just as important 强调某件事与前一件事同等重要。",
+          "because 引出设计理由。",
+          "prevents... and protects... 用两个并列动词说明价值。"
+        ]
+      },
+      {
+        "sentence": "The cockpit gets stronger when evidence shows the driver needs help, and it gets quieter as soon as the situation is stable.",
+        "translation": "当证据表明驾驶员需要帮助时，座舱提示会变强；一旦情况稳定，它就会变安静。",
+        "points": [
+          "gets stronger / gets quieter 用简单动词表达强度变化。",
+          "when evidence shows... 说明升级依据。",
+          "as soon as... 强调降级必须及时发生。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "time": "4 分钟",
+        "task": "朗读 10 个核心词汇，重点区分 escalation、de-escalation、salience、latency 的发音和含义。"
+      },
+      {
+        "time": "7 分钟",
+        "task": "跟读长文 2 遍：第一遍关注意群停顿，第二遍用笔标出所有表示条件和结果的表达。"
+      },
+      {
+        "time": "6 分钟",
+        "task": "用英文复述一个场景：驾驶员未看路时，座舱如何从视觉线索升级到语音和座椅振动。"
+      },
+      {
+        "time": "5 分钟",
+        "task": "写 3 句设计建议，分别使用 modality mix、response latency 和 de-escalation path。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-17-cabin-ai-intent-confirmation",
     "date": "2026-07-17",
     "title": "Intent confirmation and reversible actions for in-cabin AI assistants",
