@@ -1,5 +1,1509 @@
 [
   {
+    "id": "2026-07-20-ai-summary-confidence-cues",
+    "date": "2026-07-20",
+    "title": "AI summaries and confidence cues in intelligent cockpits",
+    "topic": "智能座舱 AI 摘要与置信度提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车内 AI 助手在压缩复杂信息时呈现置信度、证据链和可验证结论，帮助用户形成合理信任。",
+    "words": [
+      {
+        "term": "ambient summary",
+        "phonetic": "/ˈæmbiənt ˈsʌməri/",
+        "meaning": "环境式摘要；在不打断驾驶的情况下呈现关键车内或行程信息的简短总结",
+        "example": "An ambient summary should surface the missed call, route delay, and energy impact without forcing a deep menu.",
+        "chineseExample": "环境式摘要应展示未接电话、路线延迟和能耗影响，而不是迫使用户进入深层菜单。"
+      },
+      {
+        "term": "confidence cue",
+        "phonetic": "/ˈkɑːnfɪdəns kjuː/",
+        "meaning": "置信度提示；说明系统判断把握程度的视觉、语言或声音信号",
+        "example": "A confidence cue tells the driver when the assistant is certain and when it is only making a best effort.",
+        "chineseExample": "置信度提示告诉驾驶员助手何时很确定、何时只是尽力推断。"
+      },
+      {
+        "term": "evidence trail",
+        "phonetic": "/ˈevɪdəns treɪl/",
+        "meaning": "证据链；让用户追溯系统结论来自哪些数据、事件或用户偏好的解释路径",
+        "example": "The evidence trail should show which sensor event and profile setting shaped the recommendation.",
+        "chineseExample": "证据链应显示是哪一个传感器事件和用户档案设置影响了推荐。"
+      },
+      {
+        "term": "glanceable rationale",
+        "phonetic": "/ˈɡlænsəbl ˌræʃəˈnæl/",
+        "meaning": "可扫视理由；用户短暂一瞥即可理解的系统建议原因",
+        "example": "Glanceable rationale helps the driver accept a suggestion without reading a long explanation.",
+        "chineseExample": "可扫视理由帮助驾驶员不读长篇解释也能接受建议。"
+      },
+      {
+        "term": "summary density",
+        "phonetic": "/ˈsʌməri ˈdensəti/",
+        "meaning": "摘要密度；单位屏幕空间或语音时长内承载的信息量",
+        "example": "Summary density must stay low when the vehicle enters complex urban traffic.",
+        "chineseExample": "车辆进入复杂城市交通时，摘要密度必须保持较低。"
+      },
+      {
+        "term": "uncertainty wording",
+        "phonetic": "/ʌnˈsɜːrtnti ˈwɜːrdɪŋ/",
+        "meaning": "不确定性措辞；表达系统不完全确定时所用的清晰、不过度自信的语言",
+        "example": "Uncertainty wording should be honest but still actionable for a time-sensitive decision.",
+        "chineseExample": "不确定性措辞应诚实，同时仍能支持有时限的决策。"
+      },
+      {
+        "term": "context snapshot",
+        "phonetic": "/ˈkɑːntekst ˈsnæpʃɑːt/",
+        "meaning": "上下文快照；系统在某一时刻对位置、任务、用户状态和车辆状态的简要记录",
+        "example": "A context snapshot lets the cockpit explain why the same request produced a different answer today.",
+        "chineseExample": "上下文快照让座舱能解释为什么同一个请求今天得到了不同答案。"
+      },
+      {
+        "term": "progressive detail",
+        "phonetic": "/prəˈɡresɪv ˈdiːteɪl/",
+        "meaning": "渐进细节；先给核心结论，再按用户需要展开原因、数据和操作的呈现方式",
+        "example": "Progressive detail keeps the first answer short while preserving access to deeper evidence.",
+        "chineseExample": "渐进细节让首个回答保持简短，同时保留深入证据入口。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力形成不过度也不过低的合理信任",
+        "example": "Trust calibration improves when the assistant admits uncertainty before suggesting an action.",
+        "chineseExample": "当助手在建议操作前承认不确定性时，信任校准会改善。"
+      },
+      {
+        "term": "driver-verifiable claim",
+        "phonetic": "/ˈdraɪvər ˈverɪfaɪəbl kleɪm/",
+        "meaning": "驾驶员可验证结论；用户能通过界面、环境或经验快速核对的系统说法",
+        "example": "A driver-verifiable claim can be checked on the map, the cluster, or the visible road scene.",
+        "chineseExample": "驾驶员可验证结论可以通过地图、仪表或可见道路场景快速核对。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "ambient summary",
+        "phonetic": "/ˈæmbiənt ˈsʌməri/",
+        "meaning": "环境式摘要；在不打断驾驶的情况下呈现关键车内或行程信息的简短总结",
+        "example": "An ambient summary should surface the missed call, route delay, and energy impact without forcing a deep menu.",
+        "chineseExample": "环境式摘要应展示未接电话、路线延迟和能耗影响，而不是迫使用户进入深层菜单。"
+      },
+      {
+        "term": "confidence cue",
+        "phonetic": "/ˈkɑːnfɪdəns kjuː/",
+        "meaning": "置信度提示；说明系统判断把握程度的视觉、语言或声音信号",
+        "example": "A confidence cue tells the driver when the assistant is certain and when it is only making a best effort.",
+        "chineseExample": "置信度提示告诉驾驶员助手何时很确定、何时只是尽力推断。"
+      },
+      {
+        "term": "evidence trail",
+        "phonetic": "/ˈevɪdəns treɪl/",
+        "meaning": "证据链；让用户追溯系统结论来自哪些数据、事件或用户偏好的解释路径",
+        "example": "The evidence trail should show which sensor event and profile setting shaped the recommendation.",
+        "chineseExample": "证据链应显示是哪一个传感器事件和用户档案设置影响了推荐。"
+      },
+      {
+        "term": "glanceable rationale",
+        "phonetic": "/ˈɡlænsəbl ˌræʃəˈnæl/",
+        "meaning": "可扫视理由；用户短暂一瞥即可理解的系统建议原因",
+        "example": "Glanceable rationale helps the driver accept a suggestion without reading a long explanation.",
+        "chineseExample": "可扫视理由帮助驾驶员不读长篇解释也能接受建议。"
+      },
+      {
+        "term": "summary density",
+        "phonetic": "/ˈsʌməri ˈdensəti/",
+        "meaning": "摘要密度；单位屏幕空间或语音时长内承载的信息量",
+        "example": "Summary density must stay low when the vehicle enters complex urban traffic.",
+        "chineseExample": "车辆进入复杂城市交通时，摘要密度必须保持较低。"
+      },
+      {
+        "term": "uncertainty wording",
+        "phonetic": "/ʌnˈsɜːrtnti ˈwɜːrdɪŋ/",
+        "meaning": "不确定性措辞；表达系统不完全确定时所用的清晰、不过度自信的语言",
+        "example": "Uncertainty wording should be honest but still actionable for a time-sensitive decision.",
+        "chineseExample": "不确定性措辞应诚实，同时仍能支持有时限的决策。"
+      },
+      {
+        "term": "context snapshot",
+        "phonetic": "/ˈkɑːntekst ˈsnæpʃɑːt/",
+        "meaning": "上下文快照；系统在某一时刻对位置、任务、用户状态和车辆状态的简要记录",
+        "example": "A context snapshot lets the cockpit explain why the same request produced a different answer today.",
+        "chineseExample": "上下文快照让座舱能解释为什么同一个请求今天得到了不同答案。"
+      },
+      {
+        "term": "progressive detail",
+        "phonetic": "/prəˈɡresɪv ˈdiːteɪl/",
+        "meaning": "渐进细节；先给核心结论，再按用户需要展开原因、数据和操作的呈现方式",
+        "example": "Progressive detail keeps the first answer short while preserving access to deeper evidence.",
+        "chineseExample": "渐进细节让首个回答保持简短，同时保留深入证据入口。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力形成不过度也不过低的合理信任",
+        "example": "Trust calibration improves when the assistant admits uncertainty before suggesting an action.",
+        "chineseExample": "当助手在建议操作前承认不确定性时，信任校准会改善。"
+      },
+      {
+        "term": "driver-verifiable claim",
+        "phonetic": "/ˈdraɪvər ˈverɪfaɪəbl kleɪm/",
+        "meaning": "驾驶员可验证结论；用户能通过界面、环境或经验快速核对的系统说法",
+        "example": "A driver-verifiable claim can be checked on the map, the cluster, or the visible road scene.",
+        "chineseExample": "驾驶员可验证结论可以通过地图、仪表或可见道路场景快速核对。"
+      },
+      {
+        "term": "AI assistant",
+        "phonetic": "/ˌeɪ ˈaɪ əˈsɪstənt/",
+        "meaning": "AI 助手；在座舱中理解请求、整合上下文并提供建议的智能系统",
+        "example": "The AI assistant explains the delay before suggesting a new route.",
+        "chineseExample": "AI 助手在建议新路线前解释延误原因。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、感知、交互和智能服务的车内数字空间",
+        "example": "The intelligent cockpit should make complex context easier to understand.",
+        "chineseExample": "智能座舱应让复杂上下文更容易理解。"
+      },
+      {
+        "term": "calm update",
+        "phonetic": "/kɑːm ˈʌpdeɪt/",
+        "meaning": "平静更新；以低干扰方式告知用户状态变化的信息",
+        "example": "A calm update is safer than an urgent tone for a minor schedule change.",
+        "chineseExample": "对于轻微日程变化，平静更新比紧急语气更安全。"
+      },
+      {
+        "term": "design challenge",
+        "phonetic": "/dɪˈzaɪn ˈtʃælɪndʒ/",
+        "meaning": "设计挑战；需要权衡用户目标、场景限制和系统能力的问题",
+        "example": "The design challenge is to explain uncertainty without adding workload.",
+        "chineseExample": "设计挑战是在不增加负荷的情况下解释不确定性。"
+      },
+      {
+        "term": "highly certain",
+        "phonetic": "/ˈhaɪli ˈsɜːrtn/",
+        "meaning": "高度确定；系统对判断结果有较高把握",
+        "example": "When the assistant is highly certain, it can use direct wording.",
+        "chineseExample": "当助手高度确定时，可以使用直接措辞。"
+      },
+      {
+        "term": "route segment",
+        "phonetic": "/ruːt ˈseɡmənt/",
+        "meaning": "路线片段；导航路线中的一段道路或行驶区间",
+        "example": "The route segment slowed down near the city center.",
+        "chineseExample": "市中心附近的路线片段变慢了。"
+      },
+      {
+        "term": "energy model",
+        "phonetic": "/ˈenərdʒi ˈmɑːdl/",
+        "meaning": "能耗模型；估计电量、续航或能量消耗的系统模型",
+        "example": "The energy model checks whether the destination is still reachable.",
+        "chineseExample": "能耗模型检查目的地是否仍可到达。"
+      },
+      {
+        "term": "workload control",
+        "phonetic": "/ˈwɜːrkloʊd kənˈtroʊl/",
+        "meaning": "负荷控制；根据驾驶场景限制信息量和操作复杂度",
+        "example": "Workload control keeps the summary short during dense traffic.",
+        "chineseExample": "负荷控制让密集交通中的摘要保持简短。"
+      },
+      {
+        "term": "primary action",
+        "phonetic": "/ˈpraɪmeri ˈækʃn/",
+        "meaning": "主要动作；界面在当前场景中最希望用户执行的核心操作",
+        "example": "One primary action makes the prompt easier to act on.",
+        "chineseExample": "一个主要动作让提示更容易执行。"
+      },
+      {
+        "term": "source label",
+        "phonetic": "/sɔːrs ˈleɪbl/",
+        "meaning": "来源标签；标明信息来自日历、导航、传感器或模型的标签",
+        "example": "A source label helps the driver check where the summary came from.",
+        "chineseExample": "来源标签帮助驾驶员核对摘要来自哪里。"
+      },
+      {
+        "term": "alternative action",
+        "phonetic": "/ɔːlˈtɜːrnətɪv ˈækʃn/",
+        "meaning": "替代操作；除主推荐外可选择的备用动作",
+        "example": "Alternative actions are useful when the first suggestion does not fit.",
+        "chineseExample": "当首个建议不合适时，替代操作很有用。"
+      },
+      {
+        "term": "incomplete context",
+        "phonetic": "/ˌɪnkəmˈpliːt ˈkɑːntekst/",
+        "meaning": "不完整上下文；系统缺少部分关键场景、用户意图或环境信息",
+        "example": "Incomplete context should lower the confidence of a prediction.",
+        "chineseExample": "不完整上下文应降低预测置信度。"
+      },
+      {
+        "term": "visible evidence",
+        "phonetic": "/ˈvɪzəbl ˈevɪdəns/",
+        "meaning": "可见证据；用户能在界面中看到并核对的判断依据",
+        "example": "Visible evidence makes an AI recommendation easier to question.",
+        "chineseExample": "可见证据让 AI 推荐更容易被质疑。"
+      },
+      {
+        "term": "accountable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可追责的；能够说明原因并接受核对",
+        "example": "The word accountable appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“accountable”可理解为“可追责的”。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/按语境朗读/",
+        "meaning": "动作；用户或系统要执行的操作",
+        "example": "The word action appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“action”可理解为“动作”。"
+      },
+      {
+        "term": "actions",
+        "phonetic": "/按语境朗读/",
+        "meaning": "动作；多个可执行操作",
+        "example": "The word actions appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“actions”可理解为“动作”。"
+      },
+      {
+        "term": "added",
+        "phonetic": "/按语境朗读/",
+        "meaning": "增加了；被加入或叠加",
+        "example": "The word added appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“added”可理解为“增加了”。"
+      },
+      {
+        "term": "admits",
+        "phonetic": "/按语境朗读/",
+        "meaning": "承认；系统明确说明限制或不确定性",
+        "example": "The word admits appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“admits”可理解为“承认”。"
+      },
+      {
+        "term": "also",
+        "phonetic": "/按语境朗读/",
+        "meaning": "也；表示补充",
+        "example": "The word also appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“also”可理解为“也”。"
+      },
+      {
+        "term": "alternative",
+        "phonetic": "/按语境朗读/",
+        "meaning": "替代的；可作为备用选择的",
+        "example": "The word alternative appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“alternative”可理解为“替代的”。"
+      },
+      {
+        "term": "ambient",
+        "phonetic": "/按语境朗读/",
+        "meaning": "环境式的；低打扰、融入场景的",
+        "example": "The word ambient appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“ambient”可理解为“环境式的”。"
+      },
+      {
+        "term": "an",
+        "phonetic": "/按语境朗读/",
+        "meaning": "一个；用于元音音素前的不定冠词",
+        "example": "The word an appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“an”可理解为“一个”。"
+      },
+      {
+        "term": "and",
+        "phonetic": "/按语境朗读/",
+        "meaning": "和；连接并列信息",
+        "example": "The word and appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“and”可理解为“和”。"
+      },
+      {
+        "term": "answer",
+        "phonetic": "/按语境朗读/",
+        "meaning": "回答；系统给出的结果或反馈",
+        "example": "The word answer appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“answer”可理解为“回答”。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/按语境朗读/",
+        "meaning": "助手；帮助用户完成任务的系统",
+        "example": "The word assistant appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“assistant”可理解为“助手”。"
+      },
+      {
+        "term": "battery",
+        "phonetic": "/按语境朗读/",
+        "meaning": "电池；车辆能源状态相关对象",
+        "example": "The word battery appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“battery”可理解为“电池”。"
+      },
+      {
+        "term": "before",
+        "phonetic": "/按语境朗读/",
+        "meaning": "在……之前；表示时间顺序",
+        "example": "The word before appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“before”可理解为“在……之前”。"
+      },
+      {
+        "term": "best",
+        "phonetic": "/按语境朗读/",
+        "meaning": "最佳的；在当前条件下最合适的",
+        "example": "The word best appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“best”可理解为“最佳的”。"
+      },
+      {
+        "term": "but",
+        "phonetic": "/按语境朗读/",
+        "meaning": "但是；表示转折或补充重点",
+        "example": "The word but appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“but”可理解为“但是”。"
+      },
+      {
+        "term": "by",
+        "phonetic": "/按语境朗读/",
+        "meaning": "通过；表示方式或手段",
+        "example": "The word by appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“by”可理解为“通过”。"
+      },
+      {
+        "term": "calendar",
+        "phonetic": "/按语境朗读/",
+        "meaning": "日历；记录日程和会议的信息源",
+        "example": "The word calendar appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“calendar”可理解为“日历”。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/按语境朗读/",
+        "meaning": "平静的；不过度打扰的",
+        "example": "The word calm appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“calm”可理解为“平静的”。"
+      },
+      {
+        "term": "can",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可以；表示能力或可能性",
+        "example": "The word can appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“can”可理解为“可以”。"
+      },
+      {
+        "term": "challenge",
+        "phonetic": "/按语境朗读/",
+        "meaning": "挑战；需要解决的设计问题",
+        "example": "The word challenge appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“challenge”可理解为“挑战”。"
+      },
+      {
+        "term": "changed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "改变了；发生变化",
+        "example": "The word changed appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“changed”可理解为“改变了”。"
+      },
+      {
+        "term": "checked",
+        "phonetic": "/按语境朗读/",
+        "meaning": "被检查；经过核对",
+        "example": "The word checked appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“checked”可理解为“被检查”。"
+      },
+      {
+        "term": "clearly",
+        "phonetic": "/按语境朗读/",
+        "meaning": "清楚地；容易理解地",
+        "example": "The word clearly appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“clearly”可理解为“清楚地”。"
+      },
+      {
+        "term": "claim",
+        "phonetic": "/按语境朗读/",
+        "meaning": "结论；系统提出的说法或判断",
+        "example": "The word claim appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“claim”可理解为“结论”。"
+      },
+      {
+        "term": "concise",
+        "phonetic": "/按语境朗读/",
+        "meaning": "简洁的；表达短而清楚",
+        "example": "The word concise appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“concise”可理解为“简洁的”。"
+      },
+      {
+        "term": "confirmed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "已确认的；得到较高把握或验证",
+        "example": "The word confirmed appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“confirmed”可理解为“已确认的”。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/按语境朗读/",
+        "meaning": "置信度；系统对判断的把握程度",
+        "example": "The word confidence appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“confidence”可理解为“置信度”。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/按语境朗读/",
+        "meaning": "上下文；影响判断的场景信息",
+        "example": "The word context appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“context”可理解为“上下文”。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/按语境朗读/",
+        "meaning": "座舱；车内人机交互空间",
+        "example": "The word cockpit appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“cockpit”可理解为“座舱”。"
+      },
+      {
+        "term": "complex",
+        "phonetic": "/按语境朗读/",
+        "meaning": "复杂的；包含多个变量或限制",
+        "example": "The word complex appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“complex”可理解为“复杂的”。"
+      },
+      {
+        "term": "compress",
+        "phonetic": "/按语境朗读/",
+        "meaning": "压缩；把多项信息简化为摘要",
+        "example": "The word compress appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“compress”可理解为“压缩”。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/按语境朗读/",
+        "meaning": "提示；引导用户理解或行动的信号",
+        "example": "The word cue appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“cue”可理解为“提示”。"
+      },
+      {
+        "term": "dense",
+        "phonetic": "/按语境朗读/",
+        "meaning": "密集的；交通或信息负荷较高的",
+        "example": "The word dense appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“dense”可理解为“密集的”。"
+      },
+      {
+        "term": "density",
+        "phonetic": "/按语境朗读/",
+        "meaning": "密度；单位空间或时间内的信息量",
+        "example": "The word density appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“density”可理解为“密度”。"
+      },
+      {
+        "term": "depends",
+        "phonetic": "/按语境朗读/",
+        "meaning": "取决于；依赖某个条件",
+        "example": "The word depends appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“depends”可理解为“取决于”。"
+      },
+      {
+        "term": "design",
+        "phonetic": "/按语境朗读/",
+        "meaning": "设计；面向用户目标组织体验",
+        "example": "The word design appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“design”可理解为“设计”。"
+      },
+      {
+        "term": "destination",
+        "phonetic": "/按语境朗读/",
+        "meaning": "目的地；导航或行程终点",
+        "example": "The word destination appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“destination”可理解为“目的地”。"
+      },
+      {
+        "term": "detail",
+        "phonetic": "/按语境朗读/",
+        "meaning": "细节；进一步展开的信息",
+        "example": "The word detail appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“detail”可理解为“细节”。"
+      },
+      {
+        "term": "direct",
+        "phonetic": "/按语境朗读/",
+        "meaning": "直接的；不绕弯的表达方式",
+        "example": "The word direct appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“direct”可理解为“直接的”。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/按语境朗读/",
+        "meaning": "驾驶员；车辆操作者",
+        "example": "The word driver appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“driver”可理解为“驾驶员”。"
+      },
+      {
+        "term": "drivers",
+        "phonetic": "/按语境朗读/",
+        "meaning": "驾驶员；复数形式",
+        "example": "The word drivers appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“drivers”可理解为“驾驶员”。"
+      },
+      {
+        "term": "during",
+        "phonetic": "/按语境朗读/",
+        "meaning": "在……期间；表示场景时段",
+        "example": "The word during appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“during”可理解为“在……期间”。"
+      },
+      {
+        "term": "effort",
+        "phonetic": "/按语境朗读/",
+        "meaning": "努力；在有限条件下的尝试",
+        "example": "The word effort appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“effort”可理解为“努力”。"
+      },
+      {
+        "term": "energy",
+        "phonetic": "/按语境朗读/",
+        "meaning": "能源；电池或能量使用相关信息",
+        "example": "The word energy appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“energy”可理解为“能源”。"
+      },
+      {
+        "term": "enters",
+        "phonetic": "/按语境朗读/",
+        "meaning": "进入；车辆或系统进入某状态",
+        "example": "The word enters appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“enters”可理解为“进入”。"
+      },
+      {
+        "term": "events",
+        "phonetic": "/按语境朗读/",
+        "meaning": "事件；需要被总结的变化",
+        "example": "The word events appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“events”可理解为“事件”。"
+      },
+      {
+        "term": "evidence",
+        "phonetic": "/按语境朗读/",
+        "meaning": "证据；支撑结论的信息依据",
+        "example": "The word evidence appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“evidence”可理解为“证据”。"
+      },
+      {
+        "term": "example",
+        "phonetic": "/按语境朗读/",
+        "meaning": "例子；用于说明概念的情况",
+        "example": "The word example appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“example”可理解为“例子”。"
+      },
+      {
+        "term": "expand",
+        "phonetic": "/按语境朗读/",
+        "meaning": "展开；从摘要进入更多细节",
+        "example": "The word expand appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“expand”可理解为“展开”。"
+      },
+      {
+        "term": "expose",
+        "phonetic": "/按语境朗读/",
+        "meaning": "暴露；公开显示给用户",
+        "example": "The word expose appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“expose”可理解为“暴露”。"
+      },
+      {
+        "term": "feel",
+        "phonetic": "/按语境朗读/",
+        "meaning": "感觉；用户主观体验",
+        "example": "The word feel appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“feel”可理解为“感觉”。"
+      },
+      {
+        "term": "first",
+        "phonetic": "/按语境朗读/",
+        "meaning": "首先的；最先出现的",
+        "example": "The word first appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“first”可理解为“首先的”。"
+      },
+      {
+        "term": "forcing",
+        "phonetic": "/按语境朗读/",
+        "meaning": "迫使；让用户不得不执行某操作",
+        "example": "The word forcing appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“forcing”可理解为“迫使”。"
+      },
+      {
+        "term": "from",
+        "phonetic": "/按语境朗读/",
+        "meaning": "来自；表示来源",
+        "example": "The word from appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“from”可理解为“来自”。"
+      },
+      {
+        "term": "goal",
+        "phonetic": "/按语境朗读/",
+        "meaning": "目标；设计希望达到的结果",
+        "example": "The word goal appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“goal”可理解为“目标”。"
+      },
+      {
+        "term": "good",
+        "phonetic": "/按语境朗读/",
+        "meaning": "好的；符合目标的",
+        "example": "The word good appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“good”可理解为“好的”。"
+      },
+      {
+        "term": "has",
+        "phonetic": "/按语境朗读/",
+        "meaning": "有；表示拥有或包含",
+        "example": "The word has appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“has”可理解为“有”。"
+      },
+      {
+        "term": "helpful",
+        "phonetic": "/按语境朗读/",
+        "meaning": "有帮助的；能改善任务完成",
+        "example": "The word helpful appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“helpful”可理解为“有帮助的”。"
+      },
+      {
+        "term": "highly",
+        "phonetic": "/按语境朗读/",
+        "meaning": "高度地；程度很高",
+        "example": "The word highly appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“highly”可理解为“高度地”。"
+      },
+      {
+        "term": "how",
+        "phonetic": "/按语境朗读/",
+        "meaning": "如何；表示方式",
+        "example": "The word how appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“how”可理解为“如何”。"
+      },
+      {
+        "term": "if",
+        "phonetic": "/按语境朗读/",
+        "meaning": "如果；引出条件",
+        "example": "The word if appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“if”可理解为“如果”。"
+      },
+      {
+        "term": "ignore",
+        "phonetic": "/按语境朗读/",
+        "meaning": "忽视；不采纳或不注意",
+        "example": "The word ignore appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“ignore”可理解为“忽视”。"
+      },
+      {
+        "term": "in",
+        "phonetic": "/按语境朗读/",
+        "meaning": "在……中；表示范围或场景",
+        "example": "The word in appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“in”可理解为“在……中”。"
+      },
+      {
+        "term": "incomplete",
+        "phonetic": "/按语境朗读/",
+        "meaning": "不完整的；缺少关键部分",
+        "example": "The word incomplete appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“incomplete”可理解为“不完整的”。"
+      },
+      {
+        "term": "instead",
+        "phonetic": "/按语境朗读/",
+        "meaning": "而不是；表示替代关系",
+        "example": "The word instead appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“instead”可理解为“而不是”。"
+      },
+      {
+        "term": "intelligence",
+        "phonetic": "/按语境朗读/",
+        "meaning": "智能；系统推断和辅助能力",
+        "example": "The word intelligence appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“intelligence”可理解为“智能”。"
+      },
+      {
+        "term": "intelligent",
+        "phonetic": "/按语境朗读/",
+        "meaning": "智能的；具备感知和推理能力的",
+        "example": "The word intelligent appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“intelligent”可理解为“智能的”。"
+      },
+      {
+        "term": "into",
+        "phonetic": "/按语境朗读/",
+        "meaning": "进入；表示转化方向",
+        "example": "The word into appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“into”可理解为“进入”。"
+      },
+      {
+        "term": "is",
+        "phonetic": "/按语境朗读/",
+        "meaning": "是；系动词",
+        "example": "The word is appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“is”可理解为“是”。"
+      },
+      {
+        "term": "it",
+        "phonetic": "/按语境朗读/",
+        "meaning": "它；指代前文对象",
+        "example": "The word it appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“it”可理解为“它”。"
+      },
+      {
+        "term": "item",
+        "phonetic": "/按语境朗读/",
+        "meaning": "项目；日历或列表中的单项内容",
+        "example": "The word item appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“item”可理解为“项目”。"
+      },
+      {
+        "term": "labels",
+        "phonetic": "/按语境朗读/",
+        "meaning": "标签；用于标明类别或来源",
+        "example": "The word labels appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“labels”可理解为“标签”。"
+      },
+      {
+        "term": "language",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语言；界面或语音表达",
+        "example": "The word language appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“language”可理解为“语言”。"
+      },
+      {
+        "term": "likely",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可能的；置信度中等偏高的表达",
+        "example": "The word likely appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“likely”可理解为“可能的”。"
+      },
+      {
+        "term": "long",
+        "phonetic": "/按语境朗读/",
+        "meaning": "长的；持续或篇幅较多",
+        "example": "The word long appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“long”可理解为“长的”。"
+      },
+      {
+        "term": "low",
+        "phonetic": "/按语境朗读/",
+        "meaning": "低的；强度或数量较小",
+        "example": "The word low appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“low”可理解为“低的”。"
+      },
+      {
+        "term": "make",
+        "phonetic": "/按语境朗读/",
+        "meaning": "使得；让某事发生",
+        "example": "The word make appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“make”可理解为“使得”。"
+      },
+      {
+        "term": "makes",
+        "phonetic": "/按语境朗读/",
+        "meaning": "使得；第三人称单数形式",
+        "example": "The word makes appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“makes”可理解为“使得”。"
+      },
+      {
+        "term": "making",
+        "phonetic": "/按语境朗读/",
+        "meaning": "正在做出；进行中的动作",
+        "example": "The word making appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“making”可理解为“正在做出”。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/按语境朗读/",
+        "meaning": "地图；导航可视化对象",
+        "example": "The word map appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“map”可理解为“地图”。"
+      },
+      {
+        "term": "meeting",
+        "phonetic": "/按语境朗读/",
+        "meaning": "会议；日程中的会面事件",
+        "example": "The word meeting appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“meeting”可理解为“会议”。"
+      },
+      {
+        "term": "menu",
+        "phonetic": "/按语境朗读/",
+        "meaning": "菜单；界面层级中的选项集合",
+        "example": "The word menu appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“menu”可理解为“菜单”。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/按语境朗读/",
+        "meaning": "信息；系统传达给用户的内容",
+        "example": "The word message appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“message”可理解为“信息”。"
+      },
+      {
+        "term": "minutes",
+        "phonetic": "/按语境朗读/",
+        "meaning": "分钟；时间单位",
+        "example": "The word minutes appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“minutes”可理解为“分钟”。"
+      },
+      {
+        "term": "model",
+        "phonetic": "/按语境朗读/",
+        "meaning": "模型；用于计算或预测的系统表示",
+        "example": "The word model appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“model”可理解为“模型”。"
+      },
+      {
+        "term": "moved",
+        "phonetic": "/按语境朗读/",
+        "meaning": "移动或改期；发生时间或位置变化",
+        "example": "The word moved appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“moved”可理解为“移动或改期”。"
+      },
+      {
+        "term": "mysterious",
+        "phonetic": "/按语境朗读/",
+        "meaning": "神秘的；用户难以理解依据的",
+        "example": "The word mysterious appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“mysterious”可理解为“神秘的”。"
+      },
+      {
+        "term": "neither",
+        "phonetic": "/按语境朗读/",
+        "meaning": "两者都不；用于 neither...nor 结构",
+        "example": "The word neither appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“neither”可理解为“两者都不”。"
+      },
+      {
+        "term": "nor",
+        "phonetic": "/按语境朗读/",
+        "meaning": "也不；与 neither 搭配",
+        "example": "The word nor appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“nor”可理解为“也不”。"
+      },
+      {
+        "term": "not",
+        "phonetic": "/按语境朗读/",
+        "meaning": "不；否定词",
+        "example": "The word not appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“not”可理解为“不”。"
+      },
+      {
+        "term": "only",
+        "phonetic": "/按语境朗读/",
+        "meaning": "只；强调限制范围",
+        "example": "The word only appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“only”可理解为“只”。"
+      },
+      {
+        "term": "one",
+        "phonetic": "/按语境朗读/",
+        "meaning": "一个；数量为一",
+        "example": "The word one appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“one”可理解为“一个”。"
+      },
+      {
+        "term": "or",
+        "phonetic": "/按语境朗读/",
+        "meaning": "或者；表示选择",
+        "example": "The word or appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“or”可理解为“或者”。"
+      },
+      {
+        "term": "over-trust",
+        "phonetic": "/按语境朗读/",
+        "meaning": "过度信任；超过系统真实能力地相信",
+        "example": "The word over-trust appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“over-trust”可理解为“过度信任”。"
+      },
+      {
+        "term": "pairing",
+        "phonetic": "/按语境朗读/",
+        "meaning": "配对；把两个设计元素结合使用",
+        "example": "The word pairing appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“pairing”可理解为“配对”。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/按语境朗读/",
+        "meaning": "已驻车的；车辆停止并适合更复杂交互",
+        "example": "The word parked appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“parked”可理解为“已驻车的”。"
+      },
+      {
+        "term": "plan",
+        "phonetic": "/按语境朗读/",
+        "meaning": "计划；路线、能源或任务安排",
+        "example": "The word plan appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“plan”可理解为“计划”。"
+      },
+      {
+        "term": "prediction",
+        "phonetic": "/按语境朗读/",
+        "meaning": "预测；系统对未来状态的判断",
+        "example": "The word prediction appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“prediction”可理解为“预测”。"
+      },
+      {
+        "term": "preserves",
+        "phonetic": "/按语境朗读/",
+        "meaning": "保留；继续提供访问或能力",
+        "example": "The word preserves appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“preserves”可理解为“保留”。"
+      },
+      {
+        "term": "primary",
+        "phonetic": "/按语境朗读/",
+        "meaning": "主要的；优先级最高的",
+        "example": "The word primary appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“primary”可理解为“主要的”。"
+      },
+      {
+        "term": "produced",
+        "phonetic": "/按语境朗读/",
+        "meaning": "产生了；输出某个结果",
+        "example": "The word produced appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“produced”可理解为“产生了”。"
+      },
+      {
+        "term": "profile",
+        "phonetic": "/按语境朗读/",
+        "meaning": "用户档案；偏好和个性化设置集合",
+        "example": "The word profile appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“profile”可理解为“用户档案”。"
+      },
+      {
+        "term": "progressive",
+        "phonetic": "/按语境朗读/",
+        "meaning": "渐进的；逐步展开的",
+        "example": "The word progressive appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“progressive”可理解为“渐进的”。"
+      },
+      {
+        "term": "question",
+        "phonetic": "/按语境朗读/",
+        "meaning": "质疑；提出核对或追问",
+        "example": "The word question appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“question”可理解为“质疑”。"
+      },
+      {
+        "term": "recommendation",
+        "phonetic": "/按语境朗读/",
+        "meaning": "推荐；系统建议的动作或选择",
+        "example": "The word recommendation appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“recommendation”可理解为“推荐”。"
+      },
+      {
+        "term": "request",
+        "phonetic": "/按语境朗读/",
+        "meaning": "请求；用户发出的任务需求",
+        "example": "The word request appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“request”可理解为“请求”。"
+      },
+      {
+        "term": "respects",
+        "phonetic": "/按语境朗读/",
+        "meaning": "尊重；考虑并遵守限制",
+        "example": "The word respects appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“respects”可理解为“尊重”。"
+      },
+      {
+        "term": "rationale",
+        "phonetic": "/按语境朗读/",
+        "meaning": "理由；支撑建议的解释",
+        "example": "The word rationale appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“rationale”可理解为“理由”。"
+      },
+      {
+        "term": "reading",
+        "phonetic": "/按语境朗读/",
+        "meaning": "阅读；文本理解或朗读活动",
+        "example": "The word reading appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“reading”可理解为“阅读”。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/按语境朗读/",
+        "meaning": "路线；导航路径",
+        "example": "The word route appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“route”可理解为“路线”。"
+      },
+      {
+        "term": "safe",
+        "phonetic": "/按语境朗读/",
+        "meaning": "安全的；风险被控制的",
+        "example": "The word safe appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“safe”可理解为“安全的”。"
+      },
+      {
+        "term": "same",
+        "phonetic": "/按语境朗读/",
+        "meaning": "相同的；没有变化的",
+        "example": "The word same appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“same”可理解为“相同的”。"
+      },
+      {
+        "term": "says",
+        "phonetic": "/按语境朗读/",
+        "meaning": "说；表达内容",
+        "example": "The word says appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“says”可理解为“说”。"
+      },
+      {
+        "term": "scene",
+        "phonetic": "/按语境朗读/",
+        "meaning": "场景；用户可见环境或交互情境",
+        "example": "The word scene appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“scene”可理解为“场景”。"
+      },
+      {
+        "term": "segment",
+        "phonetic": "/按语境朗读/",
+        "meaning": "片段；整体中的一部分",
+        "example": "The word segment appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“segment”可理解为“片段”。"
+      },
+      {
+        "term": "sensor",
+        "phonetic": "/按语境朗读/",
+        "meaning": "传感器；采集车辆或环境信息的设备",
+        "example": "The word sensor appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“sensor”可理解为“传感器”。"
+      },
+      {
+        "term": "several",
+        "phonetic": "/按语境朗读/",
+        "meaning": "几个；多个但数量不大",
+        "example": "The word several appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“several”可理解为“几个”。"
+      },
+      {
+        "term": "shaped",
+        "phonetic": "/按语境朗读/",
+        "meaning": "塑造了；影响了结果",
+        "example": "The word shaped appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“shaped”可理解为“塑造了”。"
+      },
+      {
+        "term": "short",
+        "phonetic": "/按语境朗读/",
+        "meaning": "短的；简洁的",
+        "example": "The word short appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“short”可理解为“短的”。"
+      },
+      {
+        "term": "should",
+        "phonetic": "/按语境朗读/",
+        "meaning": "应该；表达设计建议或要求",
+        "example": "The word should appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“should”可理解为“应该”。"
+      },
+      {
+        "term": "show",
+        "phonetic": "/按语境朗读/",
+        "meaning": "显示；让用户看到",
+        "example": "The word show appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“show”可理解为“显示”。"
+      },
+      {
+        "term": "shows",
+        "phonetic": "/按语境朗读/",
+        "meaning": "显示；第三人称单数形式",
+        "example": "The word shows appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“shows”可理解为“显示”。"
+      },
+      {
+        "term": "slowed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "变慢了；速度降低",
+        "example": "The word slowed appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“slowed”可理解为“变慢了”。"
+      },
+      {
+        "term": "source",
+        "phonetic": "/按语境朗读/",
+        "meaning": "来源；信息出处",
+        "example": "The word source appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“source”可理解为“来源”。"
+      },
+      {
+        "term": "still",
+        "phonetic": "/按语境朗读/",
+        "meaning": "仍然；表示持续成立",
+        "example": "The word still appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“still”可理解为“仍然”。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/按语境朗读/",
+        "meaning": "建议；系统提出的可选方案",
+        "example": "The word suggestion appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“suggestion”可理解为“建议”。"
+      },
+      {
+        "term": "summarize",
+        "phonetic": "/按语境朗读/",
+        "meaning": "总结；压缩并表达关键信息",
+        "example": "The word summarize appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“summarize”可理解为“总结”。"
+      },
+      {
+        "term": "summary",
+        "phonetic": "/按语境朗读/",
+        "meaning": "摘要；被压缩后的关键信息",
+        "example": "The word summary appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“summary”可理解为“摘要”。"
+      },
+      {
+        "term": "supports",
+        "phonetic": "/按语境朗读/",
+        "meaning": "支持；能够满足或承载",
+        "example": "The word supports appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“supports”可理解为“支持”。"
+      },
+      {
+        "term": "system",
+        "phonetic": "/按语境朗读/",
+        "meaning": "系统；座舱软件或车辆功能",
+        "example": "The word system appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“system”可理解为“系统”。"
+      },
+      {
+        "term": "teams",
+        "phonetic": "/按语境朗读/",
+        "meaning": "团队；参与设计和开发的人群",
+        "example": "The word teams appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“teams”可理解为“团队”。"
+      },
+      {
+        "term": "text",
+        "phonetic": "/按语境朗读/",
+        "meaning": "文本；界面上的文字内容",
+        "example": "The word text appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“text”可理解为“文本”。"
+      },
+      {
+        "term": "the",
+        "phonetic": "/按语境朗读/",
+        "meaning": "这个；定冠词，指特定对象",
+        "example": "The word the appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“the”可理解为“这个”。"
+      },
+      {
+        "term": "this",
+        "phonetic": "/按语境朗读/",
+        "meaning": "这；指当前对象或情况",
+        "example": "The word this appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“this”可理解为“这”。"
+      },
+      {
+        "term": "time",
+        "phonetic": "/按语境朗读/",
+        "meaning": "时间；任务或事件发生的维度",
+        "example": "The word time appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“time”可理解为“时间”。"
+      },
+      {
+        "term": "timestamps",
+        "phonetic": "/按语境朗读/",
+        "meaning": "时间戳；标记事件发生时间的信息",
+        "example": "The word timestamps appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“timestamps”可理解为“时间戳”。"
+      },
+      {
+        "term": "to",
+        "phonetic": "/按语境朗读/",
+        "meaning": "到；表示目标、方向或目的",
+        "example": "The word to appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“to”可理解为“到”。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/按语境朗读/",
+        "meaning": "交通；道路车辆流状态",
+        "example": "The word traffic appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“traffic”可理解为“交通”。"
+      },
+      {
+        "term": "trail",
+        "phonetic": "/按语境朗读/",
+        "meaning": "链路；可追溯的路径",
+        "example": "The word trail appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“trail”可理解为“链路”。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/按语境朗读/",
+        "meaning": "信任；用户对系统能力的合理相信",
+        "example": "The word trust appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“trust”可理解为“信任”。"
+      },
+      {
+        "term": "twelve",
+        "phonetic": "/按语境朗读/",
+        "meaning": "十二；数字 12",
+        "example": "The word twelve appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“twelve”可理解为“十二”。"
+      },
+      {
+        "term": "uncertain",
+        "phonetic": "/按语境朗读/",
+        "meaning": "不确定的；把握不足",
+        "example": "The word uncertain appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“uncertain”可理解为“不确定的”。"
+      },
+      {
+        "term": "uncertainty",
+        "phonetic": "/按语境朗读/",
+        "meaning": "不确定性；系统判断中的未知或风险",
+        "example": "The word uncertainty appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“uncertainty”可理解为“不确定性”。"
+      },
+      {
+        "term": "update",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更新；状态变化通知",
+        "example": "The word update appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“update”可理解为“更新”。"
+      },
+      {
+        "term": "use",
+        "phonetic": "/按语境朗读/",
+        "meaning": "使用；采用某方法或元素",
+        "example": "The word use appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“use”可理解为“使用”。"
+      },
+      {
+        "term": "used",
+        "phonetic": "/按语境朗读/",
+        "meaning": "使用过的；被采用的",
+        "example": "The word used appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“used”可理解为“使用过的”。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/按语境朗读/",
+        "meaning": "有用的；能帮助完成任务",
+        "example": "The word useful appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“useful”可理解为“有用的”。"
+      },
+      {
+        "term": "user",
+        "phonetic": "/按语境朗读/",
+        "meaning": "用户；使用座舱系统的人",
+        "example": "The word user appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“user”可理解为“用户”。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/按语境朗读/",
+        "meaning": "车辆；智能座舱所在的交通工具",
+        "example": "The word vehicle appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“vehicle”可理解为“车辆”。"
+      },
+      {
+        "term": "verifiable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可验证的；能被用户核对",
+        "example": "The word verifiable appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“verifiable”可理解为“可验证的”。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可见的；能在界面或环境中看到",
+        "example": "The word visible appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“visible”可理解为“可见的”。"
+      },
+      {
+        "term": "was",
+        "phonetic": "/按语境朗读/",
+        "meaning": "是；过去时系动词",
+        "example": "The word was appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“was”可理解为“是”。"
+      },
+      {
+        "term": "what",
+        "phonetic": "/按语境朗读/",
+        "meaning": "什么；指内容",
+        "example": "The word what appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“what”可理解为“什么”。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/按语境朗读/",
+        "meaning": "当……时；表示条件或时间",
+        "example": "The word when appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“when”可理解为“当……时”。"
+      },
+      {
+        "term": "whether",
+        "phonetic": "/按语境朗读/",
+        "meaning": "是否；引出判断条件",
+        "example": "The word whether appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“whether”可理解为“是否”。"
+      },
+      {
+        "term": "which",
+        "phonetic": "/按语境朗读/",
+        "meaning": "哪一个；用于追问或限定",
+        "example": "The word which appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“which”可理解为“哪一个”。"
+      },
+      {
+        "term": "while",
+        "phonetic": "/按语境朗读/",
+        "meaning": "同时；表示并行或对比",
+        "example": "The word while appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“while”可理解为“同时”。"
+      },
+      {
+        "term": "why",
+        "phonetic": "/按语境朗读/",
+        "meaning": "为什么；表示原因",
+        "example": "The word why appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“why”可理解为“为什么”。"
+      },
+      {
+        "term": "with",
+        "phonetic": "/按语境朗读/",
+        "meaning": "与；表示伴随或使用",
+        "example": "The word with appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“with”可理解为“与”。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/按语境朗读/",
+        "meaning": "没有；表示缺少某事",
+        "example": "The word without appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“without”可理解为“没有”。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/按语境朗读/",
+        "meaning": "措辞；具体表达方式",
+        "example": "The word wording appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“wording”可理解为“措辞”。"
+      },
+      {
+        "term": "actionable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可执行的；能指导用户采取下一步动作",
+        "example": "The word actionable appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“actionable”可理解为“可执行的”。"
+      },
+      {
+        "term": "certain",
+        "phonetic": "/按语境朗读/",
+        "meaning": "确定的；系统具有较高判断把握",
+        "example": "The word certain appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“certain”可理解为“确定的”。"
+      },
+      {
+        "term": "deeper",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更深入的；包含更多细节和依据",
+        "example": "The word deeper appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“deeper”可理解为“更深入的”。"
+      },
+      {
+        "term": "driver-verifiable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "驾驶员可验证的；用户能快速核对的",
+        "example": "The word driver-verifiable appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“driver-verifiable”可理解为“驾驶员可验证的”。"
+      },
+      {
+        "term": "missed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "错过的；未及时处理或查看的",
+        "example": "The word missed appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“missed”可理解为“错过的”。"
+      },
+      {
+        "term": "preserving",
+        "phonetic": "/按语境朗读/",
+        "meaning": "保留；继续维持某种能力或入口",
+        "example": "The word preserving appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“preserving”可理解为“保留”。"
+      },
+      {
+        "term": "snapshot",
+        "phonetic": "/按语境朗读/",
+        "meaning": "快照；某一时刻的上下文记录",
+        "example": "The word snapshot appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“snapshot”可理解为“快照”。"
+      },
+      {
+        "term": "summaries",
+        "phonetic": "/按语境朗读/",
+        "meaning": "摘要；多个被压缩后的关键信息",
+        "example": "The word summaries appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“summaries”可理解为“摘要”。"
+      },
+      {
+        "term": "suggesting",
+        "phonetic": "/按语境朗读/",
+        "meaning": "建议；正在提出可选操作",
+        "example": "The word suggesting appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“suggesting”可理解为“建议”。"
+      },
+      {
+        "term": "today",
+        "phonetic": "/按语境朗读/",
+        "meaning": "今天；当前学习日期或当前场景",
+        "example": "The word today appears in today's cockpit summary practice.",
+        "chineseExample": "在这个语境中，“today”可理解为“今天”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing trustworthy AI summaries",
+        "text": "In an intelligent cockpit, an AI assistant often has to compress several events into one calm update. The design challenge is not only what the assistant says, but how clearly it shows confidence. For example, the system may summarize that a meeting moved, traffic added twelve minutes, and the battery plan still supports the destination. If the assistant is highly certain, the message can be direct. If it is uncertain, the wording should expose the evidence trail: which calendar item changed, which route segment slowed down, and which energy model was used. This makes the claim driver-verifiable instead of mysterious. A good ambient summary also respects workload. During dense traffic, it should use low summary density, one primary action, and a short confidence cue such as \"likely\" or \"confirmed.\" When the vehicle is parked, the same summary can expand into progressive detail with source labels, timestamps, and alternative actions. The goal is trust calibration. Drivers should neither ignore useful intelligence nor over-trust a prediction that depends on incomplete context. By pairing concise language with visible evidence, cockpit teams can make AI summaries feel helpful, accountable, and safe to question.",
+        "translation": "在智能座舱中，AI 助手经常需要把多个事件压缩成一条平静的更新。设计挑战不只是助手说什么，还包括它如何清楚呈现置信度。例如，系统可能总结会议改期、交通增加十二分钟、电池计划仍支持到达目的地。如果助手非常确定，信息可以直接表达；如果不确定，措辞应展示证据链：哪个日历项变化、哪段路线变慢、使用了哪个能耗模型。这会让结论成为驾驶员可验证的信息，而不是神秘判断。优秀的环境式摘要也会尊重驾驶负荷。在密集交通中，它应使用低摘要密度、一个主要动作，以及“可能”或“已确认”等简短置信度提示。车辆驻车时，同一摘要可以展开为带来源标签、时间戳和替代操作的渐进细节。目标是信任校准：驾驶员既不应忽视有用智能，也不应过度信任依赖不完整上下文的预测。通过把简洁语言与可见证据配对，座舱团队可以让 AI 摘要显得有帮助、可追责，并且可以被质疑。",
+        "source": null
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The design challenge is not only what the assistant says, but how clearly it shows confidence.",
+        "structure": "主语 The design challenge + 系表结构 is + not only A, but B 并列焦点。",
+        "focus": "not only what..., but how... 用来强调设计问题同时包含内容和呈现方式。",
+        "pattern": "The design challenge is not only what the system does, but how clearly it explains why."
+      },
+      {
+        "sentence": "If it is uncertain, the wording should expose the evidence trail.",
+        "structure": "If 条件从句 + 主句 should expose，表达不确定场景下的设计要求。",
+        "focus": "expose the evidence trail 表示把依据公开给用户，而不是只给结论。",
+        "pattern": "If the prediction is uncertain, the interface should expose the evidence trail."
+      },
+      {
+        "sentence": "During dense traffic, it should use low summary density, one primary action, and a short confidence cue.",
+        "structure": "介词短语 During dense traffic 作场景限定，主句列出三项约束。",
+        "focus": "low summary density, one primary action, and a short confidence cue 适合描述驾驶负荷下的信息控制。",
+        "pattern": "During high workload, the cockpit should use low density, one action, and a clear cue."
+      },
+      {
+        "sentence": "Drivers should neither ignore useful intelligence nor over-trust a prediction that depends on incomplete context.",
+        "structure": "should neither A nor B 表示两个都不应发生，that 从句修饰 prediction。",
+        "focus": "neither ignore nor over-trust 适合表达信任校准的平衡目标。",
+        "pattern": "Users should neither ignore helpful automation nor over-trust a weak prediction."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 confidence cue、evidence trail、glanceable rationale 和 trust calibration 的使用场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "先听或朗读全文，再标出所有描述不确定性、证据来源和驾驶负荷的句子。"
+      },
+      {
+        "title": "句型替换",
+        "time": "5 分钟",
+        "detail": "用 not only...but、If it is uncertain... 和 During dense traffic... 改写一个座舱 AI 提示方案。"
+      },
+      {
+        "title": "设计复述",
+        "time": "6 分钟",
+        "detail": "用 5 句话说明一个 AI 摘要如何呈现置信度、证据链、主要动作和可验证结论。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-18-multimodal-alert-escalation",
     "date": "2026-07-18",
     "title": "Multimodal alert escalation and de-escalation in intelligent cockpits",
