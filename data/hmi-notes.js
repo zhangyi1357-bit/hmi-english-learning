@@ -1,5 +1,844 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-21-adaptive-seat-comfort-posture-prompts",
+    "date": "2026-07-21",
+    "title": "Adaptive seat comfort and posture prompts in intelligent cockpits",
+    "topic": "智能座舱自适应座椅舒适与姿态提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱根据压力分布、坐姿和疲劳线索调节座椅舒适，同时保留用户同意、解释和撤销能力。",
+    "words": [
+      {
+        "term": "adaptive comfort loop",
+        "phonetic": "/əˈdæptɪv ˈkʌmfərt luːp/",
+        "meaning": "自适应舒适闭环；系统根据身体状态、座椅反馈和驾驶场景持续微调舒适设置",
+        "example": "An adaptive comfort loop should adjust the seat only when the driver can notice the benefit without feeling interrupted.",
+        "chineseExample": "自适应舒适闭环只应在驾驶员能感知收益且不觉得被打断时调整座椅。"
+      },
+      {
+        "term": "posture prompt",
+        "phonetic": "/ˈpɑːstʃər prɑːmpt/",
+        "meaning": "姿态提示；提醒用户调整坐姿、靠背或支撑位置的座舱提示",
+        "example": "A posture prompt works best when it explains the reason before asking the driver to move.",
+        "chineseExample": "姿态提示最好先解释原因，再请求驾驶员调整身体位置。"
+      },
+      {
+        "term": "pressure map",
+        "phonetic": "/ˈpreʃər mæp/",
+        "meaning": "压力分布图；显示座椅表面受力区域的数据或可视化结果",
+        "example": "The pressure map showed that the left thigh support was carrying more load than expected.",
+        "chineseExample": "压力分布图显示左侧大腿支撑承受的负荷高于预期。"
+      },
+      {
+        "term": "lumbar support",
+        "phonetic": "/ˈlʌmbɑːr səˈpɔːrt/",
+        "meaning": "腰部支撑；座椅中用于支撑腰椎曲线的调节区域",
+        "example": "The assistant increased lumbar support after detecting a long period of static posture.",
+        "chineseExample": "助手检测到长时间静态坐姿后增加了腰部支撑。"
+      },
+      {
+        "term": "micro-adjustment",
+        "phonetic": "/ˈmaɪkroʊ əˈdʒʌstmənt/",
+        "meaning": "微调；幅度很小、通常不打断当前任务的座椅或界面调整",
+        "example": "Micro-adjustment keeps the comfort change subtle enough for highway driving.",
+        "chineseExample": "微调让舒适性变化足够轻微，适合高速驾驶场景。"
+      },
+      {
+        "term": "fatigue marker",
+        "phonetic": "/fəˈtiːɡ ˈmɑːrkər/",
+        "meaning": "疲劳标记；用于推断疲劳或身体负荷上升的行为、生理或交互信号",
+        "example": "A fatigue marker should trigger a gentle suggestion, not an alarming message.",
+        "chineseExample": "疲劳标记应触发温和建议，而不是令人紧张的警报。"
+      },
+      {
+        "term": "consent boundary",
+        "phonetic": "/kənˈsent ˈbaʊndəri/",
+        "meaning": "同意边界；系统在收集身体数据或自动调节前必须尊重的用户授权范围",
+        "example": "The consent boundary is clear when the driver can pause body sensing from the comfort panel.",
+        "chineseExample": "当驾驶员能从舒适面板暂停身体感知时，同意边界才清晰。"
+      },
+      {
+        "term": "reversible setting",
+        "phonetic": "/rɪˈvɜːrsəbl ˈsetɪŋ/",
+        "meaning": "可撤销设置；用户能快速恢复或取消的系统调整",
+        "example": "Every automatic seat movement should be a reversible setting with a visible undo option.",
+        "chineseExample": "每一次自动座椅移动都应是带有可见撤销选项的可撤销设置。"
+      },
+      {
+        "term": "comfort preset",
+        "phonetic": "/ˈkʌmfərt ˈpriːset/",
+        "meaning": "舒适预设；为通勤、长途、休息等场景保存的一组座椅和环境参数",
+        "example": "A comfort preset can combine seat angle, heating, ventilation, and display distance.",
+        "chineseExample": "舒适预设可以组合座椅角度、加热、通风和显示距离。"
+      },
+      {
+        "term": "body-state signal",
+        "phonetic": "/ˈbɑːdi steɪt ˈsɪɡnəl/",
+        "meaning": "身体状态信号；反映坐姿、压力、疲劳或舒适度变化的数据线索",
+        "example": "A body-state signal becomes useful only when the cockpit explains how it affects the recommendation.",
+        "chineseExample": "只有当座舱解释身体状态信号如何影响推荐时，它才有用。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "adaptive comfort loop",
+        "phonetic": "/əˈdæptɪv ˈkʌmfərt luːp/",
+        "meaning": "自适应舒适闭环；系统根据身体状态、座椅反馈和驾驶场景持续微调舒适设置",
+        "example": "An adaptive comfort loop should adjust the seat only when the driver can notice the benefit without feeling interrupted.",
+        "chineseExample": "自适应舒适闭环只应在驾驶员能感知收益且不觉得被打断时调整座椅。"
+      },
+      {
+        "term": "posture prompt",
+        "phonetic": "/ˈpɑːstʃər prɑːmpt/",
+        "meaning": "姿态提示；提醒用户调整坐姿、靠背或支撑位置的座舱提示",
+        "example": "A posture prompt works best when it explains the reason before asking the driver to move.",
+        "chineseExample": "姿态提示最好先解释原因，再请求驾驶员调整身体位置。"
+      },
+      {
+        "term": "pressure map",
+        "phonetic": "/ˈpreʃər mæp/",
+        "meaning": "压力分布图；显示座椅表面受力区域的数据或可视化结果",
+        "example": "The pressure map showed that the left thigh support was carrying more load than expected.",
+        "chineseExample": "压力分布图显示左侧大腿支撑承受的负荷高于预期。"
+      },
+      {
+        "term": "lumbar support",
+        "phonetic": "/ˈlʌmbɑːr səˈpɔːrt/",
+        "meaning": "腰部支撑；座椅中用于支撑腰椎曲线的调节区域",
+        "example": "The assistant increased lumbar support after detecting a long period of static posture.",
+        "chineseExample": "助手检测到长时间静态坐姿后增加了腰部支撑。"
+      },
+      {
+        "term": "micro-adjustment",
+        "phonetic": "/ˈmaɪkroʊ əˈdʒʌstmənt/",
+        "meaning": "微调；幅度很小、通常不打断当前任务的座椅或界面调整",
+        "example": "Micro-adjustment keeps the comfort change subtle enough for highway driving.",
+        "chineseExample": "微调让舒适性变化足够轻微，适合高速驾驶场景。"
+      },
+      {
+        "term": "fatigue marker",
+        "phonetic": "/fəˈtiːɡ ˈmɑːrkər/",
+        "meaning": "疲劳标记；用于推断疲劳或身体负荷上升的行为、生理或交互信号",
+        "example": "A fatigue marker should trigger a gentle suggestion, not an alarming message.",
+        "chineseExample": "疲劳标记应触发温和建议，而不是令人紧张的警报。"
+      },
+      {
+        "term": "consent boundary",
+        "phonetic": "/kənˈsent ˈbaʊndəri/",
+        "meaning": "同意边界；系统在收集身体数据或自动调节前必须尊重的用户授权范围",
+        "example": "The consent boundary is clear when the driver can pause body sensing from the comfort panel.",
+        "chineseExample": "当驾驶员能从舒适面板暂停身体感知时，同意边界才清晰。"
+      },
+      {
+        "term": "reversible setting",
+        "phonetic": "/rɪˈvɜːrsəbl ˈsetɪŋ/",
+        "meaning": "可撤销设置；用户能快速恢复或取消的系统调整",
+        "example": "Every automatic seat movement should be a reversible setting with a visible undo option.",
+        "chineseExample": "每一次自动座椅移动都应是带有可见撤销选项的可撤销设置。"
+      },
+      {
+        "term": "comfort preset",
+        "phonetic": "/ˈkʌmfərt ˈpriːset/",
+        "meaning": "舒适预设；为通勤、长途、休息等场景保存的一组座椅和环境参数",
+        "example": "A comfort preset can combine seat angle, heating, ventilation, and display distance.",
+        "chineseExample": "舒适预设可以组合座椅角度、加热、通风和显示距离。"
+      },
+      {
+        "term": "body-state signal",
+        "phonetic": "/ˈbɑːdi steɪt ˈsɪɡnəl/",
+        "meaning": "身体状态信号；反映坐姿、压力、疲劳或舒适度变化的数据线索",
+        "example": "A body-state signal becomes useful only when the cockpit explains how it affects the recommendation.",
+        "chineseExample": "只有当座舱解释身体状态信号如何影响推荐时，它才有用。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；能根据情境变化调整。",
+        "example": "The cockpit uses adaptive to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“adaptive”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "meaning": "舒适；身体或心理上的放松状态。",
+        "example": "The cockpit uses comfort to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“comfort”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "loop",
+        "phonetic": "/luːp/",
+        "meaning": "闭环；持续反馈和调整的流程。",
+        "example": "The cockpit uses loop to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“loop”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "posture",
+        "phonetic": "/ˈpɑːstʃər/",
+        "meaning": "姿态；坐姿或身体位置。",
+        "example": "The cockpit uses posture to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“posture”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户行动的信息。",
+        "example": "The cockpit uses prompt to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“prompt”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "pressure",
+        "phonetic": "/ˈpreʃər/",
+        "meaning": "压力；座椅或身体接触面的受力。",
+        "example": "The cockpit uses pressure to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“pressure”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/mæp/",
+        "meaning": "图；用于呈现分布或位置关系的可视化。",
+        "example": "The cockpit uses map to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“map”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "lumbar",
+        "phonetic": "/ˈlʌmbɑːr/",
+        "meaning": "腰部的；与下背部相关。",
+        "example": "The cockpit uses lumbar to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“lumbar”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "support",
+        "phonetic": "/səˈpɔːrt/",
+        "meaning": "支撑；帮助保持稳定或舒适的功能。",
+        "example": "The cockpit uses support to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“support”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "micro",
+        "phonetic": "/ˈmaɪkroʊ/",
+        "meaning": "微小的；幅度很小的。",
+        "example": "The cockpit uses micro to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“micro”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "adjustment",
+        "phonetic": "/əˈdʒʌstmənt/",
+        "meaning": "调整；改变设置或位置。",
+        "example": "The cockpit uses adjustment to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“adjustment”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "fatigue",
+        "phonetic": "/fəˈtiːɡ/",
+        "meaning": "疲劳；注意力或身体状态下降。",
+        "example": "The cockpit uses fatigue to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“fatigue”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "marker",
+        "phonetic": "/ˈmɑːrkər/",
+        "meaning": "标记；用于判断状态的线索。",
+        "example": "The cockpit uses marker to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“marker”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "同意；用户明确授权。",
+        "example": "The cockpit uses consent to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“consent”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；系统行为不能越过的限制。",
+        "example": "The cockpit uses boundary to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“boundary”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "可撤销的；可以恢复到原状态。",
+        "example": "The cockpit uses reversible to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“reversible”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/ˈsetɪŋ/",
+        "meaning": "设置；用户或系统配置项。",
+        "example": "The cockpit uses setting to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“setting”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "preset",
+        "phonetic": "/ˈpriːset/",
+        "meaning": "预设；提前保存的一组配置。",
+        "example": "The cockpit uses preset to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“preset”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "body",
+        "phonetic": "/ˈbɑːdi/",
+        "meaning": "身体；驾驶员身体状态。",
+        "example": "The cockpit uses body to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“body”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；系统或用户当前情况。",
+        "example": "The cockpit uses state to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“state”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/ˈsɪɡnəl/",
+        "meaning": "信号；用于判断的输入信息。",
+        "example": "The cockpit uses signal to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“signal”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "seat",
+        "phonetic": "/siːt/",
+        "meaning": "座椅；驾驶员或乘客乘坐位置。",
+        "example": "The cockpit uses seat to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“seat”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "cushion",
+        "phonetic": "/ˈkʊʃn/",
+        "meaning": "坐垫；座椅承托身体的软性区域。",
+        "example": "The cockpit uses cushion to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“cushion”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "backrest",
+        "phonetic": "/ˈbækrest/",
+        "meaning": "靠背；支撑背部的座椅部分。",
+        "example": "The cockpit uses backrest to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“backrest”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "thigh support",
+        "phonetic": "/θaɪ səˈpɔːrt/",
+        "meaning": "大腿支撑；支撑腿部以减少疲劳的座椅区域。",
+        "example": "The cockpit uses thigh support to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“thigh support”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "seat angle",
+        "phonetic": "/siːt ˈæŋɡl/",
+        "meaning": "座椅角度；座垫或靠背的倾斜角。",
+        "example": "The cockpit uses seat angle to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“seat angle”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "heating",
+        "phonetic": "/ˈhiːtɪŋ/",
+        "meaning": "加热；提升座椅或座舱温度的功能。",
+        "example": "The cockpit uses heating to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“heating”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "ventilation",
+        "phonetic": "/ˌventɪˈleɪʃn/",
+        "meaning": "通风；通过空气流动改善舒适度。",
+        "example": "The cockpit uses ventilation to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“ventilation”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "display distance",
+        "phonetic": "/dɪˈspleɪ ˈdɪstəns/",
+        "meaning": "显示距离；用户眼睛到屏幕的距离。",
+        "example": "The cockpit uses display distance to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“display distance”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "static posture",
+        "phonetic": "/ˈstætɪk ˈpɑːstʃər/",
+        "meaning": "静态坐姿；长时间不变化的身体姿态。",
+        "example": "The cockpit uses static posture to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“static posture”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "body sensing",
+        "phonetic": "/ˈbɑːdi ˈsensɪŋ/",
+        "meaning": "身体感知；系统检测坐姿、压力或疲劳状态。",
+        "example": "The cockpit uses body sensing to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“body sensing”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "automatic seat movement",
+        "phonetic": "/ˌɔːtəˈmætɪk siːt ˈmuːvmənt/",
+        "meaning": "自动座椅移动；系统主动调节座椅位置。",
+        "example": "The cockpit uses automatic seat movement to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“automatic seat movement”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "visible undo option",
+        "phonetic": "/ˈvɪzəbl ʌnˈduː ˈɑːpʃn/",
+        "meaning": "可见撤销选项；用户能直接取消自动调整的控件。",
+        "example": "The cockpit uses visible undo option to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“visible undo option”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "comfort panel",
+        "phonetic": "/ˈkʌmfərt ˈpænl/",
+        "meaning": "舒适面板；集中控制座椅、空调和身体感知的界面。",
+        "example": "The cockpit uses comfort panel to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“comfort panel”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "gentle suggestion",
+        "phonetic": "/ˈdʒentl səɡˈdʒestʃən/",
+        "meaning": "温和建议；不制造压力的提示。",
+        "example": "The cockpit uses gentle suggestion to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“gentle suggestion”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "driver control",
+        "phonetic": "/ˈdraɪvər kənˈtroʊl/",
+        "meaning": "驾驶员控制权；用户对系统动作的最终掌控。",
+        "example": "The cockpit uses driver control to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“driver control”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户能理解、选择和撤销系统行为。",
+        "example": "The cockpit uses user agency to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“user agency”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "privacy indicator",
+        "phonetic": "/ˈpraɪvəsi ˈɪndɪkeɪtər/",
+        "meaning": "隐私指示；说明身体数据是否正在被感知或使用的标识。",
+        "example": "The cockpit uses privacy indicator to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“privacy indicator”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "workload-aware timing",
+        "phonetic": "/ˈwɜːrkloʊd əˈwer ˈtaɪmɪŋ/",
+        "meaning": "负荷感知时机；根据驾驶负荷选择提示时间。",
+        "example": "The cockpit uses workload-aware timing to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“workload-aware timing”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "low-distraction message",
+        "phonetic": "/loʊ dɪˈstrækʃn ˈmesɪdʒ/",
+        "meaning": "低干扰信息；尽量减少注意力占用的提示。",
+        "example": "The cockpit uses low-distraction message to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“low-distraction message”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "long-distance driving",
+        "phonetic": "/lɔːŋ ˈdɪstəns ˈdraɪvɪŋ/",
+        "meaning": "长途驾驶；持续时间较长的驾驶任务。",
+        "example": "The cockpit uses long-distance driving to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“long-distance driving”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "commute mode",
+        "phonetic": "/kəˈmjuːt moʊd/",
+        "meaning": "通勤模式；适合日常上下班的座舱配置。",
+        "example": "The cockpit uses commute mode to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“commute mode”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "rest mode",
+        "phonetic": "/rest moʊd/",
+        "meaning": "休息模式；车辆停靠时支持放松的设置。",
+        "example": "The cockpit uses rest mode to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“rest mode”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "occupant comfort",
+        "phonetic": "/ˈɑːkjəpənt ˈkʌmfərt/",
+        "meaning": "乘员舒适度；车内人员的整体舒适体验。",
+        "example": "The cockpit uses occupant comfort to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“occupant comfort”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "in-cabin assistant",
+        "phonetic": "/ɪn ˈkæbɪn əˈsɪstənt/",
+        "meaning": "车内助手；智能座舱中的语音或 AI 助手。",
+        "example": "The cockpit uses in-cabin assistant to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“in-cabin assistant”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "transparent recommendation",
+        "phonetic": "/trænsˈpærənt ˌrekəmenˈdeɪʃn/",
+        "meaning": "透明推荐；解释原因和数据来源的系统建议。",
+        "example": "The cockpit uses transparent recommendation to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“transparent recommendation”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "manual override",
+        "phonetic": "/ˈmænjuəl ˈoʊvərraɪd/",
+        "meaning": "手动覆盖；用户直接改变或取消自动行为。",
+        "example": "The cockpit uses manual override to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“manual override”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "profile memory",
+        "phonetic": "/ˈproʊfaɪl ˈmeməri/",
+        "meaning": "档案记忆；系统保存的用户偏好记录。",
+        "example": "The cockpit uses profile memory to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“profile memory”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "context cue",
+        "phonetic": "/ˈkɑːntekst kjuː/",
+        "meaning": "上下文线索；说明当前建议为何出现的场景信息。",
+        "example": "The cockpit uses context cue to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“context cue”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "explainable automation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌɔːtəˈmeɪʃn/",
+        "meaning": "可解释自动化；能说明原因、限制和结果的自动功能。",
+        "example": "The cockpit uses explainable automation to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“explainable automation”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "subtle feedback",
+        "phonetic": "/ˈsʌtl ˈfiːdbæk/",
+        "meaning": "细微反馈；不打断任务的轻量反馈。",
+        "example": "The cockpit uses subtle feedback to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“subtle feedback”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "safe default",
+        "phonetic": "/seɪf dɪˈfɔːlt/",
+        "meaning": "安全默认值；用户未选择时系统采用的保守设置。",
+        "example": "The cockpit uses safe default to keep comfort assistance understandable and controllable.",
+        "chineseExample": "座舱使用“safe default”让舒适辅助更容易理解和控制。"
+      },
+      {
+        "term": "interrupted",
+        "phonetic": "/按语境朗读/",
+        "meaning": "被打断的；任务或注意力被中断。",
+        "example": "The word interrupted appears in the comfort recommendation context.",
+        "chineseExample": "“interrupted”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "works",
+        "phonetic": "/按语境朗读/",
+        "meaning": "起作用；在特定场景下有效。",
+        "example": "The word works appears in the comfort recommendation context.",
+        "chineseExample": "“works”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "showed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "显示了；过去时，表示系统呈现结果。",
+        "example": "The word showed appears in the comfort recommendation context.",
+        "chineseExample": "“showed”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "thigh",
+        "phonetic": "/按语境朗读/",
+        "meaning": "大腿；座椅支撑设计中的腿部区域。",
+        "example": "The word thigh appears in the comfort recommendation context.",
+        "chineseExample": "“thigh”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "carrying",
+        "phonetic": "/按语境朗读/",
+        "meaning": "承载；承担压力或负荷。",
+        "example": "The word carrying appears in the comfort recommendation context.",
+        "chineseExample": "“carrying”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "increased",
+        "phonetic": "/按语境朗读/",
+        "meaning": "增加了；把强度或数量调高。",
+        "example": "The word increased appears in the comfort recommendation context.",
+        "chineseExample": "“increased”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "detecting",
+        "phonetic": "/按语境朗读/",
+        "meaning": "检测；识别状态或信号。",
+        "example": "The word detecting appears in the comfort recommendation context.",
+        "chineseExample": "“detecting”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "gentle",
+        "phonetic": "/按语境朗读/",
+        "meaning": "温和的；不会造成紧张或突兀感。",
+        "example": "The word gentle appears in the comfort recommendation context.",
+        "chineseExample": "“gentle”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "alarming",
+        "phonetic": "/按语境朗读/",
+        "meaning": "令人紧张的；像警报一样容易引发压力。",
+        "example": "The word alarming appears in the comfort recommendation context.",
+        "chineseExample": "“alarming”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "sensing",
+        "phonetic": "/按语境朗读/",
+        "meaning": "感知；通过传感器或算法读取状态。",
+        "example": "The word sensing appears in the comfort recommendation context.",
+        "chineseExample": "“sensing”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "automatic",
+        "phonetic": "/按语境朗读/",
+        "meaning": "自动的；由系统主动执行。",
+        "example": "The word automatic appears in the comfort recommendation context.",
+        "chineseExample": "“automatic”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "movement",
+        "phonetic": "/按语境朗读/",
+        "meaning": "移动；位置变化或调节动作。",
+        "example": "The word movement appears in the comfort recommendation context.",
+        "chineseExample": "“movement”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "angle",
+        "phonetic": "/按语境朗读/",
+        "meaning": "角度；界面或座椅部件的倾斜程度。",
+        "example": "The word angle appears in the comfort recommendation context.",
+        "chineseExample": "“angle”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "distance",
+        "phonetic": "/按语境朗读/",
+        "meaning": "距离；两个对象之间的空间间隔。",
+        "example": "The word distance appears in the comfort recommendation context.",
+        "chineseExample": "“distance”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "body-state",
+        "phonetic": "/按语境朗读/",
+        "meaning": "身体状态的；与坐姿、压力或疲劳相关。",
+        "example": "The word body-state appears in the comfort recommendation context.",
+        "chineseExample": "“body-state”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "becoming",
+        "phonetic": "/按语境朗读/",
+        "meaning": "正在成为；说明趋势形成。",
+        "example": "The word becoming appears in the comfort recommendation context.",
+        "chineseExample": "“becoming”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "discomfort",
+        "phonetic": "/按语境朗读/",
+        "meaning": "不适；身体不舒服的状态。",
+        "example": "The word discomfort appears in the comfort recommendation context.",
+        "chineseExample": "“discomfort”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "problem",
+        "phonetic": "/按语境朗读/",
+        "meaning": "问题；需要被设计解决的挑战。",
+        "example": "The word problem appears in the comfort recommendation context.",
+        "chineseExample": "“problem”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "itself",
+        "phonetic": "/按语境朗读/",
+        "meaning": "本身；强调对象自身。",
+        "example": "The word itself appears in the comfort recommendation context.",
+        "chineseExample": "“itself”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "taking",
+        "phonetic": "/按语境朗读/",
+        "meaning": "拿走；在语境中指削弱用户控制权。",
+        "example": "The word taking appears in the comfort recommendation context.",
+        "chineseExample": "“taking”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "your",
+        "phonetic": "/按语境朗读/",
+        "meaning": "你的；提示文案中直接面向用户。",
+        "example": "The word your appears in the comfort recommendation context.",
+        "chineseExample": "“your”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "stayed",
+        "phonetic": "/按语境朗读/",
+        "meaning": "保持；过去时，表示状态持续。",
+        "example": "The word stayed appears in the comfort recommendation context.",
+        "chineseExample": "“stayed”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "forty",
+        "phonetic": "/按语境朗读/",
+        "meaning": "四十；数字 40。",
+        "example": "The word forty appears in the comfort recommendation context.",
+        "chineseExample": "“forty”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "slightly",
+        "phonetic": "/按语境朗读/",
+        "meaning": "稍微；幅度很小。",
+        "example": "The word slightly appears in the comfort recommendation context.",
+        "chineseExample": "“slightly”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "specific",
+        "phonetic": "/按语境朗读/",
+        "meaning": "具体的；信息明确而不含糊。",
+        "example": "The word specific appears in the comfort recommendation context.",
+        "chineseExample": "“specific”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "refuse",
+        "phonetic": "/按语境朗读/",
+        "meaning": "拒绝；不接受系统建议。",
+        "example": "The word refuse appears in the comfort recommendation context.",
+        "chineseExample": "“refuse”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "respect",
+        "phonetic": "/按语境朗读/",
+        "meaning": "尊重；遵守用户选择或边界。",
+        "example": "The word respect appears in the comfort recommendation context.",
+        "chineseExample": "“respect”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "around",
+        "phonetic": "/按语境朗读/",
+        "meaning": "围绕；在某个主题或边界附近。",
+        "example": "The word around appears in the comfort recommendation context.",
+        "chineseExample": "“around”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "markers",
+        "phonetic": "/按语境朗读/",
+        "meaning": "标记；多个用于判断状态的线索。",
+        "example": "The word markers appears in the comfort recommendation context.",
+        "chineseExample": "“markers”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "override",
+        "phonetic": "/按语境朗读/",
+        "meaning": "覆盖；用户手动取消或替代系统动作。",
+        "example": "The word override appears in the comfort recommendation context.",
+        "chineseExample": "“override”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "well",
+        "phonetic": "/按语境朗读/",
+        "meaning": "也；用于补充说明另一个要点。",
+        "example": "The word well appears in the comfort recommendation context.",
+        "chineseExample": "“well”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "better",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更好的；比较级，表示更适合。",
+        "example": "The word better appears in the comfort recommendation context.",
+        "chineseExample": "“better”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "memory",
+        "phonetic": "/按语境朗读/",
+        "meaning": "记忆；系统保存偏好或历史信息。",
+        "example": "The word memory appears in the comfort recommendation context.",
+        "chineseExample": "“memory”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "helping",
+        "phonetic": "/按语境朗读/",
+        "meaning": "帮助；支持用户完成目标。",
+        "example": "The word helping appears in the comfort recommendation context.",
+        "chineseExample": "“helping”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "maintain",
+        "phonetic": "/按语境朗读/",
+        "meaning": "维持；保持某种状态。",
+        "example": "The word maintain appears in the comfort recommendation context.",
+        "chineseExample": "“maintain”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "secretly",
+        "phonetic": "/按语境朗读/",
+        "meaning": "暗中地；用户不知情的方式。",
+        "example": "The word secretly appears in the comfort recommendation context.",
+        "chineseExample": "“secretly”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "judging",
+        "phonetic": "/按语境朗读/",
+        "meaning": "评判；对用户身体或行为作出判断。",
+        "example": "The word judging appears in the comfort recommendation context.",
+        "chineseExample": "“judging”出现在座椅舒适推荐的语境中。"
+      },
+      {
+        "term": "their",
+        "phonetic": "/按语境朗读/",
+        "meaning": "他们的；指代驾驶员或用户的。",
+        "example": "The word their appears in the comfort recommendation context.",
+        "chineseExample": "“their”出现在座椅舒适推荐的语境中。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing adaptive comfort without taking control away",
+        "text": "Adaptive seat comfort is becoming an important part of intelligent cockpit design. A seat can read a pressure map, notice static posture, and suggest a small change before the driver feels strong discomfort. The HMI problem is not the adjustment itself; it is how the cockpit explains the adjustment without taking control away. A useful posture prompt should name the body-state signal, describe the expected benefit, and offer a reversible setting. For example, the assistant might say, \"Your lower back has stayed in one position for forty minutes. Increase lumbar support slightly?\" This wording is specific, calm, and easy to refuse. Designers should also respect the consent boundary around body sensing. If the vehicle uses pressure data or fatigue markers, the comfort panel needs a clear privacy indicator and a manual override. Timing matters as well. During complex traffic, a low-distraction message or subtle feedback is better than a detailed explanation. When the car is parked, the same recommendation can expand into profile memory, seat angle, heating, ventilation, and display distance. The goal is user agency. Drivers should feel that automation is helping them maintain comfort, not secretly judging their body or moving the seat without permission.",
+        "translation": "自适应座椅舒适正在成为智能座舱设计的重要组成部分。座椅可以读取压力分布图，发现静态坐姿，并在驾驶员感到明显不适之前建议一个小调整。HMI 问题不在调整本身，而在于座舱如何解释调整，同时不拿走控制权。有用的姿态提示应说明身体状态信号、描述预期收益，并提供可撤销设置。例如，助手可以说：“你的下背部已经保持同一姿势四十分钟。要稍微增加腰部支撑吗？”这种措辞具体、平静，也容易拒绝。设计师还应尊重身体感知周围的同意边界。如果车辆使用压力数据或疲劳标记，舒适面板需要清晰的隐私指示和手动覆盖。时机同样重要。在复杂交通中，低干扰信息或细微反馈比详细解释更合适。车辆驻车时，同一推荐可以展开为档案记忆、座椅角度、加热、通风和显示距离。目标是用户主导权。驾驶员应感觉自动化是在帮助他们保持舒适，而不是暗中评判身体或未经许可移动座椅。",
+        "source": null
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The HMI problem is not the adjustment itself; it is how the cockpit explains the adjustment without taking control away.",
+        "structure": "分号连接两个并列分句，not...it is how... 将重点从动作转向解释方式。",
+        "focus": "without taking control away 用来强调自动化必须保留用户控制权。",
+        "pattern": "The design problem is not the feature itself; it is how the system explains the feature without reducing user agency."
+      },
+      {
+        "sentence": "A useful posture prompt should name the body-state signal, describe the expected benefit, and offer a reversible setting.",
+        "structure": "主语 A useful posture prompt + should + 三个并列动词 name, describe, offer。",
+        "focus": "这类三动词结构适合描述提示文案的完整信息架构。",
+        "pattern": "A useful recommendation should name the context cue, describe the benefit, and offer a manual override."
+      },
+      {
+        "sentence": "During complex traffic, a low-distraction message or subtle feedback is better than a detailed explanation.",
+        "structure": "During complex traffic 作场景状语，better than 比较两种交互策略。",
+        "focus": "low-distraction message 和 subtle feedback 可用于表达驾驶负荷下的轻提示策略。",
+        "pattern": "During high workload, subtle feedback is better than a long spoken instruction."
+      },
+      {
+        "sentence": "Drivers should feel that automation is helping them maintain comfort, not secretly judging their body or moving the seat without permission.",
+        "structure": "should feel that 引导宾语从句，not...or... 排除两种负面感受。",
+        "focus": "helping them maintain comfort 强调辅助价值，without permission 强调同意边界。",
+        "pattern": "Users should feel that automation is supporting their goal, not making hidden decisions without permission."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 posture prompt、pressure map、consent boundary 和 reversible setting。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "跟读全文，标出所有描述身体状态信号、用户控制权和提示时机的表达。"
+      },
+      {
+        "title": "句型拆解",
+        "time": "5 分钟",
+        "detail": "用 not the adjustment itself、should name...describe...offer 和 During complex traffic... 各造一个 HMI 句子。"
+      },
+      {
+        "title": "设计复述",
+        "time": "6 分钟",
+        "detail": "用 5 句话说明一个座椅舒适推荐如何解释原因、请求同意、允许撤销并减少干扰。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-20-ai-summary-confidence-cues",
     "date": "2026-07-20",
     "title": "AI summaries and confidence cues in intelligent cockpits",
