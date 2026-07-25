@@ -1,5 +1,690 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-25-range-confidence-charging-guidance",
+    "date": "2026-07-25",
+    "title": "Range confidence and charging guidance in intelligent cockpits",
+    "topic": "智能座舱续航置信度与充电引导",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述电动车智能座舱中的续航置信度、充电绕行、能量缓冲和可解释路线推荐。",
+    "words": [
+      {
+        "term": "range confidence",
+        "phonetic": "/reɪndʒ ˈkɑːnfɪdəns/",
+        "meaning": "续航置信度；系统对剩余续航预测可靠程度的表达",
+        "example": "Range confidence should be shown before the cockpit recommends a faster charger.",
+        "chineseExample": "在座舱推荐更快充电站之前，应先呈现续航置信度。"
+      },
+      {
+        "term": "charging detour",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr/",
+        "meaning": "充电绕行；为了补能而偏离原路线的行程调整",
+        "example": "A charging detour feels acceptable when the interface explains the saved waiting time.",
+        "chineseExample": "当界面解释节省的等待时间时，充电绕行会更容易被接受。"
+      },
+      {
+        "term": "energy buffer",
+        "phonetic": "/ˈenərdʒi ˈbʌfər/",
+        "meaning": "能量缓冲；为天气、拥堵或路线变化预留的电量余量",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "规划器会为坡道、寒冷天气和意外拥堵保留能量缓冲。"
+      },
+      {
+        "term": "arrival estimate",
+        "phonetic": "/əˈraɪvəl ˈestɪmət/",
+        "meaning": "到达估算；系统预测到达目的地或充电站时的时间、电量或状态",
+        "example": "The arrival estimate must update when the driver changes cabin temperature or speed.",
+        "chineseExample": "当驾驶员改变座舱温度或车速时，到达估算必须更新。"
+      },
+      {
+        "term": "charger availability",
+        "phonetic": "/ˈtʃɑːrdʒər əˌveɪləˈbɪləti/",
+        "meaning": "充电桩可用性；充电站是否空闲、可用和适配车辆的状态",
+        "example": "Charger availability is useful only when the timestamp is visible and recent.",
+        "chineseExample": "只有时间戳可见且足够新时，充电桩可用性才有参考价值。"
+      },
+      {
+        "term": "route trade-off",
+        "phonetic": "/ruːt ˈtreɪd ɔːf/",
+        "meaning": "路线权衡；在时间、能耗、费用、可靠性之间做出的选择",
+        "example": "The route trade-off compares a shorter trip with a more reliable charging stop.",
+        "chineseExample": "路线权衡会比较更短行程和更可靠充电停靠之间的取舍。"
+      },
+      {
+        "term": "state of charge",
+        "phonetic": "/steɪt əv tʃɑːrdʒ/",
+        "meaning": "荷电状态；电池当前剩余电量比例，常缩写为 SOC",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "荷电状态应搭配对驾驶影响的通俗解释。"
+      },
+      {
+        "term": "preconditioning cue",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ kjuː/",
+        "meaning": "预调节提示；提醒电池或座舱正在为充电、舒适或效率做准备的信息",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "预调节提示会告诉驾驶员为什么电池在到达前升温。"
+      },
+      {
+        "term": "fallback station",
+        "phonetic": "/ˈfɔːlbæk ˈsteɪʃn/",
+        "meaning": "备用充电站；首选充电点不可用时可切换的备选地点",
+        "example": "The fallback station should appear before the driver feels locked into one plan.",
+        "chineseExample": "备用充电站应在驾驶员感觉被锁定到单一方案之前出现。"
+      },
+      {
+        "term": "explainable recommendation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
+        "meaning": "可解释推荐；说明依据、风险和替代方案的系统建议",
+        "example": "An explainable recommendation states the energy reason, time impact, and available undo path.",
+        "chineseExample": "可解释推荐会说明能量原因、时间影响和可用的撤销路径。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "range confidence",
+        "phonetic": "/reɪndʒ ˈkɑːnfɪdəns/",
+        "meaning": "续航置信度；系统对剩余续航预测可靠程度的表达",
+        "example": "Range confidence should be shown before the cockpit recommends a faster charger.",
+        "chineseExample": "在座舱推荐更快充电站之前，应先呈现续航置信度。"
+      },
+      {
+        "term": "charging detour",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr/",
+        "meaning": "充电绕行；为了补能而偏离原路线的行程调整",
+        "example": "A charging detour feels acceptable when the interface explains the saved waiting time.",
+        "chineseExample": "当界面解释节省的等待时间时，充电绕行会更容易被接受。"
+      },
+      {
+        "term": "energy buffer",
+        "phonetic": "/ˈenərdʒi ˈbʌfər/",
+        "meaning": "能量缓冲；为天气、拥堵或路线变化预留的电量余量",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "规划器会为坡道、寒冷天气和意外拥堵保留能量缓冲。"
+      },
+      {
+        "term": "arrival estimate",
+        "phonetic": "/əˈraɪvəl ˈestɪmət/",
+        "meaning": "到达估算；系统预测到达目的地或充电站时的时间、电量或状态",
+        "example": "The arrival estimate must update when the driver changes cabin temperature or speed.",
+        "chineseExample": "当驾驶员改变座舱温度或车速时，到达估算必须更新。"
+      },
+      {
+        "term": "charger availability",
+        "phonetic": "/ˈtʃɑːrdʒər əˌveɪləˈbɪləti/",
+        "meaning": "充电桩可用性；充电站是否空闲、可用和适配车辆的状态",
+        "example": "Charger availability is useful only when the timestamp is visible and recent.",
+        "chineseExample": "只有时间戳可见且足够新时，充电桩可用性才有参考价值。"
+      },
+      {
+        "term": "route trade-off",
+        "phonetic": "/ruːt ˈtreɪd ɔːf/",
+        "meaning": "路线权衡；在时间、能耗、费用、可靠性之间做出的选择",
+        "example": "The route trade-off compares a shorter trip with a more reliable charging stop.",
+        "chineseExample": "路线权衡会比较更短行程和更可靠充电停靠之间的取舍。"
+      },
+      {
+        "term": "state of charge",
+        "phonetic": "/steɪt əv tʃɑːrdʒ/",
+        "meaning": "荷电状态；电池当前剩余电量比例，常缩写为 SOC",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "荷电状态应搭配对驾驶影响的通俗解释。"
+      },
+      {
+        "term": "preconditioning cue",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ kjuː/",
+        "meaning": "预调节提示；提醒电池或座舱正在为充电、舒适或效率做准备的信息",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "预调节提示会告诉驾驶员为什么电池在到达前升温。"
+      },
+      {
+        "term": "fallback station",
+        "phonetic": "/ˈfɔːlbæk ˈsteɪʃn/",
+        "meaning": "备用充电站；首选充电点不可用时可切换的备选地点",
+        "example": "The fallback station should appear before the driver feels locked into one plan.",
+        "chineseExample": "备用充电站应在驾驶员感觉被锁定到单一方案之前出现。"
+      },
+      {
+        "term": "explainable recommendation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
+        "meaning": "可解释推荐；说明依据、风险和替代方案的系统建议",
+        "example": "An explainable recommendation states the energy reason, time impact, and available undo path.",
+        "chineseExample": "可解释推荐会说明能量原因、时间影响和可用的撤销路径。"
+      },
+      {
+        "term": "anxiety",
+        "phonetic": "/按语境朗读/",
+        "meaning": "焦虑；对续航或充电不确定的担心",
+        "example": "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
+        "chineseExample": "在这句话中，“anxiety”可理解为“焦虑；对续航或充电不确定的担心”。"
+      },
+      {
+        "term": "arrival",
+        "phonetic": "/按语境朗读/",
+        "meaning": "到达；抵达目的地或充电点",
+        "example": "The arrival estimate must update when the driver changes cabin temperature or speed.",
+        "chineseExample": "在这句话中，“arrival”可理解为“到达；抵达目的地或充电点”。"
+      },
+      {
+        "term": "assumptions",
+        "phonetic": "/按语境朗读/",
+        "meaning": "假设；系统推理所依赖的条件",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“assumptions”可理解为“假设；系统推理所依赖的条件”。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "可用性；资源是否可用的状态",
+        "example": "Charger availability is useful only when the timestamp is visible and recent.",
+        "chineseExample": "在这句话中，“availability”可理解为“可用性；资源是否可用的状态”。"
+      },
+      {
+        "term": "battery",
+        "phonetic": "/按语境朗读/",
+        "meaning": "电池；车辆储能系统",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "在这句话中，“battery”可理解为“电池；车辆储能系统”。"
+      },
+      {
+        "term": "best",
+        "phonetic": "/按语境朗读/",
+        "meaning": "最佳的；最合适的",
+        "example": "The best message makes this route trade-off visible in one glance and keeps the next action reversible.",
+        "chineseExample": "在这句话中，“best”可理解为“最佳的；最合适的”。"
+      },
+      {
+        "term": "buffer",
+        "phonetic": "/ˈbʌfər/",
+        "meaning": "缓冲；预留余量",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“buffer”可理解为“缓冲；预留余量”。"
+      },
+      {
+        "term": "busy",
+        "phonetic": "/按语境朗读/",
+        "meaning": "繁忙的；资源占用较高的",
+        "example": "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
+        "chineseExample": "在这句话中，“busy”可理解为“繁忙的；资源占用较高的”。"
+      },
+      {
+        "term": "charge",
+        "phonetic": "/tʃɑːrdʒ/",
+        "meaning": "充电量；电池中可用电能的状态",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "在这句话中，“charge”可理解为“充电量；电池中可用电能的状态”。"
+      },
+      {
+        "term": "cold",
+        "phonetic": "/按语境朗读/",
+        "meaning": "寒冷的；温度较低的",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“cold”可理解为“寒冷的；温度较低的”。"
+      },
+      {
+        "term": "colder",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更冷的；温度进一步降低的",
+        "example": "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
+        "chineseExample": "在这句话中，“colder”可理解为“更冷的；温度进一步降低的”。"
+      },
+      {
+        "term": "comfortable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "舒适的；留有安全余量的",
+        "example": "If confidence is high, the cockpit can say that the current route should reach the destination with a comfortable energy buffer.",
+        "chineseExample": "在这句话中，“comfortable”可理解为“舒适的；留有安全余量的”。"
+      },
+      {
+        "term": "compares",
+        "phonetic": "/按语境朗读/",
+        "meaning": "比较；并列呈现不同选项",
+        "example": "The route trade-off compares a shorter trip with a more reliable charging stop.",
+        "chineseExample": "在这句话中，“compares”可理解为“比较；并列呈现不同选项”。"
+      },
+      {
+        "term": "congestion",
+        "phonetic": "/按语境朗读/",
+        "meaning": "拥堵；交通流受阻",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“congestion”可理解为“拥堵；交通流受阻”。"
+      },
+      {
+        "term": "continue",
+        "phonetic": "/按语境朗读/",
+        "meaning": "继续；保持行程或任务推进",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“continue”可理解为“继续；保持行程或任务推进”。"
+      },
+      {
+        "term": "detour",
+        "phonetic": "/ˈdiːtʊr/",
+        "meaning": "绕行；偏离原路线",
+        "example": "A charging detour feels acceptable when the interface explains the saved waiting time.",
+        "chineseExample": "在这句话中，“detour”可理解为“绕行；偏离原路线”。"
+      },
+      {
+        "term": "distance",
+        "phonetic": "/按语境朗读/",
+        "meaning": "距离；剩余可行驶里程或空间长度",
+        "example": "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
+        "chineseExample": "在这句话中，“distance”可理解为“距离；剩余可行驶里程或空间长度”。"
+      },
+      {
+        "term": "driver-verifiable",
+        "phonetic": "/ˈdraɪvər ˈverɪfaɪəbl/",
+        "meaning": "驾驶员可验证的；驾驶员能快速核对依据或结果的",
+        "example": "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
+        "chineseExample": "在这句话中，“driver-verifiable”可理解为“驾驶员可验证的；驾驶员能快速核对依据或结果的”。"
+      },
+      {
+        "term": "drops",
+        "phonetic": "/按语境朗读/",
+        "meaning": "下降；可靠性或数值变低",
+        "example": "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
+        "chineseExample": "在这句话中，“drops”可理解为“下降；可靠性或数值变低”。"
+      },
+      {
+        "term": "electric",
+        "phonetic": "/按语境朗读/",
+        "meaning": "电动的；由电能驱动",
+        "example": "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
+        "chineseExample": "在这句话中，“electric”可理解为“电动的；由电能驱动”。"
+      },
+      {
+        "term": "energy",
+        "phonetic": "/ˈenərdʒi/",
+        "meaning": "能量；车辆电池电量或消耗能力",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“energy”可理解为“能量；车辆电池电量或消耗能力”。"
+      },
+      {
+        "term": "estimate",
+        "phonetic": "/ˈestɪmət/",
+        "meaning": "估算；基于模型的预测值",
+        "example": "The arrival estimate must update when the driver changes cabin temperature or speed.",
+        "chineseExample": "在这句话中，“estimate”可理解为“估算；基于模型的预测值”。"
+      },
+      {
+        "term": "explainable",
+        "phonetic": "/ɪkˈspleɪnəbl/",
+        "meaning": "可解释的；用户能理解依据的",
+        "example": "An explainable recommendation states the energy reason, time impact, and available undo path.",
+        "chineseExample": "在这句话中，“explainable”可理解为“可解释的；用户能理解依据的”。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃn/",
+        "meaning": "解释；把系统判断依据说明清楚的信息",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "在这句话中，“explanation”可理解为“解释；把系统判断依据说明清楚的信息”。"
+      },
+      {
+        "term": "fast",
+        "phonetic": "/fæst/",
+        "meaning": "快速的；充电速度或响应速度较高的",
+        "example": "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
+        "chineseExample": "在这句话中，“fast”可理解为“快速的；充电速度或响应速度较高的”。"
+      },
+      {
+        "term": "faster",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更快的；速度或效率更高的",
+        "example": "Range confidence should be shown before the cockpit recommends a faster charger.",
+        "chineseExample": "在这句话中，“faster”可理解为“更快的；速度或效率更高的”。"
+      },
+      {
+        "term": "hills",
+        "phonetic": "/按语境朗读/",
+        "meaning": "坡道；影响能耗的上坡或下坡路况",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“hills”可理解为“坡道；影响能耗的上坡或下坡路况”。"
+      },
+      {
+        "term": "impact",
+        "phonetic": "/按语境朗读/",
+        "meaning": "影响；对时间、能耗或体验的结果",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "在这句话中，“impact”可理解为“影响；对时间、能耗或体验的结果”。"
+      },
+      {
+        "term": "journey",
+        "phonetic": "/按语境朗读/",
+        "meaning": "旅程；驾驶行程",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“journey”可理解为“旅程；驾驶行程”。"
+      },
+      {
+        "term": "leave",
+        "phonetic": "/按语境朗读/",
+        "meaning": "专业语境词；可结合智能座舱英文原文理解",
+        "example": "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
+        "chineseExample": "在这句话中，“leave”可理解为“专业语境词”。"
+      },
+      {
+        "term": "live",
+        "phonetic": "/按语境朗读/",
+        "meaning": "实时的；来自当前状态的数据",
+        "example": "When live charger availability is uncertain, the cockpit should show the timestamp and offer a fallback station.",
+        "chineseExample": "在这句话中，“live”可理解为“实时的；来自当前状态的数据”。"
+      },
+      {
+        "term": "locked",
+        "phonetic": "/按语境朗读/",
+        "meaning": "被锁定的；缺少切换自由的",
+        "example": "The fallback station should appear before the driver feels locked into one plan.",
+        "chineseExample": "在这句话中，“locked”可理解为“被锁定的；缺少切换自由的”。"
+      },
+      {
+        "term": "makes",
+        "phonetic": "/meɪks/",
+        "meaning": "使得；让某个界面结果成立",
+        "example": "The best message makes this route trade-off visible in one glance and keeps the next action reversible.",
+        "chineseExample": "在这句话中，“makes”可理解为“使得；让某个界面结果成立”。"
+      },
+      {
+        "term": "model",
+        "phonetic": "/按语境朗读/",
+        "meaning": "模型；系统用于预测的计算逻辑",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“model”可理解为“模型；系统用于预测的计算逻辑”。"
+      },
+      {
+        "term": "number",
+        "phonetic": "/按语境朗读/",
+        "meaning": "数字；数值表达",
+        "example": "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
+        "chineseExample": "在这句话中，“number”可理解为“数字；数值表达”。"
+      },
+      {
+        "term": "offer",
+        "phonetic": "/按语境朗读/",
+        "meaning": "提供；给出可选方案",
+        "example": "When live charger availability is uncertain, the cockpit should show the timestamp and offer a fallback station.",
+        "chineseExample": "在这句话中，“offer”可理解为“提供；给出可选方案”。"
+      },
+      {
+        "term": "paired",
+        "phonetic": "/按语境朗读/",
+        "meaning": "配对的；一起呈现的",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "在这句话中，“paired”可理解为“配对的；一起呈现的”。"
+      },
+      {
+        "term": "plain-language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "通俗语言的；避免工程术语、便于驾驶员理解的",
+        "example": "State of charge should be paired with a plain-language explanation of driving impact.",
+        "chineseExample": "在这句话中，“plain-language”可理解为“通俗语言的；避免工程术语、便于驾驶员理解的”。"
+      },
+      {
+        "term": "plan",
+        "phonetic": "/按语境朗读/",
+        "meaning": "方案；规划结果",
+        "example": "The fallback station should appear before the driver feels locked into one plan.",
+        "chineseExample": "在这句话中，“plan”可理解为“方案；规划结果”。"
+      },
+      {
+        "term": "planner",
+        "phonetic": "/按语境朗读/",
+        "meaning": "规划器；生成路线或能量策略的系统",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“planner”可理解为“规划器；生成路线或能量策略的系统”。"
+      },
+      {
+        "term": "plans",
+        "phonetic": "/按语境朗读/",
+        "meaning": "规划；制定路线或策略",
+        "example": "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
+        "chineseExample": "在这句话中，“plans”可理解为“规划；制定路线或策略”。"
+      },
+      {
+        "term": "preconditioning",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ/",
+        "meaning": "预调节；提前调节电池或座舱状态",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "在这句话中，“preconditioning”可理解为“预调节；提前调节电池或座舱状态”。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/按语境朗读/",
+        "meaning": "保留；维持原有连续性",
+        "example": "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
+        "chineseExample": "在这句话中，“preserve”可理解为“保留；维持原有连续性”。"
+      },
+      {
+        "term": "rather",
+        "phonetic": "/ˈræðər/",
+        "meaning": "而是；用于 rather than 结构，表示取代或对比",
+        "example": "Good charging guidance also compares options rather than forcing one answer.",
+        "chineseExample": "在这句话中，“rather”可理解为“而是；用于 rather than 结构，表示取代或对比”。"
+      },
+      {
+        "term": "reach",
+        "phonetic": "/按语境朗读/",
+        "meaning": "到达；实现抵达",
+        "example": "If confidence is high, the cockpit can say that the current route should reach the destination with a comfortable energy buffer.",
+        "chineseExample": "在这句话中，“reach”可理解为“到达；实现抵达”。"
+      },
+      {
+        "term": "recent",
+        "phonetic": "/按语境朗读/",
+        "meaning": "近期的；刚发生或刚更新的",
+        "example": "Charger availability is useful only when the timestamp is visible and recent.",
+        "chineseExample": "在这句话中，“recent”可理解为“近期的；刚发生或刚更新的”。"
+      },
+      {
+        "term": "recommends",
+        "phonetic": "/按语境朗读/",
+        "meaning": "推荐；提出建议",
+        "example": "Range confidence should be shown before the cockpit recommends a faster charger.",
+        "chineseExample": "在这句话中，“recommends”可理解为“推荐；提出建议”。"
+      },
+      {
+        "term": "reliable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "可靠的；更值得信任的",
+        "example": "The route trade-off compares a shorter trip with a more reliable charging stop.",
+        "chineseExample": "在这句话中，“reliable”可理解为“可靠的；更值得信任的”。"
+      },
+      {
+        "term": "remaining",
+        "phonetic": "/按语境朗读/",
+        "meaning": "剩余的；尚可使用的",
+        "example": "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
+        "chineseExample": "在这句话中，“remaining”可理解为“剩余的；尚可使用的”。"
+      },
+      {
+        "term": "saved",
+        "phonetic": "/按语境朗读/",
+        "meaning": "节省的；被减少的",
+        "example": "A charging detour feels acceptable when the interface explains the saved waiting time.",
+        "chineseExample": "在这句话中，“saved”可理解为“节省的；被减少的”。"
+      },
+      {
+        "term": "segment",
+        "phonetic": "/按语境朗读/",
+        "meaning": "路段；路线的一部分",
+        "example": "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
+        "chineseExample": "在这句话中，“segment”可理解为“路段；路线的一部分”。"
+      },
+      {
+        "term": "smaller",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更小的；余量较低的",
+        "example": "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
+        "chineseExample": "在这句话中，“smaller”可理解为“更小的；余量较低的”。"
+      },
+      {
+        "term": "states",
+        "phonetic": "/按语境朗读/",
+        "meaning": "说明；陈述关键信息",
+        "example": "An explainable recommendation states the energy reason, time impact, and available undo path.",
+        "chineseExample": "在这句话中，“states”可理解为“说明；陈述关键信息”。"
+      },
+      {
+        "term": "station",
+        "phonetic": "/按语境朗读/",
+        "meaning": "站点；充电或服务地点",
+        "example": "The fallback station should appear before the driver feels locked into one plan.",
+        "chineseExample": "在这句话中，“station”可理解为“站点；充电或服务地点”。"
+      },
+      {
+        "term": "study",
+        "phonetic": "/按语境朗读/",
+        "meaning": "研究；深入分析",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“study”可理解为“研究；深入分析”。"
+      },
+      {
+        "term": "tells",
+        "phonetic": "/telz/",
+        "meaning": "告知；向用户说明原因或状态",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "在这句话中，“tells”可理解为“告知；向用户说明原因或状态”。"
+      },
+      {
+        "term": "terrain",
+        "phonetic": "/təˈreɪn/",
+        "meaning": "地形；道路坡度和环境形态",
+        "example": "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
+        "chineseExample": "在这句话中，“terrain”可理解为“地形；道路坡度和环境形态”。"
+      },
+      {
+        "term": "timely",
+        "phonetic": "/按语境朗读/",
+        "meaning": "及时的；在合适时间出现的",
+        "example": "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
+        "chineseExample": "在这句话中，“timely”可理解为“及时的；在合适时间出现的”。"
+      },
+      {
+        "term": "timestamp",
+        "phonetic": "/ˈtaɪmstæmp/",
+        "meaning": "时间戳；数据更新的时间标记",
+        "example": "Charger availability is useful only when the timestamp is visible and recent.",
+        "chineseExample": "在这句话中，“timestamp”可理解为“时间戳；数据更新的时间标记”。"
+      },
+      {
+        "term": "trade-off",
+        "phonetic": "/ˈtreɪd ɔːf/",
+        "meaning": "权衡；在多个目标之间做出的取舍",
+        "example": "The route trade-off compares a shorter trip with a more reliable charging stop.",
+        "chineseExample": "在这句话中，“trade-off”可理解为“权衡；在多个目标之间做出的取舍”。"
+      },
+      {
+        "term": "undo",
+        "phonetic": "/按语境朗读/",
+        "meaning": "撤销；取消系统动作",
+        "example": "An explainable recommendation states the energy reason, time impact, and available undo path.",
+        "chineseExample": "在这句话中，“undo”可理解为“撤销；取消系统动作”。"
+      },
+      {
+        "term": "unexpected",
+        "phonetic": "/按语境朗读/",
+        "meaning": "意外的；未提前预知的",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“unexpected”可理解为“意外的；未提前预知的”。"
+      },
+      {
+        "term": "update",
+        "phonetic": "/按语境朗读/",
+        "meaning": "更新；刷新状态",
+        "example": "The arrival estimate must update when the driver changes cabin temperature or speed.",
+        "chineseExample": "在这句话中，“update”可理解为“更新；刷新状态”。"
+      },
+      {
+        "term": "waiting",
+        "phonetic": "/按语境朗读/",
+        "meaning": "等待；为充电或服务停留",
+        "example": "A charging detour feels acceptable when the interface explains the saved waiting time.",
+        "chineseExample": "在这句话中，“waiting”可理解为“等待；为充电或服务停留”。"
+      },
+      {
+        "term": "warming",
+        "phonetic": "/按语境朗读/",
+        "meaning": "升温；温度提高",
+        "example": "A preconditioning cue tells the driver why the battery is warming before arrival.",
+        "chineseExample": "在这句话中，“warming”可理解为“升温；温度提高”。"
+      },
+      {
+        "term": "weak",
+        "phonetic": "/按语境朗读/",
+        "meaning": "薄弱的；可靠性较低的",
+        "example": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "chineseExample": "在这句话中，“weak”可理解为“薄弱的；可靠性较低的”。"
+      },
+      {
+        "term": "weather",
+        "phonetic": "/按语境朗读/",
+        "meaning": "天气；外部环境条件",
+        "example": "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
+        "chineseExample": "在这句话中，“weather”可理解为“天气；外部环境条件”。"
+      },
+      {
+        "term": "wind",
+        "phonetic": "/按语境朗读/",
+        "meaning": "风；影响能耗的空气流动",
+        "example": "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
+        "chineseExample": "在这句话中，“wind”可理解为“风；影响能耗的空气流动”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Explaining energy decisions in the cockpit",
+        "text": "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable. A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability. The interface should therefore show range confidence together with the recommendation. If confidence is high, the cockpit can say that the current route should reach the destination with a comfortable energy buffer. If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed. Good charging guidance also compares options rather than forcing one answer. A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer. The best message makes this route trade-off visible in one glance and keeps the next action reversible. Before arrival, a preconditioning cue can explain why the battery is warming and how it improves charging time. When live charger availability is uncertain, the cockpit should show the timestamp and offer a fallback station. The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "translation": "当电动车规划行程时，智能座舱应以平静、及时且驾驶员可验证的方式解释能量决策。单纯的续航数字并不够，因为剩余距离取决于车速、座舱温度、地形、风、交通、电池温度和充电桩可用性。因此界面应把续航置信度和推荐一起呈现。如果置信度较高，座舱可以说明当前路线应能以舒适的能量缓冲到达目的地。如果置信度下降，它应说明原因：更冷的天气、更快的高速路段、繁忙的充电桩，或驾驶员车速的近期变化。优秀的充电引导还会比较选项，而不是强迫一个答案。附近的快充站可能减少焦虑但增加充电绕行，后面的站点可能保持路线连续性但留下更小余量。最佳信息会一眼呈现这种路线权衡，并让下一步动作可撤销。到达前，预调节提示可以解释电池为什么升温，以及它如何改善充电时间。当实时充电桩可用性不确定时，座舱应显示时间戳并提供备用充电站。目标不是让驾驶员研究能量模型，而是帮助他们信任方案、质疑薄弱假设，并以更低认知负荷继续行程。",
+        "source": null
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The interface should therefore show range confidence together with the recommendation.",
+        "structure": "主语 The interface + 情态动词 should + 动词 show；therefore 表示因果承接。",
+        "focus": "show range confidence together with the recommendation 表示把置信度和推荐动作一起呈现。",
+        "pattern": "The cockpit should show system confidence together with the recommended action."
+      },
+      {
+        "sentence": "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
+        "structure": "If 条件从句 + 主句 should name；冒号后列出具体原因。",
+        "focus": "name the reason 用于强调系统不只给结论，还要说明触发因素。",
+        "pattern": "If reliability drops, the interface should name the reason before suggesting a new route."
+      },
+      {
+        "sentence": "Good charging guidance also compares options rather than forcing one answer.",
+        "structure": "主语 Good charging guidance + 谓语 compares；rather than 连接被避免的设计行为。",
+        "focus": "compares options rather than forcing one answer 适合描述可控、可选择的推荐。",
+        "pattern": "Good assistance compares options rather than forcing one decision."
+      },
+      {
+        "sentence": "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
+        "structure": "not to..., it is to... 对比错误目标和真实目标；后半句用三个并列动词。",
+        "focus": "trust the plan, question weak assumptions, and continue the journey 描述用户最终收益。",
+        "pattern": "The goal is not to expose complexity; it is to help users decide with less cognitive load."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 range confidence、energy buffer、charging detour 和 fallback station。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "detail": "跟读全文两遍，标出所有说明置信度、充电原因、路线权衡和备用方案的表达。"
+      },
+      {
+        "title": "句型替换",
+        "time": "5 分钟",
+        "detail": "用 If confidence drops...、rather than... 和 The goal is not to... 改写一个充电推荐提示。"
+      },
+      {
+        "title": "设计复述",
+        "time": "6 分钟",
+        "detail": "用 5 句话复述系统如何解释续航预测、充电桩可用性、时间影响和撤销路径。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-21-adaptive-seat-comfort-posture-prompts",
     "date": "2026-07-21",
     "title": "Adaptive seat comfort and posture prompts in intelligent cockpits",
