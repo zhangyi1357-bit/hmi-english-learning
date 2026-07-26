@@ -1,5 +1,753 @@
 [
   {
+    "id": "2026-07-26-contextual-voice-guidance",
+    "date": "2026-07-26",
+    "title": "Contextual voice guidance and low-interruption prompts in intelligent cockpits",
+    "topic": "智能座舱情境化语音引导与低干扰提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车内语音助手在不同驾驶负荷下的提示时机、意图修复、视觉兜底和确认短语。",
+    "words": [
+      {
+        "term": "contextual voice guidance",
+        "phonetic": "/kənˈtekstʃuəl vɔɪs ˈɡaɪdns/",
+        "meaning": "情境化语音引导；根据驾驶场景、任务状态和用户意图调整的语音提示",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "当驾驶员正在并线时，情境化语音引导应缩短提示。"
+      },
+      {
+        "term": "low-interruption prompt",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃn prɑːmpt/",
+        "meaning": "低干扰提示；尽量不打断驾驶注意力的系统提示",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "低干扰提示会利用时机、语气和优先级来保护注意力。"
+      },
+      {
+        "term": "turn-taking window",
+        "phonetic": "/tɜːrn ˈteɪkɪŋ ˈwɪndoʊ/",
+        "meaning": "轮流发话窗口；系统等待用户回应或允许用户插话的时间段",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "助手在提出是非问题后会保持一个轮流发话窗口。"
+      },
+      {
+        "term": "speech latency",
+        "phonetic": "/spiːtʃ ˈleɪtənsi/",
+        "meaning": "语音延迟；从用户说话到系统回应之间的等待时间",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "当驾驶员期待快速确认时，语音延迟会更明显。"
+      },
+      {
+        "term": "intent repair",
+        "phonetic": "/ɪnˈtent rɪˈper/",
+        "meaning": "意图修复；系统在理解错误或不完整时帮助用户澄清真实意图",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "意图修复应只重复不确定的信息槽，而不是整条指令。"
+      },
+      {
+        "term": "acoustic cue",
+        "phonetic": "/əˈkuːstɪk kjuː/",
+        "meaning": "声学提示；用声音、音色或短提示音传达状态的反馈",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "柔和的声学提示可以确认座舱指令已被接收。"
+      },
+      {
+        "term": "visual fallback",
+        "phonetic": "/ˈvɪʒuəl ˈfɔːlbæk/",
+        "meaning": "视觉兜底；当语音不适合或未被理解时提供的屏幕信息",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "视觉兜底会显示同一选项，而不强迫驾驶员再听一遍。"
+      },
+      {
+        "term": "dialog state",
+        "phonetic": "/ˈdaɪəlɔːɡ steɪt/",
+        "meaning": "对话状态；系统记录当前会话进度、意图和待确认信息的状态",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "对话状态帮助助手在导航播报打断请求后继续处理。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶、观察、决策和交互共同造成的认知与操作压力",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "驾驶员负荷应决定答案是播报、延后，还是转移到屏幕显示。"
+      },
+      {
+        "term": "confirmation phrase",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn freɪz/",
+        "meaning": "确认短语；用于验证用户意图、范围或后果的简短表达",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "确认短语应说明动作、目标和可撤销结果。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "contextual voice guidance",
+        "phonetic": "/kənˈtekstʃuəl vɔɪs ˈɡaɪdns/",
+        "meaning": "情境化语音引导；根据驾驶场景、任务状态和用户意图调整的语音提示",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "当驾驶员正在并线时，情境化语音引导应缩短提示。"
+      },
+      {
+        "term": "low-interruption prompt",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃn prɑːmpt/",
+        "meaning": "低干扰提示；尽量不打断驾驶注意力的系统提示",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "低干扰提示会利用时机、语气和优先级来保护注意力。"
+      },
+      {
+        "term": "turn-taking window",
+        "phonetic": "/tɜːrn ˈteɪkɪŋ ˈwɪndoʊ/",
+        "meaning": "轮流发话窗口；系统等待用户回应或允许用户插话的时间段",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "助手在提出是非问题后会保持一个轮流发话窗口。"
+      },
+      {
+        "term": "speech latency",
+        "phonetic": "/spiːtʃ ˈleɪtənsi/",
+        "meaning": "语音延迟；从用户说话到系统回应之间的等待时间",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "当驾驶员期待快速确认时，语音延迟会更明显。"
+      },
+      {
+        "term": "intent repair",
+        "phonetic": "/ɪnˈtent rɪˈper/",
+        "meaning": "意图修复；系统在理解错误或不完整时帮助用户澄清真实意图",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "意图修复应只重复不确定的信息槽，而不是整条指令。"
+      },
+      {
+        "term": "acoustic cue",
+        "phonetic": "/əˈkuːstɪk kjuː/",
+        "meaning": "声学提示；用声音、音色或短提示音传达状态的反馈",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "柔和的声学提示可以确认座舱指令已被接收。"
+      },
+      {
+        "term": "visual fallback",
+        "phonetic": "/ˈvɪʒuəl ˈfɔːlbæk/",
+        "meaning": "视觉兜底；当语音不适合或未被理解时提供的屏幕信息",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "视觉兜底会显示同一选项，而不强迫驾驶员再听一遍。"
+      },
+      {
+        "term": "dialog state",
+        "phonetic": "/ˈdaɪəlɔːɡ steɪt/",
+        "meaning": "对话状态；系统记录当前会话进度、意图和待确认信息的状态",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "对话状态帮助助手在导航播报打断请求后继续处理。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶、观察、决策和交互共同造成的认知与操作压力",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "驾驶员负荷应决定答案是播报、延后，还是转移到屏幕显示。"
+      },
+      {
+        "term": "confirmation phrase",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn freɪz/",
+        "meaning": "确认短语；用于验证用户意图、范围或后果的简短表达",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "确认短语应说明动作、目标和可撤销结果。"
+      },
+      {
+        "term": "contextual",
+        "phonetic": "/kənˈtekstʃuəl/",
+        "meaning": "情境化的；根据上下文调整的",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "在这句话中，“contextual”可理解为“情境化的；根据上下文调整的”。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；口头交互通道",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "在这句话中，“voice”可理解为“语音；口头交互通道”。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/ˈɡaɪdns/",
+        "meaning": "引导；帮助用户完成任务的提示",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "在这句话中，“guidance”可理解为“引导；帮助用户完成任务的提示”。"
+      },
+      {
+        "term": "shorten",
+        "phonetic": "/ˈʃɔːrtn/",
+        "meaning": "缩短；减少长度或时长",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "在这句话中，“shorten”可理解为“缩短；减少长度或时长”。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统给用户的短信息",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“prompt”可理解为“提示；系统给用户的短信息”。"
+      },
+      {
+        "term": "merging",
+        "phonetic": "/ˈmɜːrdʒɪŋ/",
+        "meaning": "并线；车辆汇入相邻车道或交通流",
+        "example": "Contextual voice guidance should shorten the prompt when the driver is merging.",
+        "chineseExample": "在这句话中，“merging”可理解为“并线；车辆汇入相邻车道或交通流”。"
+      },
+      {
+        "term": "low-interruption",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃn/",
+        "meaning": "低干扰的；减少打断注意力的",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“low-interruption”可理解为“低干扰的；减少打断注意力的”。"
+      },
+      {
+        "term": "interruption",
+        "phonetic": "/ˌɪntəˈrʌpʃn/",
+        "meaning": "打断；中断当前注意或任务",
+        "example": "The best cockpit voice experience is not the longest answer; it is the right interruption at the right moment.",
+        "chineseExample": "在这句话中，“interruption”可理解为“打断；中断当前注意或任务”。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；提示出现的时间选择",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“timing”可理解为“时机；提示出现的时间选择”。"
+      },
+      {
+        "term": "tone",
+        "phonetic": "/toʊn/",
+        "meaning": "语气；声音表达的情绪和强度",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“tone”可理解为“语气；声音表达的情绪和强度”。"
+      },
+      {
+        "term": "priority",
+        "phonetic": "/praɪˈɔːrəti/",
+        "meaning": "优先级；信息重要程度的排序",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“priority”可理解为“优先级；信息重要程度的排序”。"
+      },
+      {
+        "term": "protect",
+        "phonetic": "/prəˈtekt/",
+        "meaning": "保护；避免注意力被破坏",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“protect”可理解为“保护；避免注意力被破坏”。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户观察和处理信息的能力",
+        "example": "A low-interruption prompt uses timing, tone, and priority to protect attention.",
+        "chineseExample": "在这句话中，“attention”可理解为“注意力；用户观察和处理信息的能力”。"
+      },
+      {
+        "term": "turn-taking",
+        "phonetic": "/tɜːrn ˈteɪkɪŋ/",
+        "meaning": "轮流发话；对话中系统与用户交替说话",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "在这句话中，“turn-taking”可理解为“轮流发话；对话中系统与用户交替说话”。"
+      },
+      {
+        "term": "window",
+        "phonetic": "/ˈwɪndoʊ/",
+        "meaning": "窗口；可响应或可操作的时间段",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "在这句话中，“window”可理解为“窗口；可响应或可操作的时间段”。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；车内语音或智能服务系统",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "在这句话中，“assistant”可理解为“助手；车内语音或智能服务系统”。"
+      },
+      {
+        "term": "yes-or-no",
+        "phonetic": "/jes ɔːr noʊ/",
+        "meaning": "是非式的；只需肯定或否定回答的",
+        "example": "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
+        "chineseExample": "在这句话中，“yes-or-no”可理解为“是非式的；只需肯定或否定回答的”。"
+      },
+      {
+        "term": "latency",
+        "phonetic": "/ˈleɪtənsi/",
+        "meaning": "延迟；系统响应前的等待时间",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "在这句话中，“latency”可理解为“延迟；系统响应前的等待时间”。"
+      },
+      {
+        "term": "noticeable",
+        "phonetic": "/ˈnoʊtɪsəbl/",
+        "meaning": "明显的；容易被用户感知到的",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "在这句话中，“noticeable”可理解为“明显的；容易被用户感知到的”。"
+      },
+      {
+        "term": "expecting",
+        "phonetic": "/ɪkˈspektɪŋ/",
+        "meaning": "期待；等待某种反馈出现",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "在这句话中，“expecting”可理解为“期待；等待某种反馈出现”。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；验证动作或意图是否正确",
+        "example": "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
+        "chineseExample": "在这句话中，“confirmation”可理解为“确认；验证动作或意图是否正确”。"
+      },
+      {
+        "term": "intent",
+        "phonetic": "/ɪnˈtent/",
+        "meaning": "意图；用户真正想完成的目标",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“intent”可理解为“意图；用户真正想完成的目标”。"
+      },
+      {
+        "term": "repair",
+        "phonetic": "/rɪˈper/",
+        "meaning": "修复；纠正或补全交互问题",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“repair”可理解为“修复；纠正或补全交互问题”。"
+      },
+      {
+        "term": "repeat",
+        "phonetic": "/rɪˈpiːt/",
+        "meaning": "重复；再次说出信息",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“repeat”可理解为“重复；再次说出信息”。"
+      },
+      {
+        "term": "uncertain",
+        "phonetic": "/ʌnˈsɜːrtn/",
+        "meaning": "不确定的；系统置信度不足的",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“uncertain”可理解为“不确定的；系统置信度不足的”。"
+      },
+      {
+        "term": "slot",
+        "phonetic": "/slɑːt/",
+        "meaning": "信息槽；意图中需要填充的参数",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“slot”可理解为“信息槽；意图中需要填充的参数”。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "指令；用户要求系统执行的操作",
+        "example": "Intent repair should repeat only the uncertain slot, not the whole command.",
+        "chineseExample": "在这句话中，“command”可理解为“指令；用户要求系统执行的操作”。"
+      },
+      {
+        "term": "acoustic",
+        "phonetic": "/əˈkuːstɪk/",
+        "meaning": "声学的；与声音反馈相关的",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "在这句话中，“acoustic”可理解为“声学的；与声音反馈相关的”。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示线索；用于传达状态的小信号",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "在这句话中，“cue”可理解为“提示线索；用于传达状态的小信号”。"
+      },
+      {
+        "term": "confirm",
+        "phonetic": "/kənˈfɜːrm/",
+        "meaning": "确认；说明系统已理解或完成",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "在这句话中，“confirm”可理解为“确认；说明系统已理解或完成”。"
+      },
+      {
+        "term": "cabin",
+        "phonetic": "/ˈkæbɪn/",
+        "meaning": "座舱；车内乘员空间",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "在这句话中，“cabin”可理解为“座舱；车内乘员空间”。"
+      },
+      {
+        "term": "received",
+        "phonetic": "/rɪˈsiːvd/",
+        "meaning": "已接收的；系统已听到或收到输入",
+        "example": "A soft acoustic cue can confirm that the cabin command was received.",
+        "chineseExample": "在这句话中，“received”可理解为“已接收的；系统已听到或收到输入”。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；通过屏幕或图形呈现的",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "在这句话中，“visual”可理解为“视觉的；通过屏幕或图形呈现的”。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "兜底方案；主通道不可用时的替代方式",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "在这句话中，“fallback”可理解为“兜底方案；主通道不可用时的替代方式”。"
+      },
+      {
+        "term": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "meaning": "选择；用户可选的动作或方案",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "在这句话中，“choice”可理解为“选择；用户可选的动作或方案”。"
+      },
+      {
+        "term": "forcing",
+        "phonetic": "/ˈfɔːrsɪŋ/",
+        "meaning": "强迫；让用户被动接受某个流程",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "在这句话中，“forcing”可理解为“强迫；让用户被动接受某个流程”。"
+      },
+      {
+        "term": "listen",
+        "phonetic": "/ˈlɪsn/",
+        "meaning": "聆听；接收语音信息",
+        "example": "The visual fallback shows the same choice without forcing the driver to listen again.",
+        "chineseExample": "在这句话中，“listen”可理解为“聆听；接收语音信息”。"
+      },
+      {
+        "term": "dialog",
+        "phonetic": "/ˈdaɪəlɔːɡ/",
+        "meaning": "对话；系统与用户之间的交互轮次",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“dialog”可理解为“对话；系统与用户之间的交互轮次”。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；系统当前记录的上下文",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“state”可理解为“状态；系统当前记录的上下文”。"
+      },
+      {
+        "term": "resume",
+        "phonetic": "/rɪˈzuːm/",
+        "meaning": "恢复；从中断点继续任务",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“resume”可理解为“恢复；从中断点继续任务”。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃn/",
+        "meaning": "导航；路线和转向相关信息",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“navigation”可理解为“导航；路线和转向相关信息”。"
+      },
+      {
+        "term": "audio",
+        "phonetic": "/ˈɔːdioʊ/",
+        "meaning": "音频；声音输出通道",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“audio”可理解为“音频；声音输出通道”。"
+      },
+      {
+        "term": "interrupts",
+        "phonetic": "/ˌɪntəˈrʌpts/",
+        "meaning": "打断；中止正在进行的信息流",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“interrupts”可理解为“打断；中止正在进行的信息流”。"
+      },
+      {
+        "term": "request",
+        "phonetic": "/rɪˈkwest/",
+        "meaning": "请求；用户向系统提出的任务",
+        "example": "Dialog state helps the assistant resume after navigation audio interrupts a request.",
+        "chineseExample": "在这句话中，“request”可理解为“请求；用户向系统提出的任务”。"
+      },
+      {
+        "term": "workload",
+        "phonetic": "/ˈwɜːrkloʊd/",
+        "meaning": "负荷；用户承受的认知或操作压力",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "在这句话中，“workload”可理解为“负荷；用户承受的认知或操作压力”。"
+      },
+      {
+        "term": "determine",
+        "phonetic": "/dɪˈtɜːrmɪn/",
+        "meaning": "决定；作为选择依据",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "在这句话中，“determine”可理解为“决定；作为选择依据”。"
+      },
+      {
+        "term": "spoken",
+        "phonetic": "/ˈspoʊkən/",
+        "meaning": "口头播报的；以语音形式输出的",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "在这句话中，“spoken”可理解为“口头播报的；以语音形式输出的”。"
+      },
+      {
+        "term": "delayed",
+        "phonetic": "/dɪˈleɪd/",
+        "meaning": "延后的；稍后再呈现的",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "在这句话中，“delayed”可理解为“延后的；稍后再呈现的”。"
+      },
+      {
+        "term": "display",
+        "phonetic": "/dɪˈspleɪ/",
+        "meaning": "显示屏；视觉输出界面",
+        "example": "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
+        "chineseExample": "在这句话中，“display”可理解为“显示屏；视觉输出界面”。"
+      },
+      {
+        "term": "phrase",
+        "phonetic": "/freɪz/",
+        "meaning": "短语；可复用的表达片段",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“phrase”可理解为“短语；可复用的表达片段”。"
+      },
+      {
+        "term": "mention",
+        "phonetic": "/ˈmenʃn/",
+        "meaning": "提及；明确说出关键信息",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“mention”可理解为“提及；明确说出关键信息”。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃn/",
+        "meaning": "动作；系统将要执行的操作",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“action”可理解为“动作；系统将要执行的操作”。"
+      },
+      {
+        "term": "target",
+        "phonetic": "/ˈtɑːrɡɪt/",
+        "meaning": "目标对象；动作影响的设备、功能或位置",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“target”可理解为“目标对象；动作影响的设备、功能或位置”。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "可撤销的；可以恢复或取消的",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“reversible”可理解为“可撤销的；可以恢复或取消的”。"
+      },
+      {
+        "term": "outcome",
+        "phonetic": "/ˈaʊtkʌm/",
+        "meaning": "结果；动作执行后的影响",
+        "example": "A confirmation phrase should mention the action, target, and reversible outcome.",
+        "chineseExample": "在这句话中，“outcome”可理解为“结果；动作执行后的影响”。"
+      },
+      {
+        "term": "moment",
+        "phonetic": "/ˈmoʊmənt/",
+        "meaning": "时刻；交互发生的具体时间点",
+        "example": "The best cockpit voice experience is not the longest answer; it is the right interruption at the right moment.",
+        "chineseExample": "在这句话中，“moment”可理解为“时刻；交互发生的具体时间点”。"
+      },
+      {
+        "term": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "meaning": "路口；道路交汇处",
+        "example": "Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback.",
+        "chineseExample": "在这句话中，“intersection”可理解为“路口；道路交汇处”。"
+      },
+      {
+        "term": "replace",
+        "phonetic": "/rɪˈpleɪs/",
+        "meaning": "替换；用更合适的信息形式代替",
+        "example": "Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback.",
+        "chineseExample": "在这句话中，“replace”可理解为“替换；用更合适的信息形式代替”。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "屏幕；视觉信息显示区域",
+        "example": "That screen should preserve dialog state, so the user can answer later without starting over.",
+        "chineseExample": "在这句话中，“screen”可理解为“屏幕；视觉信息显示区域”。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/prɪˈzɜːrv/",
+        "meaning": "保留；不丢失上下文或状态",
+        "example": "That screen should preserve dialog state, so the user can answer later without starting over.",
+        "chineseExample": "在这句话中，“preserve”可理解为“保留；不丢失上下文或状态”。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "路线；导航规划的道路路径",
+        "example": "During a calm highway segment, a longer spoken explanation may be acceptable because the road demand is lower.",
+        "chineseExample": "在这句话中，“route”可理解为“路线；导航规划的道路路径”。"
+      },
+      {
+        "term": "highway",
+        "phonetic": "/ˈhaɪweɪ/",
+        "meaning": "高速路；高速行驶场景",
+        "example": "During a calm highway segment, a longer spoken explanation may be acceptable because the road demand is lower.",
+        "chineseExample": "在这句话中，“highway”可理解为“高速路；高速行驶场景”。"
+      },
+      {
+        "term": "segment",
+        "phonetic": "/ˈseɡmənt/",
+        "meaning": "路段；路线中的一部分",
+        "example": "During a calm highway segment, a longer spoken explanation may be acceptable because the road demand is lower.",
+        "chineseExample": "在这句话中，“segment”可理解为“路段；路线中的一部分”。"
+      },
+      {
+        "term": "clarifies",
+        "phonetic": "/ˈklærəfaɪz/",
+        "meaning": "澄清；把模糊信息说明清楚",
+        "example": "If speech latency is high, the system should avoid silence and say, I am checking that request.",
+        "chineseExample": "在这句话中，“clarifies”可理解为“澄清；把模糊信息说明清楚”。"
+      },
+      {
+        "term": "silence",
+        "phonetic": "/ˈsaɪləns/",
+        "meaning": "沉默；没有反馈的等待状态",
+        "example": "If speech latency is high, the system should avoid silence and say, I am checking that request.",
+        "chineseExample": "在这句话中，“silence”可理解为“沉默；没有反馈的等待状态”。"
+      },
+      {
+        "term": "checking",
+        "phonetic": "/ˈtʃekɪŋ/",
+        "meaning": "检查；确认系统正在处理",
+        "example": "If speech latency is high, the system should avoid silence and say, I am checking that request.",
+        "chineseExample": "在这句话中，“checking”可理解为“检查；确认系统正在处理”。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对理解结果的可靠判断",
+        "example": "For intent repair, the assistant should ask about the uncertain slot rather than replaying the entire command.",
+        "chineseExample": "在这句话中，“confidence”可理解为“置信度；系统对理解结果的可靠判断”。"
+      },
+      {
+        "term": "longest",
+        "phonetic": "/ˈlɔːŋɡəst/",
+        "meaning": "最长的；持续时间或内容长度最大",
+        "example": "The best cockpit voice experience is not the longest answer; it is the right interruption at the right moment.",
+        "chineseExample": "在这句话中，“longest”可理解为“最长的；持续时间或内容长度最大”。"
+      },
+      {
+        "term": "speaks",
+        "phonetic": "/spiːks/",
+        "meaning": "发声；系统用语音输出信息",
+        "example": "In an intelligent cockpit, contextual voice guidance must read the driving scene before it speaks.",
+        "chineseExample": "在这句话中，“speaks”可理解为“发声；系统用语音输出信息”。"
+      },
+      {
+        "term": "full",
+        "phonetic": "/fʊl/",
+        "meaning": "完整的；未被缩短的",
+        "example": "Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback.",
+        "chineseExample": "在这句话中，“full”可理解为“完整的；未被缩短的”。"
+      },
+      {
+        "term": "starting",
+        "phonetic": "/ˈstɑːrtɪŋ/",
+        "meaning": "开始；从头启动任务",
+        "example": "That screen should preserve dialog state, so the user can answer later without starting over.",
+        "chineseExample": "在这句话中，“starting”可理解为“开始；从头启动任务”。"
+      },
+      {
+        "term": "longer",
+        "phonetic": "/ˈlɔːŋɡər/",
+        "meaning": "更长的；信息长度或时间更长",
+        "example": "During a calm highway segment, a longer spoken explanation may be acceptable because the road demand is lower.",
+        "chineseExample": "在这句话中，“longer”可理解为“更长的；信息长度或时间更长”。"
+      },
+      {
+        "term": "length",
+        "phonetic": "/leŋθ/",
+        "meaning": "长度；信息文本或播报时长",
+        "example": "The design rule is simple: match the message length to driver workload.",
+        "chineseExample": "在这句话中，“length”可理解为“长度；信息文本或播报时长”。"
+      },
+      {
+        "term": "am",
+        "phonetic": "/æm/",
+        "meaning": "是；第一人称现在时系动词",
+        "example": "If speech latency is high, the system should avoid silence and say, I am checking that request.",
+        "chineseExample": "在这句话中，“am”可理解为“是；第一人称现在时系动词”。"
+      },
+      {
+        "term": "replaying",
+        "phonetic": "/ˌriːˈpleɪɪŋ/",
+        "meaning": "重放；再次播放或重复整段内容",
+        "example": "For intent repair, the assistant should ask about the uncertain slot rather than replaying the entire command.",
+        "chineseExample": "在这句话中，“replaying”可理解为“重放；再次播放或重复整段内容”。"
+      },
+      {
+        "term": "degrees",
+        "phonetic": "/dɪˈɡriːz/",
+        "meaning": "度；温度调节单位",
+        "example": "I will lower the rear cabin temperature by two degrees, and you can undo it.",
+        "chineseExample": "在这句话中，“degrees”可理解为“度；温度调节单位”。"
+      },
+      {
+        "term": "phrasing",
+        "phonetic": "/ˈfreɪzɪŋ/",
+        "meaning": "措辞；表达方式和句子组织",
+        "example": "This phrasing gives control without adding a heavy visual task.",
+        "chineseExample": "在这句话中，“phrasing”可理解为“措辞；表达方式和句子组织”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing voice prompts around driver workload",
+        "text": "The best cockpit voice experience is not the longest answer; it is the right interruption at the right moment. In an intelligent cockpit, contextual voice guidance must read the driving scene before it speaks. Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback. That screen should preserve dialog state, so the user can answer later without starting over. During a calm highway segment, a longer spoken explanation may be acceptable because the road demand is lower. The design rule is simple: match the message length to driver workload. If speech latency is high, the system should avoid silence and say, I am checking that request. For intent repair, the assistant should ask about the uncertain slot rather than replaying the entire command. A useful confirmation phrase names the action, the target, and the outcome, for example, I will lower the rear cabin temperature by two degrees, and you can undo it. This phrasing gives control without adding a heavy visual task. Voice interaction becomes safer when it respects timing, shows a visual fallback, and keeps every risky action reversible.",
+        "translation": "最佳的座舱语音体验不是最长的回答，而是在正确时刻出现的正确打断。在智能座舱中，情境化语音引导必须先读取驾驶场景再发声。接近路口时，助手可以用声学提示和小型视觉兜底替代完整句子。该屏幕应保留对话状态，让用户稍后无需重来即可回答。在平稳的高速路段，较长的语音解释可能可以接受，因为道路需求较低。设计规则很简单：让信息长度匹配驾驶员负荷。如果语音延迟较高，系统应避免沉默，并说明“我正在检查该请求”。对于意图修复，助手应询问不确定的信息槽，而不是重放整条指令。有用的确认短语会说明动作、目标和结果，例如“我会把后排座舱温度降低两度，并且你可以撤销”。这种措辞在不增加沉重视觉任务的情况下提供控制感。当语音交互尊重时机、显示视觉兜底，并让每个高风险动作保持可撤销时，它会更安全。",
+        "source": null
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The best cockpit voice experience is not the longest answer; it is the right interruption at the right moment.",
+        "structure": "not..., it is... 对比错误评价标准和真正目标；两个 the right 强调时机与干扰程度。",
+        "focus": "the right interruption at the right moment 适合描述低干扰提示的核心原则。",
+        "pattern": "The best assistance is not the richest response; it is the right message at the right moment."
+      },
+      {
+        "sentence": "Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback.",
+        "structure": "地点状语 Near an intersection + 主语 the assistant + may replace A with B。",
+        "focus": "replace a full sentence with an acoustic cue 表示用更轻量的反馈降低驾驶负荷。",
+        "pattern": "During high workload, the cockpit may replace a detailed message with a brief cue."
+      },
+      {
+        "sentence": "If speech latency is high, the system should avoid silence and say, I am checking that request.",
+        "structure": "If 条件从句 + 主句 should avoid... and say...；并列动词描述系统补救动作。",
+        "focus": "avoid silence 用于表达系统需要给等待反馈，而不是让用户猜测。",
+        "pattern": "If recognition confidence is low, the system should avoid silence and explain what it is checking."
+      },
+      {
+        "sentence": "A useful confirmation phrase names the action, the target, and the outcome.",
+        "structure": "主语 A useful confirmation phrase + 谓语 names + 三个并列宾语。",
+        "focus": "action, target, and outcome 是确认短语的三要素。",
+        "pattern": "A safe confirmation phrase names the command, the device, and the reversible result."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 contextual voice guidance、low-interruption prompt、intent repair 和 visual fallback。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "detail": "跟读全文两遍，标出所有描述驾驶负荷、提示时机、语音延迟和确认短语的表达。"
+      },
+      {
+        "title": "句型替换",
+        "time": "5 分钟",
+        "detail": "用 The best... is not...、may replace A with B 和 If speech latency is high... 改写一个车内语音提示。"
+      },
+      {
+        "title": "设计复述",
+        "time": "6 分钟",
+        "detail": "用 5 句话复述系统如何根据路口、高速路段、语音延迟和意图不确定性调整提示策略。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-25-range-confidence-charging-guidance",
     "date": "2026-07-25",
     "title": "Range confidence and charging guidance in intelligent cockpits",
