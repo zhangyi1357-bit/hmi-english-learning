@@ -1,5 +1,767 @@
 [
   {
+    "id": "2026-07-27-ar-hud-navigation",
+    "date": "2026-07-27",
+    "title": "AR-HUD navigation and glance control in intelligent cockpits",
+    "topic": "智能座舱 AR-HUD 导航与扫视负荷控制",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述 AR-HUD 导航提示、视觉锚定、车道级引导、遮挡风险和扫视预算。",
+    "words": [
+      {
+        "term": "augmented-reality head-up display",
+        "phonetic": "/ɔːɡˈmentɪd riˈæləti ˌhed ʌp dɪˈspleɪ/",
+        "meaning": "增强现实抬头显示；把导航、警示或状态信息叠加到驾驶员前方视野中的显示方式",
+        "example": "An augmented-reality head-up display can place a turn cue near the real lane.",
+        "chineseExample": "增强现实抬头显示可以把转向提示放在真实车道附近。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；让数字提示与真实道路目标保持稳定对应关系",
+        "example": "Visual anchoring helps the driver connect a digital arrow with the correct exit.",
+        "chineseExample": "视觉锚定帮助驾驶员把数字箭头和正确出口对应起来。"
+      },
+      {
+        "term": "focal distance",
+        "phonetic": "/ˈfoʊkl ˈdɪstəns/",
+        "meaning": "焦距距离；驾驶员眼睛从道路切换到显示信息时需要适应的视觉距离",
+        "example": "Focal distance should be tuned so the driver does not refocus for every prompt.",
+        "chineseExample": "焦距距离应经过调校，使驾驶员不必为每个提示重新调焦。"
+      },
+      {
+        "term": "lane-level guidance",
+        "phonetic": "/leɪn ˈlevl ˈɡaɪdns/",
+        "meaning": "车道级引导；明确指出目标车道、出口车道或变道时机的导航引导",
+        "example": "Lane-level guidance is useful only when it appears early enough to support a smooth maneuver.",
+        "chineseExample": "只有足够提前出现，车道级引导才有助于平顺操作。"
+      },
+      {
+        "term": "occlusion risk",
+        "phonetic": "/əˈkluːʒn rɪsk/",
+        "meaning": "遮挡风险；界面元素遮住道路、行人、标志或其他关键视觉信息的风险",
+        "example": "Occlusion risk increases when a bright overlay covers a pedestrian crossing.",
+        "chineseExample": "当明亮叠层覆盖人行横道时，遮挡风险会上升。"
+      },
+      {
+        "term": "decluttered overlay",
+        "phonetic": "/diːˈklʌtərd ˈoʊvərleɪ/",
+        "meaning": "去杂化叠层；去掉非必要内容、只保留关键提示的显示叠层",
+        "example": "A decluttered overlay keeps the next action visible without filling the windshield.",
+        "chineseExample": "去杂化叠层会保持下一步动作可见，同时不填满挡风玻璃。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可以安全分配给某条信息的短暂视觉注意时间",
+        "example": "The glance budget for a navigation cue is shorter during dense urban traffic.",
+        "chineseExample": "在密集城市交通中，导航提示的扫视预算更短。"
+      },
+      {
+        "term": "spatial cue",
+        "phonetic": "/ˈspeɪʃl kjuː/",
+        "meaning": "空间提示；通过位置、方向、距离或运动关系帮助理解的信息提示",
+        "example": "A spatial cue should point toward the target lane instead of floating in the center.",
+        "chineseExample": "空间提示应指向目标车道，而不是漂浮在中央。"
+      },
+      {
+        "term": "contrast threshold",
+        "phonetic": "/ˈkɑːntræst ˈθreʃhoʊld/",
+        "meaning": "对比度阈值；保证内容在不同光照下可读但不过度抢眼的最低对比要求",
+        "example": "The contrast threshold must support readability in sunlight without creating glare at night.",
+        "chineseExample": "对比度阈值必须支持阳光下可读，同时避免夜间产生眩光。"
+      },
+      {
+        "term": "safety-critical prompt",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl prɑːmpt/",
+        "meaning": "安全关键提示；与碰撞风险、接管、路径选择或紧急状态相关的高优先级提示",
+        "example": "A safety-critical prompt should override decorative content and appear in a stable position.",
+        "chineseExample": "安全关键提示应覆盖装饰性内容，并出现在稳定位置。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "augmented-reality head-up display",
+        "phonetic": "/ɔːɡˈmentɪd riˈæləti ˌhed ʌp dɪˈspleɪ/",
+        "meaning": "增强现实抬头显示；把导航、警示或状态信息叠加到驾驶员前方视野中的显示方式",
+        "example": "An augmented-reality head-up display can place a turn cue near the real lane.",
+        "chineseExample": "增强现实抬头显示可以把转向提示放在真实车道附近。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；让数字提示与真实道路目标保持稳定对应关系",
+        "example": "Visual anchoring helps the driver connect a digital arrow with the correct exit.",
+        "chineseExample": "视觉锚定帮助驾驶员把数字箭头和正确出口对应起来。"
+      },
+      {
+        "term": "focal distance",
+        "phonetic": "/ˈfoʊkl ˈdɪstəns/",
+        "meaning": "焦距距离；驾驶员眼睛从道路切换到显示信息时需要适应的视觉距离",
+        "example": "Focal distance should be tuned so the driver does not refocus for every prompt.",
+        "chineseExample": "焦距距离应经过调校，使驾驶员不必为每个提示重新调焦。"
+      },
+      {
+        "term": "lane-level guidance",
+        "phonetic": "/leɪn ˈlevl ˈɡaɪdns/",
+        "meaning": "车道级引导；明确指出目标车道、出口车道或变道时机的导航引导",
+        "example": "Lane-level guidance is useful only when it appears early enough to support a smooth maneuver.",
+        "chineseExample": "只有足够提前出现，车道级引导才有助于平顺操作。"
+      },
+      {
+        "term": "occlusion risk",
+        "phonetic": "/əˈkluːʒn rɪsk/",
+        "meaning": "遮挡风险；界面元素遮住道路、行人、标志或其他关键视觉信息的风险",
+        "example": "Occlusion risk increases when a bright overlay covers a pedestrian crossing.",
+        "chineseExample": "当明亮叠层覆盖人行横道时，遮挡风险会上升。"
+      },
+      {
+        "term": "decluttered overlay",
+        "phonetic": "/diːˈklʌtərd ˈoʊvərleɪ/",
+        "meaning": "去杂化叠层；去掉非必要内容、只保留关键提示的显示叠层",
+        "example": "A decluttered overlay keeps the next action visible without filling the windshield.",
+        "chineseExample": "去杂化叠层会保持下一步动作可见，同时不填满挡风玻璃。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可以安全分配给某条信息的短暂视觉注意时间",
+        "example": "The glance budget for a navigation cue is shorter during dense urban traffic.",
+        "chineseExample": "在密集城市交通中，导航提示的扫视预算更短。"
+      },
+      {
+        "term": "spatial cue",
+        "phonetic": "/ˈspeɪʃl kjuː/",
+        "meaning": "空间提示；通过位置、方向、距离或运动关系帮助理解的信息提示",
+        "example": "A spatial cue should point toward the target lane instead of floating in the center.",
+        "chineseExample": "空间提示应指向目标车道，而不是漂浮在中央。"
+      },
+      {
+        "term": "contrast threshold",
+        "phonetic": "/ˈkɑːntræst ˈθreʃhoʊld/",
+        "meaning": "对比度阈值；保证内容在不同光照下可读但不过度抢眼的最低对比要求",
+        "example": "The contrast threshold must support readability in sunlight without creating glare at night.",
+        "chineseExample": "对比度阈值必须支持阳光下可读，同时避免夜间产生眩光。"
+      },
+      {
+        "term": "safety-critical prompt",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl prɑːmpt/",
+        "meaning": "安全关键提示；与碰撞风险、接管、路径选择或紧急状态相关的高优先级提示",
+        "example": "A safety-critical prompt should override decorative content and appear in a stable position.",
+        "chineseExample": "安全关键提示应覆盖装饰性内容，并出现在稳定位置。"
+      },
+      {
+        "term": "augmented",
+        "phonetic": "/ɔːɡˈmentɪd/",
+        "meaning": "增强的；通过数字信息扩展现实感知的",
+        "example": "Augmented guidance should make the road easier to understand.",
+        "chineseExample": "在这句话中，“augmented”表示“增强的”。"
+      },
+      {
+        "term": "reality",
+        "phonetic": "/riˈæləti/",
+        "meaning": "现实；真实道路环境或驾驶场景",
+        "example": "Reality remains the primary reference for any overlay.",
+        "chineseExample": "在这句话中，“reality”表示“现实”。"
+      },
+      {
+        "term": "head-up",
+        "phonetic": "/ˌhed ˈʌp/",
+        "meaning": "抬头的；位于驾驶员前方视线附近的",
+        "example": "A head-up cue reduces the need to look down.",
+        "chineseExample": "在这句话中，“head-up”表示“抬头的”。"
+      },
+      {
+        "term": "display",
+        "phonetic": "/dɪˈspleɪ/",
+        "meaning": "显示器；呈现驾驶或交互信息的界面",
+        "example": "The display should not compete with the road scene.",
+        "chineseExample": "在这句话中，“display”表示“显示器”。"
+      },
+      {
+        "term": "anchor",
+        "phonetic": "/ˈæŋkər/",
+        "meaning": "锚定；把信息稳定连接到目标位置",
+        "example": "The system can anchor the arrow to the real exit lane.",
+        "chineseExample": "在这句话中，“anchor”表示“锚定”。"
+      },
+      {
+        "term": "anchoring",
+        "phonetic": "/ˈæŋkərɪŋ/",
+        "meaning": "锚定过程；保持数字提示和真实对象对应",
+        "example": "Anchoring reduces uncertainty in complex junctions.",
+        "chineseExample": "在这句话中，“anchoring”表示“锚定过程”。"
+      },
+      {
+        "term": "focal",
+        "phonetic": "/ˈfoʊkl/",
+        "meaning": "焦点的；与视觉聚焦位置有关的",
+        "example": "Focal comfort matters for repeated prompts.",
+        "chineseExample": "在这句话中，“focal”表示“焦点的”。"
+      },
+      {
+        "term": "distance",
+        "phonetic": "/ˈdɪstəns/",
+        "meaning": "距离；两个位置之间的间隔",
+        "example": "Distance affects how quickly the driver reads a cue.",
+        "chineseExample": "在这句话中，“distance”表示“距离”。"
+      },
+      {
+        "term": "lane",
+        "phonetic": "/leɪn/",
+        "meaning": "车道；车辆行驶的道路分隔区域",
+        "example": "The lane marker should stay easy to identify.",
+        "chineseExample": "在这句话中，“lane”表示“车道”。"
+      },
+      {
+        "term": "level",
+        "phonetic": "/ˈlevl/",
+        "meaning": "级别；精确程度或层级",
+        "example": "Level of detail should match the driving task.",
+        "chineseExample": "在这句话中，“level”表示“级别”。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/ˈɡaɪdns/",
+        "meaning": "引导；帮助用户完成行动的信息支持",
+        "example": "Guidance should arrive before the maneuver becomes urgent.",
+        "chineseExample": "在这句话中，“guidance”表示“引导”。"
+      },
+      {
+        "term": "occlusion",
+        "phonetic": "/əˈkluːʒn/",
+        "meaning": "遮挡；一个元素挡住另一个视觉目标",
+        "example": "Occlusion can hide a sign or a pedestrian.",
+        "chineseExample": "在这句话中，“occlusion”表示“遮挡”。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；可能造成安全或体验问题的不确定因素",
+        "example": "Risk increases when the overlay becomes too bright.",
+        "chineseExample": "在这句话中，“risk”表示“风险”。"
+      },
+      {
+        "term": "decluttered",
+        "phonetic": "/diːˈklʌtərd/",
+        "meaning": "去杂化的；移除非必要信息后的",
+        "example": "A decluttered view is easier to scan.",
+        "chineseExample": "在这句话中，“decluttered”表示“去杂化的”。"
+      },
+      {
+        "term": "overlay",
+        "phonetic": "/ˈoʊvərleɪ/",
+        "meaning": "叠层；覆盖在道路视野或界面上的信息层",
+        "example": "The overlay should stay aligned with the intended lane.",
+        "chineseExample": "在这句话中，“overlay”表示“叠层”。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "扫视；短暂地看一眼",
+        "example": "A glance should be enough to understand the cue.",
+        "chineseExample": "在这句话中，“glance”表示“扫视”。"
+      },
+      {
+        "term": "budget",
+        "phonetic": "/ˈbʌdʒɪt/",
+        "meaning": "预算；可分配的时间、注意力或资源上限",
+        "example": "The visual budget is limited during a merge.",
+        "chineseExample": "在这句话中，“budget”表示“预算”。"
+      },
+      {
+        "term": "spatial",
+        "phonetic": "/ˈspeɪʃl/",
+        "meaning": "空间的；与位置、方向和距离有关的",
+        "example": "Spatial information supports faster route decisions.",
+        "chineseExample": "在这句话中，“spatial”表示“空间的”。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示；帮助用户理解状态或行动的信息",
+        "example": "A cue should be brief and easy to locate.",
+        "chineseExample": "在这句话中，“cue”表示“提示”。"
+      },
+      {
+        "term": "contrast",
+        "phonetic": "/ˈkɑːntræst/",
+        "meaning": "对比度；前景和背景之间的明暗差异",
+        "example": "Contrast must change with ambient light.",
+        "chineseExample": "在这句话中，“contrast”表示“对比度”。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发或满足某项要求的边界",
+        "example": "The readability threshold should be tested at night.",
+        "chineseExample": "在这句话中，“threshold”表示“阈值”。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/ˈseɪfti/",
+        "meaning": "安全；避免伤害或危险的状态",
+        "example": "Safety comes before visual richness.",
+        "chineseExample": "在这句话中，“safety”表示“安全”。"
+      },
+      {
+        "term": "critical",
+        "phonetic": "/ˈkrɪtɪkl/",
+        "meaning": "关键的；对安全或结果非常重要的",
+        "example": "Critical messages need stable placement.",
+        "chineseExample": "在这句话中，“critical”表示“关键的”。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；系统向用户发出的短信息或请求",
+        "example": "The prompt should name the next action.",
+        "chineseExample": "在这句话中，“prompt”表示“提示”。"
+      },
+      {
+        "term": "windshield",
+        "phonetic": "/ˈwɪndʃiːld/",
+        "meaning": "挡风玻璃；驾驶员前方玻璃区域",
+        "example": "The windshield is not a free advertising surface.",
+        "chineseExample": "在这句话中，“windshield”表示“挡风玻璃”。"
+      },
+      {
+        "term": "projection",
+        "phonetic": "/prəˈdʒekʃn/",
+        "meaning": "投影；把信息投射到显示平面或视野中的方式",
+        "example": "Projection quality affects legibility in sunlight.",
+        "chineseExample": "在这句话中，“projection”表示“投影”。"
+      },
+      {
+        "term": "alignment",
+        "phonetic": "/əˈlaɪnmənt/",
+        "meaning": "对齐；界面元素与真实目标或布局基线一致",
+        "example": "Alignment must remain stable as the vehicle moves.",
+        "chineseExample": "在这句话中，“alignment”表示“对齐”。"
+      },
+      {
+        "term": "calibration",
+        "phonetic": "/ˌkælɪˈbreɪʃn/",
+        "meaning": "校准；调整系统使显示、感知和实际位置一致",
+        "example": "Calibration errors can move the cue away from the target.",
+        "chineseExample": "在这句话中，“calibration”表示“校准”。"
+      },
+      {
+        "term": "legibility",
+        "phonetic": "/ˌledʒəˈbɪləti/",
+        "meaning": "易读性；文字或符号能被快速辨认的程度",
+        "example": "Legibility should be checked with real sunlight.",
+        "chineseExample": "在这句话中，“legibility”表示“易读性”。"
+      },
+      {
+        "term": "readability",
+        "phonetic": "/ˌriːdəˈbɪləti/",
+        "meaning": "可读性；信息被轻松理解的程度",
+        "example": "Readability depends on size, contrast, and wording.",
+        "chineseExample": "在这句话中，“readability”表示“可读性”。"
+      },
+      {
+        "term": "glare",
+        "phonetic": "/ɡler/",
+        "meaning": "眩光；过亮显示导致的不适或视觉干扰",
+        "example": "Glare can make a night prompt feel aggressive.",
+        "chineseExample": "在这句话中，“glare”表示“眩光”。"
+      },
+      {
+        "term": "ambient light",
+        "phonetic": "/ˈæmbiənt laɪt/",
+        "meaning": "环境光；车内外影响显示可见性的光照条件",
+        "example": "Ambient light changes the needed contrast level.",
+        "chineseExample": "环境光会改变所需的对比度水平。"
+      },
+      {
+        "term": "urban traffic",
+        "phonetic": "/ˈɜːrbən ˈtræfɪk/",
+        "meaning": "城市交通；路口、车辆、行人和标志较密集的交通环境",
+        "example": "Urban traffic leaves a smaller glance budget.",
+        "chineseExample": "城市交通会留下更小的扫视预算。"
+      },
+      {
+        "term": "pedestrian crossing",
+        "phonetic": "/pəˈdestriən ˈkrɔːsɪŋ/",
+        "meaning": "人行横道；行人穿越道路的标线区域",
+        "example": "The overlay must not cover a pedestrian crossing.",
+        "chineseExample": "叠层不应覆盖人行横道。"
+      },
+      {
+        "term": "target lane",
+        "phonetic": "/ˈtɑːrɡɪt leɪn/",
+        "meaning": "目标车道；导航或变道动作希望车辆进入的车道",
+        "example": "The cue should point to the target lane.",
+        "chineseExample": "提示应指向目标车道。"
+      },
+      {
+        "term": "exit lane",
+        "phonetic": "/ˈeksɪt leɪn/",
+        "meaning": "出口车道；通向匝道或出口的车道",
+        "example": "The exit lane should be highlighted before the junction.",
+        "chineseExample": "出口车道应在路口前被突出显示。"
+      },
+      {
+        "term": "stable position",
+        "phonetic": "/ˈsteɪbl pəˈzɪʃn/",
+        "meaning": "稳定位置；不会随意跳动或造成误解的显示位置",
+        "example": "Warnings should appear in a stable position.",
+        "chineseExample": "警告应出现在稳定位置。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；集成感知、交互和个性化服务的车内数字空间",
+        "example": "An intelligent cockpit should adapt visual feedback to context.",
+        "chineseExample": "智能座舱应根据情境调整视觉反馈。"
+      },
+      {
+        "term": "navigation cue",
+        "phonetic": "/ˌnævɪˈɡeɪʃn kjuː/",
+        "meaning": "导航提示；辅助路径选择、转向或车道选择的信息",
+        "example": "A navigation cue should appear before the driver feels rushed.",
+        "chineseExample": "导航提示应在驾驶员感到仓促之前出现。"
+      },
+      {
+        "term": "route decision",
+        "phonetic": "/ruːt dɪˈsɪʒn/",
+        "meaning": "路线决策；选择道路、出口或车道的判断",
+        "example": "The interface should support the route decision, not dominate it.",
+        "chineseExample": "界面应支持路线决策，而不是主导路线决策。"
+      },
+      {
+        "term": "maneuver",
+        "phonetic": "/məˈnuːvər/",
+        "meaning": "驾驶操作；转向、变道、并线或驶出等动作",
+        "example": "The maneuver should remain smooth and predictable.",
+        "chineseExample": "驾驶操作应保持平顺且可预测。"
+      },
+      {
+        "term": "junction",
+        "phonetic": "/ˈdʒʌŋkʃn/",
+        "meaning": "交汇处；道路连接、分流或合流的位置",
+        "example": "A complex junction needs early lane-level guidance.",
+        "chineseExample": "复杂交汇处需要提前的车道级引导。"
+      },
+      {
+        "term": "peripheral vision",
+        "phonetic": "/pəˈrɪfərəl ˈvɪʒn/",
+        "meaning": "周边视觉；不直接注视时仍能感知到的视野范围",
+        "example": "Peripheral vision can notice motion but not dense text.",
+        "chineseExample": "周边视觉可以注意到运动，但不适合密集文字。"
+      },
+      {
+        "term": "scan path",
+        "phonetic": "/skæn pæθ/",
+        "meaning": "扫视路径；眼睛在道路和界面之间移动的顺序",
+        "example": "A simple scan path reduces visual workload.",
+        "chineseExample": "简单的扫视路径会降低视觉负荷。"
+      },
+      {
+        "term": "visual workload",
+        "phonetic": "/ˈvɪʒuəl ˈwɜːrkloʊd/",
+        "meaning": "视觉负荷；阅读、定位和判断显示信息带来的视觉压力",
+        "example": "Visual workload rises when too many labels appear together.",
+        "chineseExample": "当太多标签同时出现时，视觉负荷会上升。"
+      },
+      {
+        "term": "driver attention",
+        "phonetic": "/ˈdraɪvər əˈtenʃn/",
+        "meaning": "驾驶员注意力；驾驶员可用于道路、控制和交互的认知资源",
+        "example": "Driver attention should stay on the road first.",
+        "chineseExample": "驾驶员注意力应首先留在道路上。"
+      },
+      {
+        "term": "road scene",
+        "phonetic": "/roʊd siːn/",
+        "meaning": "道路场景；驾驶员前方的车辆、道路、行人和标志组合",
+        "example": "The road scene must remain visually dominant.",
+        "chineseExample": "道路场景必须保持视觉主导。"
+      },
+      {
+        "term": "semantic label",
+        "phonetic": "/sɪˈmæntɪk ˈleɪbl/",
+        "meaning": "语义标签；解释对象含义或行动目的的文字标签",
+        "example": "A semantic label can explain why a lane is recommended.",
+        "chineseExample": "语义标签可以解释为什么推荐某条车道。"
+      },
+      {
+        "term": "priority rule",
+        "phonetic": "/praɪˈɔːrəti ruːl/",
+        "meaning": "优先级规则；决定哪些信息先显示、哪些信息被隐藏的规则",
+        "example": "A priority rule should hide entertainment content during hazards.",
+        "chineseExample": "优先级规则应在危险场景下隐藏娱乐内容。"
+      },
+      {
+        "term": "adaptive brightness",
+        "phonetic": "/əˈdæptɪv ˈbraɪtnəs/",
+        "meaning": "自适应亮度；根据光照和驾驶状态调整显示亮度",
+        "example": "Adaptive brightness protects legibility without causing glare.",
+        "chineseExample": "自适应亮度既保护易读性，又避免眩光。"
+      },
+      {
+        "term": "augmented-reality",
+        "phonetic": "/ɔːɡˈmentɪd riˈæləti/",
+        "meaning": "增强现实的；把数字信息叠加到真实场景上的",
+        "example": "Augmented-reality guidance should stay aligned with the road.",
+        "chineseExample": "在这句话中，“augmented-reality”表示“增强现实的”。"
+      },
+      {
+        "term": "digital",
+        "phonetic": "/ˈdɪdʒɪtl/",
+        "meaning": "数字的；由软件和显示系统生成的",
+        "example": "A digital arrow should not hide real road information.",
+        "chineseExample": "在这句话中，“digital”表示“数字的”。"
+      },
+      {
+        "term": "arrow",
+        "phonetic": "/ˈæroʊ/",
+        "meaning": "箭头；表示方向或目标位置的图形符号",
+        "example": "The arrow should point toward the target lane.",
+        "chineseExample": "在这句话中，“arrow”表示“箭头”。"
+      },
+      {
+        "term": "exit",
+        "phonetic": "/ˈeksɪt/",
+        "meaning": "出口；驶离当前道路或路线的位置",
+        "example": "The exit should be highlighted before the driver reaches it.",
+        "chineseExample": "在这句话中，“exit”表示“出口”。"
+      },
+      {
+        "term": "tuned",
+        "phonetic": "/tuːnd/",
+        "meaning": "经过调校的；根据目标效果调整过的",
+        "example": "Focal distance should be tuned for comfortable reading.",
+        "chineseExample": "在这句话中，“tuned”表示“经过调校的”。"
+      },
+      {
+        "term": "refocus",
+        "phonetic": "/ˌriːˈfoʊkəs/",
+        "meaning": "重新聚焦；眼睛或注意力再次调整焦点",
+        "example": "The driver should not need to refocus for every prompt.",
+        "chineseExample": "在这句话中，“refocus”表示“重新聚焦”。"
+      },
+      {
+        "term": "lane-level",
+        "phonetic": "/leɪn ˈlevl/",
+        "meaning": "车道级的；精确到具体车道的",
+        "example": "Lane-level prompts help with complex exits.",
+        "chineseExample": "在这句话中，“lane-level”表示“车道级的”。"
+      },
+      {
+        "term": "early",
+        "phonetic": "/ˈɜːrli/",
+        "meaning": "提前的；在需要行动之前发生的",
+        "example": "Early guidance gives the driver more time to prepare.",
+        "chineseExample": "在这句话中，“early”表示“提前的”。"
+      },
+      {
+        "term": "bright",
+        "phonetic": "/braɪt/",
+        "meaning": "明亮的；亮度较高、容易吸引视线的",
+        "example": "A bright overlay may become distracting at night.",
+        "chineseExample": "在这句话中，“bright”表示“明亮的”。"
+      },
+      {
+        "term": "covers",
+        "phonetic": "/ˈkʌvərz/",
+        "meaning": "覆盖；遮住或盖住某个对象",
+        "example": "The warning fails if it covers a pedestrian crossing.",
+        "chineseExample": "在这句话中，“covers”表示“覆盖”。"
+      },
+      {
+        "term": "pedestrian",
+        "phonetic": "/pəˈdestriən/",
+        "meaning": "行人；步行通过道路空间的人",
+        "example": "A pedestrian must remain visible behind any overlay.",
+        "chineseExample": "在这句话中，“pedestrian”表示“行人”。"
+      },
+      {
+        "term": "crossing",
+        "phonetic": "/ˈkrɔːsɪŋ/",
+        "meaning": "横道；道路上的穿越区域或穿行动作",
+        "example": "The crossing should not be blocked by a cue.",
+        "chineseExample": "在这句话中，“crossing”表示“横道”。"
+      },
+      {
+        "term": "filling",
+        "phonetic": "/ˈfɪlɪŋ/",
+        "meaning": "填满；占据过多空间",
+        "example": "Filling the windshield with labels increases workload.",
+        "chineseExample": "在这句话中，“filling”表示“填满”。"
+      },
+      {
+        "term": "floating",
+        "phonetic": "/ˈfloʊtɪŋ/",
+        "meaning": "漂浮的；没有明确锚定到真实对象的",
+        "example": "A floating cue can confuse the driver.",
+        "chineseExample": "在这句话中，“floating”表示“漂浮的”。"
+      },
+      {
+        "term": "sunlight",
+        "phonetic": "/ˈsʌnlaɪt/",
+        "meaning": "阳光；影响显示可见性的强自然光",
+        "example": "Sunlight can reduce HUD readability.",
+        "chineseExample": "在这句话中，“sunlight”表示“阳光”。"
+      },
+      {
+        "term": "creating",
+        "phonetic": "/kriˈeɪtɪŋ/",
+        "meaning": "造成；产生某种结果或影响",
+        "example": "The brightness should support reading without creating glare.",
+        "chineseExample": "在这句话中，“creating”表示“造成”。"
+      },
+      {
+        "term": "night",
+        "phonetic": "/naɪt/",
+        "meaning": "夜间；低光照驾驶时段",
+        "example": "Night mode should avoid glare.",
+        "chineseExample": "在这句话中，“night”表示“夜间”。"
+      },
+      {
+        "term": "anchored",
+        "phonetic": "/ˈæŋkərd/",
+        "meaning": "被锚定的；稳定对应到真实位置的",
+        "example": "The cue is anchored to the road scene.",
+        "chineseExample": "在这句话中，“anchored”表示“被锚定的”。"
+      },
+      {
+        "term": "cover",
+        "phonetic": "/ˈkʌvər/",
+        "meaning": "覆盖；遮住某个区域或对象",
+        "example": "The goal is not to cover the windshield with information.",
+        "chineseExample": "在这句话中，“cover”表示“覆盖”。"
+      },
+      {
+        "term": "fade",
+        "phonetic": "/feɪd/",
+        "meaning": "淡出；逐渐消失或降低可见性",
+        "example": "The cue should fade when the maneuver is clear.",
+        "chineseExample": "在这句话中，“fade”表示“淡出”。"
+      },
+      {
+        "term": "sign",
+        "phonetic": "/saɪn/",
+        "meaning": "标志；道路上的交通标识",
+        "example": "The overlay must not hide a traffic sign.",
+        "chineseExample": "在这句话中，“sign”表示“标志”。"
+      },
+      {
+        "term": "forces",
+        "phonetic": "/ˈfɔːrsɪz/",
+        "meaning": "迫使；让用户不得不做某事",
+        "example": "If every prompt forces a long glance, the design is too heavy.",
+        "chineseExample": "在这句话中，“forces”表示“迫使”。"
+      },
+      {
+        "term": "semantic",
+        "phonetic": "/sɪˈmæntɪk/",
+        "meaning": "语义的；表达含义或目的的",
+        "example": "A semantic label explains the reason for a cue.",
+        "chineseExample": "在这句话中，“semantic”表示“语义的”。"
+      },
+      {
+        "term": "label",
+        "phonetic": "/ˈleɪbl/",
+        "meaning": "标签；用于说明对象或动作的短文本",
+        "example": "One short label is enough for the HUD cue.",
+        "chineseExample": "在这句话中，“label”表示“标签”。"
+      },
+      {
+        "term": "remove",
+        "phonetic": "/rɪˈmuːv/",
+        "meaning": "移除；去掉不必要内容",
+        "example": "The priority rule should remove decorative content.",
+        "chineseExample": "在这句话中，“remove”表示“移除”。"
+      },
+      {
+        "term": "ar-hud",
+        "phonetic": "/ˌeɪ ɑːr ˌhʌd/",
+        "meaning": "AR-HUD；增强现实抬头显示系统的缩写",
+        "example": "An AR-HUD experience should respect driver attention.",
+        "chineseExample": "在这句话中，“ar-hud”表示“增强现实抬头显示系统”。"
+      },
+      {
+        "term": "calibrates",
+        "phonetic": "/ˈkælɪbreɪts/",
+        "meaning": "校准；调整系统以保持准确对应",
+        "example": "The system calibrates projection alignment before showing the cue.",
+        "chineseExample": "在这句话中，“calibrates”表示“校准”。"
+      },
+      {
+        "term": "carefully",
+        "phonetic": "/ˈkerfəli/",
+        "meaning": "仔细地；谨慎而精确地",
+        "example": "Projection alignment should be calibrated carefully.",
+        "chineseExample": "在这句话中，“carefully”表示“仔细地”。"
+      },
+      {
+        "term": "treats",
+        "phonetic": "/triːts/",
+        "meaning": "视为；以某种方式看待或处理",
+        "example": "The interface treats the road as the primary display.",
+        "chineseExample": "在这句话中，“treats”表示“视为”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing AR-HUD cues for navigation without overload",
+        "text": "An augmented-reality head-up display can make navigation feel natural when the cue is anchored to the road scene. The goal is not to cover the windshield with information, but to place the next action where the driver already looks. For lane-level guidance, the overlay should appear before the junction, point toward the target lane, and then fade when the maneuver is clear. Designers must check occlusion risk because a bright arrow can hide a pedestrian crossing, a traffic sign, or a vehicle edge. Focal distance also matters. If every prompt forces the driver to refocus, the display may increase visual workload instead of reducing it. A decluttered overlay protects the glance budget: one spatial cue, one short semantic label, and one stable position are usually enough. Contrast threshold and adaptive brightness should support legibility in sunlight without creating glare at night. When the situation becomes safety-critical, the priority rule should remove decorative content and keep the warning aligned with the real hazard. A useful AR-HUD experience respects driver attention, calibrates projection alignment carefully, and treats the road as the primary interface.",
+        "translation": "增强现实抬头显示如果把提示锚定到道路场景中，就能让导航感觉更自然。目标不是用信息覆盖挡风玻璃，而是把下一步动作放在驾驶员已经在看的位置。对于车道级引导，叠层应在交汇处之前出现，指向目标车道，并在操作明确后淡出。设计师必须检查遮挡风险，因为明亮箭头可能遮住人行横道、交通标志或车辆边缘。焦距距离也很重要。如果每个提示都迫使驾驶员重新调焦，显示可能会增加而不是降低视觉负荷。去杂化叠层可以保护扫视预算：一个空间提示、一个简短语义标签和一个稳定位置通常就足够。对比度阈值和自适应亮度应支持阳光下的易读性，同时避免夜间眩光。当情境变成安全关键时，优先级规则应移除装饰性内容，并让警告与真实危险保持对齐。有用的 AR-HUD 体验会尊重驾驶员注意力，仔细校准投影对齐，并把道路视为主要界面。",
+        "source": null
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The goal is not to cover the windshield with information, but to place the next action where the driver already looks.",
+        "structure": "not to..., but to... 对比错误目标和正确目标；where 引导地点状语从句，说明信息应出现的位置。",
+        "focus": "place the next action where the driver already looks 适合描述 AR-HUD 降低扫视负荷的设计原则。",
+        "pattern": "The goal is not to add more content, but to place the key cue where the user already looks."
+      },
+      {
+        "sentence": "For lane-level guidance, the overlay should appear before the junction, point toward the target lane, and then fade when the maneuver is clear.",
+        "structure": "For... 引出应用场景；should 后接 appear, point, fade 三个并列动词，描述完整交互流程。",
+        "focus": "appear before the junction, point toward the target lane, and then fade 可用于描述导航提示的时机、方向和退出。",
+        "pattern": "For parking guidance, the cue should appear before the turn, point toward the space, and then fade when alignment is clear."
+      },
+      {
+        "sentence": "If every prompt forces the driver to refocus, the display may increase visual workload instead of reducing it.",
+        "structure": "If 条件从句 + 主句 may increase... instead of reducing...，说明设计反效果。",
+        "focus": "instead of reducing it 用来强调某个界面方案可能适得其反。",
+        "pattern": "If every alert demands a long glance, the cockpit may increase workload instead of reducing it."
+      },
+      {
+        "sentence": "When the situation becomes safety-critical, the priority rule should remove decorative content and keep the warning aligned with the real hazard.",
+        "structure": "When 时间/条件从句 + 主句 should remove... and keep...；两个动作体现优先级策略。",
+        "focus": "keep the warning aligned with the real hazard 表达警告应与真实风险保持空间对应。",
+        "pattern": "When the task becomes urgent, the system should remove secondary content and keep the cue aligned with the target."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读 10 个核心词汇，重点区分 augmented-reality head-up display、visual anchoring、glance budget 和 occlusion risk。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "detail": "跟读全文两遍，标出所有描述显示位置、车道引导、遮挡风险、亮度和优先级规则的表达。"
+      },
+      {
+        "title": "句型替换",
+        "time": "5 分钟",
+        "detail": "用 The goal is not to..., but to...、should appear..., point..., and fade...、If every prompt forces... 改写一个 HUD 提示策略。"
+      },
+      {
+        "title": "设计复述",
+        "time": "6 分钟",
+        "detail": "用 5 句话复述 AR-HUD 如何通过视觉锚定、去杂化叠层和优先级规则保护驾驶员注意力。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-26-contextual-voice-guidance",
     "date": "2026-07-26",
     "title": "Contextual voice guidance and low-interruption prompts in intelligent cockpits",
