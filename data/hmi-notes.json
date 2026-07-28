@@ -1,5 +1,670 @@
 [
   {
+    "id": "2026-07-28-conversational-repair",
+    "date": "2026-07-28",
+    "title": "Conversational repair for ambiguous voice commands in intelligent cockpits",
+    "topic": "智能座舱歧义语音指令的对话修复",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车内语音助手在指令不明确时的澄清、候选意图、风险确认和低分心对话设计。",
+    "words": [
+      {
+        "term": "conversational repair",
+        "phonetic": "/ˌkɑːnvərˈseɪʃənl rɪˈper/",
+        "meaning": "对话修复；当系统没有完全理解用户意图时，通过澄清、复述或选项缩小来恢复任务流程",
+        "example": "Conversational repair should keep the driver in control when a voice command is ambiguous.",
+        "chineseExample": "当语音指令存在歧义时，对话修复应让驾驶员保持控制权。"
+      },
+      {
+        "term": "ambiguous voice command",
+        "phonetic": "/æmˈbɪɡjuəs vɔɪs kəˈmænd/",
+        "meaning": "歧义语音指令；可能对应多个目标、位置或操作的车内语音输入",
+        "example": "An ambiguous voice command may refer to the front window, rear window, or sunroof.",
+        "chineseExample": "一条歧义语音指令可能指前窗、后窗或天窗。"
+      },
+      {
+        "term": "clarification prompt",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn prɑːmpt/",
+        "meaning": "澄清提示；系统用来请求用户补充目标、范围、时间或偏好的短提示",
+        "example": "A clarification prompt should ask for only the missing detail, not repeat the whole request.",
+        "chineseExample": "澄清提示应只询问缺失细节，而不是重复整个请求。"
+      },
+      {
+        "term": "intent candidate",
+        "phonetic": "/ɪnˈtent ˈkændɪdət/",
+        "meaning": "意图候选项；系统根据语音、上下文和界面状态推断出的可能用户意图",
+        "example": "The assistant can show two intent candidates when confidence is too close to call.",
+        "chineseExample": "当置信度过于接近时，助手可以显示两个意图候选项。"
+      },
+      {
+        "term": "confidence gap",
+        "phonetic": "/ˈkɑːnfɪdəns ɡæp/",
+        "meaning": "置信度差距；最可能意图与次可能意图之间的可靠性差异",
+        "example": "A small confidence gap means the cockpit should confirm before changing a safety-related setting.",
+        "chineseExample": "置信度差距较小时，座舱在改变安全相关设置前应先确认。"
+      },
+      {
+        "term": "context carryover",
+        "phonetic": "/ˈkɑːntekst ˈkærioʊvər/",
+        "meaning": "上下文延续；把上一轮对话、当前屏幕和车辆状态用于理解下一轮输入",
+        "example": "Context carryover helps the system understand that 'make it warmer' refers to cabin temperature.",
+        "chineseExample": "上下文延续帮助系统理解“调暖一点”指的是座舱温度。"
+      },
+      {
+        "term": "low-distraction dialogue",
+        "phonetic": "/loʊ dɪˈstrækʃn ˈdaɪəlɔːɡ/",
+        "meaning": "低分心对话；用短句、少选项和可预期反馈减少驾驶注意力占用的语音交互",
+        "example": "Low-distraction dialogue uses short choices instead of a long explanation.",
+        "chineseExample": "低分心对话使用简短选项，而不是冗长解释。"
+      },
+      {
+        "term": "confirmation threshold",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈθreʃhoʊld/",
+        "meaning": "确认阈值；决定系统何时可以直接执行、何时必须请求确认的置信度或风险标准",
+        "example": "The confirmation threshold should be higher for driving mode changes than for media volume.",
+        "chineseExample": "驾驶模式变更的确认阈值应高于媒体音量调整。"
+      },
+      {
+        "term": "recoverable action",
+        "phonetic": "/rɪˈkʌvərəbl ˈækʃn/",
+        "meaning": "可恢复操作；误执行后可以快速撤销、回退或重新设置的操作",
+        "example": "A recoverable action can proceed with a brief toast and an undo option.",
+        "chineseExample": "可恢复操作可以通过简短提示和撤销选项继续执行。"
+      },
+      {
+        "term": "turn-taking cue",
+        "phonetic": "/ˈtɜːrn ˌteɪkɪŋ kjuː/",
+        "meaning": "轮次提示；告诉用户系统正在听、正在处理或等待回答的视觉或声音信号",
+        "example": "A turn-taking cue prevents the driver from speaking over the assistant.",
+        "chineseExample": "轮次提示可以防止驾驶员在助手仍在回应时插话。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "conversational repair",
+        "phonetic": "/ˌkɑːnvərˈseɪʃənl rɪˈper/",
+        "meaning": "对话修复；当系统没有完全理解用户意图时，通过澄清、复述或选项缩小来恢复任务流程",
+        "example": "Conversational repair should keep the driver in control when a voice command is ambiguous.",
+        "chineseExample": "当语音指令存在歧义时，对话修复应让驾驶员保持控制权。"
+      },
+      {
+        "term": "ambiguous voice command",
+        "phonetic": "/æmˈbɪɡjuəs vɔɪs kəˈmænd/",
+        "meaning": "歧义语音指令；可能对应多个目标、位置或操作的车内语音输入",
+        "example": "An ambiguous voice command may refer to the front window, rear window, or sunroof.",
+        "chineseExample": "一条歧义语音指令可能指前窗、后窗或天窗。"
+      },
+      {
+        "term": "clarification prompt",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn prɑːmpt/",
+        "meaning": "澄清提示；系统用来请求用户补充目标、范围、时间或偏好的短提示",
+        "example": "A clarification prompt should ask for only the missing detail, not repeat the whole request.",
+        "chineseExample": "澄清提示应只询问缺失细节，而不是重复整个请求。"
+      },
+      {
+        "term": "intent candidate",
+        "phonetic": "/ɪnˈtent ˈkændɪdət/",
+        "meaning": "意图候选项；系统根据语音、上下文和界面状态推断出的可能用户意图",
+        "example": "The assistant can show two intent candidates when confidence is too close to call.",
+        "chineseExample": "当置信度过于接近时，助手可以显示两个意图候选项。"
+      },
+      {
+        "term": "confidence gap",
+        "phonetic": "/ˈkɑːnfɪdəns ɡæp/",
+        "meaning": "置信度差距；最可能意图与次可能意图之间的可靠性差异",
+        "example": "A small confidence gap means the cockpit should confirm before changing a safety-related setting.",
+        "chineseExample": "置信度差距较小时，座舱在改变安全相关设置前应先确认。"
+      },
+      {
+        "term": "context carryover",
+        "phonetic": "/ˈkɑːntekst ˈkærioʊvər/",
+        "meaning": "上下文延续；把上一轮对话、当前屏幕和车辆状态用于理解下一轮输入",
+        "example": "Context carryover helps the system understand that 'make it warmer' refers to cabin temperature.",
+        "chineseExample": "上下文延续帮助系统理解“调暖一点”指的是座舱温度。"
+      },
+      {
+        "term": "low-distraction dialogue",
+        "phonetic": "/loʊ dɪˈstrækʃn ˈdaɪəlɔːɡ/",
+        "meaning": "低分心对话；用短句、少选项和可预期反馈减少驾驶注意力占用的语音交互",
+        "example": "Low-distraction dialogue uses short choices instead of a long explanation.",
+        "chineseExample": "低分心对话使用简短选项，而不是冗长解释。"
+      },
+      {
+        "term": "confirmation threshold",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈθreʃhoʊld/",
+        "meaning": "确认阈值；决定系统何时可以直接执行、何时必须请求确认的置信度或风险标准",
+        "example": "The confirmation threshold should be higher for driving mode changes than for media volume.",
+        "chineseExample": "驾驶模式变更的确认阈值应高于媒体音量调整。"
+      },
+      {
+        "term": "recoverable action",
+        "phonetic": "/rɪˈkʌvərəbl ˈækʃn/",
+        "meaning": "可恢复操作；误执行后可以快速撤销、回退或重新设置的操作",
+        "example": "A recoverable action can proceed with a brief toast and an undo option.",
+        "chineseExample": "可恢复操作可以通过简短提示和撤销选项继续执行。"
+      },
+      {
+        "term": "turn-taking cue",
+        "phonetic": "/ˈtɜːrn ˌteɪkɪŋ kjuː/",
+        "meaning": "轮次提示；告诉用户系统正在听、正在处理或等待回答的视觉或声音信号",
+        "example": "A turn-taking cue prevents the driver from speaking over the assistant.",
+        "chineseExample": "轮次提示可以防止驾驶员在助手仍在回应时插话。"
+      },
+      {
+        "term": "conversational",
+        "phonetic": "/ˌkɑːnvərˈseɪʃənl/",
+        "meaning": "对话式的；与多轮交流有关的",
+        "example": "Conversational design must support interruption.",
+        "chineseExample": "在这句话中，“conversational”表示“对话式的”。"
+      },
+      {
+        "term": "repair",
+        "phonetic": "/rɪˈper/",
+        "meaning": "修复；恢复失败或中断的交互流程",
+        "example": "Repair keeps the task moving after recognition fails.",
+        "chineseExample": "在这句话中，“repair”表示“修复”。"
+      },
+      {
+        "term": "ambiguous",
+        "phonetic": "/æmˈbɪɡjuəs/",
+        "meaning": "有歧义的；可以被理解为多个含义的",
+        "example": "Ambiguous wording should trigger a focused question.",
+        "chineseExample": "在这句话中，“ambiguous”表示“有歧义的”。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；车内自然语言输入通道",
+        "example": "Voice input is useful when hands are busy.",
+        "chineseExample": "在这句话中，“voice”表示“语音”。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "指令；用户希望系统执行的口头请求",
+        "example": "The command should map to one clear vehicle function.",
+        "chineseExample": "在这句话中，“command”表示“指令”。"
+      },
+      {
+        "term": "clarification",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn/",
+        "meaning": "澄清；补足缺失信息或消除歧义的过程",
+        "example": "Clarification is better than guessing during driving.",
+        "chineseExample": "在这句话中，“clarification”表示“澄清”。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户下一步操作或回答的界面内容",
+        "example": "The prompt should be short and actionable.",
+        "chineseExample": "在这句话中，“prompt”表示“提示”。"
+      },
+      {
+        "term": "intent",
+        "phonetic": "/ɪnˈtent/",
+        "meaning": "意图；用户真正想完成的目标",
+        "example": "Intent detection combines speech and context.",
+        "chineseExample": "在这句话中，“intent”表示“意图”。"
+      },
+      {
+        "term": "candidate",
+        "phonetic": "/ˈkændɪdət/",
+        "meaning": "候选项；供系统或用户选择的可能结果",
+        "example": "The top candidate is not always safe to execute.",
+        "chineseExample": "在这句话中，“candidate”表示“候选项”。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对识别或推断结果可靠性的估计",
+        "example": "Confidence should be interpreted with task risk.",
+        "chineseExample": "在这句话中，“confidence”表示“置信度”。"
+      },
+      {
+        "term": "gap",
+        "phonetic": "/ɡæp/",
+        "meaning": "差距；两个分数、状态或理解之间的间隔",
+        "example": "A narrow gap calls for confirmation.",
+        "chineseExample": "在这句话中，“gap”表示“差距”。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "上下文；影响理解的对话、位置、界面和车辆状态",
+        "example": "Context reduces unnecessary follow-up questions.",
+        "chineseExample": "在这句话中，“context”表示“上下文”。"
+      },
+      {
+        "term": "carryover",
+        "phonetic": "/ˈkærioʊvər/",
+        "meaning": "延续；把前一状态带入下一轮判断",
+        "example": "Carryover makes short follow-up commands easier.",
+        "chineseExample": "在这句话中，“carryover”表示“延续”。"
+      },
+      {
+        "term": "low-distraction",
+        "phonetic": "/loʊ dɪˈstrækʃn/",
+        "meaning": "低分心的；减少驾驶注意力占用的",
+        "example": "Low-distraction wording avoids long menus.",
+        "chineseExample": "在这句话中，“low-distraction”表示“低分心的”。"
+      },
+      {
+        "term": "dialogue",
+        "phonetic": "/ˈdaɪəlɔːɡ/",
+        "meaning": "对话；用户与系统之间的轮流交流",
+        "example": "Dialogue should have clear turn boundaries.",
+        "chineseExample": "在这句话中，“dialogue”表示“对话”。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；执行前核对用户意图的步骤",
+        "example": "Confirmation is required for risky settings.",
+        "chineseExample": "在这句话中，“confirmation”表示“确认”。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种系统行为的边界条件",
+        "example": "The threshold can change with driving speed.",
+        "chineseExample": "在这句话中，“threshold”表示“阈值”。"
+      },
+      {
+        "term": "recoverable",
+        "phonetic": "/rɪˈkʌvərəbl/",
+        "meaning": "可恢复的；可以撤销或修正的",
+        "example": "Recoverable changes need lighter confirmation.",
+        "chineseExample": "在这句话中，“recoverable”表示“可恢复的”。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃn/",
+        "meaning": "操作；系统执行的具体行为",
+        "example": "The action must match the confirmed intent.",
+        "chineseExample": "在这句话中，“action”表示“操作”。"
+      },
+      {
+        "term": "turn-taking",
+        "phonetic": "/ˈtɜːrn ˌteɪkɪŋ/",
+        "meaning": "轮次交替；对话中说话权的切换",
+        "example": "Turn-taking cues make speech interaction predictable.",
+        "chineseExample": "在这句话中，“turn-taking”表示“轮次交替”。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示信号；帮助用户理解状态或方向的信息",
+        "example": "A short sound cue can mark the listening state.",
+        "chineseExample": "在这句话中，“cue”表示“提示信号”。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；车内交互的主要安全责任人",
+        "example": "The driver should never lose control of the task.",
+        "chineseExample": "在这句话中，“driver”表示“驾驶员”。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；车内语音或智能交互系统",
+        "example": "The assistant should explain only what matters.",
+        "chineseExample": "在这句话中，“assistant”表示“助手”。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/ˈkɑːkpɪt/",
+        "meaning": "座舱；驾驶员和乘员使用的车内交互空间",
+        "example": "The cockpit combines displays, controls, and sensors.",
+        "chineseExample": "在这句话中，“cockpit”表示“座舱”。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "屏幕；显示候选项、状态或反馈的界面区域",
+        "example": "The screen can show two concise choices.",
+        "chineseExample": "在这句话中，“screen”表示“屏幕”。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；交互所控制或感知的车载系统",
+        "example": "Vehicle state changes the response strategy.",
+        "chineseExample": "在这句话中，“vehicle”表示“车辆”。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；系统、车辆或用户当前所处情况",
+        "example": "State information supports better intent ranking.",
+        "chineseExample": "在这句话中，“state”表示“状态”。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；误解或误执行可能造成的负面影响",
+        "example": "Risk should decide how much confirmation is needed.",
+        "chineseExample": "在这句话中，“risk”表示“风险”。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/ˈsetɪŋ/",
+        "meaning": "设置；座椱功能或系统偏好的可调参数",
+        "example": "A safety-related setting needs explicit confirmation.",
+        "chineseExample": "在这句话中，“setting”表示“设置”。"
+      },
+      {
+        "term": "preference",
+        "phonetic": "/ˈprefrəns/",
+        "meaning": "偏好；用户对温度、媒体或显示方式的个人选择",
+        "example": "Preference data should be used only when relevant.",
+        "chineseExample": "在这句话中，“preference”表示“偏好”。"
+      },
+      {
+        "term": "scope",
+        "phonetic": "/skoʊp/",
+        "meaning": "范围；指令影响的对象、区域或持续时间",
+        "example": "Scope must be clear before the system acts.",
+        "chineseExample": "在这句话中，“scope”表示“范围”。"
+      },
+      {
+        "term": "target",
+        "phonetic": "/ˈtɑːrɡɪt/",
+        "meaning": "目标；用户想要操作的对象或区域",
+        "example": "The target may be a window, seat, or display.",
+        "chineseExample": "在这句话中，“target”表示“目标”。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃn/",
+        "meaning": "选项；用户可选择的候选答案或操作",
+        "example": "Two options are easier to scan than five.",
+        "chineseExample": "在这句话中，“option”表示“选项”。"
+      },
+      {
+        "term": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "meaning": "选择；用户从候选项中确认的结果",
+        "example": "The safest choice is often a short question.",
+        "chineseExample": "在这句话中，“choice”表示“选择”。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "执行；系统开始完成已确认的操作",
+        "example": "Do not execute a risky command without confirmation.",
+        "chineseExample": "在这句话中，“execute”表示“执行”。"
+      },
+      {
+        "term": "proceed",
+        "phonetic": "/proʊˈsiːd/",
+        "meaning": "继续执行；在满足条件后推进任务",
+        "example": "The system can proceed when intent is clear.",
+        "chineseExample": "在这句话中，“proceed”表示“继续执行”。"
+      },
+      {
+        "term": "undo",
+        "phonetic": "/ʌnˈduː/",
+        "meaning": "撤销；取消刚刚完成的操作",
+        "example": "Undo protects the user after a minor mistake.",
+        "chineseExample": "在这句话中，“undo”表示“撤销”。"
+      },
+      {
+        "term": "toast",
+        "phonetic": "/toʊst/",
+        "meaning": "轻提示；短暂出现的状态反馈",
+        "example": "A toast can confirm a recoverable change.",
+        "chineseExample": "在这句话中，“toast”表示“轻提示”。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "兜底方案；主路径失败后的替代交互方式",
+        "example": "Fallback should be available when speech fails.",
+        "chineseExample": "在这句话中，“fallback”表示“兜底方案”。"
+      },
+      {
+        "term": "misrecognition",
+        "phonetic": "/ˌmɪsrekəɡˈnɪʃn/",
+        "meaning": "误识别；系统把语音内容识别错的情况",
+        "example": "Misrecognition is more likely in a noisy cabin.",
+        "chineseExample": "在这句话中，“misrecognition”表示“误识别”。"
+      },
+      {
+        "term": "recognition",
+        "phonetic": "/ˌrekəɡˈnɪʃn/",
+        "meaning": "识别；系统把语音转为可理解内容的过程",
+        "example": "Recognition quality changes with road noise.",
+        "chineseExample": "在这句话中，“recognition”表示“识别”。"
+      },
+      {
+        "term": "noisy",
+        "phonetic": "/ˈnɔɪzi/",
+        "meaning": "嘈杂的；有较强背景噪声的",
+        "example": "A noisy cabin requires clearer feedback.",
+        "chineseExample": "在这句话中，“noisy”表示“嘈杂的”。"
+      },
+      {
+        "term": "cabin",
+        "phonetic": "/ˈkæbɪn/",
+        "meaning": "车厢；乘员所在的车内空间",
+        "example": "Cabin noise can affect voice recognition.",
+        "chineseExample": "在这句话中，“cabin”表示“车厢”。"
+      },
+      {
+        "term": "safe-state response",
+        "phonetic": "/seɪf steɪt rɪˈspɑːns/",
+        "meaning": "安全状态响应；系统在不确定时保持或回退到低风险状态的回应",
+        "example": "A safe-state response avoids changing speed-related settings.",
+        "chineseExample": "安全状态响应会避免改变速度相关设置。"
+      },
+      {
+        "term": "focused question",
+        "phonetic": "/ˈfoʊkəst ˈkwestʃən/",
+        "meaning": "聚焦问题；只询问解决歧义所需信息的短问题",
+        "example": "A focused question is easier to answer while driving.",
+        "chineseExample": "聚焦问题在驾驶中更容易回答。"
+      },
+      {
+        "term": "speech state indicator",
+        "phonetic": "/spiːtʃ steɪt ˈɪndɪkeɪtər/",
+        "meaning": "语音状态指示器；显示正在听、处理中或等待回答的状态元素",
+        "example": "A speech state indicator should be visible without stealing attention.",
+        "chineseExample": "语音状态指示器应可见但不抢占注意力。"
+      },
+      {
+        "term": "task flow",
+        "phonetic": "/tæsk floʊ/",
+        "meaning": "任务流程；从请求到确认再到执行的交互路径",
+        "example": "Task flow should recover quickly after ambiguity.",
+        "chineseExample": "任务流程应在出现歧义后快速恢复。"
+      },
+      {
+        "term": "risk-based confirmation",
+        "phonetic": "/rɪsk beɪst ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "基于风险的确认；根据操作风险决定确认强度",
+        "example": "Risk-based confirmation keeps simple tasks fast and critical tasks safe.",
+        "chineseExample": "基于风险的确认让简单任务保持快速，让关键任务保持安全。"
+      },
+      {
+        "term": "refer",
+        "phonetic": "/rɪˈfɜːr/",
+        "meaning": "指代；在语音指令中表示某个对象或功能",
+        "example": "The command may refer to more than one target.",
+        "chineseExample": "在这句话中，“refer”表示“指代”。"
+      },
+      {
+        "term": "sunroof",
+        "phonetic": "/ˈsʌnruːf/",
+        "meaning": "天窗；车顶可开启或遮阳的玻璃区域",
+        "example": "The request may refer to the window or the sunroof.",
+        "chineseExample": "在这句话中，“sunroof”表示“天窗”。"
+      },
+      {
+        "term": "missing",
+        "phonetic": "/ˈmɪsɪŋ/",
+        "meaning": "缺失的；用户请求中尚未说明的信息",
+        "example": "The system should ask for the missing detail.",
+        "chineseExample": "在这句话中，“missing”表示“缺失的”。"
+      },
+      {
+        "term": "candidates",
+        "phonetic": "/ˈkændɪdəts/",
+        "meaning": "候选项；多个可能的识别或意图结果",
+        "example": "Intent candidates can be shown when confidence is close.",
+        "chineseExample": "在这句话中，“candidates”表示“候选项”。"
+      },
+      {
+        "term": "warmer",
+        "phonetic": "/ˈwɔːrmər/",
+        "meaning": "更暖的；温度偏高一些的",
+        "example": "Make it warmer usually refers to cabin temperature.",
+        "chineseExample": "在这句话中，“warmer”表示“更暖的”。"
+      },
+      {
+        "term": "extra",
+        "phonetic": "/ˈekstrə/",
+        "meaning": "额外的；并非主流程必需但可增强体验的",
+        "example": "Conversational repair is not a polite extra.",
+        "chineseExample": "在这句话中，“extra”表示“额外的”。"
+      },
+      {
+        "term": "mechanism",
+        "phonetic": "/ˈmekənɪzəm/",
+        "meaning": "机制；实现安全或交互目标的一套方法",
+        "example": "Repair is a safety mechanism in voice interaction.",
+        "chineseExample": "在这句话中，“mechanism”表示“机制”。"
+      },
+      {
+        "term": "rain",
+        "phonetic": "/reɪn/",
+        "meaning": "雨；影响车窗、雨刷和驾驶场景判断的天气信息",
+        "example": "Rain information can change how a window command is handled.",
+        "chineseExample": "在这句话中，“rain”表示“雨”。"
+      },
+      {
+        "term": "record",
+        "phonetic": "/ˈrekərd/",
+        "meaning": "记录；系统保存的用户偏好或历史状态",
+        "example": "A passenger preference may be on record.",
+        "chineseExample": "在这句话中，“record”表示“记录”。"
+      },
+      {
+        "term": "guesses",
+        "phonetic": "/ˈɡesɪz/",
+        "meaning": "猜测；在不确定时直接推断并行动",
+        "example": "If the assistant guesses, it may execute the wrong action.",
+        "chineseExample": "在这句话中，“guesses”表示“猜测”。"
+      },
+      {
+        "term": "under",
+        "phonetic": "/ˈʌndər/",
+        "meaning": "在……条件下；表示压力、限制或场景约束",
+        "example": "The driver should not correct errors under time pressure.",
+        "chineseExample": "在这句话中，“under”表示“在……条件下”。"
+      },
+      {
+        "term": "checks",
+        "phonetic": "/tʃeks/",
+        "meaning": "检查；核对状态、差距或风险",
+        "example": "A better design checks the confidence gap first.",
+        "chineseExample": "在这句话中，“checks”表示“检查”。"
+      },
+      {
+        "term": "narrow",
+        "phonetic": "/ˈnæroʊ/",
+        "meaning": "狭窄的；差距很小或范围受限的",
+        "example": "A narrow confidence gap calls for a focused question.",
+        "chineseExample": "在这句话中，“narrow”表示“狭窄的；很小的”。"
+      },
+      {
+        "term": "mirrored",
+        "phonetic": "/ˈmɪrərd/",
+        "meaning": "同步呈现的；把语音提示也显示到屏幕上的",
+        "example": "The prompt can be mirrored on the screen.",
+        "chineseExample": "在这句话中，“mirrored”表示“同步呈现的”。"
+      },
+      {
+        "term": "scanning",
+        "phonetic": "/ˈskænɪŋ/",
+        "meaning": "扫视；快速浏览界面以获取关键信息",
+        "example": "Quick scanning reduces visual workload.",
+        "chineseExample": "在这句话中，“scanning”表示“扫视”。"
+      },
+      {
+        "term": "mapped",
+        "phonetic": "/mæpt/",
+        "meaning": "映射的；把输入关联到特定功能或目标的",
+        "example": "The phrase can be mapped to climate control.",
+        "chineseExample": "在这句话中，“mapped”表示“映射的”。"
+      },
+      {
+        "term": "matter",
+        "phonetic": "/ˈmætər/",
+        "meaning": "重要；对设计结果产生影响",
+        "example": "Turn-taking cues matter in noisy cabins.",
+        "chineseExample": "在这句话中，“matter”表示“重要”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing voice repair without adding workload",
+        "text": "In an intelligent cockpit, conversational repair is not a polite extra; it is a safety mechanism. A driver may say, \"open the window,\" while the vehicle has several possible targets, current rain information, and a passenger preference on record. If the assistant guesses, it may execute the wrong action and force the driver to correct it under time pressure. A better design first checks the confidence gap between intent candidates. When the gap is narrow or the action changes a safety-related setting, the system should ask a focused question such as, \"Front window or rear window?\" The prompt should be short, spoken once, and mirrored on the screen for quick scanning. Context carryover can reduce friction: after a driver asks about cabin temperature, \"make it warmer\" can be mapped to climate control rather than seat heating. However, context should never hide uncertainty. Low-distraction dialogue separates recoverable actions from risky ones. A media adjustment may proceed with a toast and an undo option, while a driving mode change needs explicit confirmation. Clear turn-taking cues also matter because the driver must know whether the assistant is listening, processing, or waiting for an answer. Good repair design keeps the task flow moving while preserving user agency.",
+        "translation": "在智能座舱中，对话修复不是礼貌性的附加功能，而是一种安全机制。驾驶员可能说“打开窗户”，但车辆存在多个可能目标、当前雨量信息以及乘客偏好记录。如果助手直接猜测，就可能执行错误操作，并迫使驾驶员在时间压力下纠正。更好的设计会先检查意图候选项之间的置信度差距。当差距很小，或操作会改变安全相关设置时，系统应提出聚焦问题，例如“前窗还是后窗？”提示应简短，只播报一次，并同步显示在屏幕上以便快速扫视。上下文延续可以减少摩擦：当驾驶员刚询问过座舱温度后，“调暖一点”可以映射到空调控制，而不是座椅加热。不过，上下文不应掩盖不确定性。低分心对话会区分可恢复操作和高风险操作。媒体调整可以通过轻提示和撤销选项继续执行，而驾驶模式变更需要明确确认。清晰的轮次提示也很重要，因为驾驶员必须知道助手正在听、正在处理，还是等待回答。优秀的修复设计会在保留用户主导权的同时，让任务流程继续向前推进。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A better design first checks the confidence gap between intent candidates.",
+        "translation": "更好的设计会先检查意图候选项之间的置信度差距。",
+        "points": [
+          "A better design 作主语，指更合理的交互方案。",
+          "checks the confidence gap 表示检查置信度差距。",
+          "between intent candidates 说明比较对象是多个意图候选项。"
+        ]
+      },
+      {
+        "sentence": "The prompt should be short, spoken once, and mirrored on the screen for quick scanning.",
+        "translation": "提示应简短，只播报一次，并同步显示在屏幕上以便快速扫视。",
+        "points": [
+          "should be short, spoken once, and mirrored 是三个并列设计要求。",
+          "mirrored on the screen 表示语音内容也在屏幕上显示。",
+          "for quick scanning 说明设计目标是减少视觉负荷。"
+        ]
+      },
+      {
+        "sentence": "Context carryover can reduce friction, but context should never hide uncertainty.",
+        "translation": "上下文延续可以减少摩擦，但上下文绝不应掩盖不确定性。",
+        "points": [
+          "can reduce friction 表示能降低交互阻力。",
+          "but 引出限制条件。",
+          "should never hide uncertainty 强调系统不能假装自己已经确定。"
+        ]
+      },
+      {
+        "sentence": "Low-distraction dialogue separates recoverable actions from risky ones.",
+        "translation": "低分心对话会区分可恢复操作和高风险操作。",
+        "points": [
+          "Low-distraction dialogue 是主语，指低注意力占用的对话策略。",
+          "separates A from B 表示把 A 与 B 区分开。",
+          "recoverable actions 和 risky ones 对应不同确认强度。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      "3 分钟：朗读 words 中的 10 个术语，重点区分 clarification、confirmation、confidence 的发音和含义。",
+      "6 分钟：跟读长文第一遍，只关注 conversational repair、intent candidates、context carryover 等短语的停顿。",
+      "7 分钟：用英文复述一个场景：驾驶员说“打开它”，系统如何用 focused question 修复歧义。",
+      "5 分钟：把 4 条 sentenceBreakdowns 改写成你自己的 HMI 设计评审表达。"
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: voice assistant confirmation design in automotive HMI",
+        "url": "",
+        "note": "未添加未经核实的视频链接；可用该关键词查找车载语音交互与确认设计案例。"
+      }
+    ]
+  },
+  {
     "id": "2026-07-27-ar-hud-navigation",
     "date": "2026-07-27",
     "title": "AR-HUD navigation and glance control in intelligent cockpits",
