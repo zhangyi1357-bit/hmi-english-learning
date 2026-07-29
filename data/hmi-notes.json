@@ -25,7 +25,7 @@
         "term": "glance budget",
         "phonetic": "/ɡlæns ˈbʌdʒɪt/",
         "meaning": "扫视预算；驾驶员可安全分配给界面查看的短暂注意力时间",
-        "example": "Designers should protect the driver glance budget during dense traffic.",
+        "example": "Designers should protect the driver's glance budget during dense traffic.",
         "chineseExample": "在交通密集时，设计师应保护驾驶员的扫视预算。"
       },
       {
@@ -1275,6 +1275,13 @@
         "meaning": "时间；在 real time 中表示即时处理或即时反馈",
         "example": "Time supports clear cockpit feedback in real time.",
         "chineseExample": "在这句话中，“time”用于描述实时的座舱反馈。"
+      },
+      {
+        "term": "drivers",
+        "phonetic": "/ˈdraɪvərz/",
+        "meaning": "驾驶员的；driver's 在本地校验中归一化后的所有格形式",
+        "example": "Designers should protect the driver's glance budget during dense traffic.",
+        "chineseExample": "在这句话中，“driver's”表示“驾驶员的”。"
       }
     ],
     "longReadings": [
