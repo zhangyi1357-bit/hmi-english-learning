@@ -1,5 +1,1344 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-29-ambient-feedback",
+    "date": "2026-07-29",
+    "title": "Ambient feedback and glance-light interaction in intelligent cockpits",
+    "topic": "智能座舱环境式反馈与扫视灯光交互",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述车内灯光、屏幕边缘和非语言反馈如何表达系统状态，同时控制驾驶员扫视负荷。",
+    "words": [
+      {
+        "term": "ambient interaction layer",
+        "phonetic": "/ˈæmbiənt ˌɪntərˈækʃn ˈleɪər/",
+        "meaning": "环境式交互层；通过灯光、声音、触觉和屏幕边缘反馈传达状态的低干扰界面层",
+        "example": "An ambient interaction layer can show vehicle state without pulling attention away from the road.",
+        "chineseExample": "环境式交互层可以显示车辆状态，而不会把注意力从道路上拉走。"
+      },
+      {
+        "term": "peripheral cue",
+        "phonetic": "/pəˈrɪfərəl kjuː/",
+        "meaning": "周边提示；位于用户视线边缘、无需长时间注视即可感知的提示",
+        "example": "A peripheral cue is useful when the driver only has a short glance budget.",
+        "chineseExample": "当驾驶员只有很短的扫视预算时，周边提示很有用。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可安全分配给界面查看的短暂注意力时间",
+        "example": "Designers should protect the driver glance budget during dense traffic.",
+        "chineseExample": "在交通密集时，设计师应保护驾驶员的扫视预算。"
+      },
+      {
+        "term": "state transition",
+        "phonetic": "/steɪt trænˈzɪʃn/",
+        "meaning": "状态转换；系统从一个可见或可感知状态切换到另一个状态",
+        "example": "Every state transition needs a clear beginning, duration, and ending.",
+        "chineseExample": "每一次状态转换都需要清晰的开始、持续时间和结束。"
+      },
+      {
+        "term": "color semantics",
+        "phonetic": "/ˈkʌlər səˈmæntɪks/",
+        "meaning": "颜色语义；颜色在界面中承载的固定含义和风险等级",
+        "example": "Color semantics must be consistent across the cluster, center stack, and light strip.",
+        "chineseExample": "颜色语义必须在仪表屏、中控和灯带之间保持一致。"
+      },
+      {
+        "term": "adaptive brightness",
+        "phonetic": "/əˈdæptɪv ˈbraɪtnəs/",
+        "meaning": "自适应亮度；根据环境光、驾驶场景和显示负荷调节亮度",
+        "example": "Adaptive brightness keeps ambient feedback visible in daylight and comfortable at night.",
+        "chineseExample": "自适应亮度让环境式反馈在白天可见、夜间舒适。"
+      },
+      {
+        "term": "attention handoff",
+        "phonetic": "/əˈtenʃn ˈhændɔːf/",
+        "meaning": "注意力交接；把用户注意力从一个通道平稳引导到另一个通道",
+        "example": "Attention handoff should move from a subtle signal to a salient signal only when risk increases.",
+        "chineseExample": "注意力交接只应在风险增加时从细微信号转为显著信号。"
+      },
+      {
+        "term": "nonverbal confirmation",
+        "phonetic": "/ˌnɑːnˈvɜːrbl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "非语言确认；不用完整语音句子也能确认动作结果的反馈",
+        "example": "Nonverbal confirmation can use a soft pulse after the climate setting changes.",
+        "chineseExample": "空调设置改变后，非语言确认可以使用柔和脉冲。"
+      },
+      {
+        "term": "comfort mode",
+        "phonetic": "/ˈkʌmfərt moʊd/",
+        "meaning": "舒适模式；面向放松、安静和低刺激的座舱显示或环境设置",
+        "example": "Comfort mode should avoid urgent colors unless a safety-critical message appears.",
+        "chineseExample": "舒适模式应避免使用紧急颜色，除非出现安全关键消息。"
+      },
+      {
+        "term": "visual hierarchy",
+        "phonetic": "/ˈvɪʒuəl ˈhaɪərɑːrki/",
+        "meaning": "视觉层级；通过大小、位置、对比和动效组织信息优先级",
+        "example": "Visual hierarchy separates navigation hints from secondary information.",
+        "chineseExample": "视觉层级把导航提示和次要信息区分开。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "ambient interaction layer",
+        "phonetic": "/ˈæmbiənt ˌɪntərˈækʃn ˈleɪər/",
+        "meaning": "环境式交互层；通过灯光、声音、触觉和屏幕边缘反馈传达状态的低干扰界面层",
+        "example": "Ambient interaction layer should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“ambient interaction layer”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "peripheral cue",
+        "phonetic": "/pəˈrɪfərəl kjuː/",
+        "meaning": "周边提示；位于用户视线边缘、无需长时间注视即可感知的提示",
+        "example": "Peripheral cue should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“peripheral cue”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可安全分配给界面查看的短暂注意力时间",
+        "example": "Glance budget should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“glance budget”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "state transition",
+        "phonetic": "/steɪt trænˈzɪʃn/",
+        "meaning": "状态转换；系统从一个可见或可感知状态切换到另一个状态",
+        "example": "State transition should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“state transition”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "color semantics",
+        "phonetic": "/ˈkʌlər səˈmæntɪks/",
+        "meaning": "颜色语义；颜色在界面中承载的固定含义和风险等级",
+        "example": "Color semantics should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“color semantics”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "adaptive brightness",
+        "phonetic": "/əˈdæptɪv ˈbraɪtnəs/",
+        "meaning": "自适应亮度；根据环境光、驾驶场景和显示负荷调节亮度",
+        "example": "Adaptive brightness should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“adaptive brightness”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "attention handoff",
+        "phonetic": "/əˈtenʃn ˈhændɔːf/",
+        "meaning": "注意力交接；把用户注意力从一个通道平稳引导到另一个通道",
+        "example": "Attention handoff should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“attention handoff”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "nonverbal confirmation",
+        "phonetic": "/ˌnɑːnˈvɜːrbl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "非语言确认；不用完整语音句子也能确认动作结果的反馈",
+        "example": "Nonverbal confirmation should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“nonverbal confirmation”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "comfort mode",
+        "phonetic": "/ˈkʌmfərt moʊd/",
+        "meaning": "舒适模式；面向放松、安静和低刺激的座舱显示或环境设置",
+        "example": "Comfort mode should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“comfort mode”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "visual hierarchy",
+        "phonetic": "/ˈvɪʒuəl ˈhaɪərɑːrki/",
+        "meaning": "视觉层级；通过大小、位置、对比和动效组织信息优先级",
+        "example": "Visual hierarchy should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“visual hierarchy”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "ambient",
+        "phonetic": "/ˈæmbiənt/",
+        "meaning": "环境的；围绕用户但不占据主要注意力的",
+        "example": "Ambient should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“ambient”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；用户、系统和环境之间的行为反馈关系",
+        "example": "Interaction should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“interaction”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "layer",
+        "phonetic": "/ˈleɪər/",
+        "meaning": "层；界面或系统中的一个功能级别",
+        "example": "Layer should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“layer”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "peripheral",
+        "phonetic": "/pəˈrɪfərəl/",
+        "meaning": "周边的；位于主要视线或主要任务之外的",
+        "example": "Peripheral should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“peripheral”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示；引导理解或行动的信号",
+        "example": "Cue should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“cue”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "扫视；短时间查看界面信息",
+        "example": "Glance should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“glance”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "budget",
+        "phonetic": "/ˈbʌdʒɪt/",
+        "meaning": "预算；可分配的有限资源或时间",
+        "example": "Budget should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“budget”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；系统当前所处的条件或模式",
+        "example": "State should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“state”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "transition",
+        "phonetic": "/trænˈzɪʃn/",
+        "meaning": "转换；从一种状态进入另一种状态",
+        "example": "Transition should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“transition”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "color",
+        "phonetic": "/ˈkʌlər/",
+        "meaning": "颜色；用于编码信息、情绪或风险等级的视觉属性",
+        "example": "Color should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“color”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "semantics",
+        "phonetic": "/səˈmæntɪks/",
+        "meaning": "语义；符号或颜色所表达的含义",
+        "example": "Semantics should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“semantics”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；根据上下文自动调整的",
+        "example": "Adaptive should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“adaptive”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "brightness",
+        "phonetic": "/ˈbraɪtnəs/",
+        "meaning": "亮度；显示或灯光的明暗程度",
+        "example": "Brightness should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“brightness”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；用户当前用于感知和决策的认知资源",
+        "example": "Attention should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“attention”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "交接；从一个系统、通道或任务转给另一个",
+        "example": "Handoff should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“handoff”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "nonverbal",
+        "phonetic": "/ˌnɑːnˈvɜːrbl/",
+        "meaning": "非语言的；不用口头语言表达的",
+        "example": "Nonverbal should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“nonverbal”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；让用户知道动作已被理解或执行",
+        "example": "Confirmation should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“confirmation”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "meaning": "舒适；降低压力和身体负担的体验目标",
+        "example": "Comfort should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“comfort”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/moʊd/",
+        "meaning": "模式；系统可选择的一组行为规则",
+        "example": "Mode should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“mode”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；通过屏幕、灯光或图形呈现的",
+        "example": "Visual should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“visual”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "hierarchy",
+        "phonetic": "/ˈhaɪərɑːrki/",
+        "meaning": "层级；信息重要性的组织顺序",
+        "example": "Hierarchy should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“hierarchy”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；集成显示、感知、语音和环境控制的车内数字空间",
+        "example": "Intelligent cockpit should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“intelligent cockpit”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "in-cabin lighting",
+        "phonetic": "/ɪn ˈkæbɪn ˈlaɪtɪŋ/",
+        "meaning": "车内灯光；用于照明、氛围和状态反馈的座舱灯光系统",
+        "example": "In-cabin lighting should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“in-cabin lighting”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "light strip",
+        "phonetic": "/laɪt strɪp/",
+        "meaning": "灯带；沿仪表板、门板或中控边缘布置的线性光源",
+        "example": "Light strip should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“light strip”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "status change",
+        "phonetic": "/ˈstætəs tʃeɪndʒ/",
+        "meaning": "状态变化；车辆、功能或任务状态发生改变",
+        "example": "Status change should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“status change”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "primary display",
+        "phonetic": "/ˈpraɪmeri dɪˈspleɪ/",
+        "meaning": "主显示屏；承载核心任务和关键信息的主要屏幕",
+        "example": "Primary display should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“primary display”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "center stack",
+        "phonetic": "/ˈsentər stæk/",
+        "meaning": "中控区域；仪表板中央用于信息娱乐和车辆控制的区域",
+        "example": "Center stack should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“center stack”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "仪表屏；驾驶员前方显示速度、警告和驾驶信息的显示区域",
+        "example": "Cluster should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“cluster”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "heads-up display",
+        "phonetic": "/ˌhedz ˈʌp dɪˌspleɪ/",
+        "meaning": "抬头显示；把关键信息投射到驾驶员视线附近的显示方式",
+        "example": "Heads-up display should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“heads-up display”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "dashboard edge",
+        "phonetic": "/ˈdæʃbɔːrd edʒ/",
+        "meaning": "仪表板边缘；可放置周边提示或灯带的位置",
+        "example": "Dashboard edge should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“dashboard edge”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "door panel",
+        "phonetic": "/dɔːr ˈpænl/",
+        "meaning": "门板；车门内侧可承载灯光、开关和触觉提示的区域",
+        "example": "Door panel should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“door panel”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "interaction design",
+        "phonetic": "/ˌɪntərˈækʃn dɪˈzaɪn/",
+        "meaning": "交互设计；规划用户行为、反馈和任务流程的设计工作",
+        "example": "Interaction design should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“interaction design”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶员完成驾驶和交互任务所需的认知与操作负担",
+        "example": "Driver workload should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“driver workload”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "low distraction",
+        "phonetic": "/loʊ dɪˈstrækʃn/",
+        "meaning": "低分心；尽量减少对驾驶注意力占用的设计原则",
+        "example": "Low distraction should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“low distraction”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "soft pulse",
+        "phonetic": "/sɔːft pʌls/",
+        "meaning": "柔和脉冲；短暂、低强度的灯光或触觉变化",
+        "example": "Soft pulse should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“soft pulse”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "persistent glow",
+        "phonetic": "/pərˈsɪstənt ɡloʊ/",
+        "meaning": "持续微光；用于表示后台状态的稳定低亮度光效",
+        "example": "Persistent glow should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“persistent glow”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "urgent flash",
+        "phonetic": "/ˈɜːrdʒənt flæʃ/",
+        "meaning": "紧急闪烁；用于高风险提醒的快速强提示",
+        "example": "Urgent flash should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“urgent flash”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "calm feedback",
+        "phonetic": "/kɑːm ˈfiːdbæk/",
+        "meaning": "平静反馈；不会制造额外紧张感的低强度反馈",
+        "example": "Calm feedback should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“calm feedback”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "risk level",
+        "phonetic": "/rɪsk ˈlevl/",
+        "meaning": "风险等级；用于区分信息紧急性和安全影响的级别",
+        "example": "Risk level should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“risk level”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "safety-critical",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl/",
+        "meaning": "安全关键的；直接影响驾驶安全的",
+        "example": "Safety-critical should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“safety-critical”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "secondary information",
+        "phonetic": "/ˈsekənderi ˌɪnfərˈmeɪʃn/",
+        "meaning": "次要信息；不需要立即处理但有助于理解状态的信息",
+        "example": "Secondary information should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“secondary information”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "salient signal",
+        "phonetic": "/ˈseɪliənt ˈsɪɡnəl/",
+        "meaning": "显著信号；能够快速被注意到的重要提示",
+        "example": "Salient signal should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“salient signal”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "subtle signal",
+        "phonetic": "/ˈsʌtl ˈsɪɡnəl/",
+        "meaning": "细微信号；低强度、不打断主要任务的提示",
+        "example": "Subtle signal should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“subtle signal”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "redundant channel",
+        "phonetic": "/rɪˈdʌndənt ˈtʃænl/",
+        "meaning": "冗余通道；用多个感知通道表达同一信息以提高可靠性",
+        "example": "Redundant channel should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“redundant channel”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "auditory tone",
+        "phonetic": "/ˈɔːdətɔːri toʊn/",
+        "meaning": "听觉提示音；用声音传达状态或警告的反馈",
+        "example": "Auditory tone should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“auditory tone”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "haptic tap",
+        "phonetic": "/ˈhæptɪk tæp/",
+        "meaning": "触觉轻点；用短促震动或触感确认动作",
+        "example": "Haptic tap should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“haptic tap”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "speech prompt",
+        "phonetic": "/spiːtʃ prɑːmpt/",
+        "meaning": "语音提示；系统用口语形式给出的引导或提醒",
+        "example": "Speech prompt should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“speech prompt”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级阶梯；提示从轻到重逐级增强的规则",
+        "example": "Escalation ladder should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“escalation ladder”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "de-escalation",
+        "phonetic": "/ˌdiː eskəˈleɪʃn/",
+        "meaning": "降级；风险降低后减少提示强度的过程",
+        "example": "De-escalation should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“de-escalation”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "system status",
+        "phonetic": "/ˈsɪstəm ˈstætəs/",
+        "meaning": "系统状态；功能是否可用、进行中或完成的信息",
+        "example": "System status should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“system status”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "charging status",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈstætəs/",
+        "meaning": "充电状态；电池补能进度、功率或连接状态",
+        "example": "Charging status should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“charging status”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "navigation hint",
+        "phonetic": "/ˌnævɪˈɡeɪʃn hɪnt/",
+        "meaning": "导航提示；为路线、转向或车道选择提供的轻量提醒",
+        "example": "Navigation hint should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“navigation hint”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "lane change",
+        "phonetic": "/leɪn tʃeɪndʒ/",
+        "meaning": "变道；车辆从一个车道移动到另一个车道",
+        "example": "Lane change should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“lane change”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "climate adjustment",
+        "phonetic": "/ˈklaɪmət əˈdʒʌstmənt/",
+        "meaning": "空调调节；改变温度、风量或出风模式的操作",
+        "example": "Climate adjustment should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“climate adjustment”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "seat massage",
+        "phonetic": "/siːt məˈsɑːʒ/",
+        "meaning": "座椅按摩；通过座椅机构提供舒适支持的功能",
+        "example": "Seat massage should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“seat massage”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "privacy state",
+        "phonetic": "/ˈpraɪvəsi steɪt/",
+        "meaning": "隐私状态；麦克风、摄像头或数据共享是否启用的状态",
+        "example": "Privacy state should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“privacy state”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "microcopy",
+        "phonetic": "/ˈmaɪkroʊkɑːpi/",
+        "meaning": "微文案；界面中简短、明确、帮助用户理解反馈的文字",
+        "example": "Microcopy should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“microcopy”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "legibility",
+        "phonetic": "/ˌledʒəˈbɪləti/",
+        "meaning": "可读性；文字或符号被快速看清的程度",
+        "example": "Legibility should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“legibility”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "contrast ratio",
+        "phonetic": "/ˈkɑːntræst ˈreɪʃioʊ/",
+        "meaning": "对比度；前景和背景亮度差异的比例",
+        "example": "Contrast ratio should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“contrast ratio”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "night mode",
+        "phonetic": "/naɪt moʊd/",
+        "meaning": "夜间模式；适合低光环境的低亮度显示方案",
+        "example": "Night mode should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“night mode”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "daylight condition",
+        "phonetic": "/ˈdeɪlaɪt kənˈdɪʃn/",
+        "meaning": "日光条件；强环境光下的车内视觉环境",
+        "example": "Daylight condition should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“daylight condition”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "context aware",
+        "phonetic": "/ˈkɑːntekst əˈwer/",
+        "meaning": "上下文感知的；根据场景、位置、状态和用户目标调整反馈的",
+        "example": "Context aware should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“context aware”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "user trust",
+        "phonetic": "/ˈjuːzər trʌst/",
+        "meaning": "用户信任；用户相信系统反馈可靠、可理解、可控的程度",
+        "example": "User trust should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“user trust”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "mental model",
+        "phonetic": "/ˈmentl ˈmɑːdl/",
+        "meaning": "心智模型；用户对系统如何工作的内部理解",
+        "example": "Mental model should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“mental model”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "feedback mapping",
+        "phonetic": "/ˈfiːdbæk ˈmæpɪŋ/",
+        "meaning": "反馈映射；把系统状态和用户可感知信号对应起来的设计规则",
+        "example": "Feedback mapping should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“feedback mapping”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "design rationale",
+        "phonetic": "/dɪˈzaɪn ˌræʃəˈnæl/",
+        "meaning": "设计理由；解释某个交互方案为什么成立的依据",
+        "example": "Design rationale should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“design rationale”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "prototype review",
+        "phonetic": "/ˈproʊtətaɪp rɪˈvjuː/",
+        "meaning": "原型评审；围绕交互样机进行问题检查和方案讨论",
+        "example": "Prototype review should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“prototype review”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "usability test",
+        "phonetic": "/ˌjuːzəˈbɪləti test/",
+        "meaning": "可用性测试；观察用户完成任务以评估设计效果的方法",
+        "example": "Usability test should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“usability test”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "ambient feedback",
+        "phonetic": "/ˈæmbiənt ˈfiːdbæk/",
+        "meaning": "环境式反馈；用车内空间中的弱提示表达系统状态",
+        "example": "Ambient feedback should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“ambient feedback”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统对用户动作或状态变化的回应",
+        "example": "Feedback should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“feedback”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/ˈkɑːkpɪt/",
+        "meaning": "座舱；驾驶和乘坐相关的人机交互空间",
+        "example": "Cockpit should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“cockpit”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；承担驾驶任务并与座舱系统交互的人",
+        "example": "Driver should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“driver”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/ˈpæsɪndʒər/",
+        "meaning": "乘客；车内非驾驶用户",
+        "example": "Passenger should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“passenger”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；承载座舱系统和驾驶任务的平台",
+        "example": "Vehicle should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“vehicle”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "system",
+        "phonetic": "/ˈsɪstəm/",
+        "meaning": "系统；共同完成感知、计算和反馈的功能组合",
+        "example": "System should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“system”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "屏幕；显示文字、图形和控制项的界面表面",
+        "example": "Screen should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“screen”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "lighting",
+        "phonetic": "/ˈlaɪtɪŋ/",
+        "meaning": "灯光；用于照明、氛围或反馈的光源设计",
+        "example": "Lighting should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“lighting”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "experience",
+        "phonetic": "/ɪkˈspɪriəns/",
+        "meaning": "体验；用户在使用系统时形成的整体感受和理解",
+        "example": "Experience should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“experience”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/klɪr/",
+        "meaning": "清晰的；容易理解且不会产生歧义的",
+        "example": "Clear should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“clear”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "safe",
+        "phonetic": "/seɪf/",
+        "meaning": "安全的；不会增加驾驶风险的",
+        "example": "Safe should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“safe”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/kɑːm/",
+        "meaning": "平静的；不造成不必要紧张或刺激的",
+        "example": "Calm should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“calm”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "urgent",
+        "phonetic": "/ˈɜːrdʒənt/",
+        "meaning": "紧急的；需要立即注意或响应的",
+        "example": "Urgent should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“urgent”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "subtle",
+        "phonetic": "/ˈsʌtl/",
+        "meaning": "细微的；轻量且不打断主要任务的",
+        "example": "Subtle should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“subtle”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "persistent",
+        "phonetic": "/pərˈsɪstənt/",
+        "meaning": "持续的；在一段时间内保持存在的",
+        "example": "Persistent should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“persistent”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "路线；导航规划出的行驶路径",
+        "example": "Route should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“route”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "turn",
+        "phonetic": "/tɜːrn/",
+        "meaning": "转向；道路或导航中的方向改变",
+        "example": "Turn should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“turn”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "confirm",
+        "phonetic": "/kənˈfɜːrm/",
+        "meaning": "确认；向用户表明理解或执行结果",
+        "example": "Confirm should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“confirm”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "indicate",
+        "phonetic": "/ˈɪndɪkeɪt/",
+        "meaning": "指示；显示或说明某个状态",
+        "example": "Indicate should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“indicate”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "interpret",
+        "phonetic": "/ɪnˈtɜːrprət/",
+        "meaning": "解释；理解某个信号或状态的含义",
+        "example": "Interpret should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“interpret”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "reduce",
+        "phonetic": "/rɪˈduːs/",
+        "meaning": "减少；降低强度、数量或负担",
+        "example": "Reduce should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“reduce”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "increase",
+        "phonetic": "/ɪnˈkriːs/",
+        "meaning": "增加；提高强度、数量或重要性",
+        "example": "Increase should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“increase”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "maintain",
+        "phonetic": "/meɪnˈteɪn/",
+        "meaning": "保持；让状态或体验持续稳定",
+        "example": "Maintain should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“maintain”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "coordinate",
+        "phonetic": "/koʊˈɔːrdɪneɪt/",
+        "meaning": "协调；让多个通道或元素一致工作",
+        "example": "Coordinate should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“coordinate”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "separate",
+        "phonetic": "/ˈsepəreɪt/",
+        "meaning": "区分；让不同含义或级别清楚分开",
+        "example": "Separate should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“separate”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "avoid",
+        "phonetic": "/əˈvɔɪd/",
+        "meaning": "避免；防止产生问题或风险",
+        "example": "Avoid should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“avoid”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明原因、状态或下一步",
+        "example": "Explain should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“explain”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "reinforce",
+        "phonetic": "/ˌriːɪnˈfɔːrs/",
+        "meaning": "强化；通过额外线索加深理解",
+        "example": "Reinforce should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“reinforce”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "reflect",
+        "phonetic": "/rɪˈflekt/",
+        "meaning": "反映；让反馈与真实状态一致",
+        "example": "Reflect should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“reflect”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "interrupt",
+        "phonetic": "/ˌɪntəˈrʌpt/",
+        "meaning": "打断；中止或干扰当前任务",
+        "example": "Interrupt should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“interrupt”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "recognize",
+        "phonetic": "/ˈrekəɡnaɪz/",
+        "meaning": "识别；发现并理解某个信号或状态",
+        "example": "Recognize should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“recognize”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "evaluate",
+        "phonetic": "/ɪˈvæljueɪt/",
+        "meaning": "评估；检查方案是否达到目标",
+        "example": "Evaluate should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“evaluate”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "principle",
+        "phonetic": "/ˈprɪnsəpl/",
+        "meaning": "原则；指导设计判断的规则",
+        "example": "Principle should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“principle”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "behavior",
+        "phonetic": "/bɪˈheɪvjər/",
+        "meaning": "行为；系统或用户在场景中的动作表现",
+        "example": "Behavior should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“behavior”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "meaning",
+        "phonetic": "/ˈmiːnɪŋ/",
+        "meaning": "含义；某个词、颜色或信号表达的信息",
+        "example": "Meaning should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“meaning”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "priority",
+        "phonetic": "/praɪˈɔːrəti/",
+        "meaning": "优先级；信息或任务的重要顺序",
+        "example": "Priority should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“priority”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "intensity",
+        "phonetic": "/ɪnˈtensəti/",
+        "meaning": "强度；灯光、声音或触觉反馈的力度",
+        "example": "Intensity should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“intensity”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；反馈出现、持续和结束的时间安排",
+        "example": "Timing should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“timing”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "rhythm",
+        "phonetic": "/ˈrɪðəm/",
+        "meaning": "节奏；提示重复或变化的时间模式",
+        "example": "Rhythm should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“rhythm”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "duration",
+        "phonetic": "/duˈreɪʃn/",
+        "meaning": "持续时间；反馈维持的长度",
+        "example": "Duration should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“duration”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "surface",
+        "phonetic": "/ˈsɜːrfɪs/",
+        "meaning": "表面；屏幕、门板或仪表板等承载反馈的位置",
+        "example": "Surface should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“surface”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "edge",
+        "phonetic": "/edʒ/",
+        "meaning": "边缘；界面或物理部件的外侧边界",
+        "example": "Edge should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“edge”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "motion",
+        "phonetic": "/ˈmoʊʃn/",
+        "meaning": "动效；可见元素随时间变化的位置或形态",
+        "example": "Motion should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“motion”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "animation",
+        "phonetic": "/ˌænɪˈmeɪʃn/",
+        "meaning": "动画；用于表达状态变化的动态视觉效果",
+        "example": "Animation should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“animation”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/ˈɡaɪdns/",
+        "meaning": "引导；帮助用户理解下一步或方向的信息",
+        "example": "Guidance should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“guidance”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/ˈsɪɡnəl/",
+        "meaning": "信号；传递信息的声音、光效、触觉或视觉元素",
+        "example": "Signal should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“signal”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "information",
+        "phonetic": "/ˌɪnfərˈmeɪʃn/",
+        "meaning": "信息；系统需要向用户传达的内容",
+        "example": "Information should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“information”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/ˈmesɪdʒ/",
+        "meaning": "消息；具有明确含义的提示内容",
+        "example": "Message should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“message”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃn/",
+        "meaning": "操作；用户或系统执行的行为",
+        "example": "Action should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“action”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/ˈsetɪŋ/",
+        "meaning": "设置；可调整的系统选项",
+        "example": "Setting should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“setting”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "function",
+        "phonetic": "/ˈfʌŋkʃn/",
+        "meaning": "功能；系统能够完成的任务能力",
+        "example": "Function should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“function”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "task",
+        "phonetic": "/tæsk/",
+        "meaning": "任务；用户想要完成的目标",
+        "example": "Task should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“task”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "scenario",
+        "phonetic": "/səˈnærioʊ/",
+        "meaning": "场景；设计评估中的具体使用情境",
+        "example": "Scenario should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“scenario”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "source",
+        "phonetic": "/sɔːrs/",
+        "meaning": "来源；信息或反馈产生的起点",
+        "example": "Source should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“source”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "channel",
+        "phonetic": "/ˈtʃænl/",
+        "meaning": "通道；视觉、听觉、触觉或语音等反馈路径",
+        "example": "Channel should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“channel”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "occupant",
+        "phonetic": "/ˈɑːkjəpənt/",
+        "meaning": "车内成员；驾驶员或乘客",
+        "example": "Occupant should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“occupant”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/roʊd/",
+        "meaning": "道路；驾驶任务发生的环境",
+        "example": "Road should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“road”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/ˈtræfɪk/",
+        "meaning": "交通；道路上的车辆和行人流动情况",
+        "example": "Traffic should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“traffic”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "rain",
+        "phonetic": "/reɪn/",
+        "meaning": "雨；会影响可见性和驾驶负荷的天气条件",
+        "example": "Rain should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“rain”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "night",
+        "phonetic": "/naɪt/",
+        "meaning": "夜晚；低光环境下的驾驶场景",
+        "example": "Night should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“night”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "daylight",
+        "phonetic": "/ˈdeɪlaɪt/",
+        "meaning": "日光；白天环境光条件",
+        "example": "Daylight should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“daylight”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "dashboard",
+        "phonetic": "/ˈdæʃbɔːrd/",
+        "meaning": "仪表板；驾驶员前方和中控附近的内饰界面区域",
+        "example": "Dashboard should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“dashboard”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/əˈveɪləbl/",
+        "meaning": "可用的；功能或状态可以被使用的",
+        "example": "Available should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“available”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "completed",
+        "phonetic": "/kəmˈpliːtɪd/",
+        "meaning": "已完成的；任务已经结束并产生结果的",
+        "example": "Completed should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“completed”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "ongoing",
+        "phonetic": "/ˈɑːnɡoʊɪŋ/",
+        "meaning": "进行中的；任务尚未结束的",
+        "example": "Ongoing should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“ongoing”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "cancelled",
+        "phonetic": "/ˈkænsəld/",
+        "meaning": "已取消的；任务或操作被停止的",
+        "example": "Cancelled should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“cancelled”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "dim",
+        "phonetic": "/dɪm/",
+        "meaning": "调暗；降低亮度",
+        "example": "Dim should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“dim”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "fade",
+        "phonetic": "/feɪd/",
+        "meaning": "淡入淡出；逐渐出现或消失",
+        "example": "Fade should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“fade”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "pulse",
+        "phonetic": "/pʌls/",
+        "meaning": "脉冲；短暂重复的灯光、声音或触觉变化",
+        "example": "Pulse should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“pulse”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "flash",
+        "phonetic": "/flæʃ/",
+        "meaning": "闪烁；快速出现和消失的高显著性提示",
+        "example": "Flash should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“flash”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "glow",
+        "phonetic": "/ɡloʊ/",
+        "meaning": "微光；柔和持续的灯光效果",
+        "example": "Glow should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“glow”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "tone",
+        "phonetic": "/toʊn/",
+        "meaning": "提示音；用于传递状态的声音",
+        "example": "Tone should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“tone”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "tap",
+        "phonetic": "/tæp/",
+        "meaning": "轻点；短促触觉反馈或点击动作",
+        "example": "Tap should support a safer and clearer cockpit experience.",
+        "chineseExample": "在这句话中，“tap”用于描述更安全、更清晰的座舱体验。"
+      },
+      {
+        "term": "beginning",
+        "phonetic": "/bɪˈɡɪnɪŋ/",
+        "meaning": "开始；状态转换或反馈出现的起点",
+        "example": "Beginning can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“beginning”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "ending",
+        "phonetic": "/ˈendɪŋ/",
+        "meaning": "结束；状态转换或反馈消失的终点",
+        "example": "Ending can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“ending”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "consistent",
+        "phonetic": "/kənˈsɪstənt/",
+        "meaning": "一致的；在不同屏幕或通道中保持相同规则的",
+        "example": "Consistent can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“consistent”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "stack",
+        "phonetic": "/stæk/",
+        "meaning": "堆叠区域；在 center stack 中指中控区域",
+        "example": "Stack can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“stack”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "salient",
+        "phonetic": "/ˈseɪliənt/",
+        "meaning": "显著的；容易被注意到的",
+        "example": "Salient can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“salient”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "unless",
+        "phonetic": "/ənˈles/",
+        "meaning": "除非；表示例外条件",
+        "example": "Unless can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“unless”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "hints",
+        "phonetic": "/hɪnts/",
+        "meaning": "提示；hint 的复数形式，用于导航或轻量引导",
+        "example": "Hints can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“hints”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "behave",
+        "phonetic": "/bɪˈheɪv/",
+        "meaning": "表现；系统或界面以某种方式运行",
+        "example": "Behave can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“behave”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "been",
+        "phonetic": "/bɪn/",
+        "meaning": "已经；be 的过去分词，用于完成时",
+        "example": "Been can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“been”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "stare",
+        "phonetic": "/ster/",
+        "meaning": "盯视；长时间注视某个界面元素",
+        "example": "Stare can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“stare”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "adapt",
+        "phonetic": "/əˈdæpt/",
+        "meaning": "适应；根据场景改变表现方式",
+        "example": "Adapt can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“adapt”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/ˈlɪmɪtɪd/",
+        "meaning": "有限的；资源、时间或能力受到限制的",
+        "example": "Limited can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“limited”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "concept",
+        "phonetic": "/ˈkɑːnsept/",
+        "meaning": "概念；待评估的设计想法或方案",
+        "example": "Concept can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“concept”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "fades",
+        "phonetic": "/feɪdz/",
+        "meaning": "淡出；fade 的第三人称单数形式",
+        "example": "Fades can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“fades”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "occupants",
+        "phonetic": "/ˈɑːkjəpənts/",
+        "meaning": "车内成员；occupant 的复数形式",
+        "example": "Occupants can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“occupants”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "build",
+        "phonetic": "/bɪld/",
+        "meaning": "建立；形成理解、信任或能力",
+        "example": "Build can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“build”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "trustworthy",
+        "phonetic": "/ˈtrʌstwɜːrði/",
+        "meaning": "可信赖的；值得用户信任的",
+        "example": "Trustworthy can be understood in the cockpit design context.",
+        "chineseExample": "在这句话中，“trustworthy”可结合座舱设计语境理解。"
+      },
+      {
+        "term": "real",
+        "phonetic": "/ˈriːəl/",
+        "meaning": "真实的；在 real time 中表示实时发生的",
+        "example": "Real supports clear cockpit feedback in real time.",
+        "chineseExample": "在这句话中，“real”用于描述实时的座舱反馈。"
+      },
+      {
+        "term": "time",
+        "phonetic": "/taɪm/",
+        "meaning": "时间；在 real time 中表示即时处理或即时反馈",
+        "example": "Time supports clear cockpit feedback in real time.",
+        "chineseExample": "在这句话中，“time”用于描述实时的座舱反馈。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing ambient feedback for the intelligent cockpit",
+        "text": "Ambient feedback in an intelligent cockpit should behave like a quiet interaction layer, not like another screen asking for attention. A light strip near the dashboard edge can indicate that navigation guidance is ongoing, charging status has changed, or a climate adjustment has been completed. The design challenge is to make each signal recognizable without forcing the driver to stare at it. Color semantics, brightness, timing, and motion all need a stable mapping to system status. For example, a soft pulse may confirm a recoverable action, while an urgent flash should be reserved for safety-critical messages. The same feedback must also adapt to daylight, night mode, rain, and dense traffic. When the driver has a limited glance budget, ambient cues should reinforce the primary display rather than compete with it. Designers can evaluate the concept by asking whether the signal explains what changed, whether it shows the source of the change, and whether it fades when the task is completed. Good ambient feedback reduces uncertainty, protects attention, and helps occupants build a trustworthy mental model of the vehicle in real time.",
+        "translation": "智能座舱中的环境式反馈应像安静的交互层，而不是另一个争夺注意力的屏幕。仪表板边缘的灯带可以提示导航正在进行、充电状态改变，或空调调节已完成。设计挑战在于让每个信号都容易识别，同时不迫使驾驶员盯着它看。颜色语义、亮度、时机和动效都需要与系统状态建立稳定映射。例如，柔和脉冲可确认可恢复操作，而紧急闪烁应保留给安全关键消息。同一种反馈还要适应日光、夜间模式、雨天和密集交通。当驾驶员扫视预算有限时，环境提示应强化主显示屏，而不是与其竞争。设计师可以通过三个问题评估概念：信号是否解释了发生了什么变化，是否显示变化来源，是否在任务完成后淡出。好的环境式反馈能减少不确定性、保护注意力，并帮助车内成员实时建立可信赖的车辆心智模型。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Ambient feedback in an intelligent cockpit should behave like a quiet interaction layer, not like another screen asking for attention.",
+        "translation": "智能座舱中的环境式反馈应像安静的交互层，而不是另一个争夺注意力的屏幕。",
+        "structure": "Ambient feedback 是主语；should behave like 表示“应当表现得像”；not like another screen asking for attention 用对比说明设计边界。",
+        "focus": "用 should behave like 描述设计原则，用 not like 限定错误方向。",
+        "pattern": "A should behave like B, not like C."
+      },
+      {
+        "sentence": "Color semantics, brightness, timing, and motion all need a stable mapping to system status.",
+        "translation": "颜色语义、亮度、时机和动效都需要与系统状态建立稳定映射。",
+        "structure": "并列名词 Color semantics, brightness, timing, and motion 作主语；need a stable mapping 是谓语和宾语；to system status 说明映射目标。",
+        "focus": "用 stable mapping 表达“反馈规则要稳定一致”。",
+        "pattern": "A, B, C, and D all need a stable mapping to E."
+      },
+      {
+        "sentence": "When the driver has a limited glance budget, ambient cues should reinforce the primary display rather than compete with it.",
+        "translation": "当驾驶员扫视预算有限时，环境提示应强化主显示屏，而不是与其竞争。",
+        "structure": "When 引导条件场景；ambient cues 是主句主语；should reinforce ... rather than compete ... 表示设计取舍。",
+        "focus": "用 rather than 表达“应该做什么，而不是做什么”。",
+        "pattern": "When A has limited B, C should do D rather than do E."
+      },
+      {
+        "sentence": "Good ambient feedback reduces uncertainty, protects attention, and helps occupants build a trustworthy mental model of the vehicle.",
+        "translation": "好的环境式反馈能减少不确定性、保护注意力，并帮助车内成员建立可信赖的车辆心智模型。",
+        "structure": "Good ambient feedback 是主语；reduces, protects, and helps 三个并列动词描述价值；of the vehicle 修饰 mental model。",
+        "focus": "用三个并列动词组织设计收益，适合评审陈述。",
+        "pattern": "Good A reduces B, protects C, and helps users build D."
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "detail": "朗读专业词汇，重点区分 ambient feedback、peripheral cue、glance budget 和 color semantics 的含义。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "detail": "跟读长文两遍，第一遍关注停顿，第二遍关注 should、must、rather than 等设计建议表达。"
+      },
+      {
+        "title": "场景复述",
+        "time": "6 分钟",
+        "detail": "用英文复述一个灯带状态变化场景：功能触发、反馈出现、用户确认、反馈淡出。"
+      },
+      {
+        "title": "评审输出",
+        "time": "5 分钟",
+        "detail": "写 3 句设计评审意见，说明某个环境式提示是否清晰、低分心、可被信任。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-28-conversational-repair",
     "date": "2026-07-28",
     "title": "Conversational repair for ambiguous voice commands in intelligent cockpits",
