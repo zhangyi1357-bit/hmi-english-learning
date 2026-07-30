@@ -1,5 +1,652 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-07-30-seat-memory-privacy",
+    "date": "2026-07-30",
+    "title": "Seat memory profiles and privacy-aware personalization in intelligent cockpits",
+    "topic": "智能座舱座椅记忆档案与隐私感知个性化",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述座椅记忆、用户档案、共享车辆场景和隐私感知的个性化体验，让舒适设置既快速恢复又可被用户控制。",
+    "words": [
+      {
+        "term": "seat memory profile",
+        "phonetic": "/siːt ˈmeməri ˈproʊfaɪl/",
+        "meaning": "座椅记忆档案；保存座椅位置、方向盘、后视镜和舒适偏好的用户配置",
+        "example": "A seat memory profile should restore comfort settings only after the driver is identified with confidence.",
+        "chineseExample": "座椅记忆档案只有在驾驶员被可靠识别后，才应恢复舒适设置。"
+      },
+      {
+        "term": "profile switching",
+        "phonetic": "/ˈproʊfaɪl ˈswɪtʃɪŋ/",
+        "meaning": "档案切换；在不同用户配置之间切换座舱设置的过程",
+        "example": "Profile switching needs a visible preview when the vehicle is shared by family members.",
+        "chineseExample": "当车辆由家庭成员共享时，档案切换需要提供可见预览。"
+      },
+      {
+        "term": "privacy-aware personalization",
+        "phonetic": "/ˈpraɪvəsi əˈwer ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "隐私感知个性化；在提供个性体验时明确数据用途、边界和用户控制权",
+        "example": "Privacy-aware personalization explains which preferences are stored locally and which are synchronized.",
+        "chineseExample": "隐私感知个性化会说明哪些偏好保存在本地，哪些偏好会同步。"
+      },
+      {
+        "term": "shared vehicle scenario",
+        "phonetic": "/ʃerd ˈviːəkl səˈnæri.oʊ/",
+        "meaning": "共享车辆场景；多人轮流使用同一车辆时出现的身份、设置和隐私问题",
+        "example": "In a shared vehicle scenario, the cockpit should not expose another driver's destination history.",
+        "chineseExample": "在共享车辆场景中，座舱不应暴露另一位驾驶员的目的地历史。"
+      },
+      {
+        "term": "local preference storage",
+        "phonetic": "/ˈloʊkl ˈprefərəns ˈstɔːrɪdʒ/",
+        "meaning": "本地偏好存储；把用户偏好保存在车端设备内以减少不必要的数据上传",
+        "example": "Local preference storage can reduce privacy risk for sensitive comfort settings.",
+        "chineseExample": "本地偏好存储可以降低敏感舒适设置带来的隐私风险。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/ɪkˈsplɪsɪt kənˈsent/",
+        "meaning": "明确同意；用户清楚了解并主动允许某项数据使用或同步",
+        "example": "Cloud synchronization should require explicit consent before a new profile is uploaded.",
+        "chineseExample": "新档案上传到云端前，云同步应要求用户明确同意。"
+      },
+      {
+        "term": "fallback posture",
+        "phonetic": "/ˈfɔːlbæk ˈpɑːstʃər/",
+        "meaning": "回退坐姿；身份不确定或档案不可用时采用的安全默认坐姿",
+        "example": "A fallback posture prevents the seat from moving to an unsafe position during identification failure.",
+        "chineseExample": "回退坐姿可防止识别失败时座椅移动到不安全位置。"
+      },
+      {
+        "term": "profile preview",
+        "phonetic": "/ˈproʊfaɪl ˈpriːvjuː/",
+        "meaning": "档案预览；在应用用户配置前展示将要改变的关键设置",
+        "example": "The profile preview should list seat height, mirror angle, and climate preference before activation.",
+        "chineseExample": "档案预览应在激活前列出座椅高度、后视镜角度和空调偏好。"
+      },
+      {
+        "term": "data boundary",
+        "phonetic": "/ˈdeɪtə ˈbaʊndəri/",
+        "meaning": "数据边界；说明哪些数据留在车内、哪些数据会同步或共享的界限",
+        "example": "A clear data boundary helps drivers trust the personalization feature.",
+        "chineseExample": "清晰的数据边界有助于驾驶员信任个性化功能。"
+      },
+      {
+        "term": "driver identification",
+        "phonetic": "/ˈdraɪvər aɪˌdentɪfɪˈkeɪʃn/",
+        "meaning": "驾驶员识别；通过钥匙、账号、手机或生物特征判断当前驾驶员身份",
+        "example": "Driver identification should be fast, but the interface must still offer a manual correction path.",
+        "chineseExample": "驾驶员识别应足够快速，但界面仍必须提供手动纠正路径。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "seat memory profile",
+        "phonetic": "/siːt ˈmeməri ˈproʊfaɪl/",
+        "meaning": "座椅记忆档案；保存座椅位置、方向盘、后视镜和舒适偏好的用户配置",
+        "example": "A seat memory profile should restore comfort settings only after the driver is identified with confidence.",
+        "chineseExample": "座椅记忆档案只有在驾驶员被可靠识别后，才应恢复舒适设置。"
+      },
+      {
+        "term": "profile switching",
+        "phonetic": "/ˈproʊfaɪl ˈswɪtʃɪŋ/",
+        "meaning": "档案切换；在不同用户配置之间切换座舱设置的过程",
+        "example": "Profile switching needs a visible preview when the vehicle is shared by family members.",
+        "chineseExample": "当车辆由家庭成员共享时，档案切换需要提供可见预览。"
+      },
+      {
+        "term": "privacy-aware personalization",
+        "phonetic": "/ˈpraɪvəsi əˈwer ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "隐私感知个性化；在提供个性体验时明确数据用途、边界和用户控制权",
+        "example": "Privacy-aware personalization explains which preferences are stored locally and which are synchronized.",
+        "chineseExample": "隐私感知个性化会说明哪些偏好保存在本地，哪些偏好会同步。"
+      },
+      {
+        "term": "shared vehicle scenario",
+        "phonetic": "/ʃerd ˈviːəkl səˈnæri.oʊ/",
+        "meaning": "共享车辆场景；多人轮流使用同一车辆时出现的身份、设置和隐私问题",
+        "example": "In a shared vehicle scenario, the cockpit should not expose another driver's destination history.",
+        "chineseExample": "在共享车辆场景中，座舱不应暴露另一位驾驶员的目的地历史。"
+      },
+      {
+        "term": "local preference storage",
+        "phonetic": "/ˈloʊkl ˈprefərəns ˈstɔːrɪdʒ/",
+        "meaning": "本地偏好存储；把用户偏好保存在车端设备内以减少不必要的数据上传",
+        "example": "Local preference storage can reduce privacy risk for sensitive comfort settings.",
+        "chineseExample": "本地偏好存储可以降低敏感舒适设置带来的隐私风险。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/ɪkˈsplɪsɪt kənˈsent/",
+        "meaning": "明确同意；用户清楚了解并主动允许某项数据使用或同步",
+        "example": "Cloud synchronization should require explicit consent before a new profile is uploaded.",
+        "chineseExample": "新档案上传到云端前，云同步应要求用户明确同意。"
+      },
+      {
+        "term": "fallback posture",
+        "phonetic": "/ˈfɔːlbæk ˈpɑːstʃər/",
+        "meaning": "回退坐姿；身份不确定或档案不可用时采用的安全默认坐姿",
+        "example": "A fallback posture prevents the seat from moving to an unsafe position during identification failure.",
+        "chineseExample": "回退坐姿可防止识别失败时座椅移动到不安全位置。"
+      },
+      {
+        "term": "profile preview",
+        "phonetic": "/ˈproʊfaɪl ˈpriːvjuː/",
+        "meaning": "档案预览；在应用用户配置前展示将要改变的关键设置",
+        "example": "The profile preview should list seat height, mirror angle, and climate preference before activation.",
+        "chineseExample": "档案预览应在激活前列出座椅高度、后视镜角度和空调偏好。"
+      },
+      {
+        "term": "data boundary",
+        "phonetic": "/ˈdeɪtə ˈbaʊndəri/",
+        "meaning": "数据边界；说明哪些数据留在车内、哪些数据会同步或共享的界限",
+        "example": "A clear data boundary helps drivers trust the personalization feature.",
+        "chineseExample": "清晰的数据边界有助于驾驶员信任个性化功能。"
+      },
+      {
+        "term": "driver identification",
+        "phonetic": "/ˈdraɪvər aɪˌdentɪfɪˈkeɪʃn/",
+        "meaning": "驾驶员识别；通过钥匙、账号、手机或生物特征判断当前驾驶员身份",
+        "example": "Driver identification should be fast, but the interface must still offer a manual correction path.",
+        "chineseExample": "驾驶员识别应足够快速，但界面仍必须提供手动纠正路径。"
+      },
+      {
+        "term": "cloud synchronization",
+        "phonetic": "/klaʊd ˌsɪŋkrənaɪˈzeɪʃn/",
+        "meaning": "云同步；把用户档案或偏好同步到云端账号",
+        "example": "Cloud synchronization should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“cloud synchronization”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "manual correction path",
+        "phonetic": "/ˈmænjuəl kəˈrekʃn pæθ/",
+        "meaning": "手动纠正路径；用户可修正系统识别或设置错误的操作入口",
+        "example": "Manual correction path should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“manual correction path”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "neutral fallback",
+        "phonetic": "/ˈnuːtrəl ˈfɔːlbæk/",
+        "meaning": "中性回退；在不确定时采用不过度个性化的默认状态",
+        "example": "Neutral fallback should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“neutral fallback”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "safety-relevant adjustment",
+        "phonetic": "/ˈseɪfti ˈreləvənt əˈdʒʌstmənt/",
+        "meaning": "安全相关调整；会影响驾驶姿态、视野或可达性的设置变化",
+        "example": "Safety-relevant adjustment should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“safety-relevant adjustment”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "comfort history",
+        "phonetic": "/ˈkʌmfərt ˈhɪstri/",
+        "meaning": "舒适历史；与用户座椅、空调、按摩等偏好相关的历史记录",
+        "example": "Comfort history should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“comfort history”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "profile ownership",
+        "phonetic": "/ˈproʊfaɪl ˈoʊnərʃɪp/",
+        "meaning": "档案所有权；用户对个人配置的查看、修改和删除权",
+        "example": "Profile ownership should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“profile ownership”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "shared display",
+        "phonetic": "/ʃerd dɪˈspleɪ/",
+        "meaning": "共享显示屏；可能被不同乘员或驾驶员看到的车内屏幕",
+        "example": "Shared display should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“shared display”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "sensitive preference",
+        "phonetic": "/ˈsensətɪv ˈprefərəns/",
+        "meaning": "敏感偏好；可能透露个人习惯或身份的信息偏好",
+        "example": "Sensitive preference should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“sensitive preference”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "activation",
+        "phonetic": "/ˌæktɪˈveɪʃn/",
+        "meaning": "激活；启用某个用户档案或功能状态",
+        "example": "Activation should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“activation”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "uploading",
+        "phonetic": "/ˌʌpˈloʊdɪŋ/",
+        "meaning": "上传；把本地数据发送到云端或服务器",
+        "example": "Uploading should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“uploading”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "delete a profile",
+        "phonetic": "/dɪˈliːt ə ˈproʊfaɪl/",
+        "meaning": "删除档案；移除用户配置及相关记录",
+        "example": "Delete a profile should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“delete a profile”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "pause a profile",
+        "phonetic": "/pɔːz ə ˈproʊfaɪl/",
+        "meaning": "暂停档案；临时停止使用某个个性化配置",
+        "example": "Pause a profile should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“pause a profile”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "edit a profile",
+        "phonetic": "/ˈedɪt ə ˈproʊfaɪl/",
+        "meaning": "编辑档案；修改用户保存的座舱偏好",
+        "example": "Edit a profile should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“edit a profile”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清晰语言；普通用户容易理解的说明方式",
+        "example": "Plain language should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“plain language”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对识别或判断结果的可信程度",
+        "example": "Confidence should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“confidence”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "identified",
+        "phonetic": "/aɪˈdentɪfaɪd/",
+        "meaning": "被识别的；身份已被系统判断出来的",
+        "example": "Identified should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“identified”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "restore",
+        "phonetic": "/rɪˈstɔːr/",
+        "meaning": "恢复；把设置还原到某个已保存状态",
+        "example": "Restore should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“restore”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "steering wheel",
+        "phonetic": "/ˈstɪrɪŋ wiːl/",
+        "meaning": "方向盘；可随用户档案调整位置的驾驶控制部件",
+        "example": "Steering wheel should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“steering wheel”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "mirror angle",
+        "phonetic": "/ˈmɪrər ˈæŋɡl/",
+        "meaning": "后视镜角度；影响驾驶视野的镜面位置",
+        "example": "Mirror angle should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“mirror angle”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "climate preference",
+        "phonetic": "/ˈklaɪmət ˈprefərəns/",
+        "meaning": "空调偏好；用户喜欢的温度、风量或出风方式",
+        "example": "Climate preference should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“climate preference”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "massage intensity",
+        "phonetic": "/məˈsɑːʒ ɪnˈtensəti/",
+        "meaning": "按摩强度；座椅按摩功能的力度级别",
+        "example": "Massage intensity should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“massage intensity”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "navigation habits",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈhæbɪts/",
+        "meaning": "导航习惯；常去地点和路线偏好",
+        "example": "Navigation habits should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“navigation habits”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "voice settings",
+        "phonetic": "/vɔɪs ˈsetɪŋz/",
+        "meaning": "语音设置；语音助手音色、唤醒或交互偏好",
+        "example": "Voice settings should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“voice settings”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "destination history",
+        "phonetic": "/ˌdestɪˈneɪʃn ˈhɪstri/",
+        "meaning": "目的地历史；用户过去导航目的地的记录",
+        "example": "Destination history should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“destination history”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "calendar hints",
+        "phonetic": "/ˈkælɪndər hɪnts/",
+        "meaning": "日历提示；由日程推断出的出行或目的地提示",
+        "example": "Calendar hints should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“calendar hints”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "user control",
+        "phonetic": "/ˈjuːzər kənˈtroʊl/",
+        "meaning": "用户控制权；用户对系统行为和数据处理的决定能力",
+        "example": "User control should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“user control”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；具备感知、交互和个性化能力的车内空间",
+        "example": "Intelligent cockpit should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“intelligent cockpit”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "personalization workflow",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn ˈwɜːrkfloʊ/",
+        "meaning": "个性化流程；从识别到应用用户偏好的完整流程",
+        "example": "Personalization workflow should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“personalization workflow”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "convenience feature",
+        "phonetic": "/kənˈviːniəns ˈfiːtʃər/",
+        "meaning": "便利功能；提升使用效率或舒适度的功能",
+        "example": "Convenience feature should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“convenience feature”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "sensitive personalization",
+        "phonetic": "/ˈsensətɪv ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "敏感个性化；涉及个人习惯、身份或隐私的个性化",
+        "example": "Sensitive personalization should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“sensitive personalization”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "vehicle is shared",
+        "phonetic": "/ˈviːəkl ɪz ʃerd/",
+        "meaning": "车辆被共享；同一车辆由多人使用的状态",
+        "example": "Vehicle is shared should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“vehicle is shared”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "begins to move",
+        "phonetic": "/bɪˈɡɪnz tə muːv/",
+        "meaning": "开始移动；座椅等部件启动自动调整",
+        "example": "Begins to move should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“begins to move”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "ask for confirmation",
+        "phonetic": "/æsk fər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "请求确认；让用户明确批准下一步操作",
+        "example": "Ask for confirmation should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“ask for confirmation”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "instead of guessing",
+        "phonetic": "/ɪnˈsted əv ˈɡesɪŋ/",
+        "meaning": "而不是猜测；避免系统在不确定时自行决定",
+        "example": "Instead of guessing should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“instead of guessing”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "respecting ownership",
+        "phonetic": "/rɪˈspektɪŋ ˈoʊnərʃɪp/",
+        "meaning": "尊重所有权；承认用户对数据和档案的控制权",
+        "example": "Respecting ownership should support clear control in a shared intelligent cockpit.",
+        "chineseExample": "在这句话中，“respecting ownership”用于描述共享智能座舱中的清晰控制。"
+      },
+      {
+        "term": "switching",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“switching”。",
+        "example": "Switching appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“switching”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "preview",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“preview”。",
+        "example": "Preview appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“preview”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "members",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“members”。",
+        "example": "Members appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“members”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "stored",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“stored”。",
+        "example": "Stored appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“stored”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "locally",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“locally”。",
+        "example": "Locally appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“locally”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "local",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“local”。",
+        "example": "Local appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“local”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "storage",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“storage”。",
+        "example": "Storage appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“storage”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "synchronization",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“synchronization”。",
+        "example": "Synchronization appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“synchronization”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "require",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“require”。",
+        "example": "Require appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“require”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "new",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“new”。",
+        "example": "New appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“new”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "uploaded",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“uploaded”。",
+        "example": "Uploaded appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“uploaded”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "identification",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“identification”。",
+        "example": "Identification appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“identification”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "height",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“height”。",
+        "example": "Height appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“height”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "mirror",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“mirror”。",
+        "example": "Mirror appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“mirror”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "treated",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“treated”。",
+        "example": "Treated appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“treated”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "workflow",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“workflow”。",
+        "example": "Workflow appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“workflow”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "include",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“include”。",
+        "example": "Include appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“include”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "massage",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“massage”。",
+        "example": "Massage appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“massage”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "whose",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“whose”。",
+        "example": "Whose appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“whose”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "begins",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“begins”。",
+        "example": "Begins appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“begins”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "confident",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“confident”。",
+        "example": "Confident appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“confident”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "safety-relevant",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“safety-relevant”。",
+        "example": "Safety-relevant appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“safety-relevant”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "destinations",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“destinations”。",
+        "example": "Destinations appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“destinations”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "switch",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“switch”。",
+        "example": "Switch appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“switch”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "searching",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“searching”。",
+        "example": "Searching appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“searching”来自今天的座椅记忆档案学习内容。"
+      },
+      {
+        "term": "respecting",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“respecting”。",
+        "example": "Respecting appears in today's seat memory profile lesson.",
+        "chineseExample": "在这句话中，“respecting”来自今天的座椅记忆档案学习内容。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing seat memory profiles with privacy boundaries",
+        "text": "Seat memory is often treated as a convenience feature, but in an intelligent cockpit it becomes a sensitive personalization workflow. A profile may include seat position, steering wheel reach, mirror angle, climate preference, massage intensity, recent navigation habits, and preferred voice settings. When the vehicle is shared, the interface must help the driver understand whose profile is active and what will change before the seat begins to move. A good design starts with confident driver identification, then shows a short profile preview with the most safety-relevant adjustments. If the system is unsure, it should keep a neutral fallback posture and ask for confirmation instead of guessing. Privacy also needs to be visible. The cockpit should separate local preference storage from cloud synchronization, explain the data boundary in plain language, and request explicit consent before uploading a profile. Designers should avoid exposing another user's destinations, calendar hints, or comfort history on a shared display. The best experience feels quick, but it is not silent about control. It lets the driver switch, edit, pause, or delete a profile without searching through deep settings. In this way, seat memory supports comfort while respecting ownership, context, and trust.",
+        "translation": "座椅记忆常被视为便利功能，但在智能座舱中，它会成为敏感的个性化流程。一个档案可能包含座椅位置、方向盘距离、后视镜角度、空调偏好、按摩强度、近期导航习惯和语音设置。当车辆被共享时，界面必须帮助驾驶员理解当前启用的是谁的档案，以及座椅移动前会发生哪些变化。良好的设计先进行可靠的驾驶员识别，再用简短档案预览展示最影响安全的调整。如果系统不确定，应保持中性的回退坐姿并请求确认，而不是猜测。隐私也需要可见：座舱应区分本地偏好存储和云同步，用清晰语言解释数据边界，并在上传档案前请求明确同意。设计师应避免在共享屏幕上暴露其他用户的目的地、日历提示或舒适历史。最好的体验很快速，但不会让控制权消失。它允许驾驶员轻松切换、编辑、暂停或删除档案。这样，座椅记忆既支持舒适，也尊重所有权、情境和信任。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "When the vehicle is shared, the interface must help the driver understand whose profile is active and what will change before the seat begins to move.",
+        "translation": "当车辆被共享时，界面必须帮助驾驶员理解当前启用的是谁的档案，以及座椅移动前会发生哪些变化。",
+        "points": [
+          "When the vehicle is shared 是时间和场景条件。",
+          "whose profile is active 表示当前启用的用户档案归属。",
+          "what will change before... 强调动作发生前的信息预告。"
+        ]
+      },
+      {
+        "sentence": "If the system is unsure, it should keep a neutral fallback posture and ask for confirmation instead of guessing.",
+        "translation": "如果系统不确定，应保持中性的回退坐姿并请求确认，而不是猜测。",
+        "points": [
+          "If the system is unsure 引出身份识别不确定的条件。",
+          "keep a neutral fallback posture 表示维持安全默认状态。",
+          "instead of guessing 强调不要用错误自动化替代确认。"
+        ]
+      },
+      {
+        "sentence": "The cockpit should separate local preference storage from cloud synchronization, explain the data boundary in plain language, and request explicit consent before uploading a profile.",
+        "translation": "座舱应区分本地偏好存储和云同步，用清晰语言解释数据边界，并在上传档案前请求明确同意。",
+        "points": [
+          "separate...from... 表示把两类数据处理方式区分开。",
+          "in plain language 强调面向用户的可理解表达。",
+          "before uploading a profile 说明同意发生在上传之前。"
+        ]
+      },
+      {
+        "sentence": "The best experience feels quick, but it is not silent about control.",
+        "translation": "最好的体验很快速，但不会让控制权消失。",
+        "points": [
+          "feels quick 描述主观体验而非单纯性能指标。",
+          "not silent about control 是设计表达，意思是清楚呈现用户控制权。",
+          "but 连接速度和透明控制之间的平衡。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 10 个核心词汇，重点区分 profile、preference、consent、boundary 的发音和设计语境。"
+      },
+      {
+        "title": "长文跟读",
+        "duration": "8 分钟",
+        "instruction": "先听或朗读全文一遍，再按句暂停，标出所有描述隐私边界和用户控制权的表达。"
+      },
+      {
+        "title": "场景复述",
+        "duration": "6 分钟",
+        "instruction": "用英语复述共享车辆中座椅记忆档案的设计流程：识别、预览、确认、同步和删除。"
+      },
+      {
+        "title": "设计输出",
+        "duration": "5 分钟",
+        "instruction": "写 3 条英文微文案，分别用于档案预览、云同步授权和识别失败时的回退坐姿提示。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-29-ambient-feedback",
     "date": "2026-07-29",
     "title": "Ambient feedback and glance-light interaction in intelligent cockpits",
