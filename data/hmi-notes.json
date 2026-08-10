@@ -1,5 +1,918 @@
 [
   {
+    "id": "2026-08-10-navigation-prompt-timing",
+    "date": "2026-08-10",
+    "title": "Navigation prompt timing and lane-level guidance in intelligent cockpits",
+    "topic": "智能座舱导航提示时机与车道级引导",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱中的导航提示时机、车道级指令、HUD 视觉锚定和错过转弯后的恢复体验。",
+    "words": [
+      {
+        "term": "turn-by-turn guidance",
+        "phonetic": "/ˌtɜːrn baɪ ˈtɜːrn ˈɡaɪdns/",
+        "meaning": "逐向导航引导；按路口、车道或动作逐步给出的驾驶提示",
+        "example": "Turn-by-turn guidance should match the driver's current lane and the time available before the maneuver.",
+        "chineseExample": "逐向导航引导应匹配驾驶员当前车道以及执行动作前可用的时间。"
+      },
+      {
+        "term": "lane-level instruction",
+        "phonetic": "/leɪn ˈlevl ɪnˈstrʌkʃn/",
+        "meaning": "车道级指令；明确指出应保持、变换或准备进入哪条车道的提示",
+        "example": "A lane-level instruction is useful only when it arrives early enough for a calm lane change.",
+        "chineseExample": "车道级指令只有在足够提前、能支持平稳变道时才有用。"
+      },
+      {
+        "term": "maneuver window",
+        "phonetic": "/məˈnuːvər ˈwɪndoʊ/",
+        "meaning": "操作窗口；驾驶员可以安全完成转向、并线或出口动作的时间范围",
+        "example": "The maneuver window should be shown with distance, time, and a simple visual cue.",
+        "chineseExample": "操作窗口应通过距离、时间和简单视觉提示来呈现。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；把导航提示固定到道路、车道或 HUD 参照物上的设计方法",
+        "example": "Visual anchoring helps the driver connect the instruction with the road scene ahead.",
+        "chineseExample": "视觉锚定帮助驾驶员把指令与前方道路场景联系起来。"
+      },
+      {
+        "term": "voice brevity",
+        "phonetic": "/vɔɪs ˈbrevəti/",
+        "meaning": "语音简洁度；语音提示在保持清楚的同时尽量减少字数和打断",
+        "example": "Voice brevity matters when navigation, safety alerts, and passenger conversation compete for attention.",
+        "chineseExample": "当导航、安全警告和乘客对话争夺注意力时，语音简洁度很重要。"
+      },
+      {
+        "term": "missed-turn recovery",
+        "phonetic": "/mɪst tɜːrn rɪˈkʌvəri/",
+        "meaning": "错过转弯后的恢复；驾驶员未按导航动作执行时重新规划并安抚用户的交互",
+        "example": "Missed-turn recovery should avoid blame and immediately present the next safe route option.",
+        "chineseExample": "错过转弯后的恢复应避免责备，并立即给出下一条安全路线选项。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃn ˈbʌdʒɪt/",
+        "meaning": "注意力预算；驾驶员在某一时刻可用于阅读、听取和判断信息的有限资源",
+        "example": "The cockpit spends the attention budget carefully by shortening messages near complex junctions.",
+        "chineseExample": "座舱会在复杂路口附近缩短信息，以谨慎使用注意力预算。"
+      },
+      {
+        "term": "junction complexity",
+        "phonetic": "/ˈdʒʌŋkʃn kəmˈpleksəti/",
+        "meaning": "路口复杂度；由车道数量、出口密度、标线和交通状态决定的导航难度",
+        "example": "Junction complexity should influence how early the system repeats a navigation prompt.",
+        "chineseExample": "路口复杂度应影响系统多早重复导航提示。"
+      },
+      {
+        "term": "prompt escalation",
+        "phonetic": "/prɑːmpt ˌeskəˈleɪʃn/",
+        "meaning": "提示升级；在动作临近或风险升高时逐步增强提示显著性的策略",
+        "example": "Prompt escalation can move from a subtle HUD cue to a short voice reminder.",
+        "chineseExample": "提示升级可以从轻量 HUD 提示转为简短语音提醒。"
+      },
+      {
+        "term": "route confidence",
+        "phonetic": "/ruːt ˈkɑːnfɪdəns/",
+        "meaning": "路线置信度；系统对当前定位、道路匹配和下一步导航判断的可信程度",
+        "example": "Route confidence should be communicated when positioning uncertainty affects the next instruction.",
+        "chineseExample": "当定位不确定性影响下一条指令时，应传达路线置信度。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "turn-by-turn guidance",
+        "phonetic": "/ˌtɜːrn baɪ ˈtɜːrn ˈɡaɪdns/",
+        "meaning": "逐向导航引导；按路口、车道或动作逐步给出的驾驶提示",
+        "example": "Turn-by-turn guidance should match the driver's current lane and the time available before the maneuver.",
+        "chineseExample": "逐向导航引导应匹配驾驶员当前车道以及执行动作前可用的时间。"
+      },
+      {
+        "term": "lane-level instruction",
+        "phonetic": "/leɪn ˈlevl ɪnˈstrʌkʃn/",
+        "meaning": "车道级指令；明确指出应保持、变换或准备进入哪条车道的提示",
+        "example": "A lane-level instruction is useful only when it arrives early enough for a calm lane change.",
+        "chineseExample": "车道级指令只有在足够提前、能支持平稳变道时才有用。"
+      },
+      {
+        "term": "maneuver window",
+        "phonetic": "/məˈnuːvər ˈwɪndoʊ/",
+        "meaning": "操作窗口；驾驶员可以安全完成转向、并线或出口动作的时间范围",
+        "example": "The maneuver window should be shown with distance, time, and a simple visual cue.",
+        "chineseExample": "操作窗口应通过距离、时间和简单视觉提示来呈现。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；把导航提示固定到道路、车道或 HUD 参照物上的设计方法",
+        "example": "Visual anchoring helps the driver connect the instruction with the road scene ahead.",
+        "chineseExample": "视觉锚定帮助驾驶员把指令与前方道路场景联系起来。"
+      },
+      {
+        "term": "voice brevity",
+        "phonetic": "/vɔɪs ˈbrevəti/",
+        "meaning": "语音简洁度；语音提示在保持清楚的同时尽量减少字数和打断",
+        "example": "Voice brevity matters when navigation, safety alerts, and passenger conversation compete for attention.",
+        "chineseExample": "当导航、安全警告和乘客对话争夺注意力时，语音简洁度很重要。"
+      },
+      {
+        "term": "missed-turn recovery",
+        "phonetic": "/mɪst tɜːrn rɪˈkʌvəri/",
+        "meaning": "错过转弯后的恢复；驾驶员未按导航动作执行时重新规划并安抚用户的交互",
+        "example": "Missed-turn recovery should avoid blame and immediately present the next safe route option.",
+        "chineseExample": "错过转弯后的恢复应避免责备，并立即给出下一条安全路线选项。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃn ˈbʌdʒɪt/",
+        "meaning": "注意力预算；驾驶员在某一时刻可用于阅读、听取和判断信息的有限资源",
+        "example": "The cockpit spends the attention budget carefully by shortening messages near complex junctions.",
+        "chineseExample": "座舱会在复杂路口附近缩短信息，以谨慎使用注意力预算。"
+      },
+      {
+        "term": "junction complexity",
+        "phonetic": "/ˈdʒʌŋkʃn kəmˈpleksəti/",
+        "meaning": "路口复杂度；由车道数量、出口密度、标线和交通状态决定的导航难度",
+        "example": "Junction complexity should influence how early the system repeats a navigation prompt.",
+        "chineseExample": "路口复杂度应影响系统多早重复导航提示。"
+      },
+      {
+        "term": "prompt escalation",
+        "phonetic": "/prɑːmpt ˌeskəˈleɪʃn/",
+        "meaning": "提示升级；在动作临近或风险升高时逐步增强提示显著性的策略",
+        "example": "Prompt escalation can move from a subtle HUD cue to a short voice reminder.",
+        "chineseExample": "提示升级可以从轻量 HUD 提示转为简短语音提醒。"
+      },
+      {
+        "term": "route confidence",
+        "phonetic": "/ruːt ˈkɑːnfɪdəns/",
+        "meaning": "路线置信度；系统对当前定位、道路匹配和下一步导航判断的可信程度",
+        "example": "Route confidence should be communicated when positioning uncertainty affects the next instruction.",
+        "chineseExample": "当定位不确定性影响下一条指令时，应传达路线置信度。"
+      },
+      {
+        "term": "navigation handoff",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈhændɔːf/",
+        "meaning": "导航交接；在语音、HUD、中控屏和仪表之间转移导航信息重点",
+        "example": "Navigation handoff should keep the same maneuver visible across cockpit surfaces.",
+        "chineseExample": "在这句话中，“navigation handoff”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "glanceable route cue",
+        "phonetic": "/ˈɡlænsəbl ruːt kjuː/",
+        "meaning": "可扫视路线提示；驾驶员快速一瞥即可理解的路线信息",
+        "example": "A glanceable route cue should not require reading a long sentence.",
+        "chineseExample": "在这句话中，“glanceable route cue”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "distance countdown",
+        "phonetic": "/ˈdɪstəns ˈkaʊntdaʊn/",
+        "meaning": "距离倒计时；用距离变化提示驾驶动作临近",
+        "example": "Distance countdown helps drivers judge whether the maneuver is still comfortable.",
+        "chineseExample": "在这句话中，“distance countdown”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "time-to-maneuver",
+        "phonetic": "/taɪm tə məˈnuːvər/",
+        "meaning": "距操作剩余时间；完成下一驾驶动作前剩余的时间",
+        "example": "Time-to-maneuver can be easier to understand than distance in heavy traffic.",
+        "chineseExample": "在这句话中，“time-to-maneuver”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "road scene",
+        "phonetic": "/roʊd siːn/",
+        "meaning": "道路场景；驾驶员前方可见的车道、标志、车辆和路口环境",
+        "example": "The road scene should match the visual cue on the display.",
+        "chineseExample": "在这句话中，“road scene”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "exit density",
+        "phonetic": "/ˈeksɪt ˈdensəti/",
+        "meaning": "出口密度；短距离内出口或匝道数量的密集程度",
+        "example": "High exit density requires earlier and clearer route prompts.",
+        "chineseExample": "在这句话中，“exit density”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "positioning uncertainty",
+        "phonetic": "/pəˈzɪʃnɪŋ ʌnˈsɜːrtnti/",
+        "meaning": "定位不确定性；车辆定位或地图匹配不够确定的状态",
+        "example": "Positioning uncertainty should reduce the confidence of a precise lane instruction.",
+        "chineseExample": "在这句话中，“positioning uncertainty”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "map matching",
+        "phonetic": "/mæp ˈmætʃɪŋ/",
+        "meaning": "地图匹配；把车辆位置对应到具体道路或车道的过程",
+        "example": "Map matching errors can make a route prompt feel late or wrong.",
+        "chineseExample": "在这句话中，“map matching”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "replanning message",
+        "phonetic": "/riːˈplænɪŋ ˈmesɪdʒ/",
+        "meaning": "重新规划消息；路线改变时解释新方案的提示",
+        "example": "A replanning message should be calm, brief, and action oriented.",
+        "chineseExample": "在这句话中，“replanning message”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "calm lane change",
+        "phonetic": "/kɑːm leɪn tʃeɪndʒ/",
+        "meaning": "平稳变道；不急促、不压迫驾驶员的车道变换",
+        "example": "A calm lane change is more likely when the prompt arrives before the last moment.",
+        "chineseExample": "在这句话中，“calm lane change”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "short voice reminder",
+        "phonetic": "/ʃɔːrt vɔɪs rɪˈmaɪndər/",
+        "meaning": "简短语音提醒；低负担的口头导航提示",
+        "example": "A short voice reminder should confirm the action without repeating every detail.",
+        "chineseExample": "在这句话中，“short voice reminder”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "subtle HUD cue",
+        "phonetic": "/ˈsʌtl hʌd kjuː/",
+        "meaning": "轻量 HUD 提示；不打扰但能引导视线的抬头显示提示",
+        "example": "A subtle HUD cue can guide attention without covering the road.",
+        "chineseExample": "在这句话中，“subtle HUD cue”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶任务对视觉、听觉和认知资源的占用",
+        "example": "Driver workload rises when navigation prompts are late and verbose.",
+        "chineseExample": "在这句话中，“driver workload”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "route preview",
+        "phonetic": "/ruːt ˈpriːvjuː/",
+        "meaning": "路线预览；提前展示即将到来的道路动作或路线变化",
+        "example": "Route preview helps the driver prepare for a complex interchange.",
+        "chineseExample": "在这句话中，“route preview”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "complex interchange",
+        "phonetic": "/ˈkɑːmpleks ˈɪntərtʃeɪndʒ/",
+        "meaning": "复杂立交；多出口、多车道和多方向选择的道路节点",
+        "example": "A complex interchange needs layered prompts instead of one long instruction.",
+        "chineseExample": "在这句话中，“complex interchange”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "layered prompt",
+        "phonetic": "/ˈleɪərd prɑːmpt/",
+        "meaning": "分层提示；按时间、风险和信息量逐步呈现的提示",
+        "example": "A layered prompt starts early and becomes more specific near the maneuver.",
+        "chineseExample": "在这句话中，“layered prompt”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "action oriented",
+        "phonetic": "/ˈækʃn ˈɔːrientɪd/",
+        "meaning": "面向动作的；直接说明用户下一步应做什么",
+        "example": "Navigation copy should be action oriented when the driver has little time.",
+        "chineseExample": "在这句话中，“action oriented”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "late prompt",
+        "phonetic": "/leɪt prɑːmpt/",
+        "meaning": "过晚提示；驾驶员已难以舒适完成动作时才出现的提示",
+        "example": "A late prompt can create stress even if the route is technically correct.",
+        "chineseExample": "在这句话中，“late prompt”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "verbose message",
+        "phonetic": "/vɜːrˈboʊs ˈmesɪdʒ/",
+        "meaning": "冗长消息；字数过多、增加理解负担的提示",
+        "example": "A verbose message competes with traffic observation.",
+        "chineseExample": "在这句话中，“verbose message”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "traffic observation",
+        "phonetic": "/ˈtræfɪk ˌɑːbzərˈveɪʃn/",
+        "meaning": "交通观察；驾驶员对车辆、行人、标志和道路状态的观察",
+        "example": "Traffic observation should not be interrupted by unnecessary route details.",
+        "chineseExample": "在这句话中，“traffic observation”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "available lane",
+        "phonetic": "/əˈveɪləbl leɪn/",
+        "meaning": "可用车道；当前可以安全进入或保持的车道",
+        "example": "The display should distinguish the available lane from the target lane.",
+        "chineseExample": "在这句话中，“available lane”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "target lane",
+        "phonetic": "/ˈtɑːrɡɪt leɪn/",
+        "meaning": "目标车道；导航希望驾驶员进入或保持的车道",
+        "example": "The target lane should be highlighted without hiding nearby lanes.",
+        "chineseExample": "在这句话中，“target lane”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "nearby lanes",
+        "phonetic": "/ˈnɪrbaɪ leɪnz/",
+        "meaning": "相邻车道；目标车道附近仍需观察的车道",
+        "example": "Nearby lanes remain important during a lane-level instruction.",
+        "chineseExample": "在这句话中，“nearby lanes”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "route option",
+        "phonetic": "/ruːt ˈɑːpʃn/",
+        "meaning": "路线选项；重新规划时可选择的下一条路线",
+        "example": "The next safe route option should appear immediately after a missed turn.",
+        "chineseExample": "在这句话中，“route option”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "driver trust",
+        "phonetic": "/ˈdraɪvər trʌst/",
+        "meaning": "驾驶员信任；用户对导航系统准确性和节奏的信赖",
+        "example": "Driver trust improves when the system admits uncertainty clearly.",
+        "chineseExample": "在这句话中，“driver trust”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "uncertainty label",
+        "phonetic": "/ʌnˈsɜːrtnti ˈleɪbl/",
+        "meaning": "不确定性标签；说明系统判断不够确定的提示标签",
+        "example": "An uncertainty label is better than pretending the route is exact.",
+        "chineseExample": "在这句话中，“uncertainty label”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "route exactness",
+        "phonetic": "/ruːt ɪɡˈzæktnəs/",
+        "meaning": "路线精确性；路线和车道判断与真实道路状态的吻合程度",
+        "example": "Route exactness depends on map quality and positioning signals.",
+        "chineseExample": "在这句话中，“route exactness”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "map quality",
+        "phonetic": "/mæp ˈkwɑːləti/",
+        "meaning": "地图质量；地图数据的新鲜度、细节和准确性",
+        "example": "Map quality affects how confident the cockpit should sound.",
+        "chineseExample": "在这句话中，“map quality”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "positioning signal",
+        "phonetic": "/pəˈzɪʃnɪŋ ˈsɪɡnəl/",
+        "meaning": "定位信号；支持车辆定位的传感器或卫星信号",
+        "example": "Weak positioning signals should make the prompt less specific.",
+        "chineseExample": "在这句话中，“positioning signal”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "instruction timing",
+        "phonetic": "/ɪnˈstrʌkʃn ˈtaɪmɪŋ/",
+        "meaning": "指令时机；导航提示出现的早晚和重复节奏",
+        "example": "Instruction timing is as important as the wording of the prompt.",
+        "chineseExample": "在这句话中，“instruction timing”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "repeat threshold",
+        "phonetic": "/rɪˈpiːt ˈθreʃhoʊld/",
+        "meaning": "重复阈值；系统决定何时再次提示的条件",
+        "example": "The repeat threshold should change with speed and junction complexity.",
+        "chineseExample": "在这句话中，“repeat threshold”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "speed context",
+        "phonetic": "/spiːd ˈkɑːntekst/",
+        "meaning": "速度语境；车速对可用反应时间和提示节奏的影响",
+        "example": "Speed context helps determine whether a voice prompt is needed.",
+        "chineseExample": "在这句话中，“speed context”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "reaction time",
+        "phonetic": "/riˈækʃn taɪm/",
+        "meaning": "反应时间；驾驶员理解提示并开始动作所需的时间",
+        "example": "Reaction time must be protected near exits and merges.",
+        "chineseExample": "在这句话中，“reaction time”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "merge area",
+        "phonetic": "/mɜːrdʒ ˈeriə/",
+        "meaning": "汇入区域；车辆并入主路或其他车道的道路区域",
+        "example": "A merge area requires prompts that leave room for observation.",
+        "chineseExample": "在这句话中，“merge area”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "clear copy",
+        "phonetic": "/klɪr ˈkɑːpi/",
+        "meaning": "清晰文案；短、准、便于执行的界面文字",
+        "example": "Clear copy tells the driver what to do now and what happens next.",
+        "chineseExample": "在这句话中，“clear copy”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "safe route",
+        "phonetic": "/seɪf ruːt/",
+        "meaning": "安全路线；符合当前道路条件且不强迫急促操作的路线",
+        "example": "A safe route is more valuable than preserving the original plan.",
+        "chineseExample": "在这句话中，“safe route”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "original plan",
+        "phonetic": "/əˈrɪdʒənl plæn/",
+        "meaning": "原路线方案；重新规划前的导航计划",
+        "example": "The original plan should not be defended after the turn is missed.",
+        "chineseExample": "在这句话中，“original plan”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "cockpit surface",
+        "phonetic": "/ˈkɑːkpɪt ˈsɜːrfɪs/",
+        "meaning": "座舱信息界面；HUD、中控、仪表等可承载信息的区域",
+        "example": "Each cockpit surface should carry the amount of detail it handles best.",
+        "chineseExample": "在这句话中，“cockpit surface”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "information rhythm",
+        "phonetic": "/ˌɪnfərˈmeɪʃn ˈrɪðəm/",
+        "meaning": "信息节奏；提示出现、重复和升级的整体节奏",
+        "example": "Information rhythm keeps navigation helpful without becoming noisy.",
+        "chineseExample": "在这句话中，“information rhythm”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "noisy guidance",
+        "phonetic": "/ˈnɔɪzi ˈɡaɪdns/",
+        "meaning": "嘈杂引导；提示过多、过频或过长的导航体验",
+        "example": "Noisy guidance can reduce attention to the road.",
+        "chineseExample": "在这句话中，“noisy guidance”用于描述智能座舱导航提示设计。"
+      },
+      {
+        "term": "affects",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“affects”。",
+        "example": "Affects appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“affects”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "ahead",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“ahead”。",
+        "example": "Ahead appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“ahead”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "anchoring",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“anchoring”。",
+        "example": "Anchoring appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“anchoring”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "arrives",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“arrives”。",
+        "example": "Arrives appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“arrives”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "blame",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“blame”。",
+        "example": "Blame appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“blame”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "brevity",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“brevity”。",
+        "example": "Brevity appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“brevity”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "budget",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“budget”。",
+        "example": "Budget appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“budget”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "carefully",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“carefully”。",
+        "example": "Carefully appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“carefully”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“cluster”。",
+        "example": "Cluster appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“cluster”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "combine",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“combine”。",
+        "example": "Combine appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“combine”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "communicate",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“communicate”。",
+        "example": "Communicate appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“communicate”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "communicated",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“communicated”。",
+        "example": "Communicated appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“communicated”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "complexity",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“complexity”。",
+        "example": "Complexity appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“complexity”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "connect",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“connect”。",
+        "example": "Connect appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“connect”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "considering",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“considering”。",
+        "example": "Considering appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“considering”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "conversation",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“conversation”。",
+        "example": "Conversation appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“conversation”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "countdown",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“countdown”。",
+        "example": "Countdown appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“countdown”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "detail",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“detail”。",
+        "example": "Detail appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“detail”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "distance",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“distance”。",
+        "example": "Distance appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“distance”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "early",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“early”。",
+        "example": "Early appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“early”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "escalates",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“escalates”。",
+        "example": "Escalates appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“escalates”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "exact",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“exact”。",
+        "example": "Exact appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“exact”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "forgotten",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“forgotten”。",
+        "example": "Forgotten appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“forgotten”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "happen",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“happen”。",
+        "example": "Happen appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“happen”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "hud",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“hud”。",
+        "example": "Hud appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“hud”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "improve",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“improve”。",
+        "example": "Improve appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“improve”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "influence",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“influence”。",
+        "example": "Influence appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“influence”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "interchange",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“interchange”。",
+        "example": "Interchange appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“interchange”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "junctions",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“junctions”。",
+        "example": "Junctions appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“junctions”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "lane-level",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“lane-level”。",
+        "example": "Lane-level appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“lane-level”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "late",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“late”。",
+        "example": "Late appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“late”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "layers",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“layers”。",
+        "example": "Layers appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“layers”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“map”。",
+        "example": "Map appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“map”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "match",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“match”。",
+        "example": "Match appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“match”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "matching",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“matching”。",
+        "example": "Matching appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“matching”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "missed",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“missed”。",
+        "example": "Missed appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“missed”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "missed-turn",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“missed-turn”。",
+        "example": "Missed-turn appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“missed-turn”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“passenger”。",
+        "example": "Passenger appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“passenger”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "plan",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“plan”。",
+        "example": "Plan appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“plan”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "positioning",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“positioning”。",
+        "example": "Positioning appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“positioning”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "pretending",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“pretending”。",
+        "example": "Pretending appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“pretending”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "problem",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“problem”。",
+        "example": "Problem appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“problem”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "protect",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“protect”。",
+        "example": "Protect appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“protect”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "pushed",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“pushed”。",
+        "example": "Pushed appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“pushed”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "respects",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“respects”。",
+        "example": "Respects appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“respects”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "scene",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“scene”。",
+        "example": "Scene appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“scene”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "shortening",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“shortening”。",
+        "example": "Shortening appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“shortening”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "soon",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“soon”。",
+        "example": "Soon appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“soon”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "spends",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“spends”。",
+        "example": "Spends appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“spends”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "stress",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“stress”。",
+        "example": "Stress appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“stress”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "subtle",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“subtle”。",
+        "example": "Subtle appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“subtle”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "tells",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“tells”。",
+        "example": "Tells appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“tells”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "turn",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“turn”。",
+        "example": "Turn appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“turn”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "turn-by-turn",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“turn-by-turn”。",
+        "example": "Turn-by-turn appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“turn-by-turn”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "uncertainty",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“uncertainty”。",
+        "example": "Uncertainty appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“uncertainty”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "unsafe",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“unsafe”。",
+        "example": "Unsafe appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“unsafe”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "verbal",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“verbal”。",
+        "example": "Verbal appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“verbal”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "weak",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“weak”。",
+        "example": "Weak appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“weak”来自今天的导航提示时机学习内容。"
+      },
+      {
+        "term": "window",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“window”。",
+        "example": "Window appears in today's navigation prompt timing lesson.",
+        "chineseExample": "在这句话中，“window”来自今天的导航提示时机学习内容。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Making navigation prompts timely, clear, and recoverable",
+        "text": "Navigation guidance in an intelligent cockpit is not only a map problem; it is an attention and timing problem. A useful route prompt tells the driver what to do, where to look, and how soon the maneuver will happen. For a simple road, a short voice reminder may be enough. Near a complex interchange, the system should combine a glanceable route cue, lane-level instruction, and visual anchoring on the HUD or cluster. The key is to protect the driver's attention budget. If a prompt arrives too early, it may be forgotten. If it arrives too late, the driver may feel pushed into an unsafe lane change. Designers can improve timing by considering speed context, junction complexity, distance countdown, and time-to-maneuver. They should also plan for uncertainty. When map matching or positioning signals are weak, the cockpit should communicate route confidence instead of pretending the instruction is exact. Recovery is just as important as the first prompt. After a missed turn, the message should avoid blame, reduce verbal detail, and show the next safe route option immediately. Good navigation feels calm because it respects the road scene ahead. It gives information in layers, escalates only when needed, and lets the driver recover without stress.",
+        "translation": "智能座舱中的导航引导不只是地图问题，也是注意力和时机问题。有用的路线提示会告诉驾驶员做什么、看哪里，以及操作多久后会发生。在简单道路上，一条简短语音提醒可能已经足够。在复杂立交附近，系统应结合可扫视路线提示、车道级指令，以及 HUD 或仪表上的视觉锚定。关键是保护驾驶员的注意力预算。如果提示太早，驾驶员可能会忘记；如果提示太晚，驾驶员可能会感到被迫进行不安全变道。设计师可以通过考虑速度语境、路口复杂度、距离倒计时和距操作剩余时间来改善提示时机。他们还应规划不确定性。当地图匹配或定位信号较弱时，座舱应传达路线置信度，而不是假装指令完全精确。恢复与首次提示同样重要。错过转弯后，消息应避免责备、减少语音细节，并立即显示下一条安全路线选项。好的导航体验之所以平静，是因为它尊重前方道路场景。它分层提供信息，只在必要时升级提示，并让驾驶员无压力地恢复路线。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A useful route prompt tells the driver what to do, where to look, and how soon the maneuver will happen.",
+        "translation": "有用的路线提示会告诉驾驶员做什么、看哪里，以及操作多久后会发生。",
+        "points": [
+          "what to do, where to look, and how soon... 是三个并列的信息目标。",
+          "route prompt 指导航路线提示，不只是地图上的路线线条。",
+          "maneuver 表示转向、并线、驶出等具体驾驶动作。"
+        ]
+      },
+      {
+        "sentence": "If a prompt arrives too early, it may be forgotten. If it arrives too late, the driver may feel pushed into an unsafe lane change.",
+        "translation": "如果提示太早，驾驶员可能会忘记；如果提示太晚，驾驶员可能会感到被迫进行不安全变道。",
+        "points": [
+          "too early 和 too late 对比提示时机的两类风险。",
+          "feel pushed into 表示用户主观上感到被迫行动。",
+          "unsafe lane change 强调晚提示可能带来的驾驶安全问题。"
+        ]
+      },
+      {
+        "sentence": "When map matching or positioning signals are weak, the cockpit should communicate route confidence instead of pretending the instruction is exact.",
+        "translation": "当地图匹配或定位信号较弱时，座舱应传达路线置信度，而不是假装指令完全精确。",
+        "points": [
+          "When...are weak 引出系统不确定的技术条件。",
+          "communicate route confidence 表示把系统置信度明确告诉用户。",
+          "instead of pretending... 强调透明表达比过度确定更可信。"
+        ]
+      },
+      {
+        "sentence": "It gives information in layers, escalates only when needed, and lets the driver recover without stress.",
+        "translation": "它分层提供信息，只在必要时升级提示，并让驾驶员无压力地恢复路线。",
+        "points": [
+          "gives, escalates, lets 构成三个并列动作。",
+          "in layers 描述分阶段、分信息量的提示策略。",
+          "without stress 说明恢复体验的目标不是责备，而是减负。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 10 个核心词汇，重点区分 guidance、instruction、maneuver、confidence 和 recovery 的设计语境。"
+      },
+      {
+        "title": "长文跟读",
+        "duration": "8 分钟",
+        "instruction": "跟读全文，标出所有描述提示时机、车道指令和路线恢复的表达。"
+      },
+      {
+        "title": "句型复述",
+        "duration": "6 分钟",
+        "instruction": "用英语复述提示太早、太晚和定位不确定时分别应该如何处理。"
+      },
+      {
+        "title": "微文案输出",
+        "duration": "5 分钟",
+        "instruction": "写 3 条英文导航提示文案：提前准备、临近变道、错过转弯后重新规划。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-07-30-seat-memory-privacy",
     "date": "2026-07-30",
     "title": "Seat memory profiles and privacy-aware personalization in intelligent cockpits",
