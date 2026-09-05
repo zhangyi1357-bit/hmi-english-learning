@@ -1,4 +1,6 @@
-import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey } from "./review-engine.mjs";
+import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey, recordPresentation } from "./review-engine.mjs?v=20260905b";
+import { createFeedback } from "./feedback.js";
+import { mountLibrary } from "./library.js?v=20260905b";
 
 export function mountReview({ notes, escapeHtml: esc, renderClickableText, speakEnglish, stopSpeaking }) {
   const root = document.querySelector("#reviewPanel");
@@ -13,6 +15,8 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
   let revealed = false;
   let undo = null;
   let currentDay = dayKey();
+  const playFeedback = createFeedback(() => data.settings.sound !== false);
+  mountLibrary({ deck, getData: () => data, esc });
 
   function save() {
     if (damaged) return;
@@ -23,6 +27,7 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
   function render() {
     if (currentDay !== dayKey()) { currentDay = dayKey(); revealed = false; undo = null; }
     const session = ensureSession(data, deck, type);
+    if (!root.hidden) recordPresentation(data, type);
     save();
     const card = lookup.get(session.queue[0]);
     const completed = session.ids.length - session.queue.length;
@@ -40,15 +45,17 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
           <div class="studyAnswer">${revealed ? `<p class="answerMeaning">${esc(card.answer)}</p>${card.type === "word" ? `<p class="studyExample">${renderClickableText(card.example)}</p><p class="translation">${esc(card.chineseExample)}</p><button class="iconTextButton" type="button" data-speak="${esc(card.example)}">朗读例句</button>` : ""}` : '<button class="revealButton" id="revealAnswer" type="button">查看答案</button>'}</div>
           ${revealed ? '<div class="ratingButtons"><button type="button" data-grade="forgot">忘记<small>尽快再学</small></button><button type="button" data-grade="vague">模糊<small>本轮再练</small></button><button type="button" data-grade="known">认识<small>下次复习</small></button></div>' : ""}` : `<div class="studyComplete"><p class="eyebrow">今日任务完成</p><h3>${type === "word" ? "单词" : "句子"}复习完成了</h3><p>已完成 ${completed} 项，明天继续。</p><button type="button" class="revealButton" data-mode="${type === "word" ? "sentence" : "word"}">去学${type === "word" ? "句子" : "单词"}</button></div>`}
       </article>
-      <div class="reviewFooter"><button class="iconTextButton" type="button" id="undoRating" ${undo ? "" : "disabled"}>撤销上次选择</button><span>进度仅保存在此浏览器 · 无需登录</span></div>`;
+      <div class="reviewFooter"><button class="iconTextButton" type="button" id="undoRating" ${undo ? "" : "disabled"}>撤销上次选择</button><label class="soundToggle"><input id="soundToggle" type="checkbox" ${data.settings.sound !== false ? "checked" : ""}>操作音效</label><span>进度仅保存在此浏览器 · 无需登录</span></div>`;
+    root.querySelector("#soundToggle").addEventListener("change", event => { data.settings.sound = event.target.checked; save(); if (event.target.checked) playFeedback("reveal"); });
     root.querySelectorAll("[data-mode]").forEach(button => button.addEventListener("click", () => { stopSpeaking(); type = button.dataset.mode; revealed = false; undo = null; render(); }));
     root.querySelector("#dailyGoal").addEventListener("change", event => { data.settings[type] = Number(event.target.value); save(); render(); });
     root.querySelector("#reviewSpeak")?.addEventListener("click", () => speakEnglish(card.text));
-    root.querySelector("#revealAnswer")?.addEventListener("click", () => { revealed = true; render(); root.querySelector("[data-grade]")?.focus(); });
+    root.querySelector("#revealAnswer")?.addEventListener("click", () => { playFeedback("reveal"); revealed = true; render(); root.querySelector("[data-grade]")?.focus(); });
     root.querySelectorAll("[data-grade]").forEach(button => button.addEventListener("click", () => {
       if (currentDay !== dayKey()) { render(); return; }
       undo = structuredClone(data);
       rateCard(data, type, button.dataset.grade);
+      playFeedback(button.dataset.grade);
       revealed = false;
       stopSpeaking();
       render();
@@ -63,5 +70,6 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
     catch { warning = "另一页面的学习记录无法读取，请刷新后重试。"; damaged = true; render(); }
   });
   document.addEventListener("visibilitychange", () => { if (!document.hidden && currentDay !== dayKey()) render(); });
+  document.querySelector("#reviewTab").addEventListener("click", () => queueMicrotask(render));
   render();
 }

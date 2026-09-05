@@ -6,7 +6,7 @@ export function dayKey(now = new Date()) {
 }
 
 export function emptyProgress() {
-  return { version: 1, settings: { word: 8, sentence: 2 }, cards: {}, sessions: {}, history: {} };
+  return { version: 1, settings: { word: 8, sentence: 2, sound: true }, cards: {}, sessions: {}, history: {}, stats: {} };
 }
 
 export function parseProgress(raw) {
@@ -21,7 +21,22 @@ export function parseProgress(raw) {
   for (const card of Object.values(data.cards)) {
     if (!Number.isInteger(card.level) || card.level < 0 || card.level > 5 || !Number.isFinite(card.due)) throw new Error("Invalid card");
   }
+  data.stats ||= {};
+  for (const id of Object.keys(data.cards)) {
+    if (!data.stats[id]) data.stats[id] = { shown: 0, known: 0, vague: 0, forgot: 0, partial: true };
+  }
   return data;
+}
+
+export function recordPresentation(data, type, now = new Date()) {
+  const session = data.sessions[type];
+  const id = session?.queue[0];
+  if (!id || session.presented === id) return;
+  session.presented = id;
+  const stats = data.stats[id] ||= { shown: 0, known: 0, vague: 0, forgot: 0 };
+  stats.shown += 1;
+  stats.firstSeen ||= now.getTime();
+  stats.lastSeen = now.getTime();
 }
 
 export function buildDeck(notes) {
@@ -58,6 +73,10 @@ export function rateCard(data, type, grade, now = new Date()) {
   const session = data.sessions[type];
   if (!session || session.day !== dayKey(now) || !session.queue.length) return;
   const id = session.queue.shift();
+  session.presented = null;
+  const stats = data.stats[id] ||= { shown: 0, known: 0, vague: 0, forgot: 0 };
+  stats[grade] += 1;
+  stats.lastRated = now.getTime();
   const previous = data.cards[id] || { level: 0, due: 0 };
   const level = grade === "known" ? Math.min(previous.level + 1, 5) : grade === "forgot" ? 0 : Math.max(0, previous.level - 1);
   const due = grade === "known" ? Date.parse(`${dayKey(now)}T00:00:00+08:00`) + intervals[level - 1] * 86400000 : now.getTime();

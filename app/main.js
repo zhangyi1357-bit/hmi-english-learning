@@ -1,4 +1,4 @@
-import { mountReview } from "./review.js";
+import { mountReview } from "./review.js?v=20260905b";
 
 const state = {
   notes: [],
@@ -788,17 +788,16 @@ loadNotes().then(() => {
   mountReview({ notes: state.notes, escapeHtml, renderClickableText, speakEnglish, stopSpeaking });
   const review = document.querySelector("#reviewPanel");
   const lesson = document.querySelector("#lessonPanel");
-  function selectView(isReview) {
+  function selectView(view) {
     stopSpeaking();
-    review.hidden = !isReview;
-    lesson.hidden = isReview;
-    document.querySelector("#reviewTab").setAttribute("aria-pressed", String(isReview));
-    document.querySelector("#lessonTab").setAttribute("aria-pressed", String(!isReview));
-    elements.dateSelect.hidden = isReview;
+    review.hidden = view !== "review";
+    lesson.hidden = view !== "lesson";
+    document.querySelector("#libraryPanel").hidden = view !== "library";
+    for (const name of ["review", "lesson", "library"]) document.querySelector(`#${name}Tab`).setAttribute("aria-pressed", String(view === name));
+    elements.dateSelect.hidden = view !== "lesson";
   }
-  document.querySelector("#reviewTab").addEventListener("click", () => selectView(true));
-  document.querySelector("#lessonTab").addEventListener("click", () => selectView(false));
-  selectView(true);
+  for (const name of ["review", "lesson", "library"]) document.querySelector(`#${name}Tab`).addEventListener("click", () => selectView(name));
+  selectView("review");
 }).catch((error) => {
   document.body.innerHTML = `<main class="layout"><section class="hero"><h1>内容加载失败</h1><p>${escapeHtml(error.message)}</p></section></main>`;
 });

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HMI 智能座舱英语学习</title>
-    <link rel="stylesheet" href="app/styles.css">
+    <link rel="stylesheet" href="app/styles.css?v=20260905b">
   </head>
   <body>
     <header class="topbar">
@@ -22,8 +22,10 @@
       <nav class="viewTabs" aria-label="学习视图">
         <button type="button" id="reviewTab" aria-pressed="true">每日复习</button>
         <button type="button" id="lessonTab" aria-pressed="false">每日课程</button>
+        <button type="button" id="libraryTab" aria-pressed="false">我的词库</button>
       </nav>
       <section id="reviewPanel" aria-label="每日复习"></section>
+      <section id="libraryPanel" aria-label="我的词库" hidden></section>
       <div id="lessonPanel" hidden>
       <section class="hero" id="todayHero"></section>
 
@@ -85,6 +87,6 @@
 
     <script src="data/hmi-notes.js"></script>
     <script src="data/local-dictionary.js"></script>
-    <script src="app/main.js" type="module"></script>
+    <script src="app/main.js?v=20260905b" type="module"></script>
   </body>
 </html>
