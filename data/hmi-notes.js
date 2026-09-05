@@ -1,5 +1,763 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-05-passenger-aware-voice-arbitration",
+    "date": "2026-09-05",
+    "title": "Passenger-aware voice arbitration and shared cockpit control",
+    "topic": "智能座舱乘员感知语音仲裁与共享控制",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在多人语音场景中的说话人识别、权限判断、控制仲裁、确认反馈和隐私边界。",
+    "words": [
+      {
+        "term": "voice arbitration",
+        "phonetic": "/vɔɪs ˌɑːrbɪˈtreɪʃn/",
+        "meaning": "语音仲裁；当多名乘员发出指令时，系统判断优先级和执行对象的机制",
+        "example": "Voice arbitration should resolve conflicting requests without making the driver negotiate every cabin command.",
+        "chineseExample": "语音仲裁应解决冲突请求，而不是让驾驶员逐个协调车内指令。"
+      },
+      {
+        "term": "occupant-aware system",
+        "phonetic": "/ˈɑːkjəpənt əˈwer ˈsɪstəm/",
+        "meaning": "乘员感知系统；能识别座位、角色和上下文的车内交互系统",
+        "example": "An occupant-aware system can tell whether a climate request comes from the front passenger or the rear seat.",
+        "chineseExample": "乘员感知系统可以判断空调请求来自前排乘客还是后排座位。"
+      },
+      {
+        "term": "speaker localization",
+        "phonetic": "/ˈspiːkər ˌloʊkələˈzeɪʃn/",
+        "meaning": "说话人定位；通过麦克风阵列和信号处理判断说话者所在位置",
+        "example": "Speaker localization helps the assistant apply a command to the correct seat zone.",
+        "chineseExample": "说话人定位帮助助手把指令应用到正确的座位区域。"
+      },
+      {
+        "term": "seat-zone permission",
+        "phonetic": "/siːt zoʊn pərˈmɪʃn/",
+        "meaning": "座位区域权限；不同座位对车窗、空调、媒体或导航等功能的控制范围",
+        "example": "Seat-zone permission prevents a rear passenger from changing a safety-critical driving setting.",
+        "chineseExample": "座位区域权限可以防止后排乘客更改与安全关键驾驶相关的设置。"
+      },
+      {
+        "term": "conflict resolution",
+        "phonetic": "/ˈkɑːnflɪkt ˌrezəˈluːʃn/",
+        "meaning": "冲突解决；系统在多个相互矛盾请求之间做出判断并解释结果",
+        "example": "Conflict resolution should explain why one request was delayed, ignored, or sent for confirmation.",
+        "chineseExample": "冲突解决应解释为什么某个请求被延迟、忽略或转入确认。"
+      },
+      {
+        "term": "driver override",
+        "phonetic": "/ˈdraɪvər ˈoʊvərraɪd/",
+        "meaning": "驾驶员覆盖；驾驶员对共享座舱控制拥有最终确认或取消权",
+        "example": "Driver override keeps the person responsible for driving in control of high-impact actions.",
+        "chineseExample": "驾驶员覆盖确保负责驾驶的人掌控高影响动作。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制；驾驶员和乘员共同影响座舱功能但权限不同的交互模式",
+        "example": "Shared control works best when the cockpit shows who requested a change and what will happen next.",
+        "chineseExample": "共享控制在座舱显示是谁请求了更改以及下一步会发生什么时效果最好。"
+      },
+      {
+        "term": "contextual confirmation",
+        "phonetic": "/kənˈtekstʃuəl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "情境化确认；根据风险、说话人和驾驶负荷决定是否需要确认",
+        "example": "Contextual confirmation should be short when the request is reversible and low risk.",
+        "chineseExample": "当请求可撤销且风险较低时，情境化确认应保持简短。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；限制系统收集、显示或转述个人信息的交互边界",
+        "example": "A clear privacy boundary prevents personal messages from being read aloud to every occupant.",
+        "chineseExample": "清晰的隐私边界可以避免个人消息被大声读给每位乘员。"
+      },
+      {
+        "term": "feedback attribution",
+        "phonetic": "/ˈfiːdbæk ˌætrɪˈbjuːʃn/",
+        "meaning": "反馈归因；明确指出系统响应对应哪位乘员、哪个座位或哪个请求",
+        "example": "Feedback attribution reduces confusion by showing that the rear-left passenger requested a temperature change.",
+        "chineseExample": "反馈归因通过显示左后乘客请求了温度变化来减少困惑。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "voice arbitration",
+        "phonetic": "/vɔɪs ˌɑːrbɪˈtreɪʃn/",
+        "meaning": "语音仲裁；当多名乘员发出指令时，系统判断优先级和执行对象的机制",
+        "example": "Voice arbitration should resolve conflicting requests without making the driver negotiate every cabin command.",
+        "chineseExample": "语音仲裁应解决冲突请求，而不是让驾驶员逐个协调车内指令。"
+      },
+      {
+        "term": "occupant-aware system",
+        "phonetic": "/ˈɑːkjəpənt əˈwer ˈsɪstəm/",
+        "meaning": "乘员感知系统；能识别座位、角色和上下文的车内交互系统",
+        "example": "An occupant-aware system can tell whether a climate request comes from the front passenger or the rear seat.",
+        "chineseExample": "乘员感知系统可以判断空调请求来自前排乘客还是后排座位。"
+      },
+      {
+        "term": "speaker localization",
+        "phonetic": "/ˈspiːkər ˌloʊkələˈzeɪʃn/",
+        "meaning": "说话人定位；通过麦克风阵列和信号处理判断说话者所在位置",
+        "example": "Speaker localization helps the assistant apply a command to the correct seat zone.",
+        "chineseExample": "说话人定位帮助助手把指令应用到正确的座位区域。"
+      },
+      {
+        "term": "seat-zone permission",
+        "phonetic": "/siːt zoʊn pərˈmɪʃn/",
+        "meaning": "座位区域权限；不同座位对车窗、空调、媒体或导航等功能的控制范围",
+        "example": "Seat-zone permission prevents a rear passenger from changing a safety-critical driving setting.",
+        "chineseExample": "座位区域权限可以防止后排乘客更改与安全关键驾驶相关的设置。"
+      },
+      {
+        "term": "conflict resolution",
+        "phonetic": "/ˈkɑːnflɪkt ˌrezəˈluːʃn/",
+        "meaning": "冲突解决；系统在多个相互矛盾请求之间做出判断并解释结果",
+        "example": "Conflict resolution should explain why one request was delayed, ignored, or sent for confirmation.",
+        "chineseExample": "冲突解决应解释为什么某个请求被延迟、忽略或转入确认。"
+      },
+      {
+        "term": "driver override",
+        "phonetic": "/ˈdraɪvər ˈoʊvərraɪd/",
+        "meaning": "驾驶员覆盖；驾驶员对共享座舱控制拥有最终确认或取消权",
+        "example": "Driver override keeps the person responsible for driving in control of high-impact actions.",
+        "chineseExample": "驾驶员覆盖确保负责驾驶的人掌控高影响动作。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制；驾驶员和乘员共同影响座舱功能但权限不同的交互模式",
+        "example": "Shared control works best when the cockpit shows who requested a change and what will happen next.",
+        "chineseExample": "共享控制在座舱显示是谁请求了更改以及下一步会发生什么时效果最好。"
+      },
+      {
+        "term": "contextual confirmation",
+        "phonetic": "/kənˈtekstʃuəl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "情境化确认；根据风险、说话人和驾驶负荷决定是否需要确认",
+        "example": "Contextual confirmation should be short when the request is reversible and low risk.",
+        "chineseExample": "当请求可撤销且风险较低时，情境化确认应保持简短。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；限制系统收集、显示或转述个人信息的交互边界",
+        "example": "A clear privacy boundary prevents personal messages from being read aloud to every occupant.",
+        "chineseExample": "清晰的隐私边界可以避免个人消息被大声读给每位乘员。"
+      },
+      {
+        "term": "feedback attribution",
+        "phonetic": "/ˈfiːdbæk ˌætrɪˈbjuːʃn/",
+        "meaning": "反馈归因；明确指出系统响应对应哪位乘员、哪个座位或哪个请求",
+        "example": "Feedback attribution reduces confusion by showing that the rear-left passenger requested a temperature change.",
+        "chineseExample": "反馈归因通过显示左后乘客请求了温度变化来减少困惑。"
+      },
+      {
+        "term": "cabin command",
+        "phonetic": "/ˈkæbɪn kəˈmænd/",
+        "meaning": "座舱指令；乘员向车内系统发出的语音或触控请求",
+        "example": "A cabin command may affect climate, media, lighting, navigation, or comfort.",
+        "chineseExample": "在这句话中，“cabin command”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "conflicting requests",
+        "phonetic": "/kənˈflɪktɪŋ rɪˈkwests/",
+        "meaning": "冲突请求；多个请求在目标、权限或时间上相互矛盾的情况",
+        "example": "Conflicting requests should be handled with a clear priority rule.",
+        "chineseExample": "在这句话中，“conflicting requests”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "priority rule",
+        "phonetic": "/praɪˈɔːrəti ruːl/",
+        "meaning": "优先级规则；系统决定先响应哪个请求或哪位乘员的判断标准",
+        "example": "A priority rule should favor safety-critical and driver-approved actions.",
+        "chineseExample": "在这句话中，“priority rule”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "microphone array",
+        "phonetic": "/ˈmaɪkrəfoʊn əˈreɪ/",
+        "meaning": "麦克风阵列；由多个麦克风组成、用于拾音和定位的硬件组合",
+        "example": "A microphone array can separate the driver voice from passenger conversation.",
+        "chineseExample": "在这句话中，“microphone array”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "signal processing",
+        "phonetic": "/ˈsɪɡnəl ˈprɑːsesɪŋ/",
+        "meaning": "信号处理；对声音、噪声和方向信息进行计算分析的过程",
+        "example": "Signal processing improves speaker localization in a noisy cabin.",
+        "chineseExample": "在这句话中，“signal processing”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "seat zone",
+        "phonetic": "/siːt zoʊn/",
+        "meaning": "座位区域；按驾驶席、副驾或后排划分的车内控制范围",
+        "example": "Each seat zone can have different temperature and media preferences.",
+        "chineseExample": "在这句话中，“seat zone”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "front passenger",
+        "phonetic": "/frʌnt ˈpæsɪndʒər/",
+        "meaning": "前排乘客；坐在驾驶员旁边的乘员",
+        "example": "The front passenger may adjust comfort settings without changing driving modes.",
+        "chineseExample": "在这句话中，“front passenger”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "rear passenger",
+        "phonetic": "/rɪr ˈpæsɪndʒər/",
+        "meaning": "后排乘客；坐在后排座位上的乘员",
+        "example": "A rear passenger can request local climate changes for the back row.",
+        "chineseExample": "在这句话中，“rear passenger”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "rear-left passenger",
+        "phonetic": "/rɪr left ˈpæsɪndʒər/",
+        "meaning": "左后乘客；位于车辆左后座的乘员",
+        "example": "The rear-left passenger requested a temperature change.",
+        "chineseExample": "在这句话中，“rear-left passenger”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "safety-critical setting",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl ˈsetɪŋ/",
+        "meaning": "安全关键设置；可能影响驾驶安全或车辆行为的设置",
+        "example": "A safety-critical setting should require driver approval.",
+        "chineseExample": "在这句话中，“safety-critical setting”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "high-impact action",
+        "phonetic": "/haɪ ˈɪmpækt ˈækʃn/",
+        "meaning": "高影响动作；可能明显改变驾驶、路线、隐私或车内体验的操作",
+        "example": "High-impact actions need stronger confirmation than simple comfort requests.",
+        "chineseExample": "在这句话中，“high-impact action”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "low-risk request",
+        "phonetic": "/loʊ rɪsk rɪˈkwest/",
+        "meaning": "低风险请求；对安全和隐私影响较小的可执行请求",
+        "example": "A low-risk request can be completed with a brief visual acknowledgement.",
+        "chineseExample": "在这句话中，“low-risk request”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "reversible request",
+        "phonetic": "/rɪˈvɜːrsəbl rɪˈkwest/",
+        "meaning": "可撤销请求；执行后可以快速恢复或取消的请求",
+        "example": "A reversible request does not need the same confirmation burden as a route change.",
+        "chineseExample": "在这句话中，“reversible request”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "visual acknowledgement",
+        "phonetic": "/ˈvɪʒuəl əkˈnɑːlɪdʒmənt/",
+        "meaning": "视觉确认反馈；用屏幕、灯光或 HUD 告知系统已理解请求",
+        "example": "Visual acknowledgement can confirm a command without adding another spoken message.",
+        "chineseExample": "在这句话中，“visual acknowledgement”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "spoken message",
+        "phonetic": "/ˈspoʊkən ˈmesɪdʒ/",
+        "meaning": "语音消息；由车机助手朗读或播报的信息",
+        "example": "A spoken message should be brief when conversation is already active.",
+        "chineseExample": "在这句话中，“spoken message”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "personal message",
+        "phonetic": "/ˈpɜːrsənl ˈmesɪdʒ/",
+        "meaning": "个人消息；只应向特定用户展示或朗读的私人信息",
+        "example": "A personal message should not be read aloud without checking the privacy boundary.",
+        "chineseExample": "在这句话中，“personal message”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "read aloud",
+        "phonetic": "/riːd əˈlaʊd/",
+        "meaning": "大声朗读；由系统把文本内容转为语音播出",
+        "example": "The assistant should ask before it reads a private notification aloud.",
+        "chineseExample": "在这句话中，“read aloud”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "private notification",
+        "phonetic": "/ˈpraɪvət ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "私人通知；含有个人信息且不适合公开播报的提醒",
+        "example": "Private notification handling depends on the recognized occupant and the display location.",
+        "chineseExample": "在这句话中，“private notification”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "display location",
+        "phonetic": "/dɪˈspleɪ loʊˈkeɪʃn/",
+        "meaning": "显示位置；信息出现在中控屏、仪表、HUD 或后排屏的位置",
+        "example": "Display location affects whether other occupants can see the content.",
+        "chineseExample": "在这句话中，“display location”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "permission model",
+        "phonetic": "/pərˈmɪʃn ˈmɑːdl/",
+        "meaning": "权限模型；定义谁能控制哪些座舱功能的规则体系",
+        "example": "A permission model should be visible enough for passengers to understand rejected commands.",
+        "chineseExample": "在这句话中，“permission model”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "rejected command",
+        "phonetic": "/rɪˈdʒektɪd kəˈmænd/",
+        "meaning": "被拒绝的指令；因权限、风险或上下文不合适而未执行的请求",
+        "example": "A rejected command needs a short reason, not a long policy explanation.",
+        "chineseExample": "在这句话中，“rejected command”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶员处理道路、控制和交互任务的认知压力",
+        "example": "Driver workload should influence how much explanation the assistant gives.",
+        "chineseExample": "在这句话中，“driver workload”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；用户理解、判断和执行任务时消耗的心理资源",
+        "example": "The cockpit should reduce cognitive load during dense traffic.",
+        "chineseExample": "在这句话中，“cognitive load”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "dense traffic",
+        "phonetic": "/dens ˈtræfɪk/",
+        "meaning": "密集交通；车辆多、变化快、驾驶注意力要求高的交通环境",
+        "example": "Dense traffic is a poor moment for lengthy voice negotiation.",
+        "chineseExample": "在这句话中，“dense traffic”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "voice negotiation",
+        "phonetic": "/vɔɪs nɪˌɡoʊʃiˈeɪʃn/",
+        "meaning": "语音协商；系统通过对话在多方请求之间澄清或征得同意",
+        "example": "Voice negotiation should be avoided when a simple rule can resolve the conflict.",
+        "chineseExample": "在这句话中，“voice negotiation”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "turn-taking",
+        "phonetic": "/tɜːrn ˈteɪkɪŋ/",
+        "meaning": "轮流发言；多人对话中依次表达和回应的机制",
+        "example": "Turn-taking cues help occupants know when the assistant is listening.",
+        "chineseExample": "在这句话中，“turn-taking”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "listening state",
+        "phonetic": "/ˈlɪsənɪŋ steɪt/",
+        "meaning": "聆听状态；语音助手正在接收或等待语音输入的系统状态",
+        "example": "The listening state should be visible from every active seat zone.",
+        "chineseExample": "在这句话中，“listening state”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "active seat zone",
+        "phonetic": "/ˈæktɪv siːt zoʊn/",
+        "meaning": "活跃座位区域；当前正在说话或被系统响应的座位区域",
+        "example": "Highlighting the active seat zone makes feedback attribution clearer.",
+        "chineseExample": "在这句话中，“active seat zone”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "system response",
+        "phonetic": "/ˈsɪstəm rɪˈspɑːns/",
+        "meaning": "系统响应；系统对用户请求做出的语音、视觉或功能反馈",
+        "example": "The system response should match the requester location and permission.",
+        "chineseExample": "在这句话中，“system response”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "requester location",
+        "phonetic": "/rɪˈkwestər loʊˈkeɪʃn/",
+        "meaning": "请求者位置；发出请求的乘员所在座位或区域",
+        "example": "Requester location helps decide which display should show confirmation.",
+        "chineseExample": "在这句话中，“requester location”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "comfort function",
+        "phonetic": "/ˈkʌmfərt ˈfʌŋkʃn/",
+        "meaning": "舒适功能；空调、座椅、香氛、灯光等不直接影响驾驶安全的功能",
+        "example": "Comfort functions can usually be controlled by the occupant in that seat zone.",
+        "chineseExample": "在这句话中，“comfort function”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "media source",
+        "phonetic": "/ˈmiːdiə sɔːrs/",
+        "meaning": "媒体源；音乐、电台、播客或蓝牙音频等播放来源",
+        "example": "Changing the media source may affect every occupant in the cabin.",
+        "chineseExample": "在这句话中，“media source”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "navigation destination",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˌdestɪˈneɪʃn/",
+        "meaning": "导航目的地；路线规划的终点或下一目标地点",
+        "example": "A new navigation destination should be confirmed by the driver.",
+        "chineseExample": "在这句话中，“navigation destination”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "role-based access",
+        "phonetic": "/roʊl beɪst ˈækses/",
+        "meaning": "基于角色的访问；根据驾驶员、乘客或儿童等角色分配权限",
+        "example": "Role-based access can limit which occupant may change navigation or payment settings.",
+        "chineseExample": "在这句话中，“role-based access”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "child lock",
+        "phonetic": "/tʃaɪld lɑːk/",
+        "meaning": "儿童锁；限制儿童乘员控制车门、车窗或其他功能的安全设置",
+        "example": "Child lock status should be considered before accepting a rear-seat command.",
+        "chineseExample": "在这句话中，“child lock”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "rear-seat command",
+        "phonetic": "/rɪr siːt kəˈmænd/",
+        "meaning": "后排指令；来自后排乘员的车内控制请求",
+        "example": "A rear-seat command can be limited to comfort and media functions.",
+        "chineseExample": "在这句话中，“rear-seat command”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "command scope",
+        "phonetic": "/kəˈmænd skoʊp/",
+        "meaning": "指令范围；某条指令可影响的功能、座位或用户群体",
+        "example": "Command scope should be narrow when the speaker location is uncertain.",
+        "chineseExample": "在这句话中，“command scope”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "uncertain speaker",
+        "phonetic": "/ʌnˈsɜːrtn ˈspiːkər/",
+        "meaning": "不确定说话人；系统无法可靠判断身份或座位的发话者",
+        "example": "An uncertain speaker should trigger a lightweight confirmation before execution.",
+        "chineseExample": "在这句话中，“uncertain speaker”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "lightweight confirmation",
+        "phonetic": "/ˈlaɪtweɪt ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "轻量确认；简短、低打扰的确认方式",
+        "example": "Lightweight confirmation is appropriate for reversible cockpit changes.",
+        "chineseExample": "在这句话中，“lightweight confirmation”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "execution feedback",
+        "phonetic": "/ˌeksɪˈkjuːʃn ˈfiːdbæk/",
+        "meaning": "执行反馈；系统完成或拒绝动作后的状态提示",
+        "example": "Execution feedback should state what changed and whose request caused it.",
+        "chineseExample": "在这句话中，“execution feedback”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "cause attribution",
+        "phonetic": "/kɔːz ˌætrɪˈbjuːʃn/",
+        "meaning": "原因归因；解释某个系统变化源于哪个请求或条件",
+        "example": "Cause attribution prevents passengers from thinking the cockpit changed by itself.",
+        "chineseExample": "在这句话中，“cause attribution”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力、限制和判断形成准确预期",
+        "example": "Trust calibration depends on honest explanations when the assistant is uncertain.",
+        "chineseExample": "在这句话中，“trust calibration”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "honest explanation",
+        "phonetic": "/ˈɑːnɪst ˌekspləˈneɪʃn/",
+        "meaning": "诚实解释；清楚说明系统限制、原因和后续选择的反馈",
+        "example": "An honest explanation is better than silently ignoring a command.",
+        "chineseExample": "在这句话中，“honest explanation”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "shared intelligent cockpit",
+        "phonetic": "/ʃerd ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "共享智能座舱；多人共同使用并交互的智能车内空间",
+        "example": "A shared intelligent cockpit needs clear rules for voice control.",
+        "chineseExample": "在这句话中，“shared intelligent cockpit”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "family cockpit",
+        "phonetic": "/ˈfæməli ˈkɑːkpɪt/",
+        "meaning": "家庭座舱；面向家庭成员共同出行的车内场景",
+        "example": "A family cockpit often includes adults, children, and personal devices.",
+        "chineseExample": "在这句话中，“family cockpit”用于描述智能座舱多人语音控制。"
+      },
+      {
+        "term": "arbitration",
+        "phonetic": "/ˌɑːrbɪˈtreɪʃn/",
+        "meaning": "仲裁；在多个请求或选项之间作出判断",
+        "example": "Voice arbitration should be explainable to occupants.",
+        "chineseExample": "在这句话中，“arbitration”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "resolve",
+        "phonetic": "/rɪˈzɑːlv/",
+        "meaning": "解决；处理冲突或不确定状态",
+        "example": "The assistant should resolve simple conflicts without extra dialogue.",
+        "chineseExample": "在这句话中，“resolve”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "conflicting",
+        "phonetic": "/kənˈflɪktɪŋ/",
+        "meaning": "相互冲突的；彼此矛盾的",
+        "example": "Conflicting requests need a clear priority rule.",
+        "chineseExample": "在这句话中，“conflicting”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "negotiate",
+        "phonetic": "/nɪˈɡoʊʃieɪt/",
+        "meaning": "协商；通过交流达成一致",
+        "example": "The driver should not negotiate every cabin command.",
+        "chineseExample": "在这句话中，“negotiate”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "occupant-aware",
+        "phonetic": "/ˈɑːkjəpənt əˈwer/",
+        "meaning": "乘员感知的；能够理解乘员位置和角色的",
+        "example": "An occupant-aware interface can route feedback to the right seat.",
+        "chineseExample": "在这句话中，“occupant-aware”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "comes",
+        "phonetic": "/kʌmz/",
+        "meaning": "来自；发生或到达",
+        "example": "The request comes from the front passenger.",
+        "chineseExample": "在这句话中，“comes”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "speaker",
+        "phonetic": "/ˈspiːkər/",
+        "meaning": "说话人；发出语音指令的人",
+        "example": "The speaker may be the driver or a passenger.",
+        "chineseExample": "在这句话中，“speaker”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "localization",
+        "phonetic": "/ˌloʊkələˈzeɪʃn/",
+        "meaning": "定位；确定位置的过程",
+        "example": "Localization helps identify the active seat zone.",
+        "chineseExample": "在这句话中，“localization”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "seat-zone",
+        "phonetic": "/siːt zoʊn/",
+        "meaning": "座位区域的；与某个座位控制范围相关的",
+        "example": "Seat-zone feedback makes shared control clearer.",
+        "chineseExample": "在这句话中，“seat-zone”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "conflict",
+        "phonetic": "/ˈkɑːnflɪkt/",
+        "meaning": "冲突；目标或请求之间的不一致",
+        "example": "The conflict should be resolved before execution.",
+        "chineseExample": "在这句话中，“conflict”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "ignored",
+        "phonetic": "/ɪɡˈnɔːrd/",
+        "meaning": "被忽略的；未被执行或回应的",
+        "example": "An ignored command should receive a short explanation.",
+        "chineseExample": "在这句话中，“ignored”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "sent",
+        "phonetic": "/sent/",
+        "meaning": "被发送；被转入某个流程",
+        "example": "The request was sent for confirmation.",
+        "chineseExample": "在这句话中，“sent”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "responsible",
+        "phonetic": "/rɪˈspɑːnsəbl/",
+        "meaning": "负责的；承担责任的",
+        "example": "The driver is responsible for high-impact driving actions.",
+        "chineseExample": "在这句话中，“responsible”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "high-impact",
+        "phonetic": "/haɪ ˈɪmpækt/",
+        "meaning": "高影响的；会产生明显后果的",
+        "example": "High-impact actions require stronger confirmation.",
+        "chineseExample": "在这句话中，“high-impact”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "requested",
+        "phonetic": "/rɪˈkwestɪd/",
+        "meaning": "被请求的；已经提出的",
+        "example": "The requested change should be shown on the display.",
+        "chineseExample": "在这句话中，“requested”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "being",
+        "phonetic": "/ˈbiːɪŋ/",
+        "meaning": "正在被；处于某种状态",
+        "example": "A message is being prepared for private display.",
+        "chineseExample": "在这句话中，“being”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "attribution",
+        "phonetic": "/ˌætrɪˈbjuːʃn/",
+        "meaning": "归因；说明来源或原因",
+        "example": "Attribution shows who caused a cockpit change.",
+        "chineseExample": "在这句话中，“attribution”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "rear-left",
+        "phonetic": "/rɪr left/",
+        "meaning": "左后方的；车辆左后座相关的",
+        "example": "The rear-left seat zone requested warmer air.",
+        "chineseExample": "在这句话中，“rear-left”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "sitting",
+        "phonetic": "/ˈsɪtɪŋ/",
+        "meaning": "坐着；处于某个座位",
+        "example": "The system identifies where the person is sitting.",
+        "chineseExample": "在这句话中，“sitting”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "air",
+        "phonetic": "/er/",
+        "meaning": "空气；此处指空调气流或温度",
+        "example": "Warmer air may be requested by one seat zone.",
+        "chineseExample": "在这句话中，“air”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "combines",
+        "phonetic": "/kəmˈbaɪnz/",
+        "meaning": "结合；把多个能力组合起来",
+        "example": "The assistant combines location, permission, and risk.",
+        "chineseExample": "在这句话中，“combines”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "payment",
+        "phonetic": "/ˈpeɪmənt/",
+        "meaning": "支付；付款相关操作",
+        "example": "Payment actions should require clear permission.",
+        "chineseExample": "在这句话中，“payment”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "equally",
+        "phonetic": "/ˈiːkwəli/",
+        "meaning": "同样地；程度相同地",
+        "example": "Feedback attribution is equally important.",
+        "chineseExample": "在这句话中，“equally”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "other",
+        "phonetic": "/ˈʌðər/",
+        "meaning": "其他的；另外的",
+        "example": "Other occupants should understand what changed.",
+        "chineseExample": "在这句话中，“other”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "acted",
+        "phonetic": "/ˈæktɪd/",
+        "meaning": "行动了；执行了某个动作",
+        "example": "The vehicle acted after a confirmed command.",
+        "chineseExample": "在这句话中，“acted”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "randomly",
+        "phonetic": "/ˈrændəmli/",
+        "meaning": "随机地；没有明显原因地",
+        "example": "The cockpit should not appear to change randomly.",
+        "chineseExample": "在这句话中，“randomly”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "choose",
+        "phonetic": "/tʃuːz/",
+        "meaning": "选择；从多个选项中决定",
+        "example": "The assistant may choose a private display.",
+        "chineseExample": "在这句话中，“choose”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "private",
+        "phonetic": "/ˈpraɪvət/",
+        "meaning": "私人的；不面向所有乘员公开的",
+        "example": "Private information should stay within the right display.",
+        "chineseExample": "在这句话中，“private”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "democratic",
+        "phonetic": "/ˌdeməˈkrætɪk/",
+        "meaning": "民主式的；由所有人共同决定的",
+        "example": "Shared control does not make every command democratic.",
+        "chineseExample": "在这句话中，“democratic”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "people",
+        "phonetic": "/ˈpiːpl/",
+        "meaning": "人们；多名乘员或用户",
+        "example": "Several people may interact with one vehicle.",
+        "chineseExample": "在这句话中，“people”用于补充今天英文文本的可点击词义覆盖。"
+      },
+      {
+        "term": "interact",
+        "phonetic": "/ˌɪntərˈækt/",
+        "meaning": "交互；与系统互相作用",
+        "example": "Passengers interact with the cockpit through voice and touch.",
+        "chineseExample": "在这句话中，“interact”用于补充今天英文文本的可点击词义覆盖。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing shared voice control in a family cockpit",
+        "text": "In a shared intelligent cockpit, a voice assistant must understand more than the words in a command. It also needs to know who is speaking, where that person is sitting, what function may change, and whether the driver should approve the action. A front passenger asking for warmer air is different from a rear passenger asking to change the navigation destination. Good voice arbitration combines speaker localization, seat-zone permission, and contextual confirmation. The system can accept low-risk comfort requests quickly, but it should pause before a command affects driving, privacy, payment, or the route. Feedback attribution is equally important. When the rear-left passenger changes the temperature, the cockpit should show that source clearly, so other occupants do not think the vehicle acted randomly. Privacy boundaries also matter. A personal message should not be read aloud to the whole cabin simply because the recognized user is inside the car. The assistant should choose a private display, ask for permission, or postpone the message. The design goal is not to make every command democratic. It is to keep shared control understandable, reduce driver workload, and protect trust when several people interact with one vehicle at the same time.",
+        "translation": "在共享智能座舱中，语音助手不能只理解指令里的词，还需要知道谁在说话、坐在哪里、将改变哪个功能，以及是否需要驾驶员批准。前排乘客要求升高温度，与后排乘客要求更改导航目的地是不同的。优秀的语音仲裁会结合说话人定位、座位区域权限和情境化确认。系统可以快速接受低风险舒适请求，但当指令影响驾驶、隐私、支付或路线时应暂停确认。反馈归因同样重要。当左后乘客改变温度时，座舱应清楚显示来源，避免其他乘员以为车辆随机动作。隐私边界也很关键。不能因为识别出的用户在车内，就把个人消息朗读给全车。助手应选择私人显示、请求许可或推迟消息。设计目标不是让每条指令都民主投票，而是让共享控制可理解、降低驾驶员负荷，并在多人同时与一辆车交互时保护信任。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Good voice arbitration combines speaker localization, seat-zone permission, and contextual confirmation.",
+        "translation": "优秀的语音仲裁会结合说话人定位、座位区域权限和情境化确认。",
+        "points": [
+          "Good voice arbitration 是主语，表示一种设计质量较高的语音仲裁机制。",
+          "combines 是谓语，后面并列三个方法或能力。",
+          "speaker localization、seat-zone permission 和 contextual confirmation 是多人语音控制中的三类核心判断。"
+        ]
+      },
+      {
+        "sentence": "The system can accept low-risk comfort requests quickly, but it should pause before a command affects driving, privacy, payment, or the route.",
+        "translation": "系统可以快速接受低风险舒适请求，但当指令影响驾驶、隐私、支付或路线时应暂停确认。",
+        "points": [
+          "can accept 表示系统可以直接执行某类低风险请求。",
+          "but it should pause 引出风险更高场景下的设计转折。",
+          "before a command affects... 说明触发确认的条件。"
+        ]
+      },
+      {
+        "sentence": "Feedback attribution is equally important.",
+        "translation": "反馈归因同样重要。",
+        "points": [
+          "Feedback attribution 是名词短语，指说明反馈来源和请求者。",
+          "equally important 用来强调它与识别、权限同样关键。",
+          "这类短句适合在设计评审中作为结论句使用。"
+        ]
+      },
+      {
+        "sentence": "The assistant should choose a private display, ask for permission, or postpone the message.",
+        "translation": "助手应选择私人显示、请求许可或推迟消息。",
+        "points": [
+          "should choose、ask、postpone 构成并列动作。",
+          "private display 强调隐私信息不应默认公开展示。",
+          "or 表示系统可根据场景选择不同的隐私保护方式。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "5 分钟",
+        "description": "朗读 voice arbitration、speaker localization、seat-zone permission、feedback attribution 和 privacy boundary，并用中文说出各自适用的座舱场景。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "description": "按句跟读长文，重点练习 who is speaking、where that person is sitting、whether the driver should approve the action 这类从句表达。"
+      },
+      {
+        "title": "场景复述",
+        "time": "6 分钟",
+        "description": "用英语复述一个后排乘客请求改变导航目的地的场景，说明系统为什么需要驾驶员确认。"
+      },
+      {
+        "title": "设计输出",
+        "time": "5 分钟",
+        "description": "写 3 条英文设计原则，分别覆盖权限、反馈归因和隐私边界，每条至少使用一个今日关键词。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Practice prompt",
+        "description": "搜索关键词：automotive voice assistant multi occupant interaction, in-cabin voice assistant speaker localization, shared vehicle HMI privacy",
+        "url": ""
+      }
+    ]
+  },
+  {
     "id": "2026-08-10-navigation-prompt-timing",
     "date": "2026-08-10",
     "title": "Navigation prompt timing and lane-level guidance in intelligent cockpits",
