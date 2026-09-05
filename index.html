@@ -19,6 +19,12 @@
     </header>
 
     <main class="layout">
+      <nav class="viewTabs" aria-label="学习视图">
+        <button type="button" id="reviewTab" aria-pressed="true">每日复习</button>
+        <button type="button" id="lessonTab" aria-pressed="false">每日课程</button>
+      </nav>
+      <section id="reviewPanel" aria-label="每日复习"></section>
+      <div id="lessonPanel" hidden>
       <section class="hero" id="todayHero"></section>
 
       <section class="section">
@@ -50,6 +56,7 @@
         </div>
         <ol class="practiceList" id="practiceList"></ol>
       </section>
+      </div>
     </main>
 
     <footer class="siteFooter">

@@ -11,6 +11,64 @@
   --shadow: 0 16px 40px rgba(24, 33, 47, 0.09);
 }
 
+[hidden] { display: none !important; }
+button, select { touch-action: manipulation; }
+button:focus-visible, select:focus-visible { outline: 3px solid #55a99b; outline-offset: 3px; }
+button:disabled { opacity: .45; cursor: default; }
+.viewTabs { display: flex; gap: 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
+.viewTabs button { border: 0; border-bottom: 3px solid transparent; padding: 12px 0; background: transparent; font: inherit; color: var(--muted); cursor: pointer; }
+.viewTabs button[aria-pressed="true"] { color: var(--accent-strong); border-bottom-color: var(--accent); font-weight: 700; }
+.reviewHeading { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
+.reviewHeading h2 { font-size: 26px; }
+.reviewSub { color: var(--muted); margin-top: 8px; }
+.goalLabel { display: grid; gap: 4px; font-size: 13px; }
+.goalLabel select { min-width: 112px; }
+.goalLabel small { color: var(--muted); }
+.reviewToolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0; }
+.reviewToolbar > span, .reviewFooter { color: var(--muted); font-size: 13px; }
+.modeTabs { display: flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.modeTabs button { min-height: 40px; padding: 8px 22px; border: 0; background: white; color: var(--muted); font: inherit; cursor: pointer; }
+.modeTabs button[aria-pressed="true"] { background: var(--accent); color: white; }
+#reviewPanel progress { display: block; width: 100%; height: 6px; accent-color: var(--accent); margin: 0 0 20px; }
+.studyCard { border: 1px solid var(--line); border-radius: 8px; padding: 24px; background: white; min-height: 450px; display: flex; flex-direction: column; }
+.studyTop { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
+.audioControl { width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); background: white; cursor: pointer; }
+.studyQuestion { text-align: center; margin: 32px auto 20px; max-width: 760px; width: 100%; }
+.studyQuestion h3 { font-size: 26px; line-height: 1.6; overflow-wrap: anywhere; margin: 0; }
+.studyQuestion .inlineWord { font: inherit; }
+.phonetic { color: var(--muted); margin-top: 8px; }
+.studyAnswer { flex: 1; text-align: center; padding-bottom: 20px; overflow-wrap: anywhere; }
+.answerMeaning { font-size: 18px; }
+.studyExample { margin-bottom: 8px; }
+.studyAnswer .translation { margin-top: 8px; }
+.revealButton { background: var(--accent); border: 0; border-radius: 6px; padding: 12px 28px; min-height: 48px; color: white; font: inherit; cursor: pointer; margin: 20px 0; }
+.ratingButtons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.ratingButtons button { min-height: 70px; border: 1px solid #edc4c9; background: #fff0f2; color: #98213e; border-radius: 6px; font: inherit; font-weight: 700; cursor: pointer; }
+.ratingButtons button[data-grade="vague"] { border-color: #e5d598; background: #fff9e6; color: #796014; }
+.ratingButtons button[data-grade="known"] { border-color: #abd8c9; background: #eaf7f1; color: #17664a; }
+.ratingButtons small { display: block; font-weight: 400; font-size: 12px; }
+.reviewFooter { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin: 16px 0 0; }
+.studyComplete { text-align: center; margin: auto; padding: 40px 0; }
+.studyComplete h3 { font-size: 24px; }
+.storageWarning { color: #98213e; }
+.topActions { min-width: 0; }
+.topActions select { max-width: min(400px, 42vw); min-width: 0; }
+@media (max-width: 600px) {
+  .topbar { position: static; flex-wrap: wrap; }
+  .topbar h1 { font-size: 22px; }
+  .topActions select { max-width: 70vw; }
+  .reviewHeading { flex-wrap: wrap; }
+  .goalLabel { grid-template-columns: auto auto; align-items: center; }
+  .goalLabel small { grid-column: 1 / -1; }
+  .reviewHeading h2 { font-size: 24px; }
+  .studyCard { padding: 16px; min-height: 450px; }
+  .studyQuestion h3 { font-size: 22px; }
+  .reviewFooter { align-items: start; flex-direction: column; }
+  .ratingButtons { gap: 8px; }
+  .modeTabs button { padding: 8px 16px; }
+  .hero h2 { font-size: 26px; overflow-wrap: anywhere; }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -78,7 +136,7 @@ p {
 
 h1 {
   margin-bottom: 0;
-  font-size: clamp(22px, 3vw, 34px);
+  font-size: 26px;
   line-height: 1.15;
 }
 
@@ -125,7 +183,7 @@ select {
 }
 
 .hero h2 {
-  font-size: clamp(26px, 4vw, 44px);
+  font-size: 32px;
   line-height: 1.12;
 }
 

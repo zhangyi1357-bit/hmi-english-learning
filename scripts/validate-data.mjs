@@ -8,9 +8,11 @@ const requiredNoteFields = [
   "suggestedTime",
   "summary",
   "words",
+  "glossary",
   "longReadings",
   "sentenceBreakdowns",
   "practiceSteps",
+  "videos",
 ];
 
 const requiredWordFields = ["term", "phonetic", "meaning", "example", "chineseExample"];
@@ -31,7 +33,7 @@ for (const note of notes) {
     }
   }
 
-  if (!Array.isArray(note.words) || note.words.length < 8) {
+  if (!Array.isArray(note.words) || note.words.length < 8 || note.words.length > 12) {
     throw new Error(`${note.id} must include at least 8 words.`);
   }
 
@@ -56,12 +58,7 @@ for (const note of notes) {
   }
 }
 
-const coveredTerms = new Set(Object.keys(localDictionary));
-for (const note of notes) {
-  for (const entry of [...(note.words || []), ...(note.glossary || [])]) {
-    if (entry?.term) coveredTerms.add(normalizeTerm(entry.term));
-  }
-}
+const localTerms = Object.keys(localDictionary).map(normalizeTerm);
 
 for (const [term, entry] of Object.entries(localDictionary)) {
   if (!Array.isArray(entry) || entry.length < 5 || !entry[0] || !entry[1] || !entry[3] || !entry[4]) {
@@ -71,6 +68,7 @@ for (const [term, entry] of Object.entries(localDictionary)) {
 
 const uncovered = new Set();
 for (const note of notes) {
+  const coveredTerms = new Set([...localTerms, ...[...(note.words || []), ...(note.glossary || [])].map(entry => normalizeTerm(entry.term))]);
   const texts = [
     ...(note.words || []).map((word) => word.example),
     ...(note.longReadings || []).map((reading) => reading.text),

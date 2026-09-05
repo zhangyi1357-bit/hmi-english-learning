@@ -1,3 +1,5 @@
+import { mountReview } from "./review.js";
+
 const state = {
   notes: [],
   active: null,
@@ -124,15 +126,14 @@ function render() {
     .map((item) => `
       <article class="breakdownItem">
         <p><strong>Sentence</strong>：${renderClickableText(item.sentence)}</p>
-        <p><strong>Structure</strong>：${escapeHtml(item.structure)}</p>
-        <p><strong>Focus</strong>：${escapeHtml(item.focus)}</p>
-        <p><strong>Pattern</strong>：${escapeHtml(item.pattern)}</p>
+        ${item.translation ? `<p>${escapeHtml(item.translation)}</p>` : ""}
+        ${(item.points || [item.structure, item.focus, item.pattern]).filter(Boolean).map(point => `<p>${escapeHtml(point)}</p>`).join("")}
       </article>
     `)
     .join("");
 
   elements.practiceList.innerHTML = note.practiceSteps
-    .map((step) => `<li><strong>${escapeHtml(step.title)}｜${escapeHtml(step.time)}</strong><br>${escapeHtml(step.detail)}</li>`)
+    .map((step) => `<li><strong>${escapeHtml(step.title)}｜${escapeHtml(step.time)}</strong><br>${escapeHtml(step.detail || step.description || "")}</li>`)
     .join("");
 }
 
@@ -783,6 +784,21 @@ const COMMON_WORDS = [
   }))
 ];
 
-loadNotes().catch((error) => {
+loadNotes().then(() => {
+  mountReview({ notes: state.notes, escapeHtml, renderClickableText, speakEnglish, stopSpeaking });
+  const review = document.querySelector("#reviewPanel");
+  const lesson = document.querySelector("#lessonPanel");
+  function selectView(isReview) {
+    stopSpeaking();
+    review.hidden = !isReview;
+    lesson.hidden = isReview;
+    document.querySelector("#reviewTab").setAttribute("aria-pressed", String(isReview));
+    document.querySelector("#lessonTab").setAttribute("aria-pressed", String(!isReview));
+    elements.dateSelect.hidden = isReview;
+  }
+  document.querySelector("#reviewTab").addEventListener("click", () => selectView(true));
+  document.querySelector("#lessonTab").addEventListener("click", () => selectView(false));
+  selectView(true);
+}).catch((error) => {
   document.body.innerHTML = `<main class="layout"><section class="hero"><h1>内容加载失败</h1><p>${escapeHtml(error.message)}</p></section></main>`;
 });

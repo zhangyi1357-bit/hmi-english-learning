@@ -4,7 +4,15 @@
 
 ## 本地查看
 
-直接打开 `index.html`，或用任意静态服务器打开当前目录。
+通过 GitHub Pages 访问，或用静态服务器打开当前目录（例如 `python3 -m http.server 8765` 后访问 `http://localhost:8765`）。页面使用 JavaScript 模块，不建议直接以文件方式打开。
+
+## 每日复习
+
+首页提供单词、句子两种复习模式，默认每天新增 8 个词、2 个句子，可分别调整。先查看答案，再选择认识、模糊或忘记。模糊和忘记会在当前队列稍后再次出现；认识后按 1、3、7、14、30 天安排下一次复习。到期内容优先于新内容。
+
+学习记录保存在当前浏览器的本地存储中，刷新后可继续。北京时间跨天后生成新的任务。无需账号，不提供跨设备同步；清除浏览器数据会清除进度。每日课程、点击查词和朗读仍然保留。
+
+复习逻辑校验：`node scripts/test-review.mjs`。
 
 ## 数据
 
@@ -14,8 +22,8 @@
 
 ```bash
 node scripts/sync-data-js.mjs
-node scripts/validate-data.mjs
 node scripts/sync-local-dictionary.mjs
+node scripts/validate-data.mjs
 ```
 
 `sync-local-dictionary.mjs` 会扫描所有已发布文章和例句，把尚未收录的单词通过免费词典补入

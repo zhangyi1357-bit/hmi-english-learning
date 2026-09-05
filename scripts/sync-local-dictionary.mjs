@@ -7,6 +7,15 @@ const dictionaryJsUrl = new URL("../data/local-dictionary.js", import.meta.url);
 const notes = JSON.parse(await readFile(notesUrl, "utf8"));
 const mainSource = await readFile(mainJsUrl, "utf8");
 const dictionary = JSON.parse(await readFile(dictionaryJsonUrl, "utf8"));
+const originalCount = Object.keys(dictionary).length;
+for (const note of notes) {
+  for (const entry of [...(note.words || []), ...(note.glossary || [])]) {
+    if (!entry?.term || !entry.phonetic || !entry.meaning || !entry.example || !entry.chineseExample) continue;
+    const key = normalize(entry.term);
+    if (!dictionary[key]) dictionary[key] = [entry.phonetic, entry.meaning, entry.partOfSpeech || "", entry.example, entry.chineseExample];
+  }
+}
+console.log(`Added ${Object.keys(dictionary).length - originalCount} authored entries to the shared dictionary.`);
 const authoredTerms = collectAuthoredTerms(notes);
 for (const term of collectBuiltInTerms(mainSource)) authoredTerms.add(term);
 const contexts = collectContexts(notes);
