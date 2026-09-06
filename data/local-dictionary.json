@@ -237,6 +237,13 @@
     "The assistant should explain before it acts.",
     "助手应在执行前解释。"
   ],
+  "actually": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word actually appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“actually”用于表达相关系统状态或用户影响。"
+  ],
   "adapt": [
     "/əˈdæpt/",
     "适应；根据场景改变表现方式",
@@ -926,6 +933,13 @@
     "在这句话中，“asks”可理解为“问, 要求；问, 要求, 邀请, 需要”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "assistance": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word assistance appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“assistance”用于表达相关系统状态或用户影响。"
+  ],
   "assistant": [
     "/ә'sistәnt/",
     "形容词：助手, 助理, 助教；有帮助的, 辅助的, 助理的",
@@ -1392,6 +1406,13 @@
     "Gaze behavior can reveal whether a secondary task is pulling attention away from the road.",
     "在这句话中，“behavior”可理解为“行为, 举止”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "behavioral change": [
+    "/bɪˈheɪvjərəl tʃeɪndʒ/",
+    "行为变化；用户能感知到的交互方式或系统响应变化",
+    "",
+    "A behavioral change needs clearer wording than a backend optimization.",
+    "行为变化比后端优化更需要清楚措辞。"
   ],
   "behind": [
     "/待查/",
@@ -2045,6 +2066,13 @@
     "A charging detour feels acceptable when the interface explains the saved waiting time.",
     "当界面解释节省的等待时间时，充电绕行会更容易被接受。"
   ],
+  "charging session": [
+    "/ˈtʃɑːrdʒɪŋ ˈseʃn/",
+    "充电会话；车辆接入电源并可安排较长任务的时段",
+    "",
+    "A charging session is a practical moment for a larger cockpit update.",
+    "充电会话是安排较大座舱更新的实用时机。"
+  ],
   "charging status": [
     "/ˈtʃɑːrdʒɪŋ ˈstætəs/",
     "充电状态；电池补能进度、功率或连接状态",
@@ -2337,6 +2365,20 @@
     "A cockpit task should be short while the vehicle is moving.",
     "车辆移动时，座舱任务应保持简短。"
   ],
+  "code": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word code appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“code”用于表达相关系统状态或用户影响。"
+  ],
+  "codes": [
+    "/暂无音标/",
+    "名词：代码",
+    "",
+    "The word codes appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“codes”用于表达相关系统状态或用户影响。"
+  ],
   "cognitive": [
     "/'kɒgnitiv/",
     "形容词：认知的, 认识的",
@@ -2609,6 +2651,13 @@
     "",
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“comparison”可结合车内助手澄清场景理解。"
+  ],
+  "compatibility check": [
+    "/kəmˌpætəˈbɪləti tʃek/",
+    "兼容性检查；确认车辆硬件、区域和版本是否支持更新",
+    "",
+    "A compatibility check prevents the cockpit from installing the wrong build.",
+    "兼容性检查可防止座舱安装错误版本。"
   ],
   "compete": [
     "/kəmˈpiːt/",
@@ -2884,6 +2933,13 @@
     "",
     "Connected scenarios reveal cross-screen issues.",
     "连贯场景会暴露跨屏问题。"
+  ],
+  "connects": [
+    "/暂无音标/",
+    "动词：连接",
+    "",
+    "The word connects appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“connects”用于表达相关系统状态或用户影响。"
   ],
   "consent": [
     "/kәn'sent/",
@@ -3395,6 +3451,13 @@
     "在这句话中，“critical”可理解为“批评的, 决定性的, 危险的, 临界的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "critical control": [
+    "/ˈkrɪtɪkl kənˈtroʊl/",
+    "关键控制；与安全、驾驶或基础舒适直接相关的控制项",
+    "",
+    "Critical control access must remain predictable during any update.",
+    "任何更新期间，关键控制入口都必须保持可预测。"
+  ],
   "cross-screen": [
     "/krɔːs skriːn/",
     "跨屏的；涉及两个或更多显示区域",
@@ -3643,6 +3706,13 @@
     "A deferred notification can appear after the vehicle leaves a dense intersection.",
     "延后通知可以在车辆离开复杂路口后再出现。"
   ],
+  "deferred update": [
+    "/dɪˈfɜːrd ˈʌpdeɪt/",
+    "延后更新；用户或系统选择稍后安装的更新",
+    "",
+    "A deferred update should return at a better time, not during a complex merge.",
+    "延后更新应在更合适的时间返回，而不是在复杂并线时出现。"
+  ],
   "define": [
     "/dɪˈfaɪn/",
     "动词：定义, 规定, 使明确",
@@ -3657,6 +3727,13 @@
     "",
     "A defined threshold makes escalation easier to test.",
     "已定义阈值让警告升级更容易测试。"
+  ],
+  "defogging": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word defogging appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“defogging”用于表达相关系统状态或用户影响。"
   ],
   "degrees": [
     "/dɪˈɡriːz/",
@@ -4194,6 +4271,20 @@
     "Turn it down may refer to volume or temperature.",
     "“调低一点”可能指音量或温度。"
   ],
+  "download": [
+    "/暂无音标/",
+    "名词/动词：下载",
+    "",
+    "The word download appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“download”用于表达相关系统状态或用户影响。"
+  ],
+  "dramatic": [
+    "/暂无音标/",
+    "形容词：夸张的；戏剧化的",
+    "",
+    "The word dramatic appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“dramatic”用于表达相关系统状态或用户影响。"
+  ],
   "driver": [
     "/'draivә/",
     "名词：驾驶员, 驱动器, 驱动程序",
@@ -4580,6 +4671,13 @@
     "在这句话中，“engine”可理解为“引擎, 发动机, 机车；安装发动机于”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "engineering": [
+    "/暂无音标/",
+    "名词/形容词：工程；工程的",
+    "",
+    "The word engineering appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“engineering”用于表达相关系统状态或用户影响。"
+  ],
   "enough": [
     "/i'nʌf/",
     "副词：充足, 够, 很多；充足的, 足够；足够；interj. 够了",
@@ -4587,6 +4685,13 @@
     "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
     "在这句话中，“enough”可理解为“充足, 够, 很多；充足的, 足够；足够；interj. 够了”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "enter": [
+    "/暂无音标/",
+    "动词：进入",
+    "",
+    "The word enter appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“enter”用于表达相关系统状态或用户影响。"
   ],
   "entering": [
     "/ˈɛn.təɹ.ɪŋ/",
@@ -4942,6 +5047,13 @@
     "An explainable suggestion tells the driver why the seat heating recommendation appears now.",
     "可解释建议会告诉驾驶员为什么现在出现座椅加热推荐。"
   ],
+  "explained": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word explained appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“explained”用于表达相关系统状态或用户影响。"
+  ],
   "explains": [
     "/ik'splein/",
     "动词：解释, 说明",
@@ -5222,6 +5334,13 @@
     "在这句话中，“feature”可理解为“面孔的一部分(如眼、口等), 特征, 容貌, 特色, 特写；是...的特色, 特写, 放映；起重要作用”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "feature continuity": [
+    "/ˈfiːtʃər ˌkɑːntəˈnuːəti/",
+    "功能连续性；更新或回滚期间关键座舱功能保持一致可用",
+    "",
+    "Feature continuity matters when drivers rely on route guidance, calls, and defogging.",
+    "当驾驶员依赖路线引导、通话和除雾时，功能连续性很重要。"
+  ],
   "features": [
     "/ˈfiːtʃəz/",
     "名词：面孔的一部分(如眼、口等), 特征, 容貌, 特色, 特写；是...的特色, 特写, 放映；起重要作用",
@@ -5394,6 +5513,13 @@
     "Focal distance should be tuned so the driver does not refocus for every prompt.",
     "焦距距离应经过调校，使驾驶员不必为每个提示重新调焦。"
   ],
+  "focus": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word focus appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“focus”用于表达相关系统状态或用户影响。"
+  ],
   "focused": [
     "/ˈfəʊ.kəst/",
     "动词：焦点, 焦距；聚焦, 注视；使聚焦, 调焦, 集中",
@@ -5505,6 +5631,13 @@
     "For example, it can say, “I found two contacts named Alex.",
     "在这句话中，“found”可理解为“发现, 感到, 找到, 认为, 得到；裁决；发现；寻找指定的字符串, 将符合条件的行或行数输出到标准输出设备上”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "four": [
+    "/暂无音标/",
+    "数词：四个",
+    "",
+    "The word four appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“four”用于表达相关系统状态或用户影响。"
   ],
   "frequent": [
     "/ˈfɹiː.kwənt/",
@@ -6079,6 +6212,13 @@
     "在这句话中，“hide”可理解为“兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "hiding": [
+    "/暂无音标/",
+    "动名词：隐藏",
+    "",
+    "The word hiding appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“hiding”用于表达相关系统状态或用户影响。"
+  ],
   "hierarchy": [
     "/ˈhaɪ.ə.ɹɑː(ɹ).ki/",
     "名词：等级制度, 僧侣统治, 等级体系",
@@ -6537,6 +6677,34 @@
     "They are design decisions that shape trust, workload, and safety inside the vehicle.",
     "在这句话中，“inside”可理解为“内部, 内脏, 内幕；内部的, 秘密的, 户内的；在里面；在...之内”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "install": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word install appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“install”用于表达相关系统状态或用户影响。"
+  ],
+  "installation": [
+    "/暂无音标/",
+    "名词：安装",
+    "",
+    "The word installation appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“installation”用于表达相关系统状态或用户影响。"
+  ],
+  "installation window": [
+    "/ˌɪnstəˈleɪʃn ˈwɪndoʊ/",
+    "安装窗口；适合执行软件更新且不打断驾驶任务的时间段",
+    "",
+    "The assistant can suggest an installation window after the vehicle is parked and charging.",
+    "助手可以在车辆停车并充电后建议安装窗口。"
+  ],
+  "installs": [
+    "/暂无音标/",
+    "动词：安装",
+    "",
+    "The word installs appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“installs”用于表达相关系统状态或用户影响。"
   ],
   "instead": [
     "/ɪnˈstɛd/",
@@ -7319,6 +7487,13 @@
     "The word likely appears in today's cockpit summary practice.",
     "在这个语境中，“likely”可理解为“可能的”。"
   ],
+  "limitations": [
+    "/暂无音标/",
+    "名词：限制",
+    "",
+    "The word limitations appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“limitations”用于表达相关系统状态或用户影响。"
+  ],
   "limited": [
     "/ˈlɪmɪtɪd/",
     "有限的；资源、时间或能力受到限制的",
@@ -7450,6 +7625,13 @@
     "A review log can show which alerts were postponed, dismissed, or escalated during real trips.",
     "在这句话中，“log”可理解为“记录, 圆木, 日志, 计程仪；伐木, 切, 航行；伐木”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "logs": [
+    "/暂无音标/",
+    "名词：日志",
+    "",
+    "The word logs appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“logs”用于表达相关系统状态或用户影响。"
   ],
   "long": [
     "/lɒŋ/",
@@ -7744,6 +7926,13 @@
     "Maintain should support a safer and clearer cockpit experience.",
     "在这句话中，“maintain”用于描述更安全、更清晰的座舱体验。"
   ],
+  "maintenance message": [
+    "/ˈmeɪntənəns ˈmesɪdʒ/",
+    "维护消息；解释更新、恢复或限制状态的系统信息",
+    "",
+    "A maintenance message should never hide a safety-relevant limitation.",
+    "维护消息绝不应隐藏与安全相关的限制。"
+  ],
   "make": [
     "/meik/",
     "动词：制造, 安排, 创造, 构成, 使得, 产生, 造成, 整理, 布置, 引起, 到达, 进行；开始, 前进, 增大, 被制造, 被处理；制造, 构造, 性情",
@@ -7774,6 +7963,13 @@
     "The team also needs to manage false positives.",
     "在这句话中，“manage”可理解为“处理；管理, 控制, 维持, 达成, 经营, 运用”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "managed": [
+    "/暂无音标/",
+    "形容词：受管理的",
+    "",
+    "The word managed appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“managed”用于表达相关系统状态或用户影响。"
   ],
   "management": [
     "/'mænidʒmәnt/",
@@ -8377,6 +8573,13 @@
     "在这句话中，“moment”可理解为“片刻, 瞬间, 重要, 阶段, 力矩”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "moments": [
+    "/暂无音标/",
+    "名词：多个时刻",
+    "",
+    "The word moments appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“moments”用于表达相关系统状态或用户影响。"
+  ],
   "monitoring": [
     "/'mɒnitә/",
     "动词：监督器, 级长, 监听员, 班长, 监视器, 告诫物；监视, 监听, 监督",
@@ -8875,6 +9078,13 @@
     "在这句话中，“not”可理解为“不, 非, 未”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "note": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word note appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“note”用于表达相关系统状态或用户影响。"
+  ],
   "notice": [
     "/ˈnəʊ.tɪs/",
     "动词：注意, 布告, 通知, 预告, 短评；注意, 通知, 评论, 提及, 关注；注意",
@@ -9079,6 +9289,13 @@
     "在这句话中，“one”可理解为“一(个)；一, 任何人；一, 一个；一致的, 完整的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "one-tap postpone": [
+    "/wʌn tæp poʊstˈpoʊn/",
+    "一键稍后；让用户快速延后非紧急更新的控件",
+    "",
+    "One-tap postpone helps avoid interruption during time-sensitive driving.",
+    "一键稍后有助于避免在时间敏感驾驶中打断用户。"
+  ],
   "ones": [
     "/wʌnz/",
     "一(个)；一, 任何人；一, 一个；一致的, 完整的",
@@ -9170,6 +9387,20 @@
     "The original plan should not be defended after the turn is missed.",
     "在这句话中，“original plan”用于描述智能座舱导航提示设计。"
   ],
+  "ota": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word ota appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“ota”用于表达相关系统状态或用户影响。"
+  ],
+  "ota rollback": [
+    "/ˌoʊ tiː ˈeɪ ˈroʊlbæk/",
+    "OTA 回滚；在无线更新失败或体验风险过高时恢复到上一稳定版本",
+    "",
+    "OTA rollback should be explained before the driver notices a missing feature.",
+    "OTA 回滚应在驾驶员注意到功能缺失之前得到解释。"
+  ],
   "other": [
     "/ˈʌðər/",
     "其他的；另外的",
@@ -9206,6 +9437,20 @@
     "A well-designed multimodal flow reduces visual-manual demand, lowers cognitive load, and gives the driver control over how to complete the same goal safely.",
     "在这句话中，“over”可理解为“结束, 越过, 从头到尾；在...之上, 遍于...之上, 越过；上面的；越过”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "over-the-air": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word over-the-air appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“over-the-air”用于表达相关系统状态或用户影响。"
+  ],
+  "over-the-air update": [
+    "/ˌoʊvər ði er ˈʌpdeɪt/",
+    "无线软件更新；车辆通过网络获取并安装新软件",
+    "",
+    "An over-the-air update may improve the cockpit without a workshop visit.",
+    "无线软件更新可以让座舱无需进店即可改进。"
   ],
   "over-trust": [
     "/按语境朗读/",
@@ -9263,6 +9508,13 @@
     "Pacing helps users absorb one decision at a time.",
     "节奏控制帮助用户一次吸收一个决策。"
   ],
+  "package": [
+    "/暂无音标/",
+    "名词：软件包",
+    "",
+    "The word package appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“package”用于表达相关系统状态或用户影响。"
+  ],
   "paired": [
     "/按语境朗读/",
     "配对的；一起呈现的",
@@ -9298,6 +9550,13 @@
     "",
     "The word parked appears in today's cockpit summary practice.",
     "在这个语境中，“parked”可理解为“已驻车的”。"
+  ],
+  "parked mode": [
+    "/pɑːrkt moʊd/",
+    "停车模式；车辆静止且适合执行非驾驶任务的状态",
+    "",
+    "Parked mode gives the system more freedom to show detailed update information.",
+    "停车模式让系统更适合展示详细更新信息。"
   ],
   "parked state": [
     "/pɑːrkt steɪt/",
@@ -9644,6 +9903,13 @@
     "State of charge should be paired with a plain-language explanation of driving impact.",
     "在这句话中，“plain-language”可理解为“通俗语言的；避免工程术语、便于驾驶员理解的”。"
   ],
+  "plain-language copy": [
+    "/pleɪn ˈlæŋɡwɪdʒ ˈkɑːpi/",
+    "直白文案；避免技术黑话、便于快速理解的界面文字",
+    "",
+    "Plain-language copy can make a rollback feel manageable.",
+    "直白文案可以让回滚显得可控。"
+  ],
   "plan": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“plan”。",
@@ -9753,6 +10019,13 @@
     "Voice confirmation prevents the cockpit from executing a risky command after a possible recognition error.",
     "在这句话中，“possible”可理解为“可能的, 潜在的, 合适的；可能性, 可能的事物”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "post-update tour": [
+    "/poʊst ˈʌpdeɪt tʊr/",
+    "更新后导览；简短介绍变化和入口的引导体验",
+    "",
+    "A post-update tour should be optional and easy to dismiss.",
+    "更新后导览应可选且容易关闭。"
   ],
   "postpone": [
     "/pәust'pәun/",
@@ -9901,6 +10174,13 @@
     "",
     "That screen should preserve dialog state, so the user can answer later without starting over.",
     "在这句话中，“preserve”可理解为“保留；不丢失上下文或状态”。"
+  ],
+  "preserved": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word preserved appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“preserved”用于表达相关系统状态或用户影响。"
   ],
   "preserves": [
     "/按语境朗读/",
@@ -10132,6 +10412,13 @@
     "The word produced appears in today's cockpit summary practice.",
     "在这个语境中，“produced”可理解为“产生了”。"
   ],
+  "product": [
+    "/暂无音标/",
+    "名词：产品",
+    "",
+    "The word product appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“product”用于表达相关系统状态或用户影响。"
+  ],
   "profile": [
     "/'prәufail/",
     "名词：侧面, 轮廓, 传略；描绘...轮廓, 写...的传略",
@@ -10167,6 +10454,20 @@
     "",
     "Profile switching needs a visible preview when the vehicle is shared by family members.",
     "当车辆由家庭成员共享时，档案切换需要提供可见预览。"
+  ],
+  "progress": [
+    "/暂无音标/",
+    "名词：进度",
+    "",
+    "The word progress appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“progress”用于表达相关系统状态或用户影响。"
+  ],
+  "progress transparency": [
+    "/ˈprɑːɡres trænsˈpærənsi/",
+    "进度透明度；清楚呈现下载、安装、验证和恢复阶段",
+    "",
+    "Progress transparency reduces anxiety when an update takes longer than expected.",
+    "当更新耗时超出预期时，进度透明度可以降低焦虑。"
   ],
   "progressive": [
     "/pɹəˈɡɹɛsɪv/",
@@ -10603,6 +10904,13 @@
     "在这句话中，“reason”可理解为“理由, 原因, 理智, 道理, 前提, 理性；说服, 推论, 辩论；推论, 劝说, 思考”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "reasons": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word reasons appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“reasons”用于表达相关系统状态或用户影响。"
+  ],
   "rebuild": [
     "/ˌriːˈbɪld/",
     "重建；重新建立",
@@ -10750,6 +11058,13 @@
     "在这句话中，“recovery”可理解为“恢复, 复原, 痊愈, 重获”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "recovery prompt": [
+    "/rɪˈkʌvəri prɑːmpt/",
+    "恢复提示；更新失败后引导用户理解下一步操作的提示",
+    "",
+    "The recovery prompt should give one clear next action instead of a technical error code.",
+    "恢复提示应给出一个明确的下一步操作，而不是技术错误码。"
+  ],
   "reduce": [
     "/ri'dju:s/",
     "动词：减少, 分解, 降低, 使衰退, 把...分解, 把...归纳；减少, 减肥, 缩小",
@@ -10875,6 +11190,20 @@
     "在这句话中，“relationships”可理解为“关系, 关联”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "release": [
+    "/暂无音标/",
+    "名词：发布",
+    "",
+    "The word release appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“release”用于表达相关系统状态或用户影响。"
+  ],
+  "release note summary": [
+    "/rɪˈliːs noʊt ˈsʌməri/",
+    "发布说明摘要；面向驾驶员的简短更新变化说明",
+    "",
+    "The release note summary should focus on cockpit behavior that the user will actually notice.",
+    "发布说明摘要应聚焦用户实际会注意到的座舱行为。"
+  ],
   "relevant": [
     "/ˈreləvənt/",
     "相关的；与当前任务或信息直接有关的",
@@ -10895,6 +11224,13 @@
     "",
     "A reliable trigger combines sensor confidence with driver inattention.",
     "可靠触发条件会结合传感器置信度和驾驶员注意力缺失。"
+  ],
+  "rely": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word rely appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“rely”用于表达相关系统状态或用户影响。"
   ],
   "remain": [
     "/ɹɪˈmeɪn/",
@@ -11255,6 +11591,13 @@
     "Restore should support clear control in a shared intelligent cockpit.",
     "在这句话中，“restore”用于描述共享智能座舱中的清晰控制。"
   ],
+  "restored": [
+    "/暂无音标/",
+    "动词：已恢复",
+    "",
+    "The word restored appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“restored”用于表达相关系统状态或用户影响。"
+  ],
   "result": [
     "/ɹɪˈzʌlt/",
     "名词：结果, 成绩, 答案；产生, 结果, 致使",
@@ -11410,6 +11753,13 @@
     "A risk signal should be checked against context.",
     "风险信号应结合上下文检查。"
   ],
+  "risk threshold": [
+    "/rɪsk ˈθreʃhoʊld/",
+    "风险阈值；系统决定继续、暂停或回滚更新的判断边界",
+    "",
+    "The risk threshold should be stricter while the vehicle is moving.",
+    "车辆行驶时，风险阈值应更严格。"
+  ],
   "risk-based confirmation": [
     "/rɪsk beɪst ˌkɑːnfərˈmeɪʃn/",
     "基于风险的确认；根据操作风险决定确认强度",
@@ -11467,6 +11817,20 @@
     "",
     "Role-based access can limit which occupant may change navigation or payment settings.",
     "在这句话中，“role-based access”用于描述智能座舱多人语音控制。"
+  ],
+  "rollback": [
+    "/暂无音标/",
+    "名词：回滚",
+    "",
+    "The word rollback appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“rollback”用于表达相关系统状态或用户影响。"
+  ],
+  "rollback explanation": [
+    "/ˈroʊlbæk ˌekspləˈneɪʃn/",
+    "回滚解释；告诉用户为何恢复旧版本以及哪些功能受影响",
+    "",
+    "A rollback explanation should separate safety reasons from temporary convenience limits.",
+    "回滚解释应区分安全原因和临时便利性限制。"
   ],
   "roundabout": [
     "/ˈɹaʊndəˌbaʊt/",
@@ -11628,6 +11992,13 @@
     "",
     "A safe execution threshold should be stricter for navigation changes than for opening a music playlist.",
     "导航变更的安全执行阈值应比打开音乐歌单更严格。"
+  ],
+  "safe fallback state": [
+    "/seɪf ˈfɔːlbæk steɪt/",
+    "安全回退状态；更新异常时系统保持可驾驶和可理解的最低功能状态",
+    "",
+    "A safe fallback state keeps navigation and climate controls available during recovery.",
+    "安全回退状态会在恢复期间保留导航和空调控制。"
   ],
   "safe glance": [
     "/seɪf ɡlæns/",
@@ -12198,6 +12569,13 @@
     "在这句话中，“serious”可理解为“严肃的, 认真的, 重要的, 严重的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "server": [
+    "/暂无音标/",
+    "名词：服务器",
+    "",
+    "The word server appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“server”用于表达相关系统状态或用户影响。"
+  ],
   "service": [
     "/ˈsɜː.vɪs/",
     "名词：服务, 贡献, 雇佣, 公职, 服役, 功劳, 仪式, 送达, 行政部门；保养, 维修；武装部队的, 服务性的, 仆人的, 耐用的",
@@ -12205,6 +12583,13 @@
     "Alert fatigue increases when every service message uses the same visual weight as a safety warning.",
     "在这句话中，“service”可理解为“服务, 贡献, 雇佣, 公职, 服役, 功劳, 仪式, 送达, 行政部门；保养, 维修；武装部队的, 服务性的, 仆人的, 耐用的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "service continuity": [
+    "/ˈsɜːrvɪs ˌkɑːntəˈnuːəti/",
+    "服务连续性；软件维护期间核心服务不中断或可恢复",
+    "",
+    "Service continuity is more important than exposing every engineering detail.",
+    "服务连续性比暴露每个工程细节更重要。"
   ],
   "service request": [
     "/ˈsɜːrvɪs rɪˈkwest/",
@@ -12724,6 +13109,13 @@
     "",
     "Soft pulse should support a safer and clearer cockpit experience.",
     "在这句话中，“soft pulse”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "software package": [
+    "/ˈsɔːftwer ˈpækɪdʒ/",
+    "软件包；一次更新中下载、校验并安装的文件集合",
+    "",
+    "The software package must pass verification before installation begins.",
+    "软件包必须在安装开始前通过验证。"
   ],
   "sometimes": [
     "/ˈsʌmtaɪmz/",
@@ -13370,6 +13762,13 @@
     "The cockpit can suggest a safer next step.",
     "座舱可以建议更安全的下一步。"
   ],
+  "suggested": [
+    "/暂无音标/",
+    "动词：被建议",
+    "",
+    "The word suggested appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“suggested”用于表达相关系统状态或用户影响。"
+  ],
   "suggesting": [
     "/按语境朗读/",
     "建议；正在提出可选操作",
@@ -13560,6 +13959,13 @@
     "A system limit should be communicated honestly.",
     "系统限制应被诚实传达。"
   ],
+  "system recovery": [
+    "/ˈsɪstəm rɪˈkʌvəri/",
+    "系统恢复；从错误状态回到稳定可用状态的过程",
+    "",
+    "System recovery should preserve the driver’s mental model.",
+    "系统恢复应保留驾驶员的心理模型。"
+  ],
   "system response": [
     "/ˈsɪstəm rɪˈspɑːns/",
     "系统响应；系统对用户请求做出的语音、视觉或功能反馈",
@@ -13616,6 +14022,13 @@
     "",
     "A takeover request should be direct and specific.",
     "接管请求应直接且具体。"
+  ],
+  "takes": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word takes appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“takes”用于表达相关系统状态或用户影响。"
   ],
   "taking": [
     "/按语境朗读/",
@@ -13778,6 +14191,20 @@
     "Voice is powerful for quick intent, such as finding a nearby charger or changing the temperature, because it can keep the driver looking forward.",
     "在这句话中，“temperature”可理解为“温度, 发烧, 热度”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "temporary": [
+    "/暂无音标/",
+    "形容词：临时的",
+    "",
+    "The word temporary appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“temporary”用于表达相关系统状态或用户影响。"
+  ],
+  "temporary limitation": [
+    "/ˈtempəreri ˌlɪmɪˈteɪʃn/",
+    "临时限制；恢复或回滚期间短时间不可用的能力",
+    "",
+    "A temporary limitation should be named in plain language.",
+    "临时限制应使用直白语言说明。"
   ],
   "terrain": [
     "/təˈreɪn/",
@@ -14126,6 +14553,13 @@
     "",
     "A transition animation can make a display handoff understandable.",
     "转场动画可以让屏幕交接更容易理解。"
+  ],
+  "transparency": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word transparency appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“transparency”用于表达相关系统状态或用户影响。"
   ],
   "transparent": [
     "/træns'pærәnt/",
@@ -14493,6 +14927,13 @@
     "The arrival estimate must update when the driver changes cabin temperature or speed.",
     "在这句话中，“update”可理解为“更新；刷新状态”。"
   ],
+  "update confidence": [
+    "/ˈʌpdeɪt ˈkɑːnfɪdəns/",
+    "更新置信度；系统对软件包完整性、兼容性和安装成功率的判断",
+    "",
+    "Update confidence can help the cockpit decide whether to install now or postpone the release.",
+    "更新置信度可以帮助座舱判断是立即安装还是推迟发布。"
+  ],
   "uploaded": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“uploaded”。",
@@ -14640,6 +15081,13 @@
     "User trust should support a safer and clearer cockpit experience.",
     "在这句话中，“user trust”用于描述更安全、更清晰的座舱体验。"
   ],
+  "user-facing status": [
+    "/ˈjuːzər ˈfeɪsɪŋ ˈsteɪtəs/",
+    "面向用户的状态；给驾驶员看的系统阶段和结果说明",
+    "",
+    "User-facing status should map technical progress to understandable steps.",
+    "面向用户的状态应把技术进度映射为易懂步骤。"
+  ],
   "users": [
     "/'ju:zә/",
     "名词：使用者",
@@ -14730,6 +15178,27 @@
     "",
     "The word verifiable appears in today's cockpit summary practice.",
     "在这个语境中，“verifiable”可理解为“可验证的”。"
+  ],
+  "verification": [
+    "/暂无音标/",
+    "原文中的英语词汇，可结合 HMI 语境理解。",
+    "",
+    "The word verification appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“verification”用于表达相关系统状态或用户影响。"
+  ],
+  "verification stage": [
+    "/ˌverɪfɪˈkeɪʃn steɪdʒ/",
+    "验证阶段；安装前后确认软件完整性和状态的过程",
+    "",
+    "The verification stage should be visible but not distracting.",
+    "验证阶段应可见但不分散注意力。"
+  ],
+  "version": [
+    "/暂无音标/",
+    "名词：版本",
+    "",
+    "The word version appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“version”用于表达相关系统状态或用户影响。"
   ],
   "vibration": [
     "/vaɪˈbreɪʃn/",
@@ -15316,6 +15785,13 @@
     "",
     "Would you like to turn on seat heating?",
     "你想打开座椅加热吗？"
+  ],
+  "writing": [
+    "/暂无音标/",
+    "名词：文案写作",
+    "",
+    "The word writing appears in today's OTA rollback learning text.",
+    "在今天的 OTA 回滚学习文本中，“writing”用于表达相关系统状态或用户影响。"
   ],
   "wrong": [
     "/ˈɹɒŋ/",

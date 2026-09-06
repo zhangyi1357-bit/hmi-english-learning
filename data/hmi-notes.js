@@ -1,5 +1,1687 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-06-ota-rollback-transparency",
+    "date": "2026-09-06",
+    "title": "OTA rollback transparency and safe fallback messaging",
+    "topic": "智能座舱 OTA 回滚透明度与安全回退提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱 OTA 更新、安装窗口、风险阈值、回滚解释、安全回退状态和面向用户的进度提示。",
+    "words": [
+      {
+        "term": "OTA rollback",
+        "phonetic": "/ˌoʊ tiː ˈeɪ ˈroʊlbæk/",
+        "meaning": "OTA 回滚；在无线更新失败或体验风险过高时恢复到上一稳定版本",
+        "example": "OTA rollback should be explained before the driver notices a missing feature.",
+        "chineseExample": "OTA 回滚应在驾驶员注意到功能缺失之前得到解释。"
+      },
+      {
+        "term": "update confidence",
+        "phonetic": "/ˈʌpdeɪt ˈkɑːnfɪdəns/",
+        "meaning": "更新置信度；系统对软件包完整性、兼容性和安装成功率的判断",
+        "example": "Update confidence can help the cockpit decide whether to install now or postpone the release.",
+        "chineseExample": "更新置信度可以帮助座舱判断是立即安装还是推迟发布。"
+      },
+      {
+        "term": "safe fallback state",
+        "phonetic": "/seɪf ˈfɔːlbæk steɪt/",
+        "meaning": "安全回退状态；更新异常时系统保持可驾驶和可理解的最低功能状态",
+        "example": "A safe fallback state keeps navigation and climate controls available during recovery.",
+        "chineseExample": "安全回退状态会在恢复期间保留导航和空调控制。"
+      },
+      {
+        "term": "release note summary",
+        "phonetic": "/rɪˈliːs noʊt ˈsʌməri/",
+        "meaning": "发布说明摘要；面向驾驶员的简短更新变化说明",
+        "example": "The release note summary should focus on cockpit behavior that the user will actually notice.",
+        "chineseExample": "发布说明摘要应聚焦用户实际会注意到的座舱行为。"
+      },
+      {
+        "term": "installation window",
+        "phonetic": "/ˌɪnstəˈleɪʃn ˈwɪndoʊ/",
+        "meaning": "安装窗口；适合执行软件更新且不打断驾驶任务的时间段",
+        "example": "The assistant can suggest an installation window after the vehicle is parked and charging.",
+        "chineseExample": "助手可以在车辆停车并充电后建议安装窗口。"
+      },
+      {
+        "term": "rollback explanation",
+        "phonetic": "/ˈroʊlbæk ˌekspləˈneɪʃn/",
+        "meaning": "回滚解释；告诉用户为何恢复旧版本以及哪些功能受影响",
+        "example": "A rollback explanation should separate safety reasons from temporary convenience limits.",
+        "chineseExample": "回滚解释应区分安全原因和临时便利性限制。"
+      },
+      {
+        "term": "feature continuity",
+        "phonetic": "/ˈfiːtʃər ˌkɑːntəˈnuːəti/",
+        "meaning": "功能连续性；更新或回滚期间关键座舱功能保持一致可用",
+        "example": "Feature continuity matters when drivers rely on route guidance, calls, and defogging.",
+        "chineseExample": "当驾驶员依赖路线引导、通话和除雾时，功能连续性很重要。"
+      },
+      {
+        "term": "progress transparency",
+        "phonetic": "/ˈprɑːɡres trænsˈpærənsi/",
+        "meaning": "进度透明度；清楚呈现下载、安装、验证和恢复阶段",
+        "example": "Progress transparency reduces anxiety when an update takes longer than expected.",
+        "chineseExample": "当更新耗时超出预期时，进度透明度可以降低焦虑。"
+      },
+      {
+        "term": "driver consent",
+        "phonetic": "/ˈdraɪvər kənˈsent/",
+        "meaning": "驾驶员同意；在影响使用或隐私的更新前获得明确授权",
+        "example": "Driver consent is necessary before the cockpit changes a personalized assistance setting.",
+        "chineseExample": "在座舱更改个性化辅助设置前，需要获得驾驶员同意。"
+      },
+      {
+        "term": "recovery prompt",
+        "phonetic": "/rɪˈkʌvəri prɑːmpt/",
+        "meaning": "恢复提示；更新失败后引导用户理解下一步操作的提示",
+        "example": "The recovery prompt should give one clear next action instead of a technical error code.",
+        "chineseExample": "恢复提示应给出一个明确的下一步操作，而不是技术错误码。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "OTA rollback",
+        "phonetic": "/ˌoʊ tiː ˈeɪ ˈroʊlbæk/",
+        "meaning": "OTA 回滚；在无线更新失败或体验风险过高时恢复到上一稳定版本",
+        "example": "OTA rollback should be explained before the driver notices a missing feature.",
+        "chineseExample": "OTA 回滚应在驾驶员注意到功能缺失之前得到解释。"
+      },
+      {
+        "term": "update confidence",
+        "phonetic": "/ˈʌpdeɪt ˈkɑːnfɪdəns/",
+        "meaning": "更新置信度；系统对软件包完整性、兼容性和安装成功率的判断",
+        "example": "Update confidence can help the cockpit decide whether to install now or postpone the release.",
+        "chineseExample": "更新置信度可以帮助座舱判断是立即安装还是推迟发布。"
+      },
+      {
+        "term": "safe fallback state",
+        "phonetic": "/seɪf ˈfɔːlbæk steɪt/",
+        "meaning": "安全回退状态；更新异常时系统保持可驾驶和可理解的最低功能状态",
+        "example": "A safe fallback state keeps navigation and climate controls available during recovery.",
+        "chineseExample": "安全回退状态会在恢复期间保留导航和空调控制。"
+      },
+      {
+        "term": "release note summary",
+        "phonetic": "/rɪˈliːs noʊt ˈsʌməri/",
+        "meaning": "发布说明摘要；面向驾驶员的简短更新变化说明",
+        "example": "The release note summary should focus on cockpit behavior that the user will actually notice.",
+        "chineseExample": "发布说明摘要应聚焦用户实际会注意到的座舱行为。"
+      },
+      {
+        "term": "installation window",
+        "phonetic": "/ˌɪnstəˈleɪʃn ˈwɪndoʊ/",
+        "meaning": "安装窗口；适合执行软件更新且不打断驾驶任务的时间段",
+        "example": "The assistant can suggest an installation window after the vehicle is parked and charging.",
+        "chineseExample": "助手可以在车辆停车并充电后建议安装窗口。"
+      },
+      {
+        "term": "rollback explanation",
+        "phonetic": "/ˈroʊlbæk ˌekspləˈneɪʃn/",
+        "meaning": "回滚解释；告诉用户为何恢复旧版本以及哪些功能受影响",
+        "example": "A rollback explanation should separate safety reasons from temporary convenience limits.",
+        "chineseExample": "回滚解释应区分安全原因和临时便利性限制。"
+      },
+      {
+        "term": "feature continuity",
+        "phonetic": "/ˈfiːtʃər ˌkɑːntəˈnuːəti/",
+        "meaning": "功能连续性；更新或回滚期间关键座舱功能保持一致可用",
+        "example": "Feature continuity matters when drivers rely on route guidance, calls, and defogging.",
+        "chineseExample": "当驾驶员依赖路线引导、通话和除雾时，功能连续性很重要。"
+      },
+      {
+        "term": "progress transparency",
+        "phonetic": "/ˈprɑːɡres trænsˈpærənsi/",
+        "meaning": "进度透明度；清楚呈现下载、安装、验证和恢复阶段",
+        "example": "Progress transparency reduces anxiety when an update takes longer than expected.",
+        "chineseExample": "当更新耗时超出预期时，进度透明度可以降低焦虑。"
+      },
+      {
+        "term": "driver consent",
+        "phonetic": "/ˈdraɪvər kənˈsent/",
+        "meaning": "驾驶员同意；在影响使用或隐私的更新前获得明确授权",
+        "example": "Driver consent is necessary before the cockpit changes a personalized assistance setting.",
+        "chineseExample": "在座舱更改个性化辅助设置前，需要获得驾驶员同意。"
+      },
+      {
+        "term": "recovery prompt",
+        "phonetic": "/rɪˈkʌvəri prɑːmpt/",
+        "meaning": "恢复提示；更新失败后引导用户理解下一步操作的提示",
+        "example": "The recovery prompt should give one clear next action instead of a technical error code.",
+        "chineseExample": "恢复提示应给出一个明确的下一步操作，而不是技术错误码。"
+      },
+      {
+        "term": "over-the-air update",
+        "phonetic": "/ˌoʊvər ði er ˈʌpdeɪt/",
+        "meaning": "无线软件更新；车辆通过网络获取并安装新软件",
+        "example": "An over-the-air update may improve the cockpit without a workshop visit.",
+        "chineseExample": "无线软件更新可以让座舱无需进店即可改进。"
+      },
+      {
+        "term": "software package",
+        "phonetic": "/ˈsɔːftwer ˈpækɪdʒ/",
+        "meaning": "软件包；一次更新中下载、校验并安装的文件集合",
+        "example": "The software package must pass verification before installation begins.",
+        "chineseExample": "软件包必须在安装开始前通过验证。"
+      },
+      {
+        "term": "compatibility check",
+        "phonetic": "/kəmˌpætəˈbɪləti tʃek/",
+        "meaning": "兼容性检查；确认车辆硬件、区域和版本是否支持更新",
+        "example": "A compatibility check prevents the cockpit from installing the wrong build.",
+        "chineseExample": "兼容性检查可防止座舱安装错误版本。"
+      },
+      {
+        "term": "verification stage",
+        "phonetic": "/ˌverɪfɪˈkeɪʃn steɪdʒ/",
+        "meaning": "验证阶段；安装前后确认软件完整性和状态的过程",
+        "example": "The verification stage should be visible but not distracting.",
+        "chineseExample": "验证阶段应可见但不分散注意力。"
+      },
+      {
+        "term": "deferred update",
+        "phonetic": "/dɪˈfɜːrd ˈʌpdeɪt/",
+        "meaning": "延后更新；用户或系统选择稍后安装的更新",
+        "example": "A deferred update should return at a better time, not during a complex merge.",
+        "chineseExample": "延后更新应在更合适的时间返回，而不是在复杂并线时出现。"
+      },
+      {
+        "term": "parked mode",
+        "phonetic": "/pɑːrkt moʊd/",
+        "meaning": "停车模式；车辆静止且适合执行非驾驶任务的状态",
+        "example": "Parked mode gives the system more freedom to show detailed update information.",
+        "chineseExample": "停车模式让系统更适合展示详细更新信息。"
+      },
+      {
+        "term": "charging session",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈseʃn/",
+        "meaning": "充电会话；车辆接入电源并可安排较长任务的时段",
+        "example": "A charging session is a practical moment for a larger cockpit update.",
+        "chineseExample": "充电会话是安排较大座舱更新的实用时机。"
+      },
+      {
+        "term": "critical control",
+        "phonetic": "/ˈkrɪtɪkl kənˈtroʊl/",
+        "meaning": "关键控制；与安全、驾驶或基础舒适直接相关的控制项",
+        "example": "Critical control access must remain predictable during any update.",
+        "chineseExample": "任何更新期间，关键控制入口都必须保持可预测。"
+      },
+      {
+        "term": "temporary limitation",
+        "phonetic": "/ˈtempəreri ˌlɪmɪˈteɪʃn/",
+        "meaning": "临时限制；恢复或回滚期间短时间不可用的能力",
+        "example": "A temporary limitation should be named in plain language.",
+        "chineseExample": "临时限制应使用直白语言说明。"
+      },
+      {
+        "term": "user-facing status",
+        "phonetic": "/ˈjuːzər ˈfeɪsɪŋ ˈsteɪtəs/",
+        "meaning": "面向用户的状态；给驾驶员看的系统阶段和结果说明",
+        "example": "User-facing status should map technical progress to understandable steps.",
+        "chineseExample": "面向用户的状态应把技术进度映射为易懂步骤。"
+      },
+      {
+        "term": "risk threshold",
+        "phonetic": "/rɪsk ˈθreʃhoʊld/",
+        "meaning": "风险阈值；系统决定继续、暂停或回滚更新的判断边界",
+        "example": "The risk threshold should be stricter while the vehicle is moving.",
+        "chineseExample": "车辆行驶时，风险阈值应更严格。"
+      },
+      {
+        "term": "service continuity",
+        "phonetic": "/ˈsɜːrvɪs ˌkɑːntəˈnuːəti/",
+        "meaning": "服务连续性；软件维护期间核心服务不中断或可恢复",
+        "example": "Service continuity is more important than exposing every engineering detail.",
+        "chineseExample": "服务连续性比暴露每个工程细节更重要。"
+      },
+      {
+        "term": "plain-language copy",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ ˈkɑːpi/",
+        "meaning": "直白文案；避免技术黑话、便于快速理解的界面文字",
+        "example": "Plain-language copy can make a rollback feel manageable.",
+        "chineseExample": "直白文案可以让回滚显得可控。"
+      },
+      {
+        "term": "system recovery",
+        "phonetic": "/ˈsɪstəm rɪˈkʌvəri/",
+        "meaning": "系统恢复；从错误状态回到稳定可用状态的过程",
+        "example": "System recovery should preserve the driver’s mental model.",
+        "chineseExample": "系统恢复应保留驾驶员的心理模型。"
+      },
+      {
+        "term": "post-update tour",
+        "phonetic": "/poʊst ˈʌpdeɪt tʊr/",
+        "meaning": "更新后导览；简短介绍变化和入口的引导体验",
+        "example": "A post-update tour should be optional and easy to dismiss.",
+        "chineseExample": "更新后导览应可选且容易关闭。"
+      },
+      {
+        "term": "behavioral change",
+        "phonetic": "/bɪˈheɪvjərəl tʃeɪndʒ/",
+        "meaning": "行为变化；用户能感知到的交互方式或系统响应变化",
+        "example": "A behavioral change needs clearer wording than a backend optimization.",
+        "chineseExample": "行为变化比后端优化更需要清楚措辞。"
+      },
+      {
+        "term": "maintenance message",
+        "phonetic": "/ˈmeɪntənəns ˈmesɪdʒ/",
+        "meaning": "维护消息；解释更新、恢复或限制状态的系统信息",
+        "example": "A maintenance message should never hide a safety-relevant limitation.",
+        "chineseExample": "维护消息绝不应隐藏与安全相关的限制。"
+      },
+      {
+        "term": "one-tap postpone",
+        "phonetic": "/wʌn tæp poʊstˈpoʊn/",
+        "meaning": "一键稍后；让用户快速延后非紧急更新的控件",
+        "example": "One-tap postpone helps avoid interruption during time-sensitive driving.",
+        "chineseExample": "一键稍后有助于避免在时间敏感驾驶中打断用户。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力和限制形成恰当预期",
+        "example": "Trust calibration depends on honest update status messages.",
+        "chineseExample": "信任校准依赖诚实的更新状态消息。"
+      },
+      {
+        "term": "ota",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word ota appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“ota”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "rollback",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：回滚",
+        "example": "The word rollback appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“rollback”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "should",
+        "phonetic": "/暂无音标/",
+        "meaning": "情态动词：应该",
+        "example": "The word should appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“should”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "be",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word be appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“be”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "explained",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word explained appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“explained”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "before",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word before appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“before”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "the",
+        "phonetic": "/暂无音标/",
+        "meaning": "冠词：这个；特指",
+        "example": "The word the appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“the”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：驾驶员",
+        "example": "The word driver appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“driver”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "notices",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word notices appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“notices”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "a",
+        "phonetic": "/暂无音标/",
+        "meaning": "冠词：一个；用于泛指单数名词",
+        "example": "The word a appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“a”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "missing",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word missing appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“missing”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "feature",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word feature appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“feature”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "update",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词/动词：更新",
+        "example": "The word update appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“update”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：置信度；信心",
+        "example": "The word confidence appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“confidence”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "can",
+        "phonetic": "/暂无音标/",
+        "meaning": "情态动词：可以；能够",
+        "example": "The word can appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“can”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "help",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word help appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“help”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word cockpit appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“cockpit”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "decide",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word decide appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“decide”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "whether",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：是否",
+        "example": "The word whether appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“whether”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "to",
+        "phonetic": "/暂无音标/",
+        "meaning": "介词：到；为了",
+        "example": "The word to appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“to”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "install",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word install appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“install”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "now",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word now appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“now”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "or",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：或者",
+        "example": "The word or appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“or”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "postpone",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：推迟",
+        "example": "The word postpone appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“postpone”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "release",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：发布",
+        "example": "The word release appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“release”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "safe",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：安全的",
+        "example": "The word safe appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“safe”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：回退；备用方案",
+        "example": "The word fallback appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“fallback”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：状态",
+        "example": "The word state appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“state”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "keeps",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word keeps appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“keeps”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：导航",
+        "example": "The word navigation appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“navigation”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "and",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：和；并且",
+        "example": "The word and appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“and”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "climate",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：空调/气候控制",
+        "example": "The word climate appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“climate”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "controls",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：控制项",
+        "example": "The word controls appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“controls”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：可用的",
+        "example": "The word available appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“available”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "during",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word during appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“during”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：恢复",
+        "example": "The word recovery appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“recovery”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "note",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word note appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“note”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "summary",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word summary appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“summary”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "focus",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word focus appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“focus”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "on",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word on appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“on”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "behavior",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：行为；表现",
+        "example": "The word behavior appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“behavior”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "that",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词/代词：那个；用于引导从句",
+        "example": "The word that appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“that”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "user",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：用户",
+        "example": "The word user appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“user”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "will",
+        "phonetic": "/暂无音标/",
+        "meaning": "情态动词：将会",
+        "example": "The word will appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“will”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "actually",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word actually appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“actually”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "notice",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word notice appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“notice”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word assistant appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“assistant”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "suggest",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word suggest appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“suggest”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "an",
+        "phonetic": "/暂无音标/",
+        "meaning": "冠词：一个；用于元音音素前",
+        "example": "The word an appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“an”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "installation",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：安装",
+        "example": "The word installation appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“installation”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "window",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：窗口；时间段",
+        "example": "The word window appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“window”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "after",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word after appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“after”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：车辆",
+        "example": "The word vehicle appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“vehicle”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "is",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：是",
+        "example": "The word is appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“is”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：已停车的",
+        "example": "The word parked appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“parked”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "charging",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word charging appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“charging”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word explanation appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“explanation”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "separate",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word separate appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“separate”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：安全",
+        "example": "The word safety appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“safety”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "reasons",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word reasons appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“reasons”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "from",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word from appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“from”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "temporary",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：临时的",
+        "example": "The word temporary appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“temporary”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "convenience",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word convenience appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“convenience”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "limits",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word limits appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“limits”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "continuity",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word continuity appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“continuity”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "matters",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word matters appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“matters”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：当……时",
+        "example": "The word when appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“when”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "drivers",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word drivers appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“drivers”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "rely",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word rely appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“rely”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：路线",
+        "example": "The word route appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“route”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word guidance appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“guidance”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "calls",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：通话",
+        "example": "The word calls appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“calls”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "defogging",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word defogging appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“defogging”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "progress",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：进度",
+        "example": "The word progress appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“progress”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "transparency",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word transparency appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“transparency”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "reduces",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word reduces appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“reduces”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "anxiety",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word anxiety appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“anxiety”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "takes",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word takes appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“takes”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "longer",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word longer appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“longer”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "than",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：比",
+        "example": "The word than appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“than”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "expected",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word expected appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“expected”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word consent appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“consent”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "necessary",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word necessary appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“necessary”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "changes",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word changes appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“changes”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "personalized",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word personalized appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“personalized”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "assistance",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word assistance appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“assistance”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "setting",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word setting appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“setting”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word prompt appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“prompt”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "give",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word give appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“give”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "one",
+        "phonetic": "/暂无音标/",
+        "meaning": "数词：一个",
+        "example": "The word one appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“one”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：清楚的",
+        "example": "The word clear appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“clear”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "next",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word next appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“next”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word action appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“action”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "instead",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word instead appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“instead”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "of",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word of appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“of”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "technical",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：技术的",
+        "example": "The word technical appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“technical”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "error",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word error appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“error”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "code",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word code appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“code”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "intelligent",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：智能的",
+        "example": "The word intelligent appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“intelligent”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "installs",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：安装",
+        "example": "The word installs appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“installs”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "over-the-air",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word over-the-air appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“over-the-air”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：交互",
+        "example": "The word interaction appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“interaction”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "design",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：设计",
+        "example": "The word design appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“design”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "make",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：使；制作",
+        "example": "The word make appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“make”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "understandable",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word understandable appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“understandable”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "does",
+        "phonetic": "/暂无音标/",
+        "meaning": "助动词：用于强调或构成否定/疑问",
+        "example": "The word does appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“does”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "not",
+        "phonetic": "/暂无音标/",
+        "meaning": "副词：不",
+        "example": "The word not appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“not”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "need",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词/名词：需要",
+        "example": "The word need appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“need”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "server",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：服务器",
+        "example": "The word server appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“server”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "logs",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：日志",
+        "example": "The word logs appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“logs”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "package",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：软件包",
+        "example": "The word package appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“package”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "names",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：名称",
+        "example": "The word names appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“names”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "engineering",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词/形容词：工程；工程的",
+        "example": "The word engineering appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“engineering”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "codes",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：代码",
+        "example": "The word codes appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“codes”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "but",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：但是",
+        "example": "The word but appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“but”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "know",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：知道",
+        "example": "The word know appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“know”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "remain",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：保持",
+        "example": "The word remain appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“remain”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "flow",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：流程",
+        "example": "The word flow appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“flow”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "separates",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：区分",
+        "example": "The word separates appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“separates”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "four",
+        "phonetic": "/暂无音标/",
+        "meaning": "数词：四个",
+        "example": "The word four appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“four”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "moments",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：多个时刻",
+        "example": "The word moments appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“moments”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "download",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词/动词：下载",
+        "example": "The word download appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“download”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "verification",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word verification appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“verification”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "each",
+        "phonetic": "/暂无音标/",
+        "meaning": "限定词：每个",
+        "example": "The word each appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“each”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "moment",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：时刻",
+        "example": "The word moment appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“moment”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "use",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word use appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“use”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "short",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：短的",
+        "example": "The word short appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“short”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "status",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：状态",
+        "example": "The word status appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“status”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "copy",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word copy appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“copy”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "stable",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：稳定的",
+        "example": "The word stable appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“stable”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "indicator",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：指示器",
+        "example": "The word indicator appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“indicator”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：有用的",
+        "example": "The word useful appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“useful”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "such",
+        "phonetic": "/暂无音标/",
+        "meaning": "限定词：这样的",
+        "example": "The word such appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“such”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "as",
+        "phonetic": "/暂无音标/",
+        "meaning": "介词/连词：作为；当……时",
+        "example": "The word as appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“as”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "while",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：当……期间",
+        "example": "The word while appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“while”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "contact",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词/名词：联系；联系人",
+        "example": "The word contact appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“contact”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "service",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：服务",
+        "example": "The word service appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“service”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "if",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：如果",
+        "example": "The word if appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“if”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "drops",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：下降",
+        "example": "The word drops appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“drops”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "below",
+        "phonetic": "/暂无音标/",
+        "meaning": "介词：低于",
+        "example": "The word below appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“below”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word risk appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“risk”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word threshold appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“threshold”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "enter",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：进入",
+        "example": "The word enter appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“enter”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：解释",
+        "example": "The word explain appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“explain”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "in",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word in appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“in”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "plain",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：直白的",
+        "example": "The word plain appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“plain”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "language",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：语言",
+        "example": "The word language appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“language”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：消息；提示",
+        "example": "The word message appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“message”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "say",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：说；说明",
+        "example": "The word say appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“say”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "previous",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：先前的",
+        "example": "The word previous appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“previous”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "version",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：版本",
+        "example": "The word version appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“version”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "has",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：有；已",
+        "example": "The word has appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“has”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "been",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word been appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“been”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "restored",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：已恢复",
+        "example": "The word restored appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“restored”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "personal",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：个人的",
+        "example": "The word personal appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“personal”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "settings",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：设置",
+        "example": "The word settings appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“settings”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "are",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word are appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“are”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "preserved",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word preserved appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“preserved”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "new",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：新的",
+        "example": "The word new appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“new”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "suggested",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：被建议",
+        "example": "The word suggested appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“suggested”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "later",
+        "phonetic": "/暂无音标/",
+        "meaning": "副词：稍后",
+        "example": "The word later appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“later”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "this",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word this appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“this”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：措辞",
+        "example": "The word wording appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“wording”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "protects",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：保护",
+        "example": "The word protects appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“protects”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：信任",
+        "example": "The word trust appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“trust”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "because",
+        "phonetic": "/暂无音标/",
+        "meaning": "连词：因为",
+        "example": "The word because appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“because”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "it",
+        "phonetic": "/暂无音标/",
+        "meaning": "代词：它",
+        "example": "The word it appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“it”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "connects",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：连接",
+        "example": "The word connects appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“connects”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "decision",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：决策",
+        "example": "The word decision appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“decision”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "impact",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：影响",
+        "example": "The word impact appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“impact”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "good",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：好的",
+        "example": "The word good appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“good”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "hmi",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：人机界面",
+        "example": "The word hmi appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“hmi”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "writing",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：文案写作",
+        "example": "The word writing appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“writing”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "avoids",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：避免",
+        "example": "The word avoids appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“avoids”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "dramatic",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：夸张的；戏剧化的",
+        "example": "The word dramatic appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“dramatic”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "warnings",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：警告",
+        "example": "The word warnings appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“warnings”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "also",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word also appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“also”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "hiding",
+        "phonetic": "/暂无音标/",
+        "meaning": "动名词：隐藏",
+        "example": "The word hiding appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“hiding”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "limitations",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：限制",
+        "example": "The word limitations appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“limitations”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "goal",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：目标",
+        "example": "The word goal appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“goal”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "simple",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：简单的",
+        "example": "The word simple appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“simple”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "keep",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：保持",
+        "example": "The word keep appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“keep”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "critical",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：关键的",
+        "example": "The word critical appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“critical”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "predictable",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：可预测的",
+        "example": "The word predictable appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“predictable”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "informed",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：知情的",
+        "example": "The word informed appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“informed”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "feel",
+        "phonetic": "/暂无音标/",
+        "meaning": "动词：感觉",
+        "example": "The word feel appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“feel”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "like",
+        "phonetic": "/暂无音标/",
+        "meaning": "原文中的英语词汇，可结合 HMI 语境理解。",
+        "example": "The word like appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“like”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "managed",
+        "phonetic": "/暂无音标/",
+        "meaning": "形容词：受管理的",
+        "example": "The word managed appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“managed”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "part",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：部分",
+        "example": "The word part appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“part”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "product",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：产品",
+        "example": "The word product appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“product”用于表达相关系统状态或用户影响。"
+      },
+      {
+        "term": "experience",
+        "phonetic": "/暂无音标/",
+        "meaning": "名词：体验",
+        "example": "The word experience appears in today's OTA rollback learning text.",
+        "chineseExample": "在今天的 OTA 回滚学习文本中，“experience”用于表达相关系统状态或用户影响。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Explaining rollback without losing user trust",
+        "text": "When an intelligent cockpit installs an over-the-air update, the interaction design should make progress and fallback behavior understandable. The driver does not need server logs, package names, or engineering codes, but the driver does need to know whether navigation, climate, calls, and driver assistance remain available. A clear update flow separates four moments: download, installation, verification, and recovery. Each moment should use short status copy, a stable progress indicator, and one useful action, such as postpone, install while parked, or contact service. If update confidence drops below the risk threshold, the cockpit should enter a safe fallback state and explain the rollback in plain language. The message can say that the previous version has been restored, that personal settings are preserved, and that a new installation window will be suggested later. This wording protects trust because it connects a technical decision to user impact. Good HMI writing avoids dramatic warnings when the vehicle is safe, but it also avoids hiding temporary limitations. The goal is simple: keep critical controls predictable, keep the user informed, and make recovery feel like a managed part of the product experience.",
+        "translation": "当智能座舱安装 OTA 更新时，交互设计应让进度和回退行为变得可理解。驾驶员不需要服务器日志、软件包名称或工程代码，但需要知道导航、空调、通话和驾驶辅助是否仍然可用。清晰的更新流程会区分下载、安装、验证和恢复四个时刻。每个时刻都应使用简短状态文案、稳定进度指示和一个有用动作，例如稍后、停车时安装或联系服务。如果更新置信度低于风险阈值，座舱应进入安全回退状态，并用直白语言解释回滚。提示可以说明上一版本已恢复、个人设置已保留，并且稍后会建议新的安装窗口。这种表达能保护信任，因为它把技术决策和用户影响联系起来。好的 HMI 文案在车辆安全时避免夸张警告，但也不会隐藏临时限制。目标很简单：让关键控制保持可预测，让用户持续知情，并让恢复像产品体验中受管理的一部分。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The driver does not need server logs, package names, or engineering codes, but the driver does need to know whether navigation, climate, calls, and driver assistance remain available.",
+        "translation": "驾驶员不需要服务器日志、软件包名称或工程代码，但确实需要知道导航、空调、通话和驾驶辅助是否仍然可用。",
+        "points": [
+          "does not need 与 does need 形成对比，强调用户需要的是影响而不是技术细节。",
+          "whether 引导宾语从句，用于说明用户需要确认的状态。"
+        ]
+      },
+      {
+        "sentence": "If update confidence drops below the risk threshold, the cockpit should enter a safe fallback state and explain the rollback in plain language.",
+        "translation": "如果更新置信度低于风险阈值，座舱应进入安全回退状态，并用直白语言解释回滚。",
+        "points": [
+          "If 引导条件，drops below 表示低于阈值。",
+          "should enter and explain 连接两个设计动作：状态处理与用户沟通。"
+        ]
+      },
+      {
+        "sentence": "This wording protects trust because it connects a technical decision to user impact.",
+        "translation": "这种措辞能保护信任，因为它把技术决策与用户影响联系起来。",
+        "points": [
+          "wording 指界面提示的具体表达方式。",
+          "connects A to B 是描述设计价值的常用结构。"
+        ]
+      },
+      {
+        "sentence": "Good HMI writing avoids dramatic warnings when the vehicle is safe, but it also avoids hiding temporary limitations.",
+        "translation": "好的 HMI 文案在车辆安全时避免夸张警告，但也避免隐藏临时限制。",
+        "points": [
+          "avoids dramatic warnings 描述降低恐慌感。",
+          "but it also avoids hiding 强调透明沟通同样重要。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "time": "4 分钟",
+        "task": "朗读 10 个核心词汇，重点区分 rollback、fallback、recovery 和 continuity 的使用场景。"
+      },
+      {
+        "time": "7 分钟",
+        "task": "跟读长文两遍，第一遍关注四个更新阶段，第二遍关注用户影响的表达方式。"
+      },
+      {
+        "time": "6 分钟",
+        "task": "用英文复述一次 OTA 更新失败后的提示流程，必须包含 safe fallback state 和 rollback explanation。"
+      },
+      {
+        "time": "5 分钟",
+        "task": "把一句技术错误提示改写成面向驾驶员的直白文案，例如从 Error 42 改为 Previous version restored safely。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-05-passenger-aware-voice-arbitration",
     "date": "2026-09-05",
     "title": "Passenger-aware voice arbitration and shared cockpit control",
