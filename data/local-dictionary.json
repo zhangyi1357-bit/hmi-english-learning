@@ -251,6 +251,13 @@
     "Adapt can be understood in the cockpit design context.",
     "在这句话中，“adapt”可结合座舱设计语境理解。"
   ],
+  "adaptation": [
+    "/ˌædæpˈteɪʃn/",
+    "适应；系统根据环境或用户状态调整行为",
+    "",
+    "Adaptation should remain optional when comfort is personal.",
+    "当舒适体验具有个人属性时，适应性调节应保持可选。"
+  ],
   "adaptive": [
     "/ә'dæptiv/",
     "形容词：适应的, 能适应的",
@@ -265,6 +272,13 @@
     "",
     "An adaptive alert changes its channel when the first signal is missed.",
     "自适应警告会在第一个信号被错过时改变提示通道。"
+  ],
+  "adaptive ambience": [
+    "/əˈdæptɪv ˈæmbiəns/",
+    "自适应氛围；根据场景和用户状态调节光、声、温度等环境体验",
+    "",
+    "Adaptive ambience should support attention instead of turning the cabin into a show.",
+    "自适应氛围应支持注意力，而不是把座舱变成表演场景。"
   ],
   "adaptive brightness": [
     "/əˈdæptɪv ˈbraɪtnəs/",
@@ -293,6 +307,13 @@
     "",
     "Adaptive simplification can hide nonessential controls when the vehicle enters heavy urban traffic.",
     "自适应简化可以在车辆进入拥堵城市交通时隐藏非必要控件。"
+  ],
+  "adapts": [
+    "/əˈdæpts/",
+    "适应；根据情况进行调整",
+    "",
+    "The cabin adapts in a calm and respectful way.",
+    "座舱以平静且尊重用户的方式适应。"
   ],
   "add": [
     "/æd/",
@@ -390,6 +411,27 @@
     "",
     "The affected setting is the rear climate zone.",
     "受影响设置是后排空调区域。"
+  ],
+  "affective": [
+    "/əˈfektɪv/",
+    "情感相关的；涉及情绪识别、解释或响应的",
+    "",
+    "Affective signals require careful privacy design.",
+    "情感信号需要谨慎的隐私设计。"
+  ],
+  "affective computing": [
+    "/əˈfektɪv kəmˈpjuːtɪŋ/",
+    "情感计算；识别、解释或响应人类情绪相关信号的计算领域",
+    "",
+    "Affective computing in vehicles must be restrained by safety and privacy needs.",
+    "车辆中的情感计算必须受到安全和隐私需求的约束。"
+  ],
+  "affective signal": [
+    "/əˈfektɪv ˈsɪɡnəl/",
+    "情感信号；可能反映情绪或压力状态的语音、面部、姿态或行为数据",
+    "",
+    "An affective signal should be treated as uncertain input rather than a fixed truth.",
+    "情感信号应被视为不确定输入，而不是固定事实。"
   ],
   "affects": [
     "/暂无音标/",
@@ -580,6 +622,13 @@
     "If speech latency is high, the system should avoid silence and say, I am checking that request.",
     "在这句话中，“am”可理解为“是；第一人称现在时系动词”。"
   ],
+  "ambience": [
+    "/ˈæmbiəns/",
+    "氛围；由光、声、温度等共同形成的环境感受",
+    "",
+    "Ambience can support attention during a demanding drive.",
+    "氛围可以在高要求驾驶中支持注意力。"
+  ],
   "ambient": [
     "/ˈæmbiənt/",
     "环境的；围绕用户但不占据主要注意力的",
@@ -702,6 +751,13 @@
     "The word angle appears in the comfort recommendation context.",
     "“angle”出现在座椅舒适推荐的语境中。"
   ],
+  "angry": [
+    "/ˈæŋɡri/",
+    "生气的；愤怒的",
+    "",
+    "The cockpit should not say the driver is angry.",
+    "座舱不应说驾驶员生气了。"
+  ],
   "animation": [
     "/ˌænɪˈmeɪʃn/",
     "动画；用于表达状态变化的动态视觉效果",
@@ -731,6 +787,13 @@
     "",
     "A nearby fast charger may reduce anxiety but add a charging detour, while a later station may preserve route continuity but leave a smaller buffer.",
     "在这句话中，“anxiety”可理解为“焦虑；对续航或充电不确定的担心”。"
+  ],
+  "anxious": [
+    "/ˈæŋkʃəs/",
+    "焦虑的；紧张不安的",
+    "",
+    "The word anxious is too strong for uncertain cockpit inference.",
+    "对于不确定的座舱推断，anxious 这个词过强。"
   ],
   "apology": [
     "/əˈpɒl.ə.d͡ʒi/",
@@ -1056,6 +1119,13 @@
     "Attention routing should guide the driver toward the cluster for urgent driving information.",
     "注意力路由应把驾驶员引导到仪表屏查看紧急驾驶信息。"
   ],
+  "attention support": [
+    "/əˈtenʃn səˈpɔːrt/",
+    "注意力支持；帮助用户保持驾驶注意力而不增加认知负担的设计",
+    "",
+    "Attention support should be the purpose of affective cockpit features.",
+    "注意力支持应是情感座舱功能的目的。"
+  ],
   "attribution": [
     "/ˌætrɪˈbjuːʃn/",
     "归因；说明来源或原因",
@@ -1190,6 +1260,13 @@
     "",
     "The automation level affects how direct a takeover cue should be.",
     "自动化等级会影响接管线索应有多直接。"
+  ],
+  "automation scope": [
+    "/ˌɔːtəˈmeɪʃn skoʊp/",
+    "自动化范围；系统被允许自动执行哪些调节的边界",
+    "",
+    "Automation scope should be narrower while the system is still learning preferences.",
+    "当系统仍在学习偏好时，自动化范围应更窄。"
   ],
   "availability": [
     "/əˌveɪləˈbɪləti/",
@@ -1414,6 +1491,13 @@
     "A behavioral change needs clearer wording than a backend optimization.",
     "行为变化比后端优化更需要清楚措辞。"
   ],
+  "behavioral pattern": [
+    "/bɪˈheɪvjərəl ˈpætərn/",
+    "行为模式；用户操作、选择和反应在一段时间内形成的规律",
+    "",
+    "A behavioral pattern should be combined with context before adaptation.",
+    "行为模式应与上下文结合后再用于适应性调节。"
+  ],
   "behind": [
     "/待查/",
     "在背后；作为判断依据",
@@ -1567,6 +1651,13 @@
     "在这句话中，“boundary”可理解为“边界, 分界线”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "breathing": [
+    "/ˈbriːðɪŋ/",
+    "呼吸；可用于放松提示的身体节奏",
+    "",
+    "A breathing pause should be suggested gently.",
+    "呼吸暂停练习应以温和方式建议。"
+  ],
   "brevity": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“brevity”。",
@@ -1698,6 +1789,13 @@
     "A cabin command may affect climate, media, lighting, navigation, or comfort.",
     "在这句话中，“cabin command”用于描述智能座舱多人语音控制。"
   ],
+  "cabin lighting": [
+    "/ˈkæbɪn ˈlaɪtɪŋ/",
+    "座舱灯光；车内用于舒适、提示和氛围表达的光照系统",
+    "",
+    "Cabin lighting can shift gradually to avoid surprising the driver.",
+    "座舱灯光可以逐步变化，避免让驾驶员感到突然。"
+  ],
   "cabin noise": [
     "/ˈkæbɪn nɔɪz/",
     "车内噪声；影响听觉反馈可感知性的声音环境",
@@ -1800,6 +1898,13 @@
     "A calm lane change is more likely when the prompt arrives before the last moment.",
     "在这句话中，“calm lane change”用于描述智能座舱导航提示设计。"
   ],
+  "calm state": [
+    "/kɑːm steɪt/",
+    "平静状态；界面和环境反馈降低刺激、帮助用户稳定注意力的状态",
+    "",
+    "The calm state can reduce animations and soften audio cues.",
+    "平静状态可以减少动画并弱化声音提示。"
+  ],
   "calm status": [
     "/kɑːm ˈsteɪtəs/",
     "平静状态；风险解除后系统回到低干扰反馈状态",
@@ -1901,6 +2006,13 @@
     "Context-sensitive timing is critical because a simple card can become distracting at the wrong moment.",
     "在这句话中，“card”可理解为“卡片, 纸牌, 节目单, 明信片, 梳棉机；备置卡片, 记于卡片上, 梳理”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "careful": [
+    "/ˈkerfl/",
+    "谨慎的；注意风险和边界的",
+    "",
+    "Emotion-aware design must be careful with language.",
+    "情绪感知设计必须谨慎处理语言。"
   ],
   "carefully": [
     "/暂无音标/",
@@ -2558,6 +2670,13 @@
     "A comfort preset can combine seat angle, heating, ventilation, and display distance.",
     "舒适预设可以组合座椅角度、加热、通风和显示距离。"
   ],
+  "comfort profile": [
+    "/ˈkʌmfərt ˈproʊfaɪl/",
+    "舒适档案；记录用户对温度、座椅、灯光和声音偏好的配置",
+    "",
+    "A comfort profile should be easy to reset after a shared vehicle trip.",
+    "共享车辆行程后，舒适档案应易于重置。"
+  ],
   "comfort setting": [
     "/ˈkʌmfərt ˈsetɪŋ/",
     "舒适性设置；温度、座椅、氛围灯等体验类配置",
@@ -2798,6 +2917,13 @@
     "The assistant should ask for confirmation when recognition falls below the confidence threshold.",
     "当识别结果低于置信阈值时，助手应请求确认。"
   ],
+  "confidence wording": [
+    "/ˈkɑːnfɪdəns ˈwɜːrdɪŋ/",
+    "置信度措辞；用合适语言表达系统不确定性，避免过度断言",
+    "",
+    "Confidence wording can say the system noticed signs of tension instead of declaring an emotion.",
+    "置信度措辞可以说系统注意到紧张迹象，而不是直接宣称一种情绪。"
+  ],
   "confident": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“confident”。",
@@ -2956,6 +3082,13 @@
     "The consent boundary is clear when the driver can pause body sensing from the comfort panel.",
     "当驾驶员能从舒适面板暂停身体感知时，同意边界才清晰。"
   ],
+  "consent screen": [
+    "/kənˈsent skriːn/",
+    "授权界面；说明数据用途并让用户选择是否开启功能的界面",
+    "",
+    "The consent screen should separate comfort data from safety-critical data.",
+    "授权界面应区分舒适数据和安全关键数据。"
+  ],
   "consider": [
     "/待查/",
     "考虑；纳入判断",
@@ -3072,6 +3205,13 @@
     "",
     "Context preservation reduces confusion when the driver resumes a route search after a voice prompt.",
     "语音提示后驾驶员继续路线搜索时，上下文保留可以减少困惑。"
+  ],
+  "context signal": [
+    "/ˈkɑːntekst ˈsɪɡnəl/",
+    "上下文信号；道路、速度、时间、乘员和任务状态等环境信息",
+    "",
+    "A context signal helps the assistant choose a calmer response.",
+    "上下文信号帮助助手选择更平静的回应。"
   ],
   "context snapshot": [
     "/ˈkɑːntekst ˈsnæpʃɑːt/",
@@ -3640,6 +3780,13 @@
     "在这句话中，“decisions”可理解为“决定, 决心, 决断”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "declaring": [
+    "/dɪˈklerɪŋ/",
+    "宣称；直接作出明确判断",
+    "",
+    "Declaring an emotion can reduce user trust.",
+    "直接宣称一种情绪可能降低用户信任。"
+  ],
   "decluttered": [
     "/diːˈklʌtərd/",
     "去杂化的；移除非必要信息后的",
@@ -3780,6 +3927,13 @@
     "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
     "在这句话中，“demand”可理解为“要求, 需求, 需要；要求, 查询”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "demanding": [
+    "/dɪˈmændɪŋ/",
+    "要求高的；需要更多注意力或精力的",
+    "",
+    "A demanding drive calls for simpler interface behavior.",
+    "高要求驾驶需要更简单的界面行为。"
   ],
   "democratic": [
     "/ˌdeməˈkrætɪk/",
@@ -4017,6 +4171,13 @@
     "在这句话中，“device”可理解为“装置, 设计, 策略, 发明物, 设备”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "diagnose": [
+    "/ˌdaɪəɡˈnoʊz/",
+    "诊断；判断疾病或心理状态，通常属于医疗语境",
+    "",
+    "The cockpit should not diagnose the driver.",
+    "座舱不应诊断驾驶员。"
+  ],
   "dialog": [
     "/ˈdaɪəlɔːɡ/",
     "对话；系统与用户之间的交互轮次",
@@ -4138,6 +4299,13 @@
     "",
     "The alert can fade when the hazard disappears.",
     "当危险消失时，警告可以淡出。"
+  ],
+  "disclose": [
+    "/dɪsˈkloʊz/",
+    "披露；清楚说明观察、原因或影响",
+    "",
+    "The interface should disclose why comfort settings changed.",
+    "界面应披露舒适设置为什么发生变化。"
   ],
   "disclosure": [
     "/dɪsˈkləʊʒə(ɹ)/",
@@ -4285,6 +4453,13 @@
     "The word dramatic appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“dramatic”用于表达相关系统状态或用户影响。"
   ],
+  "drive": [
+    "/draɪv/",
+    "驾驶过程；一次出行或驾驶任务",
+    "",
+    "This drive may be demanding, so the cockpit can reduce intensity.",
+    "这段驾驶可能要求较高，因此座舱可以降低强度。"
+  ],
   "driver": [
     "/'draivә/",
     "名词：驾驶员, 驱动器, 驱动程序",
@@ -4390,6 +4565,13 @@
     "",
     "Driver trust improves when the system admits uncertainty clearly.",
     "在这句话中，“driver trust”用于描述智能座舱导航提示设计。"
+  ],
+  "driver wellbeing": [
+    "/ˈdraɪvər welˈbiːɪŋ/",
+    "驾驶员身心舒适；与压力、疲劳、舒适和安全感相关的综合体验",
+    "",
+    "Driver wellbeing should improve through small, respectful cockpit actions.",
+    "驾驶员身心舒适应通过小而尊重用户的座舱动作得到改善。"
   ],
   "driver workload": [
     "/ˈdraɪvər ˈwɜːrkloʊd/",
@@ -4620,6 +4802,48 @@
     "",
     "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
     "在这句话中，“electric”可理解为“电动的；由电能驱动”。"
+  ],
+  "emotion": [
+    "/ɪˈmoʊʃn/",
+    "情绪；人的情感反应或心理状态",
+    "",
+    "The cockpit should avoid naming an emotion too confidently.",
+    "座舱应避免过度自信地命名情绪。"
+  ],
+  "emotion-aware": [
+    "/ɪˈmoʊʃn əˈwer/",
+    "情绪感知的；能够结合情绪或压力线索进行响应的",
+    "",
+    "Emotion-aware design should communicate uncertainty clearly.",
+    "情绪感知设计应清楚传达不确定性。"
+  ],
+  "emotion-aware feedback": [
+    "/ɪˈmoʊʃn əˈwer ˈfiːdbæk/",
+    "情绪感知反馈；系统根据用户情绪线索调整提示语气、节奏或界面强度",
+    "",
+    "Emotion-aware feedback should calm the driver without pretending to know the driver’s feelings perfectly.",
+    "情绪感知反馈应安抚驾驶员，但不能假装完全知道驾驶员的感受。"
+  ],
+  "emotional": [
+    "/ɪˈmoʊʃənl/",
+    "情绪的；与情感状态相关的",
+    "",
+    "Emotional labels can feel intrusive in a vehicle.",
+    "情绪标签在车内可能显得侵入。"
+  ],
+  "emotional state": [
+    "/ɪˈmoʊʃənl steɪt/",
+    "情绪状态；用户在某一时刻可能表现出的心理或情感状态",
+    "",
+    "The cockpit should describe an emotional state only when the confidence is high enough.",
+    "只有置信度足够高时，座舱才应描述情绪状态。"
+  ],
+  "empathetic copy": [
+    "/ˌempəˈθetɪk ˈkɑːpi/",
+    "共情文案；语气体贴、克制且尊重用户自主权的界面文字",
+    "",
+    "Empathetic copy should offer support without judging the driver.",
+    "共情文案应提供支持，而不是评判驾驶员。"
   ],
   "ending": [
     "/ˈendɪŋ/",
@@ -5019,12 +5243,26 @@
     "在这句话中，“explain”可理解为“解释, 说明”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "explainability": [
+    "/ɪkˌspleɪnəˈbɪləti/",
+    "可解释性；系统让用户理解其判断依据和动作原因的能力",
+    "",
+    "Explainability matters most when automation touches personal comfort.",
+    "当自动化影响个人舒适时，可解释性最重要。"
+  ],
   "explainable": [
     "/ɪkˈspleɪnəbl/",
     "可解释的；用户能理解依据的",
     "",
     "An explainable recommendation states the energy reason, time impact, and available undo path.",
     "在这句话中，“explainable”可理解为“可解释的；用户能理解依据的”。"
+  ],
+  "explainable adaptation": [
+    "/ɪkˈspleɪnəbl ˌædæpˈteɪʃn/",
+    "可解释适应；系统在自动调整时说明依据、影响和用户可撤销方式",
+    "",
+    "Explainable adaptation helps users decide whether to keep or undo a cockpit change.",
+    "可解释适应帮助用户决定保留还是撤销座舱变化。"
   ],
   "explainable automation": [
     "/ɪkˈspleɪnəbl ˌɔːtəˈmeɪʃn/",
@@ -5150,6 +5388,13 @@
     "",
     "A cockpit HMI should keep eyes-off-road time as short as possible during secondary tasks.",
     "在次级任务中，座舱 HMI 应尽可能缩短离路注视时间。"
+  ],
+  "facial expression": [
+    "/ˈfeɪʃl ɪkˈspreʃn/",
+    "面部表情；可能表达注意力、疲劳或情绪变化的脸部特征",
+    "",
+    "Facial expression analysis must respect privacy and avoid overconfident labels.",
+    "面部表情分析必须尊重隐私，并避免过度自信的标签。"
   ],
   "fade": [
     "/feɪd/",
@@ -5393,6 +5638,13 @@
     "Feedback should avoid feeling like an urgent alert.",
     "反馈应避免让人感觉像紧急警报。"
   ],
+  "feelings": [
+    "/ˈfiːlɪŋz/",
+    "感受；情绪体验或主观感觉",
+    "",
+    "The system should not claim to know the driver’s feelings perfectly.",
+    "系统不应声称完全知道驾驶员的感受。"
+  ],
   "feels": [
     "/fiːlz/",
     "动词：感觉, 觉得, 触摸, 以为；有知觉, 摸索, 同情；感觉, 觉得, 触摸",
@@ -5476,6 +5728,13 @@
     "",
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“fit”可结合车内助手澄清场景理解。"
+  ],
+  "fixed": [
+    "/fɪkst/",
+    "固定的；确定不变的",
+    "",
+    "An affective signal is not a fixed truth.",
+    "情感信号不是固定事实。"
   ],
   "flash": [
     "/flæʃ/",
@@ -5751,12 +6010,26 @@
     "The word gentle appears in the comfort recommendation context.",
     "“gentle”出现在座椅舒适推荐的语境中。"
   ],
+  "gentle prompt": [
+    "/ˈdʒentl prɑːmpt/",
+    "温和提示；低压力、低打断、语气克制的用户提示",
+    "",
+    "A gentle prompt can suggest a breathing pause without sounding medical or intrusive.",
+    "温和提示可以建议短暂呼吸放松，同时避免显得医疗化或侵入。"
+  ],
   "gentle suggestion": [
     "/ˈdʒentl səɡˈdʒestʃən/",
     "温和建议；不制造压力的提示。",
     "",
     "The cockpit uses gentle suggestion to keep comfort assistance understandable and controllable.",
     "座舱使用“gentle suggestion”让舒适辅助更容易理解和控制。"
+  ],
+  "gentler": [
+    "/ˈdʒentlər/",
+    "更温和的；刺激更少、语气更缓和的",
+    "",
+    "Stress cues should lead to gentler interaction.",
+    "压力线索应引导更温和的交互。"
   ],
   "gets": [
     "/ɡets/",
@@ -6388,6 +6661,20 @@
     "Human factors should guide the timing and intensity of every safety alert.",
     "人因应指导每个安全警告的时机和强度。"
   ],
+  "human-readable": [
+    "/ˈhjuːmən ˈriːdəbl/",
+    "人可读的；普通用户可以理解的",
+    "",
+    "Human-readable reasons support explainable adaptation.",
+    "人可读原因支持可解释适应。"
+  ],
+  "human-readable reason": [
+    "/ˈhjuːmən ˈriːdəbl ˈriːzn/",
+    "人可读原因；用普通用户能理解的方式解释系统动作的理由",
+    "",
+    "A human-readable reason is better than showing a sensor score.",
+    "人可读原因比展示传感器分数更合适。"
+  ],
   "i": [
     "/ə/",
     "('appen 的现在分词) ；急性盲肠炎",
@@ -6852,6 +7139,13 @@
     "Interaction design should support a safer and clearer cockpit experience.",
     "在这句话中，“interaction design”用于描述更安全、更清晰的座舱体验。"
   ],
+  "interaction intensity": [
+    "/ˌɪntərˈækʃn ɪnˈtensəti/",
+    "交互强度；提示频率、声音大小、动画幅度和信息密度的综合强弱",
+    "",
+    "Interaction intensity should decrease during stressful driving conditions.",
+    "在高压力驾驶条件下，交互强度应降低。"
+  ],
   "interaction load": [
     "/ˌɪntərˈækʃn loʊd/",
     "交互负荷；完成一次座舱操作对注意力、记忆和手眼协调造成的压力",
@@ -6990,6 +7284,13 @@
     "Task simplification turns a deep settings path into one clear driving-mode shortcut.",
     "在这句话中，“into”可理解为“进入...之内, 朝..., 深入...之中, 成为...状况”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "intrusive": [
+    "/ɪnˈtruːsɪv/",
+    "侵入的；让用户感到被冒犯或被过度观察的",
+    "",
+    "Mood labels may feel intrusive without user consent.",
+    "没有用户同意时，情绪标签可能显得侵入。"
   ],
   "irreversible": [
     "/ˌɪrɪˈvɜːrsəbl/",
@@ -7816,6 +8117,13 @@
     "A low-interruption prompt uses timing, tone, and priority to protect attention.",
     "在这句话中，“low-interruption”可理解为“低干扰的；减少打断注意力的”。"
   ],
+  "low-interruption design": [
+    "/loʊ ˌɪntəˈrʌpʃn dɪˈzaɪn/",
+    "低打断设计；减少不必要中断并控制提示时机的设计方法",
+    "",
+    "Low-interruption design keeps affective support from becoming another distraction.",
+    "低打断设计防止情感支持变成另一个干扰源。"
+  ],
   "low-interruption prompt": [
     "/loʊ ˌɪntəˈrʌpʃn prɑːmpt/",
     "低干扰提示；尽量不打断驾驶注意力的系统提示",
@@ -8212,6 +8520,13 @@
     "A media suggestion is usually lower priority than lane guidance.",
     "媒体推荐通常低于车道引导的优先级。"
   ],
+  "medical": [
+    "/ˈmedɪkl/",
+    "医疗的；与诊断或治疗相关的",
+    "",
+    "A comfort prompt should not sound medical.",
+    "舒适提示不应听起来像医疗建议。"
+  ],
   "meeting": [
     "/按语境朗读/",
     "会议；日程中的会面事件",
@@ -8587,6 +8902,20 @@
     "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
     "在这句话中，“monitoring”可理解为“监督器, 级长, 监听员, 班长, 监视器, 告诫物；监视, 监听, 监督”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "mood": [
+    "/muːd/",
+    "心情；较持续的情绪状态",
+    "",
+    "Mood labels should be used with caution.",
+    "情绪标签应谨慎使用。"
+  ],
+  "mood label": [
+    "/muːd ˈleɪbl/",
+    "情绪标签；系统对用户情绪作出的命名或分类",
+    "",
+    "A mood label can feel intrusive when the driver has not asked for emotional coaching.",
+    "当驾驶员没有请求情绪辅导时，情绪标签可能显得侵入。"
   ],
   "more": [
     "/mɒ:/",
@@ -9100,6 +9429,13 @@
     "Speech latency becomes more noticeable when the driver is expecting a quick confirmation.",
     "在这句话中，“noticeable”可理解为“明显的；容易被用户感知到的”。"
   ],
+  "noticed": [
+    "/ˈnoʊtɪst/",
+    "注意到；观察到某个线索或变化",
+    "",
+    "The system noticed signs of tension but should remain cautious.",
+    "系统注意到紧张迹象，但应保持谨慎。"
+  ],
   "notices": [
     "/ˈnoʊtɪsɪz/",
     "通知；系统发出的状态或提醒信息",
@@ -9355,6 +9691,20 @@
     "",
     "Operational state should be easy to verify.",
     "运行状态应容易确认。"
+  ],
+  "opt-in": [
+    "/ɑːpt ɪn/",
+    "主动选择加入的；用户明确开启后才启用的",
+    "",
+    "Emotion-aware personalization should be opt-in.",
+    "情绪感知个性化应由用户主动开启。"
+  ],
+  "opt-in feature": [
+    "/ɑːpt ɪn ˈfiːtʃər/",
+    "主动开启功能；只有用户明确选择后才启用的功能",
+    "",
+    "Emotion-aware personalization should begin as an opt-in feature.",
+    "情绪感知个性化应以主动开启功能的形式开始。"
   ],
   "option": [
     "/'ɒpʃәn/",
@@ -9698,6 +10048,13 @@
     "在这句话中，“perceive”可理解为“感觉; 认识, 理解; 察觉到, 意识到, 注意到”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "perfectly": [
+    "/ˈpɜːrfɪktli/",
+    "完全地；毫无误差地",
+    "",
+    "A cockpit cannot infer emotions perfectly from one signal.",
+    "座舱无法从单一信号完全准确地推断情绪。"
+  ],
   "period": [
     "/ˈpɪriəd/",
     "时间段；一个短暂窗口",
@@ -9806,6 +10163,13 @@
     "在这句话中，“personalization”可理解为“可结合原文语境理解。”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "personalization rule": [
+    "/ˌpɜːrsənələˈzeɪʃn ruːl/",
+    "个性化规则；决定系统何时、如何为某个用户调整体验的规则",
+    "",
+    "A personalization rule should be editable in a familiar settings page.",
+    "个性化规则应能在熟悉的设置页中编辑。"
+  ],
   "personalization workflow": [
     "/ˌpɜːrsənələˈzeɪʃn ˈwɜːrkfloʊ/",
     "个性化流程；从识别到应用用户偏好的完整流程",
@@ -9850,6 +10214,20 @@
     "",
     "This phrasing gives control without adding a heavy visual task.",
     "在这句话中，“phrasing”可理解为“措辞；表达方式和句子组织”。"
+  ],
+  "physiological": [
+    "/ˌfɪziəˈlɑːdʒɪkl/",
+    "生理的；与身体状态和生物信号相关的",
+    "",
+    "Physiological signals should require explicit consent.",
+    "生理信号应要求明确授权。"
+  ],
+  "physiological signal": [
+    "/ˌfɪziəˈlɑːdʒɪkl ˈsɪɡnəl/",
+    "生理信号；心率、呼吸、眼动等可用于推断状态的数据",
+    "",
+    "A physiological signal needs careful consent before it shapes cockpit behavior.",
+    "生理信号在影响座舱行为前需要谨慎征得同意。"
   ],
   "pixels": [
     "/ˈpɪksəlz/",
@@ -10122,6 +10500,13 @@
     "Predictive intent helps the cockpit suggest the next action before the driver opens a menu.",
     "预测性意图帮助座舱在驾驶员打开菜单前建议下一步操作。"
   ],
+  "prefer": [
+    "/prɪˈfɜːr/",
+    "优先选择；更倾向于采用某种方式",
+    "",
+    "The system should prefer on-device processing when possible.",
+    "系统应在可能时优先选择端侧处理。"
+  ],
   "preference": [
     "/ˈpɹɛf(ə)ɹ(ə)ns/",
     "名词：偏爱, 优先, 喜爱物",
@@ -10129,6 +10514,13 @@
     "A preference profile can store climate settings, display themes, and preferred navigation views.",
     "在这句话中，“preference”可理解为“偏爱, 优先, 喜爱物”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "preference learning": [
+    "/ˈprefrəns ˈlɜːrnɪŋ/",
+    "偏好学习；系统通过长期使用逐步理解用户习惯和选择",
+    "",
+    "Preference learning should ask for confirmation before changing a sensitive setting.",
+    "偏好学习在改变敏感设置前应请求确认。"
   ],
   "preference profile": [
     "/ˈprefərəns ˈproʊfaɪl/",
@@ -10543,6 +10935,13 @@
     "The cockpit should reduce nonessential prompts when driver workload is high.",
     "在这句话中，“prompts”可理解为“激励, 提示, 提醒物, 提词, 付款期限；迅速的, 敏捷的, 立刻的, 提词员的；激励, 鼓动, 提示；准时地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "proof": [
+    "/pruːf/",
+    "证据；能支持确定判断的依据",
+    "",
+    "A single stress cue is not proof of emotion.",
+    "单一压力线索不是情绪证据。"
   ],
   "protect": [
     "/暂无音标/",
@@ -11658,6 +12057,13 @@
     "A reversible action can use a short confirmation, while an irreversible action needs stronger consent.",
     "可撤销动作可以使用简短确认，而不可逆动作需要更强的同意。"
   ],
+  "reversible change": [
+    "/rɪˈvɜːrsəbl tʃeɪndʒ/",
+    "可撤销变化；用户可以轻松恢复到原状态的系统调整",
+    "",
+    "Every reversible change should include a clear undo action.",
+    "每个可撤销变化都应包含清晰的撤销动作。"
+  ],
   "reversible request": [
     "/rɪˈvɜːrsəbl rɪˈkwest/",
     "可撤销请求；执行后可以快速恢复或取消的请求",
@@ -11970,6 +12376,13 @@
     "Designers should define escalation rules so that a silent banner becomes an audible alert only when risk or urgency increases.",
     "在这句话中，“rules”可理解为“规则, 统治, 控制, 支配, 规律, 标准, 章程, 破折号, 铅线；规定, 统治, 管理, 控制, 支配, 裁决；统治, 管辖, 裁定”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "s": [
+    "/es/",
+    "所有格标记；在 driver’s 等词中表示所属关系",
+    "",
+    "The driver’s emotional state should not be treated as proof.",
+    "在 driver’s 中，s 表示“驾驶员的”。"
   ],
   "safe": [
     "/ˈseɪ̯f/",
@@ -12342,6 +12755,13 @@
     "A seat memory profile should restore comfort settings only after the driver is identified with confidence.",
     "座椅记忆档案只有在驾驶员被可靠识别后，才应恢复舒适设置。"
   ],
+  "seat support": [
+    "/siːt səˈpɔːrt/",
+    "座椅支撑；座椅对腰部、背部或身体姿态的支撑调节",
+    "",
+    "Seat support changes should be small enough to feel helpful rather than controlling.",
+    "座椅支撑变化应足够小，让人觉得有帮助而不是被控制。"
+  ],
   "seat vibration": [
     "/siːt vaɪˈbreɪʃn/",
     "座椅振动；通过座椅触觉刺激提示方向、风险或接管需求",
@@ -12502,6 +12922,13 @@
     "在这句话中，“sensitive”可理解为“敏感的, 易感的, 灵敏的, 感光的；[机] 敏感的, 灵敏的, 感度高的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "sensitive data": [
+    "/ˈsensətɪv ˈdeɪtə/",
+    "敏感数据；涉及情绪、生理、身份或行为模式的高风险数据",
+    "",
+    "Sensitive data should never be collected only for decorative personalization.",
+    "敏感数据绝不应只为装饰性个性化而收集。"
+  ],
   "sensitive personalization": [
     "/ˈsensətɪv ˌpɜːrsənələˈzeɪʃn/",
     "敏感个性化；涉及个人习惯、身份或隐私的个性化",
@@ -12651,6 +13078,13 @@
     "",
     "The word shaped appears in today's cockpit summary practice.",
     "在这个语境中，“shaped”可理解为“塑造了”。"
+  ],
+  "shapes": [
+    "/ʃeɪps/",
+    "塑造；影响某个体验或结果的形成",
+    "",
+    "Privacy shapes the interaction model.",
+    "隐私会塑造交互模型。"
   ],
   "shared": [
     "/ʃɛːd/",
@@ -13110,6 +13544,13 @@
     "Soft pulse should support a safer and clearer cockpit experience.",
     "在这句话中，“soft pulse”用于描述更安全、更清晰的座舱体验。"
   ],
+  "soften": [
+    "/ˈsɔːfn/",
+    "柔化；降低强度、刺激或突兀感",
+    "",
+    "The cockpit can soften cabin lighting at night.",
+    "座舱可以在夜间柔化座舱灯光。"
+  ],
   "software package": [
     "/ˈsɔːftwer ˈpækɪdʒ/",
     "软件包；一次更新中下载、校验并安装的文件集合",
@@ -13145,6 +13586,13 @@
     "",
     "A clear de-escalation path prevents the cockpit from sounding urgent after the hazard is controlled.",
     "清晰的降级路径能避免危险已受控后座舱仍显得紧急。"
+  ],
+  "soundscape": [
+    "/ˈsaʊndskeɪp/",
+    "声音环境；提示音、媒体音量、降噪和环境声构成的听觉体验",
+    "",
+    "The soundscape should become simpler when navigation demands attention.",
+    "当导航需要注意力时，声音环境应变得更简单。"
   ],
   "source": [
     "/sɔːrs/",
@@ -13484,6 +13932,13 @@
     "Status change should support a safer and clearer cockpit experience.",
     "在这句话中，“status change”用于描述更安全、更清晰的座舱体验。"
   ],
+  "status disclosure": [
+    "/ˈsteɪtəs dɪsˈkloʊʒər/",
+    "状态披露；说明系统观察到什么、准备做什么以及用户如何控制",
+    "",
+    "Status disclosure helps users understand automatic comfort actions.",
+    "状态披露帮助用户理解自动舒适动作。"
+  ],
   "status hint": [
     "/ˈsteɪtəs hɪnt/",
     "状态提示；低强度地告知系统状态或轻微变化的信息",
@@ -13633,6 +14088,13 @@
     "Stress appears in today's navigation prompt timing lesson.",
     "在这句话中，“stress”来自今天的导航提示时机学习内容。"
   ],
+  "stress cue": [
+    "/stres kjuː/",
+    "压力线索；语速、操作频率、驾驶场景或生理信号中体现紧张状态的迹象",
+    "",
+    "A stress cue should trigger gentler interaction, not a distracting emotional label.",
+    "压力线索应触发更温和的交互，而不是分散注意力的情绪标签。"
+  ],
   "stricter": [
     "/strikt/",
     "形容词：严厉的, 绝对的, 详尽的, 严格的, 精确的",
@@ -13711,6 +14173,13 @@
     "",
     "Subtle signal should support a safer and clearer cockpit experience.",
     "在这句话中，“subtle signal”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "subtle transition": [
+    "/ˈsʌtl trænˈzɪʃn/",
+    "细微过渡；不会突兀打断用户的渐进式状态变化",
+    "",
+    "A subtle transition makes adaptive lighting feel intentional but not theatrical.",
+    "细微过渡让自适应灯光显得有意图但不戏剧化。"
   ],
   "subtle vibration": [
     "/ˈsʌtl vaɪˈbreɪʃn/",
@@ -14206,6 +14675,13 @@
     "A temporary limitation should be named in plain language.",
     "临时限制应使用直白语言说明。"
   ],
+  "tension": [
+    "/ˈtenʃn/",
+    "紧张；压力或不安的状态",
+    "",
+    "Signs of tension should be phrased as uncertain input.",
+    "紧张迹象应被表述为不确定输入。"
+  ],
   "terrain": [
     "/təˈreɪn/",
     "地形；道路坡度和环境形态",
@@ -14576,6 +15052,13 @@
     "Transparent control explains why the cockpit suggests a route and lets the driver disable that signal.",
     "透明控制会解释座舱为何推荐某条路线，并允许驾驶员关闭该信号。"
   ],
+  "transparent inference": [
+    "/trænsˈpærənt ˈɪnfərəns/",
+    "透明推断；说明系统如何从信号推断状态，并承认不确定性",
+    "",
+    "Transparent inference prevents the assistant from sounding overconfident.",
+    "透明推断可以避免助手显得过度自信。"
+  ],
   "transparent recommendation": [
     "/trænsˈpærənt ˌrekəmenˈdeɪʃn/",
     "透明推荐；解释原因和数据来源的系统建议。",
@@ -14672,6 +15155,20 @@
     "Trustworthy can be understood in the cockpit design context.",
     "在这句话中，“trustworthy”可结合座舱设计语境理解。"
   ],
+  "trustworthy automation": [
+    "/ˈtrʌstwɜːrði ˌɔːtəˈmeɪʃn/",
+    "可信自动化；行为可预期、可解释、可撤销并尊重用户边界的自动化",
+    "",
+    "Trustworthy automation explains small comfort changes at the right moment.",
+    "可信自动化会在合适时机解释小幅舒适变化。"
+  ],
+  "truth": [
+    "/truːθ/",
+    "事实；真实情况",
+    "",
+    "The interface should avoid presenting inference as truth.",
+    "界面应避免把推断呈现为事实。"
+  ],
   "tuned": [
     "/tuːnd/",
     "经过调校的；根据目标效果调整过的",
@@ -14767,6 +15264,13 @@
     "A clarification prompt should mention the uncertain part of the command in plain language.",
     "在这句话中，“uncertain”可理解为“不确定的, 无常的, 不确信的, 不可预测的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "uncertain input": [
+    "/ʌnˈsɜːrtn ˈɪnpʊt/",
+    "不确定输入；可能有用但不能单独作为确定判断的数据",
+    "",
+    "Uncertain input requires conservative wording and a visible override.",
+    "不确定输入需要保守措辞和可见的覆盖入口。"
   ],
   "uncertain speaker": [
     "/ʌnˈsɜːrtn ˈspiːkər/",
@@ -15073,6 +15577,13 @@
     "",
     "User intent may be different from the literal sentence.",
     "用户意图可能不同于字面句子。"
+  ],
+  "user override": [
+    "/ˈjuːzər ˈoʊvərraɪd/",
+    "用户覆盖；用户可以暂停、撤销或重新设置系统自动调节的能力",
+    "",
+    "User override must remain visible after the cockpit changes lighting or seat support.",
+    "座舱改变灯光或座椅支撑后，用户覆盖入口必须保持可见。"
   ],
   "user trust": [
     "/ˈjuːzər trʌst/",
@@ -15416,6 +15927,13 @@
     "",
     "Voice settings should support clear control in a shared intelligent cockpit.",
     "在这句话中，“voice settings”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "voice tone": [
+    "/vɔɪs toʊn/",
+    "语音语气；说话声音中体现情绪、压力或态度的特征",
+    "",
+    "Voice tone can support context, but it should not be the only source of truth.",
+    "语音语气可以支持上下文判断，但不应是唯一依据。"
   ],
   "voice-first": [
     "/暂无音标/",

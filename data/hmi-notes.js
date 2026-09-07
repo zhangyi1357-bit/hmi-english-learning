@@ -1,5 +1,735 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-07-emotion-aware-comfort-feedback",
+    "date": "2026-09-07",
+    "title": "Emotion-aware cockpit feedback and explainable comfort adjustment",
+    "topic": "智能座舱情绪感知反馈与可解释舒适调节",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱中的情绪感知、压力线索、舒适调节、隐私边界、解释性反馈和用户可控的个性化体验。",
+    "words": [
+      {
+        "term": "emotion-aware feedback",
+        "phonetic": "/ɪˈmoʊʃn əˈwer ˈfiːdbæk/",
+        "meaning": "情绪感知反馈；系统根据用户情绪线索调整提示语气、节奏或界面强度",
+        "example": "Emotion-aware feedback should calm the driver without pretending to know the driver’s feelings perfectly.",
+        "chineseExample": "情绪感知反馈应安抚驾驶员，但不能假装完全知道驾驶员的感受。"
+      },
+      {
+        "term": "comfort adjustment",
+        "phonetic": "/ˈkʌmfərt əˈdʒʌstmənt/",
+        "meaning": "舒适调节；对温度、座椅、灯光、声音或界面节奏进行的体验优化",
+        "example": "Comfort adjustment is more acceptable when the cockpit explains what changed and why.",
+        "chineseExample": "当座舱解释改变了什么以及为什么改变时，舒适调节更容易被接受。"
+      },
+      {
+        "term": "stress cue",
+        "phonetic": "/stres kjuː/",
+        "meaning": "压力线索；语速、操作频率、驾驶场景或生理信号中体现紧张状态的迹象",
+        "example": "A stress cue should trigger gentler interaction, not a distracting emotional label.",
+        "chineseExample": "压力线索应触发更温和的交互，而不是分散注意力的情绪标签。"
+      },
+      {
+        "term": "explainable adaptation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌædæpˈteɪʃn/",
+        "meaning": "可解释适应；系统在自动调整时说明依据、影响和用户可撤销方式",
+        "example": "Explainable adaptation helps users decide whether to keep or undo a cockpit change.",
+        "chineseExample": "可解释适应帮助用户决定保留还是撤销座舱变化。"
+      },
+      {
+        "term": "affective signal",
+        "phonetic": "/əˈfektɪv ˈsɪɡnəl/",
+        "meaning": "情感信号；可能反映情绪或压力状态的语音、面部、姿态或行为数据",
+        "example": "An affective signal should be treated as uncertain input rather than a fixed truth.",
+        "chineseExample": "情感信号应被视为不确定输入，而不是固定事实。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；限定情绪、行为或生理数据采集、存储和使用范围的界限",
+        "example": "A clear privacy boundary makes emotion-aware features easier to trust.",
+        "chineseExample": "清晰的隐私边界让情绪感知功能更容易被信任。"
+      },
+      {
+        "term": "user override",
+        "phonetic": "/ˈjuːzər ˈoʊvərraɪd/",
+        "meaning": "用户覆盖；用户可以暂停、撤销或重新设置系统自动调节的能力",
+        "example": "User override must remain visible after the cockpit changes lighting or seat support.",
+        "chineseExample": "座舱改变灯光或座椅支撑后，用户覆盖入口必须保持可见。"
+      },
+      {
+        "term": "gentle prompt",
+        "phonetic": "/ˈdʒentl prɑːmpt/",
+        "meaning": "温和提示；低压力、低打断、语气克制的用户提示",
+        "example": "A gentle prompt can suggest a breathing pause without sounding medical or intrusive.",
+        "chineseExample": "温和提示可以建议短暂呼吸放松，同时避免显得医疗化或侵入。"
+      },
+      {
+        "term": "adaptive ambience",
+        "phonetic": "/əˈdæptɪv ˈæmbiəns/",
+        "meaning": "自适应氛围；根据场景和用户状态调节光、声、温度等环境体验",
+        "example": "Adaptive ambience should support attention instead of turning the cabin into a show.",
+        "chineseExample": "自适应氛围应支持注意力，而不是把座舱变成表演场景。"
+      },
+      {
+        "term": "confidence wording",
+        "phonetic": "/ˈkɑːnfɪdəns ˈwɜːrdɪŋ/",
+        "meaning": "置信度措辞；用合适语言表达系统不确定性，避免过度断言",
+        "example": "Confidence wording can say the system noticed signs of tension instead of declaring an emotion.",
+        "chineseExample": "置信度措辞可以说系统注意到紧张迹象，而不是直接宣称一种情绪。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "emotion-aware feedback",
+        "phonetic": "/ɪˈmoʊʃn əˈwer ˈfiːdbæk/",
+        "meaning": "情绪感知反馈；系统根据用户情绪线索调整提示语气、节奏或界面强度",
+        "example": "Emotion-aware feedback should calm the driver without pretending to know the driver’s feelings perfectly.",
+        "chineseExample": "情绪感知反馈应安抚驾驶员，但不能假装完全知道驾驶员的感受。"
+      },
+      {
+        "term": "comfort adjustment",
+        "phonetic": "/ˈkʌmfərt əˈdʒʌstmənt/",
+        "meaning": "舒适调节；对温度、座椅、灯光、声音或界面节奏进行的体验优化",
+        "example": "Comfort adjustment is more acceptable when the cockpit explains what changed and why.",
+        "chineseExample": "当座舱解释改变了什么以及为什么改变时，舒适调节更容易被接受。"
+      },
+      {
+        "term": "stress cue",
+        "phonetic": "/stres kjuː/",
+        "meaning": "压力线索；语速、操作频率、驾驶场景或生理信号中体现紧张状态的迹象",
+        "example": "A stress cue should trigger gentler interaction, not a distracting emotional label.",
+        "chineseExample": "压力线索应触发更温和的交互，而不是分散注意力的情绪标签。"
+      },
+      {
+        "term": "explainable adaptation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌædæpˈteɪʃn/",
+        "meaning": "可解释适应；系统在自动调整时说明依据、影响和用户可撤销方式",
+        "example": "Explainable adaptation helps users decide whether to keep or undo a cockpit change.",
+        "chineseExample": "可解释适应帮助用户决定保留还是撤销座舱变化。"
+      },
+      {
+        "term": "affective signal",
+        "phonetic": "/əˈfektɪv ˈsɪɡnəl/",
+        "meaning": "情感信号；可能反映情绪或压力状态的语音、面部、姿态或行为数据",
+        "example": "An affective signal should be treated as uncertain input rather than a fixed truth.",
+        "chineseExample": "情感信号应被视为不确定输入，而不是固定事实。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；限定情绪、行为或生理数据采集、存储和使用范围的界限",
+        "example": "A clear privacy boundary makes emotion-aware features easier to trust.",
+        "chineseExample": "清晰的隐私边界让情绪感知功能更容易被信任。"
+      },
+      {
+        "term": "user override",
+        "phonetic": "/ˈjuːzər ˈoʊvərraɪd/",
+        "meaning": "用户覆盖；用户可以暂停、撤销或重新设置系统自动调节的能力",
+        "example": "User override must remain visible after the cockpit changes lighting or seat support.",
+        "chineseExample": "座舱改变灯光或座椅支撑后，用户覆盖入口必须保持可见。"
+      },
+      {
+        "term": "gentle prompt",
+        "phonetic": "/ˈdʒentl prɑːmpt/",
+        "meaning": "温和提示；低压力、低打断、语气克制的用户提示",
+        "example": "A gentle prompt can suggest a breathing pause without sounding medical or intrusive.",
+        "chineseExample": "温和提示可以建议短暂呼吸放松，同时避免显得医疗化或侵入。"
+      },
+      {
+        "term": "adaptive ambience",
+        "phonetic": "/əˈdæptɪv ˈæmbiəns/",
+        "meaning": "自适应氛围；根据场景和用户状态调节光、声、温度等环境体验",
+        "example": "Adaptive ambience should support attention instead of turning the cabin into a show.",
+        "chineseExample": "自适应氛围应支持注意力，而不是把座舱变成表演场景。"
+      },
+      {
+        "term": "confidence wording",
+        "phonetic": "/ˈkɑːnfɪdəns ˈwɜːrdɪŋ/",
+        "meaning": "置信度措辞；用合适语言表达系统不确定性，避免过度断言",
+        "example": "Confidence wording can say the system noticed signs of tension instead of declaring an emotion.",
+        "chineseExample": "置信度措辞可以说系统注意到紧张迹象，而不是直接宣称一种情绪。"
+      },
+      {
+        "term": "emotional state",
+        "phonetic": "/ɪˈmoʊʃənl steɪt/",
+        "meaning": "情绪状态；用户在某一时刻可能表现出的心理或情感状态",
+        "example": "The cockpit should describe an emotional state only when the confidence is high enough.",
+        "chineseExample": "只有置信度足够高时，座舱才应描述情绪状态。"
+      },
+      {
+        "term": "physiological signal",
+        "phonetic": "/ˌfɪziəˈlɑːdʒɪkl ˈsɪɡnəl/",
+        "meaning": "生理信号；心率、呼吸、眼动等可用于推断状态的数据",
+        "example": "A physiological signal needs careful consent before it shapes cockpit behavior.",
+        "chineseExample": "生理信号在影响座舱行为前需要谨慎征得同意。"
+      },
+      {
+        "term": "voice tone",
+        "phonetic": "/vɔɪs toʊn/",
+        "meaning": "语音语气；说话声音中体现情绪、压力或态度的特征",
+        "example": "Voice tone can support context, but it should not be the only source of truth.",
+        "chineseExample": "语音语气可以支持上下文判断，但不应是唯一依据。"
+      },
+      {
+        "term": "facial expression",
+        "phonetic": "/ˈfeɪʃl ɪkˈspreʃn/",
+        "meaning": "面部表情；可能表达注意力、疲劳或情绪变化的脸部特征",
+        "example": "Facial expression analysis must respect privacy and avoid overconfident labels.",
+        "chineseExample": "面部表情分析必须尊重隐私，并避免过度自信的标签。"
+      },
+      {
+        "term": "interaction intensity",
+        "phonetic": "/ˌɪntərˈækʃn ɪnˈtensəti/",
+        "meaning": "交互强度；提示频率、声音大小、动画幅度和信息密度的综合强弱",
+        "example": "Interaction intensity should decrease during stressful driving conditions.",
+        "chineseExample": "在高压力驾驶条件下，交互强度应降低。"
+      },
+      {
+        "term": "cabin lighting",
+        "phonetic": "/ˈkæbɪn ˈlaɪtɪŋ/",
+        "meaning": "座舱灯光；车内用于舒适、提示和氛围表达的光照系统",
+        "example": "Cabin lighting can shift gradually to avoid surprising the driver.",
+        "chineseExample": "座舱灯光可以逐步变化，避免让驾驶员感到突然。"
+      },
+      {
+        "term": "seat support",
+        "phonetic": "/siːt səˈpɔːrt/",
+        "meaning": "座椅支撑；座椅对腰部、背部或身体姿态的支撑调节",
+        "example": "Seat support changes should be small enough to feel helpful rather than controlling.",
+        "chineseExample": "座椅支撑变化应足够小，让人觉得有帮助而不是被控制。"
+      },
+      {
+        "term": "climate setting",
+        "phonetic": "/ˈklaɪmət ˈsetɪŋ/",
+        "meaning": "空调设置；温度、风量、出风模式等舒适相关设置",
+        "example": "A climate setting can be adjusted silently when the user has allowed automation.",
+        "chineseExample": "在用户允许自动化后，空调设置可以安静地调节。"
+      },
+      {
+        "term": "soundscape",
+        "phonetic": "/ˈsaʊndskeɪp/",
+        "meaning": "声音环境；提示音、媒体音量、降噪和环境声构成的听觉体验",
+        "example": "The soundscape should become simpler when navigation demands attention.",
+        "chineseExample": "当导航需要注意力时，声音环境应变得更简单。"
+      },
+      {
+        "term": "personalization rule",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn ruːl/",
+        "meaning": "个性化规则；决定系统何时、如何为某个用户调整体验的规则",
+        "example": "A personalization rule should be editable in a familiar settings page.",
+        "chineseExample": "个性化规则应能在熟悉的设置页中编辑。"
+      },
+      {
+        "term": "consent screen",
+        "phonetic": "/kənˈsent skriːn/",
+        "meaning": "授权界面；说明数据用途并让用户选择是否开启功能的界面",
+        "example": "The consent screen should separate comfort data from safety-critical data.",
+        "chineseExample": "授权界面应区分舒适数据和安全关键数据。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集实现功能所需的最少数据",
+        "example": "Data minimization reduces risk when affective features run in the cockpit.",
+        "chineseExample": "当情感功能在座舱中运行时，数据最小化可以降低风险。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；数据在车机本地分析，而不是上传到云端",
+        "example": "On-device processing can strengthen the privacy story for emotion-aware design.",
+        "chineseExample": "端侧处理可以强化情绪感知设计的隐私叙事。"
+      },
+      {
+        "term": "context signal",
+        "phonetic": "/ˈkɑːntekst ˈsɪɡnəl/",
+        "meaning": "上下文信号；道路、速度、时间、乘员和任务状态等环境信息",
+        "example": "A context signal helps the assistant choose a calmer response.",
+        "chineseExample": "上下文信号帮助助手选择更平静的回应。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶任务对注意力、认知和操作资源的占用程度",
+        "example": "Driving workload should limit how much explanation appears on screen.",
+        "chineseExample": "驾驶负荷应限制屏幕上出现的解释信息量。"
+      },
+      {
+        "term": "low-interruption design",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃn dɪˈzaɪn/",
+        "meaning": "低打断设计；减少不必要中断并控制提示时机的设计方法",
+        "example": "Low-interruption design keeps affective support from becoming another distraction.",
+        "chineseExample": "低打断设计防止情感支持变成另一个干扰源。"
+      },
+      {
+        "term": "human-readable reason",
+        "phonetic": "/ˈhjuːmən ˈriːdəbl ˈriːzn/",
+        "meaning": "人可读原因；用普通用户能理解的方式解释系统动作的理由",
+        "example": "A human-readable reason is better than showing a sensor score.",
+        "chineseExample": "人可读原因比展示传感器分数更合适。"
+      },
+      {
+        "term": "reversible change",
+        "phonetic": "/rɪˈvɜːrsəbl tʃeɪndʒ/",
+        "meaning": "可撤销变化；用户可以轻松恢复到原状态的系统调整",
+        "example": "Every reversible change should include a clear undo action.",
+        "chineseExample": "每个可撤销变化都应包含清晰的撤销动作。"
+      },
+      {
+        "term": "calm state",
+        "phonetic": "/kɑːm steɪt/",
+        "meaning": "平静状态；界面和环境反馈降低刺激、帮助用户稳定注意力的状态",
+        "example": "The calm state can reduce animations and soften audio cues.",
+        "chineseExample": "平静状态可以减少动画并弱化声音提示。"
+      },
+      {
+        "term": "alert fatigue",
+        "phonetic": "/əˈlɜːrt fəˈtiːɡ/",
+        "meaning": "警报疲劳；过多提示让用户对重要信息反应下降的现象",
+        "example": "Alert fatigue grows when every stress cue creates a visible warning.",
+        "chineseExample": "当每个压力线索都产生可见警告时，警报疲劳会增加。"
+      },
+      {
+        "term": "empathetic copy",
+        "phonetic": "/ˌempəˈθetɪk ˈkɑːpi/",
+        "meaning": "共情文案；语气体贴、克制且尊重用户自主权的界面文字",
+        "example": "Empathetic copy should offer support without judging the driver.",
+        "chineseExample": "共情文案应提供支持，而不是评判驾驶员。"
+      },
+      {
+        "term": "status disclosure",
+        "phonetic": "/ˈsteɪtəs dɪsˈkloʊʒər/",
+        "meaning": "状态披露；说明系统观察到什么、准备做什么以及用户如何控制",
+        "example": "Status disclosure helps users understand automatic comfort actions.",
+        "chineseExample": "状态披露帮助用户理解自动舒适动作。"
+      },
+      {
+        "term": "automation scope",
+        "phonetic": "/ˌɔːtəˈmeɪʃn skoʊp/",
+        "meaning": "自动化范围；系统被允许自动执行哪些调节的边界",
+        "example": "Automation scope should be narrower while the system is still learning preferences.",
+        "chineseExample": "当系统仍在学习偏好时，自动化范围应更窄。"
+      },
+      {
+        "term": "preference learning",
+        "phonetic": "/ˈprefrəns ˈlɜːrnɪŋ/",
+        "meaning": "偏好学习；系统通过长期使用逐步理解用户习惯和选择",
+        "example": "Preference learning should ask for confirmation before changing a sensitive setting.",
+        "chineseExample": "偏好学习在改变敏感设置前应请求确认。"
+      },
+      {
+        "term": "driver agency",
+        "phonetic": "/ˈdraɪvər ˈeɪdʒənsi/",
+        "meaning": "驾驶员主导权；用户对系统行为保持理解、选择和控制的能力",
+        "example": "Driver agency is preserved when the cockpit makes adaptation optional.",
+        "chineseExample": "当座舱让适应性调节保持可选时，驾驶员主导权得以保留。"
+      },
+      {
+        "term": "transparent inference",
+        "phonetic": "/trænsˈpærənt ˈɪnfərəns/",
+        "meaning": "透明推断；说明系统如何从信号推断状态，并承认不确定性",
+        "example": "Transparent inference prevents the assistant from sounding overconfident.",
+        "chineseExample": "透明推断可以避免助手显得过度自信。"
+      },
+      {
+        "term": "sensitive data",
+        "phonetic": "/ˈsensətɪv ˈdeɪtə/",
+        "meaning": "敏感数据；涉及情绪、生理、身份或行为模式的高风险数据",
+        "example": "Sensitive data should never be collected only for decorative personalization.",
+        "chineseExample": "敏感数据绝不应只为装饰性个性化而收集。"
+      },
+      {
+        "term": "trustworthy automation",
+        "phonetic": "/ˈtrʌstwɜːrði ˌɔːtəˈmeɪʃn/",
+        "meaning": "可信自动化；行为可预期、可解释、可撤销并尊重用户边界的自动化",
+        "example": "Trustworthy automation explains small comfort changes at the right moment.",
+        "chineseExample": "可信自动化会在合适时机解释小幅舒适变化。"
+      },
+      {
+        "term": "mood label",
+        "phonetic": "/muːd ˈleɪbl/",
+        "meaning": "情绪标签；系统对用户情绪作出的命名或分类",
+        "example": "A mood label can feel intrusive when the driver has not asked for emotional coaching.",
+        "chineseExample": "当驾驶员没有请求情绪辅导时，情绪标签可能显得侵入。"
+      },
+      {
+        "term": "behavioral pattern",
+        "phonetic": "/bɪˈheɪvjərəl ˈpætərn/",
+        "meaning": "行为模式；用户操作、选择和反应在一段时间内形成的规律",
+        "example": "A behavioral pattern should be combined with context before adaptation.",
+        "chineseExample": "行为模式应与上下文结合后再用于适应性调节。"
+      },
+      {
+        "term": "micro-adjustment",
+        "phonetic": "/ˈmaɪkroʊ əˈdʒʌstmənt/",
+        "meaning": "微调；对座椅、灯光、音量或界面节奏进行的小幅变化",
+        "example": "A micro-adjustment is easier to accept than a dramatic automatic change.",
+        "chineseExample": "微调比剧烈自动变化更容易被接受。"
+      },
+      {
+        "term": "attention support",
+        "phonetic": "/əˈtenʃn səˈpɔːrt/",
+        "meaning": "注意力支持；帮助用户保持驾驶注意力而不增加认知负担的设计",
+        "example": "Attention support should be the purpose of affective cockpit features.",
+        "chineseExample": "注意力支持应是情感座舱功能的目的。"
+      },
+      {
+        "term": "comfort profile",
+        "phonetic": "/ˈkʌmfərt ˈproʊfaɪl/",
+        "meaning": "舒适档案；记录用户对温度、座椅、灯光和声音偏好的配置",
+        "example": "A comfort profile should be easy to reset after a shared vehicle trip.",
+        "chineseExample": "共享车辆行程后，舒适档案应易于重置。"
+      },
+      {
+        "term": "opt-in feature",
+        "phonetic": "/ɑːpt ɪn ˈfiːtʃər/",
+        "meaning": "主动开启功能；只有用户明确选择后才启用的功能",
+        "example": "Emotion-aware personalization should begin as an opt-in feature.",
+        "chineseExample": "情绪感知个性化应以主动开启功能的形式开始。"
+      },
+      {
+        "term": "uncertain input",
+        "phonetic": "/ʌnˈsɜːrtn ˈɪnpʊt/",
+        "meaning": "不确定输入；可能有用但不能单独作为确定判断的数据",
+        "example": "Uncertain input requires conservative wording and a visible override.",
+        "chineseExample": "不确定输入需要保守措辞和可见的覆盖入口。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/ˈkɑːɡnətɪv loʊd/",
+        "meaning": "认知负荷；用户理解、判断和操作信息所需的心理资源",
+        "example": "Cognitive load should stay low when the cockpit explains an automatic change.",
+        "chineseExample": "座舱解释自动变化时，认知负荷应保持较低。"
+      },
+      {
+        "term": "subtle transition",
+        "phonetic": "/ˈsʌtl trænˈzɪʃn/",
+        "meaning": "细微过渡；不会突兀打断用户的渐进式状态变化",
+        "example": "A subtle transition makes adaptive lighting feel intentional but not theatrical.",
+        "chineseExample": "细微过渡让自适应灯光显得有意图但不戏剧化。"
+      },
+      {
+        "term": "explainability",
+        "phonetic": "/ɪkˌspleɪnəˈbɪləti/",
+        "meaning": "可解释性；系统让用户理解其判断依据和动作原因的能力",
+        "example": "Explainability matters most when automation touches personal comfort.",
+        "chineseExample": "当自动化影响个人舒适时，可解释性最重要。"
+      },
+      {
+        "term": "affective computing",
+        "phonetic": "/əˈfektɪv kəmˈpjuːtɪŋ/",
+        "meaning": "情感计算；识别、解释或响应人类情绪相关信号的计算领域",
+        "example": "Affective computing in vehicles must be restrained by safety and privacy needs.",
+        "chineseExample": "车辆中的情感计算必须受到安全和隐私需求的约束。"
+      },
+      {
+        "term": "driver wellbeing",
+        "phonetic": "/ˈdraɪvər welˈbiːɪŋ/",
+        "meaning": "驾驶员身心舒适；与压力、疲劳、舒适和安全感相关的综合体验",
+        "example": "Driver wellbeing should improve through small, respectful cockpit actions.",
+        "chineseExample": "驾驶员身心舒适应通过小而尊重用户的座舱动作得到改善。"
+      },
+      {
+        "term": "emotion-aware",
+        "phonetic": "/ɪˈmoʊʃn əˈwer/",
+        "meaning": "情绪感知的；能够结合情绪或压力线索进行响应的",
+        "example": "Emotion-aware design should communicate uncertainty clearly.",
+        "chineseExample": "情绪感知设计应清楚传达不确定性。"
+      },
+      {
+        "term": "s",
+        "phonetic": "/es/",
+        "meaning": "所有格标记；在 driver’s 等词中表示所属关系",
+        "example": "The driver’s emotional state should not be treated as proof.",
+        "chineseExample": "在 driver’s 中，s 表示“驾驶员的”。"
+      },
+      {
+        "term": "feelings",
+        "phonetic": "/ˈfiːlɪŋz/",
+        "meaning": "感受；情绪体验或主观感觉",
+        "example": "The system should not claim to know the driver’s feelings perfectly.",
+        "chineseExample": "系统不应声称完全知道驾驶员的感受。"
+      },
+      {
+        "term": "perfectly",
+        "phonetic": "/ˈpɜːrfɪktli/",
+        "meaning": "完全地；毫无误差地",
+        "example": "A cockpit cannot infer emotions perfectly from one signal.",
+        "chineseExample": "座舱无法从单一信号完全准确地推断情绪。"
+      },
+      {
+        "term": "gentler",
+        "phonetic": "/ˈdʒentlər/",
+        "meaning": "更温和的；刺激更少、语气更缓和的",
+        "example": "Stress cues should lead to gentler interaction.",
+        "chineseExample": "压力线索应引导更温和的交互。"
+      },
+      {
+        "term": "emotional",
+        "phonetic": "/ɪˈmoʊʃənl/",
+        "meaning": "情绪的；与情感状态相关的",
+        "example": "Emotional labels can feel intrusive in a vehicle.",
+        "chineseExample": "情绪标签在车内可能显得侵入。"
+      },
+      {
+        "term": "adaptation",
+        "phonetic": "/ˌædæpˈteɪʃn/",
+        "meaning": "适应；系统根据环境或用户状态调整行为",
+        "example": "Adaptation should remain optional when comfort is personal.",
+        "chineseExample": "当舒适体验具有个人属性时，适应性调节应保持可选。"
+      },
+      {
+        "term": "affective",
+        "phonetic": "/əˈfektɪv/",
+        "meaning": "情感相关的；涉及情绪识别、解释或响应的",
+        "example": "Affective signals require careful privacy design.",
+        "chineseExample": "情感信号需要谨慎的隐私设计。"
+      },
+      {
+        "term": "fixed",
+        "phonetic": "/fɪkst/",
+        "meaning": "固定的；确定不变的",
+        "example": "An affective signal is not a fixed truth.",
+        "chineseExample": "情感信号不是固定事实。"
+      },
+      {
+        "term": "truth",
+        "phonetic": "/truːθ/",
+        "meaning": "事实；真实情况",
+        "example": "The interface should avoid presenting inference as truth.",
+        "chineseExample": "界面应避免把推断呈现为事实。"
+      },
+      {
+        "term": "breathing",
+        "phonetic": "/ˈbriːðɪŋ/",
+        "meaning": "呼吸；可用于放松提示的身体节奏",
+        "example": "A breathing pause should be suggested gently.",
+        "chineseExample": "呼吸暂停练习应以温和方式建议。"
+      },
+      {
+        "term": "medical",
+        "phonetic": "/ˈmedɪkl/",
+        "meaning": "医疗的；与诊断或治疗相关的",
+        "example": "A comfort prompt should not sound medical.",
+        "chineseExample": "舒适提示不应听起来像医疗建议。"
+      },
+      {
+        "term": "intrusive",
+        "phonetic": "/ɪnˈtruːsɪv/",
+        "meaning": "侵入的；让用户感到被冒犯或被过度观察的",
+        "example": "Mood labels may feel intrusive without user consent.",
+        "chineseExample": "没有用户同意时，情绪标签可能显得侵入。"
+      },
+      {
+        "term": "ambience",
+        "phonetic": "/ˈæmbiəns/",
+        "meaning": "氛围；由光、声、温度等共同形成的环境感受",
+        "example": "Ambience can support attention during a demanding drive.",
+        "chineseExample": "氛围可以在高要求驾驶中支持注意力。"
+      },
+      {
+        "term": "noticed",
+        "phonetic": "/ˈnoʊtɪst/",
+        "meaning": "注意到；观察到某个线索或变化",
+        "example": "The system noticed signs of tension but should remain cautious.",
+        "chineseExample": "系统注意到紧张迹象，但应保持谨慎。"
+      },
+      {
+        "term": "tension",
+        "phonetic": "/ˈtenʃn/",
+        "meaning": "紧张；压力或不安的状态",
+        "example": "Signs of tension should be phrased as uncertain input.",
+        "chineseExample": "紧张迹象应被表述为不确定输入。"
+      },
+      {
+        "term": "declaring",
+        "phonetic": "/dɪˈklerɪŋ/",
+        "meaning": "宣称；直接作出明确判断",
+        "example": "Declaring an emotion can reduce user trust.",
+        "chineseExample": "直接宣称一种情绪可能降低用户信任。"
+      },
+      {
+        "term": "emotion",
+        "phonetic": "/ɪˈmoʊʃn/",
+        "meaning": "情绪；人的情感反应或心理状态",
+        "example": "The cockpit should avoid naming an emotion too confidently.",
+        "chineseExample": "座舱应避免过度自信地命名情绪。"
+      },
+      {
+        "term": "careful",
+        "phonetic": "/ˈkerfl/",
+        "meaning": "谨慎的；注意风险和边界的",
+        "example": "Emotion-aware design must be careful with language.",
+        "chineseExample": "情绪感知设计必须谨慎处理语言。"
+      },
+      {
+        "term": "physiological",
+        "phonetic": "/ˌfɪziəˈlɑːdʒɪkl/",
+        "meaning": "生理的；与身体状态和生物信号相关的",
+        "example": "Physiological signals should require explicit consent.",
+        "chineseExample": "生理信号应要求明确授权。"
+      },
+      {
+        "term": "proof",
+        "phonetic": "/pruːf/",
+        "meaning": "证据；能支持确定判断的依据",
+        "example": "A single stress cue is not proof of emotion.",
+        "chineseExample": "单一压力线索不是情绪证据。"
+      },
+      {
+        "term": "mood",
+        "phonetic": "/muːd/",
+        "meaning": "心情；较持续的情绪状态",
+        "example": "Mood labels should be used with caution.",
+        "chineseExample": "情绪标签应谨慎使用。"
+      },
+      {
+        "term": "angry",
+        "phonetic": "/ˈæŋɡri/",
+        "meaning": "生气的；愤怒的",
+        "example": "The cockpit should not say the driver is angry.",
+        "chineseExample": "座舱不应说驾驶员生气了。"
+      },
+      {
+        "term": "anxious",
+        "phonetic": "/ˈæŋkʃəs/",
+        "meaning": "焦虑的；紧张不安的",
+        "example": "The word anxious is too strong for uncertain cockpit inference.",
+        "chineseExample": "对于不确定的座舱推断，anxious 这个词过强。"
+      },
+      {
+        "term": "drive",
+        "phonetic": "/draɪv/",
+        "meaning": "驾驶过程；一次出行或驾驶任务",
+        "example": "This drive may be demanding, so the cockpit can reduce intensity.",
+        "chineseExample": "这段驾驶可能要求较高，因此座舱可以降低强度。"
+      },
+      {
+        "term": "demanding",
+        "phonetic": "/dɪˈmændɪŋ/",
+        "meaning": "要求高的；需要更多注意力或精力的",
+        "example": "A demanding drive calls for simpler interface behavior.",
+        "chineseExample": "高要求驾驶需要更简单的界面行为。"
+      },
+      {
+        "term": "soften",
+        "phonetic": "/ˈsɔːfn/",
+        "meaning": "柔化；降低强度、刺激或突兀感",
+        "example": "The cockpit can soften cabin lighting at night.",
+        "chineseExample": "座舱可以在夜间柔化座舱灯光。"
+      },
+      {
+        "term": "disclose",
+        "phonetic": "/dɪsˈkloʊz/",
+        "meaning": "披露；清楚说明观察、原因或影响",
+        "example": "The interface should disclose why comfort settings changed.",
+        "chineseExample": "界面应披露舒适设置为什么发生变化。"
+      },
+      {
+        "term": "human-readable",
+        "phonetic": "/ˈhjuːmən ˈriːdəbl/",
+        "meaning": "人可读的；普通用户可以理解的",
+        "example": "Human-readable reasons support explainable adaptation.",
+        "chineseExample": "人可读原因支持可解释适应。"
+      },
+      {
+        "term": "shapes",
+        "phonetic": "/ʃeɪps/",
+        "meaning": "塑造；影响某个体验或结果的形成",
+        "example": "Privacy shapes the interaction model.",
+        "chineseExample": "隐私会塑造交互模型。"
+      },
+      {
+        "term": "opt-in",
+        "phonetic": "/ɑːpt ɪn/",
+        "meaning": "主动选择加入的；用户明确开启后才启用的",
+        "example": "Emotion-aware personalization should be opt-in.",
+        "chineseExample": "情绪感知个性化应由用户主动开启。"
+      },
+      {
+        "term": "prefer",
+        "phonetic": "/prɪˈfɜːr/",
+        "meaning": "优先选择；更倾向于采用某种方式",
+        "example": "The system should prefer on-device processing when possible.",
+        "chineseExample": "系统应在可能时优先选择端侧处理。"
+      },
+      {
+        "term": "diagnose",
+        "phonetic": "/ˌdaɪəɡˈnoʊz/",
+        "meaning": "诊断；判断疾病或心理状态，通常属于医疗语境",
+        "example": "The cockpit should not diagnose the driver.",
+        "chineseExample": "座舱不应诊断驾驶员。"
+      },
+      {
+        "term": "adapts",
+        "phonetic": "/əˈdæpts/",
+        "meaning": "适应；根据情况进行调整",
+        "example": "The cabin adapts in a calm and respectful way.",
+        "chineseExample": "座舱以平静且尊重用户的方式适应。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing emotion-aware comfort without overclaiming",
+        "text": "Emotion-aware cockpit design can improve comfort, but it must be careful with language, timing, and control. A vehicle may notice stress cues from voice tone, repeated touch errors, traffic context, or physiological signals. These signals are useful, yet they are uncertain input, not proof of a driver’s emotional state. Good HMI design therefore avoids strong mood labels such as you are angry or you are anxious. Instead, the cockpit can use confidence wording: it looks like this drive may be demanding, so I can lower interaction intensity or soften cabin lighting. The best comfort adjustment is small, reversible, and easy to explain. If the system changes climate settings, seat support, soundscape, or adaptive ambience, it should disclose the human-readable reason and keep user override visible. Privacy also shapes the interaction. Emotion-aware personalization should be opt-in, rely on data minimization, and prefer on-device processing when possible. A consent screen should make the automation scope clear before affective signals influence product behavior. The goal is not to diagnose the driver. The goal is to support attention, reduce cognitive load, and preserve driver agency while the cabin adapts in a calm and respectful way.",
+        "translation": "情绪感知座舱设计可以提升舒适性，但必须谨慎处理语言、时机和控制权。车辆可能从语音语气、反复触控错误、交通上下文或生理信号中注意到压力线索。这些信号有用，但它们是不确定输入，不是驾驶员情绪状态的证据。因此，好的 HMI 设计会避免“你很生气”或“你很焦虑”这类强情绪标签。相反，座舱可以使用置信度措辞：这段驾驶似乎要求较高，我可以降低交互强度或柔化座舱灯光。最好的舒适调节是小幅、可撤销且易解释的。如果系统改变空调设置、座椅支撑、声音环境或自适应氛围，它应披露人可读原因，并保持用户覆盖入口可见。隐私同样塑造交互。情绪感知个性化应主动开启，遵循数据最小化，并尽可能优先端侧处理。授权界面应在情感信号影响产品行为前说明自动化范围。目标不是诊断驾驶员。目标是在座舱以平静、尊重的方式适应时，支持注意力、降低认知负荷并保留驾驶员主导权。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "These signals are useful, yet they are uncertain input, not proof of a driver’s emotional state.",
+        "translation": "这些信号有用，但它们是不确定输入，不是驾驶员情绪状态的证据。",
+        "points": [
+          "yet 连接转折，强调可用性和不确定性同时存在。",
+          "not proof of 用于避免过度断言，是情绪感知设计中的关键表达。"
+        ]
+      },
+      {
+        "sentence": "Instead, the cockpit can use confidence wording: it looks like this drive may be demanding, so I can lower interaction intensity or soften cabin lighting.",
+        "translation": "相反，座舱可以使用置信度措辞：这段驾驶似乎要求较高，因此我可以降低交互强度或柔化座舱灯光。",
+        "points": [
+          "it looks like 与 may 表达不确定判断，比直接贴情绪标签更稳妥。",
+          "lower 与 soften 描述低打断、低刺激的调节动作。"
+        ]
+      },
+      {
+        "sentence": "If the system changes climate settings, seat support, soundscape, or adaptive ambience, it should disclose the human-readable reason and keep user override visible.",
+        "translation": "如果系统改变空调设置、座椅支撑、声音环境或自适应氛围，它应披露人可读原因，并保持用户覆盖入口可见。",
+        "points": [
+          "If 引导自动调节发生后的条件场景。",
+          "disclose the reason and keep override visible 说明可解释性和用户主导权的两个动作。"
+        ]
+      },
+      {
+        "sentence": "The goal is to support attention, reduce cognitive load, and preserve driver agency while the cabin adapts in a calm and respectful way.",
+        "translation": "目标是在座舱以平静、尊重的方式适应时，支持注意力、降低认知负荷并保留驾驶员主导权。",
+        "points": [
+          "support, reduce, preserve 三个并列动词概括设计目标。",
+          "while 引导同步发生的背景动作，说明适应不应牺牲用户控制。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "time": "4 分钟",
+        "task": "朗读 10 个核心词汇，重点区分 emotion-aware feedback、affective signal、privacy boundary 和 user override。"
+      },
+      {
+        "time": "7 分钟",
+        "task": "跟读长文两遍，第一遍抓住不确定性表达，第二遍关注系统自动调节后的解释方式。"
+      },
+      {
+        "time": "6 分钟",
+        "task": "用英文复述一次情绪感知舒适调节流程，必须包含 stress cue、confidence wording 和 reversible change。"
+      },
+      {
+        "time": "5 分钟",
+        "task": "把一句过度断言的提示改写为克制文案，例如把 You are anxious 改为 This drive may be demanding."
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-06-ota-rollback-transparency",
     "date": "2026-09-06",
     "title": "OTA rollback transparency and safe fallback messaging",
