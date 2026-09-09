@@ -1,5 +1,792 @@
 [
   {
+    "id": "2026-09-09-sensor-failure-graceful-degradation",
+    "date": "2026-09-09",
+    "title": "Sensor failure messaging and graceful degradation in intelligent cockpits",
+    "topic": "智能座舱传感器故障提示与优雅降级",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述传感器置信度下降、冗余感知、降级模式、面向驾驶员的状态说明、回退行为和状态升级。",
+    "words": [
+      {
+        "term": "graceful degradation",
+        "phonetic": "/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃn/",
+        "meaning": "优雅降级；系统能力受限时仍以可理解、可控的方式继续工作",
+        "example": "Graceful degradation keeps the cockpit useful when one sensor becomes unreliable.",
+        "chineseExample": "当某个传感器变得不可靠时，优雅降级让座舱仍保持可用。"
+      },
+      {
+        "term": "sensor confidence",
+        "phonetic": "/ˈsensər ˈkɑːnfɪdəns/",
+        "meaning": "传感器置信度；系统对传感器读数可信程度的判断",
+        "example": "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
+        "chineseExample": "传感器置信度应转化为面向驾驶员的信息，而不是隐藏成诊断代码。"
+      },
+      {
+        "term": "redundant sensing",
+        "phonetic": "/rɪˈdʌndənt ˈsensɪŋ/",
+        "meaning": "冗余感知；使用多个传感器或信号来源交叉验证同一场景",
+        "example": "Redundant sensing helps the vehicle compare camera, radar, and map signals before changing the interface state.",
+        "chineseExample": "冗余感知帮助车辆在改变界面状态前比较摄像头、雷达和地图信号。"
+      },
+      {
+        "term": "degraded mode",
+        "phonetic": "/dɪˈɡreɪdɪd moʊd/",
+        "meaning": "降级模式；部分自动化或辅助能力暂停、受限或降低精度的工作状态",
+        "example": "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
+        "chineseExample": "在驾驶员失去熟悉的辅助功能前，仪表应显示降级模式。"
+      },
+      {
+        "term": "driver-facing status",
+        "phonetic": "/ˈdraɪvər ˈfeɪsɪŋ ˈsteɪtəs/",
+        "meaning": "面向驾驶员的状态；把系统内部条件转化为驾驶员能理解的界面反馈",
+        "example": "A driver-facing status explains what changed, why it changed, and what the driver should do next.",
+        "chineseExample": "面向驾驶员的状态说明发生了什么变化、为什么变化以及驾驶员下一步该做什么。"
+      },
+      {
+        "term": "fallback behavior",
+        "phonetic": "/ˈfɔːlbæk bɪˈheɪvjər/",
+        "meaning": "回退行为；主功能不可用时系统采用的替代操作或保守策略",
+        "example": "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
+        "chineseExample": "回退行为在屏幕、声音和方向盘控制之间都应保持可预测。"
+      },
+      {
+        "term": "fault-tolerant interaction",
+        "phonetic": "/fɔːlt ˈtɑːlərənt ˌɪntərˈækʃn/",
+        "meaning": "容错交互；在输入、传感器或系统状态异常时仍支持用户完成任务的交互方式",
+        "example": "Fault-tolerant interaction gives the driver a safe path even when automation cannot complete the request.",
+        "chineseExample": "即使自动化无法完成请求，容错交互也会给驾驶员一条安全路径。"
+      },
+      {
+        "term": "limited availability",
+        "phonetic": "/ˈlɪmɪtɪd əˌveɪləˈbɪləti/",
+        "meaning": "有限可用；功能暂时只在部分条件下可用或能力受限",
+        "example": "Limited availability should be announced with a reason and a clear recovery condition.",
+        "chineseExample": "有限可用状态应同时告知原因和清晰的恢复条件。"
+      },
+      {
+        "term": "recovery condition",
+        "phonetic": "/rɪˈkʌvəri kənˈdɪʃn/",
+        "meaning": "恢复条件；系统或功能回到正常状态所需要满足的条件",
+        "example": "A recovery condition tells the driver when lane assistance may return to normal.",
+        "chineseExample": "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+      },
+      {
+        "term": "status escalation",
+        "phonetic": "/ˈsteɪtəs ˌeskəˈleɪʃn/",
+        "meaning": "状态升级；根据风险或持续时间把提示从低打断层级提升到更高层级",
+        "example": "Status escalation is appropriate when a quiet banner has not been noticed and the risk is increasing.",
+        "chineseExample": "当安静横幅未被注意且风险正在上升时，状态升级是合适的。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "graceful degradation",
+        "phonetic": "/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃn/",
+        "meaning": "优雅降级；系统能力受限时仍以可理解、可控的方式继续工作",
+        "example": "Graceful degradation keeps the cockpit useful when one sensor becomes unreliable.",
+        "chineseExample": "当某个传感器变得不可靠时，优雅降级让座舱仍保持可用。"
+      },
+      {
+        "term": "sensor confidence",
+        "phonetic": "/ˈsensər ˈkɑːnfɪdəns/",
+        "meaning": "传感器置信度；系统对传感器读数可信程度的判断",
+        "example": "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
+        "chineseExample": "传感器置信度应转化为面向驾驶员的信息，而不是隐藏成诊断代码。"
+      },
+      {
+        "term": "redundant sensing",
+        "phonetic": "/rɪˈdʌndənt ˈsensɪŋ/",
+        "meaning": "冗余感知；使用多个传感器或信号来源交叉验证同一场景",
+        "example": "Redundant sensing helps the vehicle compare camera, radar, and map signals before changing the interface state.",
+        "chineseExample": "冗余感知帮助车辆在改变界面状态前比较摄像头、雷达和地图信号。"
+      },
+      {
+        "term": "degraded mode",
+        "phonetic": "/dɪˈɡreɪdɪd moʊd/",
+        "meaning": "降级模式；部分自动化或辅助能力暂停、受限或降低精度的工作状态",
+        "example": "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
+        "chineseExample": "在驾驶员失去熟悉的辅助功能前，仪表应显示降级模式。"
+      },
+      {
+        "term": "driver-facing status",
+        "phonetic": "/ˈdraɪvər ˈfeɪsɪŋ ˈsteɪtəs/",
+        "meaning": "面向驾驶员的状态；把系统内部条件转化为驾驶员能理解的界面反馈",
+        "example": "A driver-facing status explains what changed, why it changed, and what the driver should do next.",
+        "chineseExample": "面向驾驶员的状态说明发生了什么变化、为什么变化以及驾驶员下一步该做什么。"
+      },
+      {
+        "term": "fallback behavior",
+        "phonetic": "/ˈfɔːlbæk bɪˈheɪvjər/",
+        "meaning": "回退行为；主功能不可用时系统采用的替代操作或保守策略",
+        "example": "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
+        "chineseExample": "回退行为在屏幕、声音和方向盘控制之间都应保持可预测。"
+      },
+      {
+        "term": "fault-tolerant interaction",
+        "phonetic": "/fɔːlt ˈtɑːlərənt ˌɪntərˈækʃn/",
+        "meaning": "容错交互；在输入、传感器或系统状态异常时仍支持用户完成任务的交互方式",
+        "example": "Fault-tolerant interaction gives the driver a safe path even when automation cannot complete the request.",
+        "chineseExample": "即使自动化无法完成请求，容错交互也会给驾驶员一条安全路径。"
+      },
+      {
+        "term": "limited availability",
+        "phonetic": "/ˈlɪmɪtɪd əˌveɪləˈbɪləti/",
+        "meaning": "有限可用；功能暂时只在部分条件下可用或能力受限",
+        "example": "Limited availability should be announced with a reason and a clear recovery condition.",
+        "chineseExample": "有限可用状态应同时告知原因和清晰的恢复条件。"
+      },
+      {
+        "term": "recovery condition",
+        "phonetic": "/rɪˈkʌvəri kənˈdɪʃn/",
+        "meaning": "恢复条件；系统或功能回到正常状态所需要满足的条件",
+        "example": "A recovery condition tells the driver when lane assistance may return to normal.",
+        "chineseExample": "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+      },
+      {
+        "term": "status escalation",
+        "phonetic": "/ˈsteɪtəs ˌeskəˈleɪʃn/",
+        "meaning": "状态升级；根据风险或持续时间把提示从低打断层级提升到更高层级",
+        "example": "Status escalation is appropriate when a quiet banner has not been noticed and the risk is increasing.",
+        "chineseExample": "当安静横幅未被注意且风险正在上升时，状态升级是合适的。"
+      },
+      {
+        "term": "graceful",
+        "phonetic": "/ˈɡreɪsfəl/",
+        "meaning": "优雅的；让变化显得平稳、可理解的",
+        "example": "A graceful transition avoids surprising the driver.",
+        "chineseExample": "优雅的过渡可以避免让驾驶员感到突然。"
+      },
+      {
+        "term": "degradation",
+        "phonetic": "/ˌdeɡrəˈdeɪʃn/",
+        "meaning": "降级；性能或能力下降",
+        "example": "Degradation should be visible before it affects control.",
+        "chineseExample": "降级应在影响控制前可见。"
+      },
+      {
+        "term": "sensor",
+        "phonetic": "/ˈsensər/",
+        "meaning": "传感器；检测环境、车辆或用户状态的部件",
+        "example": "The sensor may lose accuracy in heavy rain.",
+        "chineseExample": "传感器在大雨中可能失去精度。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对判断可靠性的估计",
+        "example": "Confidence drops when signals conflict.",
+        "chineseExample": "当信号冲突时，置信度会下降。"
+      },
+      {
+        "term": "redundant",
+        "phonetic": "/rɪˈdʌndənt/",
+        "meaning": "冗余的；作为备用或交叉验证而重复配置的",
+        "example": "A redundant channel can support safer fallback.",
+        "chineseExample": "冗余通道可以支持更安全的回退。"
+      },
+      {
+        "term": "sensing",
+        "phonetic": "/ˈsensɪŋ/",
+        "meaning": "感知；采集和解释外部或车内状态",
+        "example": "Sensing supports lane, weather, and driver-state decisions.",
+        "chineseExample": "感知支持车道、天气和驾驶员状态判断。"
+      },
+      {
+        "term": "degraded",
+        "phonetic": "/dɪˈɡreɪdɪd/",
+        "meaning": "已降级的；能力受限的",
+        "example": "A degraded feature should explain its current limits.",
+        "chineseExample": "已降级功能应解释当前限制。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/moʊd/",
+        "meaning": "模式；系统当前的工作状态",
+        "example": "The mode label must stay consistent across displays.",
+        "chineseExample": "模式标签必须在各显示屏之间保持一致。"
+      },
+      {
+        "term": "driver-facing",
+        "phonetic": "/ˈdraɪvər ˈfeɪsɪŋ/",
+        "meaning": "面向驾驶员的；为驾驶员理解和行动而呈现的",
+        "example": "Driver-facing language should avoid engineering jargon.",
+        "chineseExample": "面向驾驶员的语言应避免工程术语。"
+      },
+      {
+        "term": "status",
+        "phonetic": "/ˈsteɪtəs/",
+        "meaning": "状态；系统当前条件或可用性",
+        "example": "Status text helps the driver understand availability.",
+        "chineseExample": "状态文本帮助驾驶员理解可用性。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "回退；主方案不可用时的备用方案",
+        "example": "The fallback should be simple and familiar.",
+        "chineseExample": "回退方案应简单且熟悉。"
+      },
+      {
+        "term": "behavior",
+        "phonetic": "/bɪˈheɪvjər/",
+        "meaning": "行为；系统在特定条件下的表现方式",
+        "example": "Behavior must match the message shown on screen.",
+        "chineseExample": "行为必须与屏幕上显示的信息一致。"
+      },
+      {
+        "term": "fault-tolerant",
+        "phonetic": "/fɔːlt ˈtɑːlərənt/",
+        "meaning": "容错的；能在故障或异常下继续安全工作的",
+        "example": "A fault-tolerant flow avoids dead ends.",
+        "chineseExample": "容错流程会避免无路可走的状态。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；用户与系统之间的操作和反馈过程",
+        "example": "Interaction quality matters most under stress.",
+        "chineseExample": "交互质量在压力下最重要。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/ˈlɪmɪtɪd/",
+        "meaning": "有限的；受范围、能力或条件限制的",
+        "example": "Limited support is better than a silent failure.",
+        "chineseExample": "有限支持比静默失败更好。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "可用性；功能当前是否可使用",
+        "example": "Availability should be clear before the driver relies on it.",
+        "chineseExample": "在驾驶员依赖功能前，可用性应清晰可见。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/rɪˈkʌvəri/",
+        "meaning": "恢复；从异常或降级回到正常状态",
+        "example": "Recovery can happen automatically after visibility improves.",
+        "chineseExample": "能见度改善后，恢复可以自动发生。"
+      },
+      {
+        "term": "condition",
+        "phonetic": "/kənˈdɪʃn/",
+        "meaning": "条件；触发或恢复功能所需的状态",
+        "example": "The condition should be written in plain language.",
+        "chineseExample": "条件应使用通俗语言表达。"
+      },
+      {
+        "term": "escalation",
+        "phonetic": "/ˌeskəˈleɪʃn/",
+        "meaning": "升级；提示强度、优先级或处理层级提高",
+        "example": "Escalation should match the urgency of the risk.",
+        "chineseExample": "升级应匹配风险的紧迫程度。"
+      },
+      {
+        "term": "unreliable",
+        "phonetic": "/ˌʌnrɪˈlaɪəbl/",
+        "meaning": "不可靠的；无法稳定提供可信结果的",
+        "example": "An unreliable camera feed should reduce automation confidence.",
+        "chineseExample": "不可靠的摄像头画面应降低自动化置信度。"
+      },
+      {
+        "term": "diagnostic code",
+        "phonetic": "/ˌdaɪəɡˈnɑːstɪk koʊd/",
+        "meaning": "诊断代码；用于工程或维修判断的系统错误编码",
+        "example": "A diagnostic code is useful for service, but not enough for the driver.",
+        "chineseExample": "诊断代码对维修有用，但对驾驶员来说还不够。"
+      },
+      {
+        "term": "interface state",
+        "phonetic": "/ˈɪntərfeɪs steɪt/",
+        "meaning": "界面状态；界面呈现的当前模式、可用性和反馈组合",
+        "example": "The interface state should change only after the system checks sensor confidence.",
+        "chineseExample": "界面状态应在系统检查传感器置信度后才改变。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "仪表显示区；驾驶员前方的核心车辆信息显示区域",
+        "example": "The cluster is the right place for critical availability messages.",
+        "chineseExample": "仪表显示区适合承载关键可用性信息。"
+      },
+      {
+        "term": "assistance feature",
+        "phonetic": "/əˈsɪstəns ˈfiːtʃər/",
+        "meaning": "辅助功能；帮助驾驶或操作的系统能力",
+        "example": "An assistance feature needs a clear status when it is limited.",
+        "chineseExample": "辅助功能受限时需要清晰状态。"
+      },
+      {
+        "term": "lane assistance",
+        "phonetic": "/leɪn əˈsɪstəns/",
+        "meaning": "车道辅助；帮助保持、识别或提醒车道状态的功能",
+        "example": "Lane assistance may pause when markings are covered.",
+        "chineseExample": "当车道线被覆盖时，车道辅助可能暂停。"
+      },
+      {
+        "term": "map signal",
+        "phonetic": "/mæp ˈsɪɡnəl/",
+        "meaning": "地图信号；来自地图数据的道路、车道或位置判断依据",
+        "example": "A map signal can confirm what the camera sees.",
+        "chineseExample": "地图信号可以确认摄像头看到的内容。"
+      },
+      {
+        "term": "camera signal",
+        "phonetic": "/ˈkæmərə ˈsɪɡnəl/",
+        "meaning": "摄像头信号；由摄像头提供的视觉感知信息",
+        "example": "A camera signal may be weak at night.",
+        "chineseExample": "摄像头信号在夜间可能较弱。"
+      },
+      {
+        "term": "radar signal",
+        "phonetic": "/ˈreɪdɑːr ˈsɪɡnəl/",
+        "meaning": "雷达信号；由雷达提供的距离、速度或目标信息",
+        "example": "A radar signal can still work when visibility is poor.",
+        "chineseExample": "能见度差时，雷达信号仍可能工作。"
+      },
+      {
+        "term": "signal conflict",
+        "phonetic": "/ˈsɪɡnəl ˈkɑːnflɪkt/",
+        "meaning": "信号冲突；多个信息来源给出不一致判断",
+        "example": "Signal conflict should trigger a more conservative interface state.",
+        "chineseExample": "信号冲突应触发更保守的界面状态。"
+      },
+      {
+        "term": "conservative state",
+        "phonetic": "/kənˈsɜːrvətɪv steɪt/",
+        "meaning": "保守状态；系统在不确定时采用的更安全、更少自动化的状态",
+        "example": "A conservative state can protect trust during uncertainty.",
+        "chineseExample": "保守状态可以在不确定时保护信任。"
+      },
+      {
+        "term": "visibility",
+        "phonetic": "/ˌvɪzəˈbɪləti/",
+        "meaning": "能见度；道路或环境可被传感器和驾驶员看清的程度",
+        "example": "Low visibility may limit camera-based features.",
+        "chineseExample": "低能见度可能限制基于摄像头的功能。"
+      },
+      {
+        "term": "road markings",
+        "phonetic": "/roʊd ˈmɑːrkɪŋz/",
+        "meaning": "道路标线；车道线、边界线等路面视觉标记",
+        "example": "Road markings are hard to read in snow.",
+        "chineseExample": "雪天道路标线很难识别。"
+      },
+      {
+        "term": "weather noise",
+        "phonetic": "/ˈweðər nɔɪz/",
+        "meaning": "天气噪声；雨雪雾等天气对感知信号造成的干扰",
+        "example": "Weather noise can make a sensor less reliable.",
+        "chineseExample": "天气噪声会让传感器变得不那么可靠。"
+      },
+      {
+        "term": "plain-language reason",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ ˈriːzn/",
+        "meaning": "通俗原因；用户不需要工程背景也能理解的解释",
+        "example": "A plain-language reason is easier to trust than a fault number.",
+        "chineseExample": "通俗原因比故障编号更容易被信任。"
+      },
+      {
+        "term": "next action",
+        "phonetic": "/nekst ˈækʃn/",
+        "meaning": "下一步动作；用户在当前状态下应采取的明确操作",
+        "example": "The next action should be short, visible, and safe.",
+        "chineseExample": "下一步动作应简短、可见且安全。"
+      },
+      {
+        "term": "quiet banner",
+        "phonetic": "/ˈkwaɪət ˈbænər/",
+        "meaning": "低打断横幅；不强制打断但持续可见的提示条",
+        "example": "A quiet banner is suitable for low-risk limitation messages.",
+        "chineseExample": "低打断横幅适合低风险的限制提示。"
+      },
+      {
+        "term": "audible prompt",
+        "phonetic": "/ˈɔːdəbl prɑːmpt/",
+        "meaning": "声音提示；通过语音或提示音传达的信息",
+        "example": "An audible prompt may be needed when the driver misses the banner.",
+        "chineseExample": "当驾驶员错过横幅时，可能需要声音提示。"
+      },
+      {
+        "term": "handover cue",
+        "phonetic": "/ˈhændoʊvər kjuː/",
+        "meaning": "接管线索；提示用户从系统辅助转为人工控制的信息",
+        "example": "A handover cue should appear before support drops away.",
+        "chineseExample": "接管线索应在支持消失前出现。"
+      },
+      {
+        "term": "support drops away",
+        "phonetic": "/səˈpɔːrt drɑːps əˈweɪ/",
+        "meaning": "支持消失；辅助能力突然停止或退出",
+        "example": "Support drops away feels unsafe if the cockpit gives no warning.",
+        "chineseExample": "如果座舱没有预警，支持突然消失会让人感觉不安全。"
+      },
+      {
+        "term": "cross-screen consistency",
+        "phonetic": "/krɔːs skriːn kənˈsɪstənsi/",
+        "meaning": "跨屏一致性；不同显示区对同一状态使用一致表达",
+        "example": "Cross-screen consistency prevents mixed messages.",
+        "chineseExample": "跨屏一致性可以避免信息混乱。"
+      },
+      {
+        "term": "mixed message",
+        "phonetic": "/mɪkst ˈmesɪdʒ/",
+        "meaning": "混杂信息；不同通道传达相互矛盾的提示",
+        "example": "A mixed message can make the driver doubt the system.",
+        "chineseExample": "混杂信息会让驾驶员怀疑系统。"
+      },
+      {
+        "term": "service detail",
+        "phonetic": "/ˈsɜːrvɪs ˈdiːteɪl/",
+        "meaning": "维修细节；面向售后或技术人员的诊断信息",
+        "example": "Service detail should be separate from the driver message.",
+        "chineseExample": "维修细节应与驾驶员信息分开。"
+      },
+      {
+        "term": "manual control",
+        "phonetic": "/ˈmænjuəl kənˈtroʊl/",
+        "meaning": "人工控制；由驾驶员直接完成控制或决策",
+        "example": "Manual control must remain clear during automation limits.",
+        "chineseExample": "自动化受限时，人工控制必须保持清晰。"
+      },
+      {
+        "term": "automation limit",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈlɪmɪt/",
+        "meaning": "自动化限制；自动驾驶或辅助系统当前不能完成的范围",
+        "example": "An automation limit needs timely explanation.",
+        "chineseExample": "自动化限制需要及时解释。"
+      },
+      {
+        "term": "system limitation",
+        "phonetic": "/ˈsɪstəm ˌlɪmɪˈteɪʃn/",
+        "meaning": "系统限制；功能在特定环境或状态下的能力边界",
+        "example": "A system limitation is easier to accept when it is specific.",
+        "chineseExample": "当系统限制足够具体时，更容易被接受。"
+      },
+      {
+        "term": "safe path",
+        "phonetic": "/seɪf pæθ/",
+        "meaning": "安全路径；帮助用户在异常状态下继续完成任务的操作路径",
+        "example": "A safe path may be as simple as steering manually.",
+        "chineseExample": "安全路径可以只是手动转向这样简单。"
+      },
+      {
+        "term": "visible before",
+        "phonetic": "/ˈvɪzəbl bɪˈfɔːr/",
+        "meaning": "提前可见；在影响体验或安全前先被用户看到",
+        "example": "Limitations should be visible before they block a feature.",
+        "chineseExample": "限制应在阻断功能前提前可见。"
+      },
+      {
+        "term": "internal condition",
+        "phonetic": "/ɪnˈtɜːrnl kənˈdɪʃn/",
+        "meaning": "内部条件；系统内部判断、错误或状态",
+        "example": "An internal condition needs translation into user language.",
+        "chineseExample": "内部条件需要转换成用户语言。"
+      },
+      {
+        "term": "normal operation",
+        "phonetic": "/ˈnɔːrml ˌɑːpəˈreɪʃn/",
+        "meaning": "正常运行；系统按照预期能力工作的状态",
+        "example": "Normal operation should resume without hiding what changed.",
+        "chineseExample": "恢复正常运行时不应隐藏曾经发生的变化。"
+      },
+      {
+        "term": "safe slowdown",
+        "phonetic": "/seɪf ˈsloʊdaʊn/",
+        "meaning": "安全减速；在风险或系统限制增加时引导车辆或驾驶员降低速度",
+        "example": "A safe slowdown may be recommended when perception is unstable.",
+        "chineseExample": "当感知不稳定时，系统可能建议安全减速。"
+      },
+      {
+        "term": "blocked feature",
+        "phonetic": "/blɑːkt ˈfiːtʃər/",
+        "meaning": "被阻断功能；当前条件下暂时不能使用的功能",
+        "example": "A blocked feature should show how to recover it.",
+        "chineseExample": "被阻断功能应显示如何恢复。"
+      },
+      {
+        "term": "temporary loss",
+        "phonetic": "/ˈtempəreri lɔːs/",
+        "meaning": "暂时丢失；信号、能力或连接短时间不可用",
+        "example": "Temporary loss of lane detection should not feel like a system crash.",
+        "chineseExample": "车道检测暂时丢失不应让人感觉像系统崩溃。"
+      },
+      {
+        "term": "translated",
+        "phonetic": "/trænzˈleɪtɪd/",
+        "meaning": "被转换的；被翻译或转化成另一种表达的",
+        "example": "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
+        "chineseExample": "传感器置信度应被转换成面向驾驶员的信息，而不是隐藏为诊断代码。"
+      },
+      {
+        "term": "diagnostic",
+        "phonetic": "/ˌdaɪəɡˈnɑːstɪk/",
+        "meaning": "诊断的；用于识别系统问题或状态的",
+        "example": "A diagnostic message may be useful for service teams.",
+        "chineseExample": "诊断信息可能对维修团队有用。"
+      },
+      {
+        "term": "radar",
+        "phonetic": "/ˈreɪdɑːr/",
+        "meaning": "雷达；用于检测距离、速度和目标的感知设备",
+        "example": "Radar can remain useful when camera visibility is poor.",
+        "chineseExample": "当摄像头能见度较差时，雷达仍可能有用。"
+      },
+      {
+        "term": "loses",
+        "phonetic": "/ˈluːzɪz/",
+        "meaning": "失去；不再拥有某种能力或访问权限",
+        "example": "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
+        "chineseExample": "在驾驶员失去熟悉辅助功能的访问前，仪表应显示降级模式。"
+      },
+      {
+        "term": "screens",
+        "phonetic": "/skriːnz/",
+        "meaning": "屏幕；车内用于显示信息的界面区域",
+        "example": "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
+        "chineseExample": "回退行为在屏幕、声音和方向盘控制之间都应可预测。"
+      },
+      {
+        "term": "sounds",
+        "phonetic": "/saʊndz/",
+        "meaning": "声音；提示音或语音反馈",
+        "example": "Sounds should match the visual warning level.",
+        "chineseExample": "声音应匹配视觉警告层级。"
+      },
+      {
+        "term": "announced",
+        "phonetic": "/əˈnaʊnst/",
+        "meaning": "被告知的；通过界面或声音明确传达的",
+        "example": "Limited availability should be announced with a reason and a clear recovery condition.",
+        "chineseExample": "有限可用状态应通过原因和恢复条件明确告知。"
+      },
+      {
+        "term": "normal",
+        "phonetic": "/ˈnɔːrml/",
+        "meaning": "正常的；符合预期工作状态的",
+        "example": "A recovery condition tells the driver when lane assistance may return to normal.",
+        "chineseExample": "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+      },
+      {
+        "term": "appropriate",
+        "phonetic": "/əˈproʊpriət/",
+        "meaning": "合适的；与场景、风险或任务相匹配的",
+        "example": "Status escalation is appropriate when risk is increasing.",
+        "chineseExample": "当风险正在上升时，状态升级是合适的。"
+      },
+      {
+        "term": "increasing",
+        "phonetic": "/ɪnˈkriːsɪŋ/",
+        "meaning": "正在增加的；程度或风险变高的",
+        "example": "The alert should become stronger when the risk is increasing.",
+        "chineseExample": "当风险正在增加时，提醒应变得更强。"
+      },
+      {
+        "term": "detects",
+        "phonetic": "/dɪˈtekts/",
+        "meaning": "检测到；系统识别出某种状态或事件",
+        "example": "When the cockpit detects weak sensing, it should explain the limitation.",
+        "chineseExample": "当座舱检测到感知变弱时，应解释限制。"
+      },
+      {
+        "term": "internal",
+        "phonetic": "/ɪnˈtɜːrnl/",
+        "meaning": "内部的；发生在系统内部而非直接面向用户的",
+        "example": "An internal condition needs translation into user language.",
+        "chineseExample": "内部条件需要转换成用户语言。"
+      },
+      {
+        "term": "hard",
+        "phonetic": "/hɑːrd/",
+        "meaning": "困难的；不容易完成或识别的",
+        "example": "Road markings are hard to read in heavy rain.",
+        "chineseExample": "大雨中道路标线很难识别。"
+      },
+      {
+        "term": "finally",
+        "phonetic": "/ˈfaɪnəli/",
+        "meaning": "最后；用于说明步骤或顺序的末尾",
+        "example": "Finally, the message describes the fallback behavior.",
+        "chineseExample": "最后，这条信息说明回退行为。"
+      },
+      {
+        "term": "describes",
+        "phonetic": "/dɪˈskraɪbz/",
+        "meaning": "描述；说明某事物的状态、原因或动作",
+        "example": "The message describes what the driver should do next.",
+        "chineseExample": "这条信息说明驾驶员下一步应该做什么。"
+      },
+      {
+        "term": "limitation",
+        "phonetic": "/ˌlɪmɪˈteɪʃn/",
+        "meaning": "限制；系统当前不能完成或不能保证的能力边界",
+        "example": "The system admits a limitation instead of hiding it.",
+        "chineseExample": "系统承认限制，而不是隐藏它。"
+      },
+      {
+        "term": "surprise",
+        "phonetic": "/sərˈpraɪz/",
+        "meaning": "意外；用户没有预期到的突然变化",
+        "example": "Graceful degradation protects the driver from surprise.",
+        "chineseExample": "优雅降级可以避免驾驶员感到突然。"
+      },
+      {
+        "term": "alarms",
+        "phonetic": "/əˈlɑːrmz/",
+        "meaning": "警报；提醒用户注意风险的声音或视觉信号",
+        "example": "Redundant sensing can reduce false alarms.",
+        "chineseExample": "冗余感知可以减少误报。"
+      },
+      {
+        "term": "vague",
+        "phonetic": "/veɪɡ/",
+        "meaning": "含糊的；缺少清晰原因或动作指引的",
+        "example": "The interface should not become vague when sensors disagree.",
+        "chineseExample": "当传感器不一致时，界面不应变得含糊。"
+      },
+      {
+        "term": "pausing",
+        "phonetic": "/ˈpɔːzɪŋ/",
+        "meaning": "暂停；暂时停止某项功能或动作",
+        "example": "The cockpit may keep distance support active while pausing lane centering.",
+        "chineseExample": "座舱可以保持距离支持，同时暂停车道居中。"
+      },
+      {
+        "term": "centering",
+        "phonetic": "/ˈsentərɪŋ/",
+        "meaning": "居中；让车辆保持在车道中央的辅助动作",
+        "example": "Lane centering should pause when lane markings are unreliable.",
+        "chineseExample": "当车道线不可靠时，车道居中应暂停。"
+      },
+      {
+        "term": "terms",
+        "phonetic": "/tɜːrmz/",
+        "meaning": "术语；用于一致表达系统状态的词语",
+        "example": "The cluster and center display should use the same terms.",
+        "chineseExample": "仪表和中控屏应使用相同术语。"
+      },
+      {
+        "term": "receive",
+        "phonetic": "/rɪˈsiːv/",
+        "meaning": "收到；用户获得信息或提示",
+        "example": "The driver should not receive a mixed message.",
+        "chineseExample": "驾驶员不应收到混杂信息。"
+      },
+      {
+        "term": "mixed",
+        "phonetic": "/mɪkst/",
+        "meaning": "混合的；不一致或容易造成混淆的",
+        "example": "A mixed message can reduce trust.",
+        "chineseExample": "混杂信息会降低信任。"
+      },
+      {
+        "term": "loss",
+        "phonetic": "/lɔːs/",
+        "meaning": "丢失；信号、能力或功能暂时不可用",
+        "example": "A quiet banner may be enough for a temporary loss.",
+        "chineseExample": "对于暂时丢失，低打断横幅可能足够。"
+      },
+      {
+        "term": "higher-risk",
+        "phonetic": "/ˈhaɪər rɪsk/",
+        "meaning": "风险更高的；可能带来更大安全影响的",
+        "example": "A higher-risk limitation may require a stronger handover cue.",
+        "chineseExample": "风险更高的限制可能需要更强的接管线索。"
+      },
+      {
+        "term": "messaging",
+        "phonetic": "/ˈmesɪdʒɪŋ/",
+        "meaning": "提示表达；界面如何组织并传达信息",
+        "example": "Good failure messaging separates service detail from driver guidance.",
+        "chineseExample": "好的故障提示会把维修细节与驾驶员引导分开。"
+      },
+      {
+        "term": "operation",
+        "phonetic": "/ˌɑːpəˈreɪʃn/",
+        "meaning": "运行；系统按照某种状态工作的过程",
+        "example": "Normal operation should be easy to recognize.",
+        "chineseExample": "正常运行应容易被识别。"
+      },
+      {
+        "term": "returns",
+        "phonetic": "/rɪˈtɜːrnz/",
+        "meaning": "返回；恢复到之前或正常状态",
+        "example": "The interface should be clear when confidence returns.",
+        "chineseExample": "当置信度恢复时，界面应保持清晰。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Explaining degraded sensing without alarming the driver",
+        "text": "When an intelligent cockpit detects that a camera, radar, or map signal is unreliable, the interface should not simply hide the affected feature. The driver needs a clear driver-facing status that turns an internal condition into practical guidance. A useful message starts with what changed: lane assistance is limited. It then gives a plain-language reason: road markings are hard to read in heavy rain. Finally, it describes the fallback behavior: keep manual control and wait for the recovery condition. This is graceful degradation. The system admits a limitation, protects the driver from surprise, and keeps the next action visible. Redundant sensing can reduce false alarms, but it should not make the interface vague. If camera confidence drops while radar confidence remains strong, the cockpit may keep distance support active while pausing lane centering. The cluster, center display, and audible prompt should use the same terms, so the driver does not receive a mixed message. Status escalation also matters. A quiet banner may be enough for a temporary loss, but a longer or higher-risk limitation may require a stronger handover cue. Good failure messaging separates service detail from driver guidance and makes normal operation easy to recognize when confidence returns.",
+        "translation": "当智能座舱检测到摄像头、雷达或地图信号不可靠时，界面不应只是隐藏受影响的功能。驾驶员需要清晰的面向驾驶员状态，把系统内部条件转化为实用引导。一条有用的信息先说明发生了什么变化：车道辅助受限。然后给出通俗原因：大雨中道路标线难以识别。最后说明回退行为：保持人工控制并等待恢复条件。这就是优雅降级。系统承认限制，避免驾驶员感到突然，并让下一步动作保持可见。冗余感知可以减少误报，但不应让界面变得含糊。如果摄像头置信度下降而雷达置信度仍然较强，座舱可以保持距离支持，同时暂停车道居中。仪表、中控屏和声音提示应使用相同术语，避免驾驶员收到混杂信息。状态升级也很重要。对于暂时丢失，低打断横幅可能足够；但持续更久或风险更高的限制可能需要更强的接管线索。好的故障提示会把维修细节与驾驶员引导分开，并在置信度恢复时让正常运行变得容易识别。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The driver needs a clear driver-facing status that turns an internal condition into practical guidance.",
+        "translation": "驾驶员需要清晰的面向驾驶员状态，把系统内部条件转化为实用引导。",
+        "points": [
+          "that turns... 是定语从句，说明 driver-facing status 的作用。",
+          "internal condition 指系统内部诊断或置信度变化。",
+          "practical guidance 强调提示必须能指导下一步动作。"
+        ]
+      },
+      {
+        "sentence": "The system admits a limitation, protects the driver from surprise, and keeps the next action visible.",
+        "translation": "系统承认限制，避免驾驶员感到突然，并让下一步动作保持可见。",
+        "points": [
+          "admits, protects, and keeps 是三个并列动词，表达优雅降级的价值。",
+          "from surprise 表示避免突然变化带来的不安。",
+          "visible 强调界面需要持续呈现可执行信息。"
+        ]
+      },
+      {
+        "sentence": "If camera confidence drops while radar confidence remains strong, the cockpit may keep distance support active while pausing lane centering.",
+        "translation": "如果摄像头置信度下降而雷达置信度仍然较强，座舱可以保持距离支持，同时暂停车道居中。",
+        "points": [
+          "If...while... 用来对比两个传感器状态。",
+          "may keep...while pausing... 表达部分保留和部分暂停。",
+          "distance support 与 lane centering 是冗余感知下可分开处理的功能。"
+        ]
+      },
+      {
+        "sentence": "Good failure messaging separates service detail from driver guidance and makes normal operation easy to recognize when confidence returns.",
+        "translation": "好的故障提示会把维修细节与驾驶员引导分开，并在置信度恢复时让正常运行变得容易识别。",
+        "points": [
+          "separates...from... 表示把两类信息清楚区分。",
+          "makes normal operation easy to recognize 强调恢复状态也需要明确反馈。",
+          "when confidence returns 是时间从句，说明状态恢复的触发点。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 10 个核心词汇，重点区分 graceful degradation、degraded mode、fallback behavior 和 recovery condition。"
+      },
+      {
+        "title": "长文跟读",
+        "duration": "8 分钟",
+        "instruction": "跟读长文两遍，第一遍关注故障状态如何解释，第二遍关注降级、回退和恢复的表达顺序。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "instruction": "用 The driver needs a clear...that turns...into... 造 3 个句子，分别描述摄像头、雷达和地图信号异常。"
+      },
+      {
+        "title": "产品表达练习",
+        "duration": "5 分钟",
+        "instruction": "用英文写一条降级提示，必须包含发生了什么、通俗原因、当前可用功能和恢复条件。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-08-proactive-ai-suggestions-permission",
     "date": "2026-09-08",
     "title": "Proactive AI suggestions and permission control in intelligent cockpits",

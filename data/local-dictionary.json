@@ -525,6 +525,13 @@
     "The word alarming appears in the comfort recommendation context.",
     "“alarming”出现在座椅舒适推荐的语境中。"
   ],
+  "alarms": [
+    "/əˈlɑːrmz/",
+    "警报；提醒用户注意风险的声音或视觉信号",
+    "",
+    "Redundant sensing can reduce false alarms.",
+    "冗余感知可以减少误报。"
+  ],
   "alert": [
     "/ә'lә:t/",
     "动词：警觉的, 灵敏的, 留心的；警报；使警觉, 通知, 使意识到",
@@ -779,6 +786,13 @@
     "Animation should support a safer and clearer cockpit experience.",
     "在这句话中，“animation”用于描述更安全、更清晰的座舱体验。"
   ],
+  "announced": [
+    "/əˈnaʊnst/",
+    "被告知的；通过界面或声音明确传达的",
+    "",
+    "Limited availability should be announced with a reason and a clear recovery condition.",
+    "有限可用状态应通过原因和恢复条件明确告知。"
+  ],
   "another": [
     "/əˈnʌð.ə(ɹ)/",
     "副词：另外的, 再一的, 不同的；又一个, 另一个, 类似的另一个",
@@ -877,6 +891,13 @@
     "A music recommendation, a service promotion, or a general reminder should usually stay quiet when the driver is turning, merging, or approaching a dense intersection.",
     "在这句话中，“approaching”可理解为“接近, 入门；接近, 近似, 找...商量；靠近”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "appropriate": [
+    "/əˈproʊpriət/",
+    "合适的；与场景、风险或任务相匹配的",
+    "",
+    "Status escalation is appropriate when risk is increasing.",
+    "当风险正在上升时，状态升级是合适的。"
   ],
   "approval": [
     "/əˈpruːvl/",
@@ -1024,6 +1045,13 @@
     "The word assistance appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“assistance”用于表达相关系统状态或用户影响。"
   ],
+  "assistance feature": [
+    "/əˈsɪstəns ˈfiːtʃər/",
+    "辅助功能；帮助驾驶或操作的系统能力",
+    "",
+    "An assistance feature needs a clear status when it is limited.",
+    "辅助功能受限时需要清晰状态。"
+  ],
   "assistant": [
     "/ә'sistәnt/",
     "形容词：助手, 助理, 助教；有帮助的, 辅助的, 助理的",
@@ -1169,6 +1197,13 @@
     "An audible alert should be distinctive but not startling.",
     "声音告警应有辨识度，但不能令人惊吓。"
   ],
+  "audible prompt": [
+    "/ˈɔːdəbl prɑːmpt/",
+    "声音提示；通过语音或提示音传达的信息",
+    "",
+    "An audible prompt may be needed when the driver misses the banner.",
+    "当驾驶员错过横幅时，可能需要声音提示。"
+  ],
   "audible summary": [
     "/ˈɔːdəbl ˈsʌməri/",
     "可听摘要；系统用简短语音总结理解结果或下一步动作",
@@ -1295,6 +1330,13 @@
     "",
     "The automation level affects how direct a takeover cue should be.",
     "自动化等级会影响接管线索应有多直接。"
+  ],
+  "automation limit": [
+    "/ˌɔːtəˈmeɪʃn ˈlɪmɪt/",
+    "自动化限制；自动驾驶或辅助系统当前不能完成的范围",
+    "",
+    "An automation limit needs timely explanation.",
+    "自动化限制需要及时解释。"
   ],
   "automation scope": [
     "/ˌɔːtəˈmeɪʃn skoʊp/",
@@ -1626,6 +1668,13 @@
     "",
     "A situational constraint may block a complex browsing task while the vehicle is moving.",
     "在这句话中，“block”可结合车内助手澄清场景理解。"
+  ],
+  "blocked feature": [
+    "/blɑːkt ˈfiːtʃər/",
+    "被阻断功能；当前条件下暂时不能使用的功能",
+    "",
+    "A blocked feature should show how to recover it.",
+    "被阻断功能应显示如何恢复。"
   ],
   "body": [
     "/ˈbɑːdi/",
@@ -1969,6 +2018,13 @@
     "在这句话中，“camera”可理解为“照相机, 摄影机, 密谈室, 暗箱”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "camera signal": [
+    "/ˈkæmərə ˈsɪɡnəl/",
+    "摄像头信号；由摄像头提供的视觉感知信息",
+    "",
+    "A camera signal may be weak at night.",
+    "摄像头信号在夜间可能较弱。"
+  ],
   "can": [
     "/kæn/",
     "动词：装罐；罐头, 容器；aux. 能, 可以",
@@ -2112,6 +2168,13 @@
     "",
     "Center stack should support a safer and clearer cockpit experience.",
     "在这句话中，“center stack”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "centering": [
+    "/ˈsentərɪŋ/",
+    "居中；让车辆保持在车道中央的辅助动作",
+    "",
+    "Lane centering should pause when lane markings are unreliable.",
+    "当车道线不可靠时，车道居中应暂停。"
   ],
   "certain": [
     "/按语境朗读/",
@@ -2930,6 +2993,13 @@
     "A concise sentence is easier to understand during high workload driving.",
     "在高负荷驾驶中，简洁句更容易理解。"
   ],
+  "condition": [
+    "/kənˈdɪʃn/",
+    "条件；触发或恢复功能所需的状态",
+    "",
+    "The condition should be written in plain language.",
+    "条件应使用通俗语言表达。"
+  ],
   "confidence": [
     "/'kɒnfidәns/",
     "名词：信心",
@@ -3144,6 +3214,13 @@
     "",
     "The consent screen should separate comfort data from safety-critical data.",
     "授权界面应区分舒适数据和安全关键数据。"
+  ],
+  "conservative state": [
+    "/kənˈsɜːrvətɪv steɪt/",
+    "保守状态；系统在不确定时采用的更安全、更少自动化的状态",
+    "",
+    "A conservative state can protect trust during uncertainty.",
+    "保守状态可以在不确定时保护信任。"
   ],
   "consider": [
     "/待查/",
@@ -3973,6 +4050,27 @@
     "The word defogging appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“defogging”用于表达相关系统状态或用户影响。"
   ],
+  "degradation": [
+    "/ˌdeɡrəˈdeɪʃn/",
+    "降级；性能或能力下降",
+    "",
+    "Degradation should be visible before it affects control.",
+    "降级应在影响控制前可见。"
+  ],
+  "degraded": [
+    "/dɪˈɡreɪdɪd/",
+    "已降级的；能力受限的",
+    "",
+    "A degraded feature should explain its current limits.",
+    "已降级功能应解释当前限制。"
+  ],
+  "degraded mode": [
+    "/dɪˈɡreɪdɪd moʊd/",
+    "降级模式；部分自动化或辅助能力暂停、受限或降低精度的工作状态",
+    "",
+    "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
+    "在驾驶员失去熟悉的辅助功能前，仪表应显示降级模式。"
+  ],
   "degrees": [
     "/dɪˈɡriːz/",
     "度；温度调节单位",
@@ -4092,6 +4190,13 @@
     "Together, however, these signals can describe a driver's routine, relationships, and habits.",
     "在这句话中，“describe”可理解为“描述, 描绘, 画”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "describes": [
+    "/dɪˈskraɪbz/",
+    "描述；说明某事物的状态、原因或动作",
+    "",
+    "The message describes what the driver should do next.",
+    "这条信息说明驾驶员下一步应该做什么。"
   ],
   "deserve": [
     "/dɪˈzɜːv/",
@@ -4240,6 +4345,13 @@
     "The word detecting appears in the comfort recommendation context.",
     "“detecting”出现在座椅舒适推荐的语境中。"
   ],
+  "detects": [
+    "/dɪˈtekts/",
+    "检测到；系统识别出某种状态或事件",
+    "",
+    "When the cockpit detects weak sensing, it should explain the limitation.",
+    "当座舱检测到感知变弱时，应解释限制。"
+  ],
   "determine": [
     "/dɪˈtɜːrmɪn/",
     "决定；作为选择依据",
@@ -4268,6 +4380,20 @@
     "",
     "The cockpit should not diagnose the driver.",
     "座舱不应诊断驾驶员。"
+  ],
+  "diagnostic": [
+    "/ˌdaɪəɡˈnɑːstɪk/",
+    "诊断的；用于识别系统问题或状态的",
+    "",
+    "A diagnostic message may be useful for service teams.",
+    "诊断信息可能对维修团队有用。"
+  ],
+  "diagnostic code": [
+    "/ˌdaɪəɡˈnɑːstɪk koʊd/",
+    "诊断代码；用于工程或维修判断的系统错误编码",
+    "",
+    "A diagnostic code is useful for service, but not enough for the driver.",
+    "诊断代码对维修有用，但对驾驶员来说还不够。"
   ],
   "dialog": [
     "/ˈdaɪəlɔːɡ/",
@@ -4677,6 +4803,20 @@
     "",
     "Driver workload should influence how much explanation the assistant gives.",
     "在这句话中，“driver workload”用于描述智能座舱多人语音控制。"
+  ],
+  "driver-facing": [
+    "/ˈdraɪvər ˈfeɪsɪŋ/",
+    "面向驾驶员的；为驾驶员理解和行动而呈现的",
+    "",
+    "Driver-facing language should avoid engineering jargon.",
+    "面向驾驶员的语言应避免工程术语。"
+  ],
+  "driver-facing status": [
+    "/ˈdraɪvər ˈfeɪsɪŋ ˈsteɪtəs/",
+    "面向驾驶员的状态；把系统内部条件转化为驾驶员能理解的界面反馈",
+    "",
+    "A driver-facing status explains what changed, why it changed, and what the driver should do next.",
+    "面向驾驶员的状态说明发生了什么变化、为什么变化以及驾驶员下一步该做什么。"
   ],
   "driver-verifiable": [
     "/ˈdraɪvər ˈverɪfaɪəbl/",
@@ -5553,6 +5693,13 @@
     "在这句话中，“fallback”可理解为“可依靠的东西, 退却”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "fallback behavior": [
+    "/ˈfɔːlbæk bɪˈheɪvjər/",
+    "回退行为；主功能不可用时系统采用的替代操作或保守策略",
+    "",
+    "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
+    "回退行为在屏幕、声音和方向盘控制之间都应保持可预测。"
+  ],
   "fallback interaction": [
     "/ˈfɔːlbæk ˌɪntərˈækʃn/",
     "兜底交互；语音失败后提供触控、方向盘按键或简化语音路径等替代方案",
@@ -5667,6 +5814,20 @@
     "",
     "A fatigue marker should trigger a gentle suggestion, not an alarming message.",
     "疲劳标记应触发温和建议，而不是令人紧张的警报。"
+  ],
+  "fault-tolerant": [
+    "/fɔːlt ˈtɑːlərənt/",
+    "容错的；能在故障或异常下继续安全工作的",
+    "",
+    "A fault-tolerant flow avoids dead ends.",
+    "容错流程会避免无路可走的状态。"
+  ],
+  "fault-tolerant interaction": [
+    "/fɔːlt ˈtɑːlərənt ˌɪntərˈækʃn/",
+    "容错交互；在输入、传感器或系统状态异常时仍支持用户完成任务的交互方式",
+    "",
+    "Fault-tolerant interaction gives the driver a safe path even when automation cannot complete the request.",
+    "即使自动化无法完成请求，容错交互也会给驾驶员一条安全路径。"
   ],
   "favorite": [
     "/ˈfeɪv.ɹɪt/",
@@ -5802,6 +5963,13 @@
     "A multimodal handoff lets the driver start a destination search by voice and confirm the final route on the screen.",
     "在这句话中，“final”可理解为“期末考试, 结局, 决赛；最后的, 终极的, 决定性的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "finally": [
+    "/ˈfaɪnəli/",
+    "最后；用于说明步骤或顺序的末尾",
+    "",
+    "Finally, the message describes the fallback behavior.",
+    "最后，这条信息说明回退行为。"
   ],
   "find": [
     "/ˈfaɪ̯nd/",
@@ -6303,6 +6471,20 @@
     "A short grace period gives the driver time to look back at the road without causing panic.",
     "短暂宽限时间让驾驶员有时间重新看向道路，而不会造成恐慌。"
   ],
+  "graceful": [
+    "/ˈɡreɪsfəl/",
+    "优雅的；让变化显得平稳、可理解的",
+    "",
+    "A graceful transition avoids surprising the driver.",
+    "优雅的过渡可以避免让驾驶员感到突然。"
+  ],
+  "graceful degradation": [
+    "/ˈɡreɪsfəl ˌdeɡrəˈdeɪʃn/",
+    "优雅降级；系统能力受限时仍以可理解、可控的方式继续工作",
+    "",
+    "Graceful degradation keeps the cockpit useful when one sensor becomes unreliable.",
+    "当某个传感器变得不可靠时，优雅降级让座舱仍保持可用。"
+  ],
   "grows": [
     "/ɡroʊz/",
     "增长；逐渐增强",
@@ -6399,6 +6581,13 @@
     "Intent handover lets a passenger finish a search that the driver started by voice.",
     "在这句话中，“handover”可结合车内助手澄清场景理解。"
   ],
+  "handover cue": [
+    "/ˈhændoʊvər kjuː/",
+    "接管线索；提示用户从系统辅助转为人工控制的信息",
+    "",
+    "A handover cue should appear before support drops away.",
+    "接管线索应在支持消失前出现。"
+  ],
   "handover target": [
     "/ˈhændoʊvər ˈtɑːrɡɪt/",
     "交接目标；接收未完成任务的乘员、屏幕或交互通道",
@@ -6486,6 +6675,13 @@
     "",
     "Haptic tap should support a safer and clearer cockpit experience.",
     "在这句话中，“haptic tap”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "hard": [
+    "/hɑːrd/",
+    "困难的；不容易完成或识别的",
+    "",
+    "Road markings are hard to read in heavy rain.",
+    "大雨中道路标线很难识别。"
   ],
   "has": [
     "/hæz/",
@@ -6689,6 +6885,13 @@
     "",
     "The threshold should be higher for risky actions.",
     "高风险操作的阈值应更高。"
+  ],
+  "higher-risk": [
+    "/ˈhaɪər rɪsk/",
+    "风险更高的；可能带来更大安全影响的",
+    "",
+    "A higher-risk limitation may require a stronger handover cue.",
+    "风险更高的限制可能需要更强的接管线索。"
   ],
   "highlight": [
     "/'hailait/",
@@ -7038,6 +7241,13 @@
     "在这句话中，“increases”可理解为“增加, 增进, 利益；增加, 加大；增加, 繁殖”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "increasing": [
+    "/ɪnˈkriːsɪŋ/",
+    "正在增加的；程度或风险变高的",
+    "",
+    "The alert should become stronger when the risk is increasing.",
+    "当风险正在增加时，提醒应变得更强。"
+  ],
   "indicate": [
     "/ˈɪndɪkeɪt/",
     "指示；显示或说明某个状态",
@@ -7371,6 +7581,27 @@
     "在这句话中，“interface”可理解为“分界面, 接触面, 界面”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "interface state": [
+    "/ˈɪntərfeɪs steɪt/",
+    "界面状态；界面呈现的当前模式、可用性和反馈组合",
+    "",
+    "The interface state should change only after the system checks sensor confidence.",
+    "界面状态应在系统检查传感器置信度后才改变。"
+  ],
+  "internal": [
+    "/ɪnˈtɜːrnl/",
+    "内部的；发生在系统内部而非直接面向用户的",
+    "",
+    "An internal condition needs translation into user language.",
+    "内部条件需要转换成用户语言。"
+  ],
+  "internal condition": [
+    "/ɪnˈtɜːrnl kənˈdɪʃn/",
+    "内部条件；系统内部判断、错误或状态",
+    "",
+    "An internal condition needs translation into user language.",
+    "内部条件需要转换成用户语言。"
+  ],
   "interpret": [
     "/ɪnˈtɜːrprət/",
     "解释；理解某个信号或状态的含义",
@@ -7661,6 +7892,13 @@
     "Context-sensitive timing prevents a non-urgent recommendation from appearing during lane guidance.",
     "在这句话中，“lane”可理解为“可结合原文语境理解。”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "lane assistance": [
+    "/leɪn əˈsɪstəns/",
+    "车道辅助；帮助保持、识别或提醒车道状态的功能",
+    "",
+    "Lane assistance may pause when markings are covered.",
+    "当车道线被覆盖时，车道辅助可能暂停。"
   ],
   "lane change": [
     "/leɪn tʃeɪndʒ/",
@@ -7977,6 +8215,13 @@
     "The word likely appears in today's cockpit summary practice.",
     "在这个语境中，“likely”可理解为“可能的”。"
   ],
+  "limitation": [
+    "/ˌlɪmɪˈteɪʃn/",
+    "限制；系统当前不能完成或不能保证的能力边界",
+    "",
+    "The system admits a limitation instead of hiding it.",
+    "系统承认限制，而不是隐藏它。"
+  ],
   "limitations": [
     "/暂无音标/",
     "名词：限制",
@@ -7990,6 +8235,13 @@
     "",
     "Limited can be understood in the cockpit design context.",
     "在这句话中，“limited”可结合座舱设计语境理解。"
+  ],
+  "limited availability": [
+    "/ˈlɪmɪtɪd əˌveɪləˈbɪləti/",
+    "有限可用；功能暂时只在部分条件下可用或能力受限",
+    "",
+    "Limited availability should be announced with a reason and a clear recovery condition.",
+    "有限可用状态应同时告知原因和清晰的恢复条件。"
   ],
   "limits": [
     "/待查/",
@@ -8204,6 +8456,20 @@
     "",
     "The cockpit uses loop to keep comfort assistance understandable and controllable.",
     "座舱使用“loop”让舒适辅助更容易理解和控制。"
+  ],
+  "loses": [
+    "/ˈluːzɪz/",
+    "失去；不再拥有某种能力或访问权限",
+    "",
+    "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
+    "在驾驶员失去熟悉辅助功能的访问前，仪表应显示降级模式。"
+  ],
+  "loss": [
+    "/lɔːs/",
+    "丢失；信号、能力或功能暂时不可用",
+    "",
+    "A quiet banner may be enough for a temporary loss.",
+    "对于暂时丢失，低打断横幅可能足够。"
   ],
   "loud": [
     "/laʊd/",
@@ -8562,6 +8828,13 @@
     "Map quality affects how confident the cockpit should sound.",
     "在这句话中，“map quality”用于描述智能座舱导航提示设计。"
   ],
+  "map signal": [
+    "/mæp ˈsɪɡnəl/",
+    "地图信号；来自地图数据的道路、车道或位置判断依据",
+    "",
+    "A map signal can confirm what the camera sees.",
+    "地图信号可以确认摄像头看到的内容。"
+  ],
   "mapped": [
     "/mæpt/",
     "映射的；把输入关联到特定功能或目标的",
@@ -8840,6 +9113,13 @@
     "在这句话中，“messages”可理解为“消息, 通讯, 讯息, 教训, 预言, 广告词；通知；通报, 报告, 报信”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "messaging": [
+    "/ˈmesɪdʒɪŋ/",
+    "提示表达；界面如何组织并传达信息",
+    "",
+    "Good failure messaging separates service detail from driver guidance.",
+    "好的故障提示会把维修细节与驾驶员引导分开。"
+  ],
   "micro": [
     "/ˈmaɪkroʊ/",
     "微小的；幅度很小的。",
@@ -9024,6 +9304,20 @@
     "",
     "The modality mix should match the urgency and available attention channel.",
     "模态组合应匹配紧急程度和可用注意力通道。"
+  ],
+  "mixed": [
+    "/mɪkst/",
+    "混合的；不一致或容易造成混淆的",
+    "",
+    "A mixed message can reduce trust.",
+    "混杂信息会降低信任。"
+  ],
+  "mixed message": [
+    "/mɪkst ˈmesɪdʒ/",
+    "混杂信息；不同通道传达相互矛盾的提示",
+    "",
+    "A mixed message can make the driver doubt the system.",
+    "混杂信息会让驾驶员怀疑系统。"
   ],
   "modality": [
     "/moʊˈdæləti/",
@@ -9477,6 +9771,13 @@
     "在这句话中，“next”可理解为“下一个；下一个的, 其次的, 贴近的；然后, 下次, 次于”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "next action": [
+    "/nekst ˈækʃn/",
+    "下一步动作；用户在当前状态下应采取的明确操作",
+    "",
+    "The next action should be short, visible, and safe.",
+    "下一步动作应简短、可见且安全。"
+  ],
   "next step": [
     "/nekst step/",
     "下一步；用户或系统接下来要执行的动作",
@@ -9608,6 +9909,20 @@
     "",
     "The word nor appears in today's cockpit summary practice.",
     "在这个语境中，“nor”可理解为“也不”。"
+  ],
+  "normal": [
+    "/ˈnɔːrml/",
+    "正常的；符合预期工作状态的",
+    "",
+    "A recovery condition tells the driver when lane assistance may return to normal.",
+    "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+  ],
+  "normal operation": [
+    "/ˈnɔːrml ˌɑːpəˈreɪʃn/",
+    "正常运行；系统按照预期能力工作的状态",
+    "",
+    "Normal operation should resume without hiding what changed.",
+    "恢复正常运行时不应隐藏曾经发生的变化。"
   ],
   "not": [
     "/nɒt/",
@@ -9894,6 +10209,13 @@
     "",
     "The driver opens the menu only when needed.",
     "驾驶员只在需要时打开菜单。"
+  ],
+  "operation": [
+    "/ˌɑːpəˈreɪʃn/",
+    "运行；系统按照某种状态工作的过程",
+    "",
+    "Normal operation should be easy to recognize.",
+    "正常运行应容易被识别。"
   ],
   "operational": [
     "/ˌɑːpəˈreɪʃənl/",
@@ -10243,6 +10565,13 @@
     "Pause a profile should support clear control in a shared intelligent cockpit.",
     "在这句话中，“pause a profile”用于描述共享智能座舱中的清晰控制。"
   ],
+  "pausing": [
+    "/ˈpɔːzɪŋ/",
+    "暂停；暂时停止某项功能或动作",
+    "",
+    "The cockpit may keep distance support active while pausing lane centering.",
+    "座舱可以保持距离支持，同时暂停车道居中。"
+  ],
   "payment": [
     "/ˈpeɪmənt/",
     "支付；付款相关操作",
@@ -10546,6 +10875,13 @@
     "",
     "Plain-language copy can make a rollback feel manageable.",
     "直白文案可以让回滚显得可控。"
+  ],
+  "plain-language reason": [
+    "/pleɪn ˈlæŋɡwɪdʒ ˈriːzn/",
+    "通俗原因；用户不需要工程背景也能理解的解释",
+    "",
+    "A plain-language reason is easier to trust than a fault number.",
+    "通俗原因比故障编号更容易被信任。"
   ],
   "plan": [
     "/暂无音标/",
@@ -11373,6 +11709,13 @@
     "在这句话中，“quiet”可理解为“安静, 闲适, 平静；安静的, 静止的, 寂静的, 朴素的, 从容的, 暗中的；平静下来；使平静, 使平息, 使安心, 安慰”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "quiet banner": [
+    "/ˈkwaɪət ˈbænər/",
+    "低打断横幅；不强制打断但持续可见的提示条",
+    "",
+    "A quiet banner is suitable for low-risk limitation messages.",
+    "低打断横幅适合低风险的限制提示。"
+  ],
   "quieter": [
     "/ˈkwaɪətər/",
     "更安静的；噪声或干扰更少的",
@@ -11386,6 +11729,20 @@
     "",
     "A quieter route may be useful after work.",
     "下班后更安静路线可能有帮助。"
+  ],
+  "radar": [
+    "/ˈreɪdɑːr/",
+    "雷达；用于检测距离、速度和目标的感知设备",
+    "",
+    "Radar can remain useful when camera visibility is poor.",
+    "当摄像头能见度较差时，雷达仍可能有用。"
+  ],
+  "radar signal": [
+    "/ˈreɪdɑːr ˈsɪɡnəl/",
+    "雷达信号；由雷达提供的距离、速度或目标信息",
+    "",
+    "A radar signal can still work when visibility is poor.",
+    "能见度差时，雷达信号仍可能工作。"
   ],
   "rain": [
     "/reɪn/",
@@ -11618,6 +11975,13 @@
     "Drivers should not rebuild the mental model while driving.",
     "驾驶员不应在行驶中重新建立心智模型。"
   ],
+  "receive": [
+    "/rɪˈsiːv/",
+    "收到；用户获得信息或提示",
+    "",
+    "The driver should not receive a mixed message.",
+    "驾驶员不应收到混杂信息。"
+  ],
   "received": [
     "/rɪˈsiːvd/",
     "已接收的；系统已听到或收到输入",
@@ -11758,6 +12122,13 @@
     "在这句话中，“recovery”可理解为“恢复, 复原, 痊愈, 重获”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "recovery condition": [
+    "/rɪˈkʌvəri kənˈdɪʃn/",
+    "恢复条件；系统或功能回到正常状态所需要满足的条件",
+    "",
+    "A recovery condition tells the driver when lane assistance may return to normal.",
+    "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+  ],
   "recovery prompt": [
     "/rɪˈkʌvəri prɑːmpt/",
     "恢复提示；更新失败后引导用户理解下一步操作的提示",
@@ -11811,12 +12182,26 @@
     "在这句话中，“reducing”可理解为“减少, 分解, 降低, 使衰退, 把...分解, 把...归纳；减少, 减肥, 缩小”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "redundant": [
+    "/rɪˈdʌndənt/",
+    "冗余的；作为备用或交叉验证而重复配置的",
+    "",
+    "A redundant channel can support safer fallback.",
+    "冗余通道可以支持更安全的回退。"
+  ],
   "redundant channel": [
     "/rɪˈdʌndənt ˈtʃænl/",
     "冗余通道；用多个感知通道表达同一信息以提高可靠性",
     "",
     "Redundant channel should support a safer and clearer cockpit experience.",
     "在这句话中，“redundant channel”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "redundant sensing": [
+    "/rɪˈdʌndənt ˈsensɪŋ/",
+    "冗余感知；使用多个传感器或信号来源交叉验证同一场景",
+    "",
+    "Redundant sensing helps the vehicle compare camera, radar, and map signals before changing the interface state.",
+    "冗余感知帮助车辆在改变界面状态前比较摄像头、雷达和地图信号。"
   ],
   "refer": [
     "/rɪˈfɜːr/",
@@ -12356,6 +12741,13 @@
     "在这句话中，“return”可理解为“回来, 返回, 来回票, 归还, 报答, 利润率, 报告书；返回的, 回程的, 报答的, 反向的, 重现的, 复原的；返回, 归还, 回来；归还, 还, 回报, 产生, 反射, 报告, 申报, 退回”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "returns": [
+    "/rɪˈtɜːrnz/",
+    "返回；恢复到之前或正常状态",
+    "",
+    "The interface should be clear when confidence returns.",
+    "当置信度恢复时，界面应保持清晰。"
+  ],
   "reveal": [
     "/ɹɪˈviːl/",
     "动词：露出, 显示, 透露, 揭露, 泄露, (神)启示；窗侧, 门侧",
@@ -12545,6 +12937,13 @@
     "",
     "Road context changes the acceptable timing for an alert.",
     "道路上下文会改变警告的可接受时机。"
+  ],
+  "road markings": [
+    "/roʊd ˈmɑːrkɪŋz/",
+    "道路标线；车道线、边界线等路面视觉标记",
+    "",
+    "Road markings are hard to read in snow.",
+    "雪天道路标线很难识别。"
   ],
   "road scene": [
     "/roʊd siːn/",
@@ -12770,12 +13169,26 @@
     "A safe glance uses short labels, stable placement, and clear contrast for the most time-sensitive message.",
     "安全扫视会用短标签、稳定位置和清晰对比呈现最有时效性的消息。"
   ],
+  "safe path": [
+    "/seɪf pæθ/",
+    "安全路径；帮助用户在异常状态下继续完成任务的操作路径",
+    "",
+    "A safe path may be as simple as steering manually.",
+    "安全路径可以只是手动转向这样简单。"
+  ],
   "safe route": [
     "/seɪf ruːt/",
     "安全路线；符合当前道路条件且不强迫急促操作的路线",
     "",
     "A safe route is more valuable than preserving the original plan.",
     "在这句话中，“safe route”用于描述智能座舱导航提示设计。"
+  ],
+  "safe slowdown": [
+    "/seɪf ˈsloʊdaʊn/",
+    "安全减速；在风险或系统限制增加时引导车辆或驾驶员降低速度",
+    "",
+    "A safe slowdown may be recommended when perception is unstable.",
+    "当感知不稳定时，系统可能建议安全减速。"
   ],
   "safe transition": [
     "/seɪf trænˈzɪʃn/",
@@ -13039,6 +13452,13 @@
     "",
     "Lower screen dependence reduces distraction.",
     "降低屏幕依赖可以减少分心。"
+  ],
+  "screens": [
+    "/skriːnz/",
+    "屏幕；车内用于显示信息的界面区域",
+    "",
+    "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
+    "回退行为在屏幕、声音和方向盘控制之间都应可预测。"
   ],
   "search": [
     "/sɜːt͡ʃ/",
@@ -13321,6 +13741,13 @@
     "The word sensor appears in today's cockpit summary practice.",
     "在这个语境中，“sensor”可理解为“传感器”。"
   ],
+  "sensor confidence": [
+    "/ˈsensər ˈkɑːnfɪdəns/",
+    "传感器置信度；系统对传感器读数可信程度的判断",
+    "",
+    "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
+    "传感器置信度应转化为面向驾驶员的信息，而不是隐藏成诊断代码。"
+  ],
   "sent": [
     "/sent/",
     "被发送；被转入某个流程",
@@ -13381,6 +13808,13 @@
     "",
     "Service continuity is more important than exposing every engineering detail.",
     "服务连续性比暴露每个工程细节更重要。"
+  ],
+  "service detail": [
+    "/ˈsɜːrvɪs ˈdiːteɪl/",
+    "维修细节；面向售后或技术人员的诊断信息",
+    "",
+    "Service detail should be separate from the driver message.",
+    "维修细节应与驾驶员信息分开。"
   ],
   "service request": [
     "/ˈsɜːrvɪs rɪˈkwest/",
@@ -13686,6 +14120,13 @@
     "在这句话中，“signal”可理解为“信号, 暗号, 近因, 导火线；向...作信号, 标志, 用信号通知；发信号；作为信号的, 显著的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "signal conflict": [
+    "/ˈsɪɡnəl ˈkɑːnflɪkt/",
+    "信号冲突；多个信息来源给出不一致判断",
+    "",
+    "Signal conflict should trigger a more conservative interface state.",
+    "信号冲突应触发更保守的界面状态。"
+  ],
   "signal processing": [
     "/ˈsɪɡnəl ˈprɑːsesɪŋ/",
     "信号处理；对声音、噪声和方向信息进行计算分析的过程",
@@ -13964,6 +14405,13 @@
     "",
     "A clear de-escalation path prevents the cockpit from sounding urgent after the hazard is controlled.",
     "清晰的降级路径能避免危险已受控后座舱仍显得紧急。"
+  ],
+  "sounds": [
+    "/saʊndz/",
+    "声音；提示音或语音反馈",
+    "",
+    "Sounds should match the visual warning level.",
+    "声音应匹配视觉警告层级。"
   ],
   "soundscape": [
     "/ˈsaʊndskeɪp/",
@@ -14323,6 +14771,13 @@
     "",
     "Status disclosure helps users understand automatic comfort actions.",
     "状态披露帮助用户理解自动舒适动作。"
+  ],
+  "status escalation": [
+    "/ˈsteɪtəs ˌeskəˈleɪʃn/",
+    "状态升级；根据风险或持续时间把提示从低打断层级提升到更高层级",
+    "",
+    "Status escalation is appropriate when a quiet banner has not been noticed and the risk is increasing.",
+    "当安静横幅未被注意且风险正在上升时，状态升级是合适的。"
   ],
   "status hint": [
     "/ˈsteɪtəs hɪnt/",
@@ -14711,6 +15166,13 @@
     "在这句话中，“support”可理解为“支持, 支撑, 援助, 供养, 支撑物；支援, 支撑, 帮助, 支持, 忍受, 供养, 证实”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "support drops away": [
+    "/səˈpɔːrt drɑːps əˈweɪ/",
+    "支持消失；辅助能力突然停止或退出",
+    "",
+    "Support drops away feels unsafe if the cockpit gives no warning.",
+    "如果座舱没有预警，支持突然消失会让人感觉不安全。"
+  ],
   "supporting": [
     "/səˈpɔːrtɪŋ/",
     "支持性的；用于补充说明的",
@@ -14753,6 +15215,13 @@
     "",
     "Surface should support a safer and clearer cockpit experience.",
     "在这句话中，“surface”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "surprise": [
+    "/sərˈpraɪz/",
+    "意外；用户没有预期到的突然变化",
+    "",
+    "Graceful degradation protects the driver from surprise.",
+    "优雅降级可以避免驾驶员感到突然。"
   ],
   "surveillance": [
     "/sɚˈveɪ.ləns/",
@@ -14826,6 +15295,13 @@
     "",
     "A system limit should be communicated honestly.",
     "系统限制应被诚实传达。"
+  ],
+  "system limitation": [
+    "/ˈsɪstəm ˌlɪmɪˈteɪʃn/",
+    "系统限制；功能在特定环境或状态下的能力边界",
+    "",
+    "A system limitation is easier to accept when it is specific.",
+    "当系统限制足够具体时，更容易被接受。"
   ],
   "system recovery": [
     "/ˈsɪstəm rɪˈkʌvəri/",
@@ -15081,12 +15557,26 @@
     "A temporary limitation should be named in plain language.",
     "临时限制应使用直白语言说明。"
   ],
+  "temporary loss": [
+    "/ˈtempəreri lɔːs/",
+    "暂时丢失；信号、能力或连接短时间不可用",
+    "",
+    "Temporary loss of lane detection should not feel like a system crash.",
+    "车道检测暂时丢失不应让人感觉像系统崩溃。"
+  ],
   "tension": [
     "/ˈtenʃn/",
     "紧张；压力或不安的状态",
     "",
     "Signs of tension should be phrased as uncertain input.",
     "紧张迹象应被表述为不确定输入。"
+  ],
+  "terms": [
+    "/tɜːrmz/",
+    "术语；用于一致表达系统状态的词语",
+    "",
+    "The cluster and center display should use the same terms.",
+    "仪表和中控屏应使用相同术语。"
   ],
   "terrain": [
     "/təˈreɪn/",
@@ -15442,6 +15932,13 @@
     "",
     "A transition animation can make a display handoff understandable.",
     "转场动画可以让屏幕交接更容易理解。"
+  ],
+  "translated": [
+    "/trænzˈleɪtɪd/",
+    "被转换的；被翻译或转化成另一种表达的",
+    "",
+    "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
+    "传感器置信度应被转换成面向驾驶员的信息，而不是隐藏为诊断代码。"
   ],
   "transparency": [
     "/暂无音标/",
@@ -15814,6 +16311,13 @@
     "Unrelated prompts should wait until the context is calmer.",
     "无关提示应等场景更平稳时再出现。"
   ],
+  "unreliable": [
+    "/ˌʌnrɪˈlaɪəbl/",
+    "不可靠的；无法稳定提供可信结果的",
+    "",
+    "An unreliable camera feed should reduce automation confidence.",
+    "不可靠的摄像头画面应降低自动化置信度。"
+  ],
   "unsafe": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“unsafe”。",
@@ -16065,6 +16569,13 @@
     "在这句话中，“usually”可理解为“通常, 大抵”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "vague": [
+    "/veɪɡ/",
+    "含糊的；缺少清晰原因或动作指引的",
+    "",
+    "The interface should not become vague when sensors disagree.",
+    "当传感器不一致时，界面不应变得含糊。"
+  ],
   "valuable": [
     "/ˈvælju(ə)bl̩/",
     "形容词：有价值的, 贵重的, 宝贵的, 可估价的",
@@ -16189,6 +16700,13 @@
     "Fallback interaction should be visible when speech recognition fails in a noisy cabin.",
     "在这句话中，“visible”可理解为“看得见的, 明显的, 显然的；可见物”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "visible before": [
+    "/ˈvɪzəbl bɪˈfɔːr/",
+    "提前可见；在影响体验或安全前先被用户看到",
+    "",
+    "Limitations should be visible before they block a feature.",
+    "限制应在阻断功能前提前可见。"
   ],
   "visible boundary": [
     "/ˈvɪzəbl ˈbaʊndəri/",
@@ -16500,6 +17018,13 @@
     "",
     "The planner keeps an energy buffer for hills, cold weather, and unexpected congestion.",
     "在这句话中，“weather”可理解为“天气；外部环境条件”。"
+  ],
+  "weather noise": [
+    "/ˈweðər nɔɪz/",
+    "天气噪声；雨雪雾等天气对感知信号造成的干扰",
+    "",
+    "Weather noise can make a sensor less reliable.",
+    "天气噪声会让传感器变得不那么可靠。"
   ],
   "weight": [
     "/weɪt/",
