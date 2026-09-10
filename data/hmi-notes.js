@@ -1,5 +1,757 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-10-consent-memory-privacy-prompts",
+    "date": "2026-09-10",
+    "title": "Consent memory and privacy prompts in intelligent cockpits",
+    "topic": "智能座舱同意记忆与隐私提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明隐私授权、同意记忆、跨模态提示、访客模式、权限边界和可撤销设置。",
+    "words": [
+      {
+        "term": "consent memory",
+        "phonetic": "/kənˈsent ˈmeməri/",
+        "meaning": "同意记忆；系统记录用户授权偏好并在合适范围内复用的机制",
+        "example": "Consent memory lets the cockpit remember a driver's privacy choice without asking again too soon.",
+        "chineseExample": "同意记忆让座舱记住驾驶员的隐私选择，而不必过早重复询问。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；清楚说明数据、功能或用户身份适用范围的限制",
+        "example": "A permission boundary tells occupants whether a setting applies to this trip, this profile, or the whole account.",
+        "chineseExample": "权限边界告诉乘员某项设置适用于本次行程、当前档案还是整个账号。"
+      },
+      {
+        "term": "cross-modal prompt",
+        "phonetic": "/krɔːs ˈmoʊdl prɑːmpt/",
+        "meaning": "跨模态提示；通过语音、屏幕、灯光或触觉等多个通道协同表达的提示",
+        "example": "A cross-modal prompt can pair a short voice question with a clear screen choice.",
+        "chineseExample": "跨模态提示可以把简短语音问题与清晰屏幕选项配对。"
+      },
+      {
+        "term": "privacy indicator",
+        "phonetic": "/ˈpraɪvəsi ˈɪndɪkeɪtər/",
+        "meaning": "隐私指示器；显示摄像头、麦克风或个人数据使用状态的界面信号",
+        "example": "A privacy indicator should stay visible while the microphone is listening.",
+        "chineseExample": "麦克风监听期间，隐私指示器应保持可见。"
+      },
+      {
+        "term": "temporary consent",
+        "phonetic": "/ˈtempəreri kənˈsent/",
+        "meaning": "临时同意；只在当前任务、会话或行程中有效的授权",
+        "example": "Temporary consent is useful when a passenger shares a destination for one trip.",
+        "chineseExample": "当乘客只为一次行程共享目的地时，临时同意很有用。"
+      },
+      {
+        "term": "persistent preference",
+        "phonetic": "/pərˈsɪstənt ˈprefrəns/",
+        "meaning": "持久偏好；跨会话保存并可再次调用的用户设置",
+        "example": "Persistent preference should be easy to review and reset from the privacy panel.",
+        "chineseExample": "持久偏好应能在隐私面板中轻松查看和重置。"
+      },
+      {
+        "term": "consent refresh",
+        "phonetic": "/kənˈsent rɪˈfreʃ/",
+        "meaning": "授权刷新；在场景、时间或数据范围变化后重新确认用户意愿",
+        "example": "Consent refresh prevents an old approval from being reused in a new context.",
+        "chineseExample": "授权刷新防止旧批准在新场景中被继续复用。"
+      },
+      {
+        "term": "revoke access",
+        "phonetic": "/rɪˈvoʊk ˈækses/",
+        "meaning": "撤销访问；取消某项功能、服务或人员对数据的权限",
+        "example": "The driver can revoke access when the cockpit no longer needs the shared calendar.",
+        "chineseExample": "当座舱不再需要共享日历时，驾驶员可以撤销访问。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车辆或设备本地处理数据而不上传云端",
+        "example": "On-device processing can reduce privacy risk for voice and face recognition.",
+        "chineseExample": "端侧处理可以降低语音和人脸识别的隐私风险。"
+      },
+      {
+        "term": "guest mode",
+        "phonetic": "/ɡest moʊd/",
+        "meaning": "访客模式；不读取或保存车主个人偏好的临时使用状态",
+        "example": "Guest mode avoids exposing the owner's home address and media history.",
+        "chineseExample": "访客模式避免暴露车主的家庭地址和媒体历史。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "consent memory",
+        "phonetic": "/kənˈsent ˈmeməri/",
+        "meaning": "同意记忆；系统记录用户授权偏好并在合适范围内复用的机制",
+        "example": "Consent memory lets the cockpit remember a driver's privacy choice without asking again too soon.",
+        "chineseExample": "同意记忆让座舱记住驾驶员的隐私选择，而不必过早重复询问。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；清楚说明数据、功能或用户身份适用范围的限制",
+        "example": "A permission boundary tells occupants whether a setting applies to this trip, this profile, or the whole account.",
+        "chineseExample": "权限边界告诉乘员某项设置适用于本次行程、当前档案还是整个账号。"
+      },
+      {
+        "term": "cross-modal prompt",
+        "phonetic": "/krɔːs ˈmoʊdl prɑːmpt/",
+        "meaning": "跨模态提示；通过语音、屏幕、灯光或触觉等多个通道协同表达的提示",
+        "example": "A cross-modal prompt can pair a short voice question with a clear screen choice.",
+        "chineseExample": "跨模态提示可以把简短语音问题与清晰屏幕选项配对。"
+      },
+      {
+        "term": "privacy indicator",
+        "phonetic": "/ˈpraɪvəsi ˈɪndɪkeɪtər/",
+        "meaning": "隐私指示器；显示摄像头、麦克风或个人数据使用状态的界面信号",
+        "example": "A privacy indicator should stay visible while the microphone is listening.",
+        "chineseExample": "麦克风监听期间，隐私指示器应保持可见。"
+      },
+      {
+        "term": "temporary consent",
+        "phonetic": "/ˈtempəreri kənˈsent/",
+        "meaning": "临时同意；只在当前任务、会话或行程中有效的授权",
+        "example": "Temporary consent is useful when a passenger shares a destination for one trip.",
+        "chineseExample": "当乘客只为一次行程共享目的地时，临时同意很有用。"
+      },
+      {
+        "term": "persistent preference",
+        "phonetic": "/pərˈsɪstənt ˈprefrəns/",
+        "meaning": "持久偏好；跨会话保存并可再次调用的用户设置",
+        "example": "Persistent preference should be easy to review and reset from the privacy panel.",
+        "chineseExample": "持久偏好应能在隐私面板中轻松查看和重置。"
+      },
+      {
+        "term": "consent refresh",
+        "phonetic": "/kənˈsent rɪˈfreʃ/",
+        "meaning": "授权刷新；在场景、时间或数据范围变化后重新确认用户意愿",
+        "example": "Consent refresh prevents an old approval from being reused in a new context.",
+        "chineseExample": "授权刷新防止旧批准在新场景中被继续复用。"
+      },
+      {
+        "term": "revoke access",
+        "phonetic": "/rɪˈvoʊk ˈækses/",
+        "meaning": "撤销访问；取消某项功能、服务或人员对数据的权限",
+        "example": "The driver can revoke access when the cockpit no longer needs the shared calendar.",
+        "chineseExample": "当座舱不再需要共享日历时，驾驶员可以撤销访问。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车辆或设备本地处理数据而不上传云端",
+        "example": "On-device processing can reduce privacy risk for voice and face recognition.",
+        "chineseExample": "端侧处理可以降低语音和人脸识别的隐私风险。"
+      },
+      {
+        "term": "guest mode",
+        "phonetic": "/ɡest moʊd/",
+        "meaning": "访客模式；不读取或保存车主个人偏好的临时使用状态",
+        "example": "Guest mode avoids exposing the owner's home address and media history.",
+        "chineseExample": "访客模式避免暴露车主的家庭地址和媒体历史。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集完成任务所需的最少数据",
+        "example": "The cockpit uses data minimization to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“data minimization”让隐私决策更容易理解。"
+      },
+      {
+        "term": "scope",
+        "phonetic": "/skoʊp/",
+        "meaning": "范围；授权、功能或数据使用覆盖的边界",
+        "example": "The cockpit uses scope to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“scope”让隐私决策更容易理解。"
+      },
+      {
+        "term": "retention",
+        "phonetic": "/rɪˈtenʃn/",
+        "meaning": "保留期限；数据被保存的时间长度",
+        "example": "The cockpit uses retention to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“retention”让隐私决策更容易理解。"
+      },
+      {
+        "term": "shared display",
+        "phonetic": "/ʃerd dɪˈspleɪ/",
+        "meaning": "共享显示；驾驶员和乘员都能看到的屏幕区域",
+        "example": "The cockpit uses shared display to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“shared display”让隐私决策更容易理解。"
+      },
+      {
+        "term": "private surface",
+        "phonetic": "/ˈpraɪvət ˈsɜːrfɪs/",
+        "meaning": "私密界面；只适合特定乘员查看的显示或交互区域",
+        "example": "The cockpit uses private surface to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“private surface”让隐私决策更容易理解。"
+      },
+      {
+        "term": "occupant",
+        "phonetic": "/ˈɑːkjəpənt/",
+        "meaning": "乘员；车内的驾驶员或乘客",
+        "example": "The cockpit uses occupant to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“occupant”让隐私决策更容易理解。"
+      },
+      {
+        "term": "driver profile",
+        "phonetic": "/ˈdraɪvər ˈproʊfaɪl/",
+        "meaning": "驾驶员档案；保存身份、偏好和授权的用户配置",
+        "example": "The cockpit uses driver profile to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“driver profile”让隐私决策更容易理解。"
+      },
+      {
+        "term": "voice consent",
+        "phonetic": "/vɔɪs kənˈsent/",
+        "meaning": "语音同意；通过语音表达并记录的授权",
+        "example": "The cockpit uses voice consent to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“voice consent”让隐私决策更容易理解。"
+      },
+      {
+        "term": "screen confirmation",
+        "phonetic": "/skriːn ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "屏幕确认；通过屏幕选项确认用户意愿",
+        "example": "The cockpit uses screen confirmation to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“screen confirmation”让隐私决策更容易理解。"
+      },
+      {
+        "term": "biometric data",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk ˈdeɪtə/",
+        "meaning": "生物识别数据；面部、声纹或其他身份特征数据",
+        "example": "The cockpit uses biometric data to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“biometric data”让隐私决策更容易理解。"
+      },
+      {
+        "term": "microphone access",
+        "phonetic": "/ˈmaɪkrəfoʊn ˈækses/",
+        "meaning": "麦克风访问；应用或系统使用麦克风的权限",
+        "example": "The cockpit uses microphone access to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“microphone access”让隐私决策更容易理解。"
+      },
+      {
+        "term": "camera access",
+        "phonetic": "/ˈkæmərə ˈækses/",
+        "meaning": "摄像头访问；应用或系统使用摄像头的权限",
+        "example": "The cockpit uses camera access to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“camera access”让隐私决策更容易理解。"
+      },
+      {
+        "term": "location sharing",
+        "phonetic": "/loʊˈkeɪʃn ˈʃerɪŋ/",
+        "meaning": "位置共享；向系统、服务或乘员共享当前位置或目的地",
+        "example": "The cockpit uses location sharing to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“location sharing”让隐私决策更容易理解。"
+      },
+      {
+        "term": "account sync",
+        "phonetic": "/əˈkaʊnt sɪŋk/",
+        "meaning": "账号同步；跨设备或服务同步用户设置和数据",
+        "example": "The cockpit uses account sync to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“account sync”让隐私决策更容易理解。"
+      },
+      {
+        "term": "cloud service",
+        "phonetic": "/klaʊd ˈsɜːrvɪs/",
+        "meaning": "云服务；依赖远程服务器处理或保存数据的服务",
+        "example": "The cockpit uses cloud service to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“cloud service”让隐私决策更容易理解。"
+      },
+      {
+        "term": "local storage",
+        "phonetic": "/ˈloʊkl ˈstɔːrɪdʒ/",
+        "meaning": "本地存储；在车辆或设备上保存数据",
+        "example": "The cockpit uses local storage to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“local storage”让隐私决策更容易理解。"
+      },
+      {
+        "term": "privacy panel",
+        "phonetic": "/ˈpraɪvəsi ˈpænl/",
+        "meaning": "隐私面板；集中查看和管理授权的界面",
+        "example": "The cockpit uses privacy panel to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“privacy panel”让隐私决策更容易理解。"
+      },
+      {
+        "term": "audit trail",
+        "phonetic": "/ˈɔːdɪt treɪl/",
+        "meaning": "审计记录；说明何时、为何、由谁使用数据的记录",
+        "example": "The cockpit uses audit trail to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“audit trail”让隐私决策更容易理解。"
+      },
+      {
+        "term": "explainable choice",
+        "phonetic": "/ɪkˈspleɪnəbl tʃɔɪs/",
+        "meaning": "可解释选项；清楚说明后果和范围的选择",
+        "example": "The cockpit uses explainable choice to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“explainable choice”让隐私决策更容易理解。"
+      },
+      {
+        "term": "default state",
+        "phonetic": "/dɪˈfɔːlt steɪt/",
+        "meaning": "默认状态；用户未操作前系统采用的初始设置",
+        "example": "The cockpit uses default state to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“default state”让隐私决策更容易理解。"
+      },
+      {
+        "term": "session-only",
+        "phonetic": "/ˈseʃn ˈoʊnli/",
+        "meaning": "仅本次会话；只在当前使用周期内有效",
+        "example": "The cockpit uses session-only to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“session-only”让隐私决策更容易理解。"
+      },
+      {
+        "term": "trip-level permission",
+        "phonetic": "/trɪp ˈlevl pərˈmɪʃn/",
+        "meaning": "行程级权限；只在当前行程中有效的授权",
+        "example": "The cockpit uses trip-level permission to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“trip-level permission”让隐私决策更容易理解。"
+      },
+      {
+        "term": "profile-level permission",
+        "phonetic": "/ˈproʊfaɪl ˈlevl pərˈmɪʃn/",
+        "meaning": "档案级权限；绑定到某个用户档案的授权",
+        "example": "The cockpit uses profile-level permission to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“profile-level permission”让隐私决策更容易理解。"
+      },
+      {
+        "term": "reversible setting",
+        "phonetic": "/rɪˈvɜːrsəbl ˈsetɪŋ/",
+        "meaning": "可撤销设置；用户可以随时取消或恢复的设置",
+        "example": "The cockpit uses reversible setting to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“reversible setting”让隐私决策更容易理解。"
+      },
+      {
+        "term": "consent decay",
+        "phonetic": "/kənˈsent dɪˈkeɪ/",
+        "meaning": "同意衰减；随着时间和场景变化，旧授权可信度下降",
+        "example": "The cockpit uses consent decay to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“consent decay”让隐私决策更容易理解。"
+      },
+      {
+        "term": "privacy-safe wording",
+        "phonetic": "/ˈpraɪvəsi seɪf ˈwɜːrdɪŋ/",
+        "meaning": "隐私安全措辞；避免过度暴露敏感内容的提示文本",
+        "example": "The cockpit uses privacy-safe wording to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“privacy-safe wording”让隐私决策更容易理解。"
+      },
+      {
+        "term": "sensitive context",
+        "phonetic": "/ˈsensətɪv ˈkɑːntekst/",
+        "meaning": "敏感场景；涉及身份、位置、联系人或私人偏好的使用情境",
+        "example": "The cockpit uses sensitive context to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“sensitive context”让隐私决策更容易理解。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制；驾驶员和乘员共同影响座舱功能的交互方式",
+        "example": "The cockpit uses shared control to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“shared control”让隐私决策更容易理解。"
+      },
+      {
+        "term": "passenger request",
+        "phonetic": "/ˈpæsɪndʒər rɪˈkwest/",
+        "meaning": "乘客请求；由乘客发起的座舱操作意图",
+        "example": "The cockpit uses passenger request to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“passenger request”让隐私决策更容易理解。"
+      },
+      {
+        "term": "driver authority",
+        "phonetic": "/ˈdraɪvər əˈθɔːrəti/",
+        "meaning": "驾驶员权限；驾驶员对关键功能和隐私决策的最终控制",
+        "example": "The cockpit uses driver authority to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“driver authority”让隐私决策更容易理解。"
+      },
+      {
+        "term": "visible affordance",
+        "phonetic": "/ˈvɪzəbl əˈfɔːrdəns/",
+        "meaning": "可见示能；让用户看出可操作方式的界面线索",
+        "example": "The cockpit uses visible affordance to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“visible affordance”让隐私决策更容易理解。"
+      },
+      {
+        "term": "glanceable status",
+        "phonetic": "/ˈɡlænsəbl ˈsteɪtəs/",
+        "meaning": "可扫视状态；短时间内可理解的状态反馈",
+        "example": "The cockpit uses glanceable status to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“glanceable status”让隐私决策更容易理解。"
+      },
+      {
+        "term": "low-interruption",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃn/",
+        "meaning": "低打断；尽量减少对驾驶注意力干扰的提示方式",
+        "example": "The cockpit uses low-interruption to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“low-interruption”让隐私决策更容易理解。"
+      },
+      {
+        "term": "fallback prompt",
+        "phonetic": "/ˈfɔːlbæk prɑːmpt/",
+        "meaning": "回退提示；首选通道不可用时采用的替代提示",
+        "example": "The cockpit uses fallback prompt to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“fallback prompt”让隐私决策更容易理解。"
+      },
+      {
+        "term": "handover cue",
+        "phonetic": "/ˈhændoʊvər kjuː/",
+        "meaning": "交接线索；提示控制权或任务责任变化的信号",
+        "example": "The cockpit uses handover cue to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“handover cue”让隐私决策更容易理解。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力形成恰当预期",
+        "example": "The cockpit uses trust calibration to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“trust calibration”让隐私决策更容易理解。"
+      },
+      {
+        "term": "personalization",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "个性化；根据用户身份、习惯或偏好调整体验",
+        "example": "The cockpit uses personalization to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“personalization”让隐私决策更容易理解。"
+      },
+      {
+        "term": "privacy trade-off",
+        "phonetic": "/ˈpraɪvəsi ˈtreɪd ɔːf/",
+        "meaning": "隐私权衡；便利性与数据暴露之间的取舍",
+        "example": "The cockpit uses privacy trade-off to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“privacy trade-off”让隐私决策更容易理解。"
+      },
+      {
+        "term": "clear label",
+        "phonetic": "/klɪr ˈleɪbl/",
+        "meaning": "清晰标签；准确说明功能、状态或选择含义的文字",
+        "example": "The cockpit uses clear label to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“clear label”让隐私决策更容易理解。"
+      },
+      {
+        "term": "settings review",
+        "phonetic": "/ˈsetɪŋz rɪˈvjuː/",
+        "meaning": "设置复核；查看并确认现有配置是否仍合适",
+        "example": "The cockpit uses settings review to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“settings review”让隐私决策更容易理解。"
+      },
+      {
+        "term": "data use",
+        "phonetic": "/ˈdeɪtə juːs/",
+        "meaning": "数据使用；系统收集、处理或共享数据的方式",
+        "example": "The cockpit uses data use to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“data use”让隐私决策更容易理解。"
+      },
+      {
+        "term": "identity switch",
+        "phonetic": "/aɪˈdentəti swɪtʃ/",
+        "meaning": "身份切换；在不同用户档案或访客状态之间切换",
+        "example": "The cockpit uses identity switch to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“identity switch”让隐私决策更容易理解。"
+      },
+      {
+        "term": "valet mode",
+        "phonetic": "/væˈleɪ moʊd/",
+        "meaning": "代客模式；限制个人信息和部分功能的临时车辆模式",
+        "example": "The cockpit uses valet mode to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“valet mode”让隐私决策更容易理解。"
+      },
+      {
+        "term": "rental scenario",
+        "phonetic": "/ˈrentl səˈnærioʊ/",
+        "meaning": "租赁场景；车辆临时交给非车主使用的场景",
+        "example": "The cockpit uses rental scenario to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“rental scenario”让隐私决策更容易理解。"
+      },
+      {
+        "term": "family account",
+        "phonetic": "/ˈfæməli əˈkaʊnt/",
+        "meaning": "家庭账号；多个家庭成员共享或关联的车机账号",
+        "example": "The cockpit uses family account to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“family account”让隐私决策更容易理解。"
+      },
+      {
+        "term": "calendar access",
+        "phonetic": "/ˈkælɪndər ˈækses/",
+        "meaning": "日历访问；座舱读取日程信息的权限",
+        "example": "The cockpit uses calendar access to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“calendar access”让隐私决策更容易理解。"
+      },
+      {
+        "term": "media history",
+        "phonetic": "/ˈmiːdiə ˈhɪstəri/",
+        "meaning": "媒体历史；用户播放记录和内容偏好",
+        "example": "The cockpit uses media history to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“media history”让隐私决策更容易理解。"
+      },
+      {
+        "term": "home address",
+        "phonetic": "/hoʊm əˈdres/",
+        "meaning": "家庭地址；导航和账号中保存的住址信息",
+        "example": "The cockpit uses home address to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“home address”让隐私决策更容易理解。"
+      },
+      {
+        "term": "privacy copy",
+        "phonetic": "/ˈpraɪvəsi ˈkɑːpi/",
+        "meaning": "隐私文案；用于解释数据使用和授权后果的界面文字",
+        "example": "The cockpit uses privacy copy to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“privacy copy”让隐私决策更容易理解。"
+      },
+      {
+        "term": "confirmation ladder",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈlædər/",
+        "meaning": "确认阶梯；按风险逐步提高确认强度的设计方法",
+        "example": "The cockpit uses confirmation ladder to make privacy decisions easier to understand.",
+        "chineseExample": "座舱使用“confirmation ladder”让隐私决策更容易理解。"
+      },
+      {
+        "term": "remember",
+        "phonetic": "/rɪˈmembər/",
+        "meaning": "记住；保存并再次调用信息",
+        "example": "The cockpit uses the word remember in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“remember”可结合用户场景理解。"
+      },
+      {
+        "term": "account",
+        "phonetic": "/əˈkaʊnt/",
+        "meaning": "账号；与用户身份和服务绑定的账户",
+        "example": "The cockpit uses the word account in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“account”可结合用户场景理解。"
+      },
+      {
+        "term": "cross-modal",
+        "phonetic": "/krɔːs ˈmoʊdl/",
+        "meaning": "跨模态的；涉及多个交互通道的",
+        "example": "The cockpit uses the word cross-modal in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“cross-modal”可结合用户场景理解。"
+      },
+      {
+        "term": "pair",
+        "phonetic": "/per/",
+        "meaning": "配对；把两个提示或控件组合使用",
+        "example": "The cockpit uses the word pair in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“pair”可结合用户场景理解。"
+      },
+      {
+        "term": "microphone",
+        "phonetic": "/ˈmaɪkrəfoʊn/",
+        "meaning": "麦克风；用于语音输入或监听状态的设备",
+        "example": "The cockpit uses the word microphone in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“microphone”可结合用户场景理解。"
+      },
+      {
+        "term": "refresh",
+        "phonetic": "/rɪˈfreʃ/",
+        "meaning": "刷新；重新确认或更新状态",
+        "example": "The cockpit uses the word refresh in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“refresh”可结合用户场景理解。"
+      },
+      {
+        "term": "old",
+        "phonetic": "/oʊld/",
+        "meaning": "旧的；来自过去场景或时间点的",
+        "example": "The cockpit uses the word old in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“old”可结合用户场景理解。"
+      },
+      {
+        "term": "reused",
+        "phonetic": "/ˌriːˈjuːzd/",
+        "meaning": "被复用的；再次用于新场景的",
+        "example": "The cockpit uses the word reused in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“reused”可结合用户场景理解。"
+      },
+      {
+        "term": "revoke",
+        "phonetic": "/rɪˈvoʊk/",
+        "meaning": "撤销；取消已经授予的权限",
+        "example": "The cockpit uses the word revoke in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“revoke”可结合用户场景理解。"
+      },
+      {
+        "term": "face",
+        "phonetic": "/feɪs/",
+        "meaning": "人脸；用于识别或感知的面部信息",
+        "example": "The cockpit uses the word face in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“face”可结合用户场景理解。"
+      },
+      {
+        "term": "guest",
+        "phonetic": "/ɡest/",
+        "meaning": "访客；临时使用车辆但非车主的人",
+        "example": "The cockpit uses the word guest in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“guest”可结合用户场景理解。"
+      },
+      {
+        "term": "owners",
+        "phonetic": "/ˈoʊnərz/",
+        "meaning": "车主的；多个所有者或用户的",
+        "example": "The cockpit uses the word owners in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“owners”可结合用户场景理解。"
+      },
+      {
+        "term": "home",
+        "phonetic": "/hoʊm/",
+        "meaning": "家庭；住址或私人生活相关信息",
+        "example": "The cockpit uses the word home in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“home”可结合用户场景理解。"
+      },
+      {
+        "term": "address",
+        "phonetic": "/əˈdres/",
+        "meaning": "地址；导航或账号中保存的位置数据",
+        "example": "The cockpit uses the word address in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“address”可结合用户场景理解。"
+      },
+      {
+        "term": "my",
+        "phonetic": "/maɪ/",
+        "meaning": "我的；指用户个人授权或个人数据",
+        "example": "The cockpit uses the word my in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“my”可结合用户场景理解。"
+      },
+      {
+        "term": "departure",
+        "phonetic": "/dɪˈpɑːrtʃər/",
+        "meaning": "出发；行程开始时间或离开地点",
+        "example": "The cockpit uses the word departure in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“departure”可结合用户场景理解。"
+      },
+      {
+        "term": "profile-level",
+        "phonetic": "/ˈproʊfaɪl ˈlevl/",
+        "meaning": "档案级的；绑定到用户档案范围的",
+        "example": "The cockpit uses the word profile-level in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“profile-level”可结合用户场景理解。"
+      },
+      {
+        "term": "indicators",
+        "phonetic": "/ˈɪndɪkeɪtərz/",
+        "meaning": "指示器；显示状态的多个界面信号",
+        "example": "The cockpit uses the word indicators in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“indicators”可结合用户场景理解。"
+      },
+      {
+        "term": "biometric",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk/",
+        "meaning": "生物识别的；与面部、声纹等身份特征相关的",
+        "example": "The cockpit uses the word biometric in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“biometric”可结合用户场景理解。"
+      },
+      {
+        "term": "valet",
+        "phonetic": "/væˈleɪ/",
+        "meaning": "代客泊车；把车辆临时交给服务人员的场景",
+        "example": "The cockpit uses the word valet in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“valet”可结合用户场景理解。"
+      },
+      {
+        "term": "rental",
+        "phonetic": "/ˈrentl/",
+        "meaning": "租赁的；临时租用车辆相关的",
+        "example": "The cockpit uses the word rental in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“rental”可结合用户场景理解。"
+      },
+      {
+        "term": "defaults",
+        "phonetic": "/dɪˈfɔːlts/",
+        "meaning": "默认设置；未操作前采用的初始配置",
+        "example": "The cockpit uses the word defaults in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“defaults”可结合用户场景理解。"
+      },
+      {
+        "term": "routines",
+        "phonetic": "/ruːˈtiːnz/",
+        "meaning": "日常习惯；可被位置和媒体记录暴露的规律",
+        "example": "The cockpit uses the word routines in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“routines”可结合用户场景理解。"
+      },
+      {
+        "term": "plainly",
+        "phonetic": "/ˈpleɪnli/",
+        "meaning": "清楚地；用直接易懂的方式表达",
+        "example": "The cockpit uses the word plainly in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“plainly”可结合用户场景理解。"
+      },
+      {
+        "term": "audit",
+        "phonetic": "/ˈɔːdɪt/",
+        "meaning": "审计；记录和检查数据使用行为",
+        "example": "The cockpit uses the word audit in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“audit”可结合用户场景理解。"
+      },
+      {
+        "term": "promise",
+        "phonetic": "/ˈprɑːmɪs/",
+        "meaning": "承诺；产品对用户体验和信任的保证",
+        "example": "The cockpit uses the word promise in privacy prompts when it fits the user context.",
+        "chineseExample": "在隐私提示中，“promise”可结合用户场景理解。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing consent memory without hiding privacy choices",
+        "text": "In an intelligent cockpit, personalization often depends on consent memory. The system may remember a seat position, a climate preference, a recent route, or a voice setting, but it should also explain the permission boundary behind that memory. A good privacy prompt starts with the occupant's goal: use my calendar to suggest a departure time. It then names the data use, the scope, and the retention period. The interface should make temporary consent different from a persistent preference, because a passenger request for one trip should not become a profile-level permission. Cross-modal prompts help when the decision matters. A short voice question can reduce visual demand, while a screen confirmation gives the driver a stable place to review the choice. Privacy indicators should remain visible when a camera, microphone, or biometric service is active. The cockpit also needs a clear way to revoke access. Guest mode, valet mode, and rental scenarios require stronger defaults, because saved destinations, media history, and home address details can expose private routines. Trust improves when the system uses on-device processing where possible, labels cloud service use plainly, and shows an audit trail for sensitive actions. Consent memory is not just storage; it is a promise that personalization will stay understandable, reversible, and respectful.",
+        "translation": "在智能座舱中，个性化通常依赖同意记忆。系统可能会记住座椅位置、空调偏好、最近路线或语音设置，但也应解释该记忆背后的权限边界。好的隐私提示会先从乘员目标开始：使用我的日历来建议出发时间。然后说明数据使用、范围和保留期限。界面应让临时同意不同于持久偏好，因为乘客为一次行程提出的请求不应变成档案级权限。当决策重要时，跨模态提示会有帮助。简短语音问题可以减少视觉负荷，而屏幕确认给驾驶员一个稳定位置来复核选择。当摄像头、麦克风或生物识别服务处于活动状态时，隐私指示器应保持可见。座舱还需要一种清晰方式来撤销访问。访客模式、代客模式和租赁场景需要更强的默认设置，因为保存的目的地、媒体历史和家庭地址细节可能暴露私人日常。系统尽可能使用端侧处理、清楚标注云服务使用，并为敏感操作显示审计记录时，信任会提升。同意记忆不只是存储；它是一项承诺，即个性化会保持可理解、可撤销并尊重用户。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The system may remember a seat position, a climate preference, a recent route, or a voice setting, but it should also explain the permission boundary behind that memory.",
+        "translation": "系统可能会记住座椅位置、空调偏好、最近路线或语音设置，但也应解释该记忆背后的权限边界。",
+        "points": [
+          "may remember... 列举个性化可以保存的具体内容。",
+          "but it should also... 强调便利性之外还要说明隐私条件。",
+          "behind that memory 指同意记忆背后的授权范围。"
+        ]
+      },
+      {
+        "sentence": "A short voice question can reduce visual demand, while a screen confirmation gives the driver a stable place to review the choice.",
+        "translation": "简短语音问题可以减少视觉负荷，而屏幕确认给驾驶员一个稳定位置来复核选择。",
+        "points": [
+          "while 用来对比语音和屏幕两种模态的作用。",
+          "visual demand 指驾驶员需要看屏幕付出的注意力成本。",
+          "stable place to review 表示屏幕适合承载可复核内容。"
+        ]
+      },
+      {
+        "sentence": "Guest mode, valet mode, and rental scenarios require stronger defaults, because saved destinations, media history, and home address details can expose private routines.",
+        "translation": "访客模式、代客模式和租赁场景需要更强的默认设置，因为保存的目的地、媒体历史和家庭地址细节可能暴露私人日常。",
+        "points": [
+          "require stronger defaults 表示默认隐私保护应更严格。",
+          "because 引出设计理由，而不是只给出规则。",
+          "private routines 指通勤、家庭和媒体偏好等个人习惯。"
+        ]
+      },
+      {
+        "sentence": "Consent memory is not just storage; it is a promise that personalization will stay understandable, reversible, and respectful.",
+        "translation": "同意记忆不只是存储；它是一项承诺，即个性化会保持可理解、可撤销并尊重用户。",
+        "points": [
+          "not just...it is... 用来提升概念层级。",
+          "understandable, reversible, and respectful 是三个并列形容词。",
+          "promise 表示产品体验对用户信任的承诺。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 10 个核心词汇，重点区分 consent memory、temporary consent、persistent preference 和 permission boundary。"
+      },
+      {
+        "title": "长文跟读",
+        "duration": "8 分钟",
+        "instruction": "跟读长文两遍，第一遍关注授权范围，第二遍关注跨模态提示和隐私指示器的表达。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "instruction": "用 The system may remember..., but it should also explain... 造 3 个句子，分别描述座椅、导航和语音数据。"
+      },
+      {
+        "title": "产品表达练习",
+        "duration": "5 分钟",
+        "instruction": "写一条英文隐私提示，必须包含用户目标、数据使用、授权范围、保留期限和撤销入口。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-09-sensor-failure-graceful-degradation",
     "date": "2026-09-09",
     "title": "Sensor failure messaging and graceful degradation in intelligent cockpits",

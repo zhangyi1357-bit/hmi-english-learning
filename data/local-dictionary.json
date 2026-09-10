@@ -97,6 +97,20 @@
     "在这句话中，“according”可理解为“一致, 调和, 协定；给与, 使一致；相符合”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "account": [
+    "/əˈkaʊnt/",
+    "账号；与用户身份和服务绑定的账户",
+    "",
+    "The cockpit uses the word account in privacy prompts when it fits the user context.",
+    "在隐私提示中，“account”可结合用户场景理解。"
+  ],
+  "account sync": [
+    "/əˈkaʊnt sɪŋk/",
+    "账号同步；跨设备或服务同步用户设置和数据",
+    "",
+    "The cockpit uses account sync to make privacy decisions easier to understand.",
+    "座舱使用“account sync”让隐私决策更容易理解。"
+  ],
   "accountable": [
     "/按语境朗读/",
     "可追责的；能够说明原因并接受核对",
@@ -351,6 +365,13 @@
     "The team measured driver workload before adding another layer of alerts.",
     "在这句话中，“adding”可理解为“增加, 添加, 附带说明, 计算...总和；做加法, 积累而成, 增添”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "address": [
+    "/əˈdres/",
+    "地址；导航或账号中保存的位置数据",
+    "",
+    "The cockpit uses the word address in privacy prompts when it fits the user context.",
+    "在隐私提示中，“address”可结合用户场景理解。"
   ],
   "adjust": [
     "/əˈdʒʌst/",
@@ -1225,6 +1246,20 @@
     "Dialog state helps the assistant resume after navigation audio interrupts a request.",
     "在这句话中，“audio”可理解为“音频；声音输出通道”。"
   ],
+  "audit": [
+    "/ˈɔːdɪt/",
+    "审计；记录和检查数据使用行为",
+    "",
+    "The cockpit uses the word audit in privacy prompts when it fits the user context.",
+    "在隐私提示中，“audit”可结合用户场景理解。"
+  ],
+  "audit trail": [
+    "/ˈɔːdɪt treɪl/",
+    "审计记录；说明何时、为何、由谁使用数据的记录",
+    "",
+    "The cockpit uses audit trail to make privacy decisions easier to understand.",
+    "座舱使用“audit trail”让隐私决策更容易理解。"
+  ],
   "auditory": [
     "/'ɒ:ditәri/",
     "形容词：听觉的, 听觉器官的",
@@ -1626,6 +1661,20 @@
     "在这句话中，“between”可理解为“在...之间”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "biometric": [
+    "/ˌbaɪoʊˈmetrɪk/",
+    "生物识别的；与面部、声纹等身份特征相关的",
+    "",
+    "The cockpit uses the word biometric in privacy prompts when it fits the user context.",
+    "在隐私提示中，“biometric”可结合用户场景理解。"
+  ],
+  "biometric data": [
+    "/ˌbaɪoʊˈmetrɪk ˈdeɪtə/",
+    "生物识别数据；面部、声纹或其他身份特征数据",
+    "",
+    "The cockpit uses biometric data to make privacy decisions easier to understand.",
+    "座舱使用“biometric data”让隐私决策更容易理解。"
+  ],
   "blame": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“blame”。",
@@ -1916,6 +1965,13 @@
     "The word calendar appears in today's cockpit summary practice.",
     "在这个语境中，“calendar”可理解为“日历”。"
   ],
+  "calendar access": [
+    "/ˈkælɪndər ˈækses/",
+    "日历访问；座舱读取日程信息的权限",
+    "",
+    "The cockpit uses calendar access to make privacy decisions easier to understand.",
+    "座舱使用“calendar access”让隐私决策更容易理解。"
+  ],
   "calendar hints": [
     "/ˈkælɪndər hɪnts/",
     "日历提示；由日程推断出的出行或目的地提示",
@@ -2017,6 +2073,13 @@
     "The cockpit should not sound like it is blaming the driver, and it should not expose sensitive camera data without a clear reason.",
     "在这句话中，“camera”可理解为“照相机, 摄影机, 密谈室, 暗箱”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "camera access": [
+    "/ˈkæmərə ˈækses/",
+    "摄像头访问；应用或系统使用摄像头的权限",
+    "",
+    "The cockpit uses camera access to make privacy decisions easier to understand.",
+    "座舱使用“camera access”让隐私决策更容易理解。"
   ],
   "camera signal": [
     "/ˈkæmərə ˈsɪɡnəl/",
@@ -2429,6 +2492,13 @@
     "",
     "Clear copy tells the driver what to do now and what happens next.",
     "在这句话中，“clear copy”用于描述智能座舱导航提示设计。"
+  ],
+  "clear label": [
+    "/klɪr ˈleɪbl/",
+    "清晰标签；准确说明功能、状态或选择含义的文字",
+    "",
+    "The cockpit uses clear label to make privacy decisions easier to understand.",
+    "座舱使用“clear label”让隐私决策更容易理解。"
   ],
   "clearly": [
     "/ˈklɪɚli/",
@@ -3087,6 +3157,13 @@
     "Confirmation design balances speed and safety.",
     "确认设计平衡速度与安全。"
   ],
+  "confirmation ladder": [
+    "/ˌkɑːnfərˈmeɪʃn ˈlædər/",
+    "确认阶梯；按风险逐步提高确认强度的设计方法",
+    "",
+    "The cockpit uses confirmation ladder to make privacy decisions easier to understand.",
+    "座舱使用“confirmation ladder”让隐私决策更容易理解。"
+  ],
   "confirmation phrase": [
     "/ˌkɑːnfərˈmeɪʃn freɪz/",
     "确认短语；用于验证用户意图、范围或后果的简短表达",
@@ -3201,12 +3278,33 @@
     "The consent boundary is clear when the driver can pause body sensing from the comfort panel.",
     "当驾驶员能从舒适面板暂停身体感知时，同意边界才清晰。"
   ],
+  "consent decay": [
+    "/kənˈsent dɪˈkeɪ/",
+    "同意衰减；随着时间和场景变化，旧授权可信度下降",
+    "",
+    "The cockpit uses consent decay to make privacy decisions easier to understand.",
+    "座舱使用“consent decay”让隐私决策更容易理解。"
+  ],
   "consent layer": [
     "/kənˈsent ˈleɪər/",
     "同意层；在界面和策略中管理用户授权范围的机制",
     "",
     "The consent layer should distinguish suggestions from automatic execution.",
     "同意层应区分建议和自动执行。"
+  ],
+  "consent memory": [
+    "/kənˈsent ˈmeməri/",
+    "同意记忆；系统记录用户授权偏好并在合适范围内复用的机制",
+    "",
+    "Consent memory lets the cockpit remember a driver's privacy choice without asking again too soon.",
+    "同意记忆让座舱记住驾驶员的隐私选择，而不必过早重复询问。"
+  ],
+  "consent refresh": [
+    "/kənˈsent rɪˈfreʃ/",
+    "授权刷新；在场景、时间或数据范围变化后重新确认用户意愿",
+    "",
+    "Consent refresh prevents an old approval from being reused in a new context.",
+    "授权刷新防止旧批准在新场景中被继续复用。"
   ],
   "consent screen": [
     "/kənˈsent skriːn/",
@@ -3752,6 +3850,20 @@
     "Critical control access must remain predictable during any update.",
     "任何更新期间，关键控制入口都必须保持可预测。"
   ],
+  "cross-modal": [
+    "/krɔːs ˈmoʊdl/",
+    "跨模态的；涉及多个交互通道的",
+    "",
+    "The cockpit uses the word cross-modal in privacy prompts when it fits the user context.",
+    "在隐私提示中，“cross-modal”可结合用户场景理解。"
+  ],
+  "cross-modal prompt": [
+    "/krɔːs ˈmoʊdl prɑːmpt/",
+    "跨模态提示；通过语音、屏幕、灯光或触觉等多个通道协同表达的提示",
+    "",
+    "A cross-modal prompt can pair a short voice question with a clear screen choice.",
+    "跨模态提示可以把简短语音问题与清晰屏幕选项配对。"
+  ],
   "cross-screen": [
     "/krɔːs skriːn/",
     "跨屏的；涉及两个或更多显示区域",
@@ -3861,6 +3973,13 @@
     "",
     "Data minimization keeps the recommendation engine focused on useful signals instead of collecting every interaction.",
     "数据最小化让推荐引擎聚焦有用信号，而不是收集每一次交互。"
+  ],
+  "data use": [
+    "/ˈdeɪtə juːs/",
+    "数据使用；系统收集、处理或共享数据的方式",
+    "",
+    "The cockpit uses data use to make privacy decisions easier to understand.",
+    "座舱使用“data use”让隐私决策更容易理解。"
   ],
   "data-sharing": [
     "/ˈdeɪtə ˈʃerɪŋ/",
@@ -3991,6 +4110,20 @@
     "",
     "The safest default is usually to suggest rather than execute.",
     "在这句话中，default 指系统默认行为。"
+  ],
+  "default state": [
+    "/dɪˈfɔːlt steɪt/",
+    "默认状态；用户未操作前系统采用的初始设置",
+    "",
+    "The cockpit uses default state to make privacy decisions easier to understand.",
+    "座舱使用“default state”让隐私决策更容易理解。"
+  ],
+  "defaults": [
+    "/dɪˈfɔːlts/",
+    "默认设置；未操作前采用的初始配置",
+    "",
+    "The cockpit uses the word defaults in privacy prompts when it fits the user context.",
+    "在隐私提示中，“defaults”可结合用户场景理解。"
   ],
   "deferrable": [
     "/dɪˈfɜːrəbl/",
@@ -4167,6 +4300,13 @@
     "The HMI team should lower interaction load when traffic density increases.",
     "在这句话中，“density”可理解为“密度”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "departure": [
+    "/dɪˈpɑːrtʃər/",
+    "出发；行程开始时间或离开地点",
+    "",
+    "The cockpit uses the word departure in privacy prompts when it fits the user context.",
+    "在隐私提示中，“departure”可结合用户场景理解。"
   ],
   "depends": [
     "/dɪˈpɛndz/",
@@ -4706,6 +4846,13 @@
     "Driver attention should stay on the road first.",
     "驾驶员注意力应首先留在道路上。"
   ],
+  "driver authority": [
+    "/ˈdraɪvər əˈθɔːrəti/",
+    "驾驶员权限；驾驶员对关键功能和隐私决策的最终控制",
+    "",
+    "The cockpit uses driver authority to make privacy decisions easier to understand.",
+    "座舱使用“driver authority”让隐私决策更容易理解。"
+  ],
   "driver consent": [
     "/ˈdraɪvər kənˈsent/",
     "驾驶员同意；系统在执行个性化、自动化或数据相关动作前获得用户确认",
@@ -4754,6 +4901,13 @@
     "",
     "Driver override keeps the person responsible for driving in control of high-impact actions.",
     "驾驶员覆盖确保负责驾驶的人掌控高影响动作。"
+  ],
+  "driver profile": [
+    "/ˈdraɪvər ˈproʊfaɪl/",
+    "驾驶员档案；保存身份、偏好和授权的用户配置",
+    "",
+    "The cockpit uses driver profile to make privacy decisions easier to understand.",
+    "座舱使用“driver profile”让隐私决策更容易理解。"
   ],
   "driver response": [
     "/ˈdraɪvər rɪˈspɑːns/",
@@ -5516,6 +5670,13 @@
     "The cockpit uses explainable automation to keep comfort assistance understandable and controllable.",
     "座舱使用“explainable automation”让舒适辅助更容易理解和控制。"
   ],
+  "explainable choice": [
+    "/ɪkˈspleɪnəbl tʃɔɪs/",
+    "可解释选项；清楚说明后果和范围的选择",
+    "",
+    "The cockpit uses explainable choice to make privacy decisions easier to understand.",
+    "座舱使用“explainable choice”让隐私决策更容易理解。"
+  ],
   "explainable recommendation": [
     "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
     "可解释推荐；说明依据、风险和替代方案的系统建议",
@@ -5641,6 +5802,13 @@
     "A cockpit HMI should keep eyes-off-road time as short as possible during secondary tasks.",
     "在次级任务中，座舱 HMI 应尽可能缩短离路注视时间。"
   ],
+  "face": [
+    "/feɪs/",
+    "人脸；用于识别或感知的面部信息",
+    "",
+    "The cockpit uses the word face in privacy prompts when it fits the user context.",
+    "在隐私提示中，“face”可结合用户场景理解。"
+  ],
   "facial expression": [
     "/ˈfeɪʃl ɪkˈspreʃn/",
     "面部表情；可能表达注意力、疲劳或情绪变化的脸部特征",
@@ -5721,6 +5889,13 @@
     "A fallback posture prevents the seat from moving to an unsafe position during identification failure.",
     "回退坐姿可防止识别失败时座椅移动到不安全位置。"
   ],
+  "fallback prompt": [
+    "/ˈfɔːlbæk prɑːmpt/",
+    "回退提示；首选通道不可用时采用的替代提示",
+    "",
+    "The cockpit uses fallback prompt to make privacy decisions easier to understand.",
+    "座舱使用“fallback prompt”让隐私决策更容易理解。"
+  ],
   "fallback station": [
     "/ˈfɔːlbæk ˈsteɪʃn/",
     "备用充电站；首选充电点不可用时可切换的备选地点",
@@ -5771,6 +5946,13 @@
     "",
     "The driver may call a family member during a commute.",
     "驾驶员可能在通勤中拨打家庭成员电话。"
+  ],
+  "family account": [
+    "/ˈfæməli əˈkaʊnt/",
+    "家庭账号；多个家庭成员共享或关联的车机账号",
+    "",
+    "The cockpit uses family account to make privacy decisions easier to understand.",
+    "座舱使用“family account”让隐私决策更容易理解。"
   ],
   "family cockpit": [
     "/ˈfæməli ˈkɑːkpɪt/",
@@ -6420,6 +6602,13 @@
     "A glanceable route cue should not require reading a long sentence.",
     "在这句话中，“glanceable route cue”用于描述智能座舱导航提示设计。"
   ],
+  "glanceable status": [
+    "/ˈɡlænsəbl ˈsteɪtəs/",
+    "可扫视状态；短时间内可理解的状态反馈",
+    "",
+    "The cockpit uses glanceable status to make privacy decisions easier to understand.",
+    "座舱使用“glanceable status”让隐私决策更容易理解。"
+  ],
   "glances": [
     "/待查/",
     "扫视；短时间视线移动",
@@ -6505,6 +6694,20 @@
     "",
     "Context-aware clarification helps the assistant ask a short follow-up instead of guessing the driver's intent.",
     "在这句话中，“guessing”可结合车内助手澄清场景理解。"
+  ],
+  "guest": [
+    "/ɡest/",
+    "访客；临时使用车辆但非车主的人",
+    "",
+    "The cockpit uses the word guest in privacy prompts when it fits the user context.",
+    "在隐私提示中，“guest”可结合用户场景理解。"
+  ],
+  "guest mode": [
+    "/ɡest moʊd/",
+    "访客模式；不读取或保存车主个人偏好的临时使用状态",
+    "",
+    "Guest mode avoids exposing the owner's home address and media history.",
+    "访客模式避免暴露车主的家庭地址和媒体历史。"
   ],
   "guidance": [
     "/'gaidns/",
@@ -6960,6 +7163,20 @@
     "在这句话中，“hmi”可理解为“abbr. 集线器管理接口；人机接口（Human Machine Interface）；英国督学（Her/His Majesty 's Inspector）”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "home": [
+    "/hoʊm/",
+    "家庭；住址或私人生活相关信息",
+    "",
+    "The cockpit uses the word home in privacy prompts when it fits the user context.",
+    "在隐私提示中，“home”可结合用户场景理解。"
+  ],
+  "home address": [
+    "/hoʊm əˈdres/",
+    "家庭地址；导航和账号中保存的住址信息",
+    "",
+    "The cockpit uses home address to make privacy decisions easier to understand.",
+    "座舱使用“home address”让隐私决策更容易理解。"
+  ],
   "honest": [
     "/待查/",
     "诚实的；不夸大能力或隐藏限制",
@@ -7069,6 +7286,13 @@
     "",
     "Identified should support clear control in a shared intelligent cockpit.",
     "在这句话中，“identified”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "identity switch": [
+    "/aɪˈdentəti swɪtʃ/",
+    "身份切换；在不同用户档案或访客状态之间切换",
+    "",
+    "The cockpit uses identity switch to make privacy decisions easier to understand.",
+    "座舱使用“identity switch”让隐私决策更容易理解。"
   ],
   "if": [
     "/ɪf/",
@@ -7261,6 +7485,13 @@
     "",
     "A state indicator confirms the active mode.",
     "状态指示器确认当前模式。"
+  ],
+  "indicators": [
+    "/ˈɪndɪkeɪtərz/",
+    "指示器；显示状态的多个界面信号",
+    "",
+    "The cockpit uses the word indicators in privacy prompts when it fits the user context.",
+    "在隐私提示中，“indicators”可结合用户场景理解。"
   ],
   "influence": [
     "/暂无音标/",
@@ -8309,6 +8540,13 @@
     "Local preference storage can reduce privacy risk for sensitive comfort settings.",
     "本地偏好存储可以降低敏感舒适设置带来的隐私风险。"
   ],
+  "local storage": [
+    "/ˈloʊkl ˈstɔːrɪdʒ/",
+    "本地存储；在车辆或设备上保存数据",
+    "",
+    "The cockpit uses local storage to make privacy decisions easier to understand.",
+    "座舱使用“local storage”让隐私决策更容易理解。"
+  ],
   "localization": [
     "/ˌloʊkələˈzeɪʃn/",
     "定位；确定位置的过程",
@@ -8344,6 +8582,13 @@
     "",
     "Location data can reveal home and work patterns.",
     "位置数据可能揭示家庭和工作规律。"
+  ],
+  "location sharing": [
+    "/loʊˈkeɪʃn ˈʃerɪŋ/",
+    "位置共享；向系统、服务或乘员共享当前位置或目的地",
+    "",
+    "The cockpit uses location sharing to make privacy decisions easier to understand.",
+    "座舱使用“location sharing”让隐私决策更容易理解。"
   ],
   "location-based": [
     "/ləʊ'keɪʃnb'eɪst/",
@@ -8982,6 +9227,13 @@
     "Media artwork should not overpower route guidance.",
     "媒体封面不应压过路线引导。"
   ],
+  "media history": [
+    "/ˈmiːdiə ˈhɪstəri/",
+    "媒体历史；用户播放记录和内容偏好",
+    "",
+    "The cockpit uses media history to make privacy decisions easier to understand.",
+    "座舱使用“media history”让隐私决策更容易理解。"
+  ],
   "media source": [
     "/ˈmiːdiə sɔːrs/",
     "媒体源；音乐、电台、播客或蓝牙音频等播放来源",
@@ -9147,6 +9399,20 @@
     "",
     "Microcopy should support a safer and clearer cockpit experience.",
     "在这句话中，“microcopy”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "microphone": [
+    "/ˈmaɪkrəfoʊn/",
+    "麦克风；用于语音输入或监听状态的设备",
+    "",
+    "The cockpit uses the word microphone in privacy prompts when it fits the user context.",
+    "在隐私提示中，“microphone”可结合用户场景理解。"
+  ],
+  "microphone access": [
+    "/ˈmaɪkrəfoʊn ˈækses/",
+    "麦克风访问；应用或系统使用麦克风的权限",
+    "",
+    "The cockpit uses microphone access to make privacy decisions easier to understand.",
+    "座舱使用“microphone access”让隐私决策更容易理解。"
   ],
   "microphone array": [
     "/ˈmaɪkrəfoʊn əˈreɪ/",
@@ -9528,6 +9794,13 @@
     "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
     "在这句话中，“must”可理解为“必须, 未发酵葡萄汁, 绝对必要的事物；aux. 必须”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "my": [
+    "/maɪ/",
+    "我的；指用户个人授权或个人数据",
+    "",
+    "The cockpit uses the word my in privacy prompts when it fits the user context.",
+    "在隐私提示中，“my”可结合用户场景理解。"
   ],
   "mysterious": [
     "/按语境朗读/",
@@ -10106,6 +10379,13 @@
     "在这句话中，“often”可理解为“时常, 常常”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "old": [
+    "/oʊld/",
+    "旧的；来自过去场景或时间点的",
+    "",
+    "The cockpit uses the word old in privacy prompts when it fits the user context.",
+    "在隐私提示中，“old”可结合用户场景理解。"
+  ],
   "on": [
     "/ɒn/",
     "在...之上；...上去；正起作用的",
@@ -10383,6 +10663,13 @@
     "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
     "在这句话中，“overtrusting”表示驾驶员过度信任自动化。"
   ],
+  "owners": [
+    "/ˈoʊnərz/",
+    "车主的；多个所有者或用户的",
+    "",
+    "The cockpit uses the word owners in privacy prompts when it fits the user context.",
+    "在隐私提示中，“owners”可结合用户场景理解。"
+  ],
   "ownership": [
     "/ˈoʊnərʃɪp/",
     "归属；责任边界",
@@ -10410,6 +10697,13 @@
     "",
     "The word package appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“package”用于表达相关系统状态或用户影响。"
+  ],
+  "pair": [
+    "/per/",
+    "配对；把两个提示或控件组合使用",
+    "",
+    "The cockpit uses the word pair in privacy prompts when it fits the user context.",
+    "在隐私提示中，“pair”可结合用户场景理解。"
   ],
   "paired": [
     "/按语境朗读/",
@@ -10510,6 +10804,13 @@
     "",
     "A passenger display can handle detailed browsing while driving.",
     "车辆行驶时，乘客屏可以处理详细浏览。"
+  ],
+  "passenger request": [
+    "/ˈpæsɪndʒər rɪˈkwest/",
+    "乘客请求；由乘客发起的座舱操作意图",
+    "",
+    "The cockpit uses passenger request to make privacy decisions easier to understand.",
+    "座舱使用“passenger request”让隐私决策更容易理解。"
   ],
   "passenger state": [
     "/ˈpæsɪndʒər steɪt/",
@@ -10714,6 +11015,13 @@
     "Persistent glow should support a safer and clearer cockpit experience.",
     "在这句话中，“persistent glow”用于描述更安全、更清晰的座舱体验。"
   ],
+  "persistent preference": [
+    "/pərˈsɪstənt ˈprefrəns/",
+    "持久偏好；跨会话保存并可再次调用的用户设置",
+    "",
+    "Persistent preference should be easy to review and reset from the privacy panel.",
+    "持久偏好应能在隐私面板中轻松查看和重置。"
+  ],
   "person": [
     "/ˈpɜː.sən/",
     "名词：人, 人身, 人称",
@@ -10882,6 +11190,13 @@
     "",
     "A plain-language reason is easier to trust than a fault number.",
     "通俗原因比故障编号更容易被信任。"
+  ],
+  "plainly": [
+    "/ˈpleɪnli/",
+    "清楚地；用直接易懂的方式表达",
+    "",
+    "The cockpit uses the word plainly in privacy prompts when it fits the user context.",
+    "在隐私提示中，“plainly”可结合用户场景理解。"
   ],
   "plan": [
     "/暂无音标/",
@@ -11334,6 +11649,13 @@
     "A clear privacy boundary prevents personal messages from being read aloud to every occupant.",
     "清晰的隐私边界可以避免个人消息被大声读给每位乘员。"
   ],
+  "privacy copy": [
+    "/ˈpraɪvəsi ˈkɑːpi/",
+    "隐私文案；用于解释数据使用和授权后果的界面文字",
+    "",
+    "The cockpit uses privacy copy to make privacy decisions easier to understand.",
+    "座舱使用“privacy copy”让隐私决策更容易理解。"
+  ],
   "privacy indicator": [
     "/ˈpraɪvəsi ˈɪndɪkeɪtər/",
     "隐私指示；说明身体数据是否正在被感知或使用的标识。",
@@ -11341,12 +11663,26 @@
     "The cockpit uses privacy indicator to keep comfort assistance understandable and controllable.",
     "座舱使用“privacy indicator”让舒适辅助更容易理解和控制。"
   ],
+  "privacy panel": [
+    "/ˈpraɪvəsi ˈpænl/",
+    "隐私面板；集中查看和管理授权的界面",
+    "",
+    "The cockpit uses privacy panel to make privacy decisions easier to understand.",
+    "座舱使用“privacy panel”让隐私决策更容易理解。"
+  ],
   "privacy state": [
     "/ˈpraɪvəsi steɪt/",
     "隐私状态；麦克风、摄像头或数据共享是否启用的状态",
     "",
     "Privacy state should support a safer and clearer cockpit experience.",
     "在这句话中，“privacy state”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "privacy trade-off": [
+    "/ˈpraɪvəsi ˈtreɪd ɔːf/",
+    "隐私权衡；便利性与数据暴露之间的取舍",
+    "",
+    "The cockpit uses privacy trade-off to make privacy decisions easier to understand.",
+    "座舱使用“privacy trade-off”让隐私决策更容易理解。"
   ],
   "privacy-aware": [
     "/暂无音标/",
@@ -11363,6 +11699,13 @@
     "Privacy-aware personalization explains which preferences are stored locally and which are synchronized.",
     "隐私感知个性化会说明哪些偏好保存在本地，哪些偏好会同步。"
   ],
+  "privacy-safe wording": [
+    "/ˈpraɪvəsi seɪf ˈwɜːrdɪŋ/",
+    "隐私安全措辞；避免过度暴露敏感内容的提示文本",
+    "",
+    "The cockpit uses privacy-safe wording to make privacy decisions easier to understand.",
+    "座舱使用“privacy-safe wording”让隐私决策更容易理解。"
+  ],
   "private": [
     "/ˈpraɪvət/",
     "私人的；不面向所有乘员公开的",
@@ -11376,6 +11719,13 @@
     "",
     "Private notification handling depends on the recognized occupant and the display location.",
     "在这句话中，“private notification”用于描述智能座舱多人语音控制。"
+  ],
+  "private surface": [
+    "/ˈpraɪvət ˈsɜːrfɪs/",
+    "私密界面；只适合特定乘员查看的显示或交互区域",
+    "",
+    "The cockpit uses private surface to make privacy decisions easier to understand.",
+    "座舱使用“private surface”让隐私决策更容易理解。"
   ],
   "proactive": [
     "/proʊˈæktɪv/",
@@ -11477,6 +11827,20 @@
     "Profile switching needs a visible preview when the vehicle is shared by family members.",
     "当车辆由家庭成员共享时，档案切换需要提供可见预览。"
   ],
+  "profile-level": [
+    "/ˈproʊfaɪl ˈlevl/",
+    "档案级的；绑定到用户档案范围的",
+    "",
+    "The cockpit uses the word profile-level in privacy prompts when it fits the user context.",
+    "在隐私提示中，“profile-level”可结合用户场景理解。"
+  ],
+  "profile-level permission": [
+    "/ˈproʊfaɪl ˈlevl pərˈmɪʃn/",
+    "档案级权限；绑定到某个用户档案的授权",
+    "",
+    "The cockpit uses profile-level permission to make privacy decisions easier to understand.",
+    "座舱使用“profile-level permission”让隐私决策更容易理解。"
+  ],
   "progress": [
     "/暂无音标/",
     "名词：进度",
@@ -11526,6 +11890,13 @@
     "",
     "Projection quality affects legibility in sunlight.",
     "在这句话中，“projection”表示“投影”。"
+  ],
+  "promise": [
+    "/ˈprɑːmɪs/",
+    "承诺；产品对用户体验和信任的保证",
+    "",
+    "The cockpit uses the word promise in privacy prompts when it fits the user context.",
+    "在隐私提示中，“promise”可结合用户场景理解。"
   ],
   "promotion": [
     "/pɹəˈməʊʃn̩/",
@@ -12231,6 +12602,13 @@
     "The driver should not need to refocus for every prompt.",
     "在这句话中，“refocus”表示“重新聚焦”。"
   ],
+  "refresh": [
+    "/rɪˈfreʃ/",
+    "刷新；重新确认或更新状态",
+    "",
+    "The cockpit uses the word refresh in privacy prompts when it fits the user context.",
+    "在隐私提示中，“refresh”可结合用户场景理解。"
+  ],
   "refuse": [
     "/按语境朗读/",
     "拒绝；不接受系统建议。",
@@ -12361,6 +12739,13 @@
     "在这句话中，“remains”可理解为“保持, 逗留, 剩余”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "remember": [
+    "/rɪˈmembər/",
+    "记住；保存并再次调用信息",
+    "",
+    "The cockpit uses the word remember in privacy prompts when it fits the user context.",
+    "在隐私提示中，“remember”可结合用户场景理解。"
+  ],
   "reminder": [
     "/ɹɪˈmaɪndə(ɹ)/",
     "名词：提醒的人, 暗示",
@@ -12389,6 +12774,20 @@
     "",
     "Do not improve convenience by removing control.",
     "不要通过移除控制来提升便利性。"
+  ],
+  "rental": [
+    "/ˈrentl/",
+    "租赁的；临时租用车辆相关的",
+    "",
+    "The cockpit uses the word rental in privacy prompts when it fits the user context.",
+    "在隐私提示中，“rental”可结合用户场景理解。"
+  ],
+  "rental scenario": [
+    "/ˈrentl səˈnærioʊ/",
+    "租赁场景；车辆临时交给非车主使用的场景",
+    "",
+    "The cockpit uses rental scenario to make privacy decisions easier to understand.",
+    "座舱使用“rental scenario”让隐私决策更容易理解。"
   ],
   "repair": [
     "/rɪˈper/",
@@ -12733,6 +13132,13 @@
     "The driver resumes the task after a prompt.",
     "驾驶员在提示后继续任务。"
   ],
+  "retention": [
+    "/rɪˈtenʃn/",
+    "保留期限；数据被保存的时间长度",
+    "",
+    "The cockpit uses retention to make privacy decisions easier to understand.",
+    "座舱使用“retention”让隐私决策更容易理解。"
+  ],
   "return": [
     "/ri'tә:n/",
     "动词：回来, 返回, 来回票, 归还, 报答, 利润率, 报告书；返回的, 回程的, 报答的, 反向的, 重现的, 复原的；返回, 归还, 回来；归还, 还, 回报, 产生, 反射, 报告, 申报, 退回",
@@ -12747,6 +13153,13 @@
     "",
     "The interface should be clear when confidence returns.",
     "当置信度恢复时，界面应保持清晰。"
+  ],
+  "reused": [
+    "/ˌriːˈjuːzd/",
+    "被复用的；再次用于新场景的",
+    "",
+    "The cockpit uses the word reused in privacy prompts when it fits the user context.",
+    "在隐私提示中，“reused”可结合用户场景理解。"
   ],
   "reveal": [
     "/ɹɪˈviːl/",
@@ -12827,6 +13240,20 @@
     "",
     "Every permission screen needs a revocation path that is as easy to find as the opt-in control.",
     "每个许可界面都需要一个和开启入口一样容易找到的撤销路径。"
+  ],
+  "revoke": [
+    "/rɪˈvoʊk/",
+    "撤销；取消已经授予的权限",
+    "",
+    "The cockpit uses the word revoke in privacy prompts when it fits the user context.",
+    "在隐私提示中，“revoke”可结合用户场景理解。"
+  ],
+  "revoke access": [
+    "/rɪˈvoʊk ˈækses/",
+    "撤销访问；取消某项功能、服务或人员对数据的权限",
+    "",
+    "The driver can revoke access when the cockpit no longer needs the shared calendar.",
+    "当座舱不再需要共享日历时，驾驶员可以撤销访问。"
   ],
   "rhythm": [
     "/ˈrɪðəm/",
@@ -13102,6 +13529,13 @@
     "On-device processing can recognize routine seat adjustments without sending raw behavior data to the cloud.",
     "在这句话中，“routine”可理解为“常规, 日常工作, 惯例, 例行公事；日常的, 常规的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "routines": [
+    "/ruːˈtiːnz/",
+    "日常习惯；可被位置和媒体记录暴露的规律",
+    "",
+    "The cockpit uses the word routines in privacy prompts when it fits the user context.",
+    "在隐私提示中，“routines”可结合用户场景理解。"
   ],
   "routing": [
     "/ˈruːtɪŋ/",
@@ -13446,6 +13880,13 @@
     "在这句话中，“screen”可理解为“幕, 银幕, 屏风, 掩蔽物, 屏蔽, 筛子；掩蔽, 放映, 拍摄, 掩护, 筛, 甄别；拍电影”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "screen confirmation": [
+    "/skriːn ˌkɑːnfərˈmeɪʃn/",
+    "屏幕确认；通过屏幕选项确认用户意愿",
+    "",
+    "The cockpit uses screen confirmation to make privacy decisions easier to understand.",
+    "座舱使用“screen confirmation”让隐私决策更容易理解。"
+  ],
   "screen dependence": [
     "/skriːn dɪˈpendəns/",
     "屏幕依赖；用户必须频繁查看屏幕才能完成任务的程度",
@@ -13706,6 +14147,13 @@
     "在这句话中，“sensitive”可理解为“敏感的, 易感的, 灵敏的, 感光的；[机] 敏感的, 灵敏的, 感度高的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "sensitive context": [
+    "/ˈsensətɪv ˈkɑːntekst/",
+    "敏感场景；涉及身份、位置、联系人或私人偏好的使用情境",
+    "",
+    "The cockpit uses sensitive context to make privacy decisions easier to understand.",
+    "座舱使用“sensitive context”让隐私决策更容易理解。"
+  ],
   "sensitive data": [
     "/ˈsensətɪv ˈdeɪtə/",
     "敏感数据；涉及情绪、生理、身份或行为模式的高风险数据",
@@ -13831,6 +14279,13 @@
     "在这句话中，“services”可理解为“服务, 贡献, 雇佣, 公职, 服役, 功劳, 仪式, 送达, 行政部门；保养, 维修；武装部队的, 服务性的, 仆人的, 耐用的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "session-only": [
+    "/ˈseʃn ˈoʊnli/",
+    "仅本次会话；只在当前使用周期内有效",
+    "",
+    "The cockpit uses session-only to make privacy decisions easier to understand.",
+    "座舱使用“session-only”让隐私决策更容易理解。"
+  ],
   "set": [
     "/set/",
     "设置；把系统参数调整到某个状态",
@@ -13860,6 +14315,13 @@
     "",
     "A long settings path is hard to use while driving.",
     "较长设置路径在驾驶时很难使用。"
+  ],
+  "settings review": [
+    "/ˈsetɪŋz rɪˈvjuː/",
+    "设置复核；查看并确认现有配置是否仍合适",
+    "",
+    "The cockpit uses settings review to make privacy decisions easier to understand.",
+    "座舱使用“settings review”让隐私决策更容易理解。"
   ],
   "settings surface": [
     "/ˈsetɪŋz ˈsɜːrfɪs/",
@@ -15550,6 +16012,13 @@
     "Temporary automation is easier to accept than a permanent rule.",
     "临时自动化比永久规则更容易接受。"
   ],
+  "temporary consent": [
+    "/ˈtempəreri kənˈsent/",
+    "临时同意；只在当前任务、会话或行程中有效的授权",
+    "",
+    "Temporary consent is useful when a passenger shares a destination for one trip.",
+    "当乘客只为一次行程共享目的地时，临时同意很有用。"
+  ],
   "temporary limitation": [
     "/ˈtempəreri ˌlɪmɪˈteɪʃn/",
     "临时限制；恢复或回滚期间短时间不可用的能力",
@@ -16034,6 +16503,13 @@
     "",
     "Trip planning can move to the passenger display when appropriate.",
     "合适时行程规划可以转到副驾屏。"
+  ],
+  "trip-level permission": [
+    "/trɪp ˈlevl pərˈmɪʃn/",
+    "行程级权限；只在当前行程中有效的授权",
+    "",
+    "The cockpit uses trip-level permission to make privacy decisions easier to understand.",
+    "座舱使用“trip-level permission”让隐私决策更容易理解。"
   ],
   "trips": [
     "/tɹɪps/",
@@ -16576,6 +17052,20 @@
     "The interface should not become vague when sensors disagree.",
     "当传感器不一致时，界面不应变得含糊。"
   ],
+  "valet": [
+    "/væˈleɪ/",
+    "代客泊车；把车辆临时交给服务人员的场景",
+    "",
+    "The cockpit uses the word valet in privacy prompts when it fits the user context.",
+    "在隐私提示中，“valet”可结合用户场景理解。"
+  ],
+  "valet mode": [
+    "/væˈleɪ moʊd/",
+    "代客模式；限制个人信息和部分功能的临时车辆模式",
+    "",
+    "The cockpit uses valet mode to make privacy decisions easier to understand.",
+    "座舱使用“valet mode”让隐私决策更容易理解。"
+  ],
   "valuable": [
     "/ˈvælju(ə)bl̩/",
     "形容词：有价值的, 贵重的, 宝贵的, 可估价的",
@@ -16700,6 +17190,13 @@
     "Fallback interaction should be visible when speech recognition fails in a noisy cabin.",
     "在这句话中，“visible”可理解为“看得见的, 明显的, 显然的；可见物”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "visible affordance": [
+    "/ˈvɪzəbl əˈfɔːrdəns/",
+    "可见示能；让用户看出可操作方式的界面线索",
+    "",
+    "The cockpit uses visible affordance to make privacy decisions easier to understand.",
+    "座舱使用“visible affordance”让隐私决策更容易理解。"
   ],
   "visible before": [
     "/ˈvɪzəbl bɪˈfɔːr/",
@@ -16865,6 +17362,13 @@
     "",
     "Voice confirmation is useful before sending a message or changing navigation.",
     "在发送消息或更改导航前，语音确认很有用。"
+  ],
+  "voice consent": [
+    "/vɔɪs kənˈsent/",
+    "语音同意；通过语音表达并记录的授权",
+    "",
+    "The cockpit uses voice consent to make privacy decisions easier to understand.",
+    "座舱使用“voice consent”让隐私决策更容易理解。"
   ],
   "voice negotiation": [
     "/vɔɪs nɪˌɡoʊʃiˈeɪʃn/",
