@@ -294,6 +294,13 @@
     "在这句话中，“adaptive”可理解为“适应的, 能适应的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "adaptive airflow": [
+    "/əˈdæptɪv ˈerfloʊ/",
+    "自适应气流；根据温度、空气质量、疲劳或晕车风险自动调整的送风策略",
+    "",
+    "Adaptive airflow can support comfort without adding another visual interruption.",
+    "自适应气流可以提升舒适度，同时不增加额外视觉打断。"
+  ],
   "adaptive alert": [
     "/əˈdæptɪv əˈlɜːrt/",
     "自适应警告；根据场景、驾驶员状态和响应情况调整形式或强度的提示",
@@ -531,6 +538,13 @@
     "",
     "Warmer air may be requested by one seat zone.",
     "在这句话中，“air”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "airflow": [
+    "/待补充/",
+    "语境词：airflow；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The interface explains each comfort intervention before changing airflow or display brightness.",
+    "在这句话中，“airflow”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "alarm": [
     "/əˈlɑːrm/",
@@ -1725,6 +1739,13 @@
     "A blocked feature should show how to recover it.",
     "被阻断功能应显示如何恢复。"
   ],
+  "blocks": [
+    "/待补充/",
+    "语境词：blocks；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
+    "在这句话中，“blocks”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "body": [
     "/ˈbɑːdi/",
     "身体；驾驶员身体状态。",
@@ -2066,6 +2087,13 @@
     "The system can show more detail when the context is calmer.",
     "场景更平稳时，系统可以显示更多细节。"
   ],
+  "calmer display": [
+    "/ˈkɑːmər dɪˈspleɪ/",
+    "更平静的显示；减少动画、闪烁和信息密度的界面状态",
+    "",
+    "A calmer display can reduce visual load on a winding road.",
+    "更平静的显示可以降低弯道路段的视觉负荷。"
+  ],
   "camera": [
     "/ˈkæm.ə.ɹə/",
     "名词：照相机, 摄影机, 密谈室, 暗箱",
@@ -2167,6 +2195,13 @@
     "",
     "Emotion-aware design must be careful with language.",
     "情绪感知设计必须谨慎处理语言。"
+  ],
+  "careful language": [
+    "/ˈkerfl ˈlæŋɡwɪdʒ/",
+    "谨慎语言；避免夸大、诊断或施压的提示表达",
+    "",
+    "Careful language makes wellness prompts feel respectful.",
+    "谨慎语言让健康舒适提示显得更尊重用户。"
   ],
   "carefully": [
     "/暂无音标/",
@@ -2419,6 +2454,13 @@
     "",
     "The word claim appears in today's cockpit summary practice.",
     "在这个语境中，“claim”可理解为“结论”。"
+  ],
+  "claims": [
+    "/待补充/",
+    "语境词：claims；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "These signals do not prove motion sickness, so the HMI should avoid medical claims and offer a small, reversible suggestion.",
+    "在这句话中，“claims”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "clarification": [
     "/.klærifi'keiʃәn/",
@@ -2809,6 +2851,13 @@
     "",
     "Comfort history should support clear control in a shared intelligent cockpit.",
     "在这句话中，“comfort history”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "comfort intervention": [
+    "/ˈkʌmfərt ˌɪntərˈvenʃn/",
+    "舒适干预；通过座椅、空调、屏幕或提示文案缓解不适的系统动作",
+    "",
+    "The interface explains each comfort intervention before changing airflow or display brightness.",
+    "界面会在改变气流或显示亮度前解释每一次舒适干预。"
   ],
   "comfort mode": [
     "/ˈkʌmfərt moʊd/",
@@ -3312,6 +3361,13 @@
     "",
     "The consent screen should separate comfort data from safety-critical data.",
     "授权界面应区分舒适数据和安全关键数据。"
+  ],
+  "conservative": [
+    "/待补充/",
+    "语境词：conservative；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The symptom threshold should be conservative when the system is unsure about a passenger's state.",
+    "在这句话中，“conservative”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "conservative state": [
     "/kənˈsɜːrvətɪv steɪt/",
@@ -3929,6 +3985,20 @@
     "",
     "The current screen gives context to the assistant.",
     "当前屏幕为助手提供上下文。"
+  ],
+  "curvature": [
+    "/待补充/",
+    "语境词：curvature；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A motion sickness cue may combine seat movement, screen use, road curvature, and passenger posture.",
+    "在这句话中，“curvature”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "curves": [
+    "/待补充/",
+    "语境词：curves；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "For example, the cockpit might say, \"The road ahead has many curves.",
+    "在这句话中，“curves”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "cushion": [
     "/ˈkʊʃn/",
@@ -4694,6 +4764,27 @@
     "在这句话中，“dismissed”可理解为“解散, 开除, 解职；解散”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "dismisses": [
+    "/待补充/",
+    "语境词：dismisses；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "If the passenger dismisses it, the cockpit should wait before asking again.",
+    "在这句话中，“dismisses”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "dismissible": [
+    "/待补充/",
+    "语境词：dismissible；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
+    "在这句话中，“dismissible”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "dismissible alert": [
+    "/dɪsˈmɪsəbl əˈlɜːrt/",
+    "可关闭提醒；用户可以快速忽略且不会造成流程阻塞的提示",
+    "",
+    "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
+    "对于轻微不适，可关闭提醒比阻塞导航的模态警告更安全。"
+  ],
   "display": [
     "/dɪsˈpleɪ/",
     "动词：显示, 陈列, 炫耀, 显示器；陈列, 显示, 表现, 夸示",
@@ -4772,6 +4863,13 @@
     "",
     "Contextual timing prevents a helpful offer from becoming a distraction.",
     "在这句话中，distraction 指会分散驾驶注意力的干扰。"
+  ],
+  "dizzy": [
+    "/待补充/",
+    "语境词：dizzy；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Visual rest mode reduces moving graphics when a rear passenger starts to feel dizzy.",
+    "在这句话中，“dizzy”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "do": [
     "/də/",
@@ -4957,6 +5055,20 @@
     "",
     "Driver workload should influence how much explanation the assistant gives.",
     "在这句话中，“driver workload”用于描述智能座舱多人语音控制。"
+  ],
+  "driver-critical": [
+    "/待补充/",
+    "语境词：driver-critical；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Good design also separates driver-critical alerts from passenger wellbeing prompts.",
+    "在这句话中，“driver-critical”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "driver-critical alert": [
+    "/ˈdraɪvər ˈkrɪtɪkl əˈlɜːrt/",
+    "驾驶员关键警告；与驾驶安全直接相关的高优先级提醒",
+    "",
+    "A driver-critical alert must stay separate from comfort content.",
+    "驾驶员关键警告必须与舒适内容保持区分。"
   ],
   "driver-facing": [
     "/ˈdraɪvər ˈfeɪsɪŋ/",
@@ -5662,6 +5774,13 @@
     "",
     "Explainable adaptation helps users decide whether to keep or undo a cockpit change.",
     "可解释适应帮助用户决定保留还是撤销座舱变化。"
+  ],
+  "explainable adjustment": [
+    "/ɪkˈspleɪnəbl əˈdʒʌstmənt/",
+    "可解释调节；说明系统为何改变座椅、气流、灯光或屏幕设置",
+    "",
+    "An explainable adjustment builds trust by linking the change to a visible condition.",
+    "可解释调节通过把变化与可见条件关联起来建立信任。"
   ],
   "explainable automation": [
     "/ɪkˈspleɪnəbl ˌɔːtəˈmeɪʃn/",
@@ -6375,6 +6494,20 @@
     "在这句话中，“frequent”可理解为“时常发生的, 频繁的, 快速的；时常来访, 常常聚集, 常与...交往”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "fresh": [
+    "/待补充/",
+    "语境词：fresh；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Would you like a calmer display and more fresh air?",
+    "在这句话中，“fresh”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "fresh air": [
+    "/freʃ er/",
+    "新鲜空气；通过通风改善舒适感的空气流动",
+    "",
+    "Fresh air is a simple comfort option for mild nausea.",
+    "新鲜空气是缓解轻微恶心的简单舒适选项。"
+  ],
   "friction": [
     "/ˈfɹɪkʃən̩/",
     "名词：摩擦, 摩擦治疗, 不和",
@@ -6674,6 +6807,13 @@
     "Graceful degradation keeps the cockpit useful when one sensor becomes unreliable.",
     "当某个传感器变得不可靠时，优雅降级让座舱仍保持可用。"
   ],
+  "graphics": [
+    "/待补充/",
+    "语境词：graphics；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Visual rest mode reduces moving graphics when a rear passenger starts to feel dizzy.",
+    "在这句话中，“graphics”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "grows": [
     "/ɡroʊz/",
     "增长；逐渐增强",
@@ -6942,6 +7082,27 @@
     "",
     "Heads-up display should support a safer and clearer cockpit experience.",
     "在这句话中，“heads-up display”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "health": [
+    "/待补充/",
+    "语境词：health；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Occupant wellbeing requires clear consent because health signals can feel personal.",
+    "在这句话中，“health”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "health-aware": [
+    "/待补充/",
+    "语境词：health-aware；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "In a health-aware intelligent cockpit, comfort support should begin with careful language.",
+    "在这句话中，“health-aware”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "health-aware cockpit": [
+    "/helθ əˈwer ˈkɑːkpɪt/",
+    "健康感知座舱；能够根据乘员状态提供舒适支持的智能座舱",
+    "",
+    "A health-aware cockpit must communicate uncertainty carefully.",
+    "健康感知座舱必须谨慎表达不确定性。"
   ],
   "heard": [
     "/待查/",
@@ -7493,6 +7654,20 @@
     "The cockpit uses the word indicators in privacy prompts when it fits the user context.",
     "在隐私提示中，“indicators”可结合用户场景理解。"
   ],
+  "indirect": [
+    "/待补充/",
+    "语境词：indirect；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The system may notice indirect signals: a passenger stops reading, looks down for a long time, changes posture repeatedly, or turns the screen away during a winding road.",
+    "在这句话中，“indirect”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "indirect signal": [
+    "/ˌɪndəˈrekt ˈsɪɡnəl/",
+    "间接信号；不能单独证明状态但可作为判断线索的数据",
+    "",
+    "An indirect signal should not trigger a medical conclusion.",
+    "间接信号不应触发医学化结论。"
+  ],
   "influence": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“influence”。",
@@ -8017,6 +8192,13 @@
     "The word judging appears in the comfort recommendation context.",
     "“judging”出现在座椅舒适推荐的语境中。"
   ],
+  "judgmental": [
+    "/待补充/",
+    "语境词：judgmental；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
+    "在这句话中，“judgmental”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "junction": [
     "/ˈd͡ʒʌŋkʃən/",
     "名词：连接, 会合处, 交叉点",
@@ -8481,6 +8663,13 @@
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“limits”可理解为“限制”。"
   ],
+  "linking": [
+    "/待补充/",
+    "语境词：linking；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "An explainable adjustment builds trust by linking the change to a visible condition.",
+    "在这句话中，“linking”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "list": [
     "/lɪst/",
     "名词：目录, 名单, 明细表, 布条, 条纹, 列表, 序列, 数据清单；列出, 列于表上, 记入名单内, 装布条；列于表上",
@@ -8709,6 +8898,13 @@
     "The cluster should show degraded mode before the driver loses access to a familiar assistance feature.",
     "在驾驶员失去熟悉辅助功能的访问前，仪表应显示降级模式。"
   ],
+  "losing": [
+    "/待补充/",
+    "语境词：losing；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A low-pressure suggestion lets the passenger dismiss the card without losing the current task.",
+    "在这句话中，“losing”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "loss": [
     "/lɔːs/",
     "丢失；信号、能力或功能暂时不可用",
@@ -8837,6 +9033,20 @@
     "",
     "A low-interruption prompt uses timing, tone, and priority to protect attention.",
     "低干扰提示会利用时机、语气和优先级来保护注意力。"
+  ],
+  "low-pressure": [
+    "/待补充/",
+    "语境词：low-pressure；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A low-pressure suggestion lets the passenger dismiss the card without losing the current task.",
+    "在这句话中，“low-pressure”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "low-pressure suggestion": [
+    "/loʊ ˈpreʃər səˈdʒestʃən/",
+    "低压力建议；不强迫用户立刻回应的温和提示",
+    "",
+    "A low-pressure suggestion lets the passenger dismiss the card without losing the current task.",
+    "低压力建议允许乘客关闭卡片，同时不丢失当前任务。"
   ],
   "low-priority": [
     "/暂无音标/",
@@ -9255,6 +9465,13 @@
     "A comfort prompt should not sound medical.",
     "舒适提示不应听起来像医疗建议。"
   ],
+  "medical claim": [
+    "/ˈmedɪkl kleɪm/",
+    "医学化判断；类似诊断或病情判断的表述",
+    "",
+    "The HMI should avoid a medical claim when confidence is low.",
+    "当置信度较低时，HMI 应避免医学化判断。"
+  ],
   "meeting": [
     "/按语境朗读/",
     "会议；日程中的会面事件",
@@ -9428,6 +9645,13 @@
     "The assistant might ask for clarification.",
     "助手可能会请求澄清。"
   ],
+  "mild": [
+    "/待补充/",
+    "语境词：mild；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
+    "在这句话中，“mild”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "minimal": [
     "/待查/",
     "最少的；尽量减少的",
@@ -9585,6 +9809,13 @@
     "A mixed message can make the driver doubt the system.",
     "混杂信息会让驾驶员怀疑系统。"
   ],
+  "modal": [
+    "/待补充/",
+    "语境词：modal；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
+    "在这句话中，“modal”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "modality": [
     "/moʊˈdæləti/",
     "模态；信息呈现或交互输入输出的感官通道",
@@ -9710,6 +9941,13 @@
     "Interaction cost should be low for functions that drivers use during motion.",
     "在这句话中，“motion”可理解为“移动, 手势, 动作, 意向, 请求, 提议；打手势”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "motion sickness cue": [
+    "/ˈmoʊʃn ˈsɪknəs kjuː/",
+    "晕车线索；暗示乘员可能出现晕动不适的行为、环境或车辆动态信号",
+    "",
+    "A motion sickness cue may combine seat movement, screen use, road curvature, and passenger posture.",
+    "晕车线索可能结合座椅运动、屏幕使用、道路曲率和乘员姿态。"
   ],
   "move": [
     "/muːv/",
@@ -9992,6 +10230,13 @@
     "",
     "The driver should not negotiate every cabin command.",
     "在这句话中，“negotiate”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "negotiating": [
+    "/待补充/",
+    "语境词：negotiating；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A driver should not receive a detailed comfort card while negotiating traffic, but a rear passenger can receive a quiet seat-screen message.",
+    "在这句话中，“negotiating”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "neither": [
     "/按语境朗读/",
@@ -10319,6 +10564,13 @@
     "",
     "Occupant role affects which controls are available.",
     "乘员角色会影响哪些控制可用。"
+  ],
+  "occupant wellbeing": [
+    "/ˈɑːkjəpənt ˌwelˈbiːɪŋ/",
+    "乘员健康舒适；对车内人员身体感受、压力和舒适状态的综合关注",
+    "",
+    "Occupant wellbeing requires clear consent because health signals can feel personal.",
+    "乘员健康舒适需要清晰授权，因为健康信号可能显得很私人。"
   ],
   "occupant-aware": [
     "/ˈɑːkjəpənt əˈwer/",
@@ -10805,6 +11057,13 @@
     "A passenger display can handle detailed browsing while driving.",
     "车辆行驶时，乘客屏可以处理详细浏览。"
   ],
+  "passenger posture": [
+    "/ˈpæsɪndʒər ˈpɑːstʃər/",
+    "乘客姿态；乘客坐姿、头部角度和身体朝向",
+    "",
+    "Passenger posture can be one signal in a comfort model.",
+    "乘客姿态可以作为舒适模型中的一个信号。"
+  ],
   "passenger request": [
     "/ˈpæsɪndʒər rɪˈkwest/",
     "乘客请求；由乘客发起的座舱操作意图",
@@ -10818,6 +11077,13 @@
     "",
     "Passenger state can change the meaning of a request.",
     "乘员状态会改变请求含义。"
+  ],
+  "passengers": [
+    "/待补充/",
+    "语境词：passengers；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The symptom threshold should be conservative when the system is unsure about a passenger's state.",
+    "在这句话中，“passengers”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "passive": [
     "/ˈpæs.ɪv/",
@@ -11951,6 +12217,13 @@
     "A single stress cue is not proof of emotion.",
     "单一压力线索不是情绪证据。"
   ],
+  "proposed": [
+    "/待补充/",
+    "语境词：proposed；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "\" This sentence explains the context, names the proposed change, and keeps control with the occupant.",
+    "在这句话中，“proposed”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "protect": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“protect”。",
@@ -13008,6 +13281,13 @@
     "在这句话中，“respectful”可理解为“表示尊敬的, 有礼貌的, 谦恭的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "respectful interaction": [
+    "/rɪˈspektfl ˌɪntərˈækʃn/",
+    "尊重式交互；保留用户选择权并避免冒犯的交互方式",
+    "",
+    "Respectful interaction avoids blaming the passenger for discomfort.",
+    "尊重式交互避免把不适归咎于乘客。"
+  ],
   "respecting": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“respecting”。",
@@ -13212,6 +13492,13 @@
     "Every automatic seat movement should be a reversible setting with a visible undo option.",
     "每一次自动座椅移动都应是带有可见撤销选项的可撤销设置。"
   ],
+  "reversible suggestion": [
+    "/rɪˈvɜːrsəbl səˈdʒestʃən/",
+    "可撤销建议；用户接受后仍可轻松恢复的系统建议",
+    "",
+    "A reversible suggestion is easier to accept during a trip.",
+    "行程中，可撤销建议更容易被接受。"
+  ],
   "review": [
     "/ɹɪˈvjuː/",
     "名词：检讨, 复习, 回顾, 检阅, 评论；温习, 检讨, 评论, 再检察, 复审；复习功课, 写评论",
@@ -13364,6 +13651,13 @@
     "",
     "Road context changes the acceptable timing for an alert.",
     "道路上下文会改变警告的可接受时机。"
+  ],
+  "road curvature": [
+    "/roʊd ˈkɜːrvətʃər/",
+    "道路曲率；道路转弯程度，是晕车风险判断的环境因素",
+    "",
+    "Road curvature can explain why the system offers visual rest mode.",
+    "道路曲率可以解释系统为何提供视觉休息模式。"
   ],
   "road markings": [
     "/roʊd ˈmɑːrkɪŋz/",
@@ -13894,6 +14188,13 @@
     "Lower screen dependence reduces distraction.",
     "降低屏幕依赖可以减少分心。"
   ],
+  "screen use": [
+    "/skriːn juːs/",
+    "屏幕使用；乘员观看、阅读或操作屏幕的行为",
+    "",
+    "Screen use during curves may increase discomfort for some passengers.",
+    "在弯道中使用屏幕可能会增加部分乘客的不适。"
+  ],
   "screens": [
     "/skriːnz/",
     "屏幕；车内用于显示信息的界面区域",
@@ -14000,6 +14301,20 @@
     "",
     "Each seat zone can have different temperature and media preferences.",
     "在这句话中，“seat zone”用于描述智能座舱多人语音控制。"
+  ],
+  "seat-screen": [
+    "/待补充/",
+    "语境词：seat-screen；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A driver should not receive a detailed comfort card while negotiating traffic, but a rear passenger can receive a quiet seat-screen message.",
+    "在这句话中，“seat-screen”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "seat-screen message": [
+    "/siːt skriːn ˈmesɪdʒ/",
+    "座椅屏消息；显示在乘员座椅屏或后排屏上的提示",
+    "",
+    "A seat-screen message can reach the passenger without distracting the driver.",
+    "座椅屏消息可以触达乘客而不分散驾驶员注意力。"
   ],
   "seat-zone": [
     "/siːt zoʊn/",
@@ -14552,6 +14867,13 @@
     "Attention management is essential when the interface shows alerts during a complex driving maneuver.",
     "在这句话中，“shows”可理解为“显示, 表现, 展览, 卖弄, 炫耀, 外观, 演出, 洋相；表示, 显示, 展现, 陈列, 演出, 表明, 指出, 带领；露面, 显现, 演出”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "sickness": [
+    "/待补充/",
+    "语境词：sickness；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A motion sickness cue may combine seat movement, screen use, road curvature, and passenger posture.",
+    "在这句话中，“sickness”用于描述智能座舱健康舒适提示相关内容。"
   ],
   "side": [
     "/待查/",
@@ -15353,6 +15675,13 @@
     "在这句话中，“stopped”可理解为“停止, 车站, 逗留, 填塞, 障碍, (风琴的)音栓；停止, 被塞住；塞住, 堵塞, 阻止, 击落, 停止, 终止, 断绝”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "stops": [
+    "/待补充/",
+    "语境词：stops；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The system may notice indirect signals: a passenger stops reading, looks down for a long time, changes posture repeatedly, or turns the screen away during a winding road.",
+    "在这句话中，“stops”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "storage": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“storage”。",
@@ -15642,6 +15971,13 @@
     "Supporting detail can wait behind the first layer.",
     "支持性细节可以放在第一层之后。"
   ],
+  "supportive": [
+    "/待补充/",
+    "语境词：supportive；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
+    "在这句话中，“supportive”用于描述智能座舱健康舒适提示相关内容。"
+  ],
   "supports": [
     "/sә'pɒ:t/",
     "动词：支持, 支撑, 援助, 供养, 支撑物；支援, 支撑, 帮助, 支持, 忍受, 供养, 证实",
@@ -15714,6 +16050,20 @@
     "",
     "Switching appears in today's seat memory profile lesson.",
     "在这句话中，“switching”来自今天的座椅记忆档案学习内容。"
+  ],
+  "symptom": [
+    "/待补充/",
+    "语境词：symptom；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The symptom threshold should be conservative when the system is unsure about a passenger's state.",
+    "在这句话中，“symptom”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "symptom threshold": [
+    "/ˈsɪmptəm ˈθreʃhoʊld/",
+    "症状阈值；触发健康提醒前需要达到的风险或不适程度",
+    "",
+    "The symptom threshold should be conservative when the system is unsure about a passenger's state.",
+    "当系统不确定乘客状态时，症状阈值应更保守。"
   ],
   "synchronization": [
     "/暂无音标/",
@@ -16437,6 +16787,13 @@
     "",
     "Transparent inference prevents the assistant from sounding overconfident.",
     "透明推断可以避免助手显得过度自信。"
+  ],
+  "transparent interaction": [
+    "/trænsˈperənt ˌɪntərˈækʃn/",
+    "透明交互；清楚说明原因、动作和后果的交互方式",
+    "",
+    "Transparent interaction helps occupants understand why the cockpit suggests a change.",
+    "透明交互帮助乘员理解座舱为何提出调整建议。"
   ],
   "transparent recommendation": [
     "/trænsˈpærənt ˌrekəmenˈdeɪʃn/",
@@ -17290,6 +17647,13 @@
     "The team reduced visual load by pairing a short banner with a haptic pulse.",
     "团队通过将短横幅与触觉脉冲配对来降低视觉负荷。"
   ],
+  "visual rest mode": [
+    "/ˈvɪʒuəl rest moʊd/",
+    "视觉休息模式；降低屏幕运动、亮度或信息密度以缓解不适的显示状态",
+    "",
+    "Visual rest mode reduces moving graphics when a rear passenger starts to feel dizzy.",
+    "后排乘客开始头晕时，视觉休息模式会减少移动图形。"
+  ],
   "visual weight": [
     "/ˈvɪʒuəl weɪt/",
     "视觉重量；界面元素吸引注意的强弱程度",
@@ -17553,6 +17917,27 @@
     "在这句话中，“well-designed”可理解为“精心设计”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "wellbeing": [
+    "/待补充/",
+    "语境词：wellbeing；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "Occupant wellbeing requires clear consent because health signals can feel personal.",
+    "在这句话中，“wellbeing”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "wellness": [
+    "/待补充/",
+    "语境词：wellness；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
+    "在这句话中，“wellness”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "wellness prompt": [
+    "/ˈwelnəs prɑːmpt/",
+    "健康舒适提示；围绕疲劳、压力、晕车或空气质量给出的低干扰建议",
+    "",
+    "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
+    "当座舱检测到不适时，健康舒适提示应显得有支持感，而不是带有评判意味。"
+  ],
   "were": [
     "/wə(ɹ)/",
     "动词：是, 表示, 在",
@@ -17676,6 +18061,20 @@
     "",
     "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
     "在这句话中，“wind”可理解为“风；影响能耗的空气流动”。"
+  ],
+  "winding": [
+    "/待补充/",
+    "语境词：winding；用于理解今天健康舒适提示主题中的英文表达",
+    "",
+    "The system may notice indirect signals: a passenger stops reading, looks down for a long time, changes posture repeatedly, or turns the screen away during a winding road.",
+    "在这句话中，“winding”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "winding road": [
+    "/ˈwaɪndɪŋ roʊd/",
+    "弯道路段；可能增加晕车风险的连续转弯道路",
+    "",
+    "A winding road can increase the need for motion sickness support.",
+    "弯道路段可能增加对晕车支持的需求。"
   ],
   "window": [
     "/暂无音标/",
