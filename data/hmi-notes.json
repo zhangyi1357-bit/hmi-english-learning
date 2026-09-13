@@ -1,5 +1,685 @@
 [
   {
+    "id": "2026-09-13-cooperative-driving-mode-boundaries",
+    "date": "2026-09-13",
+    "title": "Cooperative driving mode handover and boundary cues in intelligent cockpits",
+    "topic": "智能座舱协同驾驶模式切换与边界提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明协同驾驶、自动化模式边界、接管准备度、控制权限和回退提示。",
+    "words": [
+      {
+        "term": "cooperative driving",
+        "phonetic": "/koʊˈɑːpərətɪv ˈdraɪvɪŋ/",
+        "meaning": "协同驾驶；驾驶员、自动化系统和车内界面共同完成驾驶任务的状态",
+        "example": "Cooperative driving works best when the cockpit clearly shows who is controlling each task.",
+        "chineseExample": "当座舱清楚显示每项任务由谁控制时，协同驾驶效果最好。"
+      },
+      {
+        "term": "mode boundary",
+        "phonetic": "/moʊd ˈbaʊndəri/",
+        "meaning": "模式边界；辅助驾驶、自动化和人工驾驶之间的能力与责任分界",
+        "example": "A visible mode boundary prevents the driver from overestimating the automation.",
+        "chineseExample": "可见的模式边界能防止驾驶员高估自动化能力。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员在需要时能否及时理解情况并恢复控制的程度",
+        "example": "The HMI should assess takeover readiness before asking the driver to resume control.",
+        "chineseExample": "HMI 应在要求驾驶员恢复控制前评估接管准备度。"
+      },
+      {
+        "term": "handover cue",
+        "phonetic": "/ˈhændoʊvər kjuː/",
+        "meaning": "交接提示；说明控制权即将转移或已经转移的视觉、声音或触觉信号",
+        "example": "A handover cue should name the reason for the change and the expected driver action.",
+        "chineseExample": "交接提示应说明变化原因以及期望的驾驶员动作。"
+      },
+      {
+        "term": "automation limit",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈlɪmɪt/",
+        "meaning": "自动化能力限制；系统在传感器、道路或法规条件下不能可靠处理的范围",
+        "example": "The screen explains the automation limit before the lane markings become unreliable.",
+        "chineseExample": "屏幕会在车道线变得不可靠之前解释自动化能力限制。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制；系统和驾驶员同时参与方向、速度或策略决策的控制方式",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "共享控制需要柔和反馈，让驾驶员理解系统辅助而不是与其对抗。"
+      },
+      {
+        "term": "control authority",
+        "phonetic": "/kənˈtroʊl əˈθɔːrəti/",
+        "meaning": "控制权限；当前由谁负责执行驾驶控制或关键决策的界面状态",
+        "example": "Control authority should be visible on the cluster, not hidden in a settings menu.",
+        "chineseExample": "控制权限应显示在仪表区域，而不是隐藏在设置菜单中。"
+      },
+      {
+        "term": "fallback prompt",
+        "phonetic": "/ˈfɔːlbæk prɑːmpt/",
+        "meaning": "回退提示；当自动化能力下降或退出时，引导用户采取安全下一步的提示",
+        "example": "A fallback prompt gives one clear next step instead of a technical explanation.",
+        "chineseExample": "回退提示给出一个清晰的下一步，而不是技术性解释。"
+      },
+      {
+        "term": "confidence state",
+        "phonetic": "/ˈkɑːnfɪdəns steɪt/",
+        "meaning": "置信状态；系统对当前感知、规划或控制结果可靠性的表达",
+        "example": "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+        "chineseExample": "置信状态可以用自然语言状态表达，而不是原始百分比。"
+      },
+      {
+        "term": "driver-in-the-loop",
+        "phonetic": "/ˈdraɪvər ɪn ðə luːp/",
+        "meaning": "驾驶员在环；驾驶员仍参与监控、确认或接管的自动化设计原则",
+        "example": "A driver-in-the-loop design keeps the driver informed without creating constant alarm.",
+        "chineseExample": "驾驶员在环设计让驾驶员保持知情，同时不制造持续警报。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "cooperative driving",
+        "phonetic": "/koʊˈɑːpərətɪv ˈdraɪvɪŋ/",
+        "meaning": "协同驾驶；驾驶员、自动化系统和车内界面共同完成驾驶任务的状态",
+        "example": "Cooperative driving works best when the cockpit clearly shows who is controlling each task.",
+        "chineseExample": "当座舱清楚显示每项任务由谁控制时，协同驾驶效果最好。"
+      },
+      {
+        "term": "mode boundary",
+        "phonetic": "/moʊd ˈbaʊndəri/",
+        "meaning": "模式边界；辅助驾驶、自动化和人工驾驶之间的能力与责任分界",
+        "example": "A visible mode boundary prevents the driver from overestimating the automation.",
+        "chineseExample": "可见的模式边界能防止驾驶员高估自动化能力。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员在需要时能否及时理解情况并恢复控制的程度",
+        "example": "The HMI should assess takeover readiness before asking the driver to resume control.",
+        "chineseExample": "HMI 应在要求驾驶员恢复控制前评估接管准备度。"
+      },
+      {
+        "term": "handover cue",
+        "phonetic": "/ˈhændoʊvər kjuː/",
+        "meaning": "交接提示；说明控制权即将转移或已经转移的视觉、声音或触觉信号",
+        "example": "A handover cue should name the reason for the change and the expected driver action.",
+        "chineseExample": "交接提示应说明变化原因以及期望的驾驶员动作。"
+      },
+      {
+        "term": "automation limit",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈlɪmɪt/",
+        "meaning": "自动化能力限制；系统在传感器、道路或法规条件下不能可靠处理的范围",
+        "example": "The screen explains the automation limit before the lane markings become unreliable.",
+        "chineseExample": "屏幕会在车道线变得不可靠之前解释自动化能力限制。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制；系统和驾驶员同时参与方向、速度或策略决策的控制方式",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "共享控制需要柔和反馈，让驾驶员理解系统辅助而不是与其对抗。"
+      },
+      {
+        "term": "control authority",
+        "phonetic": "/kənˈtroʊl əˈθɔːrəti/",
+        "meaning": "控制权限；当前由谁负责执行驾驶控制或关键决策的界面状态",
+        "example": "Control authority should be visible on the cluster, not hidden in a settings menu.",
+        "chineseExample": "控制权限应显示在仪表区域，而不是隐藏在设置菜单中。"
+      },
+      {
+        "term": "fallback prompt",
+        "phonetic": "/ˈfɔːlbæk prɑːmpt/",
+        "meaning": "回退提示；当自动化能力下降或退出时，引导用户采取安全下一步的提示",
+        "example": "A fallback prompt gives one clear next step instead of a technical explanation.",
+        "chineseExample": "回退提示给出一个清晰的下一步，而不是技术性解释。"
+      },
+      {
+        "term": "confidence state",
+        "phonetic": "/ˈkɑːnfɪdəns steɪt/",
+        "meaning": "置信状态；系统对当前感知、规划或控制结果可靠性的表达",
+        "example": "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+        "chineseExample": "置信状态可以用自然语言状态表达，而不是原始百分比。"
+      },
+      {
+        "term": "driver-in-the-loop",
+        "phonetic": "/ˈdraɪvər ɪn ðə luːp/",
+        "meaning": "驾驶员在环；驾驶员仍参与监控、确认或接管的自动化设计原则",
+        "example": "A driver-in-the-loop design keeps the driver informed without creating constant alarm.",
+        "chineseExample": "驾驶员在环设计让驾驶员保持知情，同时不制造持续警报。"
+      },
+      {
+        "term": "assess",
+        "phonetic": "/əˈses/",
+        "meaning": "评估；判断状态、风险或准备度",
+        "example": "The HMI should assess takeover readiness before asking the driver to resume control.",
+        "chineseExample": "在这句话中，“assess”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "assistance",
+        "phonetic": "/əˈsɪstəns/",
+        "meaning": "辅助；系统对驾驶或交互任务的支持",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "在这句话中，“assistance”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "automated lane centering",
+        "phonetic": "/ˈɔːtəmeɪtɪd leɪn ˈsentərɪŋ/",
+        "meaning": "自动车道居中；车辆自动保持在车道中央的辅助功能",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“automated lane centering”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "automation",
+        "phonetic": "/ˌɔːtəˈmeɪʃn/",
+        "meaning": "自动化；由系统执行感知、规划或控制任务",
+        "example": "A visible mode boundary prevents the driver from overestimating the automation.",
+        "chineseExample": "在这句话中，“automation”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；能力、责任或模式的分界",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“boundary”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "capability",
+        "phonetic": "/ˌkeɪpəˈbɪləti/",
+        "meaning": "能力；系统在特定条件下可可靠完成的功能",
+        "example": "When the road becomes narrow, the interface should explain which capability is limited.",
+        "chineseExample": "在这句话中，“capability”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "仪表区域；驾驶员前方的核心状态显示区域",
+        "example": "Control authority should be visible on the cluster, not hidden in a settings menu.",
+        "chineseExample": "在这句话中，“cluster”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "communicate responsibility",
+        "phonetic": "/kəˈmjuːnɪkeɪt rɪˌspɑːnsəˈbɪləti/",
+        "meaning": "传达责任；说明当前谁需要监控或控制",
+        "example": "Good mode design must communicate responsibility before control changes.",
+        "chineseExample": "在这句话中，“communicate responsibility”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "condition",
+        "phonetic": "/kənˈdɪʃn/",
+        "meaning": "条件；影响系统能力的道路、环境或传感器状态",
+        "example": "The interface connects the condition to the requested driver action.",
+        "chineseExample": "在这句话中，“condition”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "confirm grip",
+        "phonetic": "/kənˈfɜːrm ɡrɪp/",
+        "meaning": "确认握持；提示驾驶员把手放回方向盘并确认可接管",
+        "example": "A soft steering-wheel pulse can ask the driver to confirm grip.",
+        "chineseExample": "在这句话中，“confirm grip”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "continuous",
+        "phonetic": "/kənˈtɪnjuəs/",
+        "meaning": "连续的；不中断的",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“continuous”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "控制；对车辆方向、速度或界面动作的主导",
+        "example": "Cooperative driving works best when the cockpit clearly shows who is controlling each task.",
+        "chineseExample": "在这句话中，“control”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "control changes",
+        "phonetic": "/kənˈtroʊl ˈtʃeɪndʒɪz/",
+        "meaning": "控制变化；控制权或辅助状态发生转移",
+        "example": "Good mode design must communicate responsibility before control changes.",
+        "chineseExample": "在这句话中，“control changes”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "controlled transition",
+        "phonetic": "/kənˈtroʊld trænˈzɪʃn/",
+        "meaning": "受控过渡；以可理解、可预期方式完成模式切换",
+        "example": "The goal is a controlled transition, not a surprise handover.",
+        "chineseExample": "在这句话中，“controlled transition”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "degrade",
+        "phonetic": "/dɪˈɡreɪd/",
+        "meaning": "降级；能力或可靠性下降",
+        "example": "If perception starts to degrade, the cockpit should prepare the driver early.",
+        "chineseExample": "在这句话中，“degrade”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "driver action",
+        "phonetic": "/ˈdraɪvər ˈækʃn/",
+        "meaning": "驾驶员动作；系统希望驾驶员执行的具体操作",
+        "example": "A handover cue should name the reason for the change and the expected driver action.",
+        "chineseExample": "在这句话中，“driver action”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "driver attention",
+        "phonetic": "/ˈdraɪvər əˈtenʃn/",
+        "meaning": "驾驶员注意力；驾驶员对道路、控制和系统状态的关注程度",
+        "example": "The system should bring driver attention back before the mode boundary is crossed.",
+        "chineseExample": "在这句话中，“driver attention”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "early preparation",
+        "phonetic": "/ˈɜːrli ˌprepəˈreɪʃn/",
+        "meaning": "提前准备；在风险变急之前给用户理解和行动时间",
+        "example": "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+        "chineseExample": "在这句话中，“early preparation”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "expected action",
+        "phonetic": "/ɪkˈspektɪd ˈækʃn/",
+        "meaning": "期望动作；提示中明确要求用户完成的下一步",
+        "example": "The message names the expected action in simple language.",
+        "chineseExample": "在这句话中，“expected action”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明原因、状态或限制",
+        "example": "The screen explains the automation limit before the lane markings become unreliable.",
+        "chineseExample": "在这句话中，“explain”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "gentle feedback",
+        "phonetic": "/ˈdʒentl ˈfiːdbæk/",
+        "meaning": "柔和反馈；不过度惊扰用户的提示反馈",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "在这句话中，“gentle feedback”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "glanceable status",
+        "phonetic": "/ˈɡlænsəbl ˈsteɪtəs/",
+        "meaning": "可扫视状态；驾驶员短暂一瞥即可理解的状态信息",
+        "example": "A glanceable status reduces confusion during a mode transition.",
+        "chineseExample": "在这句话中，“glanceable status”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "hold the wheel",
+        "phonetic": "/hoʊld ðə wiːl/",
+        "meaning": "握住方向盘；接管前的关键身体动作",
+        "example": "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+        "chineseExample": "在这句话中，“hold the wheel”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "informed",
+        "phonetic": "/ɪnˈfɔːrmd/",
+        "meaning": "知情的；了解系统状态和下一步要求",
+        "example": "A driver-in-the-loop design keeps the driver informed without creating constant alarm.",
+        "chineseExample": "在这句话中，“informed”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "lane markings",
+        "phonetic": "/leɪn ˈmɑːrkɪŋz/",
+        "meaning": "车道线；系统感知道路边界的重要视觉线索",
+        "example": "The screen explains the automation limit before the lane markings become unreliable.",
+        "chineseExample": "在这句话中，“lane markings”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/ˈlɪmɪtɪd/",
+        "meaning": "受限的；能力不足或适用范围缩小",
+        "example": "When the road becomes narrow, the interface should explain which capability is limited.",
+        "chineseExample": "在这句话中，“limited”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "look up",
+        "phonetic": "/lʊk ʌp/",
+        "meaning": "抬头观察；从屏幕或其他任务回到道路观察",
+        "example": "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+        "chineseExample": "在这句话中，“look up”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "manual driving",
+        "phonetic": "/ˈmænjuəl ˈdraɪvɪŋ/",
+        "meaning": "人工驾驶；驾驶员直接负责车辆控制",
+        "example": "The transition from assistance to manual driving should be staged and calm.",
+        "chineseExample": "在这句话中，“manual driving”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "mode label",
+        "phonetic": "/moʊd ˈleɪbl/",
+        "meaning": "模式标签；界面上显示当前驾驶模式的简短名称",
+        "example": "A mode label should match what the vehicle can actually do.",
+        "chineseExample": "在这句话中，“mode label”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "mode transition",
+        "phonetic": "/moʊd trænˈzɪʃn/",
+        "meaning": "模式切换；驾驶辅助或控制状态从一种模式转到另一种模式",
+        "example": "A glanceable status reduces confusion during a mode transition.",
+        "chineseExample": "在这句话中，“mode transition”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "narrow road",
+        "phonetic": "/ˈnæroʊ roʊd/",
+        "meaning": "狭窄道路；可能限制自动化能力的道路场景",
+        "example": "When the road becomes narrow, the interface should explain which capability is limited.",
+        "chineseExample": "在这句话中，“narrow road”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "operating boundary",
+        "phonetic": "/ˈɑːpəreɪtɪŋ ˈbaʊndəri/",
+        "meaning": "运行边界；系统可以安全可靠运行的条件范围",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“operating boundary”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "overestimating",
+        "phonetic": "/ˌoʊvərˈestɪmeɪtɪŋ/",
+        "meaning": "高估；把系统能力判断得过强",
+        "example": "A visible mode boundary prevents the driver from overestimating the automation.",
+        "chineseExample": "在这句话中，“overestimating”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "perception",
+        "phonetic": "/pərˈsepʃn/",
+        "meaning": "感知；系统识别道路、车辆、车道线和环境的能力",
+        "example": "If perception starts to degrade, the cockpit should prepare the driver early.",
+        "chineseExample": "在这句话中，“perception”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "plain-language status",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ ˈsteɪtəs/",
+        "meaning": "自然语言状态；用普通话语解释系统状态",
+        "example": "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+        "chineseExample": "在这句话中，“plain-language status”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "prepare the driver",
+        "phonetic": "/prɪˈper ðə ˈdraɪvər/",
+        "meaning": "让驾驶员准备好；提前引导驾驶员恢复注意和控制",
+        "example": "If perception starts to degrade, the cockpit should prepare the driver early.",
+        "chineseExample": "在这句话中，“prepare the driver”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "raw percentage",
+        "phonetic": "/rɔːr pərˈsentɪdʒ/",
+        "meaning": "原始百分比；未经解释的数值状态",
+        "example": "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+        "chineseExample": "在这句话中，“raw percentage”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "reason for the change",
+        "phonetic": "/ˈriːzn fər ðə tʃeɪndʒ/",
+        "meaning": "变化原因；模式或控制切换背后的触发因素",
+        "example": "A handover cue should name the reason for the change and the expected driver action.",
+        "chineseExample": "在这句话中，“reason for the change”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "responsibility",
+        "phonetic": "/rɪˌspɑːnsəˈbɪləti/",
+        "meaning": "责任；谁需要监控、确认或控制车辆",
+        "example": "Good mode design must communicate responsibility before control changes.",
+        "chineseExample": "在这句话中，“responsibility”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "resume control",
+        "phonetic": "/rɪˈzuːm kənˈtroʊl/",
+        "meaning": "恢复控制；驾驶员重新接管车辆控制",
+        "example": "The HMI should assess takeover readiness before asking the driver to resume control.",
+        "chineseExample": "在这句话中，“resume control”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "scan the scene",
+        "phonetic": "/skæn ðə siːn/",
+        "meaning": "扫视场景；快速观察道路和交通环境",
+        "example": "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+        "chineseExample": "在这句话中，“scan the scene”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "settings menu",
+        "phonetic": "/ˈsetɪŋz ˈmenjuː/",
+        "meaning": "设置菜单；不应隐藏关键驾驶状态的位置",
+        "example": "Control authority should be visible on the cluster, not hidden in a settings menu.",
+        "chineseExample": "在这句话中，“settings menu”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "staged",
+        "phonetic": "/steɪdʒd/",
+        "meaning": "分阶段的；按步骤逐渐推进的",
+        "example": "The transition from assistance to manual driving should be staged and calm.",
+        "chineseExample": "在这句话中，“staged”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "steering-wheel pulse",
+        "phonetic": "/ˈstɪrɪŋ wiːl pʌls/",
+        "meaning": "方向盘脉冲；方向盘上的轻微触觉提示",
+        "example": "A soft steering-wheel pulse can ask the driver to confirm grip.",
+        "chineseExample": "在这句话中，“steering-wheel pulse”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "system assistance",
+        "phonetic": "/ˈsɪstəm əˈsɪstəns/",
+        "meaning": "系统辅助；车辆自动化对驾驶员的支持",
+        "example": "The driver understands system assistance without fighting it.",
+        "chineseExample": "在这句话中，“system assistance”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "technical explanation",
+        "phonetic": "/ˈteknɪkl ˌekspləˈneɪʃn/",
+        "meaning": "技术性解释；过于工程化、不适合紧急场景的说明",
+        "example": "A fallback prompt gives one clear next step instead of a technical explanation.",
+        "chineseExample": "在这句话中，“technical explanation”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "transition",
+        "phonetic": "/trænˈzɪʃn/",
+        "meaning": "过渡；从一种状态或模式转到另一种状态或模式",
+        "example": "The transition from assistance to manual driving should be staged and calm.",
+        "chineseExample": "在这句话中，“transition”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "unreliable",
+        "phonetic": "/ˌʌnrɪˈlaɪəbl/",
+        "meaning": "不可靠的；不能稳定信任或使用的",
+        "example": "The screen explains the automation limit before the lane markings become unreliable.",
+        "chineseExample": "在这句话中，“unreliable”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "可见的；用户能直接看到的",
+        "example": "A visible mode boundary prevents the driver from overestimating the automation.",
+        "chineseExample": "在这句话中，“visible”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "without fighting it",
+        "phonetic": "/wɪðˈaʊt ˈfaɪtɪŋ ɪt/",
+        "meaning": "不会与其对抗；不会误解或抵触系统辅助",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "在这句话中，“without fighting it”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "cooperative",
+        "phonetic": "/koʊˈɑːpərətɪv/",
+        "meaning": "语境词：协作的；共同完成任务的",
+        "example": "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit.",
+        "chineseExample": "在这句话中，“cooperative”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "limit",
+        "phonetic": "/ˈlɪmɪt/",
+        "meaning": "语境词：限制；能力或责任不能超出的范围",
+        "example": "In HMI writing, the strongest sentence is often simple: name the limit, name the responsibility, and make the next action visible.",
+        "chineseExample": "在这句话中，“limit”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "fighting",
+        "phonetic": "/ˈfaɪtɪŋ/",
+        "meaning": "语境词：对抗；与系统辅助产生冲突",
+        "example": "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+        "chineseExample": "在这句话中，“fighting”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "authority",
+        "phonetic": "/əˈθɔːrəti/",
+        "meaning": "语境词：权限；控制或决策的主导权",
+        "example": "Control authority should be visible on the cluster, not hidden in a settings menu.",
+        "chineseExample": "在这句话中，“authority”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "percentage",
+        "phonetic": "/pərˈsentɪdʒ/",
+        "meaning": "语境词：百分比；以百分数呈现的状态值",
+        "example": "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+        "chineseExample": "在这句话中，“percentage”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "constant",
+        "phonetic": "/ˈkɑːnstənt/",
+        "meaning": "语境词：持续的；一直存在的",
+        "example": "It also keeps the driver-in-the-loop without creating constant alarm.",
+        "chineseExample": "在这句话中，“constant”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "communication",
+        "phonetic": "/kəˌmjuːnɪˈkeɪʃn/",
+        "meaning": "语境词：沟通；让用户理解状态、原因和动作的表达过程",
+        "example": "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit.",
+        "chineseExample": "在这句话中，“communication”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "automated",
+        "phonetic": "/ˈɔːtəmeɪtɪd/",
+        "meaning": "语境词：自动化的；由系统执行的",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“automated”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "operating",
+        "phonetic": "/ˈɑːpəreɪtɪŋ/",
+        "meaning": "语境词：运行的；系统正在工作的",
+        "example": "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+        "chineseExample": "在这句话中，“operating”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "prepare",
+        "phonetic": "/prɪˈper/",
+        "meaning": "语境词：准备；让用户提前进入可行动状态",
+        "example": "When the road becomes narrow, lane markings fade, or perception starts to degrade, the cockpit should prepare the driver before the mode boundary is crossed.",
+        "chineseExample": "在这句话中，“prepare”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "crossed",
+        "phonetic": "/krɔːst/",
+        "meaning": "语境词：被越过；超过边界或条件",
+        "example": "The cockpit should prepare the driver before the mode boundary is crossed.",
+        "chineseExample": "在这句话中，“crossed”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "answers",
+        "phonetic": "/ˈænsərz/",
+        "meaning": "语境词：回答；回应关键问题",
+        "example": "A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next.",
+        "chineseExample": "在这句话中，“answers”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "questions",
+        "phonetic": "/ˈkwestʃənz/",
+        "meaning": "语境词：问题；需要被提示回答的信息点",
+        "example": "A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next.",
+        "chineseExample": "在这句话中，“questions”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "please",
+        "phonetic": "/pliːz/",
+        "meaning": "语境词：请；用于礼貌请求的提示词",
+        "example": "Lane confidence is low ahead. Please look up and hold the wheel.",
+        "chineseExample": "在这句话中，“please”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "up",
+        "phonetic": "/ʌp/",
+        "meaning": "语境词：向上；在 look up 中表示抬头看路",
+        "example": "Lane confidence is low ahead. Please look up and hold the wheel.",
+        "chineseExample": "在这句话中，“up”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "hold",
+        "phonetic": "/hoʊld/",
+        "meaning": "语境词：握住；保持身体动作或控制动作",
+        "example": "Lane confidence is low ahead. Please look up and hold the wheel.",
+        "chineseExample": "在这句话中，“hold”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "care",
+        "phonetic": "/ker/",
+        "meaning": "语境词：谨慎；对交互语气和用户负荷的关注",
+        "example": "Shared control needs the same care.",
+        "chineseExample": "在这句话中，“care”用于描述协同驾驶模式切换与边界提示。"
+      },
+      {
+        "term": "adds",
+        "phonetic": "/ædz/",
+        "meaning": "语境词：增加；加入辅助或系统动作",
+        "example": "If the system adds steering support, a soft steering-wheel pulse and a glanceable status can show that assistance is active.",
+        "chineseExample": "在这句话中，“adds”用于描述协同驾驶模式切换与边界提示。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Making mode handovers understandable",
+        "text": "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit. Automated lane centering may feel continuous, but it still has a clear operating boundary. When the road becomes narrow, lane markings fade, or perception starts to degrade, the cockpit should prepare the driver before the mode boundary is crossed. A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next. For example, instead of showing a raw percentage, the cluster can say, \"Lane confidence is low ahead. Please look up and hold the wheel.\" This message connects the condition to the expected action. It also keeps the driver-in-the-loop without creating constant alarm. Shared control needs the same care. If the system adds steering support, a soft steering-wheel pulse and a glanceable status can show that assistance is active. If the system must leave the automated mode, a fallback prompt should give one clear next step. The goal is a controlled transition, not a surprise handover. In HMI writing, the strongest sentence is often simple: name the limit, name the responsibility, and make the next action visible.",
+        "translation": "协同驾驶不只是技术功能，也是智能座舱内部的沟通问题。自动车道居中可能感觉连续运行，但它仍然有清晰的运行边界。当道路变窄、车道线变淡或感知开始降级时，座舱应在跨越模式边界前让驾驶员做好准备。好的交接提示会快速回答三个问题：发生了什么变化、为什么变化、驾驶员下一步应做什么。例如，与其显示原始百分比，仪表区域可以说：“前方车道置信度较低。请抬头并握住方向盘。”这条信息把条件和期望动作连接起来，也让驾驶员保持在环，而不会制造持续警报。共享控制同样需要这种谨慎。如果系统加入转向支持，轻微的方向盘脉冲和可扫视状态可以表明辅助已激活。如果系统必须退出自动化模式，回退提示应给出一个清晰的下一步。目标是受控过渡，而不是突然交接。在 HMI 英文写作中，最有力的句子往往很简单：说清限制、说清责任，并让下一步动作可见。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit.",
+        "translation": "协同驾驶不只是技术功能，也是智能座舱内部的沟通问题。",
+        "points": [
+          "not just A; it is B 用来强调问题不只属于技术层面。",
+          "communication problem 表示核心挑战在于让用户理解状态、责任和下一步。",
+          "inside the intelligent cockpit 指交互发生在车内多屏、多模态环境中。"
+        ]
+      },
+      {
+        "sentence": "A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next.",
+        "translation": "好的交接提示会快速回答三个问题：发生了什么变化、为什么变化、驾驶员下一步应做什么。",
+        "points": [
+          "answers three questions quickly 适合描述驾驶场景中的高效信息组织。",
+          "what changed, why it changed, and what... 是并列宾语从句。",
+          "should do next 把提示落到具体动作，而不是只描述系统状态。"
+        ]
+      },
+      {
+        "sentence": "It also keeps the driver-in-the-loop without creating constant alarm.",
+        "translation": "它也让驾驶员保持在环，而不会制造持续警报。",
+        "points": [
+          "keeps the driver-in-the-loop 表示驾驶员仍被纳入监控和决策流程。",
+          "without creating constant alarm 表示避免因频繁警告造成紧张或疲劳。",
+          "also 连接上一句，说明同一条提示同时承担多个设计目标。"
+        ]
+      },
+      {
+        "sentence": "The goal is a controlled transition, not a surprise handover.",
+        "translation": "目标是受控过渡，而不是突然交接。",
+        "points": [
+          "The goal is..., not... 是产品原则表达的清晰句式。",
+          "controlled transition 强调模式切换应可理解、可预期。",
+          "surprise handover 指突然要求用户接管，容易带来安全和信任风险。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      "3 分钟：朗读 10 个核心词，重点区分 boundary、limit、authority 和 readiness 的含义。",
+      "6 分钟：跟读长文，标出所有说明原因和下一步动作的句子。",
+      "7 分钟：用英文复述一次从自动车道居中到人工驾驶的模式切换流程。",
+      "5 分钟：把一句技术化报警改写成 fallback prompt，要求包含限制、责任和下一步动作。"
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-12-wellbeing-motion-sickness-prompts",
     "date": "2026-09-12",
     "title": "Wellbeing prompts and motion sickness support in intelligent cockpits",

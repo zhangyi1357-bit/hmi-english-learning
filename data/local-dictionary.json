@@ -380,6 +380,13 @@
     "The cockpit uses the word address in privacy prompts when it fits the user context.",
     "在隐私提示中，“address”可结合用户场景理解。"
   ],
+  "adds": [
+    "/ædz/",
+    "语境词：增加；加入辅助或系统动作",
+    "",
+    "If the system adds steering support, a soft steering-wheel pulse and a glanceable status can show that assistance is active.",
+    "在这句话中，“adds”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "adjust": [
     "/əˈdʒʌst/",
     "调节；改变设置、参数或状态",
@@ -844,6 +851,13 @@
     "在这句话中，“answer”可理解为“答案, 回答, 回报, 答辩；回答, 反驳, 适应, 响应, 符合；回答, 答应, 负责, 符合, 成功”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "answers": [
+    "/ˈænsərz/",
+    "语境词：回答；回应关键问题",
+    "",
+    "A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next.",
+    "在这句话中，“answers”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "anxiety": [
     "/按语境朗读/",
     "焦虑；对续航或充电不确定的担心",
@@ -1072,6 +1086,13 @@
     "Progressive disclosure keeps advanced climate options hidden until the driver asks for them.",
     "在这句话中，“asks”可理解为“问, 要求；问, 要求, 邀请, 需要”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "assess": [
+    "/əˈses/",
+    "评估；判断状态、风险或准备度",
+    "",
+    "The HMI should assess takeover readiness before asking the driver to resume control.",
+    "在这句话中，“assess”用于描述协同驾驶模式切换与边界提示。"
   ],
   "assistance": [
     "/暂无音标/",
@@ -1324,12 +1345,33 @@
     "An augmented-reality head-up display can place a turn cue near the real lane.",
     "增强现实抬头显示可以把转向提示放在真实车道附近。"
   ],
+  "authority": [
+    "/əˈθɔːrəti/",
+    "语境词：权限；控制或决策的主导权",
+    "",
+    "Control authority should be visible on the cluster, not hidden in a settings menu.",
+    "在这句话中，“authority”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "automate": [
     "/ˈɔːtəmeɪt/",
     "自动化执行；让系统在许可范围内自动完成动作",
     "",
     "The cockpit may automate this trip after explicit permission.",
     "在这句话中，automate 表示自动执行本次行程中的动作。"
+  ],
+  "automated": [
+    "/ˈɔːtəmeɪtɪd/",
+    "语境词：自动化的；由系统执行的",
+    "",
+    "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+    "在这句话中，“automated”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "automated lane centering": [
+    "/ˈɔːtəmeɪtɪd leɪn ˈsentərɪŋ/",
+    "自动车道居中；车辆自动保持在车道中央的辅助功能",
+    "",
+    "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+    "在这句话中，“automated lane centering”用于描述协同驾驶模式切换与边界提示。"
   ],
   "automatic": [
     "/按语境朗读/",
@@ -2173,6 +2215,13 @@
     "The driver cannot evaluate every option at once.",
     "驾驶员无法一次评估所有选项。"
   ],
+  "capability": [
+    "/ˌkeɪpəˈbɪləti/",
+    "能力；系统在特定条件下可可靠完成的功能",
+    "",
+    "When the road becomes narrow, the interface should explain which capability is limited.",
+    "在这句话中，“capability”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "car": [
     "/kɑː/",
     "名词：汽车, 客车；[机] 车",
@@ -2188,6 +2237,13 @@
     "Context-sensitive timing is critical because a simple card can become distracting at the wrong moment.",
     "在这句话中，“card”可理解为“卡片, 纸牌, 节目单, 明信片, 梳棉机；备置卡片, 记于卡片上, 梳理”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "care": [
+    "/ker/",
+    "语境词：谨慎；对交互语气和用户负荷的关注",
+    "",
+    "Shared control needs the same care.",
+    "在这句话中，“care”用于描述协同驾驶模式切换与边界提示。"
   ],
   "careful": [
     "/ˈkerfl/",
@@ -2952,12 +3008,26 @@
     "Communicate appears in today's navigation prompt timing lesson.",
     "在这句话中，“communicate”来自今天的导航提示时机学习内容。"
   ],
+  "communicate responsibility": [
+    "/kəˈmjuːnɪkeɪt rɪˌspɑːnsəˈbɪləti/",
+    "传达责任；说明当前谁需要监控或控制",
+    "",
+    "Good mode design must communicate responsibility before control changes.",
+    "在这句话中，“communicate responsibility”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "communicated": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“communicated”。",
     "",
     "Communicated appears in today's navigation prompt timing lesson.",
     "在这句话中，“communicated”来自今天的导航提示时机学习内容。"
+  ],
+  "communication": [
+    "/kəˌmjuːnɪˈkeɪʃn/",
+    "语境词：沟通；让用户理解状态、原因和动作的表达过程",
+    "",
+    "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit.",
+    "在这句话中，“communication”用于描述协同驾驶模式切换与边界提示。"
   ],
   "commute": [
     "/kəˈmjuːt/",
@@ -3148,6 +3218,13 @@
     "A low confidence score should trigger clarification.",
     "低置信分数应触发澄清。"
   ],
+  "confidence state": [
+    "/ˈkɑːnfɪdəns steɪt/",
+    "置信状态；系统对当前感知、规划或控制结果可靠性的表达",
+    "",
+    "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+    "置信状态可以用自然语言状态表达，而不是原始百分比。"
+  ],
   "confidence threshold": [
     "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
     "置信阈值；系统决定直接执行、澄清或拒绝请求的可信度边界",
@@ -3176,6 +3253,13 @@
     "A multimodal handoff lets the driver start a destination search by voice and confirm the final route on the screen.",
     "在这句话中，“confirm”可理解为“证实, 确定, 批准, 使巩固”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "confirm grip": [
+    "/kənˈfɜːrm ɡrɪp/",
+    "确认握持；提示驾驶员把手放回方向盘并确认可接管",
+    "",
+    "A soft steering-wheel pulse can ask the driver to confirm grip.",
+    "在这句话中，“confirm grip”用于描述协同驾驶模式切换与边界提示。"
   ],
   "confirmable action": [
     "/kənˈfɜːrməbl ˈækʃn/",
@@ -3404,6 +3488,13 @@
     "Consistent can be understood in the cockpit design context.",
     "在这句话中，“consistent”可结合座舱设计语境理解。"
   ],
+  "constant": [
+    "/ˈkɑːnstənt/",
+    "语境词：持续的；一直存在的",
+    "",
+    "It also keeps the driver-in-the-loop without creating constant alarm.",
+    "在这句话中，“constant”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "constantly": [
     "/ˈkɒnstəntli/",
     "副词：不变地, 不断地, 时常地",
@@ -3622,6 +3713,13 @@
     "在这句话中，“continuity”可理解为“连续性”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "continuous": [
+    "/kənˈtɪnjuəs/",
+    "连续的；不中断的",
+    "",
+    "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+    "在这句话中，“continuous”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "contrast": [
     "/ˈkɑːntræst/",
     "对比度；前景和背景之间的明暗差异",
@@ -3650,6 +3748,20 @@
     "The driver must look, understand, decide, and often tap a control while the vehicle is still moving.",
     "在这句话中，“control”可理解为“控制, 管理, 克制, 控制器, 操纵装置；控制, 操纵, 抑制”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "control authority": [
+    "/kənˈtroʊl əˈθɔːrəti/",
+    "控制权限；当前由谁负责执行驾驶控制或关键决策的界面状态",
+    "",
+    "Control authority should be visible on the cluster, not hidden in a settings menu.",
+    "控制权限应显示在仪表区域，而不是隐藏在设置菜单中。"
+  ],
+  "control changes": [
+    "/kənˈtroʊl ˈtʃeɪndʒɪz/",
+    "控制变化；控制权或辅助状态发生转移",
+    "",
+    "Good mode design must communicate responsibility before control changes.",
+    "在这句话中，“control changes”用于描述协同驾驶模式切换与边界提示。"
   ],
   "control confirmation": [
     "/kənˈtroʊl ˌkɑːnfərˈmeɪʃn/",
@@ -3699,6 +3811,13 @@
     "",
     "A controlled hazard should lead to a calmer status message.",
     "已受控危险应转为更平静的状态消息。"
+  ],
+  "controlled transition": [
+    "/kənˈtroʊld trænˈzɪʃn/",
+    "受控过渡；以可理解、可预期方式完成模式切换",
+    "",
+    "The goal is a controlled transition, not a surprise handover.",
+    "在这句话中，“controlled transition”用于描述协同驾驶模式切换与边界提示。"
   ],
   "controller": [
     "/kənˈtroʊlər/",
@@ -3785,6 +3904,20 @@
     "",
     "Ambiguity resolution is necessary when a driver says, 'make it cooler,' near several controllable zones.",
     "在这句话中，“cooler”可结合车内助手澄清场景理解。"
+  ],
+  "cooperative": [
+    "/koʊˈɑːpərətɪv/",
+    "语境词：协作的；共同完成任务的",
+    "",
+    "Cooperative driving is not just a technical feature; it is a communication problem inside the intelligent cockpit.",
+    "在这句话中，“cooperative”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "cooperative driving": [
+    "/koʊˈɑːpərətɪv ˈdraɪvɪŋ/",
+    "协同驾驶；驾驶员、自动化系统和车内界面共同完成驾驶任务的状态",
+    "",
+    "Cooperative driving works best when the cockpit clearly shows who is controlling each task.",
+    "当座舱清楚显示每项任务由谁控制时，协同驾驶效果最好。"
   ],
   "coordinate": [
     "/koʊˈɔːrdɪneɪt/",
@@ -3940,6 +4073,13 @@
     "",
     "Cross-screen continuity helps drivers understand why a navigation alert moves from the center display to the cluster.",
     "跨屏连续性帮助驾驶员理解为什么导航提醒会从中控屏转移到仪表屏。"
+  ],
+  "crossed": [
+    "/krɔːst/",
+    "语境词：被越过；超过边界或条件",
+    "",
+    "The cockpit should prepare the driver before the mode boundary is crossed.",
+    "在这句话中，“crossed”用于描述协同驾驶模式切换与边界提示。"
   ],
   "crossing": [
     "/ˈkrɔːsɪŋ/",
@@ -4259,6 +4399,13 @@
     "",
     "Degradation should be visible before it affects control.",
     "降级应在影响控制前可见。"
+  ],
+  "degrade": [
+    "/dɪˈɡreɪd/",
+    "降级；能力或可靠性下降",
+    "",
+    "If perception starts to degrade, the cockpit should prepare the driver early.",
+    "在这句话中，“degrade”用于描述协同驾驶模式切换与边界提示。"
   ],
   "degraded": [
     "/dɪˈɡreɪdɪd/",
@@ -4930,6 +5077,13 @@
     "在这句话中，“driver”可理解为“驾驶员, 驱动器, 驱动程序”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "driver action": [
+    "/ˈdraɪvər ˈækʃn/",
+    "驾驶员动作；系统希望驾驶员执行的具体操作",
+    "",
+    "A handover cue should name the reason for the change and the expected driver action.",
+    "在这句话中，“driver action”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "driver agency": [
     "/ˈdraɪvər ˈeɪdʒənsi/",
     "驾驶员主导权；驾驶员能够理解、批准、拒绝或撤销系统行为的控制感",
@@ -5084,6 +5238,13 @@
     "A driver-facing status explains what changed, why it changed, and what the driver should do next.",
     "面向驾驶员的状态说明发生了什么变化、为什么变化以及驾驶员下一步该做什么。"
   ],
+  "driver-in-the-loop": [
+    "/ˈdraɪvər ɪn ðə luːp/",
+    "驾驶员在环；驾驶员仍参与监控、确认或接管的自动化设计原则",
+    "",
+    "A driver-in-the-loop design keeps the driver informed without creating constant alarm.",
+    "驾驶员在环设计让驾驶员保持知情，同时不制造持续警报。"
+  ],
   "driver-verifiable": [
     "/ˈdraɪvər ˈverɪfaɪəbl/",
     "驾驶员可验证的；驾驶员能快速核对依据或结果的",
@@ -5230,6 +5391,13 @@
     "",
     "Early appears in today's navigation prompt timing lesson.",
     "在这句话中，“early”来自今天的导航提示时机学习内容。"
+  ],
+  "early preparation": [
+    "/ˈɜːrli ˌprepəˈreɪʃn/",
+    "提前准备；在风险变急之前给用户理解和行动时间",
+    "",
+    "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+    "在这句话中，“early preparation”用于描述协同驾驶模式切换与边界提示。"
   ],
   "easier": [
     "/ˈiː.zi.ə/",
@@ -6242,6 +6410,13 @@
     "在这句话中，“few”可理解为“很少的, 不多的, 少数的；少数”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "fighting": [
+    "/ˈfaɪtɪŋ/",
+    "语境词：对抗；与系统辅助产生冲突",
+    "",
+    "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+    "在这句话中，“fighting”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "filling": [
     "/ˈfɪlɪŋ/",
     "填满；占据过多空间",
@@ -6611,6 +6786,13 @@
     "",
     "The word gentle appears in the comfort recommendation context.",
     "“gentle”出现在座椅舒适推荐的语境中。"
+  ],
+  "gentle feedback": [
+    "/ˈdʒentl ˈfiːdbæk/",
+    "柔和反馈；不过度惊扰用户的提示反馈",
+    "",
+    "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+    "在这句话中，“gentle feedback”用于描述协同驾驶模式切换与边界提示。"
   ],
   "gentle prompt": [
     "/ˈdʒentl prɑːmpt/",
@@ -7323,6 +7505,20 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“hmi”可理解为“abbr. 集线器管理接口；人机接口（Human Machine Interface）；英国督学（Her/His Majesty 's Inspector）”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "hold": [
+    "/hoʊld/",
+    "语境词：握住；保持身体动作或控制动作",
+    "",
+    "Lane confidence is low ahead. Please look up and hold the wheel.",
+    "在这句话中，“hold”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "hold the wheel": [
+    "/hoʊld ðə wiːl/",
+    "握住方向盘；接管前的关键身体动作",
+    "",
+    "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+    "在这句话中，“hold the wheel”用于描述协同驾驶模式切换与边界提示。"
   ],
   "home": [
     "/hoʊm/",
@@ -8334,6 +8530,13 @@
     "Unclear lane markings may define an automation boundary.",
     "不清晰车道线可能形成自动化边界。"
   ],
+  "lane markings": [
+    "/leɪn ˈmɑːrkɪŋz/",
+    "车道线；系统感知道路边界的重要视觉线索",
+    "",
+    "The screen explains the automation limit before the lane markings become unreliable.",
+    "在这句话中，“lane markings”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "lane merge": [
     "/leɪn mɜːrdʒ/",
     "并线；车辆从一个车道并入另一车道的驾驶动作",
@@ -8628,6 +8831,13 @@
     "The word likely appears in today's cockpit summary practice.",
     "在这个语境中，“likely”可理解为“可能的”。"
   ],
+  "limit": [
+    "/ˈlɪmɪt/",
+    "语境词：限制；能力或责任不能超出的范围",
+    "",
+    "In HMI writing, the strongest sentence is often simple: name the limit, name the responsibility, and make the next action visible.",
+    "在这句话中，“limit”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "limitation": [
     "/ˌlɪmɪˈteɪʃn/",
     "限制；系统当前不能完成或不能保证的能力边界",
@@ -8867,6 +9077,13 @@
     "The driver must look, understand, decide, and often tap a control while the vehicle is still moving.",
     "在这句话中，“look”可理解为“看；外观；查找；瞧；看；寻找；瞧；注意；linkv. 显得；似乎；看来好像；int. 听我说；看上去；注视”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "look up": [
+    "/lʊk ʌp/",
+    "抬头观察；从屏幕或其他任务回到道路观察",
+    "",
+    "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+    "在这句话中，“look up”用于描述协同驾驶模式切换与边界提示。"
   ],
   "looking": [
     "/ˈlʊkɪŋ/",
@@ -9246,6 +9463,13 @@
     "",
     "Manual correction path should support clear control in a shared intelligent cockpit.",
     "在这句话中，“manual correction path”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "manual driving": [
+    "/ˈmænjuəl ˈdraɪvɪŋ/",
+    "人工驾驶；驾驶员直接负责车辆控制",
+    "",
+    "The transition from assistance to manual driving should be staged and calm.",
+    "在这句话中，“manual driving”用于描述协同驾驶模式切换与边界提示。"
   ],
   "manual override": [
     "/ˈmænjuəl ˈoʊvərraɪd/",
@@ -9845,6 +10069,27 @@
     "Mode awareness improves when alerts use consistent labels across screens.",
     "当警告在多个屏幕上使用一致标签时，模式感知会提高。"
   ],
+  "mode boundary": [
+    "/moʊd ˈbaʊndəri/",
+    "模式边界；辅助驾驶、自动化和人工驾驶之间的能力与责任分界",
+    "",
+    "A visible mode boundary prevents the driver from overestimating the automation.",
+    "可见的模式边界能防止驾驶员高估自动化能力。"
+  ],
+  "mode label": [
+    "/moʊd ˈleɪbl/",
+    "模式标签；界面上显示当前驾驶模式的简短名称",
+    "",
+    "A mode label should match what the vehicle can actually do.",
+    "在这句话中，“mode label”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "mode transition": [
+    "/moʊd trænˈzɪʃn/",
+    "模式切换；驾驶辅助或控制状态从一种模式转到另一种模式",
+    "",
+    "A glanceable status reduces confusion during a mode transition.",
+    "在这句话中，“mode transition”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "model": [
     "/按语境朗读/",
     "模型；系统用于预测的计算逻辑",
@@ -10077,6 +10322,13 @@
     "",
     "A narrow confidence gap calls for a focused question.",
     "在这句话中，“narrow”表示“狭窄的；很小的”。"
+  ],
+  "narrow road": [
+    "/ˈnæroʊ roʊd/",
+    "狭窄道路；可能限制自动化能力的道路场景",
+    "",
+    "When the road becomes narrow, the interface should explain which capability is limited.",
+    "在这句话中，“narrow road”用于描述协同驾驶模式切换与边界提示。"
   ],
   "natural": [
     "/ˈnætʃrəl/",
@@ -10742,6 +10994,20 @@
     "The driver opens the menu only when needed.",
     "驾驶员只在需要时打开菜单。"
   ],
+  "operating": [
+    "/ˈɑːpəreɪtɪŋ/",
+    "语境词：运行的；系统正在工作的",
+    "",
+    "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+    "在这句话中，“operating”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "operating boundary": [
+    "/ˈɑːpəreɪtɪŋ ˈbaʊndəri/",
+    "运行边界；系统可以安全可靠运行的条件范围",
+    "",
+    "Automated lane centering may feel continuous, but it still has a clear operating boundary.",
+    "在这句话中，“operating boundary”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "operation": [
     "/ˌɑːpəˈreɪʃn/",
     "运行；系统按照某种状态工作的过程",
@@ -10886,6 +11152,13 @@
     "",
     "The word over-trust appears in today's cockpit summary practice.",
     "在这个语境中，“over-trust”可理解为“过度信任”。"
+  ],
+  "overestimating": [
+    "/ˌoʊvərˈestɪmeɪtɪŋ/",
+    "高估；把系统能力判断得过强",
+    "",
+    "A visible mode boundary prevents the driver from overestimating the automation.",
+    "在这句话中，“overestimating”用于描述协同驾驶模式切换与边界提示。"
   ],
   "overlay": [
     "/ˈoʊvərleɪ/",
@@ -11175,6 +11448,20 @@
     "在这句话中，“perceive”可理解为“感觉; 认识, 理解; 察觉到, 意识到, 注意到”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "percentage": [
+    "/pərˈsentɪdʒ/",
+    "语境词：百分比；以百分数呈现的状态值",
+    "",
+    "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+    "在这句话中，“percentage”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "perception": [
+    "/pərˈsepʃn/",
+    "感知；系统识别道路、车辆、车道线和环境的能力",
+    "",
+    "If perception starts to degrade, the cockpit should prepare the driver early.",
+    "在这句话中，“perception”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "perfectly": [
     "/ˈpɜːrfɪktli/",
     "完全地；毫无误差地",
@@ -11457,6 +11744,13 @@
     "A plain-language reason is easier to trust than a fault number.",
     "通俗原因比故障编号更容易被信任。"
   ],
+  "plain-language status": [
+    "/pleɪn ˈlæŋɡwɪdʒ ˈsteɪtəs/",
+    "自然语言状态；用普通话语解释系统状态",
+    "",
+    "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+    "在这句话中，“plain-language status”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "plainly": [
     "/ˈpleɪnli/",
     "清楚地；用直接易懂的方式表达",
@@ -11499,6 +11793,13 @@
     "A safe execution threshold should be stricter for navigation changes than for opening a music playlist.",
     "在这句话中，“playlist”可理解为“播放列表；演出剧目表”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "please": [
+    "/pliːz/",
+    "语境词：请；用于礼貌请求的提示词",
+    "",
+    "Lane confidence is low ahead. Please look up and hold the wheel.",
+    "在这句话中，“please”用于描述协同驾驶模式切换与边界提示。"
   ],
   "point": [
     "/pɔɪnt/",
@@ -11741,6 +12042,20 @@
     "A preference profile can store climate settings, display themes, and preferred navigation views.",
     "在这句话中，“preferred”可理解为“宁可, 较喜欢, 提出”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "prepare": [
+    "/prɪˈper/",
+    "语境词：准备；让用户提前进入可行动状态",
+    "",
+    "When the road becomes narrow, lane markings fade, or perception starts to degrade, the cockpit should prepare the driver before the mode boundary is crossed.",
+    "在这句话中，“prepare”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "prepare the driver": [
+    "/prɪˈper ðə ˈdraɪvər/",
+    "让驾驶员准备好；提前引导驾驶员恢复注意和控制",
+    "",
+    "If perception starts to degrade, the cockpit should prepare the driver early.",
+    "在这句话中，“prepare the driver”用于描述协同驾驶模式切换与边界提示。"
   ],
   "present": [
     "/ˈpɹɛz.ənt/",
@@ -12322,6 +12637,13 @@
     "在这句话中，“question”可理解为“问题, 询问；询问, 审问, 怀疑”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "questions": [
+    "/ˈkwestʃənz/",
+    "语境词：问题；需要被提示回答的信息点",
+    "",
+    "A good handover cue answers three questions quickly: what changed, why it changed, and what the driver should do next.",
+    "在这句话中，“questions”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "quick": [
     "/kwɪk/",
     "形容词：快的, 迅速的, 敏捷的, 灵敏的, 急速的；快；新长出的肉, 要害, 核心, 感觉敏锐部位",
@@ -12460,6 +12782,13 @@
     "",
     "Raw behavior data may be more revealing than a simple preference.",
     "原始行为数据可能比简单偏好更能暴露用户信息。"
+  ],
+  "raw percentage": [
+    "/rɔːr pərˈsentɪdʒ/",
+    "原始百分比；未经解释的数值状态",
+    "",
+    "A confidence state can be shown as a plain-language status rather than a raw percentage.",
+    "在这句话中，“raw percentage”用于描述协同驾驶模式切换与边界提示。"
   ],
   "re-engagement": [
     "/ˌriː ɪnˈɡeɪdʒmənt/",
@@ -12604,6 +12933,13 @@
     "The cockpit should not sound like it is blaming the driver, and it should not expose sensitive camera data without a clear reason.",
     "在这句话中，“reason”可理解为“理由, 原因, 理智, 道理, 前提, 理性；说服, 推论, 辩论；推论, 劝说, 思考”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "reason for the change": [
+    "/ˈriːzn fər ðə tʃeɪndʒ/",
+    "变化原因；模式或控制切换背后的触发因素",
+    "",
+    "A handover cue should name the reason for the change and the expected driver action.",
+    "在这句话中，“reason for the change”用于描述协同驾驶模式切换与边界提示。"
   ],
   "reasons": [
     "/暂无音标/",
@@ -13339,6 +13675,13 @@
     "在这句话中，“responsibilities”可理解为“责任, 职责, 负担, 可靠性”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "responsibility": [
+    "/rɪˌspɑːnsəˈbɪləti/",
+    "责任；谁需要监控、确认或控制车辆",
+    "",
+    "Good mode design must communicate responsibility before control changes.",
+    "在这句话中，“responsibility”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "responsible": [
     "/rɪˈspɑːnsəbl/",
     "负责的；承担责任的",
@@ -13404,6 +13747,13 @@
     "",
     "Dialog state helps the assistant resume after navigation audio interrupts a request.",
     "在这句话中，“resume”可理解为“恢复；从中断点继续任务”。"
+  ],
+  "resume control": [
+    "/rɪˈzuːm kənˈtroʊl/",
+    "恢复控制；驾驶员重新接管车辆控制",
+    "",
+    "The HMI should assess takeover readiness before asking the driver to resume control.",
+    "在这句话中，“resume control”用于描述协同驾驶模式切换与边界提示。"
   ],
   "resumes": [
     "/rɪˈzuːmz/",
@@ -14115,6 +14465,13 @@
     "A simple scan path reduces visual workload.",
     "简单的扫视路径会降低视觉负荷。"
   ],
+  "scan the scene": [
+    "/skæn ðə siːn/",
+    "扫视场景；快速观察道路和交通环境",
+    "",
+    "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
+    "在这句话中，“scan the scene”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "scanning": [
     "/ˈskænɪŋ/",
     "扫视；快速浏览界面以获取关键信息",
@@ -14623,6 +14980,13 @@
     "Task simplification turns a deep settings path into one clear driving-mode shortcut.",
     "在这句话中，“settings”可理解为“环境, 背景, 布景, 镶嵌, 调整, 沉落, 一副餐具”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "settings menu": [
+    "/ˈsetɪŋz ˈmenjuː/",
+    "设置菜单；不应隐藏关键驾驶状态的位置",
+    "",
+    "Control authority should be visible on the cluster, not hidden in a settings menu.",
+    "在这句话中，“settings menu”用于描述协同驾驶模式切换与边界提示。"
   ],
   "settings path": [
     "/ˈsetɪŋz pæθ/",
@@ -15424,6 +15788,13 @@
     "Stacking prompts can overload the driver.",
     "叠加提示可能让驾驶员过载。"
   ],
+  "staged": [
+    "/steɪdʒd/",
+    "分阶段的；按步骤逐渐推进的",
+    "",
+    "The transition from assistance to manual driving should be staged and calm.",
+    "在这句话中，“staged”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "stare": [
     "/ster/",
     "盯视；长时间注视某个界面元素",
@@ -15628,6 +15999,13 @@
     "Voice interaction, touch controls, steering-wheel shortcuts, and haptic feedback should work together as one interaction system.",
     "在这句话中，“steering-wheel”可理解为“方向盘, 舵轮”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "steering-wheel pulse": [
+    "/ˈstɪrɪŋ wiːl pʌls/",
+    "方向盘脉冲；方向盘上的轻微触觉提示",
+    "",
+    "A soft steering-wheel pulse can ask the driver to confirm grip.",
+    "在这句话中，“steering-wheel pulse”用于描述协同驾驶模式切换与边界提示。"
   ],
   "steering-wheel shortcut": [
     "/ˈstɪrɪŋ wiːl ˈʃɔːrtkʌt/",
@@ -16094,6 +16472,13 @@
     "在这句话中，“system”可理解为“系统, 体系, 制度, 方式, 秩序, 分类原则”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "system assistance": [
+    "/ˈsɪstəm əˈsɪstəns/",
+    "系统辅助；车辆自动化对驾驶员的支持",
+    "",
+    "The driver understands system assistance without fighting it.",
+    "在这句话中，“system assistance”用于描述协同驾驶模式切换与边界提示。"
+  ],
   "system initiative": [
     "/ˈsɪstəm ɪˈnɪʃətɪv/",
     "系统主动性；助手主动提议、询问或执行下一步的程度",
@@ -16318,6 +16703,13 @@
     "",
     "Technical wording can slow down confirmation.",
     "技术性措辞会减慢确认。"
+  ],
+  "technical explanation": [
+    "/ˈteknɪkl ˌekspləˈneɪʃn/",
+    "技术性解释；过于工程化、不适合紧急场景的说明",
+    "",
+    "A fallback prompt gives one clear next step instead of a technical explanation.",
+    "在这句话中，“technical explanation”用于描述协同驾驶模式切换与边界提示。"
   ],
   "technical label": [
     "/ˈteknɪkl ˈleɪbl/",
@@ -17180,6 +17572,13 @@
     "Progressive disclosure keeps advanced climate options hidden until the driver asks for them.",
     "在这句话中，“until”可理解为“直到, 在...以前；直到...时, 在...以前”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "up": [
+    "/ʌp/",
+    "语境词：向上；在 look up 中表示抬头看路",
+    "",
+    "Lane confidence is low ahead. Please look up and hold the wheel.",
+    "在这句话中，“up”用于描述协同驾驶模式切换与边界提示。"
   ],
   "update": [
     "/按语境朗读/",
@@ -18113,6 +18512,13 @@
     "It helps the driver complete useful actions without making the interface compete with the road.",
     "在这句话中，“without”可理解为“没有, 不, 在...之外；在外面, 户外；外面, 外部”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "without fighting it": [
+    "/wɪðˈaʊt ˈfaɪtɪŋ ɪt/",
+    "不会与其对抗；不会误解或抵触系统辅助",
+    "",
+    "Shared control needs gentle feedback so the driver understands system assistance without fighting it.",
+    "在这句话中，“without fighting it”用于描述协同驾驶模式切换与边界提示。"
   ],
   "wording": [
     "/按语境朗读/",
