@@ -89,6 +89,13 @@
     "Accessibility requires more than color coding for critical alerts.",
     "可访问性要求关键警告不能只依赖颜色编码。"
   ],
+  "accidental purchase": [
+    "/ˌæksɪˈdentl ˈpɜːrtʃəs/",
+    "意外购买；用户并非真正想完成的购买",
+    "",
+    "Undo support is important after an accidental purchase.",
+    "意外购买后，撤销支持很重要。"
+  ],
   "according": [
     "/ә'kɒ:d/",
     "名词：一致, 调和, 协定；给与, 使一致；相符合",
@@ -103,6 +110,13 @@
     "",
     "The cockpit uses the word account in privacy prompts when it fits the user context.",
     "在隐私提示中，“account”可结合用户场景理解。"
+  ],
+  "account detail": [
+    "/əˈkaʊnt ˈdiːteɪl/",
+    "账户细节；账号、卡号、余额或身份等信息",
+    "",
+    "Account details need stronger masking in passenger view.",
+    "乘客视图中的账户细节需要更强脱敏。"
   ],
   "account sync": [
     "/əˈkaʊnt sɪŋk/",
@@ -770,6 +784,13 @@
     "Ambiguous voice input should trigger clarification.",
     "模糊语音输入应触发澄清。"
   ],
+  "amount": [
+    "/əˈmaʊnt/",
+    "金额；一次交易需要支付的钱数",
+    "",
+    "The amount is repeated in both text and speech.",
+    "金额会用文字和语音同时重复。"
+  ],
   "an": [
     "/eɪ/",
     "na. 一；英文字母表的第一字母；【乐】A音；冠以不定冠词主要表示类别；按；一个",
@@ -1345,12 +1366,33 @@
     "An augmented-reality head-up display can place a turn cue near the real lane.",
     "增强现实抬头显示可以把转向提示放在真实车道附近。"
   ],
+  "authentication": [
+    "/ɔːˌθentɪˈkeɪʃn/",
+    "认证；验证用户身份或权限的过程",
+    "",
+    "Authentication should be quick but clearly linked to the payment risk.",
+    "认证应快速完成，但要清楚关联支付风险。"
+  ],
   "authority": [
     "/əˈθɔːrəti/",
     "语境词：权限；控制或决策的主导权",
     "",
     "Control authority should be visible on the cluster, not hidden in a settings menu.",
     "在这句话中，“authority”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "authorization": [
+    "/ˌɔːθərəˈzeɪʃn/",
+    "授权；允许系统执行付款或敏感操作",
+    "",
+    "Authorization should match the risk level of the transaction.",
+    "授权方式应匹配交易风险等级。"
+  ],
+  "authorization threshold": [
+    "/ˌɔːθərəˈzeɪʃn ˈθreʃhoʊld/",
+    "授权阈值；触发额外确认的金额、风险或权限边界",
+    "",
+    "The authorization threshold can be lower when the vehicle is in motion.",
+    "车辆行驶中时，授权阈值可以更低。"
   ],
   "automate": [
     "/ˈɔːtəmeɪt/",
@@ -1730,6 +1772,13 @@
     "",
     "The cockpit uses biometric data to make privacy decisions easier to understand.",
     "座舱使用“biometric data”让隐私决策更容易理解。"
+  ],
+  "biometric prompt": [
+    "/ˌbaɪoʊˈmetrɪk prɑːmpt/",
+    "生物识别提示；要求用户通过指纹、人脸或声纹确认身份的界面提示",
+    "",
+    "A biometric prompt should explain why authentication is needed at this moment.",
+    "生物识别提示应解释此刻为什么需要认证。"
   ],
   "blame": [
     "/暂无音标/",
@@ -2122,6 +2171,13 @@
     "A calm update is safer than an urgent tone for a minor schedule change.",
     "对于轻微日程变化，平静更新比紧急语气更安全。"
   ],
+  "calm wording": [
+    "/kɑːm ˈwɜːrdɪŋ/",
+    "平静措辞；避免制造压力的提示语言",
+    "",
+    "Calm wording matters when payment risk is high.",
+    "支付风险高时，平静措辞很重要。"
+  ],
   "calmer": [
     "/ˈkɑːmər/",
     "更平稳的；压力更低的",
@@ -2157,6 +2213,13 @@
     "",
     "A camera signal may be weak at night.",
     "摄像头信号在夜间可能较弱。"
+  ],
+  "camera unavailable": [
+    "/ˈkæmərə ˌʌnəˈveɪləbl/",
+    "摄像头不可用；摄像头因遮挡、故障或权限限制无法使用",
+    "",
+    "Camera unavailable should not become a confusing payment error.",
+    "摄像头不可用不应变成令人困惑的支付错误。"
   ],
   "can": [
     "/kæn/",
@@ -2238,6 +2301,13 @@
     "在这句话中，“card”可理解为“卡片, 纸牌, 节目单, 明信片, 梳棉机；备置卡片, 记于卡片上, 梳理”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "card number": [
+    "/kɑːrd ˈnʌmbər/",
+    "卡号；银行卡或支付卡的号码",
+    "",
+    "Only the last four digits of the card number are shown.",
+    "界面只显示卡号后四位。"
+  ],
   "care": [
     "/ker/",
     "语境词：谨慎；对交互语气和用户负荷的关注",
@@ -2286,6 +2356,20 @@
     "",
     "Carryover makes short follow-up commands easier.",
     "在这句话中，“carryover”表示“延续”。"
+  ],
+  "casual": [
+    "/ˈkæʒuəl/",
+    "随意的；非正式或没有明确操作意图的",
+    "",
+    "A casual question about price should not become a payment command.",
+    "关于价格的随口询问不应变成支付命令。"
+  ],
+  "casual question": [
+    "/ˈkæʒuəl ˈkwestʃən/",
+    "随口问题；不应被理解为明确操作意图的普通询问",
+    "",
+    "A casual question about price must not trigger checkout.",
+    "关于价格的随口询问不应触发结账。"
   ],
   "cause attribution": [
     "/kɔːz ˌætrɪˈbjuːʃn/",
@@ -2344,6 +2428,13 @@
     "The design challenge is the handoff between these modes.",
     "在这句话中，“challenge”可理解为“挑战, 盘问；向...挑战, 要求, 怀疑；挑战, 对(证据等)表示异议”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "chance": [
+    "/tʃæns/",
+    "机会；可以采取行动或改变决定的时机",
+    "",
+    "A revocation window gives the user a chance to cancel.",
+    "撤销窗口给用户一次取消机会。"
   ],
   "change": [
     "/ˈt͡ʃeɪ̯nd͡ʒ/",
@@ -2466,6 +2557,13 @@
     "If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel.",
     "在这句话中，“checking”可理解为“检查, 支票, 阻止物, 寄物牌, 象棋中将军；检查, 阻止, 核对, 寄存, 托运；逐项相符, 开支票”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "checkout": [
+    "/ˈtʃekaʊt/",
+    "结账；确认购买并进入付款的步骤",
+    "",
+    "Checkout starts only after the user confirms the payment intent.",
+    "只有用户确认支付意图后才开始结账。"
   ],
   "checks": [
     "/tʃeks/",
@@ -3297,6 +3395,13 @@
     "The cockpit uses confirmation ladder to make privacy decisions easier to understand.",
     "座舱使用“confirmation ladder”让隐私决策更容易理解。"
   ],
+  "confirmation pattern": [
+    "/ˌkɑːnfərˈmeɪʃn ˈpætərn/",
+    "确认模式；界面用于确认操作的固定交互结构",
+    "",
+    "A consistent confirmation pattern helps users act calmly.",
+    "一致的确认模式帮助用户冷静操作。"
+  ],
   "confirmation phrase": [
     "/ˌkɑːnfərˈmeɪʃn freɪz/",
     "确认短语；用于验证用户意图、范围或后果的简短表达",
@@ -3332,6 +3437,13 @@
     "Feedback should be glanceable, with clear mode awareness for listening, editing, confirming, and executing.",
     "在这句话中，“confirming”可理解为“证实, 确定, 批准, 使巩固”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "confirms": [
+    "/kənˈfɜːrmz/",
+    "确认；confirm 的第三人称单数形式",
+    "",
+    "The system confirms payment intent before checkout.",
+    "系统会在结账前确认支付意图。"
   ],
   "conflict": [
     "/ˈkɑːnflɪkt/",
@@ -3517,6 +3629,13 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“contact”可理解为“联系, 交际, 熟人, 接触；接触, 联系；使接触”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "contact support": [
+    "/ˈkɑːntækt səˈpɔːrt/",
+    "联系客服；向服务团队寻求帮助",
+    "",
+    "Contact support is offered when the payment status is unclear.",
+    "支付状态不清楚时会提供联系客服选项。"
   ],
   "contacts": [
     "/'kɒntækt/",
@@ -4024,6 +4143,13 @@
     "The brightness should support reading without creating glare.",
     "在这句话中，“creating”表示“造成”。"
   ],
+  "credential": [
+    "/krəˈdenʃl/",
+    "凭证；用于证明身份或支付账户的信息",
+    "",
+    "A credential should be masked on shared displays.",
+    "共享屏幕上应对凭证脱敏。"
+  ],
   "critical": [
     "/'kritikәl/",
     "形容词：批评的, 决定性的, 危险的, 临界的",
@@ -4320,6 +4446,13 @@
     "",
     "The safest default is usually to suggest rather than execute.",
     "在这句话中，default 指系统默认行为。"
+  ],
+  "default account": [
+    "/dɪˈfɔːlt əˈkaʊnt/",
+    "默认账户；系统预先选择的付款账户",
+    "",
+    "The default account is shown with a masked credential.",
+    "默认账户会与脱敏凭证一起显示。"
   ],
   "default state": [
     "/dɪˈfɔːlt steɪt/",
@@ -4975,6 +5108,13 @@
     "Tasks may move between displays.",
     "任务可能在屏幕之间移动。"
   ],
+  "disputed charge": [
+    "/dɪˈspjuːtɪd tʃɑːrdʒ/",
+    "争议扣款；用户对交易提出异议的扣款",
+    "",
+    "A disputed charge should link to the receipt and support channel.",
+    "争议扣款应关联收据和支持渠道。"
+  ],
   "disruptive": [
     "/dɪsˈrʌptɪv/",
     "干扰性的；会打断用户当前任务的",
@@ -5288,6 +5428,13 @@
     "",
     "A prompt should not interrupt the main driving task.",
     "提示不应打断主要驾驶任务。"
+  ],
+  "driving view": [
+    "/ˈdraɪvɪŋ vjuː/",
+    "驾驶视图；车辆行驶中面向驾驶任务的主界面",
+    "",
+    "The driving view only shows the essential payment status.",
+    "驾驶视图只显示必要支付状态。"
   ],
   "driving workload": [
     "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
@@ -5642,6 +5789,13 @@
     "Voice confirmation prevents the cockpit from executing a risky command after a possible recognition error.",
     "在这句话中，“error”可理解为“错误, 过失, 失误, 误差”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "error code": [
+    "/ˈerər koʊd/",
+    "错误代码；系统或服务返回的技术编号",
+    "",
+    "The cockpit should translate an error code into useful guidance.",
+    "座舱应把错误代码转化为有用引导。"
   ],
   "error recovery": [
     "/ˈerər rɪˈkʌvəri/",
@@ -6147,6 +6301,13 @@
     "The fallback interaction can move the user from voice input to a short tappable list on the center display.",
     "在这句话中，“fallback”可理解为“可依靠的东西, 退却”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fallback authentication": [
+    "/ˈfɔːlbæk ɔːˌθentɪˈkeɪʃn/",
+    "备用认证；主认证方式不可用时的替代身份验证方式",
+    "",
+    "Fallback authentication may use a PIN when biometrics fail.",
+    "生物识别失败时，备用认证可以使用 PIN。"
   ],
   "fallback behavior": [
     "/ˈfɔːlbæk bɪˈheɪvjər/",
@@ -6661,6 +6822,20 @@
     "The word four appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“four”用于表达相关系统状态或用户影响。"
   ],
+  "fraud": [
+    "/frɔːd/",
+    "欺诈；异常或非法的支付风险",
+    "",
+    "Fraud checks should pause suspicious payment flows.",
+    "欺诈检查应暂停可疑支付流程。"
+  ],
+  "fraud signal": [
+    "/frɔːd ˈsɪɡnəl/",
+    "欺诈信号；提示当前支付行为可能异常或风险较高的系统判断",
+    "",
+    "A fraud signal should pause the flow and offer a safe next step.",
+    "欺诈信号应暂停流程并提供安全的下一步。"
+  ],
   "frequent": [
     "/ˈfɹiː.kwənt/",
     "形容词：时常发生的, 频繁的, 快速的；时常来访, 常常聚集, 常与...交往",
@@ -6814,6 +6989,13 @@
     "",
     "Stress cues should lead to gentler interaction.",
     "压力线索应引导更温和的交互。"
+  ],
+  "gesture approval": [
+    "/ˈdʒestʃər əˈpruːvl/",
+    "手势批准；通过手势完成授权的方式",
+    "",
+    "Gesture approval needs a fallback when the camera is unavailable.",
+    "摄像头不可用时，手势批准需要回退方案。"
   ],
   "gets": [
     "/ɡets/",
@@ -7425,6 +7607,13 @@
     "A high-risk warning may combine channels.",
     "高风险警告可以结合多个通道。"
   ],
+  "high-value": [
+    "/haɪ ˈvæljuː/",
+    "高价值的；金额或风险较高的",
+    "",
+    "High-value purchases require stronger confirmation.",
+    "高价值购买需要更强确认。"
+  ],
   "higher": [
     "/ˈhaɪər/",
     "更高的；high 的比较级",
@@ -7644,6 +7833,20 @@
     "Identified should support clear control in a shared intelligent cockpit.",
     "在这句话中，“identified”用于描述共享智能座舱中的清晰控制。"
   ],
+  "identity": [
+    "/aɪˈdentəti/",
+    "身份；用于区分当前用户或账户的个人识别信息",
+    "",
+    "Payment is a sensitive action that touches identity and privacy.",
+    "支付是一项涉及身份和隐私的敏感操作。"
+  ],
+  "identity confirmation": [
+    "/aɪˈdentəti ˌkɑːnfərˈmeɪʃn/",
+    "身份确认；系统确认当前操作者是否有权执行敏感操作的过程",
+    "",
+    "Identity confirmation protects shared vehicles when several profiles can access the same cockpit.",
+    "当多个档案可访问同一座舱时，身份确认能保护共享车辆。"
+  ],
   "identity switch": [
     "/aɪˈdentəti swɪtʃ/",
     "身份切换；在不同用户档案或访客状态之间切换",
@@ -7770,6 +7973,13 @@
     "",
     "In-cabin lighting should support a safer and clearer cockpit experience.",
     "在这句话中，“in-cabin lighting”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "in-cabin payment": [
+    "/ɪn ˈkæbɪn ˈpeɪmənt/",
+    "车内支付；用户在座舱内完成停车、充电、通行或服务购买的支付流程",
+    "",
+    "In-cabin payment should confirm the merchant, amount, and action before money is transferred.",
+    "车内支付应在转账前确认商户、金额和操作。"
   ],
   "include": [
     "/暂无音标/",
@@ -8587,6 +8797,13 @@
     "A larger touch target can reduce input errors on a bumpy road.",
     "在这句话中，“larger”可理解为“大的, 大量的, 宽大的, 广博的；大大地, 夸大地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "last": [
+    "/læst/",
+    "最后的；流程结束前的最终机会或步骤",
+    "",
+    "The summary gives the driver one last chance to review the charge.",
+    "摘要给驾驶员最后一次复核扣款的机会。"
   ],
   "late": [
     "/暂无音标/",
@@ -9549,6 +9766,20 @@
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“markings”可理解为“标线”。"
   ],
+  "masked": [
+    "/mæskt/",
+    "已脱敏的；隐藏完整敏感信息后的显示状态",
+    "",
+    "A masked credential protects the full card number.",
+    "脱敏凭证能保护完整卡号。"
+  ],
+  "masked credential": [
+    "/mæskt krəˈdenʃl/",
+    "脱敏凭证；隐藏完整卡号、账户或身份信息后的凭证显示方式",
+    "",
+    "The HMI shows a masked credential instead of exposing the full card number.",
+    "HMI 显示脱敏凭证，而不是暴露完整卡号。"
+  ],
   "massage": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“massage”。",
@@ -9761,6 +9992,13 @@
     "High menu depth increases memory load.",
     "较高的菜单深度会增加记忆负荷。"
   ],
+  "merchant": [
+    "/ˈmɜːrtʃənt/",
+    "商户；收款的服务方或店铺",
+    "",
+    "The merchant name must be readable before the user approves payment.",
+    "用户批准付款前，商户名称必须清晰可读。"
+  ],
   "merge": [
     "/待查/",
     "并线；车辆汇入车流",
@@ -9812,6 +10050,13 @@
     "",
     "Good failure messaging separates service detail from driver guidance.",
     "好的故障提示会把维修细节与驾驶员引导分开。"
+  ],
+  "method": [
+    "/ˈmeθəd/",
+    "方法；完成任务的方式，在支付中常指付款方式",
+    "",
+    "The selected method appears in the transaction summary.",
+    "选定方式会显示在交易摘要中。"
   ],
   "micro": [
     "/ˈmaɪkroʊ/",
@@ -10133,6 +10378,13 @@
     "",
     "The word moments appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“moments”用于表达相关系统状态或用户影响。"
+  ],
+  "money": [
+    "/ˈmʌni/",
+    "钱；支付流程中被转移或扣除的资金",
+    "",
+    "Money should not transfer until the confirmation is complete.",
+    "确认完成前不应转移资金。"
   ],
   "monitoring": [
     "/'mɒnitә/",
@@ -11351,6 +11603,13 @@
     "Passenger state can change the meaning of a request.",
     "乘员状态会改变请求含义。"
   ],
+  "passenger view": [
+    "/ˈpæsɪndʒər vjuː/",
+    "乘客视图；面向乘客的座舱显示内容",
+    "",
+    "Passenger view can show the route but hide payment credentials.",
+    "乘客视图可以显示路线，但隐藏支付凭证。"
+  ],
   "passengers": [
     "/待补充/",
     "语境词：passengers；用于理解今天健康舒适提示主题中的英文表达",
@@ -11418,6 +11677,41 @@
     "",
     "Payment actions should require clear permission.",
     "在这句话中，“payment”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "payment flow": [
+    "/ˈpeɪmənt floʊ/",
+    "支付流程；从发起付款到确认结果的完整交互路径",
+    "",
+    "The payment flow should be short, reversible, and easy to audit.",
+    "支付流程应简短、可撤销且易于审计。"
+  ],
+  "payment history": [
+    "/ˈpeɪmənt ˈhɪstəri/",
+    "支付历史；过往交易记录",
+    "",
+    "Payment history belongs in a lower-pressure review screen.",
+    "支付历史适合放在压力较低的复核页面。"
+  ],
+  "payment intent": [
+    "/ˈpeɪmənt ɪnˈtent/",
+    "支付意图；用户明确表示准备付款或授权交易的意图",
+    "",
+    "The assistant should separate payment intent from a casual question about price.",
+    "助手应区分支付意图和关于价格的随口询问。"
+  ],
+  "payment method": [
+    "/ˈpeɪmənt ˈmeθəd/",
+    "支付方式；银行卡、钱包或账户等付款工具",
+    "",
+    "The default payment method should be easy to identify.",
+    "默认支付方式应易于识别。"
+  ],
+  "payment status": [
+    "/ˈpeɪmənt ˈstætəs/",
+    "支付状态；交易当前是成功、失败、处理中或待确认",
+    "",
+    "Payment status should never be hidden behind a spinner.",
+    "支付状态不应隐藏在加载动画后面。"
   ],
   "pedestrian": [
     "/pəˈdestriən/",
@@ -11677,6 +11971,13 @@
     "",
     "A physiological signal needs careful consent before it shapes cockpit behavior.",
     "生理信号在影响座舱行为前需要谨慎征得同意。"
+  ],
+  "pin": [
+    "/pɪn/",
+    "个人识别码；用于身份验证的数字密码",
+    "",
+    "A PIN entry screen should protect digits from passenger view.",
+    "PIN 输入界面应防止乘客视图看到数字。"
   ],
   "pixels": [
     "/ˈpɪksəlz/",
@@ -12165,6 +12466,13 @@
     "在这句话中，“previous”可理解为“早先的, 前面的, 过急的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "price": [
+    "/praɪs/",
+    "价格；商品或服务的费用",
+    "",
+    "The assistant reads the price before asking for approval.",
+    "助手会先读出价格，再请求批准。"
+  ],
   "primary": [
     "/按语境朗读/",
     "主要的；优先级最高的",
@@ -12257,6 +12565,13 @@
     "",
     "Privacy state should support a safer and clearer cockpit experience.",
     "在这句话中，“privacy state”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "privacy surface": [
+    "/ˈpraɪvəsi ˈsɜːrfɪs/",
+    "隐私暴露面；界面上可能泄露个人或账户信息的位置",
+    "",
+    "Every payment screen is also a privacy surface.",
+    "每个支付屏幕也是隐私暴露面。"
   ],
   "privacy trade-off": [
     "/ˈpraɪvəsi ˈtreɪd ɔːf/",
@@ -12380,6 +12695,13 @@
     "在这句话中，“profile”可理解为“侧面, 轮廓, 传略；描绘...轮廓, 写...的传略”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "profile access": [
+    "/ˈproʊfaɪl ˈækses/",
+    "档案访问权限；用户可进入或操作某个个人档案的权限",
+    "",
+    "Profile access determines which payment methods are available.",
+    "档案访问权限决定哪些支付方式可用。"
+  ],
   "profile memory": [
     "/ˈproʊfaɪl ˈmeməri/",
     "档案记忆；系统保存的用户偏好记录。",
@@ -12421,6 +12743,13 @@
     "",
     "The cockpit uses profile-level permission to make privacy decisions easier to understand.",
     "座舱使用“profile-level permission”让隐私决策更容易理解。"
+  ],
+  "profiles": [
+    "/ˈproʊfaɪlz/",
+    "用户档案；profile 的复数形式",
+    "",
+    "Several profiles can access the same cockpit.",
+    "多个用户档案可以访问同一座舱。"
   ],
   "progress": [
     "/暂无音标/",
@@ -12598,6 +12927,13 @@
     "",
     "Pulse should support a safer and clearer cockpit experience.",
     "在这句话中，“pulse”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "purchase": [
+    "/ˈpɜːrtʃəs/",
+    "购买；买入商品或服务",
+    "",
+    "The purchase can be reversed during the revocation window.",
+    "购买可在撤销窗口内撤回。"
   ],
   "purpose": [
     "/ˈpɜːrpəs/",
@@ -12954,6 +13290,13 @@
     "",
     "Drivers should not rebuild the mental model while driving.",
     "驾驶员不应在行驶中重新建立心智模型。"
+  ],
+  "receipt": [
+    "/rɪˈsiːt/",
+    "收据；交易完成后的凭证或结果记录",
+    "",
+    "The receipt confirms what was paid and where.",
+    "收据确认支付了什么以及支付给谁。"
   ],
   "receive": [
     "/rɪˈsiːv/",
@@ -13769,6 +14112,13 @@
     "The cockpit uses retention to make privacy decisions easier to understand.",
     "座舱使用“retention”让隐私决策更容易理解。"
   ],
+  "retry": [
+    "/ˌriːˈtraɪ/",
+    "重试；再次尝试同一操作",
+    "",
+    "A retry button should not repeat a failed payment silently.",
+    "重试按钮不应静默重复失败支付。"
+  ],
   "return": [
     "/ri'tә:n/",
     "动词：回来, 返回, 来回票, 归还, 报答, 利润率, 报告书；返回的, 回程的, 报答的, 反向的, 重现的, 复原的；返回, 归还, 回来；归还, 还, 回报, 产生, 反射, 报告, 申报, 退回",
@@ -13857,6 +14207,13 @@
     "在这句话中，“review”可理解为“检讨, 复习, 回顾, 检阅, 评论；温习, 检讨, 评论, 再检察, 复审；复习功课, 写评论”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "review screen": [
+    "/rɪˈvjuː skriːn/",
+    "复核页面；用于检查详情、历史或结果的界面",
+    "",
+    "The review screen can show more detail than the driving view.",
+    "复核页面可以比驾驶视图显示更多细节。"
+  ],
   "review strip": [
     "/rɪˈvjuː strɪp/",
     "回顾条；短暂显示刚执行动作并提供撤销入口的界面区域",
@@ -13877,6 +14234,13 @@
     "",
     "Every permission screen needs a revocation path that is as easy to find as the opt-in control.",
     "每个许可界面都需要一个和开启入口一样容易找到的撤销路径。"
+  ],
+  "revocation window": [
+    "/ˌrevəˈkeɪʃn ˈwɪndoʊ/",
+    "撤销窗口；付款或授权后允许用户取消、回滚或申诉的短时间范围",
+    "",
+    "A visible revocation window reduces anxiety after a high-value in-cabin purchase.",
+    "可见的撤销窗口能降低高额车内购买后的焦虑。"
   ],
   "revoke": [
     "/rɪˈvoʊk/",
@@ -14247,6 +14611,13 @@
     "A safe glance uses short labels, stable placement, and clear contrast for the most time-sensitive message.",
     "安全扫视会用短标签、稳定位置和清晰对比呈现最有时效性的消息。"
   ],
+  "safe next step": [
+    "/seɪf nekst step/",
+    "安全下一步；风险出现时界面建议的明确后续动作",
+    "",
+    "A safe next step is easier to follow than a vague warning.",
+    "安全下一步比模糊警告更容易执行。"
+  ],
   "safe path": [
     "/seɪf pæθ/",
     "安全路径；帮助用户在异常状态下继续完成任务的操作路径",
@@ -14267,6 +14638,13 @@
     "",
     "A safe slowdown may be recommended when perception is unstable.",
     "当感知不稳定时，系统可能建议安全减速。"
+  ],
+  "safe state": [
+    "/seɪf steɪt/",
+    "安全状态；系统在不确定时回到不会继续扣款或暴露信息的状态",
+    "",
+    "The safe state should say that no payment was completed.",
+    "安全状态应说明没有完成付款。"
   ],
   "safe transition": [
     "/seɪf trænˈzɪʃn/",
@@ -14426,6 +14804,13 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“same”可理解为“相同的, 同样的；相同的人(或事物)；同样地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "save": [
+    "/seɪv/",
+    "保存；将记录留存供之后查看",
+    "",
+    "The cockpit should save an audit trail for later review.",
+    "座舱应保存审计轨迹供后续复核。"
   ],
   "saved": [
     "/按语境朗读/",
@@ -14753,6 +15138,13 @@
     "在这句话中，“see”可理解为“看见, 查看, 参观, 游览, 理解, 知道, 同意；看, 观看, 注意, 知道, 考虑；主教的职位”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "seeing": [
+    "/ˈsiːɪŋ/",
+    "看到；see 的动名词形式",
+    "",
+    "The display protects passengers from seeing account details.",
+    "显示屏会防止乘客看到账户细节。"
+  ],
   "segment": [
     "/ˈseɡmənt/",
     "路段；路线中的一部分",
@@ -14818,6 +15210,13 @@
     "The cockpit should not sound like it is blaming the driver, and it should not expose sensitive camera data without a clear reason.",
     "在这句话中，“sensitive”可理解为“敏感的, 易感的, 灵敏的, 感光的；[机] 敏感的, 灵敏的, 感度高的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "sensitive action": [
+    "/ˈsensətɪv ˈækʃn/",
+    "敏感操作；可能影响金钱、隐私或安全的操作",
+    "",
+    "A sensitive action requires explicit confirmation.",
+    "敏感操作需要明确确认。"
   ],
   "sensitive context": [
     "/ˈsensətɪv ˈkɑːntekst/",
@@ -15718,6 +16117,13 @@
     "Spends appears in today's navigation prompt timing lesson.",
     "在这句话中，“spends”来自今天的导航提示时机学习内容。"
   ],
+  "spinner": [
+    "/ˈspɪnər/",
+    "加载动画；表示系统正在处理的旋转标记",
+    "",
+    "A spinner needs a status message when the wait is long.",
+    "等待时间较长时，加载动画需要状态消息。"
+  ],
   "spoken": [
     "/ˈspoʊkən/",
     "口头播报的；以语音形式输出的",
@@ -15940,6 +16346,13 @@
     "",
     "A status hint should not interrupt a navigation instruction.",
     "状态提示不应打断导航指令。"
+  ],
+  "status message": [
+    "/ˈstætəs ˈmesɪdʒ/",
+    "状态消息；说明当前处理结果或等待原因的提示",
+    "",
+    "A status message is clearer than an endless spinner.",
+    "状态消息比无尽加载动画更清楚。"
   ],
   "status mirroring": [
     "/ˈsteɪtəs ˈmɪrərɪŋ/",
@@ -16334,6 +16747,13 @@
     "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
     "在这句话中，“support”可理解为“支持, 支撑, 援助, 供养, 支撑物；支援, 支撑, 帮助, 支持, 忍受, 供养, 证实”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "support channel": [
+    "/səˈpɔːrt ˈtʃænl/",
+    "支持渠道；用户获得帮助的入口",
+    "",
+    "The support channel should be visible after payment failure.",
+    "支付失败后，支持渠道应可见。"
   ],
   "support drops away": [
     "/səˈpɔːrt drɑːps əˈweɪ/",
@@ -16969,6 +17389,13 @@
     "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
     "在这句话中，“timely”可理解为“及时的；在合适时间出现的”。"
   ],
+  "timeout": [
+    "/ˈtaɪmaʊt/",
+    "超时；用户或系统在限定时间内未完成操作",
+    "",
+    "A timeout returns the payment flow to a safe state.",
+    "超时会让支付流程回到安全状态。"
+  ],
   "times": [
     "/taɪmz/",
     "次数；动作重复发生的数量",
@@ -17080,6 +17507,13 @@
     "A small touch target needs stronger feedback.",
     "小触控目标需要更强反馈。"
   ],
+  "touches": [
+    "/ˈtʌtʃɪz/",
+    "涉及；在抽象语境中表示影响某个方面",
+    "",
+    "Payment touches identity, privacy, workload, and trust.",
+    "支付涉及身份、隐私、负荷和信任。"
+  ],
   "toward": [
     "/təˈwɔːrd/",
     "朝向；指向",
@@ -17129,6 +17563,34 @@
     "",
     "The word trail appears in today's cockpit summary practice.",
     "在这个语境中，“trail”可理解为“链路”。"
+  ],
+  "transaction": [
+    "/trænˈzækʃn/",
+    "交易；一次购买、付款或扣款行为",
+    "",
+    "The transaction should be easy to review after completion.",
+    "交易完成后应易于复核。"
+  ],
+  "transaction summary": [
+    "/trænˈzækʃn ˈsʌməri/",
+    "交易摘要；付款前展示的商户、项目、金额、账户和结果信息",
+    "",
+    "A transaction summary gives the driver one last chance to review the charge.",
+    "交易摘要给驾驶员最后一次复核扣款的机会。"
+  ],
+  "transfer": [
+    "/trænsˈfɜːr/",
+    "转移；在支付语境中指资金或权限从一方转到另一方",
+    "",
+    "Money should not transfer until the confirmation is complete.",
+    "确认完成前不应转移资金。"
+  ],
+  "transferred": [
+    "/trænsˈfɜːrd/",
+    "已转移的；资金或控制权已经从一方转到另一方",
+    "",
+    "Money is not transferred until the user confirms the payment.",
+    "用户确认付款前，资金不会被转移。"
   ],
   "transition": [
     "/trænˈzɪʃn/",
@@ -17267,6 +17729,13 @@
     "A review log can show which alerts were postponed, dismissed, or escalated during real trips.",
     "在这句话中，“trips”可理解为“旅行, 绊倒, 摔倒, 失足, 差错, 旅程；使跌倒, 使犯错, 使失败；轻快地走, 绊倒, 失误, 犯错, 结巴, 旅行, 远足”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "truly": [
+    "/ˈtruːli/",
+    "真正地；确实地",
+    "",
+    "The goal is simple: confirm only what truly needs confirmation.",
+    "目标很简单：只确认真正需要确认的内容。"
   ],
   "trust": [
     "/trʌst/",
@@ -17705,6 +18174,13 @@
     "在这句话中，“useful”可理解为“有用的, 有益的；[机] 有用的, 有效的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "useful guidance": [
+    "/ˈjuːsfl ˈɡaɪdns/",
+    "有用引导；告诉用户可执行下一步的信息",
+    "",
+    "Useful guidance explains whether to retry, cancel, or contact support.",
+    "有用引导会说明应重试、取消还是联系客服。"
+  ],
   "user": [
     "/ˈjuːzə/",
     "用户；一般授权用户",
@@ -17859,6 +18335,13 @@
     "",
     "Vehicle is shared should support clear control in a shared intelligent cockpit.",
     "在这句话中，“vehicle is shared”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "vehicles": [
+    "/ˈviːəkəlz/",
+    "车辆；vehicle 的复数形式",
+    "",
+    "Shared vehicles need stronger identity checks before payment.",
+    "共享车辆在付款前需要更强的身份检查。"
   ],
   "ventilation": [
     "/ˌventɪˈleɪʃn/",
@@ -18146,6 +18629,13 @@
     "",
     "The voice prompt should name the hazard without adding unnecessary detail.",
     "语音提示应说明危险来源，而不增加不必要细节。"
+  ],
+  "voice receipt": [
+    "/vɔɪs rɪˈsiːt/",
+    "语音收据；用语音播报关键支付结果和后续操作的反馈",
+    "",
+    "A short voice receipt helps the driver stay informed without reading a long screen.",
+    "简短语音收据能让驾驶员无需阅读长屏幕也保持知情。"
   ],
   "voice settings": [
     "/vɔɪs ˈsetɪŋz/",

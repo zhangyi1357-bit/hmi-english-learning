@@ -1,5 +1,783 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-14-in-cabin-payment-identity-confirmation",
+    "date": "2026-09-14",
+    "title": "In-cabin payment and identity confirmation in intelligent cockpits",
+    "topic": "智能座舱车内支付与身份确认",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明车内支付、身份确认、授权阈值、隐私脱敏、撤销窗口和异常支付提示。",
+    "words": [
+      {
+        "term": "in-cabin payment",
+        "phonetic": "/ɪn ˈkæbɪn ˈpeɪmənt/",
+        "meaning": "车内支付；用户在座舱内完成停车、充电、通行或服务购买的支付流程",
+        "example": "In-cabin payment should confirm the merchant, amount, and action before money is transferred.",
+        "chineseExample": "车内支付应在转账前确认商户、金额和操作。"
+      },
+      {
+        "term": "identity confirmation",
+        "phonetic": "/aɪˈdentəti ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "身份确认；系统确认当前操作者是否有权执行敏感操作的过程",
+        "example": "Identity confirmation protects shared vehicles when several profiles can access the same cockpit.",
+        "chineseExample": "当多个档案可访问同一座舱时，身份确认能保护共享车辆。"
+      },
+      {
+        "term": "payment intent",
+        "phonetic": "/ˈpeɪmənt ɪnˈtent/",
+        "meaning": "支付意图；用户明确表示准备付款或授权交易的意图",
+        "example": "The assistant should separate payment intent from a casual question about price.",
+        "chineseExample": "助手应区分支付意图和关于价格的随口询问。"
+      },
+      {
+        "term": "transaction summary",
+        "phonetic": "/trænˈzækʃn ˈsʌməri/",
+        "meaning": "交易摘要；付款前展示的商户、项目、金额、账户和结果信息",
+        "example": "A transaction summary gives the driver one last chance to review the charge.",
+        "chineseExample": "交易摘要给驾驶员最后一次复核扣款的机会。"
+      },
+      {
+        "term": "biometric prompt",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk prɑːmpt/",
+        "meaning": "生物识别提示；要求用户通过指纹、人脸或声纹确认身份的界面提示",
+        "example": "A biometric prompt should explain why authentication is needed at this moment.",
+        "chineseExample": "生物识别提示应解释此刻为什么需要认证。"
+      },
+      {
+        "term": "authorization threshold",
+        "phonetic": "/ˌɔːθərəˈzeɪʃn ˈθreʃhoʊld/",
+        "meaning": "授权阈值；触发额外确认的金额、风险或权限边界",
+        "example": "The authorization threshold can be lower when the vehicle is in motion.",
+        "chineseExample": "车辆行驶中时，授权阈值可以更低。"
+      },
+      {
+        "term": "voice receipt",
+        "phonetic": "/vɔɪs rɪˈsiːt/",
+        "meaning": "语音收据；用语音播报关键支付结果和后续操作的反馈",
+        "example": "A short voice receipt helps the driver stay informed without reading a long screen.",
+        "chineseExample": "简短语音收据能让驾驶员无需阅读长屏幕也保持知情。"
+      },
+      {
+        "term": "revocation window",
+        "phonetic": "/ˌrevəˈkeɪʃn ˈwɪndoʊ/",
+        "meaning": "撤销窗口；付款或授权后允许用户取消、回滚或申诉的短时间范围",
+        "example": "A visible revocation window reduces anxiety after a high-value in-cabin purchase.",
+        "chineseExample": "可见的撤销窗口能降低高额车内购买后的焦虑。"
+      },
+      {
+        "term": "masked credential",
+        "phonetic": "/mæskt krəˈdenʃl/",
+        "meaning": "脱敏凭证；隐藏完整卡号、账户或身份信息后的凭证显示方式",
+        "example": "The HMI shows a masked credential instead of exposing the full card number.",
+        "chineseExample": "HMI 显示脱敏凭证，而不是暴露完整卡号。"
+      },
+      {
+        "term": "fraud signal",
+        "phonetic": "/frɔːd ˈsɪɡnəl/",
+        "meaning": "欺诈信号；提示当前支付行为可能异常或风险较高的系统判断",
+        "example": "A fraud signal should pause the flow and offer a safe next step.",
+        "chineseExample": "欺诈信号应暂停流程并提供安全的下一步。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "in-cabin payment",
+        "phonetic": "/ɪn ˈkæbɪn ˈpeɪmənt/",
+        "meaning": "车内支付；用户在座舱内完成停车、充电、通行或服务购买的支付流程",
+        "example": "In-cabin payment should confirm the merchant, amount, and action before money is transferred.",
+        "chineseExample": "车内支付应在转账前确认商户、金额和操作。"
+      },
+      {
+        "term": "identity confirmation",
+        "phonetic": "/aɪˈdentəti ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "身份确认；系统确认当前操作者是否有权执行敏感操作的过程",
+        "example": "Identity confirmation protects shared vehicles when several profiles can access the same cockpit.",
+        "chineseExample": "当多个档案可访问同一座舱时，身份确认能保护共享车辆。"
+      },
+      {
+        "term": "payment intent",
+        "phonetic": "/ˈpeɪmənt ɪnˈtent/",
+        "meaning": "支付意图；用户明确表示准备付款或授权交易的意图",
+        "example": "The assistant should separate payment intent from a casual question about price.",
+        "chineseExample": "助手应区分支付意图和关于价格的随口询问。"
+      },
+      {
+        "term": "transaction summary",
+        "phonetic": "/trænˈzækʃn ˈsʌməri/",
+        "meaning": "交易摘要；付款前展示的商户、项目、金额、账户和结果信息",
+        "example": "A transaction summary gives the driver one last chance to review the charge.",
+        "chineseExample": "交易摘要给驾驶员最后一次复核扣款的机会。"
+      },
+      {
+        "term": "biometric prompt",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk prɑːmpt/",
+        "meaning": "生物识别提示；要求用户通过指纹、人脸或声纹确认身份的界面提示",
+        "example": "A biometric prompt should explain why authentication is needed at this moment.",
+        "chineseExample": "生物识别提示应解释此刻为什么需要认证。"
+      },
+      {
+        "term": "authorization threshold",
+        "phonetic": "/ˌɔːθərəˈzeɪʃn ˈθreʃhoʊld/",
+        "meaning": "授权阈值；触发额外确认的金额、风险或权限边界",
+        "example": "The authorization threshold can be lower when the vehicle is in motion.",
+        "chineseExample": "车辆行驶中时，授权阈值可以更低。"
+      },
+      {
+        "term": "voice receipt",
+        "phonetic": "/vɔɪs rɪˈsiːt/",
+        "meaning": "语音收据；用语音播报关键支付结果和后续操作的反馈",
+        "example": "A short voice receipt helps the driver stay informed without reading a long screen.",
+        "chineseExample": "简短语音收据能让驾驶员无需阅读长屏幕也保持知情。"
+      },
+      {
+        "term": "revocation window",
+        "phonetic": "/ˌrevəˈkeɪʃn ˈwɪndoʊ/",
+        "meaning": "撤销窗口；付款或授权后允许用户取消、回滚或申诉的短时间范围",
+        "example": "A visible revocation window reduces anxiety after a high-value in-cabin purchase.",
+        "chineseExample": "可见的撤销窗口能降低高额车内购买后的焦虑。"
+      },
+      {
+        "term": "masked credential",
+        "phonetic": "/mæskt krəˈdenʃl/",
+        "meaning": "脱敏凭证；隐藏完整卡号、账户或身份信息后的凭证显示方式",
+        "example": "The HMI shows a masked credential instead of exposing the full card number.",
+        "chineseExample": "HMI 显示脱敏凭证，而不是暴露完整卡号。"
+      },
+      {
+        "term": "fraud signal",
+        "phonetic": "/frɔːd ˈsɪɡnəl/",
+        "meaning": "欺诈信号；提示当前支付行为可能异常或风险较高的系统判断",
+        "example": "A fraud signal should pause the flow and offer a safe next step.",
+        "chineseExample": "欺诈信号应暂停流程并提供安全的下一步。"
+      },
+      {
+        "term": "merchant",
+        "phonetic": "/ˈmɜːrtʃənt/",
+        "meaning": "商户；收款的服务方或店铺",
+        "example": "The merchant name must be readable before the user approves payment.",
+        "chineseExample": "用户批准付款前，商户名称必须清晰可读。"
+      },
+      {
+        "term": "amount",
+        "phonetic": "/əˈmaʊnt/",
+        "meaning": "金额；一次交易需要支付的钱数",
+        "example": "The amount is repeated in both text and speech.",
+        "chineseExample": "金额会用文字和语音同时重复。"
+      },
+      {
+        "term": "transfer",
+        "phonetic": "/trænsˈfɜːr/",
+        "meaning": "转移；在支付语境中指资金或权限从一方转到另一方",
+        "example": "Money should not transfer until the confirmation is complete.",
+        "chineseExample": "确认完成前不应转移资金。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/ʃerd ˈviːəkl/",
+        "meaning": "共享车辆；多个用户或账号共同使用的车辆",
+        "example": "Shared vehicle payment flows need stronger profile checks.",
+        "chineseExample": "共享车辆的支付流程需要更强的档案检查。"
+      },
+      {
+        "term": "profile access",
+        "phonetic": "/ˈproʊfaɪl ˈækses/",
+        "meaning": "档案访问权限；用户可进入或操作某个个人档案的权限",
+        "example": "Profile access determines which payment methods are available.",
+        "chineseExample": "档案访问权限决定哪些支付方式可用。"
+      },
+      {
+        "term": "casual question",
+        "phonetic": "/ˈkæʒuəl ˈkwestʃən/",
+        "meaning": "随口问题；不应被理解为明确操作意图的普通询问",
+        "example": "A casual question about price must not trigger checkout.",
+        "chineseExample": "关于价格的随口询问不应触发结账。"
+      },
+      {
+        "term": "price",
+        "phonetic": "/praɪs/",
+        "meaning": "价格；商品或服务的费用",
+        "example": "The assistant reads the price before asking for approval.",
+        "chineseExample": "助手会先读出价格，再请求批准。"
+      },
+      {
+        "term": "charge",
+        "phonetic": "/tʃɑːrdʒ/",
+        "meaning": "扣款；向用户账户收取费用",
+        "example": "The charge appears in the transaction summary.",
+        "chineseExample": "扣款会显示在交易摘要中。"
+      },
+      {
+        "term": "authentication",
+        "phonetic": "/ɔːˌθentɪˈkeɪʃn/",
+        "meaning": "认证；验证用户身份或权限的过程",
+        "example": "Authentication should be quick but clearly linked to the payment risk.",
+        "chineseExample": "认证应快速完成，但要清楚关联支付风险。"
+      },
+      {
+        "term": "needed",
+        "phonetic": "/ˈniːdɪd/",
+        "meaning": "需要的；必要的",
+        "example": "The prompt explains why extra confirmation is needed.",
+        "chineseExample": "提示会解释为什么需要额外确认。"
+      },
+      {
+        "term": "motion",
+        "phonetic": "/ˈmoʊʃn/",
+        "meaning": "运动；车辆行驶状态",
+        "example": "Payment screens become simpler when the vehicle is in motion.",
+        "chineseExample": "车辆行驶时，支付屏幕会变得更简洁。"
+      },
+      {
+        "term": "informed",
+        "phonetic": "/ɪnˈfɔːrmd/",
+        "meaning": "知情的；了解关键信息的",
+        "example": "The driver stays informed through a short voice receipt.",
+        "chineseExample": "驾驶员通过简短语音收据保持知情。"
+      },
+      {
+        "term": "reading",
+        "phonetic": "/ˈriːdɪŋ/",
+        "meaning": "阅读；查看文字信息",
+        "example": "The interface avoids heavy reading during driving.",
+        "chineseExample": "界面会避免驾驶中大量阅读。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "可见的；能被用户看到的",
+        "example": "A visible cancel option supports trust.",
+        "chineseExample": "可见的取消选项有助于建立信任。"
+      },
+      {
+        "term": "high-value",
+        "phonetic": "/haɪ ˈvæljuː/",
+        "meaning": "高价值的；金额或风险较高的",
+        "example": "High-value purchases require stronger confirmation.",
+        "chineseExample": "高价值购买需要更强确认。"
+      },
+      {
+        "term": "purchase",
+        "phonetic": "/ˈpɜːrtʃəs/",
+        "meaning": "购买；买入商品或服务",
+        "example": "The purchase can be reversed during the revocation window.",
+        "chineseExample": "购买可在撤销窗口内撤回。"
+      },
+      {
+        "term": "anxiety",
+        "phonetic": "/æŋˈzaɪəti/",
+        "meaning": "焦虑；担心错误扣款或误操作的情绪",
+        "example": "Clear recovery options reduce payment anxiety.",
+        "chineseExample": "清晰的恢复选项能降低支付焦虑。"
+      },
+      {
+        "term": "credential",
+        "phonetic": "/krəˈdenʃl/",
+        "meaning": "凭证；用于证明身份或支付账户的信息",
+        "example": "A credential should be masked on shared displays.",
+        "chineseExample": "共享屏幕上应对凭证脱敏。"
+      },
+      {
+        "term": "exposing",
+        "phonetic": "/ɪkˈspoʊzɪŋ/",
+        "meaning": "暴露；让敏感信息被看见",
+        "example": "The interface avoids exposing the full card number.",
+        "chineseExample": "界面会避免暴露完整卡号。"
+      },
+      {
+        "term": "card number",
+        "phonetic": "/kɑːrd ˈnʌmbər/",
+        "meaning": "卡号；银行卡或支付卡的号码",
+        "example": "Only the last four digits of the card number are shown.",
+        "chineseExample": "界面只显示卡号后四位。"
+      },
+      {
+        "term": "pause",
+        "phonetic": "/pɔːz/",
+        "meaning": "暂停；暂时停止流程",
+        "example": "The flow pauses when a risk signal appears.",
+        "chineseExample": "出现风险信号时流程会暂停。"
+      },
+      {
+        "term": "safe next step",
+        "phonetic": "/seɪf nekst step/",
+        "meaning": "安全下一步；风险出现时界面建议的明确后续动作",
+        "example": "A safe next step is easier to follow than a vague warning.",
+        "chineseExample": "安全下一步比模糊警告更容易执行。"
+      },
+      {
+        "term": "payment flow",
+        "phonetic": "/ˈpeɪmənt floʊ/",
+        "meaning": "支付流程；从发起付款到确认结果的完整交互路径",
+        "example": "The payment flow should be short, reversible, and easy to audit.",
+        "chineseExample": "支付流程应简短、可撤销且易于审计。"
+      },
+      {
+        "term": "sensitive action",
+        "phonetic": "/ˈsensətɪv ˈækʃn/",
+        "meaning": "敏感操作；可能影响金钱、隐私或安全的操作",
+        "example": "A sensitive action requires explicit confirmation.",
+        "chineseExample": "敏感操作需要明确确认。"
+      },
+      {
+        "term": "explicit confirmation",
+        "phonetic": "/ɪkˈsplɪsɪt ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "明确确认；用户清楚表达同意或授权的确认方式",
+        "example": "Explicit confirmation prevents accidental purchases.",
+        "chineseExample": "明确确认能防止意外购买。"
+      },
+      {
+        "term": "accidental purchase",
+        "phonetic": "/ˌæksɪˈdentl ˈpɜːrtʃəs/",
+        "meaning": "意外购买；用户并非真正想完成的购买",
+        "example": "Undo support is important after an accidental purchase.",
+        "chineseExample": "意外购买后，撤销支持很重要。"
+      },
+      {
+        "term": "approval",
+        "phonetic": "/əˈpruːvl/",
+        "meaning": "批准；用户同意执行某项操作",
+        "example": "Approval should be captured with a clear phrase or gesture.",
+        "chineseExample": "批准应通过清晰短语或手势获取。"
+      },
+      {
+        "term": "payment method",
+        "phonetic": "/ˈpeɪmənt ˈmeθəd/",
+        "meaning": "支付方式；银行卡、钱包或账户等付款工具",
+        "example": "The default payment method should be easy to identify.",
+        "chineseExample": "默认支付方式应易于识别。"
+      },
+      {
+        "term": "default account",
+        "phonetic": "/dɪˈfɔːlt əˈkaʊnt/",
+        "meaning": "默认账户；系统预先选择的付款账户",
+        "example": "The default account is shown with a masked credential.",
+        "chineseExample": "默认账户会与脱敏凭证一起显示。"
+      },
+      {
+        "term": "risk level",
+        "phonetic": "/rɪsk ˈlevl/",
+        "meaning": "风险等级；系统对交易危险程度的判断",
+        "example": "The risk level changes the confirmation pattern.",
+        "chineseExample": "风险等级会改变确认模式。"
+      },
+      {
+        "term": "confirmation pattern",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈpætərn/",
+        "meaning": "确认模式；界面用于确认操作的固定交互结构",
+        "example": "A consistent confirmation pattern helps users act calmly.",
+        "chineseExample": "一致的确认模式帮助用户冷静操作。"
+      },
+      {
+        "term": "calm wording",
+        "phonetic": "/kɑːm ˈwɜːrdɪŋ/",
+        "meaning": "平静措辞；避免制造压力的提示语言",
+        "example": "Calm wording matters when payment risk is high.",
+        "chineseExample": "支付风险高时，平静措辞很重要。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "自然语言；清楚、直接、非技术化的表达",
+        "example": "Plain language is better than bank-side error codes.",
+        "chineseExample": "自然语言比银行侧错误代码更合适。"
+      },
+      {
+        "term": "error code",
+        "phonetic": "/ˈerər koʊd/",
+        "meaning": "错误代码；系统或服务返回的技术编号",
+        "example": "The cockpit should translate an error code into useful guidance.",
+        "chineseExample": "座舱应把错误代码转化为有用引导。"
+      },
+      {
+        "term": "useful guidance",
+        "phonetic": "/ˈjuːsfl ˈɡaɪdns/",
+        "meaning": "有用引导；告诉用户可执行下一步的信息",
+        "example": "Useful guidance explains whether to retry, cancel, or contact support.",
+        "chineseExample": "有用引导会说明应重试、取消还是联系客服。"
+      },
+      {
+        "term": "retry",
+        "phonetic": "/ˌriːˈtraɪ/",
+        "meaning": "重试；再次尝试同一操作",
+        "example": "A retry button should not repeat a failed payment silently.",
+        "chineseExample": "重试按钮不应静默重复失败支付。"
+      },
+      {
+        "term": "cancel",
+        "phonetic": "/ˈkænsl/",
+        "meaning": "取消；停止当前操作",
+        "example": "Cancel remains available until the final confirmation.",
+        "chineseExample": "最终确认前一直可以取消。"
+      },
+      {
+        "term": "contact support",
+        "phonetic": "/ˈkɑːntækt səˈpɔːrt/",
+        "meaning": "联系客服；向服务团队寻求帮助",
+        "example": "Contact support is offered when the payment status is unclear.",
+        "chineseExample": "支付状态不清楚时会提供联系客服选项。"
+      },
+      {
+        "term": "payment status",
+        "phonetic": "/ˈpeɪmənt ˈstætəs/",
+        "meaning": "支付状态；交易当前是成功、失败、处理中或待确认",
+        "example": "Payment status should never be hidden behind a spinner.",
+        "chineseExample": "支付状态不应隐藏在加载动画后面。"
+      },
+      {
+        "term": "spinner",
+        "phonetic": "/ˈspɪnər/",
+        "meaning": "加载动画；表示系统正在处理的旋转标记",
+        "example": "A spinner needs a status message when the wait is long.",
+        "chineseExample": "等待时间较长时，加载动画需要状态消息。"
+      },
+      {
+        "term": "audit trail",
+        "phonetic": "/ˈɔːdɪt treɪl/",
+        "meaning": "审计轨迹；可追踪交易、确认和更改的记录",
+        "example": "An audit trail helps explain what happened after a disputed charge.",
+        "chineseExample": "审计轨迹有助于解释争议扣款后发生了什么。"
+      },
+      {
+        "term": "disputed charge",
+        "phonetic": "/dɪˈspjuːtɪd tʃɑːrdʒ/",
+        "meaning": "争议扣款；用户对交易提出异议的扣款",
+        "example": "A disputed charge should link to the receipt and support channel.",
+        "chineseExample": "争议扣款应关联收据和支持渠道。"
+      },
+      {
+        "term": "support channel",
+        "phonetic": "/səˈpɔːrt ˈtʃænl/",
+        "meaning": "支持渠道；用户获得帮助的入口",
+        "example": "The support channel should be visible after payment failure.",
+        "chineseExample": "支付失败后，支持渠道应可见。"
+      },
+      {
+        "term": "privacy surface",
+        "phonetic": "/ˈpraɪvəsi ˈsɜːrfɪs/",
+        "meaning": "隐私暴露面；界面上可能泄露个人或账户信息的位置",
+        "example": "Every payment screen is also a privacy surface.",
+        "chineseExample": "每个支付屏幕也是隐私暴露面。"
+      },
+      {
+        "term": "shared display",
+        "phonetic": "/ʃerd dɪˈspleɪ/",
+        "meaning": "共享显示屏；乘员都可能看到的屏幕",
+        "example": "Shared displays should hide sensitive account details.",
+        "chineseExample": "共享显示屏应隐藏敏感账户细节。"
+      },
+      {
+        "term": "account detail",
+        "phonetic": "/əˈkaʊnt ˈdiːteɪl/",
+        "meaning": "账户细节；账号、卡号、余额或身份等信息",
+        "example": "Account details need stronger masking in passenger view.",
+        "chineseExample": "乘客视图中的账户细节需要更强脱敏。"
+      },
+      {
+        "term": "passenger view",
+        "phonetic": "/ˈpæsɪndʒər vjuː/",
+        "meaning": "乘客视图；面向乘客的座舱显示内容",
+        "example": "Passenger view can show the route but hide payment credentials.",
+        "chineseExample": "乘客视图可以显示路线，但隐藏支付凭证。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶员当前需要处理的信息和操作压力",
+        "example": "The cockpit lowers driver workload by postponing non-urgent payment details.",
+        "chineseExample": "座舱通过延后非紧急支付细节来降低驾驶员负荷。"
+      },
+      {
+        "term": "non-urgent",
+        "phonetic": "/nɑːn ˈɜːrdʒənt/",
+        "meaning": "非紧急的；可以稍后处理的",
+        "example": "Non-urgent receipts can wait until the vehicle is parked.",
+        "chineseExample": "非紧急收据可以等车辆停稳后再显示。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/pɑːrkt/",
+        "meaning": "已停车的；车辆处于停稳状态",
+        "example": "Full payment history is safer to review when parked.",
+        "chineseExample": "完整支付历史在停车后查看更安全。"
+      },
+      {
+        "term": "payment history",
+        "phonetic": "/ˈpeɪmənt ˈhɪstəri/",
+        "meaning": "支付历史；过往交易记录",
+        "example": "Payment history belongs in a lower-pressure review screen.",
+        "chineseExample": "支付历史适合放在压力较低的复核页面。"
+      },
+      {
+        "term": "review screen",
+        "phonetic": "/rɪˈvjuː skriːn/",
+        "meaning": "复核页面；用于检查详情、历史或结果的界面",
+        "example": "The review screen can show more detail than the driving view.",
+        "chineseExample": "复核页面可以比驾驶视图显示更多细节。"
+      },
+      {
+        "term": "driving view",
+        "phonetic": "/ˈdraɪvɪŋ vjuː/",
+        "meaning": "驾驶视图；车辆行驶中面向驾驶任务的主界面",
+        "example": "The driving view only shows the essential payment status.",
+        "chineseExample": "驾驶视图只显示必要支付状态。"
+      },
+      {
+        "term": "essential",
+        "phonetic": "/ɪˈsenʃl/",
+        "meaning": "必要的；完成任务必须知道的",
+        "example": "Only essential information should appear during a moving payment flow.",
+        "chineseExample": "行驶支付流程中只应出现必要信息。"
+      },
+      {
+        "term": "confirmation phrase",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn freɪz/",
+        "meaning": "确认短语；用户说出以批准操作的固定语句",
+        "example": "The confirmation phrase should include the amount and merchant.",
+        "chineseExample": "确认短语应包含金额和商户。"
+      },
+      {
+        "term": "gesture approval",
+        "phonetic": "/ˈdʒestʃər əˈpruːvl/",
+        "meaning": "手势批准；通过手势完成授权的方式",
+        "example": "Gesture approval needs a fallback when the camera is unavailable.",
+        "chineseExample": "摄像头不可用时，手势批准需要回退方案。"
+      },
+      {
+        "term": "camera unavailable",
+        "phonetic": "/ˈkæmərə ˌʌnəˈveɪləbl/",
+        "meaning": "摄像头不可用；摄像头因遮挡、故障或权限限制无法使用",
+        "example": "Camera unavailable should not become a confusing payment error.",
+        "chineseExample": "摄像头不可用不应变成令人困惑的支付错误。"
+      },
+      {
+        "term": "fallback authentication",
+        "phonetic": "/ˈfɔːlbæk ɔːˌθentɪˈkeɪʃn/",
+        "meaning": "备用认证；主认证方式不可用时的替代身份验证方式",
+        "example": "Fallback authentication may use a PIN when biometrics fail.",
+        "chineseExample": "生物识别失败时，备用认证可以使用 PIN。"
+      },
+      {
+        "term": "PIN",
+        "phonetic": "/pɪn/",
+        "meaning": "个人识别码；用于身份验证的数字密码",
+        "example": "A PIN entry screen should protect digits from passenger view.",
+        "chineseExample": "PIN 输入界面应防止乘客视图看到数字。"
+      },
+      {
+        "term": "timeout",
+        "phonetic": "/ˈtaɪmaʊt/",
+        "meaning": "超时；用户或系统在限定时间内未完成操作",
+        "example": "A timeout returns the payment flow to a safe state.",
+        "chineseExample": "超时会让支付流程回到安全状态。"
+      },
+      {
+        "term": "safe state",
+        "phonetic": "/seɪf steɪt/",
+        "meaning": "安全状态；系统在不确定时回到不会继续扣款或暴露信息的状态",
+        "example": "The safe state should say that no payment was completed.",
+        "chineseExample": "安全状态应说明没有完成付款。"
+      },
+      {
+        "term": "status message",
+        "phonetic": "/ˈstætəs ˈmesɪdʒ/",
+        "meaning": "状态消息；说明当前处理结果或等待原因的提示",
+        "example": "A status message is clearer than an endless spinner.",
+        "chineseExample": "状态消息比无尽加载动画更清楚。"
+      },
+      {
+        "term": "checkout",
+        "phonetic": "/ˈtʃekaʊt/",
+        "meaning": "结账；确认购买并进入付款的步骤",
+        "example": "Checkout starts only after the user confirms the payment intent.",
+        "chineseExample": "只有用户确认支付意图后才开始结账。"
+      },
+      {
+        "term": "money",
+        "phonetic": "/ˈmʌni/",
+        "meaning": "钱；支付流程中被转移或扣除的资金",
+        "example": "Money should not transfer until the confirmation is complete.",
+        "chineseExample": "确认完成前不应转移资金。"
+      },
+      {
+        "term": "transferred",
+        "phonetic": "/trænsˈfɜːrd/",
+        "meaning": "已转移的；资金或控制权已经从一方转到另一方",
+        "example": "Money is not transferred until the user confirms the payment.",
+        "chineseExample": "用户确认付款前，资金不会被转移。"
+      },
+      {
+        "term": "identity",
+        "phonetic": "/aɪˈdentəti/",
+        "meaning": "身份；用于区分当前用户或账户的个人识别信息",
+        "example": "Payment is a sensitive action that touches identity and privacy.",
+        "chineseExample": "支付是一项涉及身份和隐私的敏感操作。"
+      },
+      {
+        "term": "vehicles",
+        "phonetic": "/ˈviːəkəlz/",
+        "meaning": "车辆；vehicle 的复数形式",
+        "example": "Shared vehicles need stronger identity checks before payment.",
+        "chineseExample": "共享车辆在付款前需要更强的身份检查。"
+      },
+      {
+        "term": "profiles",
+        "phonetic": "/ˈproʊfaɪlz/",
+        "meaning": "用户档案；profile 的复数形式",
+        "example": "Several profiles can access the same cockpit.",
+        "chineseExample": "多个用户档案可以访问同一座舱。"
+      },
+      {
+        "term": "casual",
+        "phonetic": "/ˈkæʒuəl/",
+        "meaning": "随意的；非正式或没有明确操作意图的",
+        "example": "A casual question about price should not become a payment command.",
+        "chineseExample": "关于价格的随口询问不应变成支付命令。"
+      },
+      {
+        "term": "transaction",
+        "phonetic": "/trænˈzækʃn/",
+        "meaning": "交易；一次购买、付款或扣款行为",
+        "example": "The transaction should be easy to review after completion.",
+        "chineseExample": "交易完成后应易于复核。"
+      },
+      {
+        "term": "last",
+        "phonetic": "/læst/",
+        "meaning": "最后的；流程结束前的最终机会或步骤",
+        "example": "The summary gives the driver one last chance to review the charge.",
+        "chineseExample": "摘要给驾驶员最后一次复核扣款的机会。"
+      },
+      {
+        "term": "chance",
+        "phonetic": "/tʃæns/",
+        "meaning": "机会；可以采取行动或改变决定的时机",
+        "example": "A revocation window gives the user a chance to cancel.",
+        "chineseExample": "撤销窗口给用户一次取消机会。"
+      },
+      {
+        "term": "authorization",
+        "phonetic": "/ˌɔːθərəˈzeɪʃn/",
+        "meaning": "授权；允许系统执行付款或敏感操作",
+        "example": "Authorization should match the risk level of the transaction.",
+        "chineseExample": "授权方式应匹配交易风险等级。"
+      },
+      {
+        "term": "receipt",
+        "phonetic": "/rɪˈsiːt/",
+        "meaning": "收据；交易完成后的凭证或结果记录",
+        "example": "The receipt confirms what was paid and where.",
+        "chineseExample": "收据确认支付了什么以及支付给谁。"
+      },
+      {
+        "term": "masked",
+        "phonetic": "/mæskt/",
+        "meaning": "已脱敏的；隐藏完整敏感信息后的显示状态",
+        "example": "A masked credential protects the full card number.",
+        "chineseExample": "脱敏凭证能保护完整卡号。"
+      },
+      {
+        "term": "fraud",
+        "phonetic": "/frɔːd/",
+        "meaning": "欺诈；异常或非法的支付风险",
+        "example": "Fraud checks should pause suspicious payment flows.",
+        "chineseExample": "欺诈检查应暂停可疑支付流程。"
+      },
+      {
+        "term": "touches",
+        "phonetic": "/ˈtʌtʃɪz/",
+        "meaning": "涉及；在抽象语境中表示影响某个方面",
+        "example": "Payment touches identity, privacy, workload, and trust.",
+        "chineseExample": "支付涉及身份、隐私、负荷和信任。"
+      },
+      {
+        "term": "confirms",
+        "phonetic": "/kənˈfɜːrmz/",
+        "meaning": "确认；confirm 的第三人称单数形式",
+        "example": "The system confirms payment intent before checkout.",
+        "chineseExample": "系统会在结账前确认支付意图。"
+      },
+      {
+        "term": "method",
+        "phonetic": "/ˈmeθəd/",
+        "meaning": "方法；完成任务的方式，在支付中常指付款方式",
+        "example": "The selected method appears in the transaction summary.",
+        "chineseExample": "选定方式会显示在交易摘要中。"
+      },
+      {
+        "term": "seeing",
+        "phonetic": "/ˈsiːɪŋ/",
+        "meaning": "看到；see 的动名词形式",
+        "example": "The display protects passengers from seeing account details.",
+        "chineseExample": "显示屏会防止乘客看到账户细节。"
+      },
+      {
+        "term": "save",
+        "phonetic": "/seɪv/",
+        "meaning": "保存；将记录留存供之后查看",
+        "example": "The cockpit should save an audit trail for later review.",
+        "chineseExample": "座舱应保存审计轨迹供后续复核。"
+      },
+      {
+        "term": "truly",
+        "phonetic": "/ˈtruːli/",
+        "meaning": "真正地；确实地",
+        "example": "The goal is simple: confirm only what truly needs confirmation.",
+        "chineseExample": "目标很简单：只确认真正需要确认的内容。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing a calm in-cabin payment flow",
+        "text": "In an intelligent cockpit, payment is not just a checkout feature. It is a sensitive action that touches identity, privacy, driver workload, and trust. A good in-cabin payment flow first confirms payment intent, then shows a short transaction summary with the merchant, amount, payment method, and masked credential. If the vehicle is moving, the HMI should reduce reading and use plain language, a brief voice receipt, and one clear confirmation phrase. Higher risk level or a high-value purchase can trigger a biometric prompt or fallback authentication, but the interface should explain why authentication is needed instead of showing a cold error code. Designers also need to protect passengers from seeing account details on a shared display. After approval, the cockpit should show payment status, keep a visible revocation window when possible, and save an audit trail for later review. If a fraud signal appears, the flow should pause, state that no payment was completed, and offer a safe next step such as retry, cancel, or contact support. Calm wording makes the experience feel controlled rather than alarming. The goal is simple: confirm only what truly needs confirmation.",
+        "translation": "在智能座舱中，支付不只是一个结账功能。它是一项敏感操作，会影响身份、隐私、驾驶员负荷和信任。优秀的车内支付流程会先确认支付意图，然后用简短交易摘要展示商户、金额、支付方式和脱敏凭证。如果车辆正在行驶，HMI 应减少阅读负担，使用自然语言、简短语音收据和一个清楚的确认短语。更高风险等级或高价值购买可以触发生物识别提示或备用认证，但界面应解释为什么需要认证，而不是显示冰冷的错误代码。设计师还需要防止乘客在共享显示屏上看到账户细节。批准后，座舱应显示支付状态，在可能时保留可见撤销窗口，并保存审计轨迹供后续复核。如果出现欺诈信号，流程应暂停，说明没有完成付款，并提供安全下一步，例如重试、取消或联系客服。平静措辞会让体验显得可控，而不是令人紧张。 目标很简单：只确认真正需要确认的内容。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A good in-cabin payment flow first confirms payment intent, then shows a short transaction summary with the merchant, amount, payment method, and masked credential.",
+        "translation": "优秀的车内支付流程会先确认支付意图，然后展示包含商户、金额、支付方式和脱敏凭证的简短交易摘要。",
+        "breakdown": "A good in-cabin payment flow 是主语；first confirms 和 then shows 是并列动作；with 后面列出摘要必须包含的信息。"
+      },
+      {
+        "sentence": "If the vehicle is moving, the HMI should reduce reading and use plain language, a brief voice receipt, and one clear confirmation phrase.",
+        "translation": "如果车辆正在行驶，HMI 应减少阅读，并使用自然语言、简短语音收据和一个清楚的确认短语。",
+        "breakdown": "If 引导条件；should reduce 和 use 表示设计建议；三个宾语说明低负荷确认方式。"
+      },
+      {
+        "sentence": "Higher risk level or a high-value purchase can trigger a biometric prompt or fallback authentication, but the interface should explain why authentication is needed.",
+        "translation": "更高风险等级或高价值购买可以触发生物识别提示或备用认证，但界面应解释为什么需要认证。",
+        "breakdown": "Higher risk level or a high-value purchase 是触发条件；can trigger 表示可能动作；but 转向用户体验要求。"
+      },
+      {
+        "sentence": "If a fraud signal appears, the flow should pause, state that no payment was completed, and offer a safe next step such as retry, cancel, or contact support.",
+        "translation": "如果出现欺诈信号，流程应暂停，说明没有完成付款，并提供安全下一步，例如重试、取消或联系客服。",
+        "breakdown": "If 引导异常场景；pause、state、offer 是连续处理动作；such as 后面给出可执行选项。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 payment intent、identity confirmation、authorization threshold 和 revocation window。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "先听或朗读英文长文，再用中文复述车内支付流程的六个关键节点。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 If the vehicle is moving... 和 Higher risk level can trigger... 各造一个新的 HMI 设计句。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向产品经理说明：为什么车内支付需要脱敏凭证、语音收据和撤销窗口。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-13-cooperative-driving-mode-boundaries",
     "date": "2026-09-13",
     "title": "Cooperative driving mode handover and boundary cues in intelligent cockpits",
