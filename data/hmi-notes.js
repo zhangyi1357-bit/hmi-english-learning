@@ -1,5 +1,678 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-16-offline-voice-fallback-recoverable-dialogue",
+    "date": "2026-09-16",
+    "title": "Offline voice fallback and recoverable dialogue in intelligent cockpits",
+    "topic": "智能座舱离线语音回退与可恢复对话",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明离线语音回退、本地指令集、能力边界、断网提示、状态保留和重连后的平滑交还。",
+    "words": [
+      {
+        "term": "offline voice fallback",
+        "phonetic": "/ˈɔːflaɪn vɔɪs ˈfɔːlbæk/",
+        "meaning": "离线语音回退；云端语音不可用时，本地语音能力接管关键指令的机制",
+        "example": "Offline voice fallback should keep essential commands available when the network is unstable.",
+        "chineseExample": "网络不稳定时，离线语音回退应保持关键指令可用。"
+      },
+      {
+        "term": "recoverable dialogue",
+        "phonetic": "/rɪˈkʌvərəbl ˈdaɪəlɔːɡ/",
+        "meaning": "可恢复对话；中断、识别失败或模式变化后仍能继续完成任务的对话流程",
+        "example": "A recoverable dialogue lets the driver continue from the last confirmed step.",
+        "chineseExample": "可恢复对话让驾驶员从上一次确认的步骤继续。"
+      },
+      {
+        "term": "local command set",
+        "phonetic": "/ˈloʊkl kəˈmænd set/",
+        "meaning": "本地指令集；无需联网即可识别和执行的车控语音命令范围",
+        "example": "The local command set should cover climate, defrosting, volume, and emergency calling.",
+        "chineseExample": "本地指令集应覆盖空调、除霜、音量和紧急呼叫。"
+      },
+      {
+        "term": "cloud dependency",
+        "phonetic": "/klaʊd dɪˈpendənsi/",
+        "meaning": "云端依赖；功能依赖远程服务、网络连接或在线模型才能完整运行的状态",
+        "example": "A clear HMI label can explain which feature has a cloud dependency.",
+        "chineseExample": "清楚的 HMI 标签可以解释哪个功能存在云端依赖。"
+      },
+      {
+        "term": "capability boundary",
+        "phonetic": "/ˌkeɪpəˈbɪləti ˈbaʊndəri/",
+        "meaning": "能力边界；系统当前能做和不能做的范围说明",
+        "example": "Capability boundary messages should be short, specific, and action oriented.",
+        "chineseExample": "能力边界提示应简短、具体，并指向可执行操作。"
+      },
+      {
+        "term": "graceful handback",
+        "phonetic": "/ˈɡreɪsfl ˈhændbæk/",
+        "meaning": "平滑交还；在线能力恢复后，把任务从本地模式自然交回云端或完整模式",
+        "example": "Graceful handback prevents the assistant from repeating the whole dialogue after reconnection.",
+        "chineseExample": "平滑交还能避免重连后助手重复整个对话。"
+      },
+      {
+        "term": "confidence prompt",
+        "phonetic": "/ˈkɑːnfɪdəns prɑːmpt/",
+        "meaning": "置信度提示；系统在识别不确定时请求用户确认或改述的提示",
+        "example": "A confidence prompt is safer than executing a low-confidence command.",
+        "chineseExample": "置信度提示比执行低置信度指令更安全。"
+      },
+      {
+        "term": "network-loss cue",
+        "phonetic": "/ˈnetwɜːrk lɔːs kjuː/",
+        "meaning": "断网提示；告知用户连接丢失及可用替代能力的界面或语音反馈",
+        "example": "A network-loss cue should appear without making the driver feel blamed.",
+        "chineseExample": "断网提示应出现，但不应让驾驶员感觉被责备。"
+      },
+      {
+        "term": "state preservation",
+        "phonetic": "/steɪt ˌprezərˈveɪʃn/",
+        "meaning": "状态保留；在网络切换、页面跳转或语音失败后保存任务上下文",
+        "example": "State preservation helps the cockpit resume navigation search after the signal returns.",
+        "chineseExample": "状态保留帮助座舱在信号恢复后继续导航搜索。"
+      },
+      {
+        "term": "minimal apology",
+        "phonetic": "/ˈmɪnɪməl əˈpɑːlədʒi/",
+        "meaning": "最小化道歉；用简短道歉配合可执行替代方案，避免冗长解释",
+        "example": "A minimal apology should be followed by a practical fallback option.",
+        "chineseExample": "最小化道歉后应跟随一个实用的回退选项。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "offline voice fallback",
+        "phonetic": "/ˈɔːflaɪn vɔɪs ˈfɔːlbæk/",
+        "meaning": "离线语音回退；云端语音不可用时，本地语音能力接管关键指令的机制",
+        "example": "Offline voice fallback should keep essential commands available when the network is unstable.",
+        "chineseExample": "网络不稳定时，离线语音回退应保持关键指令可用。"
+      },
+      {
+        "term": "recoverable dialogue",
+        "phonetic": "/rɪˈkʌvərəbl ˈdaɪəlɔːɡ/",
+        "meaning": "可恢复对话；中断、识别失败或模式变化后仍能继续完成任务的对话流程",
+        "example": "A recoverable dialogue lets the driver continue from the last confirmed step.",
+        "chineseExample": "可恢复对话让驾驶员从上一次确认的步骤继续。"
+      },
+      {
+        "term": "local command set",
+        "phonetic": "/ˈloʊkl kəˈmænd set/",
+        "meaning": "本地指令集；无需联网即可识别和执行的车控语音命令范围",
+        "example": "The local command set should cover climate, defrosting, volume, and emergency calling.",
+        "chineseExample": "本地指令集应覆盖空调、除霜、音量和紧急呼叫。"
+      },
+      {
+        "term": "cloud dependency",
+        "phonetic": "/klaʊd dɪˈpendənsi/",
+        "meaning": "云端依赖；功能依赖远程服务、网络连接或在线模型才能完整运行的状态",
+        "example": "A clear HMI label can explain which feature has a cloud dependency.",
+        "chineseExample": "清楚的 HMI 标签可以解释哪个功能存在云端依赖。"
+      },
+      {
+        "term": "capability boundary",
+        "phonetic": "/ˌkeɪpəˈbɪləti ˈbaʊndəri/",
+        "meaning": "能力边界；系统当前能做和不能做的范围说明",
+        "example": "Capability boundary messages should be short, specific, and action oriented.",
+        "chineseExample": "能力边界提示应简短、具体，并指向可执行操作。"
+      },
+      {
+        "term": "graceful handback",
+        "phonetic": "/ˈɡreɪsfl ˈhændbæk/",
+        "meaning": "平滑交还；在线能力恢复后，把任务从本地模式自然交回云端或完整模式",
+        "example": "Graceful handback prevents the assistant from repeating the whole dialogue after reconnection.",
+        "chineseExample": "平滑交还能避免重连后助手重复整个对话。"
+      },
+      {
+        "term": "confidence prompt",
+        "phonetic": "/ˈkɑːnfɪdəns prɑːmpt/",
+        "meaning": "置信度提示；系统在识别不确定时请求用户确认或改述的提示",
+        "example": "A confidence prompt is safer than executing a low-confidence command.",
+        "chineseExample": "置信度提示比执行低置信度指令更安全。"
+      },
+      {
+        "term": "network-loss cue",
+        "phonetic": "/ˈnetwɜːrk lɔːs kjuː/",
+        "meaning": "断网提示；告知用户连接丢失及可用替代能力的界面或语音反馈",
+        "example": "A network-loss cue should appear without making the driver feel blamed.",
+        "chineseExample": "断网提示应出现，但不应让驾驶员感觉被责备。"
+      },
+      {
+        "term": "state preservation",
+        "phonetic": "/steɪt ˌprezərˈveɪʃn/",
+        "meaning": "状态保留；在网络切换、页面跳转或语音失败后保存任务上下文",
+        "example": "State preservation helps the cockpit resume navigation search after the signal returns.",
+        "chineseExample": "状态保留帮助座舱在信号恢复后继续导航搜索。"
+      },
+      {
+        "term": "minimal apology",
+        "phonetic": "/ˈmɪnɪməl əˈpɑːlədʒi/",
+        "meaning": "最小化道歉；用简短道歉配合可执行替代方案，避免冗长解释",
+        "example": "A minimal apology should be followed by a practical fallback option.",
+        "chineseExample": "最小化道歉后应跟随一个实用的回退选项。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "An intelligent cockpit must explain system limits before trust is damaged.",
+        "chineseExample": "智能座舱必须在信任受损前解释系统限制。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；在座舱中帮助用户完成语音、导航、娱乐和车控任务的系统",
+        "example": "The assistant should offer a shorter route when online search is unavailable.",
+        "chineseExample": "在线搜索不可用时，助手应提供更短的路线方案。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "可用性；功能当前是否可以被访问、调用或执行的状态",
+        "example": "Availability changes should be visible before the driver starts a complex task.",
+        "chineseExample": "可用性变化应在驾驶员开始复杂任务前可见。"
+      },
+      {
+        "term": "backup",
+        "phonetic": "/ˈbækʌp/",
+        "meaning": "备份；主能力失效时提供连续服务的替代方案",
+        "example": "A backup grammar can handle simple commands offline.",
+        "chineseExample": "备份语法可以离线处理简单指令。"
+      },
+      {
+        "term": "brief",
+        "phonetic": "/briːf/",
+        "meaning": "简短的；信息量控制得较少，便于驾驶中理解",
+        "example": "Brief wording is easier to process during lane changes.",
+        "chineseExample": "简短措辞在变道时更容易处理。"
+      },
+      {
+        "term": "cancel",
+        "phonetic": "/ˈkænsl/",
+        "meaning": "取消；停止当前操作或退出未完成流程",
+        "example": "Cancel must remain available when recognition confidence is low.",
+        "chineseExample": "识别置信度低时，取消仍必须可用。"
+      },
+      {
+        "term": "carplay",
+        "phonetic": "/ˈkɑːrpleɪ/",
+        "meaning": "CarPlay；苹果车载投屏与交互生态",
+        "example": "CarPlay voice features may need a separate fallback path.",
+        "chineseExample": "CarPlay 语音功能可能需要单独的回退路径。"
+      },
+      {
+        "term": "climate",
+        "phonetic": "/ˈklaɪmət/",
+        "meaning": "空调；座舱温度、风量、出风方向和除霜相关控制",
+        "example": "Climate commands belong in the local command set.",
+        "chineseExample": "空调指令属于本地指令集。"
+      },
+      {
+        "term": "cloud",
+        "phonetic": "/klaʊd/",
+        "meaning": "云端；通过远程服务提供计算、语音理解、搜索或账户能力的系统",
+        "example": "The cloud can enrich answers, but basic vehicle controls should not depend on it.",
+        "chineseExample": "云端可以丰富回答，但基础车控不应依赖它。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "指令；用户要求系统执行的明确操作",
+        "example": "Each command needs a safe response when the network drops.",
+        "chineseExample": "每条指令都需要断网时的安全响应。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "确认；执行前或执行后用于降低误操作风险的反馈",
+        "example": "Confirmation should focus on the next action, not the failure itself.",
+        "chineseExample": "确认应聚焦下一步操作，而不是失败本身。"
+      },
+      {
+        "term": "connection",
+        "phonetic": "/kəˈnekʃn/",
+        "meaning": "连接；车辆与网络、账户、手机或云端服务之间的通信状态",
+        "example": "Connection status should be described in plain language.",
+        "chineseExample": "连接状态应使用自然语言说明。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "上下文；系统理解当前任务、位置、用户目标和上一轮交互所需的信息",
+        "example": "Context allows the assistant to resume the right step.",
+        "chineseExample": "上下文让助手恢复到正确步骤。"
+      },
+      {
+        "term": "continue",
+        "phonetic": "/kənˈtɪnjuː/",
+        "meaning": "继续；在中断后从当前状态接着完成任务",
+        "example": "A continue button can reduce frustration after reconnection.",
+        "chineseExample": "重连后，继续按钮可以降低挫败感。"
+      },
+      {
+        "term": "degraded mode",
+        "phonetic": "/dɪˈɡreɪdɪd moʊd/",
+        "meaning": "降级模式；系统保留核心能力但限制高级功能的运行模式",
+        "example": "Degraded mode should sound controlled, not broken.",
+        "chineseExample": "降级模式听起来应是可控的，而不是坏掉了。"
+      },
+      {
+        "term": "defrosting",
+        "phonetic": "/diːˈfrɔːstɪŋ/",
+        "meaning": "除霜；清除车窗雾气或冰霜的空调安全功能",
+        "example": "Defrosting should remain available during offline voice fallback.",
+        "chineseExample": "离线语音回退期间，除霜应保持可用。"
+      },
+      {
+        "term": "dialogue",
+        "phonetic": "/ˈdaɪəlɔːɡ/",
+        "meaning": "对话；用户与系统之间多轮语音或文本交互",
+        "example": "The dialogue should not restart after a brief signal loss.",
+        "chineseExample": "短暂信号丢失后，对话不应重新开始。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；车辆行驶任务的主要负责人和 HMI 设计中的核心用户",
+        "example": "The driver needs one clear option under time pressure.",
+        "chineseExample": "驾驶员在时间压力下需要一个清楚选项。"
+      },
+      {
+        "term": "emergency",
+        "phonetic": "/ɪˈmɜːrdʒənsi/",
+        "meaning": "紧急情况；需要快速、低负荷响应的安全相关场景",
+        "example": "Emergency calling should not wait for cloud recognition.",
+        "chineseExample": "紧急呼叫不应等待云端识别。"
+      },
+      {
+        "term": "essential",
+        "phonetic": "/ɪˈsenʃl/",
+        "meaning": "必要的；对安全、基础控制或任务连续性至关重要的",
+        "example": "Essential commands need offline coverage.",
+        "chineseExample": "必要指令需要离线覆盖。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "执行；系统根据用户指令完成操作",
+        "example": "Do not execute a command when the recognized intent is uncertain.",
+        "chineseExample": "识别意图不确定时不要执行指令。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "回退；主路径不可用时使用的替代路径或简化能力",
+        "example": "A fallback should explain what still works.",
+        "chineseExample": "回退应说明哪些功能仍可使用。"
+      },
+      {
+        "term": "feature",
+        "phonetic": "/ˈfiːtʃər/",
+        "meaning": "功能；产品中可被用户感知或调用的能力",
+        "example": "Every feature does not need the same offline promise.",
+        "chineseExample": "并非每个功能都需要相同的离线承诺。"
+      },
+      {
+        "term": "frustration",
+        "phonetic": "/frʌˈstreɪʃn/",
+        "meaning": "挫败感；用户因任务受阻、重复操作或反馈不清而产生的负面体验",
+        "example": "Clear recovery steps reduce frustration.",
+        "chineseExample": "清楚的恢复步骤能降低挫败感。"
+      },
+      {
+        "term": "grammar",
+        "phonetic": "/ˈɡræmər/",
+        "meaning": "语法；语音系统用于匹配本地命令的限定表达集合",
+        "example": "A small grammar can be reliable for safety commands.",
+        "chineseExample": "小范围语法可让安全指令更可靠。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "交接；任务或控制权从一个模式、通道或系统转移到另一个",
+        "example": "Handoff copy should name the new mode.",
+        "chineseExample": "交接文案应说明新的模式。"
+      },
+      {
+        "term": "HMI",
+        "phonetic": "/ˌeɪtʃ em ˈaɪ/",
+        "meaning": "人机界面；车辆中承载信息呈现、控制和反馈的人机交互系统",
+        "example": "The HMI should make service changes understandable.",
+        "chineseExample": "HMI 应让服务变化易于理解。"
+      },
+      {
+        "term": "instruction",
+        "phonetic": "/ɪnˈstrʌkʃn/",
+        "meaning": "指示；告诉用户可以说什么、按什么或下一步怎么做的内容",
+        "example": "The instruction should fit into one glance.",
+        "chineseExample": "指示应一眼可读。"
+      },
+      {
+        "term": "intent",
+        "phonetic": "/ɪnˈtent/",
+        "meaning": "意图；用户希望系统完成的目标或动作",
+        "example": "Intent must be confirmed when the cost of error is high.",
+        "chineseExample": "错误代价高时，意图必须被确认。"
+      },
+      {
+        "term": "local",
+        "phonetic": "/ˈloʊkl/",
+        "meaning": "本地的；在车端或设备端完成，不依赖实时联网",
+        "example": "Local processing supports faster fallback.",
+        "chineseExample": "本地处理支持更快回退。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/ˈmesɪdʒ/",
+        "meaning": "提示信息；界面或语音中向用户解释状态、结果或下一步的内容",
+        "example": "The message should name the limitation and the alternative.",
+        "chineseExample": "提示信息应说明限制和替代方案。"
+      },
+      {
+        "term": "microcopy",
+        "phonetic": "/ˈmaɪkroʊkɑːpi/",
+        "meaning": "微文案；按钮、提示和状态消息中的短文本",
+        "example": "Microcopy can turn a failure into a manageable next step.",
+        "chineseExample": "微文案可以把失败转化为可处理的下一步。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/moʊd/",
+        "meaning": "模式；系统当前运行能力、交互方式或控制边界的状态",
+        "example": "Mode changes should be announced only when they affect the task.",
+        "chineseExample": "模式变化只有影响任务时才应提示。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃn/",
+        "meaning": "导航；路线规划、目的地搜索和行驶引导相关功能",
+        "example": "Navigation search may pause until the connection returns.",
+        "chineseExample": "导航搜索可能暂停到连接恢复。"
+      },
+      {
+        "term": "network",
+        "phonetic": "/ˈnetwɜːrk/",
+        "meaning": "网络；支持在线语音、地图、账户和云服务的数据连接",
+        "example": "Network quality can change quickly in tunnels.",
+        "chineseExample": "隧道中网络质量可能快速变化。"
+      },
+      {
+        "term": "offline",
+        "phonetic": "/ˈɔːflaɪn/",
+        "meaning": "离线；没有可用网络或不使用在线服务的状态",
+        "example": "Offline mode should still support common vehicle controls.",
+        "chineseExample": "离线模式仍应支持常用车控。"
+      },
+      {
+        "term": "online",
+        "phonetic": "/ˈɑːnlaɪn/",
+        "meaning": "在线；可以连接云端服务并使用完整联网能力的状态",
+        "example": "Online recovery should not surprise the user.",
+        "chineseExample": "在线恢复不应让用户意外。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃn/",
+        "meaning": "选项；用户可以选择的下一步操作",
+        "example": "One good option is better than a long list while driving.",
+        "chineseExample": "驾驶中，一个好选项胜过长列表。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/prɪˈzɜːrv/",
+        "meaning": "保留；保持重要状态、上下文或用户输入不丢失",
+        "example": "Preserve the destination text when search fails.",
+        "chineseExample": "搜索失败时保留目的地文本。"
+      },
+      {
+        "term": "reconnection",
+        "phonetic": "/ˌriːkəˈnekʃn/",
+        "meaning": "重连；网络、云服务或账户连接恢复的过程",
+        "example": "After reconnection, the assistant can offer to continue.",
+        "chineseExample": "重连后，助手可以询问是否继续。"
+      },
+      {
+        "term": "recognition",
+        "phonetic": "/ˌrekəɡˈnɪʃn/",
+        "meaning": "识别；系统把语音、文本或手势解析为可处理输入的过程",
+        "example": "Recognition confidence should guide the response.",
+        "chineseExample": "识别置信度应指导响应方式。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/rɪˈkʌvəri/",
+        "meaning": "恢复；从失败、中断或降级状态回到可继续任务的过程",
+        "example": "Recovery copy should tell the driver what changed.",
+        "chineseExample": "恢复文案应告诉驾驶员发生了什么变化。"
+      },
+      {
+        "term": "repeat",
+        "phonetic": "/rɪˈpiːt/",
+        "meaning": "重复；再次说出、播放或执行某项内容",
+        "example": "Avoid asking the driver to repeat the whole request.",
+        "chineseExample": "避免要求驾驶员重复整个请求。"
+      },
+      {
+        "term": "resume",
+        "phonetic": "/rɪˈzuːm/",
+        "meaning": "恢复继续；从暂停或中断处接着进行",
+        "example": "Resume from the last confirmed step.",
+        "chineseExample": "从上一次确认的步骤继续。"
+      },
+      {
+        "term": "retry",
+        "phonetic": "/ˌriːˈtraɪ/",
+        "meaning": "重试；在失败后再次尝试同一操作",
+        "example": "Retry should be offered only when it is likely to help.",
+        "chineseExample": "只有可能有效时才应提供重试。"
+      },
+      {
+        "term": "safe",
+        "phonetic": "/seɪf/",
+        "meaning": "安全的；不会增加驾驶风险或误操作风险的",
+        "example": "Safe fallback keeps attention on the road.",
+        "chineseExample": "安全回退让注意力留在道路上。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/ˈsɪɡnəl/",
+        "meaning": "信号；网络、定位或传感输入的连接质量或可用状态",
+        "example": "Weak signal should not erase the dialogue state.",
+        "chineseExample": "弱信号不应清除对话状态。"
+      },
+      {
+        "term": "status",
+        "phonetic": "/ˈstætəs/",
+        "meaning": "状态；系统当前可用性、进度或结果的说明",
+        "example": "Status text should be calm and factual.",
+        "chineseExample": "状态文本应平静且基于事实。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户相信系统可靠、可理解且可控的程度",
+        "example": "Trust grows when the system explains limits early.",
+        "chineseExample": "系统尽早解释限制时，信任会增长。"
+      },
+      {
+        "term": "unstable",
+        "phonetic": "/ʌnˈsteɪbl/",
+        "meaning": "不稳定的；连接、识别或系统状态频繁变化且不可靠",
+        "example": "Unstable connectivity requires a predictable fallback path.",
+        "chineseExample": "不稳定连接需要可预测的回退路径。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "语音；用户通过说话输入指令，系统通过播报输出反馈的交互通道",
+        "example": "Voice feedback must stay concise in motion.",
+        "chineseExample": "行驶中语音反馈必须保持简洁。"
+      },
+      {
+        "term": "volume",
+        "phonetic": "/ˈvɑːljuːm/",
+        "meaning": "音量；媒体、提示音或语音播报的响度控制",
+        "example": "Volume commands should work offline.",
+        "chineseExample": "音量指令应支持离线执行。"
+      },
+      {
+        "term": "workload",
+        "phonetic": "/ˈwɜːrkloʊd/",
+        "meaning": "负荷；驾驶员理解、判断和操作所需的认知或视觉资源",
+        "example": "Lower workload is the main reason to simplify fallback prompts.",
+        "chineseExample": "降低负荷是简化回退提示的主要原因。"
+      },
+      {
+        "term": "calling",
+        "phonetic": "/ˈkɔːlɪŋ/",
+        "meaning": "呼叫；通过语音或系统发起电话、紧急联系或服务请求",
+        "example": "Emergency calling should remain available in offline mode.",
+        "chineseExample": "紧急呼叫在离线模式下仍应可用。"
+      },
+      {
+        "term": "dependency",
+        "phonetic": "/dɪˈpendənsi/",
+        "meaning": "依赖；某项能力对网络、云端服务或其他系统条件的依靠",
+        "example": "Cloud dependency should be visible before a feature fails.",
+        "chineseExample": "云端依赖应在功能失败前可见。"
+      },
+      {
+        "term": "oriented",
+        "phonetic": "/ˈɔːrientɪd/",
+        "meaning": "导向的；围绕某个目标或操作方式组织的",
+        "example": "Action oriented messages help the driver recover quickly.",
+        "chineseExample": "行动导向的提示帮助驾驶员快速恢复。"
+      },
+      {
+        "term": "handback",
+        "phonetic": "/ˈhændbæk/",
+        "meaning": "交还；能力恢复后把任务交回完整模式或原系统的过程",
+        "example": "Handback should continue the task without repeating old prompts.",
+        "chineseExample": "交还应继续任务，而不是重复旧提示。"
+      },
+      {
+        "term": "repeating",
+        "phonetic": "/rɪˈpiːtɪŋ/",
+        "meaning": "重复；再次说出或执行相同内容",
+        "example": "Avoid repeating the whole dialogue after reconnection.",
+        "chineseExample": "重连后避免重复整个对话。"
+      },
+      {
+        "term": "low-confidence",
+        "phonetic": "/loʊ ˈkɑːnfɪdəns/",
+        "meaning": "低置信度的；系统对识别结果不够确定的状态",
+        "example": "A low-confidence result should trigger confirmation instead of action.",
+        "chineseExample": "低置信度结果应触发确认，而不是直接执行。"
+      },
+      {
+        "term": "network-loss",
+        "phonetic": "/ˈnetwɜːrk lɔːs/",
+        "meaning": "断网的；与网络连接丢失相关的状态或提示",
+        "example": "A network-loss message should name what still works.",
+        "chineseExample": "断网提示应说明哪些功能仍可用。"
+      },
+      {
+        "term": "blamed",
+        "phonetic": "/bleɪmd/",
+        "meaning": "被责备的；用户感觉问题被归咎于自己的状态",
+        "example": "Fallback copy should not make the driver feel blamed.",
+        "chineseExample": "回退文案不应让驾驶员感觉被责备。"
+      },
+      {
+        "term": "followed",
+        "phonetic": "/ˈfɑːloʊd/",
+        "meaning": "跟随；后面接着出现另一个动作、提示或步骤",
+        "example": "A minimal apology should be followed by a practical option.",
+        "chineseExample": "最小化道歉后应接一个实用选项。"
+      },
+      {
+        "term": "useless",
+        "phonetic": "/ˈjuːsləs/",
+        "meaning": "无用的；无法帮助用户完成当前任务的",
+        "example": "Voice should not feel useless when the cloud disappears.",
+        "chineseExample": "云端消失时，语音不应显得无用。"
+      },
+      {
+        "term": "prepares",
+        "phonetic": "/prɪˈperz/",
+        "meaning": "准备；提前配置能力、流程或资源",
+        "example": "The design prepares an offline fallback for essential tasks.",
+        "chineseExample": "该设计为必要任务准备离线回退。"
+      },
+      {
+        "term": "choosing",
+        "phonetic": "/ˈtʃuːzɪŋ/",
+        "meaning": "选择；从多个选项中确定目标或路径",
+        "example": "Choosing a destination should resume after the signal returns.",
+        "chineseExample": "选择目的地应在信号恢复后继续。"
+      },
+      {
+        "term": "typed",
+        "phonetic": "/taɪpt/",
+        "meaning": "已输入的；通过键盘、触控或文本框录入的",
+        "example": "The typed destination should be preserved during signal loss.",
+        "chineseExample": "信号丢失期间，应保留已输入目的地。"
+      },
+      {
+        "term": "surprising",
+        "phonetic": "/sərˈpraɪzɪŋ/",
+        "meaning": "令人意外的；超出用户预期并可能造成困惑的",
+        "example": "Online recovery should avoid surprising the user.",
+        "chineseExample": "在线恢复应避免让用户意外。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Keeping voice useful when the cloud disappears",
+        "text": "In an intelligent cockpit, voice should not feel useless the moment the cloud connection disappears. A safe design separates essential vehicle commands from online features and prepares an offline voice fallback for the tasks that matter most. The local command set may include climate control, defrosting, volume, cancel, and emergency calling, while navigation search or open conversation may wait for reconnection. The HMI should explain this capability boundary with brief microcopy: the assistant is in degraded mode, but key controls still work. When recognition confidence is low, a confidence prompt can ask the driver to repeat only the unclear part, not the whole request. Good recovery also depends on state preservation. If the driver was choosing a destination before signal loss, the system should preserve the typed or spoken place name and resume from the last confirmed step. After the network returns, graceful handback lets the assistant continue online without surprising the user or restarting the dialogue. The tone matters. Use a minimal apology, name the current status, and offer one practical option. Calm fallback language protects trust because it makes the limitation understandable and the next action obvious.",
+        "translation": "在智能座舱中，语音不应在云端连接消失的瞬间变得无用。安全的设计会把必要车控指令和在线功能分开，并为最重要的任务准备离线语音回退。本地指令集可以包括空调、除霜、音量、取消和紧急呼叫，而导航搜索或开放式对话可以等待重连。HMI 应用简短微文案解释这个能力边界：助手处于降级模式，但关键控制仍然可用。当识别置信度低时，置信度提示可以让驾驶员只重复不清楚的部分，而不是重复整个请求。良好的恢复还依赖状态保留。如果驾驶员在信号丢失前正在选择目的地，系统应保留输入或说出的地点名称，并从上一次确认的步骤继续。网络恢复后，平滑交还让助手继续在线处理，而不会让用户意外或重新开始对话。语气同样重要。使用最小化道歉，说明当前状态，并提供一个实用选项。平静的回退语言能保护信任，因为它让限制更容易理解，也让下一步更明显。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A safe design separates essential vehicle commands from online features and prepares an offline voice fallback for the tasks that matter most.",
+        "translation": "安全的设计会把必要车控指令和在线功能分开，并为最重要的任务准备离线语音回退。",
+        "breakdown": "A safe design 是主语；separates 和 prepares 是并列谓语；that matter most 修饰 tasks，说明优先覆盖的任务范围。"
+      },
+      {
+        "sentence": "The HMI should explain this capability boundary with brief microcopy: the assistant is in degraded mode, but key controls still work.",
+        "translation": "HMI 应用简短微文案解释这个能力边界：助手处于降级模式，但关键控制仍然可用。",
+        "breakdown": "should explain 表示设计建议；with brief microcopy 表示方式；冒号后给出可直接使用的状态提示内容。"
+      },
+      {
+        "sentence": "When recognition confidence is low, a confidence prompt can ask the driver to repeat only the unclear part, not the whole request.",
+        "translation": "当识别置信度低时，置信度提示可以让驾驶员只重复不清楚的部分，而不是重复整个请求。",
+        "breakdown": "When 引导条件；can ask 表示可采用的交互动作；only...not... 强调降低驾驶员负荷。"
+      },
+      {
+        "sentence": "After the network returns, graceful handback lets the assistant continue online without surprising the user or restarting the dialogue.",
+        "translation": "网络恢复后，平滑交还让助手继续在线处理，而不会让用户意外或重新开始对话。",
+        "breakdown": "After 引导时间条件；lets the assistant continue 是核心结构；without 后面列出交还时应避免的两个问题。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 offline voice fallback、local command set、capability boundary 和 graceful handback。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "先完整朗读英文长文，再用中文复述离线语音回退应覆盖哪些任务、哪些任务可以等待重连。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 The HMI should explain... 和 When recognition confidence is low... 各造一个新的座舱降级提示句。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向语音产品经理说明：为什么断网时要保留上下文、使用最小化道歉，并提供一个可执行选项。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-14-in-cabin-payment-identity-confirmation",
     "date": "2026-09-14",
     "title": "In-cabin payment and identity confirmation in intelligent cockpits",

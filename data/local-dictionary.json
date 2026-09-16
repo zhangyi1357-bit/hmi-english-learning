@@ -1560,6 +1560,13 @@
     "The cockpit uses backrest to keep comfort assistance understandable and controllable.",
     "座舱使用“backrest”让舒适辅助更容易理解和控制。"
   ],
+  "backup": [
+    "/ˈbækʌp/",
+    "备份；主能力失效时提供连续服务的替代方案",
+    "",
+    "A backup grammar can handle simple commands offline.",
+    "备份语法可以离线处理简单指令。"
+  ],
   "balances": [
     "/'bælәns/",
     "名词：平衡, 差额；平衡, 相等；称, 权衡, 比较, 使平衡, 结算, 抵消",
@@ -1786,6 +1793,13 @@
     "",
     "Blame appears in today's navigation prompt timing lesson.",
     "在这句话中，“blame”来自今天的导航提示时机学习内容。"
+  ],
+  "blamed": [
+    "/bleɪmd/",
+    "被责备的；用户感觉问题被归咎于自己的状态",
+    "",
+    "Fallback copy should not make the driver feel blamed.",
+    "回退文案不应让驾驶员感觉被责备。"
   ],
   "blaming": [
     "/ˈbleɪmɪŋ/",
@@ -2121,6 +2135,13 @@
     "在这句话中，“call”可理解为“呼叫, 访问, 打电话, 号召, 召集, 要求；呼叫, 召集, 打电话；叫喊, 访问, 叫牌”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "calling": [
+    "/ˈkɔːlɪŋ/",
+    "呼叫；通过语音或系统发起电话、紧急联系或服务请求",
+    "",
+    "Emergency calling should remain available in offline mode.",
+    "紧急呼叫在离线模式下仍应可用。"
+  ],
   "calls": [
     "/kɔːlz/",
     "电话；呼叫",
@@ -2285,6 +2306,13 @@
     "When the road becomes narrow, the interface should explain which capability is limited.",
     "在这句话中，“capability”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "capability boundary": [
+    "/ˌkeɪpəˈbɪləti ˈbaʊndəri/",
+    "能力边界；系统当前能做和不能做的范围说明",
+    "",
+    "Capability boundary messages should be short, specific, and action oriented.",
+    "能力边界提示应简短、具体，并指向可执行操作。"
+  ],
   "car": [
     "/kɑː/",
     "名词：汽车, 客车；[机] 车",
@@ -2335,6 +2363,13 @@
     "",
     "Carefully appears in today's navigation prompt timing lesson.",
     "在这句话中，“carefully”来自今天的导航提示时机学习内容。"
+  ],
+  "carplay": [
+    "/ˈkɑːrpleɪ/",
+    "CarPlay；苹果车载投屏与交互生态",
+    "",
+    "CarPlay voice features may need a separate fallback path.",
+    "CarPlay 语音功能可能需要单独的回退路径。"
   ],
   "carry": [
     "/ˈkæri/",
@@ -2602,6 +2637,13 @@
     "The assistant may choose a private display.",
     "在这句话中，“choose”用于补充今天英文文本的可点击词义覆盖。"
   ],
+  "choosing": [
+    "/ˈtʃuːzɪŋ/",
+    "选择；从多个选项中确定目标或路径",
+    "",
+    "Choosing a destination should resume after the signal returns.",
+    "选择目的地应在信号恢复后继续。"
+  ],
   "claim": [
     "/按语境朗读/",
     "结论；系统提出的说法或判断",
@@ -2797,6 +2839,13 @@
     "The vehicle should ask for explicit consent before sharing location-based preferences with cloud services.",
     "在这句话中，“cloud”可理解为“云, 阴暗, 烟雾, 疑团；以云遮敝, 笼罩, 使黯然；乌云密布, 阴沉”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "cloud dependency": [
+    "/klaʊd dɪˈpendənsi/",
+    "云端依赖；功能依赖远程服务、网络连接或在线模型才能完整运行的状态",
+    "",
+    "A clear HMI label can explain which feature has a cloud dependency.",
+    "清楚的 HMI 标签可以解释哪个功能存在云端依赖。"
   ],
   "cloud service": [
     "/klaʊd ˈsɜːrvɪs/",
@@ -3309,6 +3358,13 @@
     "A small confidence gap means the cockpit should confirm before changing a safety-related setting.",
     "置信度差距较小时，座舱在改变安全相关设置前应先确认。"
   ],
+  "confidence prompt": [
+    "/ˈkɑːnfɪdəns prɑːmpt/",
+    "置信度提示；系统在识别不确定时请求用户确认或改述的提示",
+    "",
+    "A confidence prompt is safer than executing a low-confidence command.",
+    "置信度提示比执行低置信度指令更安全。"
+  ],
   "confidence score": [
     "/ˈkɑːnfɪdəns skɔːr/",
     "置信分数；系统对自己理解是否正确的估计",
@@ -3500,6 +3556,13 @@
     "",
     "Connected scenarios reveal cross-screen issues.",
     "连贯场景会暴露跨屏问题。"
+  ],
+  "connection": [
+    "/kəˈnekʃn/",
+    "连接；车辆与网络、账户、手机或云端服务之间的通信状态",
+    "",
+    "Connection status should be described in plain language.",
+    "连接状态应使用自然语言说明。"
   ],
   "connects": [
     "/暂无音标/",
@@ -4526,6 +4589,13 @@
     "The word defogging appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“defogging”用于表达相关系统状态或用户影响。"
   ],
+  "defrosting": [
+    "/diːˈfrɔːstɪŋ/",
+    "除霜；清除车窗雾气或冰霜的空调安全功能",
+    "",
+    "Defrosting should remain available during offline voice fallback.",
+    "离线语音回退期间，除霜应保持可用。"
+  ],
   "degradation": [
     "/ˌdeɡrəˈdeɪʃn/",
     "降级；性能或能力下降",
@@ -4657,6 +4727,13 @@
     "",
     "The cockpit uses the word departure in privacy prompts when it fits the user context.",
     "在隐私提示中，“departure”可结合用户场景理解。"
+  ],
+  "dependency": [
+    "/dɪˈpendənsi/",
+    "依赖；某项能力对网络、云端服务或其他系统条件的依靠",
+    "",
+    "Cloud dependency should be visible before a feature fails.",
+    "云端依赖应在功能失败前可见。"
   ],
   "depends": [
     "/dɪˈpɛndz/",
@@ -5628,6 +5705,13 @@
     "",
     "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
     "在这句话中，“electric”可理解为“电动的；由电能驱动”。"
+  ],
+  "emergency": [
+    "/ɪˈmɜːrdʒənsi/",
+    "紧急情况；需要快速、低负荷响应的安全相关场景",
+    "",
+    "Emergency calling should not wait for cloud recognition.",
+    "紧急呼叫不应等待云端识别。"
   ],
   "emotion": [
     "/ɪˈmoʊʃn/",
@@ -6732,6 +6816,13 @@
     "A follow-up question should be short enough for driving.",
     "追问应足够简短，适合驾驶场景。"
   ],
+  "followed": [
+    "/ˈfɑːloʊd/",
+    "跟随；后面接着出现另一个动作、提示或步骤",
+    "",
+    "A minimal apology should be followed by a practical option.",
+    "最小化道歉后应接一个实用选项。"
+  ],
   "following": [
     "/ˈfɒləʊɪŋ/",
     "动词：跟随, 沿行, 遵循, 追求；跟随, 接着；跟随, 追随",
@@ -6887,6 +6978,13 @@
     "",
     "The front passenger may adjust comfort settings without changing driving modes.",
     "在这句话中，“front passenger”用于描述智能座舱多人语音控制。"
+  ],
+  "frustration": [
+    "/frʌˈstreɪʃn/",
+    "挫败感；用户因任务受阻、重复操作或反馈不清而产生的负面体验",
+    "",
+    "Clear recovery steps reduce frustration.",
+    "清楚的恢复步骤能降低挫败感。"
   ],
   "full": [
     "/fʊl/",
@@ -7171,6 +7269,20 @@
     "Graceful degradation keeps the cockpit useful when one sensor becomes unreliable.",
     "当某个传感器变得不可靠时，优雅降级让座舱仍保持可用。"
   ],
+  "graceful handback": [
+    "/ˈɡreɪsfl ˈhændbæk/",
+    "平滑交还；在线能力恢复后，把任务从本地模式自然交回云端或完整模式",
+    "",
+    "Graceful handback prevents the assistant from repeating the whole dialogue after reconnection.",
+    "平滑交还能避免重连后助手重复整个对话。"
+  ],
+  "grammar": [
+    "/ˈɡræmər/",
+    "语法；语音系统用于匹配本地命令的限定表达集合",
+    "",
+    "A small grammar can be reliable for safety commands.",
+    "小范围语法可让安全指令更可靠。"
+  ],
   "graphics": [
     "/待补充/",
     "语境词：graphics；用于理解今天健康舒适提示主题中的英文表达",
@@ -7235,6 +7347,13 @@
     "Together, however, these signals can describe a driver's routine, relationships, and habits.",
     "在这句话中，“habits”可理解为“习惯, 嗜好, 习性；使穿衣”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "handback": [
+    "/ˈhændbæk/",
+    "交还；能力恢复后把任务交回完整模式或原系统的过程",
+    "",
+    "Handback should continue the task without repeating old prompts.",
+    "交还应继续任务，而不是重复旧提示。"
   ],
   "handing": [
     "/待查/",
@@ -9149,6 +9268,13 @@
     "Local appears in today's seat memory profile lesson.",
     "在这句话中，“local”来自今天的座椅记忆档案学习内容。"
   ],
+  "local command set": [
+    "/ˈloʊkl kəˈmænd set/",
+    "本地指令集；无需联网即可识别和执行的车控语音命令范围",
+    "",
+    "The local command set should cover climate, defrosting, volume, and emergency calling.",
+    "本地指令集应覆盖空调、除霜、音量和紧急呼叫。"
+  ],
   "local preference storage": [
     "/ˈloʊkl ˈprefərəns ˈstɔːrɪdʒ/",
     "本地偏好存储；把用户偏好保存在车端设备内以减少不必要的数据上传",
@@ -9396,6 +9522,13 @@
     "The same low-battery phone reminder may be useful on a straight highway and distracting during lane guidance.",
     "在这句话中，“low-battery”可理解为“电量不足”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "low-confidence": [
+    "/loʊ ˈkɑːnfɪdəns/",
+    "低置信度的；系统对识别结果不够确定的状态",
+    "",
+    "A low-confidence result should trigger confirmation instead of action.",
+    "低置信度结果应触发确认，而不是直接执行。"
   ],
   "low-distraction": [
     "/暂无音标/",
@@ -10128,6 +10261,13 @@
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“minimal”可结合车内助手澄清场景理解。"
   ],
+  "minimal apology": [
+    "/ˈmɪnɪməl əˈpɑːlədʒi/",
+    "最小化道歉；用简短道歉配合可执行替代方案，避免冗长解释",
+    "",
+    "A minimal apology should be followed by a practical fallback option.",
+    "最小化道歉后应跟随一个实用的回退选项。"
+  ],
   "minimal wording": [
     "/ˈmɪnɪməl ˈwɜːrdɪŋ/",
     "最少措辞；以尽量少的词完成提示、确认或反馈",
@@ -10749,6 +10889,27 @@
     "The word neither appears in today's cockpit summary practice.",
     "在这个语境中，“neither”可理解为“两者都不”。"
   ],
+  "network": [
+    "/ˈnetwɜːrk/",
+    "网络；支持在线语音、地图、账户和云服务的数据连接",
+    "",
+    "Network quality can change quickly in tunnels.",
+    "隧道中网络质量可能快速变化。"
+  ],
+  "network-loss": [
+    "/ˈnetwɜːrk lɔːs/",
+    "断网的；与网络连接丢失相关的状态或提示",
+    "",
+    "A network-loss message should name what still works.",
+    "断网提示应说明哪些功能仍可用。"
+  ],
+  "network-loss cue": [
+    "/ˈnetwɜːrk lɔːs kjuː/",
+    "断网提示；告知用户连接丢失及可用替代能力的界面或语音反馈",
+    "",
+    "A network-loss cue should appear without making the driver feel blamed.",
+    "断网提示应出现，但不应让驾驶员感觉被责备。"
+  ],
   "neutral": [
     "/ˈnuːtrəl/",
     "中性的；不偏向某个决定的",
@@ -11127,6 +11288,20 @@
     "在这句话中，“office”可理解为“办公室, 部, 公职, 职责”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "offline": [
+    "/ˈɔːflaɪn/",
+    "离线；没有可用网络或不使用在线服务的状态",
+    "",
+    "Offline mode should still support common vehicle controls.",
+    "离线模式仍应支持常用车控。"
+  ],
+  "offline voice fallback": [
+    "/ˈɔːflaɪn vɔɪs ˈfɔːlbæk/",
+    "离线语音回退；云端语音不可用时，本地语音能力接管关键指令的机制",
+    "",
+    "Offline voice fallback should keep essential commands available when the network is unstable.",
+    "网络不稳定时，离线语音回退应保持关键指令可用。"
+  ],
   "often": [
     "/ˈɒfən/",
     "副词：时常, 常常",
@@ -11214,6 +11389,13 @@
     "",
     "Ongoing should support a safer and clearer cockpit experience.",
     "在这句话中，“ongoing”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "online": [
+    "/ˈɑːnlaɪn/",
+    "在线；可以连接云端服务并使用完整联网能力的状态",
+    "",
+    "Online recovery should not surprise the user.",
+    "在线恢复不应让用户意外。"
   ],
   "only": [
     "/'әunli/",
@@ -11325,6 +11507,13 @@
     "When traffic is light and the road is straight, a short climate adjustment or media choice may be acceptable.",
     "在这句话中，“or”可理解为“或, 或者”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "oriented": [
+    "/ˈɔːrientɪd/",
+    "导向的；围绕某个目标或操作方式组织的",
+    "",
+    "Action oriented messages help the driver recover quickly.",
+    "行动导向的提示帮助驾驶员快速恢复。"
   ],
   "original plan": [
     "/əˈrɪdʒənl plæn/",
@@ -12357,6 +12546,13 @@
     "",
     "If perception starts to degrade, the cockpit should prepare the driver early.",
     "在这句话中，“prepare the driver”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "prepares": [
+    "/prɪˈperz/",
+    "准备；提前配置能力、流程或资源",
+    "",
+    "The design prepares an offline fallback for essential tasks.",
+    "该设计为必要任务准备离线回退。"
   ],
   "present": [
     "/ˈpɹɛz.ənt/",
@@ -13394,6 +13590,13 @@
     "Range confidence should be shown before the cockpit recommends a faster charger.",
     "在这句话中，“recommends”可理解为“推荐；提出建议”。"
   ],
+  "reconnection": [
+    "/ˌriːkəˈnekʃn/",
+    "重连；网络、云服务或账户连接恢复的过程",
+    "",
+    "After reconnection, the assistant can offer to continue.",
+    "重连后，助手可以询问是否继续。"
+  ],
   "record": [
     "/ˈrekərd/",
     "记录；系统保存的用户偏好或历史状态",
@@ -13422,6 +13625,13 @@
     "",
     "A recoverable action can proceed with a brief toast and an undo option.",
     "可恢复操作可以通过简短提示和撤销选项继续执行。"
+  ],
+  "recoverable dialogue": [
+    "/rɪˈkʌvərəbl ˈdaɪəlɔːɡ/",
+    "可恢复对话；中断、识别失败或模式变化后仍能继续完成任务的对话流程",
+    "",
+    "A recoverable dialogue lets the driver continue from the last confirmed step.",
+    "可恢复对话让驾驶员从上一次确认的步骤继续。"
   ],
   "recoverable mistake": [
     "/rɪˈkʌvərəbl mɪˈsteɪk/",
@@ -13797,6 +14007,13 @@
     "",
     "The driver repeatedly lowers the cabin temperature on long trips.",
     "在这句话中，repeatedly 表示驾驶员多次执行同一动作。"
+  ],
+  "repeating": [
+    "/rɪˈpiːtɪŋ/",
+    "重复；再次说出或执行相同内容",
+    "",
+    "Avoid repeating the whole dialogue after reconnection.",
+    "重连后避免重复整个对话。"
   ],
   "repeats": [
     "/ri'pi:t/",
@@ -16275,6 +16492,13 @@
     "State of charge should be paired with a plain-language explanation of driving impact.",
     "荷电状态应搭配对驾驶影响的通俗解释。"
   ],
+  "state preservation": [
+    "/steɪt ˌprezərˈveɪʃn/",
+    "状态保留；在网络切换、页面跳转或语音失败后保存任务上下文",
+    "",
+    "State preservation helps the cockpit resume navigation search after the signal returns.",
+    "状态保留帮助座舱在信号恢复后继续导航搜索。"
+  ],
   "state transition": [
     "/steɪt trænˈzɪʃn/",
     "状态转换；系统从一个可见或可感知状态切换到另一个状态",
@@ -16818,6 +17042,13 @@
     "",
     "Graceful degradation protects the driver from surprise.",
     "优雅降级可以避免驾驶员感到突然。"
+  ],
+  "surprising": [
+    "/sərˈpraɪzɪŋ/",
+    "令人意外的；超出用户预期并可能造成困惑的",
+    "",
+    "Online recovery should avoid surprising the user.",
+    "在线恢复应避免让用户意外。"
   ],
   "surveillance": [
     "/sɚˈveɪ.ləns/",
@@ -17861,6 +18092,13 @@
     "在这句话中，“two”可理解为“二, 二个”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "typed": [
+    "/taɪpt/",
+    "已输入的；通过键盘、触控或文本框录入的",
+    "",
+    "The typed destination should be preserved during signal loss.",
+    "信号丢失期间，应保留已输入目的地。"
+  ],
   "uncertain": [
     "/.ʌn'sә:tn/",
     "形容词：不确定的, 无常的, 不确信的, 不可预测的",
@@ -18180,6 +18418,13 @@
     "",
     "Useful guidance explains whether to retry, cancel, or contact support.",
     "有用引导会说明应重试、取消还是联系客服。"
+  ],
+  "useless": [
+    "/ˈjuːsləs/",
+    "无用的；无法帮助用户完成当前任务的",
+    "",
+    "Voice should not feel useless when the cloud disappears.",
+    "云端消失时，语音不应显得无用。"
   ],
   "user": [
     "/ˈjuːzə/",
