@@ -1,5 +1,699 @@
 [
   {
+    "id": "2026-09-17-ar-lane-guidance-visual-anchoring",
+    "date": "2026-09-17",
+    "title": "AR lane guidance and visual anchoring in intelligent cockpits",
+    "topic": "智能座舱 AR 车道引导与视觉锚定",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明 AR 车道引导、空间配准、遮挡管理、扫视预算、校准漂移和安全回退。",
+    "words": [
+      {
+        "term": "AR lane guidance",
+        "phonetic": "/eɪ ɑːr leɪn ˈɡaɪdns/",
+        "meaning": "AR 车道引导；用增强现实提示帮助驾驶员理解应走车道和转向时机",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；让虚拟提示稳定贴合道路、车道或目标物的设计方法",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "spatial registration",
+        "phonetic": "/ˈspeɪʃl ˌredʒɪˈstreɪʃn/",
+        "meaning": "空间配准；虚拟图形与真实道路几何位置准确对应的过程",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "occlusion management",
+        "phonetic": "/əˈkluːʒn ˈmænɪdʒmənt/",
+        "meaning": "遮挡管理；控制 AR 元素不要挡住行人、车辆、标志或关键视野",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "depth cue",
+        "phonetic": "/depθ kjuː/",
+        "meaning": "深度线索；帮助用户判断提示距离、层级和道路位置的视觉信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "lane-level navigation",
+        "phonetic": "/leɪn ˈlevl ˌnævɪˈɡeɪʃn/",
+        "meaning": "车道级导航；精确到具体车道的导航指引",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可安全分配给界面的一小段视觉注意力",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "turn anticipation",
+        "phonetic": "/tɜːrn ænˌtɪsɪˈpeɪʃn/",
+        "meaning": "转向预判；在转弯或变道前提前给出节奏合适的提示",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "calibration drift",
+        "phonetic": "/ˌkælɪˈbreɪʃn drɪft/",
+        "meaning": "校准漂移；传感器或显示校准随时间偏移，导致 AR 位置不准",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "fallback arrow",
+        "phonetic": "/ˈfɔːlbæk ˈæroʊ/",
+        "meaning": "回退箭头；AR 不可靠时切换到传统二维导航箭头",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "AR lane guidance",
+        "phonetic": "/eɪ ɑːr leɪn ˈɡaɪdns/",
+        "meaning": "AR 车道引导；用增强现实提示帮助驾驶员理解应走车道和转向时机",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "visual anchoring",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkərɪŋ/",
+        "meaning": "视觉锚定；让虚拟提示稳定贴合道路、车道或目标物的设计方法",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "spatial registration",
+        "phonetic": "/ˈspeɪʃl ˌredʒɪˈstreɪʃn/",
+        "meaning": "空间配准；虚拟图形与真实道路几何位置准确对应的过程",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "occlusion management",
+        "phonetic": "/əˈkluːʒn ˈmænɪdʒmənt/",
+        "meaning": "遮挡管理；控制 AR 元素不要挡住行人、车辆、标志或关键视野",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "depth cue",
+        "phonetic": "/depθ kjuː/",
+        "meaning": "深度线索；帮助用户判断提示距离、层级和道路位置的视觉信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "lane-level navigation",
+        "phonetic": "/leɪn ˈlevl ˌnævɪˈɡeɪʃn/",
+        "meaning": "车道级导航；精确到具体车道的导航指引",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶员可安全分配给界面的一小段视觉注意力",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "turn anticipation",
+        "phonetic": "/tɜːrn ænˌtɪsɪˈpeɪʃn/",
+        "meaning": "转向预判；在转弯或变道前提前给出节奏合适的提示",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "calibration drift",
+        "phonetic": "/ˌkælɪˈbreɪʃn drɪft/",
+        "meaning": "校准漂移；传感器或显示校准随时间偏移，导致 AR 位置不准",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "fallback arrow",
+        "phonetic": "/ˈfɔːlbæk ˈæroʊ/",
+        "meaning": "回退箭头；AR 不可靠时切换到传统二维导航箭头",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "augmented reality",
+        "phonetic": "/ɔːɡˈmentɪd riˈæləti/",
+        "meaning": "增强现实；把数字信息叠加到真实环境中的显示技术",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "head-up display",
+        "phonetic": "/hed ʌp dɪˈspleɪ/",
+        "meaning": "抬头显示；把关键信息投射到驾驶员前方视野中的显示系统",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "road geometry",
+        "phonetic": "/roʊd dʒiˈɑːmətri/",
+        "meaning": "道路几何；车道曲率、坡度、交叉口和道路边界等结构信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "instrument cluster",
+        "phonetic": "/ˈɪnstrəmənt ˈklʌstər/",
+        "meaning": "仪表盘；显示车速、警报、能耗和车辆状态的驾驶信息区域",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "safety alert",
+        "phonetic": "/ˈseɪfti əˈlɜːrt/",
+        "meaning": "安全警报；提示风险、故障或需要驾驶员立即注意的信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "navigation cue",
+        "phonetic": "/ˌnævɪˈɡeɪʃn kjuː/",
+        "meaning": "导航提示；用于说明路线、车道、方向或距离的界面线索",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "guidance layer",
+        "phonetic": "/ˈɡaɪdns ˈleɪər/",
+        "meaning": "引导层；AR 或导航系统中承载方向提示的视觉层级",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "real world",
+        "phonetic": "/ˈriːəl wɜːrld/",
+        "meaning": "真实世界；车辆外部道路、交通参与者和环境",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "digital overlay",
+        "phonetic": "/ˈdɪdʒɪtl ˈoʊvərleɪ/",
+        "meaning": "数字叠加层；覆盖在真实视野上的虚拟图形或信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "driver attention",
+        "phonetic": "/ˈdraɪvər əˈtenʃn/",
+        "meaning": "驾驶员注意力；驾驶员处理道路和界面信息的认知资源",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "attention demand",
+        "phonetic": "/əˈtenʃn dɪˈmænd/",
+        "meaning": "注意力需求；某个界面元素占用驾驶员视觉或认知资源的程度",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "target lane",
+        "phonetic": "/ˈtɑːrɡɪt leɪn/",
+        "meaning": "目标车道；导航建议驾驶员进入或保持的车道",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "merge lane",
+        "phonetic": "/mɜːrdʒ leɪn/",
+        "meaning": "汇入车道；车辆需要并入主路或其他车流的车道",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "exit ramp",
+        "phonetic": "/ˈeksɪt ræmp/",
+        "meaning": "出口匝道；车辆离开主路进入出口的道路部分",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "roundabout",
+        "phonetic": "/ˈraʊndəbaʊt/",
+        "meaning": "环岛；车辆按环形道路行驶并选择出口的交叉路口",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "meaning": "交叉口；两条或多条道路相交的位置",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "curve",
+        "phonetic": "/kɜːrv/",
+        "meaning": "弯道；道路方向连续变化的路段",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "distance marker",
+        "phonetic": "/ˈdɪstəns ˈmɑːrkər/",
+        "meaning": "距离标记；说明距离转向点或目标位置还有多远的提示",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "timing threshold",
+        "phonetic": "/ˈtaɪmɪŋ ˈθreʃhoʊld/",
+        "meaning": "时机阈值；触发提示、淡入或切换的时间或距离条件",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "fade-in",
+        "phonetic": "/feɪd ɪn/",
+        "meaning": "淡入；界面元素逐渐出现，降低突兀感",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "fade-out",
+        "phonetic": "/feɪd aʊt/",
+        "meaning": "淡出；界面元素逐渐消失，避免遮挡或干扰",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "contrast ratio",
+        "phonetic": "/ˈkɑːntræst ˈreɪʃioʊ/",
+        "meaning": "对比度；前景与背景之间的亮度差异",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "visual clutter",
+        "phonetic": "/ˈvɪʒuəl ˈklʌtər/",
+        "meaning": "视觉杂乱；界面元素过多导致难以快速理解的状态",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "motion parallax",
+        "phonetic": "/ˈmoʊʃn ˈpærəlæks/",
+        "meaning": "运动视差；观察者移动时不同距离物体产生的相对位移线索",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "sensor fusion",
+        "phonetic": "/ˈsensər ˈfjuːʒn/",
+        "meaning": "传感器融合；整合摄像头、定位、地图和车辆信号来提升判断准确性",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "map confidence",
+        "phonetic": "/mæp ˈkɑːnfɪdəns/",
+        "meaning": "地图置信度；地图数据对当前道路状态的可信程度",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "position accuracy",
+        "phonetic": "/pəˈzɪʃn ˈækjərəsi/",
+        "meaning": "定位精度；系统判断车辆位置的准确程度",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "user trust",
+        "phonetic": "/ˈjuːzər trʌst/",
+        "meaning": "用户信任；用户相信系统可靠、可理解且可控的程度",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户信任水平与系统真实能力相匹配",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "safe fallback",
+        "phonetic": "/seɪf ˈfɔːlbæk/",
+        "meaning": "安全回退；主功能不可靠时切换到更稳妥、更清楚的替代方案",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "two-dimensional map",
+        "phonetic": "/tuː daɪˈmenʃənl mæp/",
+        "meaning": "二维地图；传统平面地图视图",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "status banner",
+        "phonetic": "/ˈsteɪtəs ˈbænər/",
+        "meaning": "状态横幅；用简短文字说明当前能力或限制的界面区域",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清晰语言；避免术语堆叠、让驾驶员快速理解的表达方式",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "horizon line",
+        "phonetic": "/həˈraɪzn laɪn/",
+        "meaning": "地平线；视野中道路和天空或远景相接的参考线",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "vanishing point",
+        "phonetic": "/ˈvænɪʃɪŋ pɔɪnt/",
+        "meaning": "消失点；透视中平行线看似汇聚的位置",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "alignment check",
+        "phonetic": "/əˈlaɪnmənt tʃek/",
+        "meaning": "对齐检查；确认 AR 图形是否与道路目标一致的测试步骤",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶任务、界面任务和环境压力叠加后的总负担",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "context handoff",
+        "phonetic": "/ˈkɑːntekst ˈhændɔːf/",
+        "meaning": "上下文交接；在 AR、地图和仪表之间保持任务信息连续",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "route confidence",
+        "phonetic": "/ruːt ˈkɑːnfɪdəns/",
+        "meaning": "路线置信度；系统对推荐路线和车道选择正确性的信心",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "lane boundary",
+        "phonetic": "/leɪn ˈbaʊndəri/",
+        "meaning": "车道边界；区分相邻车道或道路边缘的线条或区域",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "microcopy",
+        "phonetic": "/ˈmaɪkroʊkɑːpi/",
+        "meaning": "微文案；界面中短小、直接、帮助用户行动的文字",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "drift warning",
+        "phonetic": "/drɪft ˈwɔːrnɪŋ/",
+        "meaning": "漂移警告；提示 AR 位置可能不准或已发生偏移的信息",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "headway",
+        "phonetic": "/ˈhedweɪ/",
+        "meaning": "车距时间；车辆与前车之间以时间衡量的安全间隔",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "curb",
+        "phonetic": "/kɜːrb/",
+        "meaning": "路缘；道路边缘或人行道边界",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "pedestrian",
+        "phonetic": "/pəˈdestriən/",
+        "meaning": "行人；道路环境中的步行交通参与者",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "readability",
+        "phonetic": "/ˌriːdəˈbɪləti/",
+        "meaning": "可读性；文字或图形能否被快速看清和理解",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "reassurance",
+        "phonetic": "/ˌriːəˈʃʊrəns/",
+        "meaning": "安抚；通过清楚状态和下一步建议降低用户不安",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "destination",
+        "phonetic": "/ˌdestɪˈneɪʃn/",
+        "meaning": "目的地；导航任务的最终到达位置",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "maneuver",
+        "phonetic": "/məˈnuːvər/",
+        "meaning": "驾驶动作；转弯、变道、汇入或驶出等操作",
+        "example": "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+        "chineseExample": "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+      },
+      {
+        "term": "AR",
+        "phonetic": "/eɪ ɑːr/",
+        "meaning": "增强现实的缩写；augmented reality 的常用简写",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "instrument",
+        "phonetic": "/ˈɪnstrəmənt/",
+        "meaning": "仪表；用于显示或测量车辆状态的信息部件",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "free",
+        "phonetic": "/friː/",
+        "meaning": "空闲的；未被占用的，可留给其他信息或操作",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "attached",
+        "phonetic": "/əˈtætʃt/",
+        "meaning": "附着的；在视觉上像固定在某个真实对象上",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "geometry",
+        "phonetic": "/dʒiˈɑːmətri/",
+        "meaning": "几何结构；道路形状、曲线和空间关系",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "ramps",
+        "phonetic": "/ræmps/",
+        "meaning": "匝道；ramp 的复数，指进出主路的连接道路",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "intersections",
+        "phonetic": "/ˌɪntərˈsekʃnz/",
+        "meaning": "交叉口；intersection 的复数",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "registration",
+        "phonetic": "/ˌredʒɪˈstreɪʃn/",
+        "meaning": "配准；让虚拟元素与真实位置准确对应",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "highlighted",
+        "phonetic": "/ˈhaɪlaɪtɪd/",
+        "meaning": "高亮的；被视觉强调以便快速识别",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "parallax",
+        "phonetic": "/ˈpærəlæks/",
+        "meaning": "视差；由观察位置变化产生的相对位移线索",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "ratio",
+        "phonetic": "/ˈreɪʃioʊ/",
+        "meaning": "比率；两个数值或视觉量之间的比例关系",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "belongs",
+        "phonetic": "/bɪˈlɔːŋz/",
+        "meaning": "属于；在界面语境中表示信息应归属的位置或对象",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "spending",
+        "phonetic": "/ˈspendɪŋ/",
+        "meaning": "消耗；在注意力语境中表示占用时间或认知资源",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "much",
+        "phonetic": "/mʌtʃ/",
+        "meaning": "过多的；表示程度较高或数量较大",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "accuracy",
+        "phonetic": "/ˈækjərəsi/",
+        "meaning": "准确性；系统结果接近真实状态的程度",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "calibrate",
+        "phonetic": "/ˈkælɪbreɪt/",
+        "meaning": "校准；调整系统或用户理解，使其接近真实能力",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "follow",
+        "phonetic": "/ˈfɑːloʊ/",
+        "meaning": "跟随；按照路线、提示或说明执行",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "two-dimensional",
+        "phonetic": "/tuː daɪˈmenʃənl/",
+        "meaning": "二维的；以平面形式呈现，没有立体深度",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "field",
+        "phonetic": "/fiːld/",
+        "meaning": "视野；驾驶员可看到或处理的信息范围",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      },
+      {
+        "term": "clean",
+        "phonetic": "/kliːn/",
+        "meaning": "清爽的；界面中杂乱较少、易于理解的",
+        "example": "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+        "chineseExample": "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Making AR guidance feel attached to the road",
+        "text": "AR lane guidance can make navigation easier only when the digital overlay feels attached to the real road. In an intelligent cockpit, the guidance layer should respect road geometry, lane boundaries, curves, exit ramps, and intersections. Strong visual anchoring depends on spatial registration: the arrow, distance marker, or highlighted target lane must stay aligned as the vehicle moves. Designers also need occlusion management. A navigation cue should never hide a pedestrian, a curb, or a safety alert in the instrument cluster. Depth cues, motion parallax, contrast ratio, and careful fade-in timing help the driver understand where the instruction belongs without spending too much glance budget. When map confidence or position accuracy becomes weak, the HMI should calibrate trust with plain language. It can show a short status banner such as AR alignment is reduced, follow the map view, then switch to a fallback arrow or a two-dimensional map. This safe fallback is not a failure if it protects driver attention. The best experience keeps the route obvious, the visual field clean, and the next maneuver understandable before the driver reaches the decision point.",
+        "translation": "只有当数字叠加层像是贴在真实道路上时，AR 车道引导才能让导航更容易。在智能座舱中，引导层应尊重道路几何、车道边界、弯道、出口匝道和交叉口。强视觉锚定依赖空间配准：箭头、距离标记或高亮目标车道必须在车辆移动时保持对齐。设计师还需要处理遮挡管理。导航提示绝不能遮住行人、路缘或仪表盘中的安全警报。深度线索、运动视差、对比度和谨慎的淡入时机，能帮助驾驶员理解指令属于哪里，同时不过度占用扫视预算。当地图置信度或定位精度变弱时，HMI 应用清晰语言校准信任。它可以显示简短状态横幅，例如“AR 对齐度降低，请参考地图视图”，然后切换到回退箭头或二维地图。如果安全回退能保护驾驶员注意力，它就不是失败。最好的体验会让路线清楚、视野干净，并让驾驶员在到达决策点前理解下一步驾驶动作。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "AR lane guidance can make navigation easier only when the digital overlay feels attached to the real road.",
+        "translation": "只有当数字叠加层像是贴在真实道路上时，AR 车道引导才能让导航更容易。",
+        "breakdown": "only when 引导必要条件；the digital overlay feels attached to the real road 说明 AR 提示需要建立空间可信感。"
+      },
+      {
+        "sentence": "Strong visual anchoring depends on spatial registration: the arrow, distance marker, or highlighted target lane must stay aligned as the vehicle moves.",
+        "translation": "强视觉锚定依赖空间配准：箭头、距离标记或高亮目标车道必须在车辆移动时保持对齐。",
+        "breakdown": "depends on 表示依赖关系；冒号后列出被配准的对象；as the vehicle moves 强调动态场景中的持续对齐。"
+      },
+      {
+        "sentence": "A navigation cue should never hide a pedestrian, a curb, or a safety alert in the instrument cluster.",
+        "translation": "导航提示绝不能遮住行人、路缘或仪表盘中的安全警报。",
+        "breakdown": "should never hide 是强约束表达；a pedestrian, a curb, or a safety alert 列出遮挡管理中的关键保护对象。"
+      },
+      {
+        "sentence": "This safe fallback is not a failure if it protects driver attention.",
+        "translation": "如果安全回退能保护驾驶员注意力，它就不是失败。",
+        "breakdown": "This safe fallback 是主语；is not a failure 是判断；if it protects driver attention 说明为什么回退仍然是好的体验。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 AR lane guidance、visual anchoring、spatial registration 和 occlusion management。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "完整跟读英文长文，再用中文复述 AR 提示为什么必须贴合道路并避免遮挡关键对象。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 depends on... 和 should never hide... 各写一句智能座舱 AR 导航设计建议。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向设计评审说明：当定位精度下降时，为什么要显示状态横幅并切换到回退箭头。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-16-offline-voice-fallback-recoverable-dialogue",
     "date": "2026-09-16",
     "title": "Offline voice fallback and recoverable dialogue in intelligent cockpits",

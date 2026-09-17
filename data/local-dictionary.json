@@ -132,6 +132,13 @@
     "The word accountable appears in today's cockpit summary practice.",
     "在这个语境中，“accountable”可理解为“可追责的”。"
   ],
+  "accuracy": [
+    "/ˈækjərəsi/",
+    "准确性；系统结果接近真实状态的程度",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "accurate": [
     "/ˈak.jʊ.ɹɪt/",
     "形容词：正确的, 精确的",
@@ -641,6 +648,13 @@
     "Alignment must remain stable as the vehicle moves.",
     "在这句话中，“alignment”表示“对齐”。"
   ],
+  "alignment check": [
+    "/əˈlaɪnmənt tʃek/",
+    "对齐检查；确认 AR 图形是否与道路目标一致的测试步骤",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "all": [
     "/ɔːl/",
     "一切；全部；大家；全都；一切；全；整个；全体；都；全部；全身；那么；一切；全部；全体；所有的；全部的",
@@ -998,6 +1012,20 @@
     "The interface should separate a hint from an approved action.",
     "界面应区分提示和已批准动作。"
   ],
+  "ar": [
+    "/eɪ ɑːr/",
+    "增强现实的缩写；augmented reality 的常用简写",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
+  "ar lane guidance": [
+    "/eɪ ɑːr leɪn ˈɡaɪdns/",
+    "AR 车道引导；用增强现实提示帮助驾驶员理解应走车道和转向时机",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "ar-hud": [
     "/ˌeɪ ɑːr ˌhʌd/",
     "AR-HUD；增强现实抬头显示系统的缩写",
@@ -1173,6 +1201,13 @@
     "Context-sensitive timing is critical because a simple card can become distracting at the wrong moment.",
     "在这句话中，“at”可理解为“朝；向；在（某处）；在（表示学习或工作地点）；abbr. (=astatine)【化】(=Air Transport)；奥地利(Austria)；砹”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "attached": [
+    "/əˈtætʃt/",
+    "附着的；在视觉上像固定在某个真实对象上",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "attention": [
     "/ә'tenʃәn/",
@@ -1351,6 +1386,13 @@
     "",
     "Augmented guidance should make the road easier to understand.",
     "在这句话中，“augmented”表示“增强的”。"
+  ],
+  "augmented reality": [
+    "/ɔːɡˈmentɪd riˈæləti/",
+    "增强现实；把数字信息叠加到真实环境中的显示技术",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "augmented-reality": [
     "/ɔːɡˈmentɪd riˈæləti/",
@@ -1728,6 +1770,13 @@
     "",
     "A message is being prepared for private display.",
     "在这句话中，“being”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "belongs": [
+    "/bɪˈlɔːŋz/",
+    "属于；在界面语境中表示信息应归属的位置或对象",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "below": [
     "/待查/",
@@ -2112,6 +2161,13 @@
     "Calendar timing can support a route suggestion.",
     "日程时间可以支持路线建议。"
   ],
+  "calibrate": [
+    "/ˈkælɪbreɪt/",
+    "校准；调整系统或用户理解，使其接近真实能力",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "calibrates": [
     "/ˈkælɪbreɪts/",
     "校准；调整系统以保持准确对应",
@@ -2126,6 +2182,13 @@
     "Trust calibration improves when the cockpit explains why it changed the feedback level.",
     "在这句话中，“calibration”可理解为“口径测定, 刻度, 校准”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "calibration drift": [
+    "/ˌkælɪˈbreɪʃn drɪft/",
+    "校准漂移；传感器或显示校准随时间偏移，导致 AR 位置不准",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "call": [
     "/kɔːl/",
@@ -2708,6 +2771,13 @@
     "Good cockpit task design balances speed, clarity, safety, and trust.",
     "在这句话中，“clarity”可理解为“清楚, 明晰”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "clean": [
+    "/kliːn/",
+    "清爽的；界面中杂乱较少、易于理解的",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "clear": [
     "/kliә/",
@@ -3759,6 +3829,13 @@
     "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
     "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
   ],
+  "context handoff": [
+    "/ˈkɑːntekst ˈhændɔːf/",
+    "上下文交接；在 AR、地图和仪表之间保持任务信息连续",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "context preservation": [
     "/ˈkɑːntekst ˌprezərˈveɪʃn/",
     "上下文保留；跨屏切换后继续呈现任务来源、当前状态和下一步操作",
@@ -4300,6 +4377,13 @@
     "Haptic, visual, and audio cues work together.",
     "触觉、视觉和声音线索协同工作。"
   ],
+  "curb": [
+    "/kɜːrb/",
+    "路缘；道路边缘或人行道边界",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "current": [
     "/'kʌrәnt/",
     "形容词：涌流, 趋势, 流；流通的, 现在的, 当前的, 流行的",
@@ -4321,6 +4405,13 @@
     "",
     "A motion sickness cue may combine seat movement, screen use, road curvature, and passenger posture.",
     "在这句话中，“curvature”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "curve": [
+    "/kɜːrv/",
+    "弯道；道路方向连续变化的路段",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "curves": [
     "/待补充/",
@@ -4750,6 +4841,13 @@
     "Information depth should change with driving risk.",
     "信息深度应随驾驶风险变化。"
   ],
+  "depth cue": [
+    "/depθ kjuː/",
+    "深度线索；帮助用户判断提示距离、层级和道路位置的视觉信息",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "describe": [
     "/dɪˈskɹaɪb/",
     "动词：描述, 描绘, 画",
@@ -5011,6 +5109,13 @@
     "A digital arrow should not hide real road information.",
     "在这句话中，“digital”表示“数字的”。"
   ],
+  "digital overlay": [
+    "/ˈdɪdʒɪtl ˈoʊvərleɪ/",
+    "数字叠加层；覆盖在真实视野上的虚拟图形或信息",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "dim": [
     "/dɪm/",
     "调暗；降低亮度",
@@ -5213,6 +5318,13 @@
     "Distance countdown helps drivers judge whether the maneuver is still comfortable.",
     "在这句话中，“distance countdown”用于描述智能座舱导航提示设计。"
   ],
+  "distance marker": [
+    "/ˈdɪstəns ˈmɑːrkər/",
+    "距离标记；说明距离转向点或目标位置还有多远的提示",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "distracting": [
     "/dis'trækt/",
     "动词：转移, 分心, 使发狂",
@@ -5278,6 +5390,13 @@
     "",
     "The word dramatic appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“dramatic”用于表达相关系统状态或用户影响。"
+  ],
+  "drift warning": [
+    "/drɪft ˈwɔːrnɪŋ/",
+    "漂移警告；提示 AR 位置可能不准或已发生偏移的信息",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "drive": [
     "/draɪv/",
@@ -6088,6 +6207,13 @@
     "The exit lane should be highlighted before the junction.",
     "出口车道应在路口前被突出显示。"
   ],
+  "exit ramp": [
+    "/ˈeksɪt ræmp/",
+    "出口匝道；车辆离开主路进入出口的道路部分",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "expand": [
     "/按语境朗读/",
     "展开；从摘要进入更多细节",
@@ -6348,6 +6474,20 @@
     "Fade should support a safer and clearer cockpit experience.",
     "在这句话中，“fade”用于描述更安全、更清晰的座舱体验。"
   ],
+  "fade-in": [
+    "/feɪd ɪn/",
+    "淡入；界面元素逐渐出现，降低突兀感",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
+  "fade-out": [
+    "/feɪd aʊt/",
+    "淡出；界面元素逐渐消失，避免遮挡或干扰",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "fades": [
     "/feɪdz/",
     "淡出；fade 的第三人称单数形式",
@@ -6385,6 +6525,13 @@
     "The fallback interaction can move the user from voice input to a short tappable list on the center display.",
     "在这句话中，“fallback”可理解为“可依靠的东西, 退却”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fallback arrow": [
+    "/ˈfɔːlbæk ˈæroʊ/",
+    "回退箭头；AR 不可靠时切换到传统二维导航箭头",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "fallback authentication": [
     "/ˈfɔːlbæk ɔːˌθentɪˈkeɪʃn/",
@@ -6655,6 +6802,13 @@
     "在这句话中，“few”可理解为“很少的, 不多的, 少数的；少数”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "field": [
+    "/fiːld/",
+    "视野；驾驶员可看到或处理的信息范围",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "fighting": [
     "/ˈfaɪtɪŋ/",
     "语境词：对抗；与系统辅助产生冲突",
@@ -6802,6 +6956,13 @@
     "A focused question is easier to answer while driving.",
     "聚焦问题在驾驶中更容易回答。"
   ],
+  "follow": [
+    "/ˈfɑːloʊ/",
+    "跟随；按照路线、提示或说明执行",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "follow-up": [
     "/待查/",
     "课堂词汇；在今日座舱语音交互语境中理解为“follow-up”。",
@@ -6926,6 +7087,13 @@
     "",
     "A fraud signal should pause the flow and offer a safe next step.",
     "欺诈信号应暂停流程并提供安全的下一步。"
+  ],
+  "free": [
+    "/friː/",
+    "空闲的；未被占用的，可留给其他信息或操作",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "frequent": [
     "/ˈfɹiː.kwənt/",
@@ -7087,6 +7255,13 @@
     "",
     "Stress cues should lead to gentler interaction.",
     "压力线索应引导更温和的交互。"
+  ],
+  "geometry": [
+    "/dʒiˈɑːmətri/",
+    "几何结构；道路形状、曲线和空间关系",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "gesture approval": [
     "/ˈdʒestʃər əˈpruːvl/",
@@ -7333,6 +7508,13 @@
     "在这句话中，“guidance”可理解为“指导, 领导”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "guidance layer": [
+    "/ˈɡaɪdns ˈleɪər/",
+    "引导层；AR 或导航系统中承载方向提示的视觉层级",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "guide": [
     "/ɡaɪd/",
     "引导；指导",
@@ -7566,6 +7748,13 @@
     "Heads-up display should support a safer and clearer cockpit experience.",
     "在这句话中，“heads-up display”用于描述更安全、更清晰的座舱体验。"
   ],
+  "headway": [
+    "/ˈhedweɪ/",
+    "车距时间；车辆与前车之间以时间衡量的安全间隔",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "health": [
     "/待补充/",
     "语境词：health；用于理解今天健康舒适提示主题中的英文表达",
@@ -7755,6 +7944,13 @@
     "在这句话中，“highlight”可理解为“加亮区, 精彩场面；加亮, 使显著, 以强光照射, 突出”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "highlighted": [
+    "/ˈhaɪlaɪtɪd/",
+    "高亮的；被视觉强调以便快速识别",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "highly": [
     "/按语境朗读/",
     "高度地；程度很高",
@@ -7862,6 +8058,13 @@
     "",
     "An honest explanation is better than silently ignoring a command.",
     "在这句话中，“honest explanation”用于描述智能座舱多人语音控制。"
+  ],
+  "horizon line": [
+    "/həˈraɪzn laɪn/",
+    "地平线；视野中道路和天空或远景相接的参考线",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "how": [
     "/haʊ/",
@@ -8326,6 +8529,20 @@
     "在这句话中，“instructions”可理解为“指令, 教导, 命令”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "instrument": [
+    "/ˈɪnstrəmənt/",
+    "仪表；用于显示或测量车辆状态的信息部件",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
+  "instrument cluster": [
+    "/ˈɪnstrəmənt ˈklʌstər/",
+    "仪表盘；显示车速、警报、能耗和车辆状态的驾驶信息区域",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "intact": [
     "/ɪnˈtækt/",
     "保持完整的；未被削弱或破坏的",
@@ -8600,6 +8817,13 @@
     "在这句话中，“intersection”可理解为“交集, 十字路口, 交叉点”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "intersections": [
+    "/ˌɪntərˈsekʃnz/",
+    "交叉口；intersection 的复数",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "intervention": [
     "/ˌɪntərˈvenʃn/",
     "干预；系统主动介入以降低风险或改变行为",
@@ -8838,6 +9062,13 @@
     "Lane assistance may pause when markings are covered.",
     "当车道线被覆盖时，车道辅助可能暂停。"
   ],
+  "lane boundary": [
+    "/leɪn ˈbaʊndəri/",
+    "车道边界；区分相邻车道或道路边缘的线条或区域",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "lane change": [
     "/leɪn tʃeɪndʒ/",
     "变道；车辆从一个车道移动到另一个车道",
@@ -8893,6 +9124,13 @@
     "",
     "A lane-level instruction is useful only when it arrives early enough for a calm lane change.",
     "车道级指令只有在足够提前、能支持平稳变道时才有用。"
+  ],
+  "lane-level navigation": [
+    "/leɪn ˈlevl ˌnævɪˈɡeɪʃn/",
+    "车道级导航；精确到具体车道的导航指引",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "language": [
     "/ˈlæŋ.ɡwɪd͡ʒ/",
@@ -9843,6 +10081,13 @@
     "Map appears in today's navigation prompt timing lesson.",
     "在这句话中，“map”来自今天的导航提示时机学习内容。"
   ],
+  "map confidence": [
+    "/mæp ˈkɑːnfɪdəns/",
+    "地图置信度；地图数据对当前道路状态的可信程度",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "map matching": [
     "/mæp ˈmætʃɪŋ/",
     "地图匹配；把车辆位置对应到具体道路或车道的过程",
@@ -10145,6 +10390,13 @@
     "",
     "A merge area requires prompts that leave room for observation.",
     "在这句话中，“merge area”用于描述智能座舱导航提示设计。"
+  ],
+  "merge lane": [
+    "/mɜːrdʒ leɪn/",
+    "汇入车道；车辆需要并入主路或其他车流的车道",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "merging": [
     "/mә:dʒ/",
@@ -10579,6 +10831,13 @@
     "在这句话中，“motion”可理解为“移动, 手势, 动作, 意向, 请求, 提议；打手势”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "motion parallax": [
+    "/ˈmoʊʃn ˈpærəlæks/",
+    "运动视差；观察者移动时不同距离物体产生的相对位移线索",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "motion sickness cue": [
     "/ˈmoʊʃn ˈsɪknəs kjuː/",
     "晕车线索；暗示乘员可能出现晕动不适的行为、环境或车辆动态信号",
@@ -10624,6 +10883,13 @@
     "The driver must look, understand, decide, and often tap a control while the vehicle is still moving.",
     "在这句话中，“moving”可理解为“移动, 迁居, 步骤；移动, 开动, 感动, 搬(家)；移动, 离开, 运行, 迁移, 摇动, 搬家, 交往, 进展, 脱手”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "much": [
+    "/mʌtʃ/",
+    "过多的；表示程度较高或数量较大",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "multi-turn dialogue": [
     "/ˌmʌlti tɜːrn ˈdaɪəlɔːɡ/",
@@ -11202,6 +11468,13 @@
     "Occlusion can hide a sign or a pedestrian.",
     "在这句话中，“occlusion”表示“遮挡”。"
   ],
+  "occlusion management": [
+    "/əˈkluːʒn ˈmænɪdʒmənt/",
+    "遮挡管理；控制 AR 元素不要挡住行人、车辆、标志或关键视野",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "occlusion risk": [
     "/əˈkluːʒn rɪsk/",
     "遮挡风险；界面元素遮住道路、行人、标志或其他关键视觉信息的风险",
@@ -11699,6 +11972,13 @@
     "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
     "在这句话中，“panic”可理解为“恐慌, 惊慌；惊慌的, 没有理由的, 恐慌的；使惊慌, 使狂热；惊慌”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "parallax": [
+    "/ˈpærəlæks/",
+    "视差；由观察位置变化产生的相对位移线索",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "parked": [
     "/按语境朗读/",
@@ -12320,6 +12600,13 @@
     "A seat position, a favorite navigation view, a preferred temperature, or a repeated charging stop may look like small convenience data.",
     "在这句话中，“position”可理解为“位置, 地位, 身分, 形势, 姿势, 立场, 职位, 状态, 阵地；安置, 决定...的位置”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "position accuracy": [
+    "/pəˈzɪʃn ˈækjərəsi/",
+    "定位精度；系统判断车辆位置的准确程度",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "positioning": [
     "/暂无音标/",
@@ -13256,6 +13543,13 @@
     "Raise the execution threshold for sensitive actions.",
     "对敏感动作提高执行阈值。"
   ],
+  "ramps": [
+    "/ræmps/",
+    "匝道；ramp 的复数，指进出主路的连接道路",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
   "randomly": [
     "/ˈrændəmli/",
     "随机地；没有明显原因地",
@@ -13292,6 +13586,13 @@
     "",
     "Good charging guidance also compares options rather than forcing one answer.",
     "在这句话中，“rather”可理解为“而是；用于 rather than 结构，表示取代或对比”。"
+  ],
+  "ratio": [
+    "/ˈreɪʃioʊ/",
+    "比率；两个数值或视觉量之间的比例关系",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "rationale": [
     "/按语境朗读/",
@@ -13409,6 +13710,13 @@
     "在这句话中，“real”可理解为“真的, 真实的, 实际的, 实在的, 不动(产)的, 实数的；实数, 现实；真正地”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "real world": [
+    "/ˈriːəl wɜːrld/",
+    "真实世界；车辆外部道路、交通参与者和环境",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "reality": [
     "/riˈæləti/",
     "现实；真实道路环境或驾驶场景",
@@ -13479,6 +13787,13 @@
     "",
     "The word reasons appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“reasons”用于表达相关系统状态或用户影响。"
+  ],
+  "reassurance": [
+    "/ˌriːəˈʃʊrəns/",
+    "安抚；通过清楚状态和下一步建议降低用户不安",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "rebuild": [
     "/ˌriːˈbɪld/",
@@ -13785,6 +14100,13 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“regional”可理解为“地方的, 地域性的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "registration": [
+    "/ˌredʒɪˈstreɪʃn/",
+    "配准；让虚拟元素与真实位置准确对应",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "regular": [
     "/ˈreɡjələr/",
@@ -14590,6 +14912,13 @@
     "Road curvature can explain why the system offers visual rest mode.",
     "道路曲率可以解释系统为何提供视觉休息模式。"
   ],
+  "road geometry": [
+    "/roʊd dʒiˈɑːmətri/",
+    "道路几何；车道曲率、坡度、交叉口和道路边界等结构信息",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "road markings": [
     "/roʊd ˈmɑːrkɪŋz/",
     "道路标线；车道线、边界线等路面视觉标记",
@@ -14813,6 +15142,13 @@
     "",
     "A safe execution threshold should be stricter for navigation changes than for opening a music playlist.",
     "导航变更的安全执行阈值应比打开音乐歌单更严格。"
+  ],
+  "safe fallback": [
+    "/seɪf ˈfɔːlbæk/",
+    "安全回退；主功能不可靠时切换到更稳妥、更清楚的替代方案",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "safe fallback state": [
     "/seɪf ˈfɔːlbæk steɪt/",
@@ -15483,6 +15819,13 @@
     "",
     "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
     "传感器置信度应转化为面向驾驶员的信息，而不是隐藏成诊断代码。"
+  ],
+  "sensor fusion": [
+    "/ˈsensər ˈfjuːʒn/",
+    "传感器融合；整合摄像头、定位、地图和车辆信号来提升判断准确性",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "sent": [
     "/sent/",
@@ -16226,6 +16569,13 @@
     "Spatial mapping helps users connect a left-side blind-spot warning with the left edge of the cluster.",
     "空间映射帮助用户把左侧盲区警告与仪表屏左边缘联系起来。"
   ],
+  "spatial registration": [
+    "/ˈspeɪʃl ˌredʒɪˈstreɪʃn/",
+    "空间配准；虚拟图形与真实道路几何位置准确对应的过程",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "speak": [
     "/spiːk/",
     "说出；通过语音提示表达",
@@ -16326,6 +16676,13 @@
     "",
     "Speed context helps determine whether a voice prompt is needed.",
     "在这句话中，“speed context”用于描述智能座舱导航提示设计。"
+  ],
+  "spending": [
+    "/ˈspendɪŋ/",
+    "消耗；在注意力语境中表示占用时间或认知资源",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
   "spends": [
     "/暂无音标/",
@@ -16542,6 +16899,13 @@
     "An interruptive alert should be reserved for urgent safety or system status changes.",
     "在这句话中，“status”可理解为“雕像；特级雪花白”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "status banner": [
+    "/ˈsteɪtəs ˈbænər/",
+    "状态横幅；用简短文字说明当前能力或限制的界面区域",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "status change": [
     "/ˈstætəs tʃeɪndʒ/",
@@ -17656,6 +18020,13 @@
     "在这句话中，“timing”可理解为“时间, 时侯, 时机, 时期, 期限, 次数, 节拍, 暂停, 规定时间；测定...的时间, 记录...的时间, 计时, 定时；时间的, 记时的, 定时的, 定期的, 分期的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "timing threshold": [
+    "/ˈtaɪmɪŋ ˈθreʃhoʊld/",
+    "时机阈值；触发提示、淡入或切换的时间或距离条件",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "to": [
     "/tu:/",
     "到, 向, 趋于；向前",
@@ -18018,6 +18389,13 @@
     "Turn appears in today's navigation prompt timing lesson.",
     "在这句话中，“turn”来自今天的导航提示时机学习内容。"
   ],
+  "turn anticipation": [
+    "/tɜːrn ænˌtɪsɪˈpeɪʃn/",
+    "转向预判；在转弯或变道前提前给出节奏合适的提示",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "turn-by-turn": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“turn-by-turn”。",
@@ -18091,6 +18469,20 @@
     "For example, it can say, “I found two contacts named Alex.",
     "在这句话中，“two”可理解为“二, 二个”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "two-dimensional": [
+    "/tuː daɪˈmenʃənl/",
+    "二维的；以平面形式呈现，没有立体深度",
+    "",
+    "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
+    "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
+  "two-dimensional map": [
+    "/tuː daɪˈmenʃənl mæp/",
+    "二维地图；传统平面地图视图",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "typed": [
     "/taɪpt/",
@@ -18566,6 +18958,13 @@
     "A value signal can come from repeated manual adjustments.",
     "价值信号可以来自重复的手动调节。"
   ],
+  "vanishing point": [
+    "/ˈvænɪʃɪŋ pɔɪnt/",
+    "消失点；透视中平行线看似汇聚的位置",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
   "vehicle": [
     "/'vi:ikl/",
     "名词：交通工具, 车辆, 传播媒介",
@@ -18731,6 +19130,13 @@
     "",
     "Visual anchoring helps the driver connect the instruction with the road scene ahead.",
     "视觉锚定帮助驾驶员把指令与前方道路场景联系起来。"
+  ],
+  "visual clutter": [
+    "/ˈvɪʒuəl ˈklʌtər/",
+    "视觉杂乱；界面元素过多导致难以快速理解的状态",
+    "",
+    "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
+    "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
   "visual confirmation": [
     "/ˈvɪʒuəl ˌkɑːnfərˈmeɪʃn/",
