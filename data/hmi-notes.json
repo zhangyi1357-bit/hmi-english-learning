@@ -1,5 +1,790 @@
 [
   {
+    "id": "2026-09-19-privacy-preserving-occupant-sensing",
+    "date": "2026-09-19",
+    "title": "Privacy-preserving occupant sensing in intelligent cockpits",
+    "topic": "智能座舱隐私保护型乘员感知",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明乘员感知、边缘处理、最小化采集、同意提示、可解释状态和隐私保护型个性化。",
+    "words": [
+      {
+        "term": "privacy-preserving occupant sensing",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈɑːkjəpənt ˈsensɪŋ/",
+        "meaning": "隐私保护型乘员感知；在识别乘员状态和需求时尽量减少敏感数据暴露的座舱能力",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车机或本地芯片上处理数据，而不是默认上传到云端",
+        "example": "On-device processing keeps most occupant signals inside the vehicle and reduces unnecessary cloud exposure.",
+        "chineseExample": "端侧处理把大多数乘员信号留在车内，并减少不必要的云端暴露。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪmaɪˈzeɪʃn/",
+        "meaning": "数据最小化；只采集和保留完成当前功能所需的数据",
+        "example": "Data minimization means the cockpit should estimate seat occupancy without storing identifiable cabin footage.",
+        "chineseExample": "数据最小化意味着座舱应估算座椅占用情况，而不存储可识别的舱内影像。"
+      },
+      {
+        "term": "consent prompt",
+        "phonetic": "/kənˈsent prɑːmpt/",
+        "meaning": "同意提示；在启用敏感能力前清楚询问用户是否允许的界面提示",
+        "example": "A consent prompt must explain why a passenger profile is needed and how the setting can be changed later.",
+        "chineseExample": "同意提示必须说明为什么需要乘客档案，以及之后如何修改设置。"
+      },
+      {
+        "term": "occupant profile",
+        "phonetic": "/ˈɑːkjəpənt ˈproʊfaɪl/",
+        "meaning": "乘员档案；记录座椅、温度、音量或辅助偏好的个性化资料",
+        "example": "An occupant profile should store preferences separately from raw sensor streams.",
+        "chineseExample": "乘员档案应把偏好与原始传感器数据流分开存储。"
+      },
+      {
+        "term": "local inference",
+        "phonetic": "/ˈloʊkl ˈɪnfərəns/",
+        "meaning": "本地推理；在车端根据传感器输入判断状态、意图或需求",
+        "example": "Local inference can detect whether the rear passenger is resting without sending audio to a remote service.",
+        "chineseExample": "本地推理可以判断后排乘客是否在休息，而无需把音频发送到远程服务。"
+      },
+      {
+        "term": "retention window",
+        "phonetic": "/rɪˈtenʃn ˈwɪndoʊ/",
+        "meaning": "保留窗口；数据在系统中保存的限定时间范围",
+        "example": "A short retention window helps teams delete temporary sensing data after the comfort action is complete.",
+        "chineseExample": "较短的保留窗口有助于团队在舒适性动作完成后删除临时感知数据。"
+      },
+      {
+        "term": "purpose limitation",
+        "phonetic": "/ˈpɜːrpəs ˌlɪmɪˈteɪʃn/",
+        "meaning": "目的限制；数据只能用于用户理解并同意的明确功能",
+        "example": "Purpose limitation prevents a fatigue signal from being reused for unrelated marketing messages.",
+        "chineseExample": "目的限制可防止疲劳信号被重新用于无关的营销消息。"
+      },
+      {
+        "term": "transparent status chip",
+        "phonetic": "/trænsˈpærənt ˈsteɪtəs tʃɪp/",
+        "meaning": "透明状态标签；用短标签显示正在感知什么、为什么感知以及是否可关闭",
+        "example": "A transparent status chip can show that cabin sensing is active for climate comfort only.",
+        "chineseExample": "透明状态标签可以显示舱内感知仅为气候舒适功能而开启。"
+      },
+      {
+        "term": "privacy fallback",
+        "phonetic": "/ˈpraɪvəsi ˈfɔːlbæk/",
+        "meaning": "隐私回退；用户拒绝或关闭敏感感知后仍可使用的低敏方案",
+        "example": "The privacy fallback should offer manual seat and climate controls when personal sensing is off.",
+        "chineseExample": "当个性化感知关闭时，隐私回退应提供手动座椅和空调控制。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "privacy-preserving occupant sensing",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈɑːkjəpənt ˈsensɪŋ/",
+        "meaning": "隐私保护型乘员感知；在识别乘员状态和需求时尽量减少敏感数据暴露的座舱能力",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车机或本地芯片上处理数据，而不是默认上传到云端",
+        "example": "On-device processing keeps most occupant signals inside the vehicle and reduces unnecessary cloud exposure.",
+        "chineseExample": "端侧处理把大多数乘员信号留在车内，并减少不必要的云端暴露。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪmaɪˈzeɪʃn/",
+        "meaning": "数据最小化；只采集和保留完成当前功能所需的数据",
+        "example": "Data minimization means the cockpit should estimate seat occupancy without storing identifiable cabin footage.",
+        "chineseExample": "数据最小化意味着座舱应估算座椅占用情况，而不存储可识别的舱内影像。"
+      },
+      {
+        "term": "consent prompt",
+        "phonetic": "/kənˈsent prɑːmpt/",
+        "meaning": "同意提示；在启用敏感能力前清楚询问用户是否允许的界面提示",
+        "example": "A consent prompt must explain why a passenger profile is needed and how the setting can be changed later.",
+        "chineseExample": "同意提示必须说明为什么需要乘客档案，以及之后如何修改设置。"
+      },
+      {
+        "term": "occupant profile",
+        "phonetic": "/ˈɑːkjəpənt ˈproʊfaɪl/",
+        "meaning": "乘员档案；记录座椅、温度、音量或辅助偏好的个性化资料",
+        "example": "An occupant profile should store preferences separately from raw sensor streams.",
+        "chineseExample": "乘员档案应把偏好与原始传感器数据流分开存储。"
+      },
+      {
+        "term": "local inference",
+        "phonetic": "/ˈloʊkl ˈɪnfərəns/",
+        "meaning": "本地推理；在车端根据传感器输入判断状态、意图或需求",
+        "example": "Local inference can detect whether the rear passenger is resting without sending audio to a remote service.",
+        "chineseExample": "本地推理可以判断后排乘客是否在休息，而无需把音频发送到远程服务。"
+      },
+      {
+        "term": "retention window",
+        "phonetic": "/rɪˈtenʃn ˈwɪndoʊ/",
+        "meaning": "保留窗口；数据在系统中保存的限定时间范围",
+        "example": "A short retention window helps teams delete temporary sensing data after the comfort action is complete.",
+        "chineseExample": "较短的保留窗口有助于团队在舒适性动作完成后删除临时感知数据。"
+      },
+      {
+        "term": "purpose limitation",
+        "phonetic": "/ˈpɜːrpəs ˌlɪmɪˈteɪʃn/",
+        "meaning": "目的限制；数据只能用于用户理解并同意的明确功能",
+        "example": "Purpose limitation prevents a fatigue signal from being reused for unrelated marketing messages.",
+        "chineseExample": "目的限制可防止疲劳信号被重新用于无关的营销消息。"
+      },
+      {
+        "term": "transparent status chip",
+        "phonetic": "/trænsˈpærənt ˈsteɪtəs tʃɪp/",
+        "meaning": "透明状态标签；用短标签显示正在感知什么、为什么感知以及是否可关闭",
+        "example": "A transparent status chip can show that cabin sensing is active for climate comfort only.",
+        "chineseExample": "透明状态标签可以显示舱内感知仅为气候舒适功能而开启。"
+      },
+      {
+        "term": "privacy fallback",
+        "phonetic": "/ˈpraɪvəsi ˈfɔːlbæk/",
+        "meaning": "隐私回退；用户拒绝或关闭敏感感知后仍可使用的低敏方案",
+        "example": "The privacy fallback should offer manual seat and climate controls when personal sensing is off.",
+        "chineseExample": "当个性化感知关闭时，隐私回退应提供手动座椅和空调控制。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "occupant sensing",
+        "phonetic": "/ˈɑːkjəpənt ˈsensɪŋ/",
+        "meaning": "乘员感知；识别车内人员状态、位置和需求的能力",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "passenger trust",
+        "phonetic": "/ˈpæsɪndʒər trʌst/",
+        "meaning": "乘客信任；乘员对系统感知、解释和控制方式的信心",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "comfort suggestion",
+        "phonetic": "/ˈkʌmfərt səˈdʒestʃən/",
+        "meaning": "舒适性建议；系统基于状态提出的座椅、空调或灯光建议",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/ˈseɪfti/",
+        "meaning": "安全；降低风险并保护驾驶员和乘员的状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "personalization",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn/",
+        "meaning": "个性化；根据用户偏好和状态调整体验",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "design challenge",
+        "phonetic": "/dɪˈzaɪn ˈtʃælɪndʒ/",
+        "meaning": "设计挑战；需要平衡多个目标的问题",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "上下文；影响系统判断的场景、状态和任务信息",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "watched",
+        "phonetic": "/wɑːtʃt/",
+        "meaning": "被监视的；让用户感觉持续被观察的状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/ˈsɪɡnəl/",
+        "meaning": "信号；传感器、语音或交互产生的输入",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "seat pressure",
+        "phonetic": "/siːt ˈpreʃər/",
+        "meaning": "座椅压力；用于判断座位占用和姿态的压力信息",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "belt status",
+        "phonetic": "/belt ˈsteɪtəs/",
+        "meaning": "安全带状态；安全带是否扣上的车辆状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "temperature preference",
+        "phonetic": "/ˈtemprətʃər ˈprefərəns/",
+        "meaning": "温度偏好；用户喜欢的空调温度或热舒适设置",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "voice command",
+        "phonetic": "/vɔɪs kəˈmænd/",
+        "meaning": "语音指令；用户通过语音发出的操作请求",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "raw sensor input",
+        "phonetic": "/rɔː ˈsensər ˈɪnpʊt/",
+        "meaning": "原始传感器输入；未经处理的摄像头、麦克风或座椅数据",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "simple state",
+        "phonetic": "/ˈsɪmpl steɪt/",
+        "meaning": "简单状态；由复杂数据归纳出的可解释状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "cloud service",
+        "phonetic": "/klaʊd ˈsɜːrvɪs/",
+        "meaning": "云服务；在远程服务器上运行的数据处理或存储服务",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "rear passenger",
+        "phonetic": "/rɪr ˈpæsɪndʒər/",
+        "meaning": "后排乘客；坐在车辆后排的乘员",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "notification volume",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn ˈvɑːljuːm/",
+        "meaning": "通知音量；提醒声音的大小",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "ambient light",
+        "phonetic": "/ˈæmbiənt laɪt/",
+        "meaning": "氛围灯；用于营造座舱氛围和反馈状态的灯光",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "cabin video",
+        "phonetic": "/ˈkæbɪn ˈvɪdioʊ/",
+        "meaning": "舱内视频；摄像头记录的车内影像",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "sensing state",
+        "phonetic": "/ˈsensɪŋ steɪt/",
+        "meaning": "感知状态；系统是否正在感知以及感知用途的状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "可见的；用户可以看到或理解的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "purpose",
+        "phonetic": "/ˈpɜːrpəs/",
+        "meaning": "目的；功能使用数据的具体原因",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "control path",
+        "phonetic": "/kənˈtroʊl pæθ/",
+        "meaning": "控制路径；用户修改、关闭或撤回设置的操作路线",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清晰语言；避免术语堆叠、让用户快速理解的表达",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "quick off switch",
+        "phonetic": "/kwɪk ɔːf swɪtʃ/",
+        "meaning": "快速关闭开关；一键停止某项能力或感知的控件",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "manual control",
+        "phonetic": "/ˈmænjuəl kənˈtroʊl/",
+        "meaning": "手动控制；由用户直接操作而非系统自动调整的控制方式",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "personal sensing",
+        "phonetic": "/ˈpɜːrsənl ˈsensɪŋ/",
+        "meaning": "个性化感知；面向具体乘员状态或偏好的感知",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "raw sensor stream",
+        "phonetic": "/rɔː ˈsensər striːm/",
+        "meaning": "原始传感器数据流；连续产生的未经处理传感器数据",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "identifiable footage",
+        "phonetic": "/aɪˌdentɪˈfaɪəbl ˈfʊtɪdʒ/",
+        "meaning": "可识别影像；可能识别具体个人的视频或图像资料",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "cloud exposure",
+        "phonetic": "/klaʊd ɪkˈspoʊʒər/",
+        "meaning": "云端暴露；数据上传到远程服务后产生的可见或泄露风险",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "remote service",
+        "phonetic": "/rɪˈmoʊt ˈsɜːrvɪs/",
+        "meaning": "远程服务；不在本车本地运行的外部服务",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "fatigue signal",
+        "phonetic": "/fəˈtiːɡ ˈsɪɡnəl/",
+        "meaning": "疲劳信号；用于判断困倦或注意力下降的提示信息",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "marketing message",
+        "phonetic": "/ˈmɑːrkɪtɪŋ ˈmesɪdʒ/",
+        "meaning": "营销消息；用于推广产品或服务的信息",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "data reuse",
+        "phonetic": "/ˈdeɪtə ˌriːˈjuːs/",
+        "meaning": "数据复用；把已采集数据用于新的或不同的目的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "feature",
+        "phonetic": "/ˈfiːtʃər/",
+        "meaning": "功能；产品中面向用户的能力",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "current feature",
+        "phonetic": "/ˈkɜːrənt ˈfiːtʃər/",
+        "meaning": "当前功能；用户正在使用或系统正在执行的功能",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；能力、数据用途或责任范围的限制",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "preference",
+        "phonetic": "/ˈprefərəns/",
+        "meaning": "偏好；用户倾向选择的设置或体验",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "profile",
+        "phonetic": "/ˈproʊfaɪl/",
+        "meaning": "档案；保存用户偏好、状态或身份信息的记录",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "temporary sensing data",
+        "phonetic": "/ˈtempəreri ˈsensɪŋ ˈdeɪtə/",
+        "meaning": "临时感知数据；仅为当前任务短暂保存的数据",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "comfort action",
+        "phonetic": "/ˈkʌmfərt ˈækʃn/",
+        "meaning": "舒适性动作；调节座椅、空调、音量或灯光的动作",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "offering",
+        "phonetic": "/ˈɔːfərɪŋ/",
+        "meaning": "提供；向用户呈现建议或功能",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "process",
+        "phonetic": "/ˈprɑːses/",
+        "meaning": "处理；对数据进行计算、转换或判断",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "locally",
+        "phonetic": "/ˈloʊkəli/",
+        "meaning": "在本地；在车辆或设备内部完成",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "resting",
+        "phonetic": "/ˈrestɪŋ/",
+        "meaning": "休息中的；处于放松或睡眠前状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "storing",
+        "phonetic": "/ˈstɔːrɪŋ/",
+        "meaning": "存储；把数据保存下来以便后续使用",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "involved",
+        "phonetic": "/ɪnˈvɑːlvd/",
+        "meaning": "被涉及的；参与某个流程或处理链路的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "recover control",
+        "phonetic": "/rɪˈkʌvər kənˈtroʊl/",
+        "meaning": "恢复控制；用户重新获得对设置或功能的直接掌控",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "one clear action",
+        "phonetic": "/wʌn klɪr ˈækʃn/",
+        "meaning": "一个清楚动作；用户能快速理解和完成的单步操作",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "quick switch",
+        "phonetic": "/kwɪk swɪtʃ/",
+        "meaning": "快速开关；能迅速改变状态的界面控件",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "separately",
+        "phonetic": "/ˈseprətli/",
+        "meaning": "分开地；与其他数据或流程隔离处理",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "needed",
+        "phonetic": "/ˈniːdɪd/",
+        "meaning": "所需的；完成当前任务必要的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/wɪðˈaʊt/",
+        "meaning": "不做某事；表示避免某个条件或副作用",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "lower",
+        "phonetic": "/ˈloʊər/",
+        "meaning": "降低；把数值、强度或音量调低",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "dim",
+        "phonetic": "/dɪm/",
+        "meaning": "调暗；降低光线亮度",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "refuses",
+        "phonetic": "/rɪˈfjuːzɪz/",
+        "meaning": "拒绝；不同意或不启用某项能力",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "blaming",
+        "phonetic": "/ˈbleɪmɪŋ/",
+        "meaning": "责怪；把问题归咎于用户",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "hide",
+        "phonetic": "/haɪd/",
+        "meaning": "隐藏；不让用户看到或理解",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "explains",
+        "phonetic": "/ɪkˈspleɪnz/",
+        "meaning": "解释；说明原因、状态或边界",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "limits",
+        "phonetic": "/ˈlɪmɪts/",
+        "meaning": "限制；设定范围或约束",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "collect",
+        "phonetic": "/kəˈlekt/",
+        "meaning": "采集；从传感器或交互中获取数据",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "depends",
+        "phonetic": "/dɪˈpendz/",
+        "meaning": "依赖；需要某个条件才能成立",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "knowing",
+        "phonetic": "/ˈnoʊɪŋ/",
+        "meaning": "知道；了解对象、状态或背景信息",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；承载驾驶员和乘员的交通工具",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "privacy-preserving",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ/",
+        "meaning": "隐私保护型的；以减少敏感数据暴露为目标的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "exposure",
+        "phonetic": "/ɪkˈspoʊʒər/",
+        "meaning": "暴露；数据被外部系统、人员或风险接触到的状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "occupancy",
+        "phonetic": "/ˈɑːkjəpənsi/",
+        "meaning": "占用情况；座位或空间是否有人使用的状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "identifiable",
+        "phonetic": "/aɪˌdentɪˈfaɪəbl/",
+        "meaning": "可识别的；能关联到具体个人或身份的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "footage",
+        "phonetic": "/ˈfʊtɪdʒ/",
+        "meaning": "影像资料；摄像头记录的视频片段",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "streams",
+        "phonetic": "/striːmz/",
+        "meaning": "数据流；stream 的复数，指连续传来的数据",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "inference",
+        "phonetic": "/ˈɪnfərəns/",
+        "meaning": "推理；根据输入判断状态、意图或需求的过程",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "remote",
+        "phonetic": "/rɪˈmoʊt/",
+        "meaning": "远程的；不在本地设备或车辆内运行的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "marketing",
+        "phonetic": "/ˈmɑːrkɪtɪŋ/",
+        "meaning": "营销；推广产品、服务或品牌的信息活动",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "chip",
+        "phonetic": "/tʃɪp/",
+        "meaning": "标签；界面中用于显示短状态或属性的小型控件",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "off",
+        "phonetic": "/ɔːf/",
+        "meaning": "关闭的；功能或感知处于停用状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "depend",
+        "phonetic": "/dɪˈpend/",
+        "meaning": "依赖；需要某个条件、数据或能力支持",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "sense",
+        "phonetic": "/sens/",
+        "meaning": "感知；通过传感器或系统判断状态",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "belt",
+        "phonetic": "/belt/",
+        "meaning": "安全带；用于约束乘员、提升安全性的部件",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "any",
+        "phonetic": "/ˈeni/",
+        "meaning": "任何；表示无论哪一个或哪一些",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "video",
+        "phonetic": "/ˈvɪdioʊ/",
+        "meaning": "视频；连续的影像内容",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      },
+      {
+        "term": "reuse",
+        "phonetic": "/ˌriːˈjuːs/",
+        "meaning": "复用；把数据、设计或能力再次用于某个目的",
+        "example": "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
+        "chineseExample": "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing sensing that earns passenger trust",
+        "text": "Privacy-preserving occupant sensing is becoming a core capability in the intelligent cockpit because comfort, safety, and personalization often depend on knowing who is in the vehicle. The design challenge is to sense enough context without making passengers feel watched. A strong HMI starts with data minimization: collect only the signals needed for the current feature, such as seat pressure, belt status, temperature preference, or a short voice command. Whenever possible, on-device processing and local inference should turn raw sensor input into simple states before any cloud service is involved. For example, the cockpit can decide that the rear passenger is resting, lower notification volume, and dim the ambient light without storing cabin video. The interface must also make the sensing state visible. A consent prompt should describe the purpose, retention window, and control path in plain language. A transparent status chip can show sensing is active for comfort only and provide a quick off switch. If a passenger refuses, the privacy fallback should keep manual controls available and avoid blaming the user. Good privacy design does not hide capability; it explains boundaries, limits data reuse through purpose limitation, and lets every occupant recover control with one clear action.",
+        "translation": "隐私保护型乘员感知正在成为智能座舱的核心能力，因为舒适、安全和个性化往往依赖于知道车内是谁。设计挑战在于感知足够的上下文，同时不让乘客觉得被监视。强 HMI 从数据最小化开始：只采集当前功能需要的信号，例如座椅压力、安全带状态、温度偏好或一条简短语音指令。只要可能，端侧处理和本地推理就应先把原始传感器输入转化为简单状态，再涉及任何云服务。例如，座舱可以判断后排乘客正在休息，降低通知音量并调暗氛围灯，而不存储舱内视频。界面还必须让感知状态可见。同意提示应用清晰语言说明目的、保留窗口和控制路径。透明状态标签可以显示感知仅为舒适功能而开启，并提供快速关闭开关。如果乘客拒绝，隐私回退应保留手动控制，并避免责怪用户。好的隐私设计不会隐藏能力；它会解释边界，通过目的限制约束数据复用，并让每位乘员都能用一个清楚动作重新获得控制。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The design challenge is to sense enough context without making passengers feel watched.",
+        "translation": "设计挑战在于感知足够的上下文，同时不让乘客觉得被监视。",
+        "breakdown": "The design challenge is to... 用来定义设计难题；without making... 表示需要避免的负面体验。"
+      },
+      {
+        "sentence": "Whenever possible, on-device processing and local inference should turn raw sensor input into simple states before any cloud service is involved.",
+        "translation": "只要可能，端侧处理和本地推理就应先把原始传感器输入转化为简单状态，再涉及任何云服务。",
+        "breakdown": "Whenever possible 放在句首表示优先原则；turn... into... 说明从原始输入到可用状态的转换；before 强调顺序。"
+      },
+      {
+        "sentence": "A consent prompt should describe the purpose, retention window, and control path in plain language.",
+        "translation": "同意提示应用清晰语言说明目的、保留窗口和控制路径。",
+        "breakdown": "should describe 是产品规范表达；purpose, retention window, and control path 列出用户需要知道的三类信息。"
+      },
+      {
+        "sentence": "Good privacy design does not hide capability; it explains boundaries, limits data reuse through purpose limitation, and lets every occupant recover control with one clear action.",
+        "translation": "好的隐私设计不会隐藏能力；它会解释边界，通过目的限制约束数据复用，并让每位乘员都能用一个清楚动作重新获得控制。",
+        "breakdown": "does not hide...; it explains... 用分号连接对比；limits data reuse 和 lets every occupant recover control 是并列设计目标。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 on-device processing、local inference、data minimization 和 purpose limitation。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "完整跟读英文长文，再用中文复述乘员感知为什么要把感知状态、目的和关闭路径讲清楚。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 Whenever possible... should... 和 A consent prompt should describe... 各写一句智能座舱隐私提示设计建议。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向评审说明：当乘客拒绝个性化感知时，为什么仍要保留手动控制和隐私回退。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-17-ar-lane-guidance-visual-anchoring",
     "date": "2026-09-17",
     "title": "AR lane guidance and visual anchoring in intelligent cockpits",
