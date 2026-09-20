@@ -532,6 +532,13 @@
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“again”可理解为“再次”。"
   ],
+  "against": [
+    "/əˈɡenst/",
+    "针对；在这里表示对某种风险动作发出警告",
+    "",
+    "The system can warn against an unsafe lane change.",
+    "系统可以针对不安全变道发出警告。"
+  ],
   "agency": [
     "/ˈeɪdʒənsi/",
     "主导权；用户能够理解并控制结果的能力",
@@ -1505,6 +1512,13 @@
     "",
     "The interface should show the automation boundary when lane markings become unclear.",
     "当车道线变得不清晰时，界面应显示自动化边界。"
+  ],
+  "automation confidence": [
+    "/ˌɔːtəˈmeɪʃn ˈkɑːnfɪdəns/",
+    "自动化置信度；系统对自身感知、规划或控制结果可靠性的判断",
+    "",
+    "Automation confidence should be expressed as plain status, not as a hidden technical score.",
+    "自动化置信度应以清楚状态表达，而不是隐藏的技术分数。"
   ],
   "automation level": [
     "/ˌɔːtəˈmeɪʃn ˈlevl/",
@@ -2980,6 +2994,13 @@
     "Cluster appears in today's navigation prompt timing lesson.",
     "在这句话中，“cluster”来自今天的导航提示时机学习内容。"
   ],
+  "clutter": [
+    "/ˈklʌtər/",
+    "杂乱；界面中过多元素造成的干扰",
+    "",
+    "A haptic affordance can reduce clutter by moving some feedback away from the screen.",
+    "触觉可供性可以把部分反馈从屏幕转移出去，从而减少杂乱。"
+  ],
   "cockpit": [
     "/'kɒkpit/",
     "名词：驾驶员座舱, 战场",
@@ -4085,6 +4106,13 @@
     "Control authority should be visible on the cluster, not hidden in a settings menu.",
     "控制权限应显示在仪表区域，而不是隐藏在设置菜单中。"
   ],
+  "control boundary": [
+    "/kənˈtroʊl ˈbaʊndəri/",
+    "控制边界；说明人和系统分别负责哪些驾驶任务的界线",
+    "",
+    "The control boundary must remain visible when lane centering is active but speed choice is manual.",
+    "当车道居中处于开启状态但速度选择为手动时，控制边界必须保持可见。"
+  ],
   "control changes": [
     "/kənˈtroʊl ˈtʃeɪndʒɪz/",
     "控制变化；控制权或辅助状态发生转移",
@@ -4261,6 +4289,13 @@
     "",
     "Coordinate should support a safer and clearer cockpit experience.",
     "在这句话中，“coordinate”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "coordinated feedback": [
+    "/koʊˈɔːrdɪneɪtɪd ˈfiːdbæk/",
+    "协同反馈；视觉、语音和触觉在同一意图下配合输出",
+    "",
+    "Coordinated feedback makes a transition easier to understand.",
+    "协同反馈使切换更容易理解。"
   ],
   "copy": [
     "/'kɒpi/",
@@ -4446,6 +4481,13 @@
     "A clear confirmation cue prevents the cockpit from executing a misunderstood command silently.",
     "在这句话中，“cue”可理解为“暗示；提示；信号；（戏剧的）提示；给（某人）暗示（或提示）；线索；凯迪拉克用户体验(Cadillac User Experience)”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "cueing": [
+    "/ˈkjuːɪŋ/",
+    "提示；通过声音、视觉或触觉引导用户注意和行动",
+    "",
+    "Progressive cueing changes strength as the risk level rises.",
+    "渐进式提示会随着风险等级升高而改变强度。"
   ],
   "cues": [
     "/kjuːz/",
@@ -5438,6 +5480,13 @@
     "Contextual timing prevents a helpful offer from becoming a distraction.",
     "在这句话中，distraction 指会分散驾驶注意力的干扰。"
   ],
+  "divide": [
+    "/dɪˈvaɪd/",
+    "分担；把任务或责任分配给不同角色",
+    "",
+    "The driver and automation may divide steering and speed tasks.",
+    "驾驶员和自动化系统可能会分担转向和速度任务。"
+  ],
   "dizzy": [
     "/待补充/",
     "语境词：dizzy；用于理解今天健康舒适提示主题中的英文表达",
@@ -5525,6 +5574,13 @@
     "Driver agency remains strong when the assistant explains why it is asking before it acts.",
     "当助手在执行前解释为什么要询问时，驾驶员主导权会保持较强。"
   ],
+  "driver assistance": [
+    "/ˈdraɪvər əˈsɪstəns/",
+    "驾驶辅助；帮助驾驶员完成部分观察、判断或控制任务的功能",
+    "",
+    "Driver assistance needs clear feedback when responsibility changes.",
+    "当责任发生变化时，驾驶辅助需要清楚反馈。"
+  ],
   "driver attention": [
     "/ˈdraɪvər əˈtenʃn/",
     "驾驶员注意力；驾驶员可用于道路、控制和交互的认知资源",
@@ -5538,6 +5594,13 @@
     "",
     "The cockpit uses driver authority to make privacy decisions easier to understand.",
     "座舱使用“driver authority”让隐私决策更容易理解。"
+  ],
+  "driver confirmation": [
+    "/ˈdraɪvər ˌkɑːnfərˈmeɪʃn/",
+    "驾驶员确认；在关键控制变化前要求驾驶员明确确认的交互步骤",
+    "",
+    "Driver confirmation should be easy to perform without forcing a long glance away from the road.",
+    "驾驶员确认应易于完成，并避免迫使驾驶员长时间离开道路视线。"
   ],
   "driver consent": [
     "/ˈdraɪvər kənˈsent/",
@@ -6426,6 +6489,13 @@
     "The cockpit uses explainable choice to make privacy decisions easier to understand.",
     "座舱使用“explainable choice”让隐私决策更容易理解。"
   ],
+  "explainable feedback": [
+    "/ɪkˈspleɪnəbl ˈfiːdbæk/",
+    "可解释反馈；说明系统为什么提示、限制或切换状态的反馈",
+    "",
+    "Explainable feedback can say why lane centering is fading.",
+    "可解释反馈可以说明车道居中为什么正在减弱。"
+  ],
   "explainable recommendation": [
     "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
     "可解释推荐；说明依据、风险和替代方案的系统建议",
@@ -6520,6 +6590,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "expressed": [
+    "/ɪkˈsprest/",
+    "被表达的；通过界面语言或反馈呈现出来的",
+    "",
+    "Automation confidence should be expressed as plain status.",
+    "自动化置信度应以清楚状态表达。"
   ],
   "extra": [
     "/ˈekstrə/",
@@ -6988,6 +7065,20 @@
     "The best experience feels firm but controlled.",
     "最佳体验应坚定但可控。"
   ],
+  "firm steering vibration": [
+    "/fɜːrm ˈstɪrɪŋ vaɪˈbreɪʃn/",
+    "明确的方向盘振动；较清晰、可感知的转向触觉提示",
+    "",
+    "A firm steering vibration can support a spoken takeover cue.",
+    "明确的方向盘振动可以支持语音接管提示。"
+  ],
+  "firmer": [
+    "/ˈfɜːrmər/",
+    "更明确的；力度更强、更容易被感知的",
+    "",
+    "Firmer steering resistance can warn against an unsafe lane change.",
+    "更明确的转向阻力可以警告不安全变道。"
+  ],
   "first": [
     "/fɜːst/",
     "首先, 第一, 优先；第一的；第一；开始, 第一",
@@ -7243,6 +7334,13 @@
     "Ambiguous icons create cognitive friction during time-sensitive tasks.",
     "在这句话中，“friction”可理解为“摩擦, 摩擦治疗, 不和”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "frighten": [
+    "/ˈfraɪtn/",
+    "吓到；让用户产生不必要的恐惧或紧张",
+    "",
+    "The goal is not to frighten the driver.",
+    "目标不是吓到驾驶员。"
   ],
   "from": [
     "/frɒm/",
@@ -7774,6 +7872,13 @@
     "A takeover request must be clear across visual, auditory, and haptic channels.",
     "在这句话中，“haptic”可理解为“触觉的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "haptic affordance": [
+    "/ˈhæptɪk əˈfɔːrdəns/",
+    "触觉可供性；通过振动、阻尼或力反馈暗示用户可采取的动作",
+    "",
+    "A haptic affordance on the steering wheel can invite the driver to hold the wheel without adding visual clutter.",
+    "方向盘上的触觉可供性可以提示驾驶员握住方向盘，同时不增加视觉杂乱。"
   ],
   "haptic confirmation": [
     "/ˈhæptɪk ˌkɑːnfərˈmeɪʃn/",
@@ -8985,6 +9090,13 @@
     "",
     "Mood labels may feel intrusive without user consent.",
     "没有用户同意时，情绪标签可能显得侵入。"
+  ],
+  "invite": [
+    "/ɪnˈvaɪt/",
+    "邀请；在交互中表示温和提示用户采取某个动作",
+    "",
+    "A soft pulse can invite the driver to place both hands on the wheel.",
+    "轻微脉冲可以提示驾驶员双手握住方向盘。"
   ],
   "involved": [
     "/ɪnˈvɑːlvd/",
@@ -12463,6 +12575,13 @@
     "A cockpit cannot infer emotions perfectly from one signal.",
     "座舱无法从单一信号完全准确地推断情绪。"
   ],
+  "perform": [
+    "/pərˈfɔːrm/",
+    "执行；完成某个操作或任务",
+    "",
+    "Driver confirmation should be easy to perform without a long glance.",
+    "驾驶员确认应易于执行，并避免长时间扫视。"
+  ],
   "period": [
     "/ˈpɪriəd/",
     "时间段；一个短暂窗口",
@@ -12723,6 +12842,13 @@
     "",
     "Plain language should support clear control in a shared intelligent cockpit.",
     "在这句话中，“plain language”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "plain status": [
+    "/pleɪn ˈsteɪtəs/",
+    "清楚状态；用普通语言表达系统当前能力和限制",
+    "",
+    "Plain status helps users understand automation confidence.",
+    "清楚状态有助于用户理解自动化置信度。"
   ],
   "plain wording": [
     "/pleɪn ˈwɜːrdɪŋ/",
@@ -13521,6 +13647,13 @@
     "Progressive disclosure keeps advanced climate options hidden until the driver asks for them.",
     "在这句话中，“progressive”可理解为“改革论者, 进步论者；前进的, 累进的, 进步的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "progressive cueing": [
+    "/prəˈɡresɪv ˈkjuːɪŋ/",
+    "渐进式提示；随着风险或紧迫性增加逐级增强提示强度",
+    "",
+    "Progressive cueing can move from a soft pulse to a stronger vibration when the driver does not respond.",
+    "当驾驶员没有响应时，渐进式提示可以从轻微脉冲升级为更强振动。"
   ],
   "progressive detail": [
     "/prəˈɡresɪv ˈdiːteɪl/",
@@ -14892,6 +15025,13 @@
     "",
     "Good mode design must communicate responsibility before control changes.",
     "在这句话中，“responsibility”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "responsibility map": [
+    "/rɪˌspɑːnsəˈbɪləti mæp/",
+    "责任地图；说明人机双方当前职责分配的概念模型或界面表达",
+    "",
+    "A simple responsibility map reduces confusion during shared control.",
+    "简单的责任地图可减少共享控制中的困惑。"
   ],
   "responsible": [
     "/rɪˈspɑːnsəbl/",
@@ -16398,6 +16538,13 @@
     "Shared control works best when the cockpit shows who requested a change and what will happen next.",
     "共享控制在座舱显示是谁请求了更改以及下一步会发生什么时效果最好。"
   ],
+  "shared control transition": [
+    "/ʃerd kənˈtroʊl trænˈzɪʃn/",
+    "共享控制切换；驾驶员与自动化系统之间逐步转移控制权的过程",
+    "",
+    "A shared control transition should tell the driver which steering and speed tasks are still automated.",
+    "共享控制切换应告诉驾驶员哪些转向和车速任务仍由自动化系统执行。"
+  ],
   "shared display": [
     "/ʃerd dɪˈspleɪ/",
     "共享显示屏；可能被不同乘员或驾驶员看到的车内屏幕",
@@ -16425,6 +16572,20 @@
     "",
     "In a shared vehicle scenario, the cockpit should not expose another driver's destination history.",
     "在共享车辆场景中，座舱不应暴露另一位驾驶员的目的地历史。"
+  ],
+  "shared-control": [
+    "/ʃerd kənˈtroʊl/",
+    "共享控制的；描述人和自动化系统共同承担驾驶任务的设计",
+    "",
+    "Good shared-control design needs progressive cueing.",
+    "优秀的共享控制设计需要渐进式提示。"
+  ],
+  "shared-control design": [
+    "/ʃerd kənˈtroʊl dɪˈzaɪn/",
+    "共享控制设计；为人和自动化系统共同参与驾驶任务而设计的交互方案",
+    "",
+    "Shared-control design works best when responsibility is visible.",
+    "当责任可见时，共享控制设计效果最好。"
   ],
   "shares": [
     "/ʃerz/",
@@ -16740,6 +16901,13 @@
     "在这句话中，“simply”可理解为“简单地, 只是, 简直, 简朴地, 坦白地”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "single": [
+    "/ˈsɪŋɡl/",
+    "单一的；只有一个阶段或一次动作的",
+    "",
+    "Shared control is not a single handoff moment.",
+    "共享控制并不是单一的交接瞬间。"
+  ],
   "sitting": [
     "/ˈsɪtɪŋ/",
     "坐着；处于某个座位",
@@ -16789,6 +16957,20 @@
     "",
     "Intent repair should repeat only the uncertain slot, not the whole command.",
     "在这句话中，“slot”可理解为“信息槽；意图中需要填充的参数”。"
+  ],
+  "slow": [
+    "/sloʊ/",
+    "减速；使车辆速度降低",
+    "",
+    "A fallback path may slow the vehicle and ask for manual control.",
+    "回退路径可以让车辆减速并请求手动控制。"
+  ],
+  "slowdown": [
+    "/ˈsloʊdaʊn/",
+    "减速；车辆以受控方式降低速度的过程",
+    "",
+    "The fallback path can begin a safe slowdown.",
+    "回退路径可以开始安全减速。"
   ],
   "slowed": [
     "/按语境朗读/",
@@ -17062,6 +17244,13 @@
     "Speed context helps determine whether a voice prompt is needed.",
     "在这句话中，“speed context”用于描述智能座舱导航提示设计。"
   ],
+  "speed task": [
+    "/spiːd tæsk/",
+    "速度任务；控制车辆速度、跟车或减速的驾驶任务",
+    "",
+    "A speed task can remain manual while lane centering stays automated.",
+    "速度任务可以保持手动，同时车道居中仍为自动。"
+  ],
   "spending": [
     "/ˈspendɪŋ/",
     "消耗；在注意力语境中表示占用时间或认知资源",
@@ -17117,6 +17306,13 @@
     "",
     "A spoken request may omit the object or location.",
     "语音请求可能省略对象或位置。"
+  ],
+  "spoken takeover cue": [
+    "/ˈspoʊkən ˈteɪkoʊvər kjuː/",
+    "语音接管提示；用语音要求驾驶员恢复控制的提醒",
+    "",
+    "A spoken takeover cue should be short, direct, and paired with haptic feedback.",
+    "语音接管提示应简短直接，并与触觉反馈配合。"
   ],
   "stable": [
     "/ˈsteɪbl/",
@@ -17371,6 +17567,20 @@
     "A steering correction may allow the cockpit to reduce the warning level.",
     "方向修正可能允许座舱降低警告等级。"
   ],
+  "steering resistance": [
+    "/ˈstɪrɪŋ rɪˈzɪstəns/",
+    "转向阻力；通过方向盘力度变化表达系统状态或动作限制",
+    "",
+    "Steering resistance can warn the driver before an unsafe lane change becomes critical.",
+    "转向阻力可以在不安全变道变得危险之前提醒驾驶员。"
+  ],
+  "steering task": [
+    "/ˈstɪrɪŋ tæsk/",
+    "转向任务；控制车辆方向和横向位置的驾驶任务",
+    "",
+    "The interface should show whether the steering task belongs to the system or the driver.",
+    "界面应显示转向任务属于系统还是驾驶员。"
+  ],
   "steering wheel": [
     "/ˈstɪrɪŋ wiːl/",
     "方向盘；可随用户档案调整位置的驾驶控制部件",
@@ -17540,6 +17750,13 @@
     "",
     "Stronger consent is needed for safety-related changes.",
     "安全相关变化需要更强同意。"
+  ],
+  "stronger vibration": [
+    "/ˈstrɔːŋɡər vaɪˈbreɪʃn/",
+    "更强振动；更高强度的触觉提醒，通常用于更紧迫场景",
+    "",
+    "A stronger vibration should be reserved for urgent or ignored requests.",
+    "更强振动应保留给紧急或被忽视的请求。"
   ],
   "strongest": [
     "/ˈstrɔːŋɡəst/",
@@ -18132,6 +18349,13 @@
     "Avoid technical labels in a confirmation prompt.",
     "确认提示中应避免技术标签。"
   ],
+  "technical score": [
+    "/ˈteknɪkl skɔːr/",
+    "技术分数；系统内部用于衡量置信度或性能的数值",
+    "",
+    "A technical score is less useful than a direct instruction during driving.",
+    "驾驶过程中，技术分数不如直接指令有用。"
+  ],
   "tell": [
     "/tel/",
     "判断；分辨；说出",
@@ -18620,6 +18844,13 @@
     "",
     "A transition animation can make a display handoff understandable.",
     "转场动画可以让屏幕交接更容易理解。"
+  ],
+  "transition language": [
+    "/trænˈzɪʃn ˈlæŋɡwɪdʒ/",
+    "切换语言；用于描述模式变化、责任变化和下一步动作的统一文案",
+    "",
+    "Consistent transition language prevents mixed messages across displays.",
+    "一致的切换语言可防止不同显示之间出现混乱信息。"
   ],
   "translated": [
     "/trænzˈleɪtɪd/",
@@ -19193,6 +19424,13 @@
     "Urgent information belongs near the driver sightline.",
     "紧急信息应靠近驾驶员视线。"
   ],
+  "urgent request": [
+    "/ˈɜːrdʒənt rɪˈkwest/",
+    "紧急请求；需要驾驶员快速响应的系统请求",
+    "",
+    "An urgent request can combine voice, visual, and haptic cues.",
+    "紧急请求可以结合语音、视觉和触觉提示。"
+  ],
   "usability test": [
     "/ˌjuːzəˈbɪləti test/",
     "可用性测试；观察用户完成任务以评估设计效果的方法",
@@ -19399,6 +19637,13 @@
     "",
     "Vehicle is shared should support clear control in a shared intelligent cockpit.",
     "在这句话中，“vehicle is shared”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "vehicle motion": [
+    "/ˈviːəkl ˈmoʊʃn/",
+    "车辆运动；车辆的速度、方向、加速度和位置变化",
+    "",
+    "Vehicle motion should match what the interface says about control.",
+    "车辆运动应与界面对控制权的说明一致。"
   ],
   "vehicles": [
     "/ˈviːəkəlz/",
@@ -19802,6 +20047,13 @@
     "A preconditioning cue tells the driver why the battery is warming before arrival.",
     "在这句话中，“warming”可理解为“升温；温度提高”。"
   ],
+  "warn": [
+    "/wɔːrn/",
+    "警告；在风险出现前提醒用户注意或行动",
+    "",
+    "Firmer steering resistance can warn against an unsafe lane change.",
+    "更明确的转向阻力可以警告不安全变道。"
+  ],
   "warning": [
     "/ˈwɔːnɪŋ/",
     "动词：警告, 提醒, 通知；发出警告",
@@ -19831,6 +20083,13 @@
     "",
     "The word was appears in today's cockpit summary practice.",
     "在这个语境中，“was”可理解为“是”。"
+  ],
+  "wasting": [
+    "/ˈweɪstɪŋ/",
+    "浪费；消耗本可用于驾驶观察的注意力资源",
+    "",
+    "Drivers can build mode awareness without wasting attention budget.",
+    "驾驶员可以建立模式意识，而不浪费注意力预算。"
   ],
   "watched": [
     "/wɑːtʃt/",

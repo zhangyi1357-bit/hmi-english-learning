@@ -1,5 +1,587 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-20-shared-control-and-haptic-affordances",
+    "date": "2026-09-20",
+    "title": "Shared control transitions and haptic affordances in intelligent cockpits",
+    "topic": "智能座舱共享控制切换与触觉可供性",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明驾驶员与自动化系统之间的共享控制、触觉提示、控制权边界、接管准备和可解释反馈。",
+    "words": [
+      {
+        "term": "shared control transition",
+        "phonetic": "/ʃerd kənˈtroʊl trænˈzɪʃn/",
+        "meaning": "共享控制切换；驾驶员与自动化系统之间逐步转移控制权的过程",
+        "example": "A shared control transition should tell the driver which steering and speed tasks are still automated.",
+        "chineseExample": "共享控制切换应告诉驾驶员哪些转向和车速任务仍由自动化系统执行。"
+      },
+      {
+        "term": "haptic affordance",
+        "phonetic": "/ˈhæptɪk əˈfɔːrdəns/",
+        "meaning": "触觉可供性；通过振动、阻尼或力反馈暗示用户可采取的动作",
+        "example": "A haptic affordance on the steering wheel can invite the driver to hold the wheel without adding visual clutter.",
+        "chineseExample": "方向盘上的触觉可供性可以提示驾驶员握住方向盘，同时不增加视觉杂乱。"
+      },
+      {
+        "term": "control boundary",
+        "phonetic": "/kənˈtroʊl ˈbaʊndəri/",
+        "meaning": "控制边界；说明人和系统分别负责哪些驾驶任务的界线",
+        "example": "The control boundary must remain visible when lane centering is active but speed choice is manual.",
+        "chineseExample": "当车道居中处于开启状态但速度选择为手动时，控制边界必须保持可见。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员是否已经感知场景、理解请求并准备恢复控制",
+        "example": "Takeover readiness is higher when the cockpit combines a short voice cue with a firm steering vibration.",
+        "chineseExample": "当座舱把简短语音提示与明确的方向盘振动结合时，接管准备度会更高。"
+      },
+      {
+        "term": "steering resistance",
+        "phonetic": "/ˈstɪrɪŋ rɪˈzɪstəns/",
+        "meaning": "转向阻力；通过方向盘力度变化表达系统状态或动作限制",
+        "example": "Steering resistance can warn the driver before an unsafe lane change becomes critical.",
+        "chineseExample": "转向阻力可以在不安全变道变得危险之前提醒驾驶员。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式意识；用户对当前驾驶辅助模式及其限制的理解",
+        "example": "Mode awareness improves when the cluster, HUD, and steering wheel use the same transition language.",
+        "chineseExample": "当仪表、HUD 和方向盘使用一致的切换语言时，模式意识会提升。"
+      },
+      {
+        "term": "driver confirmation",
+        "phonetic": "/ˈdraɪvər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "驾驶员确认；在关键控制变化前要求驾驶员明确确认的交互步骤",
+        "example": "Driver confirmation should be easy to perform without forcing a long glance away from the road.",
+        "chineseExample": "驾驶员确认应易于完成，并避免迫使驾驶员长时间离开道路视线。"
+      },
+      {
+        "term": "progressive cueing",
+        "phonetic": "/prəˈɡresɪv ˈkjuːɪŋ/",
+        "meaning": "渐进式提示；随着风险或紧迫性增加逐级增强提示强度",
+        "example": "Progressive cueing can move from a soft pulse to a stronger vibration when the driver does not respond.",
+        "chineseExample": "当驾驶员没有响应时，渐进式提示可以从轻微脉冲升级为更强振动。"
+      },
+      {
+        "term": "automation confidence",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈkɑːnfɪdəns/",
+        "meaning": "自动化置信度；系统对自身感知、规划或控制结果可靠性的判断",
+        "example": "Automation confidence should be expressed as plain status, not as a hidden technical score.",
+        "chineseExample": "自动化置信度应以清楚状态表达，而不是隐藏的技术分数。"
+      },
+      {
+        "term": "fallback path",
+        "phonetic": "/ˈfɔːlbæk pæθ/",
+        "meaning": "回退路径；在系统能力下降或用户未响应时保持安全的下一步方案",
+        "example": "A fallback path may slow the vehicle, center it in the lane, and ask for manual control.",
+        "chineseExample": "回退路径可以让车辆减速、保持车道居中，并请求手动控制。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "shared control transition",
+        "phonetic": "/ʃerd kənˈtroʊl trænˈzɪʃn/",
+        "meaning": "共享控制切换；驾驶员与自动化系统之间逐步转移控制权的过程",
+        "example": "A shared control transition should tell the driver which steering and speed tasks are still automated.",
+        "chineseExample": "共享控制切换应告诉驾驶员哪些转向和车速任务仍由自动化系统执行。"
+      },
+      {
+        "term": "haptic affordance",
+        "phonetic": "/ˈhæptɪk əˈfɔːrdəns/",
+        "meaning": "触觉可供性；通过振动、阻尼或力反馈暗示用户可采取的动作",
+        "example": "A haptic affordance on the steering wheel can invite the driver to hold the wheel without adding visual clutter.",
+        "chineseExample": "方向盘上的触觉可供性可以提示驾驶员握住方向盘，同时不增加视觉杂乱。"
+      },
+      {
+        "term": "control boundary",
+        "phonetic": "/kənˈtroʊl ˈbaʊndəri/",
+        "meaning": "控制边界；说明人和系统分别负责哪些驾驶任务的界线",
+        "example": "The control boundary must remain visible when lane centering is active but speed choice is manual.",
+        "chineseExample": "当车道居中处于开启状态但速度选择为手动时，控制边界必须保持可见。"
+      },
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkoʊvər ˈredinəs/",
+        "meaning": "接管准备度；驾驶员是否已经感知场景、理解请求并准备恢复控制",
+        "example": "Takeover readiness is higher when the cockpit combines a short voice cue with a firm steering vibration.",
+        "chineseExample": "当座舱把简短语音提示与明确的方向盘振动结合时，接管准备度会更高。"
+      },
+      {
+        "term": "steering resistance",
+        "phonetic": "/ˈstɪrɪŋ rɪˈzɪstəns/",
+        "meaning": "转向阻力；通过方向盘力度变化表达系统状态或动作限制",
+        "example": "Steering resistance can warn the driver before an unsafe lane change becomes critical.",
+        "chineseExample": "转向阻力可以在不安全变道变得危险之前提醒驾驶员。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式意识；用户对当前驾驶辅助模式及其限制的理解",
+        "example": "Mode awareness improves when the cluster, HUD, and steering wheel use the same transition language.",
+        "chineseExample": "当仪表、HUD 和方向盘使用一致的切换语言时，模式意识会提升。"
+      },
+      {
+        "term": "driver confirmation",
+        "phonetic": "/ˈdraɪvər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "驾驶员确认；在关键控制变化前要求驾驶员明确确认的交互步骤",
+        "example": "Driver confirmation should be easy to perform without forcing a long glance away from the road.",
+        "chineseExample": "驾驶员确认应易于完成，并避免迫使驾驶员长时间离开道路视线。"
+      },
+      {
+        "term": "progressive cueing",
+        "phonetic": "/prəˈɡresɪv ˈkjuːɪŋ/",
+        "meaning": "渐进式提示；随着风险或紧迫性增加逐级增强提示强度",
+        "example": "Progressive cueing can move from a soft pulse to a stronger vibration when the driver does not respond.",
+        "chineseExample": "当驾驶员没有响应时，渐进式提示可以从轻微脉冲升级为更强振动。"
+      },
+      {
+        "term": "automation confidence",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈkɑːnfɪdəns/",
+        "meaning": "自动化置信度；系统对自身感知、规划或控制结果可靠性的判断",
+        "example": "Automation confidence should be expressed as plain status, not as a hidden technical score.",
+        "chineseExample": "自动化置信度应以清楚状态表达，而不是隐藏的技术分数。"
+      },
+      {
+        "term": "fallback path",
+        "phonetic": "/ˈfɔːlbæk pæθ/",
+        "meaning": "回退路径；在系统能力下降或用户未响应时保持安全的下一步方案",
+        "example": "A fallback path may slow the vehicle, center it in the lane, and ask for manual control.",
+        "chineseExample": "回退路径可以让车辆减速、保持车道居中，并请求手动控制。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "In an intelligent cockpit, shared control is not a single handoff moment.",
+        "chineseExample": "在智能座舱中，共享控制并不是单一的交接瞬间。"
+      },
+      {
+        "term": "automated lane centering",
+        "phonetic": "/ˈɔːtəmeɪtɪd leɪn ˈsentərɪŋ/",
+        "meaning": "自动车道居中；系统帮助车辆保持在车道中央的辅助功能",
+        "example": "Automated lane centering may guide the vehicle while the driver still chooses the speed.",
+        "chineseExample": "自动车道居中可以引导车辆，同时驾驶员仍选择速度。"
+      },
+      {
+        "term": "driver assistance",
+        "phonetic": "/ˈdraɪvər əˈsɪstəns/",
+        "meaning": "驾驶辅助；帮助驾驶员完成部分观察、判断或控制任务的功能",
+        "example": "Driver assistance needs clear feedback when responsibility changes.",
+        "chineseExample": "当责任发生变化时，驾驶辅助需要清楚反馈。"
+      },
+      {
+        "term": "steering wheel",
+        "phonetic": "/ˈstɪrɪŋ wiːl/",
+        "meaning": "方向盘；驾驶员控制车辆转向的主要部件",
+        "example": "A steering wheel cue can communicate urgency without covering the road scene.",
+        "chineseExample": "方向盘提示可以传达紧迫性，而不会遮挡道路场景。"
+      },
+      {
+        "term": "visual clutter",
+        "phonetic": "/ˈvɪʒuəl ˈklʌtər/",
+        "meaning": "视觉杂乱；过多视觉元素导致信息难以扫视和理解的状态",
+        "example": "Haptic feedback reduces visual clutter during a complex transition.",
+        "chineseExample": "触觉反馈可在复杂切换中减少视觉杂乱。"
+      },
+      {
+        "term": "steering task",
+        "phonetic": "/ˈstɪrɪŋ tæsk/",
+        "meaning": "转向任务；控制车辆方向和横向位置的驾驶任务",
+        "example": "The interface should show whether the steering task belongs to the system or the driver.",
+        "chineseExample": "界面应显示转向任务属于系统还是驾驶员。"
+      },
+      {
+        "term": "speed task",
+        "phonetic": "/spiːd tæsk/",
+        "meaning": "速度任务；控制车辆速度、跟车或减速的驾驶任务",
+        "example": "A speed task can remain manual while lane centering stays automated.",
+        "chineseExample": "速度任务可以保持手动，同时车道居中仍为自动。"
+      },
+      {
+        "term": "status banner",
+        "phonetic": "/ˈsteɪtəs ˈbænər/",
+        "meaning": "状态横幅；用短句说明当前模式、限制或下一步动作的界面区域",
+        "example": "A status banner can say Steering assist fading, please hold the wheel.",
+        "chineseExample": "状态横幅可以写“转向辅助正在减弱，请握住方向盘”。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "仪表；驾驶员前方显示速度、模式和警示信息的区域",
+        "example": "The cluster should repeat the same transition message as the HUD.",
+        "chineseExample": "仪表应重复与 HUD 相同的切换信息。"
+      },
+      {
+        "term": "HUD",
+        "phonetic": "/ˌeɪtʃ juː ˈdiː/",
+        "meaning": "抬头显示；把关键驾驶信息投射到驾驶员前方视野中的显示方式",
+        "example": "The HUD can keep the next action close to the road view.",
+        "chineseExample": "HUD 可以让下一步动作靠近道路视野。"
+      },
+      {
+        "term": "transition language",
+        "phonetic": "/trænˈzɪʃn ˈlæŋɡwɪdʒ/",
+        "meaning": "切换语言；用于描述模式变化、责任变化和下一步动作的统一文案",
+        "example": "Consistent transition language prevents mixed messages across displays.",
+        "chineseExample": "一致的切换语言可防止不同显示之间出现混乱信息。"
+      },
+      {
+        "term": "plain status",
+        "phonetic": "/pleɪn ˈsteɪtəs/",
+        "meaning": "清楚状态；用普通语言表达系统当前能力和限制",
+        "example": "Plain status helps users understand automation confidence.",
+        "chineseExample": "清楚状态有助于用户理解自动化置信度。"
+      },
+      {
+        "term": "technical score",
+        "phonetic": "/ˈteknɪkl skɔːr/",
+        "meaning": "技术分数；系统内部用于衡量置信度或性能的数值",
+        "example": "A technical score is less useful than a direct instruction during driving.",
+        "chineseExample": "驾驶过程中，技术分数不如直接指令有用。"
+      },
+      {
+        "term": "soft pulse",
+        "phonetic": "/sɔːft pʌls/",
+        "meaning": "轻微脉冲；低强度、短时的触觉提示",
+        "example": "A soft pulse can start the cue before a stronger vibration is needed.",
+        "chineseExample": "轻微脉冲可以在需要更强振动之前开始提示。"
+      },
+      {
+        "term": "stronger vibration",
+        "phonetic": "/ˈstrɔːŋɡər vaɪˈbreɪʃn/",
+        "meaning": "更强振动；更高强度的触觉提醒，通常用于更紧迫场景",
+        "example": "A stronger vibration should be reserved for urgent or ignored requests.",
+        "chineseExample": "更强振动应保留给紧急或被忽视的请求。"
+      },
+      {
+        "term": "manual control",
+        "phonetic": "/ˈmænjuəl kənˈtroʊl/",
+        "meaning": "手动控制；由驾驶员直接负责车辆转向、速度或制动",
+        "example": "The system can ask for manual control when sensor confidence drops.",
+        "chineseExample": "当传感器置信度下降时，系统可以请求手动控制。"
+      },
+      {
+        "term": "responsibility map",
+        "phonetic": "/rɪˌspɑːnsəˈbɪləti mæp/",
+        "meaning": "责任地图；说明人机双方当前职责分配的概念模型或界面表达",
+        "example": "A simple responsibility map reduces confusion during shared control.",
+        "chineseExample": "简单的责任地图可减少共享控制中的困惑。"
+      },
+      {
+        "term": "safe slowdown",
+        "phonetic": "/seɪf ˈsloʊdaʊn/",
+        "meaning": "安全减速；在风险增加或无人响应时以可控方式降低车速",
+        "example": "Safe slowdown is part of the fallback path when the driver does not respond.",
+        "chineseExample": "当驾驶员没有响应时，安全减速是回退路径的一部分。"
+      },
+      {
+        "term": "lane change",
+        "phonetic": "/leɪn tʃeɪndʒ/",
+        "meaning": "变道；车辆从当前车道移动到相邻车道的驾驶动作",
+        "example": "Steering resistance can warn the driver before an unsafe lane change becomes critical.",
+        "chineseExample": "转向阻力可以在不安全变道变得危险之前提醒驾驶员。"
+      },
+      {
+        "term": "critical",
+        "phonetic": "/ˈkrɪtɪkl/",
+        "meaning": "危急的；风险高、需要快速处理的状态",
+        "example": "A warning should arrive before the lane change becomes critical.",
+        "chineseExample": "警告应在变道变得危急之前出现。"
+      },
+      {
+        "term": "urgent request",
+        "phonetic": "/ˈɜːrdʒənt rɪˈkwest/",
+        "meaning": "紧急请求；需要驾驶员快速响应的系统请求",
+        "example": "An urgent request can combine voice, visual, and haptic cues.",
+        "chineseExample": "紧急请求可以结合语音、视觉和触觉提示。"
+      },
+      {
+        "term": "glance demand",
+        "phonetic": "/ɡlæns dɪˈmænd/",
+        "meaning": "扫视需求；界面要求驾驶员看屏幕的时间和注意力成本",
+        "example": "The design should keep glance demand low during takeover.",
+        "chineseExample": "设计应在接管期间保持较低的扫视需求。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃn ˈbʌdʒɪt/",
+        "meaning": "注意力预算；驾驶员在特定时刻可分配给界面的有限注意力资源",
+        "example": "Haptic affordance protects the attention budget by reducing extra reading.",
+        "chineseExample": "触觉可供性通过减少额外阅读来保护注意力预算。"
+      },
+      {
+        "term": "vehicle motion",
+        "phonetic": "/ˈviːəkl ˈmoʊʃn/",
+        "meaning": "车辆运动；车辆的速度、方向、加速度和位置变化",
+        "example": "Vehicle motion should match what the interface says about control.",
+        "chineseExample": "车辆运动应与界面对控制权的说明一致。"
+      },
+      {
+        "term": "sensor confidence",
+        "phonetic": "/ˈsensər ˈkɑːnfɪdəns/",
+        "meaning": "传感器置信度；系统对传感器输入可靠程度的判断",
+        "example": "The cockpit should request manual control when sensor confidence drops.",
+        "chineseExample": "当传感器置信度下降时，座舱应请求手动控制。"
+      },
+      {
+        "term": "firm steering vibration",
+        "phonetic": "/fɜːrm ˈstɪrɪŋ vaɪˈbreɪʃn/",
+        "meaning": "明确的方向盘振动；较清晰、可感知的转向触觉提示",
+        "example": "A firm steering vibration can support a spoken takeover cue.",
+        "chineseExample": "明确的方向盘振动可以支持语音接管提示。"
+      },
+      {
+        "term": "spoken takeover cue",
+        "phonetic": "/ˈspoʊkən ˈteɪkoʊvər kjuː/",
+        "meaning": "语音接管提示；用语音要求驾驶员恢复控制的提醒",
+        "example": "A spoken takeover cue should be short, direct, and paired with haptic feedback.",
+        "chineseExample": "语音接管提示应简短直接，并与触觉反馈配合。"
+      },
+      {
+        "term": "explainable feedback",
+        "phonetic": "/ɪkˈspleɪnəbl ˈfiːdbæk/",
+        "meaning": "可解释反馈；说明系统为什么提示、限制或切换状态的反馈",
+        "example": "Explainable feedback can say why lane centering is fading.",
+        "chineseExample": "可解释反馈可以说明车道居中为什么正在减弱。"
+      },
+      {
+        "term": "shared-control design",
+        "phonetic": "/ʃerd kənˈtroʊl dɪˈzaɪn/",
+        "meaning": "共享控制设计；为人和自动化系统共同参与驾驶任务而设计的交互方案",
+        "example": "Shared-control design works best when responsibility is visible.",
+        "chineseExample": "当责任可见时，共享控制设计效果最好。"
+      },
+      {
+        "term": "driver trust",
+        "phonetic": "/ˈdraɪvər trʌst/",
+        "meaning": "驾驶员信任；驾驶员对系统能力、限制和反馈诚实性的信心",
+        "example": "Driver trust depends on clear limits, not optimistic wording.",
+        "chineseExample": "驾驶员信任取决于清楚限制，而不是乐观措辞。"
+      },
+      {
+        "term": "automation limit",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈlɪmɪt/",
+        "meaning": "自动化限制；自动驾驶或辅助系统当前无法可靠处理的边界",
+        "example": "The interface should reveal an automation limit before the driver feels surprised.",
+        "chineseExample": "界面应在驾驶员感到意外之前揭示自动化限制。"
+      },
+      {
+        "term": "control authority",
+        "phonetic": "/kənˈtroʊl əˈθɔːrəti/",
+        "meaning": "控制权限；谁有权决定车辆当前动作的交互和系统状态",
+        "example": "Control authority should not feel ambiguous during a transition.",
+        "chineseExample": "在切换期间，控制权限不应让人感到模糊。"
+      },
+      {
+        "term": "ambiguous",
+        "phonetic": "/æmˈbɪɡjuəs/",
+        "meaning": "模糊的；含义不清、容易产生多种理解的",
+        "example": "Ambiguous mode feedback can make the driver overtrust the system.",
+        "chineseExample": "模糊的模式反馈可能让驾驶员过度信任系统。"
+      },
+      {
+        "term": "coordinated feedback",
+        "phonetic": "/koʊˈɔːrdɪneɪtɪd ˈfiːdbæk/",
+        "meaning": "协同反馈；视觉、语音和触觉在同一意图下配合输出",
+        "example": "Coordinated feedback makes a transition easier to understand.",
+        "chineseExample": "协同反馈使切换更容易理解。"
+      },
+      {
+        "term": "risk level",
+        "phonetic": "/rɪsk ˈlevl/",
+        "meaning": "风险等级；用于判断提示强度和回退策略的风险程度",
+        "example": "The cue should become stronger as the risk level rises.",
+        "chineseExample": "随着风险等级升高，提示应变得更强。"
+      },
+      {
+        "term": "automation",
+        "phonetic": "/ˌɔːtəˈmeɪʃn/",
+        "meaning": "自动化；系统自动感知、决策或控制的能力",
+        "example": "Automation should explain what it can and cannot handle.",
+        "chineseExample": "自动化系统应说明自己能处理什么、不能处理什么。"
+      },
+      {
+        "term": "steering",
+        "phonetic": "/ˈstɪrɪŋ/",
+        "meaning": "转向；控制车辆行驶方向的动作或系统",
+        "example": "Steering feedback should match the current control boundary.",
+        "chineseExample": "转向反馈应匹配当前控制边界。"
+      },
+      {
+        "term": "vibration",
+        "phonetic": "/vaɪˈbreɪʃn/",
+        "meaning": "振动；通过触觉传递状态、警示或确认的反馈方式",
+        "example": "Vibration can support a visual cue during shared control.",
+        "chineseExample": "振动可以在共享控制期间支持视觉提示。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "交接；任务、控制权或上下文从一方转移给另一方",
+        "example": "A handoff needs a clear next action.",
+        "chineseExample": "交接需要清楚的下一步动作。"
+      },
+      {
+        "term": "invite",
+        "phonetic": "/ɪnˈvaɪt/",
+        "meaning": "邀请；在交互中表示温和提示用户采取某个动作",
+        "example": "A soft pulse can invite the driver to place both hands on the wheel.",
+        "chineseExample": "轻微脉冲可以提示驾驶员双手握住方向盘。"
+      },
+      {
+        "term": "clutter",
+        "phonetic": "/ˈklʌtər/",
+        "meaning": "杂乱；界面中过多元素造成的干扰",
+        "example": "A haptic affordance can reduce clutter by moving some feedback away from the screen.",
+        "chineseExample": "触觉可供性可以把部分反馈从屏幕转移出去，从而减少杂乱。"
+      },
+      {
+        "term": "warn",
+        "phonetic": "/wɔːrn/",
+        "meaning": "警告；在风险出现前提醒用户注意或行动",
+        "example": "Firmer steering resistance can warn against an unsafe lane change.",
+        "chineseExample": "更明确的转向阻力可以警告不安全变道。"
+      },
+      {
+        "term": "perform",
+        "phonetic": "/pərˈfɔːrm/",
+        "meaning": "执行；完成某个操作或任务",
+        "example": "Driver confirmation should be easy to perform without a long glance.",
+        "chineseExample": "驾驶员确认应易于执行，并避免长时间扫视。"
+      },
+      {
+        "term": "cueing",
+        "phonetic": "/ˈkjuːɪŋ/",
+        "meaning": "提示；通过声音、视觉或触觉引导用户注意和行动",
+        "example": "Progressive cueing changes strength as the risk level rises.",
+        "chineseExample": "渐进式提示会随着风险等级升高而改变强度。"
+      },
+      {
+        "term": "expressed",
+        "phonetic": "/ɪkˈsprest/",
+        "meaning": "被表达的；通过界面语言或反馈呈现出来的",
+        "example": "Automation confidence should be expressed as plain status.",
+        "chineseExample": "自动化置信度应以清楚状态表达。"
+      },
+      {
+        "term": "slow",
+        "phonetic": "/sloʊ/",
+        "meaning": "减速；使车辆速度降低",
+        "example": "A fallback path may slow the vehicle and ask for manual control.",
+        "chineseExample": "回退路径可以让车辆减速并请求手动控制。"
+      },
+      {
+        "term": "single",
+        "phonetic": "/ˈsɪŋɡl/",
+        "meaning": "单一的；只有一个阶段或一次动作的",
+        "example": "Shared control is not a single handoff moment.",
+        "chineseExample": "共享控制并不是单一的交接瞬间。"
+      },
+      {
+        "term": "divide",
+        "phonetic": "/dɪˈvaɪd/",
+        "meaning": "分担；把任务或责任分配给不同角色",
+        "example": "The driver and automation may divide steering and speed tasks.",
+        "chineseExample": "驾驶员和自动化系统可能会分担转向和速度任务。"
+      },
+      {
+        "term": "firmer",
+        "phonetic": "/ˈfɜːrmər/",
+        "meaning": "更明确的；力度更强、更容易被感知的",
+        "example": "Firmer steering resistance can warn against an unsafe lane change.",
+        "chineseExample": "更明确的转向阻力可以警告不安全变道。"
+      },
+      {
+        "term": "against",
+        "phonetic": "/əˈɡenst/",
+        "meaning": "针对；在这里表示对某种风险动作发出警告",
+        "example": "The system can warn against an unsafe lane change.",
+        "chineseExample": "系统可以针对不安全变道发出警告。"
+      },
+      {
+        "term": "shared-control",
+        "phonetic": "/ʃerd kənˈtroʊl/",
+        "meaning": "共享控制的；描述人和自动化系统共同承担驾驶任务的设计",
+        "example": "Good shared-control design needs progressive cueing.",
+        "chineseExample": "优秀的共享控制设计需要渐进式提示。"
+      },
+      {
+        "term": "slowdown",
+        "phonetic": "/ˈsloʊdaʊn/",
+        "meaning": "减速；车辆以受控方式降低速度的过程",
+        "example": "The fallback path can begin a safe slowdown.",
+        "chineseExample": "回退路径可以开始安全减速。"
+      },
+      {
+        "term": "frighten",
+        "phonetic": "/ˈfraɪtn/",
+        "meaning": "吓到；让用户产生不必要的恐惧或紧张",
+        "example": "The goal is not to frighten the driver.",
+        "chineseExample": "目标不是吓到驾驶员。"
+      },
+      {
+        "term": "wasting",
+        "phonetic": "/ˈweɪstɪŋ/",
+        "meaning": "浪费；消耗本可用于驾驶观察的注意力资源",
+        "example": "Drivers can build mode awareness without wasting attention budget.",
+        "chineseExample": "驾驶员可以建立模式意识，而不浪费注意力预算。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing shared control that drivers can feel",
+        "text": "In an intelligent cockpit, shared control is not a single handoff moment. The driver and automation may divide steering, speed, lane centering, and monitoring tasks for several minutes. That is why the HMI must make the control boundary easy to feel as well as easy to see. Haptic affordance can help because the steering wheel is already part of the driving task. A soft pulse can invite the driver to place both hands on the wheel. Firmer steering resistance can warn against an unsafe lane change. A short spoken takeover cue can explain the reason: sensor confidence is low, please resume manual control. Good shared-control design also needs progressive cueing. If automation confidence drops slightly, the cluster and HUD can show a plain status banner. If the driver does not respond, the cue can become stronger and the fallback path can begin a safe slowdown. The goal is not to frighten the driver. The goal is to make control authority, responsibility, and the next action understandable before the situation becomes critical. When visual, voice, and haptic feedback use the same transition language, drivers can build mode awareness without wasting attention budget.",
+        "translation": "在智能座舱中，共享控制并不是单一的交接瞬间。驾驶员和自动化系统可能会在数分钟内分担转向、速度、车道居中和监控任务。因此，HMI 必须让控制边界既容易看见，也容易感知。触觉可供性能够提供帮助，因为方向盘本来就是驾驶任务的一部分。轻微脉冲可以提示驾驶员双手握住方向盘。更明确的转向阻力可以警告不安全变道。简短的语音接管提示可以解释原因：传感器置信度较低，请恢复手动控制。优秀的共享控制设计还需要渐进式提示。如果自动化置信度略有下降，仪表和 HUD 可以显示清楚的状态横幅。如果驾驶员没有响应，提示可以变得更强，回退路径可以开始安全减速。目标不是吓到驾驶员。目标是在情况变得危急之前，让控制权限、责任和下一步动作变得可理解。当视觉、语音和触觉反馈使用同一套切换语言时，驾驶员可以建立模式意识，而不浪费注意力预算。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The driver and automation may divide steering, speed, lane centering, and monitoring tasks for several minutes.",
+        "translation": "驾驶员和自动化系统可能会在数分钟内分担转向、速度、车道居中和监控任务。",
+        "breakdown": "may divide 表示可能分担；steering, speed, lane centering, and monitoring tasks 列出共享控制中的具体任务。"
+      },
+      {
+        "sentence": "That is why the HMI must make the control boundary easy to feel as well as easy to see.",
+        "translation": "因此，HMI 必须让控制边界既容易看见，也容易感知。",
+        "breakdown": "That is why 用来承接原因；as well as 连接 easy to feel 和 easy to see，强调触觉与视觉同样重要。"
+      },
+      {
+        "sentence": "If automation confidence drops slightly, the cluster and HUD can show a plain status banner.",
+        "translation": "如果自动化置信度略有下降，仪表和 HUD 可以显示清楚的状态横幅。",
+        "breakdown": "If 引导条件；automation confidence drops slightly 是触发条件；can show 表示一种适合的界面响应。"
+      },
+      {
+        "sentence": "When visual, voice, and haptic feedback use the same transition language, drivers can build mode awareness without wasting attention budget.",
+        "translation": "当视觉、语音和触觉反馈使用同一套切换语言时，驾驶员可以建立模式意识，而不浪费注意力预算。",
+        "breakdown": "When 引导时间和条件；the same transition language 指一致文案与反馈逻辑；without wasting attention budget 说明设计收益。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 shared control transition、haptic affordance、control boundary 和 takeover readiness。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "完整跟读英文长文，再用中文复述触觉反馈为什么适合表达共享控制边界。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 That is why... 和 If automation confidence drops... 各写一句智能座舱接管提示设计建议。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向设计评审说明：当传感器置信度下降且驾驶员未响应时，系统如何逐级提示并进入安全回退路径。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-19-privacy-preserving-occupant-sensing",
     "date": "2026-09-19",
     "title": "Privacy-preserving occupant sensing in intelligent cockpits",
