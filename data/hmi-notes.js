@@ -1,5 +1,780 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-21-child-presence-detection-and-rear-seat-reminders",
+    "date": "2026-09-21",
+    "title": "Child presence detection and rear-seat reminder design in intelligent cockpits",
+    "topic": "智能座舱儿童存在检测与后排提醒设计",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明儿童存在检测、后排提醒、升级告警、误报管理、隐私边界和照护者确认流程。",
+    "words": [
+      {
+        "term": "child presence detection",
+        "phonetic": "/tʃaɪld ˈprezns dɪˈtekʃn/",
+        "meaning": "儿童存在检测；识别车内是否仍有儿童或婴幼儿的座舱感知能力",
+        "example": "Child presence detection should continue briefly after the driver locks the vehicle.",
+        "chineseExample": "儿童存在检测应在驾驶员锁车后继续短时间工作。"
+      },
+      {
+        "term": "rear-seat reminder",
+        "phonetic": "/rɪr siːt rɪˈmaɪndər/",
+        "meaning": "后排提醒；提示驾驶员检查后排乘员或物品的安全提示",
+        "example": "A rear-seat reminder is more useful when it explains what triggered the alert.",
+        "chineseExample": "当后排提醒说明触发原因时，它会更有用。"
+      },
+      {
+        "term": "occupant classification",
+        "phonetic": "/ˈɑːkjəpənt ˌklæsɪfɪˈkeɪʃn/",
+        "meaning": "乘员分类；区分成人、儿童、宠物或物品等车内对象的能力",
+        "example": "Occupant classification helps the cockpit choose the right message tone and escalation path.",
+        "chineseExample": "乘员分类帮助座舱选择合适的信息语气和告警升级路径。"
+      },
+      {
+        "term": "escalation path",
+        "phonetic": "/ˌeskəˈleɪʃn pæθ/",
+        "meaning": "升级路径；从轻提醒到强告警或远程通知的逐级处理流程",
+        "example": "The escalation path should become stronger when the cabin temperature rises and no caregiver responds.",
+        "chineseExample": "当座舱温度升高且照护者没有响应时，升级路径应逐步增强。"
+      },
+      {
+        "term": "caregiver confirmation",
+        "phonetic": "/ˈkerɡɪvər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "照护者确认；由驾驶员、家长或看护人明确确认儿童安全状态的交互步骤",
+        "example": "Caregiver confirmation must be quick, but it should not be easy to dismiss by accident.",
+        "chineseExample": "照护者确认必须快捷，但不应容易被误触关闭。"
+      },
+      {
+        "term": "false alert management",
+        "phonetic": "/fɔːls əˈlɜːrt ˈmænɪdʒmənt/",
+        "meaning": "误报警管理；降低错误提醒干扰并保留安全保护的设计策略",
+        "example": "False alert management should tune sensitivity without hiding critical safety warnings.",
+        "chineseExample": "误报警管理应调整灵敏度，同时不隐藏关键安全警告。"
+      },
+      {
+        "term": "cabin thermal risk",
+        "phonetic": "/ˈkæbɪn ˈθɜːrməl rɪsk/",
+        "meaning": "座舱热风险；车内温度过高或过低对乘员造成伤害的风险",
+        "example": "Cabin thermal risk can turn a reminder into an urgent safety alert.",
+        "chineseExample": "座舱热风险可以把提醒升级为紧急安全告警。"
+      },
+      {
+        "term": "multi-channel alert",
+        "phonetic": "/ˌmʌlti ˈtʃænl əˈlɜːrt/",
+        "meaning": "多通道告警；通过车内声音、灯光、手机通知或车外喇叭等多个渠道提醒",
+        "example": "A multi-channel alert reaches the caregiver even when the phone is not visible.",
+        "chineseExample": "即使手机不在视线内，多通道告警也能触达照护者。"
+      },
+      {
+        "term": "privacy-preserving sensing",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈsensɪŋ/",
+        "meaning": "隐私保护型感知；在减少身份暴露和数据留存的前提下完成车内检测",
+        "example": "Privacy-preserving sensing can detect movement without storing identifiable cabin images.",
+        "chineseExample": "隐私保护型感知可以检测动作，而不存储可识别的座舱图像。"
+      },
+      {
+        "term": "dismissal guardrail",
+        "phonetic": "/dɪsˈmɪsl ˈɡɑːrdreɪl/",
+        "meaning": "关闭防护栏；防止用户无意或过早关闭安全提醒的交互限制",
+        "example": "A dismissal guardrail may ask the driver to confirm that the rear seat has been checked.",
+        "chineseExample": "关闭防护栏可以要求驾驶员确认后排已经检查过。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "child presence detection",
+        "phonetic": "/tʃaɪld ˈprezns dɪˈtekʃn/",
+        "meaning": "儿童存在检测；识别车内是否仍有儿童或婴幼儿的座舱感知能力",
+        "example": "Child presence detection should continue briefly after the driver locks the vehicle.",
+        "chineseExample": "儿童存在检测应在驾驶员锁车后继续短时间工作。"
+      },
+      {
+        "term": "rear-seat reminder",
+        "phonetic": "/rɪr siːt rɪˈmaɪndər/",
+        "meaning": "后排提醒；提示驾驶员检查后排乘员或物品的安全提示",
+        "example": "A rear-seat reminder is more useful when it explains what triggered the alert.",
+        "chineseExample": "当后排提醒说明触发原因时，它会更有用。"
+      },
+      {
+        "term": "occupant classification",
+        "phonetic": "/ˈɑːkjəpənt ˌklæsɪfɪˈkeɪʃn/",
+        "meaning": "乘员分类；区分成人、儿童、宠物或物品等车内对象的能力",
+        "example": "Occupant classification helps the cockpit choose the right message tone and escalation path.",
+        "chineseExample": "乘员分类帮助座舱选择合适的信息语气和告警升级路径。"
+      },
+      {
+        "term": "escalation path",
+        "phonetic": "/ˌeskəˈleɪʃn pæθ/",
+        "meaning": "升级路径；从轻提醒到强告警或远程通知的逐级处理流程",
+        "example": "The escalation path should become stronger when the cabin temperature rises and no caregiver responds.",
+        "chineseExample": "当座舱温度升高且照护者没有响应时，升级路径应逐步增强。"
+      },
+      {
+        "term": "caregiver confirmation",
+        "phonetic": "/ˈkerɡɪvər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "照护者确认；由驾驶员、家长或看护人明确确认儿童安全状态的交互步骤",
+        "example": "Caregiver confirmation must be quick, but it should not be easy to dismiss by accident.",
+        "chineseExample": "照护者确认必须快捷，但不应容易被误触关闭。"
+      },
+      {
+        "term": "false alert management",
+        "phonetic": "/fɔːls əˈlɜːrt ˈmænɪdʒmənt/",
+        "meaning": "误报警管理；降低错误提醒干扰并保留安全保护的设计策略",
+        "example": "False alert management should tune sensitivity without hiding critical safety warnings.",
+        "chineseExample": "误报警管理应调整灵敏度，同时不隐藏关键安全警告。"
+      },
+      {
+        "term": "cabin thermal risk",
+        "phonetic": "/ˈkæbɪn ˈθɜːrməl rɪsk/",
+        "meaning": "座舱热风险；车内温度过高或过低对乘员造成伤害的风险",
+        "example": "Cabin thermal risk can turn a reminder into an urgent safety alert.",
+        "chineseExample": "座舱热风险可以把提醒升级为紧急安全告警。"
+      },
+      {
+        "term": "multi-channel alert",
+        "phonetic": "/ˌmʌlti ˈtʃænl əˈlɜːrt/",
+        "meaning": "多通道告警；通过车内声音、灯光、手机通知或车外喇叭等多个渠道提醒",
+        "example": "A multi-channel alert reaches the caregiver even when the phone is not visible.",
+        "chineseExample": "即使手机不在视线内，多通道告警也能触达照护者。"
+      },
+      {
+        "term": "privacy-preserving sensing",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈsensɪŋ/",
+        "meaning": "隐私保护型感知；在减少身份暴露和数据留存的前提下完成车内检测",
+        "example": "Privacy-preserving sensing can detect movement without storing identifiable cabin images.",
+        "chineseExample": "隐私保护型感知可以检测动作，而不存储可识别的座舱图像。"
+      },
+      {
+        "term": "dismissal guardrail",
+        "phonetic": "/dɪsˈmɪsl ˈɡɑːrdreɪl/",
+        "meaning": "关闭防护栏；防止用户无意或过早关闭安全提醒的交互限制",
+        "example": "A dismissal guardrail may ask the driver to confirm that the rear seat has been checked.",
+        "chineseExample": "关闭防护栏可以要求驾驶员确认后排已经检查过。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "An intelligent cockpit can coordinate sensing, alerts, and caregiver confirmation.",
+        "chineseExample": "智能座舱可以协调感知、告警和照护者确认。"
+      },
+      {
+        "term": "rear seat",
+        "phonetic": "/rɪr siːt/",
+        "meaning": "后排座椅；车辆后部乘员乘坐的位置",
+        "example": "The interface should clearly refer to the rear seat when the alert is triggered.",
+        "chineseExample": "当告警被触发时，界面应清楚指向后排座椅。"
+      },
+      {
+        "term": "child safety",
+        "phonetic": "/tʃaɪld ˈseɪfti/",
+        "meaning": "儿童安全；围绕儿童乘员保护、提醒和风险预防的设计目标",
+        "example": "Child safety messages should be direct and free of technical jargon.",
+        "chineseExample": "儿童安全信息应直接表达，并避免技术术语。"
+      },
+      {
+        "term": "in-cabin sensing",
+        "phonetic": "/ɪn ˈkæbɪn ˈsensɪŋ/",
+        "meaning": "舱内感知；通过传感器识别座舱内乘员、动作或环境状态",
+        "example": "In-cabin sensing can combine motion, sound, and seat data.",
+        "chineseExample": "舱内感知可以结合动作、声音和座椅数据。"
+      },
+      {
+        "term": "seat sensor",
+        "phonetic": "/siːt ˈsensər/",
+        "meaning": "座椅传感器；检测座椅占用、压力或安全带状态的硬件",
+        "example": "A seat sensor may confirm whether the rear seat is occupied.",
+        "chineseExample": "座椅传感器可以确认后排座椅是否被占用。"
+      },
+      {
+        "term": "cabin camera",
+        "phonetic": "/ˈkæbɪn ˈkæmərə/",
+        "meaning": "座舱摄像头；用于检测车内乘员、姿态或动作的摄像头",
+        "example": "A cabin camera should support privacy settings that users can understand.",
+        "chineseExample": "座舱摄像头应支持用户能理解的隐私设置。"
+      },
+      {
+        "term": "radar sensing",
+        "phonetic": "/ˈreɪdɑːr ˈsensɪŋ/",
+        "meaning": "雷达感知；通过雷达识别车内细微运动或生命体征的技术",
+        "example": "Radar sensing can detect small movement after the cabin becomes quiet.",
+        "chineseExample": "当座舱安静后，雷达感知仍能检测到细微动作。"
+      },
+      {
+        "term": "vital sign",
+        "phonetic": "/ˈvaɪtl saɪn/",
+        "meaning": "生命体征；呼吸、心跳等反映生命状态的信号",
+        "example": "The system should avoid showing raw vital sign data unless it is needed.",
+        "chineseExample": "除非必要，系统应避免显示原始生命体征数据。"
+      },
+      {
+        "term": "movement pattern",
+        "phonetic": "/ˈmuːvmənt ˈpætərn/",
+        "meaning": "动作模式；用于判断乘员存在或状态的运动特征",
+        "example": "A movement pattern can help distinguish a child from a loose bag.",
+        "chineseExample": "动作模式可帮助区分儿童和松散放置的包。"
+      },
+      {
+        "term": "confidence level",
+        "phonetic": "/ˈkɑːnfɪdəns ˈlevl/",
+        "meaning": "置信水平；系统对检测结果可靠性的判断程度",
+        "example": "The confidence level should guide the alert, not confuse the caregiver.",
+        "chineseExample": "置信水平应指导告警，而不是让照护者困惑。"
+      },
+      {
+        "term": "trigger reason",
+        "phonetic": "/ˈtrɪɡər ˈriːzn/",
+        "meaning": "触发原因；说明提醒或告警为什么出现的简短解释",
+        "example": "A clear trigger reason builds trust in the warning.",
+        "chineseExample": "清楚的触发原因能提升用户对警告的信任。"
+      },
+      {
+        "term": "message tone",
+        "phonetic": "/ˈmesɪdʒ toʊn/",
+        "meaning": "信息语气；界面文案传达紧迫性、安抚感或指令性的表达方式",
+        "example": "The message tone should shift from calm to urgent as risk increases.",
+        "chineseExample": "随着风险增加，信息语气应从平静转为紧急。"
+      },
+      {
+        "term": "calm prompt",
+        "phonetic": "/kɑːm prɑːmpt/",
+        "meaning": "平静提示；用于低风险场景的温和提醒",
+        "example": "A calm prompt can remind the driver to check the rear seat after parking.",
+        "chineseExample": "平静提示可以在停车后提醒驾驶员检查后排。"
+      },
+      {
+        "term": "urgent alert",
+        "phonetic": "/ˈɜːrdʒənt əˈlɜːrt/",
+        "meaning": "紧急告警；面向高风险场景的强提醒",
+        "example": "An urgent alert should provide a clear next action.",
+        "chineseExample": "紧急告警应提供清楚的下一步动作。"
+      },
+      {
+        "term": "remote notification",
+        "phonetic": "/rɪˈmoʊt ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "远程通知；发送到手机、钥匙或云端服务的车外提醒",
+        "example": "Remote notification helps when the caregiver has already left the vehicle.",
+        "chineseExample": "当照护者已经离开车辆时，远程通知会很有帮助。"
+      },
+      {
+        "term": "vehicle horn",
+        "phonetic": "/ˈviːəkl hɔːrn/",
+        "meaning": "车辆喇叭；可用于车外紧急提醒的声音装置",
+        "example": "The vehicle horn should be reserved for severe and unresolved alerts.",
+        "chineseExample": "车辆喇叭应保留给严重且未解决的告警。"
+      },
+      {
+        "term": "hazard light",
+        "phonetic": "/ˈhæzərd laɪt/",
+        "meaning": "危险警示灯；用于向车外传达异常或紧急状态的灯光",
+        "example": "Hazard lights can support the external alert when the risk is high.",
+        "chineseExample": "风险较高时，危险警示灯可以辅助车外告警。"
+      },
+      {
+        "term": "mobile app",
+        "phonetic": "/ˈmoʊbl æp/",
+        "meaning": "移动应用；用户手机上的车辆服务和通知入口",
+        "example": "The mobile app can show why the child presence alert was sent.",
+        "chineseExample": "移动应用可以显示儿童存在告警发送的原因。"
+      },
+      {
+        "term": "lock event",
+        "phonetic": "/lɑːk ɪˈvent/",
+        "meaning": "锁车事件；车辆上锁这一可触发检测或提醒的状态变化",
+        "example": "A lock event can start a short post-exit sensing window.",
+        "chineseExample": "锁车事件可以启动短暂的离车后感知窗口。"
+      },
+      {
+        "term": "post-exit sensing window",
+        "phonetic": "/poʊst ˈeksɪt ˈsensɪŋ ˈwɪndoʊ/",
+        "meaning": "离车后感知窗口；驾驶员离车后系统继续检测的一段时间",
+        "example": "The post-exit sensing window should be long enough to catch delayed movement.",
+        "chineseExample": "离车后感知窗口应足够长，以捕捉延迟出现的动作。"
+      },
+      {
+        "term": "checked rear seat",
+        "phonetic": "/tʃekt rɪr siːt/",
+        "meaning": "已检查后排；用户确认后排安全状态的交互状态",
+        "example": "The checked rear seat action should require intentional confirmation.",
+        "chineseExample": "“已检查后排”操作应要求有意识的确认。"
+      },
+      {
+        "term": "intentional confirmation",
+        "phonetic": "/ɪnˈtenʃənl ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "有意识确认；避免误触的明确确认动作",
+        "example": "Intentional confirmation reduces accidental dismissal.",
+        "chineseExample": "有意识确认能减少意外关闭。"
+      },
+      {
+        "term": "accidental dismissal",
+        "phonetic": "/ˌæksɪˈdentl dɪsˈmɪsl/",
+        "meaning": "意外关闭；用户无意中关闭提醒或告警",
+        "example": "Large buttons alone do not prevent accidental dismissal.",
+        "chineseExample": "仅有大按钮并不能防止意外关闭。"
+      },
+      {
+        "term": "sensitivity setting",
+        "phonetic": "/ˌsensəˈtɪvəti ˈsetɪŋ/",
+        "meaning": "灵敏度设置；调整系统检测或告警触发条件的设置",
+        "example": "A sensitivity setting should explain the safety trade-off.",
+        "chineseExample": "灵敏度设置应说明安全取舍。"
+      },
+      {
+        "term": "safety trade-off",
+        "phonetic": "/ˈseɪfti ˈtreɪd ɔːf/",
+        "meaning": "安全取舍；在减少干扰和保持保护之间做出的平衡",
+        "example": "The safety trade-off should be visible when users adjust alerts.",
+        "chineseExample": "当用户调整告警时，安全取舍应可见。"
+      },
+      {
+        "term": "critical warning",
+        "phonetic": "/ˈkrɪtɪkl ˈwɔːrnɪŋ/",
+        "meaning": "关键警告；不可轻易隐藏或弱化的高风险安全提醒",
+        "example": "Critical warnings should override low-priority comfort settings.",
+        "chineseExample": "关键警告应覆盖低优先级的舒适设置。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集和保留完成任务所必需的数据",
+        "example": "Data minimization supports trust in in-cabin sensing.",
+        "chineseExample": "数据最小化有助于建立对舱内感知的信任。"
+      },
+      {
+        "term": "local processing",
+        "phonetic": "/ˈloʊkl ˈprɑːsesɪŋ/",
+        "meaning": "本地处理；在车辆端完成数据分析而不上传原始数据",
+        "example": "Local processing can reduce privacy concerns for cabin cameras.",
+        "chineseExample": "本地处理可以降低座舱摄像头带来的隐私担忧。"
+      },
+      {
+        "term": "identifiable image",
+        "phonetic": "/aɪˌdentɪˈfaɪəbl ˈɪmɪdʒ/",
+        "meaning": "可识别图像；能够识别个人身份或面部特征的图像",
+        "example": "The feature should avoid storing identifiable images by default.",
+        "chineseExample": "该功能默认应避免存储可识别图像。"
+      },
+      {
+        "term": "retention period",
+        "phonetic": "/rɪˈtenʃn ˈpɪriəd/",
+        "meaning": "保留期限；数据被保存的时间长度",
+        "example": "The retention period should be short and easy to find.",
+        "chineseExample": "保留期限应较短，并且容易找到。"
+      },
+      {
+        "term": "explainable alert",
+        "phonetic": "/ɪkˈspleɪnəbl əˈlɜːrt/",
+        "meaning": "可解释告警；说明检测依据、风险和下一步动作的提醒",
+        "example": "An explainable alert reduces panic while keeping urgency clear.",
+        "chineseExample": "可解释告警能减少慌乱，同时保持紧迫性清楚。"
+      },
+      {
+        "term": "next action",
+        "phonetic": "/nekst ˈækʃn/",
+        "meaning": "下一步动作；用户收到提醒后应立即执行的具体行动",
+        "example": "The next action should be written as a short command.",
+        "chineseExample": "下一步动作应写成简短指令。"
+      },
+      {
+        "term": "risk threshold",
+        "phonetic": "/rɪsk ˈθreʃhoʊld/",
+        "meaning": "风险阈值；系统决定提醒升级的风险判断边界",
+        "example": "The risk threshold may consider time, temperature, and movement.",
+        "chineseExample": "风险阈值可以考虑时间、温度和动作。"
+      },
+      {
+        "term": "time since parking",
+        "phonetic": "/taɪm sɪns ˈpɑːrkɪŋ/",
+        "meaning": "停车后经过时间；车辆停止并离车后已经过去的时间",
+        "example": "Time since parking can change the urgency of the reminder.",
+        "chineseExample": "停车后经过时间会改变提醒的紧迫程度。"
+      },
+      {
+        "term": "ambient temperature",
+        "phonetic": "/ˈæmbiənt ˈtemprətʃər/",
+        "meaning": "环境温度；车辆周围或座舱内部的温度条件",
+        "example": "Ambient temperature is important for judging thermal risk.",
+        "chineseExample": "环境温度对判断热风险很重要。"
+      },
+      {
+        "term": "response timeout",
+        "phonetic": "/rɪˈspɑːns ˈtaɪmaʊt/",
+        "meaning": "响应超时；用户在规定时间内没有回应提醒的状态",
+        "example": "A response timeout should move the system to the next escalation step.",
+        "chineseExample": "响应超时应让系统进入下一步升级。"
+      },
+      {
+        "term": "contact priority",
+        "phonetic": "/ˈkɑːntækt praɪˈɔːrəti/",
+        "meaning": "联系人优先级；远程通知时不同照护者或紧急联系人的通知顺序",
+        "example": "Contact priority helps decide who receives the second notification.",
+        "chineseExample": "联系人优先级帮助决定第二条通知发送给谁。"
+      },
+      {
+        "term": "shared family account",
+        "phonetic": "/ʃerd ˈfæməli əˈkaʊnt/",
+        "meaning": "家庭共享账号；多个家庭成员共同接收车辆安全信息的账户设置",
+        "example": "A shared family account can reduce missed child safety alerts.",
+        "chineseExample": "家庭共享账号可以减少儿童安全告警漏接。"
+      },
+      {
+        "term": "audible reminder",
+        "phonetic": "/ˈɔːdəbl rɪˈmaɪndər/",
+        "meaning": "可听提醒；通过声音让用户注意到风险或下一步动作",
+        "example": "An audible reminder should be loud enough outside the vehicle only when risk is severe.",
+        "chineseExample": "只有风险严重时，可听提醒才应在车外足够响亮。"
+      },
+      {
+        "term": "visual indicator",
+        "phonetic": "/ˈvɪʒuəl ˈɪndɪkeɪtər/",
+        "meaning": "视觉指示；用图标、灯光或文字显示状态的元素",
+        "example": "A visual indicator can show that post-exit sensing is still active.",
+        "chineseExample": "视觉指示可以显示离车后感知仍在工作。"
+      },
+      {
+        "term": "lock screen message",
+        "phonetic": "/lɑːk skriːn ˈmesɪdʒ/",
+        "meaning": "锁屏信息；显示在手机锁屏上的通知内容",
+        "example": "The lock screen message should include the vehicle and the detected risk.",
+        "chineseExample": "锁屏信息应包含车辆和检测到的风险。"
+      },
+      {
+        "term": "snooze option",
+        "phonetic": "/snuːz ˈɑːpʃn/",
+        "meaning": "稍后提醒选项；暂时延后非紧急提示的交互选择",
+        "example": "The snooze option should disappear when thermal risk becomes high.",
+        "chineseExample": "当热风险变高时，稍后提醒选项应消失。"
+      },
+      {
+        "term": "override control",
+        "phonetic": "/ˈoʊvərraɪd kənˈtroʊl/",
+        "meaning": "覆盖控制；用户或系统在特殊情况下改变默认流程的控制方式",
+        "example": "Override control should be logged when it cancels a safety alert.",
+        "chineseExample": "当覆盖控制取消安全告警时，应记录该操作。"
+      },
+      {
+        "term": "safety log",
+        "phonetic": "/ˈseɪfti lɔːɡ/",
+        "meaning": "安全日志；记录提醒、响应和升级过程的简要记录",
+        "example": "A safety log can help the caregiver review what happened later.",
+        "chineseExample": "安全日志可帮助照护者之后回看发生了什么。"
+      },
+      {
+        "term": "regulatory requirement",
+        "phonetic": "/ˈreɡjələtɔːri rɪˈkwaɪərmənt/",
+        "meaning": "法规要求；产品必须满足的安全、隐私或告警规则",
+        "example": "Regulatory requirements may define when a rear-seat reminder must appear.",
+        "chineseExample": "法规要求可能规定后排提醒何时必须出现。"
+      },
+      {
+        "term": "human factors review",
+        "phonetic": "/ˈhjuːmən ˈfæktərz rɪˈvjuː/",
+        "meaning": "人因评审；评估用户注意力、误操作、理解和安全影响的设计审查",
+        "example": "A human factors review should test whether caregivers understand each alert stage.",
+        "chineseExample": "人因评审应测试照护者是否理解每个告警阶段。"
+      },
+      {
+        "term": "alert fatigue",
+        "phonetic": "/əˈlɜːrt fəˈtiːɡ/",
+        "meaning": "告警疲劳；过多或不准确提醒导致用户忽视告警的现象",
+        "example": "Poor false alert management can create alert fatigue.",
+        "chineseExample": "糟糕的误报警管理会造成告警疲劳。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力和限制形成合适信任程度的过程",
+        "example": "Trust calibration improves when the system admits uncertainty.",
+        "chineseExample": "当系统承认不确定性时，信任校准会改善。"
+      },
+      {
+        "term": "uncertainty",
+        "phonetic": "/ʌnˈsɜːrtnti/",
+        "meaning": "不确定性；系统无法完全确认检测结果的状态",
+        "example": "Uncertainty should be described in plain language during low-confidence alerts.",
+        "chineseExample": "在低置信度告警中，不确定性应以通俗语言说明。"
+      },
+      {
+        "term": "low-confidence alert",
+        "phonetic": "/loʊ ˈkɑːnfɪdəns əˈlɜːrt/",
+        "meaning": "低置信度告警；系统有风险线索但检测结果不够确定的提醒",
+        "example": "A low-confidence alert can ask the driver to check without sounding severe.",
+        "chineseExample": "低置信度告警可以要求驾驶员检查，但不必听起来很严重。"
+      },
+      {
+        "term": "high-confidence alert",
+        "phonetic": "/haɪ ˈkɑːnfɪdəns əˈlɜːrt/",
+        "meaning": "高置信度告警；系统较确定存在风险时发出的提醒",
+        "example": "A high-confidence alert should escalate faster when no one responds.",
+        "chineseExample": "当无人响应时，高置信度告警应更快升级。"
+      },
+      {
+        "term": "design validation",
+        "phonetic": "/dɪˈzaɪn ˌvælɪˈdeɪʃn/",
+        "meaning": "设计验证；通过测试确认交互设计是否达到安全和可用性目标",
+        "example": "Design validation should include parked, locked, and hot-cabin scenarios.",
+        "chineseExample": "设计验证应包含停车、锁车和高温座舱场景。"
+      },
+      {
+        "term": "child",
+        "phonetic": "/tʃaɪld/",
+        "meaning": "儿童；儿童乘员或婴幼儿用户",
+        "example": "The child may remain in the rear seat after parking.",
+        "chineseExample": "停车后儿童可能仍留在后排座椅。"
+      },
+      {
+        "term": "presence",
+        "phonetic": "/ˈprezns/",
+        "meaning": "存在；某人或某物仍在某个位置的状态",
+        "example": "Presence in the rear seat can trigger a safety reminder.",
+        "chineseExample": "后排存在乘员会触发安全提醒。"
+      },
+      {
+        "term": "detection",
+        "phonetic": "/dɪˈtekʃn/",
+        "meaning": "检测；发现并判断某种状态或对象的过程",
+        "example": "Detection should continue after the lock event.",
+        "chineseExample": "检测应在锁车事件后继续。"
+      },
+      {
+        "term": "briefly",
+        "phonetic": "/ˈbriːfli/",
+        "meaning": "短暂地；持续很短时间",
+        "example": "The sensor may stay active briefly after exit.",
+        "chineseExample": "传感器可在离车后短暂保持工作。"
+      },
+      {
+        "term": "locks",
+        "phonetic": "/lɑːks/",
+        "meaning": "锁上；lock 的第三人称单数形式",
+        "example": "The system starts checking when the driver locks the vehicle.",
+        "chineseExample": "驾驶员锁车时，系统开始检查。"
+      },
+      {
+        "term": "rear-seat",
+        "phonetic": "/rɪr siːt/",
+        "meaning": "后排的；与后排座椅相关的",
+        "example": "Rear-seat alerts should name the detected risk.",
+        "chineseExample": "后排告警应说明检测到的风险。"
+      },
+      {
+        "term": "triggered",
+        "phonetic": "/ˈtrɪɡərd/",
+        "meaning": "被触发的；由某个条件启动的",
+        "example": "The alert is triggered by movement in the rear seat.",
+        "chineseExample": "该告警由后排动作触发。"
+      },
+      {
+        "term": "classification",
+        "phonetic": "/ˌklæsɪfɪˈkeɪʃn/",
+        "meaning": "分类；把对象归入不同类别的过程",
+        "example": "Classification helps separate a child from luggage.",
+        "chineseExample": "分类有助于区分儿童和行李。"
+      },
+      {
+        "term": "caregiver",
+        "phonetic": "/ˈkerɡɪvər/",
+        "meaning": "照护者；负责儿童安全的家长或看护人",
+        "example": "The caregiver receives the mobile notification.",
+        "chineseExample": "照护者会收到手机通知。"
+      },
+      {
+        "term": "responds",
+        "phonetic": "/rɪˈspɑːndz/",
+        "meaning": "回应；respond 的第三人称单数形式",
+        "example": "If no caregiver responds, the alert escalates.",
+        "chineseExample": "如果没有照护者回应，告警会升级。"
+      },
+      {
+        "term": "accident",
+        "phonetic": "/ˈæksɪdənt/",
+        "meaning": "意外；非有意发生的错误或事故",
+        "example": "The button should not close the alert by accident.",
+        "chineseExample": "该按钮不应让用户意外关闭告警。"
+      },
+      {
+        "term": "tune",
+        "phonetic": "/tuːn/",
+        "meaning": "调节；调整参数以达到更合适的效果",
+        "example": "Designers can tune sensitivity for different cabins.",
+        "chineseExample": "设计师可以针对不同座舱调节灵敏度。"
+      },
+      {
+        "term": "sensitivity",
+        "phonetic": "/ˌsensəˈtɪvəti/",
+        "meaning": "灵敏度；系统对信号或风险变化的敏感程度",
+        "example": "Sensitivity affects false alerts and missed alerts.",
+        "chineseExample": "灵敏度会影响误报和漏报。"
+      },
+      {
+        "term": "thermal",
+        "phonetic": "/ˈθɜːrməl/",
+        "meaning": "热的；与温度或热风险相关的",
+        "example": "Thermal risk increases in a parked vehicle.",
+        "chineseExample": "停放车辆中的热风险会上升。"
+      },
+      {
+        "term": "multi-channel",
+        "phonetic": "/ˌmʌlti ˈtʃænl/",
+        "meaning": "多通道的；通过多个媒介或路径传递的",
+        "example": "A multi-channel design can combine phone and vehicle alerts.",
+        "chineseExample": "多通道设计可以结合手机和车辆告警。"
+      },
+      {
+        "term": "images",
+        "phonetic": "/ˈɪmɪdʒɪz/",
+        "meaning": "图像；image 的复数形式",
+        "example": "The system should avoid storing identifiable images.",
+        "chineseExample": "系统应避免存储可识别图像。"
+      },
+      {
+        "term": "dismissal",
+        "phonetic": "/dɪsˈmɪsl/",
+        "meaning": "关闭；取消提醒或告警的动作",
+        "example": "Dismissal should require a deliberate confirmation.",
+        "chineseExample": "关闭提醒应要求明确确认。"
+      },
+      {
+        "term": "guardrail",
+        "phonetic": "/ˈɡɑːrdreɪl/",
+        "meaning": "防护栏；防止错误操作或风险行为的设计限制",
+        "example": "A guardrail can prevent accidental dismissal.",
+        "chineseExample": "防护栏可以防止意外关闭。"
+      },
+      {
+        "term": "earn",
+        "phonetic": "/ɜːrn/",
+        "meaning": "赢得；通过清楚可靠的表现获得信任",
+        "example": "The interface has to earn caregiver trust.",
+        "chineseExample": "界面必须赢得照护者信任。"
+      },
+      {
+        "term": "lock",
+        "phonetic": "/lɑːk/",
+        "meaning": "锁车；使车辆进入锁定状态",
+        "example": "A lock event starts the post-exit check.",
+        "chineseExample": "锁车事件会启动离车后检查。"
+      },
+      {
+        "term": "post-exit",
+        "phonetic": "/poʊst ˈeksɪt/",
+        "meaning": "离车后的；发生在用户离开车辆之后的",
+        "example": "Post-exit sensing protects occupants after parking.",
+        "chineseExample": "离车后感知保护停车后的乘员。"
+      },
+      {
+        "term": "sensors",
+        "phonetic": "/ˈsensərz/",
+        "meaning": "传感器；sensor 的复数形式",
+        "example": "Seat sensors and radar can work together.",
+        "chineseExample": "座椅传感器和雷达可以协同工作。"
+      },
+      {
+        "term": "including",
+        "phonetic": "/ɪnˈkluːdɪŋ/",
+        "meaning": "包括；用于列举包含项",
+        "example": "The alert may use several channels, including the mobile app.",
+        "chineseExample": "告警可以使用多个通道，包括移动应用。"
+      },
+      {
+        "term": "mobile",
+        "phonetic": "/ˈmoʊbl/",
+        "meaning": "移动的；通常指手机或移动端服务",
+        "example": "Mobile notification reaches the caregiver outside the car.",
+        "chineseExample": "移动通知能触达车外的照护者。"
+      },
+      {
+        "term": "app",
+        "phonetic": "/æp/",
+        "meaning": "应用；手机或车机上的软件应用",
+        "example": "The app shows the reason for the alert.",
+        "chineseExample": "应用会显示告警原因。"
+      },
+      {
+        "term": "lights",
+        "phonetic": "/laɪts/",
+        "meaning": "灯；light 的复数形式",
+        "example": "Hazard lights can support an external warning.",
+        "chineseExample": "危险警示灯可以辅助车外警告。"
+      },
+      {
+        "term": "horn",
+        "phonetic": "/hɔːrn/",
+        "meaning": "喇叭；车辆用于发出声音警告的装置",
+        "example": "The horn should be used only for severe unresolved alerts.",
+        "chineseExample": "喇叭应只用于严重且未解决的告警。"
+      },
+      {
+        "term": "let",
+        "phonetic": "/let/",
+        "meaning": "让；允许某事发生",
+        "example": "Designers should never let convenience hide a critical warning.",
+        "chineseExample": "设计师绝不应让便利性隐藏关键警告。"
+      },
+      {
+        "term": "intentional",
+        "phonetic": "/ɪnˈtenʃənl/",
+        "meaning": "有意的；用户明确、主动执行的",
+        "example": "Intentional confirmation reduces mistaken dismissals.",
+        "chineseExample": "有意识确认能减少误关闭。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing child presence alerts that caregivers can trust",
+        "text": "Child presence detection is a safety feature, but the interface still has to earn trust. After a lock event, the cockpit may keep a short post-exit sensing window open and combine seat sensors, radar sensing, sound, or a cabin camera to decide whether a child may remain in the rear seat. The message should not simply say alert. It should explain the trigger reason, such as movement detected in the rear seat, and give one next action: Check the rear seat now. If confidence is low, the cockpit can use a calm prompt. If cabin thermal risk increases or the caregiver does not respond, the escalation path should move to stronger channels, including a mobile app notification, audible reminder, hazard lights, or a vehicle horn. Privacy also matters. A privacy-preserving sensing design can process data locally, avoid storing identifiable images, and show a short retention period. False alert management is important, but designers should never let convenience hide a critical warning. The safest experience combines clear language, intentional confirmation, and a dismissal guardrail that asks the caregiver to confirm the rear seat has been checked.",
+        "translation": "儿童存在检测是一项安全功能，但界面仍然需要赢得信任。锁车事件之后，座舱可以保留短暂的离车后感知窗口，并结合座椅传感器、雷达感知、声音或座舱摄像头，判断后排是否可能仍有儿童。信息不应只写“告警”，而应说明触发原因，例如“后排检测到动作”，并给出一个下一步动作：“请立即检查后排”。如果置信度较低，座舱可以使用平静提示。如果座舱热风险增加或照护者没有响应，升级路径应转向更强的通道，包括移动应用通知、可听提醒、危险警示灯或车辆喇叭。隐私同样重要。隐私保护型感知设计可以在本地处理数据，避免存储可识别图像，并显示较短的数据保留期限。误报警管理很重要，但设计师绝不能为了便利而隐藏关键警告。最安全的体验应结合清楚语言、有意识确认，以及要求照护者确认“已检查后排”的关闭防护栏。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "After a lock event, the cockpit may keep a short post-exit sensing window open and combine seat sensors, radar sensing, sound, or a cabin camera to decide whether a child may remain in the rear seat.",
+        "meaning": "锁车事件之后，座舱可以保留短暂的离车后感知窗口，并结合多种传感器判断后排是否可能仍有儿童。",
+        "structure": "After a lock event 是时间状语；the cockpit may keep...and combine... 是并列谓语；to decide whether... 表示目的和判断内容。",
+        "keyPoint": "用 combine A, B, or C to decide whether... 描述多源感知如何支持判断。"
+      },
+      {
+        "sentence": "If cabin thermal risk increases or the caregiver does not respond, the escalation path should move to stronger channels.",
+        "meaning": "如果座舱热风险增加或照护者没有响应，升级路径应转向更强的提醒通道。",
+        "structure": "If 引导条件状语从句；the escalation path should move to... 是主句；stronger channels 概括更强通知方式。",
+        "keyPoint": "用 should move to stronger channels 表达告警升级，而不是只说 make louder alerts。"
+      },
+      {
+        "sentence": "A privacy-preserving sensing design can process data locally, avoid storing identifiable images, and show a short retention period.",
+        "meaning": "隐私保护型感知设计可以本地处理数据、避免存储可识别图像，并显示较短的保留期限。",
+        "structure": "主语 A privacy-preserving sensing design；can 后面连接三个并列动词 process, avoid, show。",
+        "keyPoint": "三个并列动词可以清楚列出隐私策略：处理方式、存储限制、保留期限。"
+      },
+      {
+        "sentence": "The safest experience combines clear language, intentional confirmation, and a dismissal guardrail that asks the caregiver to confirm the rear seat has been checked.",
+        "meaning": "最安全的体验结合清楚语言、有意识确认，以及要求照护者确认后排已检查的关闭防护栏。",
+        "structure": "The safest experience combines A, B, and C；that asks... 是定语从句，修饰 dismissal guardrail。",
+        "keyPoint": "用 combines...and... 总结设计原则，并用定语从句说明防护栏的具体动作。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "description": "朗读 10 个重点词，特别区分 reminder、alert、warning、confirmation 和 guardrail 的语气强度。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "7 分钟",
+        "description": "先听全文朗读，再分句跟读，注意 child presence detection、post-exit sensing window 和 escalation path 的连读。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "5 分钟",
+        "description": "用 If cabin thermal risk increases... 和 A privacy-preserving sensing design can... 两个句型替换成自己的项目场景。"
+      },
+      {
+        "title": "口头设计说明",
+        "duration": "6 分钟",
+        "description": "用英语说明一个儿童存在检测提醒流程：触发原因、下一步动作、升级路径、隐私保护和关闭防护栏。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-20-shared-control-and-haptic-affordances",
     "date": "2026-09-20",
     "title": "Shared control transitions and haptic affordances in intelligent cockpits",

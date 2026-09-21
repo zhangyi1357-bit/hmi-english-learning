@@ -89,6 +89,20 @@
     "Accessibility requires more than color coding for critical alerts.",
     "可访问性要求关键警告不能只依赖颜色编码。"
   ],
+  "accident": [
+    "/ˈæksɪdənt/",
+    "意外；非有意发生的错误或事故",
+    "",
+    "The button should not close the alert by accident.",
+    "该按钮不应让用户意外关闭告警。"
+  ],
+  "accidental dismissal": [
+    "/ˌæksɪˈdentl dɪsˈmɪsl/",
+    "意外关闭；用户无意中关闭提醒或告警",
+    "",
+    "Large buttons alone do not prevent accidental dismissal.",
+    "仅有大按钮并不能防止意外关闭。"
+  ],
   "accidental purchase": [
     "/ˌæksɪˈdentl ˈpɜːrtʃəs/",
     "意外购买；用户并非真正想完成的购买",
@@ -762,6 +776,13 @@
     "An ambient summary should surface the missed call, route delay, and energy impact without forcing a deep menu.",
     "环境式摘要应展示未接电话、路线延迟和能耗影响，而不是迫使用户进入深层菜单。"
   ],
+  "ambient temperature": [
+    "/ˈæmbiənt ˈtemprətʃər/",
+    "环境温度；车辆周围或座舱内部的温度条件",
+    "",
+    "Ambient temperature is important for judging thermal risk.",
+    "环境温度对判断热风险很重要。"
+  ],
   "ambiguity": [
     "/待查/",
     "歧义；可能有多种理解的情况",
@@ -928,6 +949,13 @@
     "If the system is unsure, it should use a clarification prompt instead of a long apology.",
     "在这句话中，“apology”可理解为“道歉, 辩护”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "app": [
+    "/æp/",
+    "应用；手机或车机上的软件应用",
+    "",
+    "The app shows the reason for the alert.",
+    "应用会显示告警原因。"
   ],
   "appear": [
     "/əˈpɪə/",
@@ -1329,6 +1357,13 @@
     "",
     "An audible prompt may be needed when the driver misses the banner.",
     "当驾驶员错过横幅时，可能需要声音提示。"
+  ],
+  "audible reminder": [
+    "/ˈɔːdəbl rɪˈmaɪndər/",
+    "可听提醒；通过声音让用户注意到风险或下一步动作",
+    "",
+    "An audible reminder should be loud enough outside the vehicle only when risk is severe.",
+    "只有风险严重时，可听提醒才应在车外足够响亮。"
   ],
   "audible summary": [
     "/ˈɔːdəbl ˈsʌməri/",
@@ -2016,6 +2051,13 @@
     "在这句话中，“brief”可理解为“摘要, 简报；简短的, 短暂的；对...作简报, 摘要, 节录”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "briefly": [
+    "/ˈbriːfli/",
+    "短暂地；持续很短时间",
+    "",
+    "The sensor may stay active briefly after exit.",
+    "传感器可在离车后短暂保持工作。"
+  ],
   "bright": [
     "/braɪt/",
     "明亮的；亮度较高、容易吸引视线的",
@@ -2125,6 +2167,13 @@
     "在这句话中，“cabin”可理解为“小屋, 客舱；关在小屋”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "cabin camera": [
+    "/ˈkæbɪn ˈkæmərə/",
+    "座舱摄像头；用于检测车内乘员、姿态或动作的摄像头",
+    "",
+    "A cabin camera should support privacy settings that users can understand.",
+    "座舱摄像头应支持用户能理解的隐私设置。"
+  ],
   "cabin command": [
     "/ˈkæbɪn kəˈmænd/",
     "座舱指令；乘员向车内系统发出的语音或触控请求",
@@ -2159,6 +2208,13 @@
     "",
     "Cabin temperature can be changed with a low-friction control.",
     "座舱温度可以用低摩擦控件调整。"
+  ],
+  "cabin thermal risk": [
+    "/ˈkæbɪn ˈθɜːrməl rɪsk/",
+    "座舱热风险；车内温度过高或过低对乘员造成伤害的风险",
+    "",
+    "Cabin thermal risk can turn a reminder into an urgent safety alert.",
+    "座舱热风险可以把提醒升级为紧急安全告警。"
   ],
   "cabin video": [
     "/ˈkæbɪn ˈvɪdioʊ/",
@@ -2275,6 +2331,13 @@
     "",
     "A calm lane change is more likely when the prompt arrives before the last moment.",
     "在这句话中，“calm lane change”用于描述智能座舱导航提示设计。"
+  ],
+  "calm prompt": [
+    "/kɑːm prɑːmpt/",
+    "平静提示；用于低风险场景的温和提醒",
+    "",
+    "A calm prompt can remind the driver to check the rear seat after parking.",
+    "平静提示可以在停车后提醒驾驶员检查后排。"
   ],
   "calm state": [
     "/kɑːm steɪt/",
@@ -2468,6 +2531,20 @@
     "",
     "Carefully appears in today's navigation prompt timing lesson.",
     "在这句话中，“carefully”来自今天的导航提示时机学习内容。"
+  ],
+  "caregiver": [
+    "/ˈkerɡɪvər/",
+    "照护者；负责儿童安全的家长或看护人",
+    "",
+    "The caregiver receives the mobile notification.",
+    "照护者会收到手机通知。"
+  ],
+  "caregiver confirmation": [
+    "/ˈkerɡɪvər ˌkɑːnfərˈmeɪʃn/",
+    "照护者确认；由驾驶员、家长或看护人明确确认儿童安全状态的交互步骤",
+    "",
+    "Caregiver confirmation must be quick, but it should not be easy to dismiss by accident.",
+    "照护者确认必须快捷，但不应容易被误触关闭。"
   ],
   "carplay": [
     "/ˈkɑːrpleɪ/",
@@ -2690,6 +2767,13 @@
     "The word checked appears in today's cockpit summary practice.",
     "在这个语境中，“checked”可理解为“被检查”。"
   ],
+  "checked rear seat": [
+    "/tʃekt rɪr siːt/",
+    "已检查后排；用户确认后排安全状态的交互状态",
+    "",
+    "The checked rear seat action should require intentional confirmation.",
+    "“已检查后排”操作应要求有意识的确认。"
+  ],
   "checking": [
     "/ˈt͡ʃɛkɪŋ/",
     "动词：检查, 支票, 阻止物, 寄物牌, 象棋中将军；检查, 阻止, 核对, 寄存, 托运；逐项相符, 开支票",
@@ -2712,12 +2796,33 @@
     "A better design checks the confidence gap first.",
     "在这句话中，“checks”表示“检查”。"
   ],
+  "child": [
+    "/tʃaɪld/",
+    "儿童；儿童乘员或婴幼儿用户",
+    "",
+    "The child may remain in the rear seat after parking.",
+    "停车后儿童可能仍留在后排座椅。"
+  ],
   "child lock": [
     "/tʃaɪld lɑːk/",
     "儿童锁；限制儿童乘员控制车门、车窗或其他功能的安全设置",
     "",
     "Child lock status should be considered before accepting a rear-seat command.",
     "在这句话中，“child lock”用于描述智能座舱多人语音控制。"
+  ],
+  "child presence detection": [
+    "/tʃaɪld ˈprezns dɪˈtekʃn/",
+    "儿童存在检测；识别车内是否仍有儿童或婴幼儿的座舱感知能力",
+    "",
+    "Child presence detection should continue briefly after the driver locks the vehicle.",
+    "儿童存在检测应在驾驶员锁车后继续短时间工作。"
+  ],
+  "child safety": [
+    "/tʃaɪld ˈseɪfti/",
+    "儿童安全；围绕儿童乘员保护、提醒和风险预防的设计目标",
+    "",
+    "Child safety messages should be direct and free of technical jargon.",
+    "儿童安全信息应直接表达，并避免技术术语。"
   ],
   "chip": [
     "/tʃɪp/",
@@ -2820,6 +2925,13 @@
     "Good cockpit task design balances speed, clarity, safety, and trust.",
     "在这句话中，“clarity”可理解为“清楚, 明晰”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "classification": [
+    "/ˌklæsɪfɪˈkeɪʃn/",
+    "分类；把对象归入不同类别的过程",
+    "",
+    "Classification helps separate a child from luggage.",
+    "分类有助于区分儿童和行李。"
   ],
   "clean": [
     "/kliːn/",
@@ -3512,6 +3624,13 @@
     "A small confidence gap means the cockpit should confirm before changing a safety-related setting.",
     "置信度差距较小时，座舱在改变安全相关设置前应先确认。"
   ],
+  "confidence level": [
+    "/ˈkɑːnfɪdəns ˈlevl/",
+    "置信水平；系统对检测结果可靠性的判断程度",
+    "",
+    "The confidence level should guide the alert, not confuse the caregiver.",
+    "置信水平应指导告警，而不是让照护者困惑。"
+  ],
   "confidence prompt": [
     "/ˈkɑːnfɪdəns prɑːmpt/",
     "置信度提示；系统在识别不确定时请求用户确认或改述的提示",
@@ -3853,6 +3972,13 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“contact”可理解为“联系, 交际, 熟人, 接触；接触, 联系；使接触”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "contact priority": [
+    "/ˈkɑːntækt praɪˈɔːrəti/",
+    "联系人优先级；远程通知时不同照护者或紧急联系人的通知顺序",
+    "",
+    "Contact priority helps decide who receives the second notification.",
+    "联系人优先级帮助决定第二条通知发送给谁。"
   ],
   "contact support": [
     "/ˈkɑːntækt səˈpɔːrt/",
@@ -4416,6 +4542,13 @@
     "",
     "Critical control access must remain predictable during any update.",
     "任何更新期间，关键控制入口都必须保持可预测。"
+  ],
+  "critical warning": [
+    "/ˈkrɪtɪkl ˈwɔːrnɪŋ/",
+    "关键警告；不可轻易隐藏或弱化的高风险安全提醒",
+    "",
+    "Critical warnings should override low-priority comfort settings.",
+    "关键警告应覆盖低优先级的舒适设置。"
   ],
   "cross-modal": [
     "/krɔːs ˈmoʊdl/",
@@ -5040,6 +5173,13 @@
     "A design review should include cross-screen scenarios.",
     "设计评审应包含跨屏场景。"
   ],
+  "design validation": [
+    "/dɪˈzaɪn ˌvælɪˈdeɪʃn/",
+    "设计验证；通过测试确认交互设计是否达到安全和可用性目标",
+    "",
+    "Design validation should include parked, locked, and hot-cabin scenarios.",
+    "设计验证应包含停车、锁车和高温座舱场景。"
+  ],
   "designed": [
     "/dɪˈzaɪnd/",
     "被设计的；按目标和约束规划的",
@@ -5149,6 +5289,13 @@
     "",
     "The word detecting appears in the comfort recommendation context.",
     "“detecting”出现在座椅舒适推荐的语境中。"
+  ],
+  "detection": [
+    "/dɪˈtekʃn/",
+    "检测；发现并判断某种状态或对象的过程",
+    "",
+    "Detection should continue after the lock event.",
+    "检测应在锁车事件后继续。"
   ],
   "detects": [
     "/dɪˈtekts/",
@@ -5357,6 +5504,20 @@
     "",
     "The driver should be able to dismiss the prompt quickly.",
     "驾驶员应能快速关闭提示。"
+  ],
+  "dismissal": [
+    "/dɪsˈmɪsl/",
+    "关闭；取消提醒或告警的动作",
+    "",
+    "Dismissal should require a deliberate confirmation.",
+    "关闭提醒应要求明确确认。"
+  ],
+  "dismissal guardrail": [
+    "/dɪsˈmɪsl ˈɡɑːrdreɪl/",
+    "关闭防护栏；防止用户无意或过早关闭安全提醒的交互限制",
+    "",
+    "A dismissal guardrail may ask the driver to confirm that the rear seat has been checked.",
+    "关闭防护栏可以要求驾驶员确认后排已经检查过。"
   ],
   "dismissed": [
     "/dɪsˈmɪst/",
@@ -5903,6 +6064,13 @@
     "Early preparation gives the driver time to look up, hold the wheel, and scan the scene.",
     "在这句话中，“early preparation”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "earn": [
+    "/ɜːrn/",
+    "赢得；通过清楚可靠的表现获得信任",
+    "",
+    "The interface has to earn caregiver trust.",
+    "界面必须赢得照护者信任。"
+  ],
   "easier": [
     "/ˈiː.zi.ə/",
     "形容词：容易的, 缓缓的, 舒适的, 从容的, 宽容的, 流畅的, 随便的, 自在的, 疲软的；容易地, 慢慢地",
@@ -6206,6 +6374,13 @@
     "Escalation ladder should support a safer and clearer cockpit experience.",
     "在这句话中，“escalation ladder”用于描述更安全、更清晰的座舱体验。"
   ],
+  "escalation path": [
+    "/ˌeskəˈleɪʃn pæθ/",
+    "升级路径；从轻提醒到强告警或远程通知的逐级处理流程",
+    "",
+    "The escalation path should become stronger when the cabin temperature rises and no caregiver responds.",
+    "当座舱温度升高且照护者没有响应时，升级路径应逐步增强。"
+  ],
   "escalation rule": [
     "/ˌeskəˈleɪʃn ruːl/",
     "升级规则；当信息变得更紧急或多次未被处理时提高提示强度的规则",
@@ -6474,6 +6649,13 @@
     "",
     "An explainable adjustment builds trust by linking the change to a visible condition.",
     "可解释调节通过把变化与可见条件关联起来建立信任。"
+  ],
+  "explainable alert": [
+    "/ɪkˈspleɪnəbl əˈlɜːrt/",
+    "可解释告警；说明检测依据、风险和下一步动作的提醒",
+    "",
+    "An explainable alert reduces panic while keeping urgency clear.",
+    "可解释告警能减少慌乱，同时保持紧迫性清楚。"
   ],
   "explainable automation": [
     "/ɪkˈspleɪnəbl ˌɔːtəˈmeɪʃn/",
@@ -6785,6 +6967,13 @@
     "",
     "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
     "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+  ],
+  "false alert management": [
+    "/fɔːls əˈlɜːrt ˈmænɪdʒmənt/",
+    "误报警管理；降低错误提醒干扰并保留安全保护的设计策略",
+    "",
+    "False alert management should tune sensitivity without hiding critical safety warnings.",
+    "误报警管理应调整灵敏度，同时不隐藏关键安全警告。"
   ],
   "false positive": [
     "/ˌfɔːls ˈpɑːzətɪv/",
@@ -7689,6 +7878,13 @@
     "Trust grows when the cockpit explains its limits.",
     "在这句话中，grows 表示信任逐渐增强。"
   ],
+  "guardrail": [
+    "/ˈɡɑːrdreɪl/",
+    "防护栏；防止错误操作或风险行为的设计限制",
+    "",
+    "A guardrail can prevent accidental dismissal.",
+    "防护栏可以防止意外关闭。"
+  ],
   "guesses": [
     "/ˈɡesɪz/",
     "猜测；在不确定时直接推断并行动",
@@ -7937,6 +8133,13 @@
     "The hazard alert should stay active until the driver notices it or the risk disappears.",
     "危险警告应保持激活，直到驾驶员注意到它或风险消失。"
   ],
+  "hazard light": [
+    "/ˈhæzərd laɪt/",
+    "危险警示灯；用于向车外传达异常或紧急状态的灯光",
+    "",
+    "Hazard lights can support the external alert when the risk is high.",
+    "风险较高时，危险警示灯可以辅助车外告警。"
+  ],
   "head": [
     "/hed/",
     "头部；驾驶员姿态监测的重要身体部位",
@@ -8110,6 +8313,13 @@
     "The interface should postpone nonessential input when driving workload is high.",
     "在这句话中，“high”可理解为“高度, 高处；高的, 高级的, 主要的, 高尚的, 高原的, 高音的, 昂贵的, 傲慢的；高度地, 奢侈地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "high-confidence alert": [
+    "/haɪ ˈkɑːnfɪdəns əˈlɜːrt/",
+    "高置信度告警；系统较确定存在风险时发出的提醒",
+    "",
+    "A high-confidence alert should escalate faster when no one responds.",
+    "当无人响应时，高置信度告警应更快升级。"
   ],
   "high-impact": [
     "/haɪ ˈɪmpækt/",
@@ -8290,6 +8500,13 @@
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
+  "horn": [
+    "/hɔːrn/",
+    "喇叭；车辆用于发出声音警告的装置",
+    "",
+    "The horn should be used only for severe unresolved alerts.",
+    "喇叭应只用于严重且未解决的告警。"
+  ],
   "how": [
     "/haʊ/",
     "副词：如何, 怎样, 多少, 多么；方式",
@@ -8319,6 +8536,13 @@
     "",
     "Human factors should guide the timing and intensity of every safety alert.",
     "人因应指导每个安全警告的时机和强度。"
+  ],
+  "human factors review": [
+    "/ˈhjuːmən ˈfæktərz rɪˈvjuː/",
+    "人因评审；评估用户注意力、误操作、理解和安全影响的设计审查",
+    "",
+    "A human factors review should test whether caregivers understand each alert stage.",
+    "人因评审应测试照护者是否理解每个告警阶段。"
   ],
   "human-readable": [
     "/ˈhjuːmən ˈriːdəbl/",
@@ -8378,6 +8602,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "identifiable image": [
+    "/aɪˌdentɪˈfaɪəbl ˈɪmɪdʒ/",
+    "可识别图像；能够识别个人身份或面部特征的图像",
+    "",
+    "The feature should avoid storing identifiable images by default.",
+    "该功能默认应避免存储可识别图像。"
   ],
   "identification": [
     "/暂无音标/",
@@ -8443,6 +8674,13 @@
     "",
     "Repeated ignored suggestions should lower future confidence.",
     "反复被忽略的建议应降低未来置信度。"
+  ],
+  "images": [
+    "/ˈɪmɪdʒɪz/",
+    "图像；image 的复数形式",
+    "",
+    "The system should avoid storing identifiable images.",
+    "系统应避免存储可识别图像。"
   ],
   "immediate": [
     "/i'mi:diәt/",
@@ -8541,12 +8779,26 @@
     "In-cabin payment should confirm the merchant, amount, and action before money is transferred.",
     "车内支付应在转账前确认商户、金额和操作。"
   ],
+  "in-cabin sensing": [
+    "/ɪn ˈkæbɪn ˈsensɪŋ/",
+    "舱内感知；通过传感器识别座舱内乘员、动作或环境状态",
+    "",
+    "In-cabin sensing can combine motion, sound, and seat data.",
+    "舱内感知可以结合动作、声音和座椅数据。"
+  ],
   "include": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“include”。",
     "",
     "Include appears in today's seat memory profile lesson.",
     "在这句话中，“include”来自今天的座椅记忆档案学习内容。"
+  ],
+  "including": [
+    "/ɪnˈkluːdɪŋ/",
+    "包括；用于列举包含项",
+    "",
+    "The alert may use several channels, including the mobile app.",
+    "告警可以使用多个通道，包括移动应用。"
   ],
   "incoming": [
     "/ˈɪnkʌmɪŋ/",
@@ -8873,6 +9125,20 @@
     "",
     "An intent signal is useful only when it is combined with driving context.",
     "意图信号只有与驾驶上下文结合时才有用。"
+  ],
+  "intentional": [
+    "/ɪnˈtenʃənl/",
+    "有意的；用户明确、主动执行的",
+    "",
+    "Intentional confirmation reduces mistaken dismissals.",
+    "有意识确认能减少误关闭。"
+  ],
+  "intentional confirmation": [
+    "/ɪnˈtenʃənl ˌkɑːnfərˈmeɪʃn/",
+    "有意识确认；避免误触的明确确认动作",
+    "",
+    "Intentional confirmation reduces accidental dismissal.",
+    "有意识确认能减少意外关闭。"
   ],
   "interact": [
     "/ˌɪntərˈækt/",
@@ -9604,6 +9870,13 @@
     "在这句话中，“less”可理解为“【男名】男子名；大涡模拟(large eddy simulation)；食管下括约肌(lower esophageal sphincter)”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "let": [
+    "/let/",
+    "让；允许某事发生",
+    "",
+    "Designers should never let convenience hide a critical warning.",
+    "设计师绝不应让便利性隐藏关键警告。"
+  ],
   "lets": [
     "/lɛts/",
     "动词：让, 假设, 出租, 排放, 妨碍；出租, 被承包；出租屋, 障碍",
@@ -9648,6 +9921,13 @@
     "",
     "Lighting should support a safer and clearer cockpit experience.",
     "在这句话中，“lighting”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "lights": [
+    "/laɪts/",
+    "灯；light 的复数形式",
+    "",
+    "Hazard lights can support an external warning.",
+    "危险警示灯可以辅助车外警告。"
   ],
   "lightweight confirmation": [
     "/ˈlaɪtweɪt ˌkɑːnfərˈmeɪʃn/",
@@ -9793,6 +10073,13 @@
     "Local preference storage can reduce privacy risk for sensitive comfort settings.",
     "本地偏好存储可以降低敏感舒适设置带来的隐私风险。"
   ],
+  "local processing": [
+    "/ˈloʊkl ˈprɑːsesɪŋ/",
+    "本地处理；在车辆端完成数据分析而不上传原始数据",
+    "",
+    "Local processing can reduce privacy concerns for cabin cameras.",
+    "本地处理可以降低座舱摄像头带来的隐私担忧。"
+  ],
   "local storage": [
     "/ˈloʊkl ˈstɔːrɪdʒ/",
     "本地存储；在车辆或设备上保存数据",
@@ -9851,12 +10138,40 @@
     "在这句话中，“location-based”可理解为“基于位置”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "lock": [
+    "/lɑːk/",
+    "锁车；使车辆进入锁定状态",
+    "",
+    "A lock event starts the post-exit check.",
+    "锁车事件会启动离车后检查。"
+  ],
+  "lock event": [
+    "/lɑːk ɪˈvent/",
+    "锁车事件；车辆上锁这一可触发检测或提醒的状态变化",
+    "",
+    "A lock event can start a short post-exit sensing window.",
+    "锁车事件可以启动短暂的离车后感知窗口。"
+  ],
+  "lock screen message": [
+    "/lɑːk skriːn ˈmesɪdʒ/",
+    "锁屏信息；显示在手机锁屏上的通知内容",
+    "",
+    "The lock screen message should include the vehicle and the detected risk.",
+    "锁屏信息应包含车辆和检测到的风险。"
+  ],
   "locked": [
     "/按语境朗读/",
     "被锁定的；缺少切换自由的",
     "",
     "The fallback station should appear before the driver feels locked into one plan.",
     "在这句话中，“locked”可理解为“被锁定的；缺少切换自由的”。"
+  ],
+  "locks": [
+    "/lɑːks/",
+    "锁上；lock 的第三人称单数形式",
+    "",
+    "The system starts checking when the driver locks the vehicle.",
+    "驾驶员锁车时，系统开始检查。"
   ],
   "log": [
     "/lɒɡ/",
@@ -10040,6 +10355,13 @@
     "",
     "A low-confidence result should trigger confirmation instead of action.",
     "低置信度结果应触发确认，而不是直接执行。"
+  ],
+  "low-confidence alert": [
+    "/loʊ ˈkɑːnfɪdəns əˈlɜːrt/",
+    "低置信度告警；系统有风险线索但检测结果不够确定的提醒",
+    "",
+    "A low-confidence alert can ask the driver to check without sounding severe.",
+    "低置信度告警可以要求驾驶员检查，但不必听起来很严重。"
   ],
   "low-distraction": [
     "/暂无音标/",
@@ -10708,6 +11030,13 @@
     "Message hierarchy should put immediate safety information above comfort advice.",
     "信息层级应把即时安全信息置于舒适性建议之上。"
   ],
+  "message tone": [
+    "/ˈmesɪdʒ toʊn/",
+    "信息语气；界面文案传达紧迫性、安抚感或指令性的表达方式",
+    "",
+    "The message tone should shift from calm to urgent as risk increases.",
+    "随着风险增加，信息语气应从平静转为紧急。"
+  ],
   "messages": [
     "/ˈmɛs.ɪ.d͡ʒɪz/",
     "名词：消息, 通讯, 讯息, 教训, 预言, 广告词；通知；通报, 报告, 报信",
@@ -10957,6 +11286,20 @@
     "A mixed message can make the driver doubt the system.",
     "混杂信息会让驾驶员怀疑系统。"
   ],
+  "mobile": [
+    "/ˈmoʊbl/",
+    "移动的；通常指手机或移动端服务",
+    "",
+    "Mobile notification reaches the caregiver outside the car.",
+    "移动通知能触达车外的照护者。"
+  ],
+  "mobile app": [
+    "/ˈmoʊbl æp/",
+    "移动应用；用户手机上的车辆服务和通知入口",
+    "",
+    "The mobile app can show why the child presence alert was sent.",
+    "移动应用可以显示儿童存在告警发送的原因。"
+  ],
   "modal": [
     "/待补充/",
     "语境词：modal；用于理解今天健康舒适提示主题中的英文表达",
@@ -11155,6 +11498,13 @@
     "The word movement appears in the comfort recommendation context.",
     "“movement”出现在座椅舒适推荐的语境中。"
   ],
+  "movement pattern": [
+    "/ˈmuːvmənt ˈpætərn/",
+    "动作模式；用于判断乘员存在或状态的运动特征",
+    "",
+    "A movement pattern can help distinguish a child from a loose bag.",
+    "动作模式可帮助区分儿童和松散放置的包。"
+  ],
   "moves": [
     "/muːvz/",
     "动词：移动, 迁居, 步骤；移动, 开动, 感动, 搬(家)；移动, 离开, 运行, 迁移, 摇动, 搬家, 交往, 进展, 脱手",
@@ -11177,6 +11527,20 @@
     "",
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
+  "multi-channel": [
+    "/ˌmʌlti ˈtʃænl/",
+    "多通道的；通过多个媒介或路径传递的",
+    "",
+    "A multi-channel design can combine phone and vehicle alerts.",
+    "多通道设计可以结合手机和车辆告警。"
+  ],
+  "multi-channel alert": [
+    "/ˌmʌlti ˈtʃænl əˈlɜːrt/",
+    "多通道告警；通过车内声音、灯光、手机通知或车外喇叭等多个渠道提醒",
+    "",
+    "A multi-channel alert reaches the caregiver even when the phone is not visible.",
+    "即使手机不在视线内，多通道告警也能触达照护者。"
   ],
   "multi-turn dialogue": [
     "/ˌmʌlti tɜːrn ˈdaɪəlɔːɡ/",
@@ -11790,6 +12154,13 @@
     "Occupant should support a safer and clearer cockpit experience.",
     "在这句话中，“occupant”用于描述更安全、更清晰的座舱体验。"
   ],
+  "occupant classification": [
+    "/ˈɑːkjəpənt ˌklæsɪfɪˈkeɪʃn/",
+    "乘员分类；区分成人、儿童、宠物或物品等车内对象的能力",
+    "",
+    "Occupant classification helps the cockpit choose the right message tone and escalation path.",
+    "乘员分类帮助座舱选择合适的信息语气和告警升级路径。"
+  ],
   "occupant comfort": [
     "/ˈɑːkjəpənt ˈkʌmfərt/",
     "乘员舒适度；车内人员的整体舒适体验。",
@@ -12230,6 +12601,13 @@
     "",
     "The word override appears in the comfort recommendation context.",
     "“override”出现在座椅舒适推荐的语境中。"
+  ],
+  "override control": [
+    "/ˈoʊvərraɪd kənˈtroʊl/",
+    "覆盖控制；用户或系统在特殊情况下改变默认流程的控制方式",
+    "",
+    "Override control should be logged when it cancels a safety alert.",
+    "当覆盖控制取消安全告警时，应记录该操作。"
   ],
   "overtrusting": [
     "/ˌoʊvərˈtrʌstɪŋ/",
@@ -13016,6 +13394,20 @@
     "在这句话中，“possible”可理解为“可能的, 潜在的, 合适的；可能性, 可能的事物”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "post-exit": [
+    "/poʊst ˈeksɪt/",
+    "离车后的；发生在用户离开车辆之后的",
+    "",
+    "Post-exit sensing protects occupants after parking.",
+    "离车后感知保护停车后的乘员。"
+  ],
+  "post-exit sensing window": [
+    "/poʊst ˈeksɪt ˈsensɪŋ ˈwɪndoʊ/",
+    "离车后感知窗口；驾驶员离车后系统继续检测的一段时间",
+    "",
+    "The post-exit sensing window should be long enough to catch delayed movement.",
+    "离车后感知窗口应足够长，以捕捉延迟出现的动作。"
+  ],
   "post-update tour": [
     "/poʊst ˈʌpdeɪt tʊr/",
     "更新后导览；简短介绍变化和入口的引导体验",
@@ -13204,6 +13596,13 @@
     "",
     "The design prepares an offline fallback for essential tasks.",
     "该设计为必要任务准备离线回退。"
+  ],
+  "presence": [
+    "/ˈprezns/",
+    "存在；某人或某物仍在某个位置的状态",
+    "",
+    "Presence in the rear seat can trigger a safety reminder.",
+    "后排存在乘员会触发安全提醒。"
   ],
   "present": [
     "/ˈpɹɛz.ənt/",
@@ -13462,6 +13861,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "privacy-preserving sensing": [
+    "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈsensɪŋ/",
+    "隐私保护型感知；在减少身份暴露和数据留存的前提下完成车内检测",
+    "",
+    "Privacy-preserving sensing can detect movement without storing identifiable cabin images.",
+    "隐私保护型感知可以检测动作，而不存储可识别的座舱图像。"
   ],
   "privacy-safe wording": [
     "/ˈpraɪvəsi seɪf ˈwɜːrdɪŋ/",
@@ -13942,6 +14348,13 @@
     "Radar can remain useful when camera visibility is poor.",
     "当摄像头能见度较差时，雷达仍可能有用。"
   ],
+  "radar sensing": [
+    "/ˈreɪdɑːr ˈsensɪŋ/",
+    "雷达感知；通过雷达识别车内细微运动或生命体征的技术",
+    "",
+    "Radar sensing can detect small movement after the cabin becomes quiet.",
+    "当座舱安静后，雷达感知仍能检测到细微动作。"
+  ],
   "radar signal": [
     "/ˈreɪdɑːr ˈsɪɡnəl/",
     "雷达信号；由雷达提供的距离、速度或目标信息",
@@ -14179,6 +14592,13 @@
     "A rear passenger can request local climate changes for the back row.",
     "在这句话中，“rear passenger”用于描述智能座舱多人语音控制。"
   ],
+  "rear seat": [
+    "/rɪr siːt/",
+    "后排座椅；车辆后部乘员乘坐的位置",
+    "",
+    "The interface should clearly refer to the rear seat when the alert is triggered.",
+    "当告警被触发时，界面应清楚指向后排座椅。"
+  ],
   "rear-left": [
     "/rɪr left/",
     "左后方的；车辆左后座相关的",
@@ -14193,12 +14613,26 @@
     "The rear-left passenger requested a temperature change.",
     "在这句话中，“rear-left passenger”用于描述智能座舱多人语音控制。"
   ],
+  "rear-seat": [
+    "/rɪr siːt/",
+    "后排的；与后排座椅相关的",
+    "",
+    "Rear-seat alerts should name the detected risk.",
+    "后排告警应说明检测到的风险。"
+  ],
   "rear-seat command": [
     "/rɪr siːt kəˈmænd/",
     "后排指令；来自后排乘员的车内控制请求",
     "",
     "A rear-seat command can be limited to comfort and media functions.",
     "在这句话中，“rear-seat command”用于描述智能座舱多人语音控制。"
+  ],
+  "rear-seat reminder": [
+    "/rɪr siːt rɪˈmaɪndər/",
+    "后排提醒；提示驾驶员检查后排乘员或物品的安全提示",
+    "",
+    "A rear-seat reminder is more useful when it explains what triggered the alert.",
+    "当后排提醒说明触发原因时，它会更有用。"
   ],
   "reason": [
     "/ˈɹiː.zən/",
@@ -14570,6 +15004,13 @@
     "A regular commute can reveal useful habits.",
     "固定通勤可以显示有用习惯。"
   ],
+  "regulatory requirement": [
+    "/ˈreɡjələtɔːri rɪˈkwaɪərmənt/",
+    "法规要求；产品必须满足的安全、隐私或告警规则",
+    "",
+    "Regulatory requirements may define when a rear-seat reminder must appear.",
+    "法规要求可能规定后排提醒何时必须出现。"
+  ],
   "reinforce": [
     "/ˌriːɪnˈfɔːrs/",
     "强化；通过额外线索加深理解",
@@ -14699,6 +15140,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "remote notification": [
+    "/rɪˈmoʊt ˌnoʊtɪfɪˈkeɪʃn/",
+    "远程通知；发送到手机、钥匙或云端服务的车外提醒",
+    "",
+    "Remote notification helps when the caregiver has already left the vehicle.",
+    "当照护者已经离开车辆时，远程通知会很有帮助。"
   ],
   "remote service": [
     "/rɪˈmoʊt ˈsɜːrvɪs/",
@@ -14997,6 +15445,13 @@
     "在这句话中，“respond”可理解为“以...回答；回答, 响应, 回报, 有反应, 承担责任”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "responds": [
+    "/rɪˈspɑːndz/",
+    "回应；respond 的第三人称单数形式",
+    "",
+    "If no caregiver responds, the alert escalates.",
+    "如果没有照护者回应，告警会升级。"
+  ],
   "response": [
     "/待查/",
     "响应；系统反馈或动作",
@@ -15010,6 +15465,13 @@
     "",
     "Response latency can trigger escalation when the driver keeps looking away from the road.",
     "当驾驶员持续移开视线时，响应延迟可以触发警告升级。"
+  ],
+  "response timeout": [
+    "/rɪˈspɑːns ˈtaɪmaʊt/",
+    "响应超时；用户在规定时间内没有回应提醒的状态",
+    "",
+    "A response timeout should move the system to the next escalation step.",
+    "响应超时应让系统进入下一步升级。"
   ],
   "responsibilities": [
     "/ɹɪˌspɒn.səˈbɪl.ɪ.tiz/",
@@ -15126,6 +15588,13 @@
     "",
     "The cockpit uses retention to make privacy decisions easier to understand.",
     "座舱使用“retention”让隐私决策更容易理解。"
+  ],
+  "retention period": [
+    "/rɪˈtenʃn ˈpɪriəd/",
+    "保留期限；数据被保存的时间长度",
+    "",
+    "The retention period should be short and easy to find.",
+    "保留期限应较短，并且容易找到。"
   ],
   "retention window": [
     "/rɪˈtenʃn ˈwɪndoʊ/",
@@ -15740,6 +16209,13 @@
     "A safety alert should be brief, specific, and easy to act on.",
     "安全警告应简短、具体且易于执行。"
   ],
+  "safety log": [
+    "/ˈseɪfti lɔːɡ/",
+    "安全日志；记录提醒、响应和升级过程的简要记录",
+    "",
+    "A safety log can help the caregiver review what happened later.",
+    "安全日志可帮助照护者之后回看发生了什么。"
+  ],
   "safety priority": [
     "/ˈseɪfti praɪˈɔːrəti/",
     "安全优先级；安全信息和驾驶任务高于舒适、娱乐或效率建议",
@@ -15753,6 +16229,13 @@
     "",
     "Safety settings need conservative interaction rules.",
     "安全设置需要保守的交互规则。"
+  ],
+  "safety trade-off": [
+    "/ˈseɪfti ˈtreɪd ɔːf/",
+    "安全取舍；在减少干扰和保持保护之间做出的平衡",
+    "",
+    "The safety trade-off should be visible when users adjust alerts.",
+    "当用户调整告警时，安全取舍应可见。"
   ],
   "safety-critical": [
     "/暂无音标/",
@@ -16073,6 +16556,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "seat sensor": [
+    "/siːt ˈsensər/",
+    "座椅传感器；检测座椅占用、压力或安全带状态的硬件",
+    "",
+    "A seat sensor may confirm whether the rear seat is occupied.",
+    "座椅传感器可以确认后排座椅是否被占用。"
+  ],
   "seat support": [
     "/siːt səˈpɔːrt/",
     "座椅支撑；座椅对腰部、背部或身体姿态的支撑调节",
@@ -16317,6 +16807,20 @@
     "Visibility is a sensitive setting during night driving.",
     "夜间驾驶时，可见性是敏感设置。"
   ],
+  "sensitivity": [
+    "/ˌsensəˈtɪvəti/",
+    "灵敏度；系统对信号或风险变化的敏感程度",
+    "",
+    "Sensitivity affects false alerts and missed alerts.",
+    "灵敏度会影响误报和漏报。"
+  ],
+  "sensitivity setting": [
+    "/ˌsensəˈtɪvəti ˈsetɪŋ/",
+    "灵敏度设置；调整系统检测或告警触发条件的设置",
+    "",
+    "A sensitivity setting should explain the safety trade-off.",
+    "灵敏度设置应说明安全取舍。"
+  ],
   "sensor": [
     "/按语境朗读/",
     "传感器；采集车辆或环境信息的设备",
@@ -16337,6 +16841,13 @@
     "",
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
+  "sensors": [
+    "/ˈsensərz/",
+    "传感器；sensor 的复数形式",
+    "",
+    "Seat sensors and radar can work together.",
+    "座椅传感器和雷达可以协同工作。"
   ],
   "sent": [
     "/sent/",
@@ -16551,6 +17062,13 @@
     "",
     "Shared display should support clear control in a shared intelligent cockpit.",
     "在这句话中，“shared display”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "shared family account": [
+    "/ʃerd ˈfæməli əˈkaʊnt/",
+    "家庭共享账号；多个家庭成员共同接收车辆安全信息的账户设置",
+    "",
+    "A shared family account can reduce missed child safety alerts.",
+    "家庭共享账号可以减少儿童安全告警漏接。"
   ],
   "shared intelligent cockpit": [
     "/ʃerd ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
@@ -17014,6 +17532,13 @@
     "",
     "The word snapshot appears in today's cockpit summary practice.",
     "在这个语境中，“snapshot”可理解为“快照”。"
+  ],
+  "snooze option": [
+    "/snuːz ˈɑːpʃn/",
+    "稍后提醒选项；暂时延后非紧急提示的交互选择",
+    "",
+    "The snooze option should disappear when thermal risk becomes high.",
+    "当热风险变高时，稍后提醒选项应消失。"
   ],
   "so": [
     "/səʊ/",
@@ -18517,6 +19042,13 @@
     "在这句话中，“therefore”可理解为“因此, 所以”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "thermal": [
+    "/ˈθɜːrməl/",
+    "热的；与温度或热风险相关的",
+    "",
+    "Thermal risk increases in a parked vehicle.",
+    "停放车辆中的热风险会上升。"
+  ],
   "these": [
     "/ðɪs/",
     "这；这里；这时；(前述二物中的)后者；这；即将来到的；今…；这个；本；这样；这么；此；这位",
@@ -18591,6 +19123,13 @@
     "Reducing eyes-off-road time is a core goal for cockpit task design.",
     "在这句话中，“time”可理解为“时间, 时侯, 时机, 时期, 期限, 次数, 节拍, 暂停, 规定时间；测定...的时间, 记录...的时间, 计时, 定时；时间的, 记时的, 定时的, 定期的, 分期的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "time since parking": [
+    "/taɪm sɪns ˈpɑːrkɪŋ/",
+    "停车后经过时间；车辆停止并离车后已经过去的时间",
+    "",
+    "Time since parking can change the urgency of the reminder.",
+    "停车后经过时间会改变提醒的紧迫程度。"
   ],
   "time-sensitive": [
     "/暂无音标/",
@@ -18946,6 +19485,20 @@
     "在这句话中，“trigger”可理解为“触发器, 扳机；触发, 发射, 引起；松开扳柄”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "trigger reason": [
+    "/ˈtrɪɡər ˈriːzn/",
+    "触发原因；说明提醒或告警为什么出现的简短解释",
+    "",
+    "A clear trigger reason builds trust in the warning.",
+    "清楚的触发原因能提升用户对警告的信任。"
+  ],
+  "triggered": [
+    "/ˈtrɪɡərd/",
+    "被触发的；由某个条件启动的",
+    "",
+    "The alert is triggered by movement in the rear seat.",
+    "该告警由后排动作触发。"
+  ],
   "trip": [
     "/tɹɪp/",
     "名词：旅行, 绊倒, 摔倒, 失足, 差错, 旅程；使跌倒, 使犯错, 使失败；轻快地走, 绊倒, 失误, 犯错, 结巴, 旅行, 远足",
@@ -19025,6 +19578,13 @@
     "",
     "The interface should avoid presenting inference as truth.",
     "界面应避免把推断呈现为事实。"
+  ],
+  "tune": [
+    "/tuːn/",
+    "调节；调整参数以达到更合适的效果",
+    "",
+    "Designers can tune sensitivity for different cabins.",
+    "设计师可以针对不同座舱调节灵敏度。"
   ],
   "tuned": [
     "/tuːnd/",
@@ -19631,6 +20191,13 @@
     "在这句话中，“vehicle”可理解为“交通工具, 车辆, 传播媒介”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "vehicle horn": [
+    "/ˈviːəkl hɔːrn/",
+    "车辆喇叭；可用于车外紧急提醒的声音装置",
+    "",
+    "The vehicle horn should be reserved for severe and unresolved alerts.",
+    "车辆喇叭应保留给严重且未解决的告警。"
+  ],
   "vehicle is shared": [
     "/ˈviːəkl ɪz ʃerd/",
     "车辆被共享；同一车辆由多人使用的状态",
@@ -19845,6 +20412,13 @@
     "Visual hierarchy separates navigation hints from secondary information.",
     "视觉层级把导航提示和次要信息区分开。"
   ],
+  "visual indicator": [
+    "/ˈvɪʒuəl ˈɪndɪkeɪtər/",
+    "视觉指示；用图标、灯光或文字显示状态的元素",
+    "",
+    "A visual indicator can show that post-exit sensing is still active.",
+    "视觉指示可以显示离车后感知仍在工作。"
+  ],
   "visual load": [
     "/ˈvɪʒuəl loʊd/",
     "视觉负荷；界面对驾驶员视觉注意力造成的占用程度",
@@ -19895,6 +20469,13 @@
     "A safety-critical alert should never compete visually with entertainment content.",
     "在这句话中，“visually”可理解为“看, 视力, 视觉, 可见, 凭视力, 看到, 看得见, 光学, 形象化, 栩栩如生”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "vital sign": [
+    "/ˈvaɪtl saɪn/",
+    "生命体征；呼吸、心跳等反映生命状态的信号",
+    "",
+    "The system should avoid showing raw vital sign data unless it is needed.",
+    "除非必要，系统应避免显示原始生命体征数据。"
   ],
   "voice": [
     "/vɒis/",
