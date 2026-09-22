@@ -1,5 +1,979 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-22-distraction-recovery-and-glance-safe-resumption",
+    "date": "2026-09-22",
+    "title": "Distraction recovery and glance-safe task resumption in intelligent cockpits",
+    "topic": "智能座舱分心恢复与低扫视任务续接",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明分心恢复、任务暂停、低扫视续接、微摘要、延后动作和安全优先的座舱交互策略。",
+    "words": [
+      {
+        "term": "distraction recovery",
+        "phonetic": "/dɪˈstrækʃn rɪˈkʌvəri/",
+        "meaning": "分心恢复；驾驶员注意力离开后重新回到驾驶任务的过程",
+        "example": "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
+        "chineseExample": "分心恢复应从平静提示开始，而不是从拥挤的警告屏幕开始。"
+      },
+      {
+        "term": "glance-safe resumption",
+        "phonetic": "/ɡlæns seɪf rɪˈzʌmpʃn/",
+        "meaning": "低扫视续接；让用户以很短扫视恢复中断任务的交互方式",
+        "example": "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+        "chineseExample": "低扫视续接让驾驶员无需重读整条路线就能继续查看导航。"
+      },
+      {
+        "term": "task bookmark",
+        "phonetic": "/tæsk ˈbʊkmɑːrk/",
+        "meaning": "任务书签；记录用户中断前位置、状态或下一步动作的界面机制",
+        "example": "A task bookmark can return the climate panel to the exact setting the driver paused on.",
+        "chineseExample": "任务书签可以把空调面板恢复到驾驶员暂停时的准确设置。"
+      },
+      {
+        "term": "attention reorientation",
+        "phonetic": "/əˈtenʃn riˌɔːriənˈteɪʃn/",
+        "meaning": "注意力重新定向；帮助用户从非驾驶内容回到关键驾驶信息的提示过程",
+        "example": "Attention reorientation should point first to road risk and then to the paused task.",
+        "chineseExample": "注意力重新定向应先指向道路风险，再指向暂停的任务。"
+      },
+      {
+        "term": "interruption hierarchy",
+        "phonetic": "/ˌɪntəˈrʌpʃn ˈhaɪərɑːrki/",
+        "meaning": "中断层级；根据安全性、紧急性和上下文安排打断优先级的规则",
+        "example": "The interruption hierarchy should pause entertainment controls before it hides a safety alert.",
+        "chineseExample": "中断层级应先暂停娱乐控制，而不是隐藏安全告警。"
+      },
+      {
+        "term": "resume affordance",
+        "phonetic": "/rɪˈzuːm əˈfɔːrdns/",
+        "meaning": "续接可供性；提示用户可以继续先前任务的按钮、状态或动效线索",
+        "example": "A clear resume affordance tells the driver what will happen after one tap.",
+        "chineseExample": "清楚的续接可供性会告诉驾驶员轻触一次后会发生什么。"
+      },
+      {
+        "term": "micro-summary",
+        "phonetic": "/ˈmaɪkroʊ ˈsʌməri/",
+        "meaning": "微摘要；用极短文本概括中断前状态或下一步动作",
+        "example": "A micro-summary can say “Route options paused” instead of showing a full map menu.",
+        "chineseExample": "微摘要可以显示“路线选项已暂停”，而不是展示完整地图菜单。"
+      },
+      {
+        "term": "cognitive reload",
+        "phonetic": "/ˈkɑːɡnətɪv ˌriːˈloʊd/",
+        "meaning": "认知重载；用户恢复任务时重新理解上下文所需的脑力成本",
+        "example": "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
+        "chineseExample": "优秀的座舱 HMI 会降低电话或安全中断后的认知重载。"
+      },
+      {
+        "term": "deferred action tray",
+        "phonetic": "/dɪˈfɜːrd ˈækʃn treɪ/",
+        "meaning": "延后动作托盘；临时保存非紧急任务并允许稍后继续的界面区域",
+        "example": "The deferred action tray should keep parked tasks visible but secondary.",
+        "chineseExample": "延后动作托盘应让已暂存任务保持可见，但处于次要位置。"
+      },
+      {
+        "term": "safe pause state",
+        "phonetic": "/seɪf pɔːz steɪt/",
+        "meaning": "安全暂停状态；系统在中断任务时保留上下文并避免误操作的状态",
+        "example": "A safe pause state prevents the seat massage setting from changing while the driver responds to traffic.",
+        "chineseExample": "安全暂停状态会防止驾驶员应对交通时误改座椅按摩设置。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "distraction recovery",
+        "phonetic": "/dɪˈstrækʃn rɪˈkʌvəri/",
+        "meaning": "分心恢复；驾驶员注意力离开后重新回到驾驶任务的过程",
+        "example": "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
+        "chineseExample": "分心恢复应从平静提示开始，而不是从拥挤的警告屏幕开始。"
+      },
+      {
+        "term": "glance-safe resumption",
+        "phonetic": "/ɡlæns seɪf rɪˈzʌmpʃn/",
+        "meaning": "低扫视续接；让用户以很短扫视恢复中断任务的交互方式",
+        "example": "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+        "chineseExample": "低扫视续接让驾驶员无需重读整条路线就能继续查看导航。"
+      },
+      {
+        "term": "task bookmark",
+        "phonetic": "/tæsk ˈbʊkmɑːrk/",
+        "meaning": "任务书签；记录用户中断前位置、状态或下一步动作的界面机制",
+        "example": "A task bookmark can return the climate panel to the exact setting the driver paused on.",
+        "chineseExample": "任务书签可以把空调面板恢复到驾驶员暂停时的准确设置。"
+      },
+      {
+        "term": "attention reorientation",
+        "phonetic": "/əˈtenʃn riˌɔːriənˈteɪʃn/",
+        "meaning": "注意力重新定向；帮助用户从非驾驶内容回到关键驾驶信息的提示过程",
+        "example": "Attention reorientation should point first to road risk and then to the paused task.",
+        "chineseExample": "注意力重新定向应先指向道路风险，再指向暂停的任务。"
+      },
+      {
+        "term": "interruption hierarchy",
+        "phonetic": "/ˌɪntəˈrʌpʃn ˈhaɪərɑːrki/",
+        "meaning": "中断层级；根据安全性、紧急性和上下文安排打断优先级的规则",
+        "example": "The interruption hierarchy should pause entertainment controls before it hides a safety alert.",
+        "chineseExample": "中断层级应先暂停娱乐控制，而不是隐藏安全告警。"
+      },
+      {
+        "term": "resume affordance",
+        "phonetic": "/rɪˈzuːm əˈfɔːrdns/",
+        "meaning": "续接可供性；提示用户可以继续先前任务的按钮、状态或动效线索",
+        "example": "A clear resume affordance tells the driver what will happen after one tap.",
+        "chineseExample": "清楚的续接可供性会告诉驾驶员轻触一次后会发生什么。"
+      },
+      {
+        "term": "micro-summary",
+        "phonetic": "/ˈmaɪkroʊ ˈsʌməri/",
+        "meaning": "微摘要；用极短文本概括中断前状态或下一步动作",
+        "example": "A micro-summary can say “Route options paused” instead of showing a full map menu.",
+        "chineseExample": "微摘要可以显示“路线选项已暂停”，而不是展示完整地图菜单。"
+      },
+      {
+        "term": "cognitive reload",
+        "phonetic": "/ˈkɑːɡnətɪv ˌriːˈloʊd/",
+        "meaning": "认知重载；用户恢复任务时重新理解上下文所需的脑力成本",
+        "example": "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
+        "chineseExample": "优秀的座舱 HMI 会降低电话或安全中断后的认知重载。"
+      },
+      {
+        "term": "deferred action tray",
+        "phonetic": "/dɪˈfɜːrd ˈækʃn treɪ/",
+        "meaning": "延后动作托盘；临时保存非紧急任务并允许稍后继续的界面区域",
+        "example": "The deferred action tray should keep parked tasks visible but secondary.",
+        "chineseExample": "延后动作托盘应让已暂存任务保持可见，但处于次要位置。"
+      },
+      {
+        "term": "safe pause state",
+        "phonetic": "/seɪf pɔːz steɪt/",
+        "meaning": "安全暂停状态；系统在中断任务时保留上下文并避免误操作的状态",
+        "example": "A safe pause state prevents the seat massage setting from changing while the driver responds to traffic.",
+        "chineseExample": "安全暂停状态会防止驾驶员应对交通时误改座椅按摩设置。"
+      },
+      {
+        "term": "intelligent cockpit",
+        "phonetic": "/ɪnˈtelɪdʒənt ˈkɑːkpɪt/",
+        "meaning": "智能座舱；融合显示、语音、感知和车控服务的人车交互空间",
+        "example": "An intelligent cockpit should protect attention during task resumption.",
+        "chineseExample": "智能座舱应在任务续接期间保护注意力。"
+      },
+      {
+        "term": "driver distraction",
+        "phonetic": "/ˈdraɪvər dɪˈstrækʃn/",
+        "meaning": "驾驶员分心；驾驶注意力被非道路任务或界面内容占用",
+        "example": "Driver distraction can increase when a paused task returns with too much detail.",
+        "chineseExample": "当暂停任务带着过多细节返回时，驾驶员分心可能增加。"
+      },
+      {
+        "term": "recovery cue",
+        "phonetic": "/rɪˈkʌvəri kjuː/",
+        "meaning": "恢复提示；帮助用户回到安全状态或先前任务的简短提示",
+        "example": "A recovery cue should be short enough to read in one glance.",
+        "chineseExample": "恢复提示应短到一次扫视即可读完。"
+      },
+      {
+        "term": "road context",
+        "phonetic": "/roʊd ˈkɑːntekst/",
+        "meaning": "道路上下文；道路、速度、交通和风险等驾驶环境信息",
+        "example": "Road context decides whether a task should resume now or later.",
+        "chineseExample": "道路上下文决定任务应现在续接还是稍后续接。"
+      },
+      {
+        "term": "traffic demand",
+        "phonetic": "/ˈtræfɪk dɪˈmænd/",
+        "meaning": "交通需求；当前交通环境对驾驶员注意力和操作的要求",
+        "example": "High traffic demand should delay low-priority task resumption.",
+        "chineseExample": "高交通需求应延后低优先级任务续接。"
+      },
+      {
+        "term": "low-priority task",
+        "phonetic": "/loʊ praɪˈɔːrəti tæsk/",
+        "meaning": "低优先级任务；可等待且不影响安全的座舱操作",
+        "example": "A low-priority task can wait until the vehicle is stopped.",
+        "chineseExample": "低优先级任务可以等到车辆停止后再处理。"
+      },
+      {
+        "term": "safety interruption",
+        "phonetic": "/ˈseɪfti ˌɪntəˈrʌpʃn/",
+        "meaning": "安全中断；由安全风险触发、优先级高于普通任务的打断",
+        "example": "A safety interruption should freeze nonessential controls.",
+        "chineseExample": "安全中断应冻结非必要控制。"
+      },
+      {
+        "term": "nonessential control",
+        "phonetic": "/ˌnɑːnɪˈsenʃl kənˈtroʊl/",
+        "meaning": "非必要控制；不直接影响当前驾驶安全的控制项",
+        "example": "Nonessential controls should not compete with collision warnings.",
+        "chineseExample": "非必要控制不应与碰撞警告争夺注意力。"
+      },
+      {
+        "term": "paused task",
+        "phonetic": "/pɔːzd tæsk/",
+        "meaning": "已暂停任务；被系统临时中断但可恢复的用户任务",
+        "example": "The paused task should keep its last meaningful step.",
+        "chineseExample": "已暂停任务应保留最后一个有意义的步骤。"
+      },
+      {
+        "term": "last meaningful step",
+        "phonetic": "/læst ˈmiːnɪŋfl step/",
+        "meaning": "最后有意义步骤；任务中断前最适合恢复的关键节点",
+        "example": "The last meaningful step may be a route choice, not every previous tap.",
+        "chineseExample": "最后有意义步骤可能是路线选择，而不是之前每一次点击。"
+      },
+      {
+        "term": "state restoration",
+        "phonetic": "/steɪt ˌrestəˈreɪʃn/",
+        "meaning": "状态恢复；把界面恢复到中断前可理解状态的能力",
+        "example": "State restoration should avoid surprising changes in vehicle settings.",
+        "chineseExample": "状态恢复应避免车辆设置出现令人意外的变化。"
+      },
+      {
+        "term": "context snapshot",
+        "phonetic": "/ˈkɑːntekst ˈsnæpʃɑːt/",
+        "meaning": "上下文快照；记录任务中断前目标、选择和风险状态的简要信息",
+        "example": "A context snapshot helps the interface rebuild the user’s place.",
+        "chineseExample": "上下文快照帮助界面重建用户所在位置。"
+      },
+      {
+        "term": "one-glance message",
+        "phonetic": "/wʌn ɡlæns ˈmesɪdʒ/",
+        "meaning": "一眼可读信息；一次短暂扫视即可理解的提示",
+        "example": "A one-glance message should use plain verbs and familiar nouns.",
+        "chineseExample": "一眼可读信息应使用清楚动词和熟悉名词。"
+      },
+      {
+        "term": "plain verb",
+        "phonetic": "/pleɪn vɜːrb/",
+        "meaning": "清楚动词；直接说明动作的简单动词",
+        "example": "Plain verbs make the next action easier to trust.",
+        "chineseExample": "清楚动词让下一步动作更容易被信任。"
+      },
+      {
+        "term": "familiar noun",
+        "phonetic": "/fəˈmɪliər naʊn/",
+        "meaning": "熟悉名词；用户日常理解的对象名称",
+        "example": "Familiar nouns reduce interpretation time in moving vehicles.",
+        "chineseExample": "熟悉名词会减少车辆行驶中的理解时间。"
+      },
+      {
+        "term": "next action",
+        "phonetic": "/nekst ˈækʃn/",
+        "meaning": "下一步动作；用户或系统马上应该执行的动作",
+        "example": "The next action should be visible before the task resumes.",
+        "chineseExample": "下一步动作应在任务续接前可见。"
+      },
+      {
+        "term": "single-tap resume",
+        "phonetic": "/ˈsɪŋɡl tæp rɪˈzuːm/",
+        "meaning": "单击续接；一次点击即可继续已暂停任务的交互",
+        "example": "Single-tap resume is useful only when the result is predictable.",
+        "chineseExample": "只有结果可预测时，单击续接才有用。"
+      },
+      {
+        "term": "predictable result",
+        "phonetic": "/prɪˈdɪktəbl rɪˈzʌlt/",
+        "meaning": "可预测结果；用户能提前理解操作后果的结果",
+        "example": "A predictable result reduces hesitation during driving.",
+        "chineseExample": "可预测结果会减少驾驶中的犹豫。"
+      },
+      {
+        "term": "confirmation layer",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈleɪər/",
+        "meaning": "确认层；在恢复或执行敏感操作前要求确认的界面层",
+        "example": "A confirmation layer is needed when a resumed task can change a vehicle setting.",
+        "chineseExample": "当续接任务会改变车辆设置时，需要确认层。"
+      },
+      {
+        "term": "sensitive setting",
+        "phonetic": "/ˈsensətɪv ˈsetɪŋ/",
+        "meaning": "敏感设置；可能影响安全、隐私或舒适体验的重要设置",
+        "example": "Sensitive settings should not change silently after a distraction.",
+        "chineseExample": "敏感设置不应在分心后悄悄改变。"
+      },
+      {
+        "term": "temporary hold",
+        "phonetic": "/ˈtempəreri hoʊld/",
+        "meaning": "临时保持；短时间保留任务状态而不执行动作",
+        "example": "Temporary hold gives the driver time to look back at the road.",
+        "chineseExample": "临时保持给驾驶员时间把视线转回道路。"
+      },
+      {
+        "term": "task queue",
+        "phonetic": "/tæsk kjuː/",
+        "meaning": "任务队列；按优先级排列等待处理的座舱任务列表",
+        "example": "A task queue should show only what matters now.",
+        "chineseExample": "任务队列应只显示当前重要的内容。"
+      },
+      {
+        "term": "deferred task",
+        "phonetic": "/dɪˈfɜːrd tæsk/",
+        "meaning": "延后任务；被推迟到更安全时机处理的任务",
+        "example": "A deferred task can return after the vehicle stops.",
+        "chineseExample": "延后任务可以在车辆停止后返回。"
+      },
+      {
+        "term": "resumption timing",
+        "phonetic": "/rɪˈzʌmpʃn ˈtaɪmɪŋ/",
+        "meaning": "续接时机；系统选择何时恢复任务的判断",
+        "example": "Resumption timing should consider speed, workload, and urgency.",
+        "chineseExample": "续接时机应考虑车速、负荷和紧急性。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/ˈdraɪvər ˈwɜːrkloʊd/",
+        "meaning": "驾驶员负荷；驾驶员处理驾驶和界面任务的综合压力",
+        "example": "Driver workload rises when the interface asks for long reading.",
+        "chineseExample": "当界面要求长时间阅读时，驾驶员负荷会上升。"
+      },
+      {
+        "term": "visual demand",
+        "phonetic": "/ˈvɪʒuəl dɪˈmænd/",
+        "meaning": "视觉需求；界面对视线停留和阅读的要求",
+        "example": "Visual demand should remain low during resumption.",
+        "chineseExample": "续接期间视觉需求应保持较低。"
+      },
+      {
+        "term": "manual interaction",
+        "phonetic": "/ˈmænjuəl ˌɪntərˈækʃn/",
+        "meaning": "手动交互；用户通过触控、按键或旋钮完成的操作",
+        "example": "Manual interaction should wait when both hands are needed for steering.",
+        "chineseExample": "当双手需要控制方向盘时，手动交互应等待。"
+      },
+      {
+        "term": "voice fallback",
+        "phonetic": "/vɔɪs ˈfɔːlbæk/",
+        "meaning": "语音回退；触控不适合时用语音完成或确认任务的方式",
+        "example": "Voice fallback can resume a simple task without extra touch input.",
+        "chineseExample": "语音回退可以在无需额外触控的情况下续接简单任务。"
+      },
+      {
+        "term": "touch target",
+        "phonetic": "/tʌtʃ ˈtɑːrɡɪt/",
+        "meaning": "触控目标；用户需要点击或触摸的界面区域",
+        "example": "A resume touch target should be large but not visually dominant.",
+        "chineseExample": "续接触控目标应足够大，但不应视觉上过于突出。"
+      },
+      {
+        "term": "visual dominance",
+        "phonetic": "/ˈvɪʒuəl ˈdɑːmɪnəns/",
+        "meaning": "视觉主导性；某个元素在界面中抢占注意力的程度",
+        "example": "Too much visual dominance can turn a helper into a distraction.",
+        "chineseExample": "过强的视觉主导性可能把帮助变成干扰。"
+      },
+      {
+        "term": "progress indicator",
+        "phonetic": "/ˈprɑːɡres ˈɪndɪkeɪtər/",
+        "meaning": "进度指示；显示任务已完成程度或当前位置的界面线索",
+        "example": "A progress indicator can remind users where they stopped.",
+        "chineseExample": "进度指示可以提醒用户停在了哪里。"
+      },
+      {
+        "term": "short label",
+        "phonetic": "/ʃɔːrt ˈleɪbl/",
+        "meaning": "短标签；用少量词语命名状态或动作的界面文本",
+        "example": "A short label is easier to scan than a full instruction.",
+        "chineseExample": "短标签比完整说明更容易扫视。"
+      },
+      {
+        "term": "resume label",
+        "phonetic": "/rɪˈzuːm ˈleɪbl/",
+        "meaning": "续接标签；说明恢复动作及其对象的简短文案",
+        "example": "The resume label should name the task, not just say continue.",
+        "chineseExample": "续接标签应说出任务名称，而不只是写继续。"
+      },
+      {
+        "term": "continue route review",
+        "phonetic": "/kənˈtɪnjuː ruːt rɪˈvjuː/",
+        "meaning": "继续路线查看；恢复导航路线比较或确认任务",
+        "example": "Continue route review is clearer than a generic resume button.",
+        "chineseExample": "“继续路线查看”比通用的续接按钮更清楚。"
+      },
+      {
+        "term": "keep paused",
+        "phonetic": "/kiːp pɔːzd/",
+        "meaning": "保持暂停；让任务继续停留在暂存状态",
+        "example": "Keep paused should be available when traffic demand is high.",
+        "chineseExample": "当交通需求高时，应提供保持暂停。"
+      },
+      {
+        "term": "dismiss task",
+        "phonetic": "/dɪsˈmɪs tæsk/",
+        "meaning": "关闭任务；取消或移除已暂停任务",
+        "example": "Dismiss task should not delete important context without confirmation.",
+        "chineseExample": "关闭任务不应在没有确认的情况下删除重要上下文。"
+      },
+      {
+        "term": "safe window",
+        "phonetic": "/seɪf ˈwɪndoʊ/",
+        "meaning": "安全窗口；更适合恢复或完成非紧急任务的短暂时机",
+        "example": "The cockpit can wait for a safe window before showing a deferred task.",
+        "chineseExample": "座舱可以等待安全窗口再显示延后任务。"
+      },
+      {
+        "term": "speed threshold",
+        "phonetic": "/spiːd ˈθreʃhoʊld/",
+        "meaning": "车速阈值；用于决定功能是否可用或是否延后的速度边界",
+        "example": "A speed threshold can block complex browsing while driving.",
+        "chineseExample": "车速阈值可以在行驶中阻止复杂浏览。"
+      },
+      {
+        "term": "lane complexity",
+        "phonetic": "/leɪn kəmˈpleksəti/",
+        "meaning": "车道复杂度；车道数量、分叉和变道要求带来的驾驶复杂程度",
+        "example": "Lane complexity should influence whether the interface resumes a task.",
+        "chineseExample": "车道复杂度应影响界面是否续接任务。"
+      },
+      {
+        "term": "environmental urgency",
+        "phonetic": "/ɪnˌvaɪrənˈmentl ˈɜːrdʒənsi/",
+        "meaning": "环境紧急性；由道路、交通或天气导致的紧迫程度",
+        "example": "Environmental urgency can override convenience features.",
+        "chineseExample": "环境紧急性可以覆盖便利功能。"
+      },
+      {
+        "term": "convenience feature",
+        "phonetic": "/kənˈviːniəns ˈfiːtʃər/",
+        "meaning": "便利功能；提升舒适或效率但非安全必需的功能",
+        "example": "Convenience features should step back during safety interruptions.",
+        "chineseExample": "便利功能应在安全中断期间退居次要。"
+      },
+      {
+        "term": "trustworthy resumption",
+        "phonetic": "/ˈtrʌstwɜːrði rɪˈzʌmpʃn/",
+        "meaning": "可信续接；让用户理解为何、何时以及如何恢复任务的设计",
+        "example": "Trustworthy resumption explains both the pause and the return.",
+        "chineseExample": "可信续接会同时解释暂停和返回。"
+      },
+      {
+        "term": "explainable pause",
+        "phonetic": "/ɪkˈspleɪnəbl pɔːz/",
+        "meaning": "可解释暂停；说明任务为何被暂停的反馈",
+        "example": "An explainable pause reduces frustration when the system delays a task.",
+        "chineseExample": "当系统延后任务时，可解释暂停会减少挫败感。"
+      },
+      {
+        "term": "frustration",
+        "phonetic": "/frʌˈstreɪʃn/",
+        "meaning": "挫败感；用户因目标受阻或解释不足产生的不满",
+        "example": "Frustration drops when the cockpit says why it paused the task.",
+        "chineseExample": "当座舱说明为何暂停任务时，挫败感会下降。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户理解并控制系统行为的能力",
+        "example": "User agency remains high when the driver can keep paused, resume, or dismiss.",
+        "chineseExample": "当驾驶员可以保持暂停、续接或关闭时，用户主导权会保持较高。"
+      },
+      {
+        "term": "system judgment",
+        "phonetic": "/ˈsɪstəm ˈdʒʌdʒmənt/",
+        "meaning": "系统判断；系统基于上下文作出的暂停、延后或恢复决策",
+        "example": "System judgment should be visible enough to evaluate.",
+        "chineseExample": "系统判断应足够可见，便于用户评估。"
+      },
+      {
+        "term": "resume decision",
+        "phonetic": "/rɪˈzuːm dɪˈsɪʒn/",
+        "meaning": "续接决策；是否恢复任务及如何恢复的判断",
+        "example": "A resume decision should balance convenience with driving attention.",
+        "chineseExample": "续接决策应平衡便利性和驾驶注意力。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃn ˈbʌdʒɪt/",
+        "meaning": "注意力预算；驾驶员在特定时刻可分配给界面的有限注意力资源",
+        "example": "The interface should spend the attention budget on safety first.",
+        "chineseExample": "界面应首先把注意力预算用于安全。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；用户可用于看屏幕的短暂时间",
+        "example": "A micro-summary protects the glance budget after an interruption.",
+        "chineseExample": "微摘要会在中断后保护扫视预算。"
+      },
+      {
+        "term": "re-entry point",
+        "phonetic": "/riː ˈentri pɔɪnt/",
+        "meaning": "重新进入点；任务恢复时最合适的界面位置或步骤",
+        "example": "The re-entry point should match the driver’s goal.",
+        "chineseExample": "重新进入点应匹配驾驶员目标。"
+      },
+      {
+        "term": "driver goal",
+        "phonetic": "/ˈdraɪvər ɡoʊl/",
+        "meaning": "驾驶员目标；用户当前想完成的驾驶或座舱任务",
+        "example": "The driver goal may change after a safety event.",
+        "chineseExample": "安全事件后，驾驶员目标可能发生变化。"
+      },
+      {
+        "term": "safety event",
+        "phonetic": "/ˈseɪfti ɪˈvent/",
+        "meaning": "安全事件；触发告警、暂停或注意力转移的风险事件",
+        "example": "A safety event should reset the priority of pending tasks.",
+        "chineseExample": "安全事件应重置待处理任务的优先级。"
+      },
+      {
+        "term": "pending task",
+        "phonetic": "/ˈpendɪŋ tæsk/",
+        "meaning": "待处理任务；已经开始但尚未完成的任务",
+        "example": "Pending tasks need clear status after interruption.",
+        "chineseExample": "待处理任务在中断后需要清楚状态。"
+      },
+      {
+        "term": "priority reset",
+        "phonetic": "/praɪˈɔːrəti ˈriːset/",
+        "meaning": "优先级重置；根据新风险重新排序任务的过程",
+        "example": "Priority reset prevents old choices from driving new behavior.",
+        "chineseExample": "优先级重置会防止旧选择驱动新行为。"
+      },
+      {
+        "term": "old choice",
+        "phonetic": "/oʊld tʃɔɪs/",
+        "meaning": "旧选择；中断前做出的选择或设置",
+        "example": "An old choice may no longer be appropriate after traffic changes.",
+        "chineseExample": "交通变化后，旧选择可能不再合适。"
+      },
+      {
+        "term": "new behavior",
+        "phonetic": "/nuː bɪˈheɪvjər/",
+        "meaning": "新行为；系统在新上下文下采取的动作",
+        "example": "New behavior should be explained when it differs from the previous plan.",
+        "chineseExample": "当新行为不同于先前计划时，应加以解释。"
+      },
+      {
+        "term": "previous plan",
+        "phonetic": "/ˈpriːviəs plæn/",
+        "meaning": "先前计划；中断前系统或用户准备执行的方案",
+        "example": "The previous plan should not restart automatically after a hazard.",
+        "chineseExample": "风险过后，先前计划不应自动重启。"
+      },
+      {
+        "term": "automatic restart",
+        "phonetic": "/ˌɔːtəˈmætɪk ˈriːstɑːrt/",
+        "meaning": "自动重启；无需用户确认就恢复任务或动作",
+        "example": "Automatic restart can surprise drivers after a tense moment.",
+        "chineseExample": "紧张时刻之后，自动重启可能让驾驶员意外。"
+      },
+      {
+        "term": "user confirmation",
+        "phonetic": "/ˈjuːzər ˌkɑːnfərˈmeɪʃn/",
+        "meaning": "用户确认；用户明确同意继续或执行动作",
+        "example": "User confirmation is important when the task affects vehicle behavior.",
+        "chineseExample": "当任务影响车辆行为时，用户确认很重要。"
+      },
+      {
+        "term": "vehicle behavior",
+        "phonetic": "/ˈviːəkl bɪˈheɪvjər/",
+        "meaning": "车辆行为；车辆的运动、控制或设置变化",
+        "example": "Vehicle behavior should not change because of a hidden resumed task.",
+        "chineseExample": "车辆行为不应因隐藏的续接任务而变化。"
+      },
+      {
+        "term": "hidden task",
+        "phonetic": "/ˈhɪdn tæsk/",
+        "meaning": "隐藏任务；用户无法立即看见但系统仍在保留或执行的任务",
+        "example": "A hidden task can damage trust if it changes settings later.",
+        "chineseExample": "如果隐藏任务稍后改变设置，可能损害信任。"
+      },
+      {
+        "term": "visible status",
+        "phonetic": "/ˈvɪzəbl ˈsteɪtəs/",
+        "meaning": "可见状态；用户能够看到并理解的系统或任务状态",
+        "example": "Visible status makes deferred actions easier to manage.",
+        "chineseExample": "可见状态让延后动作更容易管理。"
+      },
+      {
+        "term": "status chip",
+        "phonetic": "/ˈsteɪtəs tʃɪp/",
+        "meaning": "状态标签；用紧凑视觉元素显示状态或任务的界面组件",
+        "example": "A status chip can show that route review is paused.",
+        "chineseExample": "状态标签可以显示路线查看已暂停。"
+      },
+      {
+        "term": "compact control",
+        "phonetic": "/kəmˈpækt kənˈtroʊl/",
+        "meaning": "紧凑控件；占用空间小但功能明确的界面控件",
+        "example": "Compact controls should still support clear touch targets.",
+        "chineseExample": "紧凑控件仍应支持清楚的触控目标。"
+      },
+      {
+        "term": "secondary area",
+        "phonetic": "/ˈsekənderi ˈeriə/",
+        "meaning": "次要区域；视觉优先级低于主驾驶信息的界面位置",
+        "example": "Deferred tasks belong in a secondary area.",
+        "chineseExample": "延后任务应放在次要区域。"
+      },
+      {
+        "term": "primary driving information",
+        "phonetic": "/ˈpraɪmeri ˈdraɪvɪŋ ˌɪnfərˈmeɪʃn/",
+        "meaning": "主要驾驶信息；速度、道路、导航和安全状态等核心驾驶内容",
+        "example": "Primary driving information must stay visible during resumption.",
+        "chineseExample": "续接期间主要驾驶信息必须保持可见。"
+      },
+      {
+        "term": "navigation review",
+        "phonetic": "/ˌnævɪˈɡeɪʃn rɪˈvjuː/",
+        "meaning": "导航查看；比较或确认路线信息的任务",
+        "example": "Navigation review can resume with a short route summary.",
+        "chineseExample": "导航查看可以通过简短路线摘要续接。"
+      },
+      {
+        "term": "route summary",
+        "phonetic": "/ruːt ˈsʌməri/",
+        "meaning": "路线摘要；用少量信息概括路线选择或变化",
+        "example": "A route summary can replace a dense list of alternatives.",
+        "chineseExample": "路线摘要可以替代密集的备选列表。"
+      },
+      {
+        "term": "dense list",
+        "phonetic": "/dens lɪst/",
+        "meaning": "密集列表；信息项过多、需要较长阅读时间的列表",
+        "example": "A dense list is risky when the vehicle is moving.",
+        "chineseExample": "车辆行驶时，密集列表存在风险。"
+      },
+      {
+        "term": "alternative route",
+        "phonetic": "/ɔːlˈtɜːrnətɪv ruːt/",
+        "meaning": "备选路线；导航中可供选择的其他路线",
+        "example": "Alternative routes should wait until the driver can compare them safely.",
+        "chineseExample": "备选路线应等到驾驶员能安全比较时再显示。"
+      },
+      {
+        "term": "climate panel",
+        "phonetic": "/ˈklaɪmət ˈpænl/",
+        "meaning": "空调面板；调整温度、风量和舒适功能的界面区域",
+        "example": "The climate panel can save the exact fan setting as a task bookmark.",
+        "chineseExample": "空调面板可以把准确风量设置保存为任务书签。"
+      },
+      {
+        "term": "seat massage",
+        "phonetic": "/siːt məˈsɑːʒ/",
+        "meaning": "座椅按摩；座椅舒适功能之一",
+        "example": "Seat massage should not switch modes during a safety interruption.",
+        "chineseExample": "座椅按摩不应在安全中断期间切换模式。"
+      },
+      {
+        "term": "phone call",
+        "phonetic": "/foʊn kɔːl/",
+        "meaning": "电话通话；可能中断座舱任务或增加注意力负荷的通信活动",
+        "example": "A phone call can create cognitive reload when the driver returns to a menu.",
+        "chineseExample": "电话通话会在驾驶员返回菜单时造成认知重载。"
+      },
+      {
+        "term": "menu depth",
+        "phonetic": "/ˈmenjuː depθ/",
+        "meaning": "菜单深度；用户进入功能所需的层级数量",
+        "example": "High menu depth makes task recovery slower.",
+        "chineseExample": "菜单层级深会让任务恢复变慢。"
+      },
+      {
+        "term": "screen clutter",
+        "phonetic": "/skriːn ˈklʌtər/",
+        "meaning": "屏幕杂乱；屏幕上过多信息造成的视觉干扰",
+        "example": "Screen clutter makes resumption harder after distraction.",
+        "chineseExample": "屏幕杂乱会让分心后的续接更困难。"
+      },
+      {
+        "term": "calm cue",
+        "phonetic": "/kɑːm kjuː/",
+        "meaning": "平静提示；低强度、不制造惊吓的提示",
+        "example": "A calm cue can guide attention without adding stress.",
+        "chineseExample": "平静提示可以在不增加压力的情况下引导注意力。"
+      },
+      {
+        "term": "crowded warning screen",
+        "phonetic": "/ˈkraʊdɪd ˈwɔːrnɪŋ skriːn/",
+        "meaning": "拥挤警告屏；信息过多、难以快速理解的警告界面",
+        "example": "A crowded warning screen can slow the recovery process.",
+        "chineseExample": "拥挤警告屏会拖慢恢复过程。"
+      },
+      {
+        "term": "whole route",
+        "phonetic": "/hoʊl ruːt/",
+        "meaning": "完整路线；导航从起点到终点的全部路径信息",
+        "example": "Drivers should not reread the whole route after a short interruption.",
+        "chineseExample": "短暂中断后，驾驶员不应重读完整路线。"
+      },
+      {
+        "term": "rereading",
+        "phonetic": "/ˌriːˈriːdɪŋ/",
+        "meaning": "重新阅读；再次阅读已经看过的信息",
+        "example": "Rereading increases visual demand during driving.",
+        "chineseExample": "重新阅读会增加驾驶中的视觉需求。"
+      },
+      {
+        "term": "exact setting",
+        "phonetic": "/ɪɡˈzækt ˈsetɪŋ/",
+        "meaning": "准确设置；中断前具体的功能数值或模式",
+        "example": "Exact settings help users trust state restoration.",
+        "chineseExample": "准确设置帮助用户信任状态恢复。"
+      },
+      {
+        "term": "paused position",
+        "phonetic": "/pɔːzd pəˈzɪʃn/",
+        "meaning": "暂停位置；任务中断时停留的界面或步骤位置",
+        "example": "The paused position should return only when the road is safe.",
+        "chineseExample": "暂停位置应只在道路安全时返回。"
+      },
+      {
+        "term": "safety first",
+        "phonetic": "/ˈseɪfti fɜːrst/",
+        "meaning": "安全优先；以驾驶安全高于便利操作的原则",
+        "example": "Safety first means some tasks remain deferred.",
+        "chineseExample": "安全优先意味着有些任务会保持延后。"
+      },
+      {
+        "term": "later prompt",
+        "phonetic": "/ˈleɪtər prɑːmpt/",
+        "meaning": "稍后提示；在更安全时机再次提醒用户的提示",
+        "example": "A later prompt can offer to resume the task after parking.",
+        "chineseExample": "稍后提示可以在停车后询问是否续接任务。"
+      },
+      {
+        "term": "after parking",
+        "phonetic": "/ˈæftər ˈpɑːrkɪŋ/",
+        "meaning": "停车后；车辆停稳或进入停车状态之后",
+        "example": "Complex settings are safer after parking.",
+        "chineseExample": "复杂设置在停车后处理更安全。"
+      },
+      {
+        "term": "moving vehicle",
+        "phonetic": "/ˈmuːvɪŋ ˈviːəkl/",
+        "meaning": "行驶车辆；正在移动中的车辆",
+        "example": "A moving vehicle requires shorter messages and fewer choices.",
+        "chineseExample": "行驶车辆需要更短的信息和更少的选择。"
+      },
+      {
+        "term": "fewer choices",
+        "phonetic": "/ˈfjuːər tʃɔɪsɪz/",
+        "meaning": "更少选择；减少可选项以降低决策负担",
+        "example": "Fewer choices can lower cognitive reload.",
+        "chineseExample": "更少选择可以降低认知重载。"
+      },
+      {
+        "term": "decision burden",
+        "phonetic": "/dɪˈsɪʒn ˈbɜːrdn/",
+        "meaning": "决策负担；用户比较选项并作出选择所需的心理成本",
+        "example": "Decision burden should stay low while driving.",
+        "chineseExample": "驾驶时决策负担应保持较低。"
+      },
+      {
+        "term": "interface memory",
+        "phonetic": "/ˈɪntərfeɪs ˈmeməri/",
+        "meaning": "界面记忆；系统记住任务上下文并帮助用户恢复的能力",
+        "example": "Interface memory is useful only when users can see and control it.",
+        "chineseExample": "只有用户能看见并控制界面记忆时，它才有用。"
+      },
+      {
+        "term": "recoverable task",
+        "phonetic": "/rɪˈkʌvərəbl tæsk/",
+        "meaning": "可恢复任务；中断后能以清楚上下文继续的任务",
+        "example": "A recoverable task should have a clear re-entry point.",
+        "chineseExample": "可恢复任务应有清楚的重新进入点。"
+      },
+      {
+        "term": "attention shift",
+        "phonetic": "/əˈtenʃn ʃɪft/",
+        "meaning": "注意力转移；用户注意力从一个对象转到另一个对象",
+        "example": "The cockpit should support attention shift back to driving first.",
+        "chineseExample": "座舱应先支持注意力转回驾驶。"
+      },
+      {
+        "term": "task resumption",
+        "phonetic": "/tæsk rɪˈzʌmpʃn/",
+        "meaning": "任务续接；在中断后继续先前任务的过程",
+        "example": "Task resumption should feel controlled and predictable.",
+        "chineseExample": "任务续接应让人感觉可控且可预测。"
+      },
+      {
+        "term": "controlled",
+        "phonetic": "/kənˈtroʊld/",
+        "meaning": "可控的；用户能够理解并影响其进程的",
+        "example": "Controlled resumption supports user agency.",
+        "chineseExample": "可控的续接支持用户主导权。"
+      },
+      {
+        "term": "crowded",
+        "phonetic": "/ˈkraʊdɪd/",
+        "meaning": "拥挤的；信息或元素过多、难以快速理解的",
+        "example": "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
+        "chineseExample": "在这句话中，“crowded”表示警告屏内容过多、过于拥挤。"
+      },
+      {
+        "term": "glance-safe",
+        "phonetic": "/ɡlæns seɪf/",
+        "meaning": "低扫视安全的；适合短暂扫视、不增加过多视觉负荷的",
+        "example": "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+        "chineseExample": "在这句话中，“glance-safe”表示适合短暂扫视的安全续接方式。"
+      },
+      {
+        "term": "resumption",
+        "phonetic": "/rɪˈzʌmpʃn/",
+        "meaning": "续接；中断后恢复或继续某个任务的过程",
+        "example": "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+        "chineseExample": "在这句话中，“resumption”指任务中断后的恢复继续。"
+      },
+      {
+        "term": "bookmark",
+        "phonetic": "/ˈbʊkmɑːrk/",
+        "meaning": "书签；用于记录位置或状态以便稍后返回的标记",
+        "example": "A task bookmark can return the climate panel to the exact setting the driver paused on.",
+        "chineseExample": "在这句话中，“bookmark”指保存任务位置和状态的界面机制。"
+      },
+      {
+        "term": "paused",
+        "phonetic": "/pɔːzd/",
+        "meaning": "已暂停的；临时停止但仍可继续的",
+        "example": "The paused task should move into a deferred action tray with a visible status chip.",
+        "chineseExample": "在这句话中，“paused”表示任务被暂时停止但仍可恢复。"
+      },
+      {
+        "term": "reorientation",
+        "phonetic": "/riˌɔːriənˈteɪʃn/",
+        "meaning": "重新定向；把注意力或方向重新引回目标的过程",
+        "example": "Attention reorientation should point first to road risk and then to the paused task.",
+        "chineseExample": "在这句话中，“reorientation”指注意力重新回到道路和任务。"
+      },
+      {
+        "term": "hides",
+        "phonetic": "/haɪdz/",
+        "meaning": "隐藏；遮住或使某物不可见",
+        "example": "The interruption hierarchy should pause entertainment controls before it hides a safety alert.",
+        "chineseExample": "在这句话中，“hides”表示界面把安全告警遮住。"
+      },
+      {
+        "term": "reload",
+        "phonetic": "/ˌriːˈloʊd/",
+        "meaning": "重新加载；这里指重新理解上下文的心理过程",
+        "example": "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
+        "chineseExample": "在这句话中，“reload”指用户重新加载任务上下文的认知成本。"
+      },
+      {
+        "term": "tray",
+        "phonetic": "/treɪ/",
+        "meaning": "托盘；界面中暂存项目的小区域",
+        "example": "The deferred action tray should keep parked tasks visible but secondary.",
+        "chineseExample": "在这句话中，“tray”指用于存放延后动作的界面区域。"
+      },
+      {
+        "term": "stopping",
+        "phonetic": "/ˈstɑːpɪŋ/",
+        "meaning": "停止；让某事物停下来或中断",
+        "example": "Distraction recovery is not only about stopping a risky task.",
+        "chineseExample": "在这句话中，“stopping”表示停止有风险的任务。"
+      },
+      {
+        "term": "one-glance",
+        "phonetic": "/wʌn ɡlæns/",
+        "meaning": "一眼可读的；一次短暂扫视即可理解的",
+        "example": "The HMI should show a calm one-glance message.",
+        "chineseExample": "在这句话中，“one-glance”表示一次扫视即可读懂。"
+      },
+      {
+        "term": "environmental",
+        "phonetic": "/ɪnˌvaɪrənˈmentl/",
+        "meaning": "环境的；与道路、天气或外部情境相关的",
+        "example": "Environmental urgency can override convenience features.",
+        "chineseExample": "在这句话中，“environmental”表示来自外部驾驶环境的。"
+      },
+      {
+        "term": "allow",
+        "phonetic": "/əˈlaʊ/",
+        "meaning": "允许；使某事可以发生",
+        "example": "When speed and lane complexity allow a safer window, the cockpit can offer resumption.",
+        "chineseExample": "在这句话中，“allow”表示条件允许系统恢复任务。"
+      },
+      {
+        "term": "meaningful",
+        "phonetic": "/ˈmiːnɪŋfl/",
+        "meaning": "有意义的；对理解任务状态真正有帮助的",
+        "example": "It explains the last meaningful step and predicts the result of one tap.",
+        "chineseExample": "在这句话中，“meaningful”表示对恢复任务有价值的关键步骤。"
+      },
+      {
+        "term": "predicts",
+        "phonetic": "/prɪˈdɪkts/",
+        "meaning": "预测；提前说明可能结果",
+        "example": "It names the task, explains the last meaningful step, and predicts the result of one tap.",
+        "chineseExample": "在这句话中，“predicts”表示提前说明点击后的结果。"
+      },
+      {
+        "term": "generic",
+        "phonetic": "/dʒəˈnerɪk/",
+        "meaning": "通用的；缺少具体对象或上下文的",
+        "example": "A task-specific label is easier to trust than a generic button.",
+        "chineseExample": "在这句话中，“generic”表示按钮文案过于通用。"
+      },
+      {
+        "term": "judgment",
+        "phonetic": "/ˈdʒʌdʒmənt/",
+        "meaning": "判断；基于上下文做出的决定",
+        "example": "The system shows its judgment, but the driver can keep paused, resume, or dismiss the task.",
+        "chineseExample": "在这句话中，“judgment”指系统为何暂停或恢复任务的判断。"
+      },
+      {
+        "term": "stealing",
+        "phonetic": "/ˈstiːlɪŋ/",
+        "meaning": "夺走；这里指占用本应留给道路的注意力",
+        "example": "Good resumption design reduces cognitive reload without stealing attention from the road.",
+        "chineseExample": "在这句话中，“stealing”表示从道路注意力中夺走资源。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Helping drivers resume tasks after distraction",
+        "text": "In an intelligent cockpit, distraction recovery is not only about stopping a risky task. It is also about helping the driver return at the right time, with the right amount of context. When traffic demand is high, the HMI should pause nonessential controls, protect primary driving information, and show a calm one-glance message. The paused task should move into a deferred action tray with a visible status chip, such as “Route review paused.” Later, when speed, lane complexity, and environmental urgency allow a safer window, the cockpit can offer glance-safe resumption. A good resume affordance does not simply say “continue.” It names the task, explains the last meaningful step, and predicts the result of one tap. For example, “Continue route review: two faster options saved” is easier to trust than a generic button. Sensitive settings need an extra confirmation layer because automatic restart may change vehicle behavior after the driver’s goal has changed. This design protects user agency as well as safety. The system shows its judgment, but the driver can keep paused, resume, or dismiss the task. Good resumption design reduces cognitive reload without stealing attention from the road.",
+        "translation": "在智能座舱中，分心恢复不只是停止有风险的任务，也是在合适的时间、用合适数量的上下文帮助驾驶员返回任务。当交通需求较高时，HMI 应暂停非必要控制，保护主要驾驶信息，并显示平静的一眼可读信息。已暂停任务应移入延后动作托盘，并带有可见状态标签，例如“路线查看已暂停”。稍后，当车速、车道复杂度和环境紧急性允许更安全的窗口时，座舱可以提供低扫视续接。优秀的续接可供性不应只写“继续”，而应说出任务名称，解释最后有意义步骤，并预测一次点击的结果。例如，“继续路线查看：已保存两条更快路线”比通用按钮更值得信任。敏感设置需要额外确认层，因为自动重启可能在驾驶员目标已经改变后改变车辆行为。这种设计既保护用户主导权，也保护安全。系统展示自己的判断，但驾驶员可以保持暂停、续接或关闭任务。优秀的续接设计会降低认知重载，同时不从道路上夺走注意力。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "When traffic demand is high, the HMI should pause nonessential controls, protect primary driving information, and show a calm one-glance message.",
+        "translation": "当交通需求较高时，HMI 应暂停非必要控制，保护主要驾驶信息，并显示平静的一眼可读信息。",
+        "breakdown": "When 引导条件；pause, protect, and show 三个并列动词说明高负荷场景下的界面响应。"
+      },
+      {
+        "sentence": "The paused task should move into a deferred action tray with a visible status chip, such as “Route review paused.”",
+        "translation": "已暂停任务应移入延后动作托盘，并带有可见状态标签，例如“路线查看已暂停”。",
+        "breakdown": "should move into 表示推荐的状态迁移；with a visible status chip 补充说明任务如何保持可见。"
+      },
+      {
+        "sentence": "A good resume affordance does not simply say “continue.”",
+        "translation": "优秀的续接可供性不应只写“继续”。",
+        "breakdown": "does not simply say 用来批评过于泛化的按钮文案；resume affordance 是主语，指可恢复任务的交互线索。"
+      },
+      {
+        "sentence": "Good resumption design reduces cognitive reload without stealing attention from the road.",
+        "translation": "优秀的续接设计会降低认知重载，同时不从道路上夺走注意力。",
+        "breakdown": "reduces cognitive reload 是核心收益；without stealing attention from the road 表示设计约束。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 distraction recovery、glance-safe resumption、task bookmark 和 deferred action tray。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "完整跟读英文长文，再用中文复述系统为什么不能在安全事件后自动重启任务。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 When traffic demand is high... 和 A good resume affordance does not simply say... 各写一句座舱设计建议。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向评审说明：导航路线查看被安全告警中断后，系统如何保存上下文、等待安全窗口并提供低扫视续接。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-21-child-presence-detection-and-rear-seat-reminders",
     "date": "2026-09-21",
     "title": "Child presence detection and rear-seat reminder design in intelligent cockpits",

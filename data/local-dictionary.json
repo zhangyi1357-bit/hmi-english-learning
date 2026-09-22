@@ -539,6 +539,13 @@
     "在这句话中，“after”可理解为“在...之后, 由于；在...之后；后来”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "after parking": [
+    "/ˈæftər ˈpɑːrkɪŋ/",
+    "停车后；车辆停稳或进入停车状态之后",
+    "",
+    "Complex settings are safer after parking.",
+    "复杂设置在停车后处理更安全。"
+  ],
   "again": [
     "/待查/",
     "再次；重新回到某状态",
@@ -684,6 +691,13 @@
     "在这句话中，“all”可理解为“一切；全部；大家；全都；一切；全；整个；全体；都；全部；全身；那么；一切；全部；全体；所有的；全部的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "allow": [
+    "/əˈlaʊ/",
+    "允许；使某事可以发生",
+    "",
+    "When speed and lane complexity allow a safer window, the cockpit can offer resumption.",
+    "在这句话中，“allow”表示条件允许系统恢复任务。"
+  ],
   "allowing": [
     "/əˈlaʊɪŋ/",
     "允许；allow 的现在分词",
@@ -726,6 +740,13 @@
     "",
     "Alternative actions are useful when the first suggestion does not fit.",
     "当首个建议不合适时，替代操作很有用。"
+  ],
+  "alternative route": [
+    "/ɔːlˈtɜːrnətɪv ruːt/",
+    "备选路线；导航中可供选择的其他路线",
+    "",
+    "Alternative routes should wait until the driver can compare them safely.",
+    "备选路线应等到驾驶员能安全比较时再显示。"
   ],
   "am": [
     "/æm/",
@@ -1308,6 +1329,13 @@
     "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
     "注意力监测应支持安全决策，同时避免让驾驶员感觉被持续评判。"
   ],
+  "attention reorientation": [
+    "/əˈtenʃn riˌɔːriənˈteɪʃn/",
+    "注意力重新定向；帮助用户从非驾驶内容回到关键驾驶信息的提示过程",
+    "",
+    "Attention reorientation should point first to road risk and then to the paused task.",
+    "注意力重新定向应先指向道路风险，再指向暂停的任务。"
+  ],
   "attention required": [
     "/əˈtenʃn rɪˈkwaɪərd/",
     "需要注意；系统提示驾驶员必须重新关注驾驶任务",
@@ -1321,6 +1349,13 @@
     "",
     "Attention routing should guide the driver toward the cluster for urgent driving information.",
     "注意力路由应把驾驶员引导到仪表屏查看紧急驾驶信息。"
+  ],
+  "attention shift": [
+    "/əˈtenʃn ʃɪft/",
+    "注意力转移；用户注意力从一个对象转到另一个对象",
+    "",
+    "The cockpit should support attention shift back to driving first.",
+    "座舱应先支持注意力转回驾驶。"
   ],
   "attention support": [
     "/əˈtenʃn səˈpɔːrt/",
@@ -1519,6 +1554,13 @@
     "",
     "Automatic execution belongs only inside a narrow permission scope.",
     "自动执行只应发生在狭窄的许可范围内。"
+  ],
+  "automatic restart": [
+    "/ˌɔːtəˈmætɪk ˈriːstɑːrt/",
+    "自动重启；无需用户确认就恢复任务或动作",
+    "",
+    "Automatic restart can surprise drivers after a tense moment.",
+    "紧张时刻之后，自动重启可能让驾驶员意外。"
   ],
   "automatic seat movement": [
     "/ˌɔːtəˈmætɪk siːt ˈmuːvmənt/",
@@ -2006,6 +2048,13 @@
     "在这句话中，“book”可理解为“书, 书籍, 帐簿, 名册, 工作簿；登记, 预订”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "bookmark": [
+    "/ˈbʊkmɑːrk/",
+    "书签；用于记录位置或状态以便稍后返回的标记",
+    "",
+    "A task bookmark can return the climate panel to the exact setting the driver paused on.",
+    "在这句话中，“bookmark”指保存任务位置和状态的界面机制。"
+  ],
   "both": [
     "/bəʊθ/",
     "副词：两者的；两者都；两者",
@@ -2317,6 +2366,13 @@
     "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
     "在这句话中，“calm”可理解为“平稳, 风平浪静；平静的, 冷静的；平静下来, 镇静；使平静”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "calm cue": [
+    "/kɑːm kjuː/",
+    "平静提示；低强度、不制造惊吓的提示",
+    "",
+    "A calm cue can guide attention without adding stress.",
+    "平静提示可以在不增加压力的情况下引导注意力。"
   ],
   "calm feedback": [
     "/kɑːm ˈfiːdbæk/",
@@ -3007,6 +3063,13 @@
     "Climate control is a common secondary task.",
     "空调控制是常见次级任务。"
   ],
+  "climate panel": [
+    "/ˈklaɪmət ˈpænl/",
+    "空调面板；调整温度、风量和舒适功能的界面区域",
+    "",
+    "The climate panel can save the exact fan setting as a task bookmark.",
+    "空调面板可以把准确风量设置保存为任务书签。"
+  ],
   "climate preference": [
     "/ˈklaɪmət ˈprefərəns/",
     "空调偏好；用户喜欢的温度、风量或出风方式",
@@ -3177,6 +3240,13 @@
     "",
     "Cognitive pacing prevents the cockpit from stacking three unrelated prompts during a lane change.",
     "认知节奏控制避免座舱在变道时叠加三个无关提示。"
+  ],
+  "cognitive reload": [
+    "/ˈkɑːɡnətɪv ˌriːˈloʊd/",
+    "认知重载；用户恢复任务时重新理解上下文所需的脑力成本",
+    "",
+    "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
+    "优秀的座舱 HMI 会降低电话或安全中断后的认知重载。"
   ],
   "cold": [
     "/按语境朗读/",
@@ -3456,6 +3526,13 @@
     "The cockpit uses commute mode to keep comfort assistance understandable and controllable.",
     "座舱使用“commute mode”让舒适辅助更容易理解和控制。"
   ],
+  "compact control": [
+    "/kəmˈpækt kənˈtroʊl/",
+    "紧凑控件；占用空间小但功能明确的界面控件",
+    "",
+    "Compact controls should still support clear touch targets.",
+    "紧凑控件仍应支持清楚的触控目标。"
+  ],
   "compare": [
     "/kəmˈpɛɚ/",
     "动词：比较, 比喻, 对照；相比；比较",
@@ -3723,6 +3800,13 @@
     "",
     "The cockpit uses confirmation ladder to make privacy decisions easier to understand.",
     "座舱使用“confirmation ladder”让隐私决策更容易理解。"
+  ],
+  "confirmation layer": [
+    "/ˌkɑːnfərˈmeɪʃn ˈleɪər/",
+    "确认层；在恢复或执行敏感操作前要求确认的界面层",
+    "",
+    "A confirmation layer is needed when a resumed task can change a vehicle setting.",
+    "当续接任务会改变车辆设置时，需要确认层。"
   ],
   "confirmation pattern": [
     "/ˌkɑːnfərˈmeɪʃn ˈpætərn/",
@@ -4181,6 +4265,13 @@
     "The goal is not to make drivers study an energy model; it is to help them trust the plan, question weak assumptions, and continue the journey with less cognitive load.",
     "在这句话中，“continue”可理解为“继续；保持行程或任务推进”。"
   ],
+  "continue route review": [
+    "/kənˈtɪnjuː ruːt rɪˈvjuː/",
+    "继续路线查看；恢复导航路线比较或确认任务",
+    "",
+    "Continue route review is clearer than a generic resume button.",
+    "“继续路线查看”比通用的续接按钮更清楚。"
+  ],
   "continuity": [
     "/.kɒnti'nju:iti/",
     "名词：连续性",
@@ -4599,6 +4690,20 @@
     "The crossing should not be blocked by a cue.",
     "在这句话中，“crossing”表示“横道”。"
   ],
+  "crowded": [
+    "/ˈkraʊdɪd/",
+    "拥挤的；信息或元素过多、难以快速理解的",
+    "",
+    "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
+    "在这句话中，“crowded”表示警告屏内容过多、过于拥挤。"
+  ],
+  "crowded warning screen": [
+    "/ˈkraʊdɪd ˈwɔːrnɪŋ skriːn/",
+    "拥挤警告屏；信息过多、难以快速理解的警告界面",
+    "",
+    "A crowded warning screen can slow the recovery process.",
+    "拥挤警告屏会拖慢恢复过程。"
+  ],
   "cruising": [
     "/kru:z/",
     "名词：巡航, 巡弋, 漫游；巡航, 巡弋, 漫游",
@@ -4801,6 +4906,13 @@
     "The core decision should be visible first.",
     "核心决策应先可见。"
   ],
+  "decision burden": [
+    "/dɪˈsɪʒn ˈbɜːrdn/",
+    "决策负担；用户比较选项并作出选择所需的心理成本",
+    "",
+    "Decision burden should stay low while driving.",
+    "驾驶时决策负担应保持较低。"
+  ],
   "decisions": [
     "/dɪˈsɪʒənz/",
     "名词：决定, 决心, 决断",
@@ -4903,6 +5015,13 @@
     "在这句话中，“deferred”可理解为“推迟, 延期, 听从；使推迟, 使延期”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "deferred action tray": [
+    "/dɪˈfɜːrd ˈækʃn treɪ/",
+    "延后动作托盘；临时保存非紧急任务并允许稍后继续的界面区域",
+    "",
+    "The deferred action tray should keep parked tasks visible but secondary.",
+    "延后动作托盘应让已暂存任务保持可见，但处于次要位置。"
+  ],
   "deferred detail": [
     "/dɪˈfɜːrd dɪˈteɪl/",
     "延后细节；把非关键解释、设置或数据放到稍后可查看的位置",
@@ -4916,6 +5035,13 @@
     "",
     "A deferred notification can appear after the vehicle leaves a dense intersection.",
     "延后通知可以在车辆离开复杂路口后再出现。"
+  ],
+  "deferred task": [
+    "/dɪˈfɜːrd tæsk/",
+    "延后任务；被推迟到更安全时机处理的任务",
+    "",
+    "A deferred task can return after the vehicle stops.",
+    "延后任务可以在车辆停止后返回。"
   ],
   "deferred update": [
     "/dɪˈfɜːrd ˈʌpdeɪt/",
@@ -5055,6 +5181,13 @@
     "",
     "A dense explanation belongs in a parked state.",
     "密集解释适合停车状态。"
+  ],
+  "dense list": [
+    "/dens lɪst/",
+    "密集列表；信息项过多、需要较长阅读时间的列表",
+    "",
+    "A dense list is risky when the vehicle is moving.",
+    "车辆行驶时，密集列表存在风险。"
   ],
   "dense traffic": [
     "/dens ˈtræfɪk/",
@@ -5505,6 +5638,13 @@
     "The driver should be able to dismiss the prompt quickly.",
     "驾驶员应能快速关闭提示。"
   ],
+  "dismiss task": [
+    "/dɪsˈmɪs tæsk/",
+    "关闭任务；取消或移除已暂停任务",
+    "",
+    "Dismiss task should not delete important context without confirmation.",
+    "关闭任务不应在没有确认的情况下删除重要上下文。"
+  ],
   "dismissal": [
     "/dɪsˈmɪsl/",
     "关闭；取消提醒或告警的动作",
@@ -5640,6 +5780,13 @@
     "",
     "Contextual timing prevents a helpful offer from becoming a distraction.",
     "在这句话中，distraction 指会分散驾驶注意力的干扰。"
+  ],
+  "distraction recovery": [
+    "/dɪˈstrækʃn rɪˈkʌvəri/",
+    "分心恢复；驾驶员注意力离开后重新回到驾驶任务的过程",
+    "",
+    "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
+    "分心恢复应从平静提示开始，而不是从拥挤的警告屏幕开始。"
   ],
   "divide": [
     "/dɪˈvaɪd/",
@@ -5790,6 +5937,13 @@
     "",
     "Driver engagement should rise before a takeover.",
     "接管前驾驶员参与度应提高。"
+  ],
+  "driver goal": [
+    "/ˈdraɪvər ɡoʊl/",
+    "驾驶员目标；用户当前想完成的驾驶或座舱任务",
+    "",
+    "The driver goal may change after a safety event.",
+    "安全事件后，驾驶员目标可能发生变化。"
   ],
   "driver identification": [
     "/ˈdraɪvər aɪˌdentɪfɪˈkeɪʃn/",
@@ -6307,6 +6461,20 @@
     "在这句话中，“entire”可理解为“整个, 全部；全体的, 完全的, 全部的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "environmental": [
+    "/ɪnˌvaɪrənˈmentl/",
+    "环境的；与道路、天气或外部情境相关的",
+    "",
+    "Environmental urgency can override convenience features.",
+    "在这句话中，“environmental”表示来自外部驾驶环境的。"
+  ],
+  "environmental urgency": [
+    "/ɪnˌvaɪrənˈmentl ˈɜːrdʒənsi/",
+    "环境紧急性；由道路、交通或天气导致的紧迫程度",
+    "",
+    "Environmental urgency can override convenience features.",
+    "环境紧急性可以覆盖便利功能。"
+  ],
   "equally": [
     "/ˈiːkwəli/",
     "同样地；程度相同地",
@@ -6461,6 +6629,13 @@
     "",
     "Exact appears in today's navigation prompt timing lesson.",
     "在这句话中，“exact”来自今天的导航提示时机学习内容。"
+  ],
+  "exact setting": [
+    "/ɪɡˈzækt ˈsetɪŋ/",
+    "准确设置；中断前具体的功能数值或模式",
+    "",
+    "Exact settings help users trust state restoration.",
+    "准确设置帮助用户信任状态恢复。"
   ],
   "example": [
     "/ɪɡˈzɑːm.pəl/",
@@ -6677,6 +6852,13 @@
     "",
     "Explainable feedback can say why lane centering is fading.",
     "可解释反馈可以说明车道居中为什么正在减弱。"
+  ],
+  "explainable pause": [
+    "/ɪkˈspleɪnəbl pɔːz/",
+    "可解释暂停；说明任务为何被暂停的反馈",
+    "",
+    "An explainable pause reduces frustration when the system delays a task.",
+    "当系统延后任务时，可解释暂停会减少挫败感。"
   ],
   "explainable recommendation": [
     "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
@@ -6990,6 +7172,13 @@
     "在这句话中，“familiar”可理解为“熟悉的, 常见的, 亲密的；熟友, 常客”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "familiar noun": [
+    "/fəˈmɪliər naʊn/",
+    "熟悉名词；用户日常理解的对象名称",
+    "",
+    "Familiar nouns reduce interpretation time in moving vehicles.",
+    "熟悉名词会减少车辆行驶中的理解时间。"
+  ],
   "family": [
     "/ˈfæməli/",
     "家庭；亲属或家庭联系人",
@@ -7179,6 +7368,13 @@
     "They should also measure glance duration and reduce copy to the few words that support action.",
     "在这句话中，“few”可理解为“很少的, 不多的, 少数的；少数”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fewer choices": [
+    "/ˈfjuːər tʃɔɪsɪz/",
+    "更少选择；减少可选项以降低决策负担",
+    "",
+    "Fewer choices can lower cognitive reload.",
+    "更少选择可以降低认知重载。"
   ],
   "field": [
     "/fiːld/",
@@ -7627,6 +7823,13 @@
     "在这句话中，“general”可理解为“一般, 将军, 大体；全面的, 大体的, 总的, 一般的, 普遍的；常规”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "generic": [
+    "/dʒəˈnerɪk/",
+    "通用的；缺少具体对象或上下文的",
+    "",
+    "A task-specific label is easier to trust than a generic button.",
+    "在这句话中，“generic”表示按钮文案过于通用。"
+  ],
   "gentle": [
     "/按语境朗读/",
     "温和的；不会造成紧张或突兀感。",
@@ -7740,6 +7943,20 @@
     "",
     "Shorter glance duration helps drivers return attention to the road more quickly.",
     "更短的扫视时长帮助驾驶员更快把注意力回到道路上。"
+  ],
+  "glance-safe": [
+    "/ɡlæns seɪf/",
+    "低扫视安全的；适合短暂扫视、不增加过多视觉负荷的",
+    "",
+    "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+    "在这句话中，“glance-safe”表示适合短暂扫视的安全续接方式。"
+  ],
+  "glance-safe resumption": [
+    "/ɡlæns seɪf rɪˈzʌmpʃn/",
+    "低扫视续接；让用户以很短扫视恢复中断任务的交互方式",
+    "",
+    "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+    "低扫视续接让驾驶员无需重读整条路线就能继续查看导航。"
   ],
   "glanceability": [
     "/暂无音标/",
@@ -8283,6 +8500,13 @@
     "在这句话中，“hidden”可理解为“兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "hidden task": [
+    "/ˈhɪdn tæsk/",
+    "隐藏任务；用户无法立即看见但系统仍在保留或执行的任务",
+    "",
+    "A hidden task can damage trust if it changes settings later.",
+    "如果隐藏任务稍后改变设置，可能损害信任。"
+  ],
   "hide": [
     "/haɪd/",
     "动词：兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏",
@@ -8290,6 +8514,13 @@
     "Low-distraction mode can hide secondary widgets during dense urban driving.",
     "在这句话中，“hide”可理解为“兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "hides": [
+    "/haɪdz/",
+    "隐藏；遮住或使某物不可见",
+    "",
+    "The interruption hierarchy should pause entertainment controls before it hides a safety alert.",
+    "在这句话中，“hides”表示界面把安全告警遮住。"
   ],
   "hiding": [
     "/暂无音标/",
@@ -9240,6 +9471,13 @@
     "在这句话中，“interface”可理解为“分界面, 接触面, 界面”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "interface memory": [
+    "/ˈɪntərfeɪs ˈmeməri/",
+    "界面记忆；系统记住任务上下文并帮助用户恢复的能力",
+    "",
+    "Interface memory is useful only when users can see and control it.",
+    "只有用户能看见并控制界面记忆时，它才有用。"
+  ],
   "interface state": [
     "/ˈɪntərfeɪs steɪt/",
     "界面状态；界面呈现的当前模式、可用性和反馈组合",
@@ -9290,6 +9528,13 @@
     "The HMI team should decide which requests deserve immediate interruption and which ones can wait.",
     "在这句话中，“interruption”可理解为“打扰, 中断, 障碍物”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "interruption hierarchy": [
+    "/ˌɪntəˈrʌpʃn ˈhaɪərɑːrki/",
+    "中断层级；根据安全性、紧急性和上下文安排打断优先级的规则",
+    "",
+    "The interruption hierarchy should pause entertainment controls before it hides a safety alert.",
+    "中断层级应先暂停娱乐控制，而不是隐藏安全告警。"
   ],
   "interruption risk": [
     "/ˌɪntəˈrʌpʃn rɪsk/",
@@ -9466,6 +9711,13 @@
     "The word judging appears in the comfort recommendation context.",
     "“judging”出现在座椅舒适推荐的语境中。"
   ],
+  "judgment": [
+    "/ˈdʒʌdʒmənt/",
+    "判断；基于上下文做出的决定",
+    "",
+    "The system shows its judgment, but the driver can keep paused, resume, or dismiss the task.",
+    "在这句话中，“judgment”指系统为何暂停或恢复任务的判断。"
+  ],
   "judgmental": [
     "/待补充/",
     "语境词：judgmental；用于理解今天健康舒适提示主题中的英文表达",
@@ -9517,6 +9769,13 @@
     "The goal is not to make the assistant sound clever; the goal is to keep the task understandable, reversible, and safe.",
     "在这句话中，“keep”可理解为“生计, 维持, 保持；保持, 保存, 遵守, 看守, 整理, 维持, 履行, 经营, 拘留, 记帐；保持, 继续不断”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "keep paused": [
+    "/kiːp pɔːzd/",
+    "保持暂停；让任务继续停留在暂存状态",
+    "",
+    "Keep paused should be available when traffic demand is high.",
+    "当交通需求高时，应提供保持暂停。"
   ],
   "keeping": [
     "/ˈkiːpɪŋ/",
@@ -9608,6 +9867,13 @@
     "Lane change should support a safer and clearer cockpit experience.",
     "在这句话中，“lane change”用于描述更安全、更清晰的座舱体验。"
   ],
+  "lane complexity": [
+    "/leɪn kəmˈpleksəti/",
+    "车道复杂度；车道数量、分叉和变道要求带来的驾驶复杂程度",
+    "",
+    "Lane complexity should influence whether the interface resumes a task.",
+    "车道复杂度应影响界面是否续接任务。"
+  ],
   "lane guidance": [
     "/leɪn ˈɡaɪdəns/",
     "车道引导；提示驾驶员选择或保持正确车道的信息",
@@ -9694,6 +9960,13 @@
     "The summary gives the driver one last chance to review the charge.",
     "摘要给驾驶员最后一次复核扣款的机会。"
   ],
+  "last meaningful step": [
+    "/læst ˈmiːnɪŋfl step/",
+    "最后有意义步骤；任务中断前最适合恢复的关键节点",
+    "",
+    "The last meaningful step may be a route choice, not every previous tap.",
+    "最后有意义步骤可能是路线选择，而不是之前每一次点击。"
+  ],
   "late": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“late”。",
@@ -9722,6 +9995,13 @@
     "Instead, the HMI can explain the action in practical language: \"Traffic is complex, so I will show this reminder later.",
     "在这句话中，“later”可理解为“迟的, 晚的, 已故的；很晚, 很迟, 晚”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "later prompt": [
+    "/ˈleɪtər prɑːmpt/",
+    "稍后提示；在更安全时机再次提醒用户的提示",
+    "",
+    "A later prompt can offer to resume the task after parking.",
+    "稍后提示可以在停车后询问是否续接任务。"
   ],
   "layer": [
     "/lɛə/",
@@ -10456,6 +10736,13 @@
     "在这句话中，“low-priority”可理解为“un. 低优先级；次要；低优先性；低紧要性”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "low-priority task": [
+    "/loʊ praɪˈɔːrəti tæsk/",
+    "低优先级任务；可等待且不影响安全的座舱操作",
+    "",
+    "A low-priority task can wait until the vehicle is stopped.",
+    "低优先级任务可以等到车辆停止后再处理。"
+  ],
   "low-risk": [
     "/loʊ rɪsk/",
     "低风险的；对安全或任务影响较小的",
@@ -10654,6 +10941,13 @@
     "The transition from assistance to manual driving should be staged and calm.",
     "在这句话中，“manual driving”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "manual interaction": [
+    "/ˈmænjuəl ˌɪntərˈækʃn/",
+    "手动交互；用户通过触控、按键或旋钮完成的操作",
+    "",
+    "Manual interaction should wait when both hands are needed for steering.",
+    "当双手需要控制方向盘时，手动交互应等待。"
+  ],
   "manual override": [
     "/ˈmænjuəl ˈoʊvərraɪd/",
     "手动覆盖；用户直接改变或取消自动行为。",
@@ -10832,6 +11126,13 @@
     "",
     "Meaning should support a safer and clearer cockpit experience.",
     "在这句话中，“meaning”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "meaningful": [
+    "/ˈmiːnɪŋfl/",
+    "有意义的；对理解任务状态真正有帮助的",
+    "",
+    "It explains the last meaningful step and predicts the result of one tap.",
+    "在这句话中，“meaningful”表示对恢复任务有价值的关键步骤。"
   ],
   "means": [
     "/miːnz/",
@@ -11079,6 +11380,13 @@
     "",
     "Micro-feedback is useful when a touch target is small or the cabin is noisy.",
     "当触控目标较小或车内较吵时，微反馈很有用。"
+  ],
+  "micro-summary": [
+    "/ˈmaɪkroʊ ˈsʌməri/",
+    "微摘要；用极短文本概括中断前状态或下一步动作",
+    "",
+    "A micro-summary can say “Route options paused” instead of showing a full map menu.",
+    "微摘要可以显示“路线选项已暂停”，而不是展示完整地图菜单。"
   ],
   "microcopy": [
     "/ˈmaɪkroʊkɑːpi/",
@@ -11521,6 +11829,13 @@
     "在这句话中，“moving”可理解为“移动, 迁居, 步骤；移动, 开动, 感动, 搬(家)；移动, 离开, 运行, 迁移, 摇动, 搬家, 交往, 进展, 脱手”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "moving vehicle": [
+    "/ˈmuːvɪŋ ˈviːəkl/",
+    "行驶车辆；正在移动中的车辆",
+    "",
+    "A moving vehicle requires shorter messages and fewer choices.",
+    "行驶车辆需要更短的信息和更少的选择。"
+  ],
   "much": [
     "/mʌtʃ/",
     "过多的；表示程度较高或数量较大",
@@ -11710,6 +12025,13 @@
     "Navigation hint should support a safer and clearer cockpit experience.",
     "在这句话中，“navigation hint”用于描述更安全、更清晰的座舱体验。"
   ],
+  "navigation review": [
+    "/ˌnævɪˈɡeɪʃn rɪˈvjuː/",
+    "导航查看；比较或确认路线信息的任务",
+    "",
+    "Navigation review can resume with a short route summary.",
+    "导航查看可以通过简短路线摘要续接。"
+  ],
   "navigation shortcut": [
     "/ˌnævɪˈɡeɪʃn ˈʃɔːrtkʌt/",
     "导航捷径；系统推荐的更快路线或操作路径",
@@ -11863,6 +12185,13 @@
     "New appears in today's seat memory profile lesson.",
     "在这句话中，“new”来自今天的座椅记忆档案学习内容。"
   ],
+  "new behavior": [
+    "/nuː bɪˈheɪvjər/",
+    "新行为；系统在新上下文下采取的动作",
+    "",
+    "New behavior should be explained when it differs from the previous plan.",
+    "当新行为不同于先前计划时，应加以解释。"
+  ],
   "next": [
     "/nɛkst/",
     "下一个；下一个的, 其次的, 贴近的；然后, 下次, 次于",
@@ -11981,6 +12310,13 @@
     "The interface should postpone nonessential input when driving workload is high.",
     "在这句话中，“nonessential”可理解为“非本质的；不重要的人”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "nonessential control": [
+    "/ˌnɑːnɪˈsenʃl kənˈtroʊl/",
+    "非必要控制；不直接影响当前驾驶安全的控制项",
+    "",
+    "Nonessential controls should not compete with collision warnings.",
+    "非必要控制不应与碰撞警告争夺注意力。"
   ],
   "nonessential controls": [
     "/ˌnɑːnɪˈsenʃl kənˈtroʊlz/",
@@ -12290,6 +12626,13 @@
     "The cockpit uses the word old in privacy prompts when it fits the user context.",
     "在隐私提示中，“old”可结合用户场景理解。"
   ],
+  "old choice": [
+    "/oʊld tʃɔɪs/",
+    "旧选择；中断前做出的选择或设置",
+    "",
+    "An old choice may no longer be appropriate after traffic changes.",
+    "交通变化后，旧选择可能不再合适。"
+  ],
   "on": [
     "/ɒn/",
     "在...之上；...上去；正起作用的",
@@ -12340,6 +12683,20 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "one-glance": [
+    "/wʌn ɡlæns/",
+    "一眼可读的；一次短暂扫视即可理解的",
+    "",
+    "The HMI should show a calm one-glance message.",
+    "在这句话中，“one-glance”表示一次扫视即可读懂。"
+  ],
+  "one-glance message": [
+    "/wʌn ɡlæns ˈmesɪdʒ/",
+    "一眼可读信息；一次短暂扫视即可理解的提示",
+    "",
+    "A one-glance message should use plain verbs and familiar nouns.",
+    "一眼可读信息应使用清楚动词和熟悉名词。"
   ],
   "one-tap postpone": [
     "/wʌn tæp poʊstˈpoʊn/",
@@ -12854,6 +13211,27 @@
     "Pause a profile should support clear control in a shared intelligent cockpit.",
     "在这句话中，“pause a profile”用于描述共享智能座舱中的清晰控制。"
   ],
+  "paused": [
+    "/pɔːzd/",
+    "已暂停的；临时停止但仍可继续的",
+    "",
+    "The paused task should move into a deferred action tray with a visible status chip.",
+    "在这句话中，“paused”表示任务被暂时停止但仍可恢复。"
+  ],
+  "paused position": [
+    "/pɔːzd pəˈzɪʃn/",
+    "暂停位置；任务中断时停留的界面或步骤位置",
+    "",
+    "The paused position should return only when the road is safe.",
+    "暂停位置应只在道路安全时返回。"
+  ],
+  "paused task": [
+    "/pɔːzd tæsk/",
+    "已暂停任务；被系统临时中断但可恢复的用户任务",
+    "",
+    "The paused task should keep its last meaningful step.",
+    "已暂停任务应保留最后一个有意义的步骤。"
+  ],
   "pausing": [
     "/ˈpɔːzɪŋ/",
     "暂停；暂时停止某项功能或动作",
@@ -12916,6 +13294,13 @@
     "",
     "The overlay must not cover a pedestrian crossing.",
     "叠层不应覆盖人行横道。"
+  ],
+  "pending task": [
+    "/ˈpendɪŋ tæsk/",
+    "待处理任务；已经开始但尚未完成的任务",
+    "",
+    "Pending tasks need clear status after interruption.",
+    "待处理任务在中断后需要清楚状态。"
   ],
   "people": [
     "/ˈpiːpl/",
@@ -13147,6 +13532,13 @@
     "The phone book can create ambiguity for voice calls.",
     "通讯录可能给语音拨号带来歧义。"
   ],
+  "phone call": [
+    "/foʊn kɔːl/",
+    "电话通话；可能中断座舱任务或增加注意力负荷的通信活动",
+    "",
+    "A phone call can create cognitive reload when the driver returns to a menu.",
+    "电话通话会在驾驶员返回菜单时造成认知重载。"
+  ],
   "phrase": [
     "/ˈfɹeɪ̯z/",
     "名词：惯用语, 词组, 成语, 措词, 乐句；用短语表达, 把(乐曲)分成短句",
@@ -13227,6 +13619,13 @@
     "",
     "Plain status helps users understand automation confidence.",
     "清楚状态有助于用户理解自动化置信度。"
+  ],
+  "plain verb": [
+    "/pleɪn vɜːrb/",
+    "清楚动词；直接说明动作的简单动词",
+    "",
+    "Plain verbs make the next action easier to trust.",
+    "清楚动词让下一步动作更容易被信任。"
   ],
   "plain wording": [
     "/pleɪn ˈwɜːrdɪŋ/",
@@ -13510,6 +13909,13 @@
     "Predictable placement lowers search time.",
     "可预测的位置减少查找时间。"
   ],
+  "predictable result": [
+    "/prɪˈdɪktəbl rɪˈzʌlt/",
+    "可预测结果；用户能提前理解操作后果的结果",
+    "",
+    "A predictable result reduces hesitation during driving.",
+    "可预测结果会减少驾驶中的犹豫。"
+  ],
   "prediction": [
     "/按语境朗读/",
     "预测；系统对未来状态的判断",
@@ -13530,6 +13936,13 @@
     "",
     "Predictive intent helps the cockpit suggest the next action before the driver opens a menu.",
     "预测性意图帮助座舱在驾驶员打开菜单前建议下一步操作。"
+  ],
+  "predicts": [
+    "/prɪˈdɪkts/",
+    "预测；提前说明可能结果",
+    "",
+    "It names the task, explains the last meaningful step, and predicts the result of one tap.",
+    "在这句话中，“predicts”表示提前说明点击后的结果。"
   ],
   "prefer": [
     "/prɪˈfɜːr/",
@@ -13712,6 +14125,13 @@
     "在这句话中，“previous”可理解为“早先的, 前面的, 过急的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "previous plan": [
+    "/ˈpriːviəs plæn/",
+    "先前计划；中断前系统或用户准备执行的方案",
+    "",
+    "The previous plan should not restart automatically after a hazard.",
+    "风险过后，先前计划不应自动重启。"
+  ],
   "price": [
     "/praɪs/",
     "价格；商品或服务的费用",
@@ -13740,6 +14160,13 @@
     "Primary display should support a safer and clearer cockpit experience.",
     "在这句话中，“primary display”用于描述更安全、更清晰的座舱体验。"
   ],
+  "primary driving information": [
+    "/ˈpraɪmeri ˈdraɪvɪŋ ˌɪnfərˈmeɪʃn/",
+    "主要驾驶信息；速度、道路、导航和安全状态等核心驾驶内容",
+    "",
+    "Primary driving information must stay visible during resumption.",
+    "续接期间主要驾驶信息必须保持可见。"
+  ],
   "principle": [
     "/ˈprɪnsəpl/",
     "原则；指导设计判断的规则",
@@ -13761,6 +14188,13 @@
     "",
     "A priority queue prevents low-value messages from blocking safety alerts.",
     "优先级队列能避免低价值信息阻塞安全警告。"
+  ],
+  "priority reset": [
+    "/praɪˈɔːrəti ˈriːset/",
+    "优先级重置；根据新风险重新排序任务的过程",
+    "",
+    "Priority reset prevents old choices from driving new behavior.",
+    "优先级重置会防止旧选择驱动新行为。"
   ],
   "priority rule": [
     "/praɪˈɔːrəti ruːl/",
@@ -14038,6 +14472,13 @@
     "",
     "The word progress appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“progress”用于表达相关系统状态或用户影响。"
+  ],
+  "progress indicator": [
+    "/ˈprɑːɡres ˈɪndɪkeɪtər/",
+    "进度指示；显示任务已完成程度或当前位置的界面线索",
+    "",
+    "A progress indicator can remind users where they stopped.",
+    "进度指示可以提醒用户停在了哪里。"
   ],
   "progress transparency": [
     "/ˈprɑːɡres trænsˈpærənsi/",
@@ -14484,6 +14925,13 @@
     "A re-engagement cue should point to the driving task, not to a decorative animation.",
     "重新参与线索应指向驾驶任务，而不是装饰性动画。"
   ],
+  "re-entry point": [
+    "/riː ˈentri pɔɪnt/",
+    "重新进入点；任务恢复时最合适的界面位置或步骤",
+    "",
+    "The re-entry point should match the driver’s goal.",
+    "重新进入点应匹配驾驶员目标。"
+  ],
   "reach": [
     "/按语境朗读/",
     "到达；实现抵达",
@@ -14837,6 +15285,13 @@
     "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
     "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
   ],
+  "recoverable task": [
+    "/rɪˈkʌvərəbl tæsk/",
+    "可恢复任务；中断后能以清楚上下文继续的任务",
+    "",
+    "A recoverable task should have a clear re-entry point.",
+    "可恢复任务应有清楚的重新进入点。"
+  ],
   "recovery": [
     "/ri'kʌvәri/",
     "名词：恢复, 复原, 痊愈, 重获",
@@ -14851,6 +15306,13 @@
     "",
     "A recovery condition tells the driver when lane assistance may return to normal.",
     "恢复条件告诉驾驶员车道辅助何时可能恢复正常。"
+  ],
+  "recovery cue": [
+    "/rɪˈkʌvəri kjuː/",
+    "恢复提示；帮助用户回到安全状态或先前任务的简短提示",
+    "",
+    "A recovery cue should be short enough to read in one glance.",
+    "恢复提示应短到一次扫视即可读完。"
   ],
   "recovery prompt": [
     "/rɪˈkʌvəri prɑːmpt/",
@@ -15082,6 +15544,13 @@
     "A reliable trigger combines sensor confidence with driver inattention.",
     "可靠触发条件会结合传感器置信度和驾驶员注意力缺失。"
   ],
+  "reload": [
+    "/ˌriːˈloʊd/",
+    "重新加载；这里指重新理解上下文的心理过程",
+    "",
+    "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
+    "在这句话中，“reload”指用户重新加载任务上下文的认知成本。"
+  ],
   "rely": [
     "/暂无音标/",
     "原文中的英语词汇，可结合 HMI 语境理解。",
@@ -15182,6 +15651,13 @@
     "",
     "The cockpit uses rental scenario to make privacy decisions easier to understand.",
     "座舱使用“rental scenario”让隐私决策更容易理解。"
+  ],
+  "reorientation": [
+    "/riˌɔːriənˈteɪʃn/",
+    "重新定向；把注意力或方向重新引回目标的过程",
+    "",
+    "Attention reorientation should point first to road risk and then to the paused task.",
+    "在这句话中，“reorientation”指注意力重新回到道路和任务。"
   ],
   "repair": [
     "/rɪˈper/",
@@ -15334,6 +15810,13 @@
     "",
     "Requiring a long glance increases visual load.",
     "在这句话中，requiring 表示需要长时间注视。"
+  ],
+  "rereading": [
+    "/ˌriːˈriːdɪŋ/",
+    "重新阅读；再次阅读已经看过的信息",
+    "",
+    "Rereading increases visual demand during driving.",
+    "重新阅读会增加驾驶中的视觉需求。"
   ],
   "reroute": [
     "/ˌriːˈruːt/",
@@ -15568,6 +16051,13 @@
     "Dialog state helps the assistant resume after navigation audio interrupts a request.",
     "在这句话中，“resume”可理解为“恢复；从中断点继续任务”。"
   ],
+  "resume affordance": [
+    "/rɪˈzuːm əˈfɔːrdns/",
+    "续接可供性；提示用户可以继续先前任务的按钮、状态或动效线索",
+    "",
+    "A clear resume affordance tells the driver what will happen after one tap.",
+    "清楚的续接可供性会告诉驾驶员轻触一次后会发生什么。"
+  ],
   "resume control": [
     "/rɪˈzuːm kənˈtroʊl/",
     "恢复控制；驾驶员重新接管车辆控制",
@@ -15575,12 +16065,40 @@
     "The HMI should assess takeover readiness before asking the driver to resume control.",
     "在这句话中，“resume control”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "resume decision": [
+    "/rɪˈzuːm dɪˈsɪʒn/",
+    "续接决策；是否恢复任务及如何恢复的判断",
+    "",
+    "A resume decision should balance convenience with driving attention.",
+    "续接决策应平衡便利性和驾驶注意力。"
+  ],
+  "resume label": [
+    "/rɪˈzuːm ˈleɪbl/",
+    "续接标签；说明恢复动作及其对象的简短文案",
+    "",
+    "The resume label should name the task, not just say continue.",
+    "续接标签应说出任务名称，而不只是写继续。"
+  ],
   "resumes": [
     "/rɪˈzuːmz/",
     "继续；恢复",
     "",
     "The driver resumes the task after a prompt.",
     "驾驶员在提示后继续任务。"
+  ],
+  "resumption": [
+    "/rɪˈzʌmpʃn/",
+    "续接；中断后恢复或继续某个任务的过程",
+    "",
+    "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
+    "在这句话中，“resumption”指任务中断后的恢复继续。"
+  ],
+  "resumption timing": [
+    "/rɪˈzʌmpʃn ˈtaɪmɪŋ/",
+    "续接时机；系统选择何时恢复任务的判断",
+    "",
+    "Resumption timing should consider speed, workload, and urgency.",
+    "续接时机应考虑车速、负荷和紧急性。"
   ],
   "retention": [
     "/rɪˈtenʃn/",
@@ -16020,6 +16538,13 @@
     "Route selection should not demand long visual comparison while driving.",
     "驾驶中路线选择不应要求长时间视觉比较。"
   ],
+  "route summary": [
+    "/ruːt ˈsʌməri/",
+    "路线摘要；用少量信息概括路线选择或变化",
+    "",
+    "A route summary can replace a dense list of alternatives.",
+    "路线摘要可以替代密集的备选列表。"
+  ],
   "route trade-off": [
     "/ruːt ˈtreɪd ɔːf/",
     "路线权衡；在时间、能耗、费用、可靠性之间做出的选择",
@@ -16137,6 +16662,13 @@
     "A safe path may be as simple as steering manually.",
     "安全路径可以只是手动转向这样简单。"
   ],
+  "safe pause state": [
+    "/seɪf pɔːz steɪt/",
+    "安全暂停状态；系统在中断任务时保留上下文并避免误操作的状态",
+    "",
+    "A safe pause state prevents the seat massage setting from changing while the driver responds to traffic.",
+    "安全暂停状态会防止驾驶员应对交通时误改座椅按摩设置。"
+  ],
   "safe route": [
     "/seɪf ruːt/",
     "安全路线；符合当前道路条件且不强迫急促操作的路线",
@@ -16164,6 +16696,13 @@
     "",
     "A safe transition explains what changed and what the driver should do next.",
     "安全过渡会说明发生了什么变化以及驾驶员下一步应做什么。"
+  ],
+  "safe window": [
+    "/seɪf ˈwɪndoʊ/",
+    "安全窗口；更适合恢复或完成非紧急任务的短暂时机",
+    "",
+    "The cockpit can wait for a safe window before showing a deferred task.",
+    "座舱可以等待安全窗口再显示延后任务。"
   ],
   "safe-state response": [
     "/seɪf steɪt rɪˈspɑːns/",
@@ -16208,6 +16747,27 @@
     "",
     "A safety alert should be brief, specific, and easy to act on.",
     "安全警告应简短、具体且易于执行。"
+  ],
+  "safety event": [
+    "/ˈseɪfti ɪˈvent/",
+    "安全事件；触发告警、暂停或注意力转移的风险事件",
+    "",
+    "A safety event should reset the priority of pending tasks.",
+    "安全事件应重置待处理任务的优先级。"
+  ],
+  "safety first": [
+    "/ˈseɪfti fɜːrst/",
+    "安全优先；以驾驶安全高于便利操作的原则",
+    "",
+    "Safety first means some tasks remain deferred.",
+    "安全优先意味着有些任务会保持延后。"
+  ],
+  "safety interruption": [
+    "/ˈseɪfti ˌɪntəˈrʌpʃn/",
+    "安全中断；由安全风险触发、优先级高于普通任务的打断",
+    "",
+    "A safety interruption should freeze nonessential controls.",
+    "安全中断应冻结非必要控制。"
   ],
   "safety log": [
     "/ˈseɪfti lɔːɡ/",
@@ -16442,6 +17002,13 @@
     "在这句话中，“screen”可理解为“幕, 银幕, 屏风, 掩蔽物, 屏蔽, 筛子；掩蔽, 放映, 拍摄, 掩护, 筛, 甄别；拍电影”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "screen clutter": [
+    "/skriːn ˈklʌtər/",
+    "屏幕杂乱；屏幕上过多信息造成的视觉干扰",
+    "",
+    "Screen clutter makes resumption harder after distraction.",
+    "屏幕杂乱会让分心后的续接更困难。"
+  ],
   "screen confirmation": [
     "/skriːn ˌkɑːnfərˈmeɪʃn/",
     "屏幕确认；通过屏幕选项确认用户意愿",
@@ -16634,6 +17201,13 @@
     "Low-distraction mode can hide secondary widgets during dense urban driving.",
     "在这句话中，“secondary”可理解为“中级的, 中等的, 次要的, 第二的, 从属的, 辅助的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "secondary area": [
+    "/ˈsekənderi ˈeriə/",
+    "次要区域；视觉优先级低于主驾驶信息的界面位置",
+    "",
+    "Deferred tasks belong in a secondary area.",
+    "延后任务应放在次要区域。"
   ],
   "secondary details": [
     "/ˈsekənderi dɪˈteɪlz/",
@@ -17135,6 +17709,13 @@
     "A short banner can show the selected temperature.",
     "短横幅可以显示所选温度。"
   ],
+  "short label": [
+    "/ʃɔːrt ˈleɪbl/",
+    "短标签；用少量词语命名状态或动作的界面文本",
+    "",
+    "A short label is easier to scan than a full instruction.",
+    "短标签比完整说明更容易扫视。"
+  ],
   "short labels": [
     "/ʃɔːrt ˈleɪblz/",
     "短标签；短而明确的界面文字",
@@ -17425,6 +18006,13 @@
     "",
     "Shared control is not a single handoff moment.",
     "共享控制并不是单一的交接瞬间。"
+  ],
+  "single-tap resume": [
+    "/ˈsɪŋɡl tæp rɪˈzuːm/",
+    "单击续接；一次点击即可继续已暂停任务的交互",
+    "",
+    "Single-tap resume is useful only when the result is predictable.",
+    "只有结果可预测时，单击续接才有用。"
   ],
   "sitting": [
     "/ˈsɪtɪŋ/",
@@ -17776,6 +18364,13 @@
     "A speed task can remain manual while lane centering stays automated.",
     "速度任务可以保持手动，同时车道居中仍为自动。"
   ],
+  "speed threshold": [
+    "/spiːd ˈθreʃhoʊld/",
+    "车速阈值；用于决定功能是否可用或是否延后的速度边界",
+    "",
+    "A speed threshold can block complex browsing while driving.",
+    "车速阈值可以在行驶中阻止复杂浏览。"
+  ],
   "spending": [
     "/ˈspendɪŋ/",
     "消耗；在注意力语境中表示占用时间或认知资源",
@@ -17962,6 +18557,13 @@
     "State preservation helps the cockpit resume navigation search after the signal returns.",
     "状态保留帮助座舱在信号恢复后继续导航搜索。"
   ],
+  "state restoration": [
+    "/steɪt ˌrestəˈreɪʃn/",
+    "状态恢复；把界面恢复到中断前可理解状态的能力",
+    "",
+    "State restoration should avoid surprising changes in vehicle settings.",
+    "状态恢复应避免车辆设置出现令人意外的变化。"
+  ],
   "state transition": [
     "/steɪt trænˈzɪʃn/",
     "状态转换；系统从一个可见或可感知状态切换到另一个状态",
@@ -18020,6 +18622,13 @@
     "Status change should support a safer and clearer cockpit experience.",
     "在这句话中，“status change”用于描述更安全、更清晰的座舱体验。"
   ],
+  "status chip": [
+    "/ˈsteɪtəs tʃɪp/",
+    "状态标签；用紧凑视觉元素显示状态或任务的界面组件",
+    "",
+    "A status chip can show that route review is paused.",
+    "状态标签可以显示路线查看已暂停。"
+  ],
   "status disclosure": [
     "/ˈsteɪtəs dɪsˈkloʊʒər/",
     "状态披露；说明系统观察到什么、准备做什么以及用户如何控制",
@@ -18076,6 +18685,13 @@
     "",
     "The word stayed appears in the comfort recommendation context.",
     "“stayed”出现在座椅舒适推荐的语境中。"
+  ],
+  "stealing": [
+    "/ˈstiːlɪŋ/",
+    "夺走；这里指占用本应留给道路的注意力",
+    "",
+    "Good resumption design reduces cognitive reload without stealing attention from the road.",
+    "在这句话中，“stealing”表示从道路注意力中夺走资源。"
   ],
   "steering": [
     "/stiә/",
@@ -18173,6 +18789,13 @@
     "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
     "在这句话中，“stopped”可理解为“停止, 车站, 逗留, 填塞, 障碍, (风琴的)音栓；停止, 被塞住；塞住, 堵塞, 阻止, 击落, 停止, 终止, 断绝”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "stopping": [
+    "/ˈstɑːpɪŋ/",
+    "停止；让某事物停下来或中断",
+    "",
+    "Distraction recovery is not only about stopping a risky task.",
+    "在这句话中，“stopping”表示停止有风险的任务。"
   ],
   "stops": [
     "/待补充/",
@@ -18642,6 +19265,13 @@
     "System initiative is useful only when the next step is low risk and easy to reject.",
     "只有当下一步风险低且易于拒绝时，系统主动性才有价值。"
   ],
+  "system judgment": [
+    "/ˈsɪstəm ˈdʒʌdʒmənt/",
+    "系统判断；系统基于上下文作出的暂停、延后或恢复决策",
+    "",
+    "System judgment should be visible enough to evaluate.",
+    "系统判断应足够可见，便于用户评估。"
+  ],
   "system limit": [
     "/ˈsɪstəm ˈlɪmɪt/",
     "系统限制；自动化能力无法可靠覆盖的边界",
@@ -18795,6 +19425,13 @@
     "在这句话中，“task”可理解为“工作, 任务, 作业, 困难的工作；派给...工作, 使辛劳”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "task bookmark": [
+    "/tæsk ˈbʊkmɑːrk/",
+    "任务书签；记录用户中断前位置、状态或下一步动作的界面机制",
+    "",
+    "A task bookmark can return the climate panel to the exact setting the driver paused on.",
+    "任务书签可以把空调面板恢复到驾驶员暂停时的准确设置。"
+  ],
   "task boundary": [
     "/tæsk ˈbaʊndəri/",
     "任务边界；用于区分当前任务、后续任务和不应合并请求的界限",
@@ -18822,6 +19459,20 @@
     "",
     "Task ownership prevents duplicate controls from fighting for attention.",
     "任务归属避免重复控件争夺注意力。"
+  ],
+  "task queue": [
+    "/tæsk kjuː/",
+    "任务队列；按优先级排列等待处理的座舱任务列表",
+    "",
+    "A task queue should show only what matters now.",
+    "任务队列应只显示当前重要的内容。"
+  ],
+  "task resumption": [
+    "/tæsk rɪˈzʌmpʃn/",
+    "任务续接；在中断后继续先前任务的过程",
+    "",
+    "Task resumption should feel controlled and predictable.",
+    "任务续接应让人感觉可控且可预测。"
   ],
   "task simplification": [
     "/tæsk ˌsɪmplɪfɪˈkeɪʃn/",
@@ -18930,6 +19581,13 @@
     "",
     "Temporary consent is useful when a passenger shares a destination for one trip.",
     "当乘客只为一次行程共享目的地时，临时同意很有用。"
+  ],
+  "temporary hold": [
+    "/ˈtempəreri hoʊld/",
+    "临时保持；短时间保留任务状态而不执行动作",
+    "",
+    "Temporary hold gives the driver time to look back at the road.",
+    "临时保持给驾驶员时间把视线转回道路。"
   ],
   "temporary limitation": [
     "/ˈtempəreri ˌlɪmɪˈteɪʃn/",
@@ -19321,6 +19979,13 @@
     "Traffic complexity affects how early the cockpit asks for attention.",
     "交通复杂度影响座舱多早请求注意力。"
   ],
+  "traffic demand": [
+    "/ˈtræfɪk dɪˈmænd/",
+    "交通需求；当前交通环境对驾驶员注意力和操作的要求",
+    "",
+    "High traffic demand should delay low-priority task resumption.",
+    "高交通需求应延后低优先级任务续接。"
+  ],
   "traffic density": [
     "/ˈtræfɪk ˈdensəti/",
     "交通密度；车辆和行人等交通参与者在周围空间中的密集程度",
@@ -19448,6 +20113,13 @@
     "A transparent status chip can show that cabin sensing is active for climate comfort only.",
     "透明状态标签可以显示舱内感知仅为气候舒适功能而开启。"
   ],
+  "tray": [
+    "/treɪ/",
+    "托盘；界面中暂存项目的小区域",
+    "",
+    "The deferred action tray should keep parked tasks visible but secondary.",
+    "在这句话中，“tray”指用于存放延后动作的界面区域。"
+  ],
   "treat": [
     "/tɹiːt/",
     "动词：宴请, 款待；视为, 对待, 论述, 治疗, 款待；讨论, 谈判, 作东",
@@ -19571,6 +20243,13 @@
     "",
     "Trustworthy automation explains small comfort changes at the right moment.",
     "可信自动化会在合适时机解释小幅舒适变化。"
+  ],
+  "trustworthy resumption": [
+    "/ˈtrʌstwɜːrði rɪˈzʌmpʃn/",
+    "可信续接；让用户理解为何、何时以及如何恢复任务的设计",
+    "",
+    "Trustworthy resumption explains both the pause and the return.",
+    "可信续接会同时解释暂停和返回。"
   ],
   "truth": [
     "/truːθ/",
@@ -20051,6 +20730,13 @@
     "The cockpit uses user agency to keep comfort assistance understandable and controllable.",
     "座舱使用“user agency”让舒适辅助更容易理解和控制。"
   ],
+  "user confirmation": [
+    "/ˈjuːzər ˌkɑːnfərˈmeɪʃn/",
+    "用户确认；用户明确同意继续或执行动作",
+    "",
+    "User confirmation is important when the task affects vehicle behavior.",
+    "当任务影响车辆行为时，用户确认很重要。"
+  ],
   "user control": [
     "/ˈjuːzər kənˈtroʊl/",
     "用户控制权；用户对系统行为和数据处理的决定能力",
@@ -20190,6 +20876,13 @@
     "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
     "在这句话中，“vehicle”可理解为“交通工具, 车辆, 传播媒介”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "vehicle behavior": [
+    "/ˈviːəkl bɪˈheɪvjər/",
+    "车辆行为；车辆的运动、控制或设置变化",
+    "",
+    "Vehicle behavior should not change because of a hidden resumed task.",
+    "车辆行为不应因隐藏的续接任务而变化。"
   ],
   "vehicle horn": [
     "/ˈviːəkl hɔːrn/",
@@ -20341,6 +21034,13 @@
     "Visible evidence makes an AI recommendation easier to question.",
     "可见证据让 AI 推荐更容易被质疑。"
   ],
+  "visible status": [
+    "/ˈvɪzəbl ˈsteɪtəs/",
+    "可见状态；用户能够看到并理解的系统或任务状态",
+    "",
+    "Visible status makes deferred actions easier to manage.",
+    "可见状态让延后动作更容易管理。"
+  ],
   "visible undo option": [
     "/ˈvɪzəbl ʌnˈduː ˈɑːpʃn/",
     "可见撤销选项；用户能直接取消自动调整的控件。",
@@ -20397,6 +21097,20 @@
     "",
     "A visual cue should be close to the area that needs attention.",
     "视觉线索应靠近需要关注的区域。"
+  ],
+  "visual demand": [
+    "/ˈvɪʒuəl dɪˈmænd/",
+    "视觉需求；界面对视线停留和阅读的要求",
+    "",
+    "Visual demand should remain low during resumption.",
+    "续接期间视觉需求应保持较低。"
+  ],
+  "visual dominance": [
+    "/ˈvɪʒuəl ˈdɑːmɪnəns/",
+    "视觉主导性；某个元素在界面中抢占注意力的程度",
+    "",
+    "Too much visual dominance can turn a helper into a distraction.",
+    "过强的视觉主导性可能把帮助变成干扰。"
   ],
   "visual fallback": [
     "/ˈvɪʒuəl ˈfɔːlbæk/",
@@ -20519,6 +21233,13 @@
     "",
     "The cockpit uses voice consent to make privacy decisions easier to understand.",
     "座舱使用“voice consent”让隐私决策更容易理解。"
+  ],
+  "voice fallback": [
+    "/vɔɪs ˈfɔːlbæk/",
+    "语音回退；触控不适合时用语音完成或确认任务的方式",
+    "",
+    "Voice fallback can resume a simple task without extra touch input.",
+    "语音回退可以在无需额外触控的情况下续接简单任务。"
   ],
   "voice negotiation": [
     "/vɔɪs nɪˌɡoʊʃiˈeɪʃn/",
@@ -20837,6 +21558,13 @@
     "Good error recovery gives the driver a simple way to correct the destination without restarting the whole flow.",
     "在这句话中，“whole”可理解为“全部, 全体, 整体, 完全之体系；所有的, 完整的, 完全的, 纯粹的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "whole route": [
+    "/hoʊl ruːt/",
+    "完整路线；导航从起点到终点的全部路径信息",
+    "",
+    "Drivers should not reread the whole route after a short interruption.",
+    "短暂中断后，驾驶员不应重读完整路线。"
   ],
   "whose": [
     "/暂无音标/",
