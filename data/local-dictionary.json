@@ -29,6 +29,13 @@
     "Warnings should appear above entertainment details.",
     "警告应优先于娱乐细节。"
   ],
+  "acceleration": [
+    "/əkˌseləˈreɪʃn/",
+    "加速度；车辆速度变化的程度",
+    "",
+    "Acceleration changes can trigger layout simplification.",
+    "在这句话中，“acceleration”指车辆加速变化。"
+  ],
   "accents": [
     "/ˈæk.sɛnts/",
     "名词：重音, 口音, 特点, 注重点；重读, 加重音号于, 强调",
@@ -428,6 +435,13 @@
     "",
     "The driver may adjust climate control while monitoring traffic.",
     "驾驶员可能在观察交通时调节空调。"
+  ],
+  "adjustable": [
+    "/əˈdʒʌstəbl/",
+    "可调节的；可以按用户或情境修改的",
+    "",
+    "The comfort threshold should be adjustable for different passengers.",
+    "在这句话中，“adjustable”表示可调节。"
   ],
   "adjustment": [
     "/əˈd͡ʒʌst.mənt/",
@@ -905,12 +919,26 @@
     "The cockpit should not say the driver is angry.",
     "座舱不应说驾驶员生气了。"
   ],
+  "animated": [
+    "/ˈænɪmeɪtɪd/",
+    "带动画的；具有动态视觉变化的",
+    "",
+    "Animated menus can be harder to tolerate during sharp turns.",
+    "在这句话中，“animated”表示带有动画效果。"
+  ],
   "animation": [
     "/ˌænɪˈmeɪʃn/",
     "动画；用于表达状态变化的动态视觉效果",
     "",
     "Animation should support a safer and clearer cockpit experience.",
     "在这句话中，“animation”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "animations": [
+    "/ˌænɪˈmeɪʃnz/",
+    "动画；界面元素的动态变化",
+    "",
+    "Animations should become subtle on curvy roads.",
+    "在这句话中，“animations”指界面动效。"
   ],
   "announced": [
     "/əˈnaʊnst/",
@@ -1520,6 +1548,13 @@
     "The authorization threshold can be lower when the vehicle is in motion.",
     "车辆行驶中时，授权阈值可以更低。"
   ],
+  "auto-scrolling": [
+    "/ˈɔːtoʊ ˈskroʊlɪŋ/",
+    "自动滚动；无需用户操作而持续移动内容",
+    "",
+    "Auto-scrolling content can increase visual-motion conflict.",
+    "在这句话中，“auto-scrolling”指自动滚动。"
+  ],
   "automate": [
     "/ˈɔːtəmeɪt/",
     "自动化执行；让系统在许可范围内自动完成动作",
@@ -1661,6 +1696,13 @@
     "",
     "The design avoids silent changes.",
     "该设计避免静默变化。"
+  ],
+  "aware": [
+    "/əˈwer/",
+    "感知到的；能根据某种状态做出调整的",
+    "",
+    "A comfort-aware interface responds to passenger condition.",
+    "在这句话中，“aware”表示系统能感知舒适状态。"
   ],
   "awareness": [
     "/ә'weәnis/",
@@ -2077,6 +2119,13 @@
     "When users can see the benefit, change the boundary, and withdraw consent without effort, the system feels less like surveillance and more like a respectful assistant.",
     "在这句话中，“boundary”可理解为“边界, 分界线”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "braking": [
+    "/ˈbreɪkɪŋ/",
+    "制动；车辆减速操作",
+    "",
+    "Braking may raise passenger discomfort.",
+    "在这句话中，“braking”指制动。"
   ],
   "breathing": [
     "/ˈbriːðɪŋ/",
@@ -2560,6 +2609,13 @@
     "Only the last four digits of the card number are shown.",
     "界面只显示卡号后四位。"
   ],
+  "cards": [
+    "/kɑːrdz/",
+    "卡片；界面中承载一组信息的小模块",
+    "",
+    "Secondary cards can be hidden during heavy motion.",
+    "在这句话中，“cards”指信息卡片。"
+  ],
   "care": [
     "/ker/",
     "语境词：谨慎；对交互语气和用户负荷的关注",
@@ -2601,6 +2657,13 @@
     "",
     "Caregiver confirmation must be quick, but it should not be easy to dismiss by accident.",
     "照护者确认必须快捷，但不应容易被误触关闭。"
+  ],
+  "carousel": [
+    "/ˌkærəˈsel/",
+    "轮播；内容按卡片或页面循环切换的浏览方式",
+    "",
+    "Low-motion mode can replace carousel browsing with a list.",
+    "在这句话中，“carousel”指轮播式浏览。"
   ],
   "carplay": [
     "/ˈkɑːrpleɪ/",
@@ -3447,6 +3510,27 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "comfort threshold": [
+    "/ˈkʌmfərt ˈθreʃhoʊld/",
+    "舒适阈值；触发界面降噪、动画减弱或服务建议的舒适状态边界",
+    "",
+    "The comfort threshold should be adjustable for different passengers.",
+    "舒适阈值应能针对不同乘客调整。"
+  ],
+  "comfort-aware": [
+    "/ˈkʌmfərt əˈwer/",
+    "舒适感知的；能根据乘员舒适状态调整的",
+    "",
+    "Comfort-aware interaction adapts screen motion when the road becomes winding.",
+    "在这句话中，“comfort-aware”表示系统关注舒适状态。"
+  ],
+  "comfort-aware interaction": [
+    "/ˈkʌmfərt əˈwer ˌɪntərˈækʃn/",
+    "舒适感知交互；根据乘员舒适状态调整提示、显示和车内服务的交互方式",
+    "",
+    "Comfort-aware interaction adapts screen motion when the road becomes winding.",
+    "当道路变得弯曲时，舒适感知交互会调整屏幕运动。"
+  ],
   "comfortable": [
     "/按语境朗读/",
     "舒适的；留有安全余量的",
@@ -3678,6 +3762,13 @@
     "",
     "The condition should be written in plain language.",
     "条件应使用通俗语言表达。"
+  ],
+  "conditions": [
+    "/kənˈdɪʃnz/",
+    "条件；道路、车速和车内状态等环境因素",
+    "",
+    "Conditions may improve after the curve.",
+    "在这句话中，“conditions”指情境条件。"
   ],
   "confidence": [
     "/'kɒnfidәns/",
@@ -4783,6 +4874,13 @@
     "",
     "For example, the cockpit might say, \"The road ahead has many curves.",
     "在这句话中，“curves”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "curvy": [
+    "/ˈkɜːrvi/",
+    "多弯的；包含较多弯道的",
+    "",
+    "Curvy roads may trigger low-motion mode.",
+    "在这句话中，“curvy”表示多弯。"
   ],
   "cushion": [
     "/ˈkʊʃn/",
@@ -6190,6 +6288,13 @@
     "在这句话中，“during”可理解为“在...的时候”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "dynamic": [
+    "/daɪˈnæmɪk/",
+    "动态的；会随状态变化或移动的",
+    "",
+    "Dynamic map movement may feel comfortable to some users.",
+    "在这句话中，“dynamic”表示动态。"
+  ],
   "each": [
     "/待查/",
     "课堂词汇；在今日座舱语音交互语境中理解为“each”。",
@@ -6413,6 +6518,13 @@
     "",
     "The word engineering appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“engineering”用于表达相关系统状态或用户影响。"
+  ],
+  "enjoy": [
+    "/ɪnˈdʒɔɪ/",
+    "喜欢；从某体验中获得愉悦",
+    "",
+    "One passenger may enjoy dynamic map movement.",
+    "在这句话中，“enjoy”表示喜欢。"
   ],
   "enough": [
     "/i'nʌf/",
@@ -8328,6 +8440,13 @@
     "Road markings are hard to read in heavy rain.",
     "大雨中道路标线很难识别。"
   ],
+  "harder": [
+    "/ˈhɑːrdər/",
+    "更难的；难度或负担更高的",
+    "",
+    "Motion can make detailed controls harder to tolerate.",
+    "在这句话中，“harder”表示更难承受。"
+  ],
   "has": [
     "/hæz/",
     "interj. 嘿, 哈, 哈哈",
@@ -8724,12 +8843,26 @@
     "An honest explanation is better than silently ignoring a command.",
     "在这句话中，“honest explanation”用于描述智能座舱多人语音控制。"
   ],
+  "horizon": [
+    "/həˈraɪzn/",
+    "地平线；可帮助判断方向和稳定性的视觉参照",
+    "",
+    "The horizon reference keeps movement understandable.",
+    "在这句话中，“horizon”指稳定参照。"
+  ],
   "horizon line": [
     "/həˈraɪzn laɪn/",
     "地平线；视野中道路和天空或远景相接的参考线",
     "",
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
+  "horizon reference": [
+    "/həˈraɪzn ˈrefrəns/",
+    "地平线参照；帮助乘员感知车辆运动方向和稳定性的视觉参照线索",
+    "",
+    "A subtle horizon reference can make map movement feel more stable.",
+    "轻微的地平线参照可以让地图运动感觉更稳定。"
   ],
   "horn": [
     "/hɔːrn/",
@@ -9938,6 +10071,13 @@
     "在这句话中，“language”可理解为“语言, 文字, 措辞”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "large": [
+    "/lɑːrdʒ/",
+    "大的；尺寸、幅度或范围较大的",
+    "",
+    "High vestibular load makes large animated menus harder to tolerate.",
+    "在这句话中，“large”指菜单动效幅度较大。"
+  ],
   "large language model": [
     "/lɑːrdʒ ˈlæŋɡwɪdʒ ˈmɑːdl/",
     "大语言模型；用于理解和生成自然语言的 AI 模型",
@@ -10309,6 +10449,13 @@
     "",
     "The listening state should be visible from every active seat zone.",
     "在这句话中，“listening state”用于描述智能座舱多人语音控制。"
+  ],
+  "lists": [
+    "/lɪsts/",
+    "列表；一组垂直或连续排列的信息项",
+    "",
+    "Long lists can be hard to read during motion.",
+    "在这句话中，“lists”指界面列表。"
   ],
   "live": [
     "/按语境朗读/",
@@ -10713,6 +10860,20 @@
     "",
     "A low-interruption prompt uses timing, tone, and priority to protect attention.",
     "低干扰提示会利用时机、语气和优先级来保护注意力。"
+  ],
+  "low-motion": [
+    "/loʊ ˈmoʊʃn/",
+    "低动效的；减少动画和视觉移动的",
+    "",
+    "Low-motion mode can replace carousel browsing.",
+    "在这句话中，“low-motion”表示低动效。"
+  ],
+  "low-motion mode": [
+    "/loʊ ˈmoʊʃn moʊd/",
+    "低动效模式；减少滚动、视差和大幅动画以降低不适的显示模式",
+    "",
+    "Low-motion mode can replace carousel browsing with a simple step-by-step list.",
+    "低动效模式可以用简单的分步列表替代轮播浏览。"
   ],
   "low-pressure": [
     "/待补充/",
@@ -11280,6 +11441,13 @@
     "High menu depth increases memory load.",
     "较高的菜单深度会增加记忆负荷。"
   ],
+  "menus": [
+    "/ˈmenjuːz/",
+    "菜单；界面中组织功能选项的列表或面板",
+    "",
+    "Large animated menus may increase discomfort.",
+    "在这句话中，“menus”指界面菜单。"
+  ],
   "merchant": [
     "/ˈmɜːrtʃənt/",
     "商户；收款的服务方或店铺",
@@ -11573,6 +11741,13 @@
     "在这句话中，“misunderstood”可理解为“误解, 误会”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "mitigation": [
+    "/ˌmɪtɪˈɡeɪʃn/",
+    "缓解；降低风险或不适程度",
+    "",
+    "Mitigation should happen before discomfort becomes severe.",
+    "在这句话中，“mitigation”表示提前降低不适。"
+  ],
   "mix": [
     "/mɪks/",
     "组合；多个元素或通道的搭配",
@@ -11782,6 +11957,27 @@
     "",
     "A motion sickness cue may combine seat movement, screen use, road curvature, and passenger posture.",
     "晕车线索可能结合座椅运动、屏幕使用、道路曲率和乘员姿态。"
+  ],
+  "motion sickness mitigation": [
+    "/ˈmoʊʃn ˈsɪknəs ˌmɪtɪˈɡeɪʃn/",
+    "动晕缓解；通过界面、座椅、视觉和节奏控制降低晕车不适的设计策略",
+    "",
+    "Motion sickness mitigation should begin before the passenger feels severe discomfort.",
+    "动晕缓解应在乘客感到严重不适之前开始。"
+  ],
+  "motion-adaptive": [
+    "/ˈmoʊʃn əˈdæptɪv/",
+    "运动自适应的；根据车辆动态调整界面的",
+    "",
+    "A motion-adaptive layout hides secondary cards when acceleration changes quickly.",
+    "在这句话中，“motion-adaptive”表示根据运动状态调整。"
+  ],
+  "motion-adaptive layout": [
+    "/ˈmoʊʃn əˈdæptɪv ˈleɪaʊt/",
+    "运动自适应布局；根据车辆动态减少视觉复杂度、动画和阅读负荷的界面布局",
+    "",
+    "A motion-adaptive layout hides secondary cards when acceleration changes quickly.",
+    "当加速度快速变化时，运动自适应布局会隐藏次要卡片。"
   ],
   "move": [
     "/muːv/",
@@ -12829,6 +13025,13 @@
     "在这句话中，“option”可理解为“选择权, 挑选, 选项”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "optional": [
+    "/ˈɑːpʃənl/",
+    "可选的；允许用户决定是否采用",
+    "",
+    "The prompt should be optional.",
+    "在这句话中，“optional”表示可选择。"
+  ],
   "options": [
     "/'ɒpʃәn/",
     "名词：选择权, 挑选, 选项",
@@ -13036,6 +13239,13 @@
     "The rear control panel uses the same labels.",
     "后排控制面板使用相同标签。"
   ],
+  "panels": [
+    "/ˈpænlz/",
+    "面板；界面中的功能区域",
+    "",
+    "Secondary panels should not crowd the screen.",
+    "在这句话中，“panels”指功能面板。"
+  ],
   "panic": [
     "/ˈpænɪk/",
     "名词：恐慌, 惊慌；惊慌的, 没有理由的, 恐慌的；使惊慌, 使狂热；惊慌",
@@ -13128,6 +13338,13 @@
     "",
     "Passenger posture can be one signal in a comfort model.",
     "乘客姿态可以作为舒适模型中的一个信号。"
+  ],
+  "passenger reassurance": [
+    "/ˈpæsɪndʒər ˌriːəˈʃʊrəns/",
+    "乘客安抚；通过解释、可控选项和舒适反馈降低乘员焦虑的设计方式",
+    "",
+    "Passenger reassurance works best when the system explains why it changed the display.",
+    "当系统解释为什么改变显示时，乘客安抚效果最好。"
   ],
   "passenger request": [
     "/ˈpæsɪndʒər rɪˈkwest/",
@@ -13930,6 +14147,13 @@
     "Predictive features should still ask for confirmation.",
     "预测性功能仍应请求确认。"
   ],
+  "predictive comfort cue": [
+    "/prɪˈdɪktɪv ˈkʌmfərt kjuː/",
+    "预测性舒适提示；在即将发生转弯或加减速前提醒乘员调整注意力或姿态的提示",
+    "",
+    "A predictive comfort cue can warn the passenger before a series of curves.",
+    "预测性舒适提示可以在连续弯道前提醒乘客。"
+  ],
   "predictive intent": [
     "/prɪˈdɪktɪv ɪnˈtent/",
     "预测性意图；系统根据场景、历史行为和当前任务推测用户下一步需求",
@@ -13988,6 +14212,13 @@
     "A preference profile can store climate settings, display themes, and preferred navigation views.",
     "在这句话中，“preferred”可理解为“宁可, 较喜欢, 提出”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "prefers": [
+    "/prɪˈfɜːrz/",
+    "更喜欢；在多个选项中倾向于某一个",
+    "",
+    "Another passenger prefers a fixed view.",
+    "在这句话中，“prefers”表示更偏好。"
   ],
   "prepare": [
     "/prɪˈper/",
@@ -14990,6 +15221,13 @@
     "The word reading appears in today's cockpit summary practice.",
     "在这个语境中，“reading”可理解为“阅读”。"
   ],
+  "reads": [
+    "/riːdz/",
+    "阅读；查看并理解文字内容",
+    "",
+    "A passenger reads a scrolling list during sharp turns.",
+    "在这句话中，“reads”表示阅读界面内容。"
+  ],
   "ready": [
     "/待查/",
     "准备好的；可以执行下一步动作",
@@ -15394,6 +15632,13 @@
     "",
     "The command may refer to more than one target.",
     "在这句话中，“refer”表示“指代”。"
+  ],
+  "reference": [
+    "/ˈrefrəns/",
+    "参照；帮助理解位置、方向或状态的依据",
+    "",
+    "A stable reference can reduce visual confusion.",
+    "在这句话中，“reference”表示视觉参照依据。"
   ],
   "refers": [
     "/rɪˈfɜːrz/",
@@ -16410,6 +16655,13 @@
     "The road scene should match the visual cue on the display.",
     "在这句话中，“road scene”用于描述智能座舱导航提示设计。"
   ],
+  "roads": [
+    "/roʊdz/",
+    "道路；车辆行驶环境",
+    "",
+    "Winding roads require calmer screen behavior.",
+    "在这句话中，“roads”指道路环境。"
+  ],
   "role": [
     "/待查/",
     "课堂词汇；在今日座舱语音交互语境中理解为“role”。",
@@ -17037,6 +17289,13 @@
     "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
     "回退行为在屏幕、声音和方向盘控制之间都应可预测。"
   ],
+  "scrolling": [
+    "/ˈskroʊlɪŋ/",
+    "滚动的；内容上下或左右移动显示的",
+    "",
+    "Scrolling lists can increase visual-motion conflict.",
+    "在这句话中，“scrolling”指滚动显示。"
+  ],
   "search": [
     "/sɜːt͡ʃ/",
     "名词：搜寻, 查究；搜寻, 搜查, 探求, 调查, 搜索",
@@ -17461,6 +17720,13 @@
     "在这句话中，“separates”可理解为“独立件, 抽印本；分开的, 各别的, 单独的, 分隔的；分开, 隔开, 分居；使分离, 使分开, 区分, 使分居”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "series": [
+    "/ˈsɪriːz/",
+    "一连串；连续发生的一组事物",
+    "",
+    "A predictive comfort cue can warn before a series of curves.",
+    "在这句话中，“series”指连续弯道。"
+  ],
   "serious": [
     "/ˈsɪə̯.ɹi.əs/",
     "形容词：严肃的, 认真的, 重要的, 严重的",
@@ -17579,6 +17845,13 @@
     "在这句话中，“several”可理解为“几个的, 一些的, 各自的；几个”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "severe": [
+    "/sɪˈvɪr/",
+    "严重的；程度高且可能影响舒适或安全",
+    "",
+    "Motion sickness mitigation should begin before the passenger feels severe discomfort.",
+    "在这句话中，“severe”表示不适程度严重。"
+  ],
   "shape": [
     "/ʃeɪp/",
     "名词：形状, 形态, 外形, 形式, 身材；定形, 使成形, 塑造, 计划, 使符合；成形, 形成, 成长",
@@ -17693,6 +17966,13 @@
     "The vehicle should ask for explicit consent before sharing location-based preferences with cloud services.",
     "在这句话中，“sharing”可理解为“部分, 参与, 一份, 参股, 份额；均分, 分担, 分享, 分配, 共有；分享；文件锁定及检测磁盘更动和对超过32MB硬盘分区的支持”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "sharp": [
+    "/ʃɑːrp/",
+    "急剧的；方向或强度变化明显的",
+    "",
+    "Sharp turns can raise vestibular load.",
+    "在这句话中，“sharp”表示急转弯的。"
   ],
   "short": [
     "/ʃɒ:t/",
@@ -18084,6 +18364,13 @@
     "",
     "The word slowed appears in today's cockpit summary practice.",
     "在这个语境中，“slowed”可理解为“变慢了”。"
+  ],
+  "slowing": [
+    "/ˈsloʊɪŋ/",
+    "放慢；降低速度",
+    "",
+    "Slowing animations can protect comfort.",
+    "在这句话中，“slowing”表示放慢动效。"
   ],
   "small": [
     "/smɔl/",
@@ -18765,6 +19052,13 @@
     "",
     "The warning should escalate step by step.",
     "警告应逐步升级。"
+  ],
+  "step-by-step": [
+    "/step baɪ step/",
+    "分步的；按顺序逐步呈现的",
+    "",
+    "A step-by-step list can be easier to read in motion.",
+    "在这句话中，“step-by-step”表示分步呈现。"
   ],
   "still": [
     "/stil/",
@@ -19767,6 +20061,13 @@
     "在这句话中，“threshold”可理解为“门槛, 入口, 开端, 阈”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "thresholds": [
+    "/ˈθreʃhoʊldz/",
+    "阈值；多个触发边界或状态界限",
+    "",
+    "Personal comfort thresholds matter because passengers differ.",
+    "在这句话中，“thresholds”指个人舒适阈值。"
+  ],
   "through": [
     "/θruː/",
     "通过；贯穿",
@@ -19897,6 +20198,13 @@
     "",
     "False alarm tolerance is lower for loud alerts than for a subtle status hint.",
     "用户对响亮警告的误报警容忍度低于对轻微状态提示的容忍度。"
+  ],
+  "tolerate": [
+    "/ˈtɑːləreɪt/",
+    "忍受；在不适或压力下仍能接受",
+    "",
+    "Passengers may not tolerate rapid screen motion.",
+    "在这句话中，“tolerate”表示忍受或接受。"
   ],
   "toll": [
     "/toʊl/",
@@ -20961,6 +21269,20 @@
     "The word version appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“version”用于表达相关系统状态或用户影响。"
   ],
+  "vestibular": [
+    "/veˈstɪbjələr/",
+    "前庭的；与人体平衡感知系统相关的",
+    "",
+    "Vestibular load rises during sharp curves.",
+    "在这句话中，“vestibular”表示与平衡感知相关。"
+  ],
+  "vestibular load": [
+    "/veˈstɪbjələr loʊd/",
+    "前庭负荷；转弯、加减速等身体运动给平衡系统带来的负担",
+    "",
+    "High vestibular load makes large animated menus harder to tolerate.",
+    "较高的前庭负荷会让大幅动画菜单更难忍受。"
+  ],
   "vibration": [
     "/vaɪˈbreɪʃn/",
     "振动；常见触觉反馈形式",
@@ -21175,6 +21497,20 @@
     "",
     "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
     "当驾驶员必须浏览长菜单并点击多个控件时，视觉-手动负荷会上升。"
+  ],
+  "visual-motion": [
+    "/ˈvɪʒuəl ˈmoʊʃn/",
+    "视觉运动的；与屏幕运动和视觉感知有关的",
+    "",
+    "The HMI can reduce visual-motion conflict.",
+    "在这句话中，“visual-motion”表示视觉运动相关。"
+  ],
+  "visual-motion conflict": [
+    "/ˈvɪʒuəl ˈmoʊʃn ˈkɑːnflɪkt/",
+    "视觉运动冲突；屏幕视觉运动与身体感知运动不一致造成的不适来源",
+    "",
+    "Visual-motion conflict can increase when a passenger reads a scrolling list during sharp turns.",
+    "乘客在急转弯时阅读滚动列表，可能会加剧视觉运动冲突。"
   ],
   "visually": [
     "/ˈvɪzju.əli/",

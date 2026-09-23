@@ -1,5 +1,965 @@
 [
   {
+    "id": "2026-09-23-motion-sickness-mitigation-and-comfort-aware-interaction",
+    "date": "2026-09-23",
+    "title": "Motion sickness mitigation and comfort-aware interaction in intelligent cockpits",
+    "topic": "智能座舱动晕缓解与舒适感知交互",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明动晕缓解、舒适感知交互、前庭负荷、视觉运动线索、预测性提示和个性化舒适策略。",
+    "words": [
+      {
+        "term": "motion sickness mitigation",
+        "phonetic": "/ˈmoʊʃn ˈsɪknəs ˌmɪtɪˈɡeɪʃn/",
+        "meaning": "动晕缓解；通过界面、座椅、视觉和节奏控制降低晕车不适的设计策略",
+        "example": "Motion sickness mitigation should begin before the passenger feels severe discomfort.",
+        "chineseExample": "动晕缓解应在乘客感到严重不适之前开始。"
+      },
+      {
+        "term": "comfort-aware interaction",
+        "phonetic": "/ˈkʌmfərt əˈwer ˌɪntərˈækʃn/",
+        "meaning": "舒适感知交互；根据乘员舒适状态调整提示、显示和车内服务的交互方式",
+        "example": "Comfort-aware interaction adapts screen motion when the road becomes winding.",
+        "chineseExample": "当道路变得弯曲时，舒适感知交互会调整屏幕运动。"
+      },
+      {
+        "term": "vestibular load",
+        "phonetic": "/veˈstɪbjələr loʊd/",
+        "meaning": "前庭负荷；转弯、加减速等身体运动给平衡系统带来的负担",
+        "example": "High vestibular load makes large animated menus harder to tolerate.",
+        "chineseExample": "较高的前庭负荷会让大幅动画菜单更难忍受。"
+      },
+      {
+        "term": "visual-motion conflict",
+        "phonetic": "/ˈvɪʒuəl ˈmoʊʃn ˈkɑːnflɪkt/",
+        "meaning": "视觉运动冲突；屏幕视觉运动与身体感知运动不一致造成的不适来源",
+        "example": "Visual-motion conflict can increase when a passenger reads a scrolling list during sharp turns.",
+        "chineseExample": "乘客在急转弯时阅读滚动列表，可能会加剧视觉运动冲突。"
+      },
+      {
+        "term": "predictive comfort cue",
+        "phonetic": "/prɪˈdɪktɪv ˈkʌmfərt kjuː/",
+        "meaning": "预测性舒适提示；在即将发生转弯或加减速前提醒乘员调整注意力或姿态的提示",
+        "example": "A predictive comfort cue can warn the passenger before a series of curves.",
+        "chineseExample": "预测性舒适提示可以在连续弯道前提醒乘客。"
+      },
+      {
+        "term": "horizon reference",
+        "phonetic": "/həˈraɪzn ˈrefrəns/",
+        "meaning": "地平线参照；帮助乘员感知车辆运动方向和稳定性的视觉参照线索",
+        "example": "A subtle horizon reference can make map movement feel more stable.",
+        "chineseExample": "轻微的地平线参照可以让地图运动感觉更稳定。"
+      },
+      {
+        "term": "motion-adaptive layout",
+        "phonetic": "/ˈmoʊʃn əˈdæptɪv ˈleɪaʊt/",
+        "meaning": "运动自适应布局；根据车辆动态减少视觉复杂度、动画和阅读负荷的界面布局",
+        "example": "A motion-adaptive layout hides secondary cards when acceleration changes quickly.",
+        "chineseExample": "当加速度快速变化时，运动自适应布局会隐藏次要卡片。"
+      },
+      {
+        "term": "comfort threshold",
+        "phonetic": "/ˈkʌmfərt ˈθreʃhoʊld/",
+        "meaning": "舒适阈值；触发界面降噪、动画减弱或服务建议的舒适状态边界",
+        "example": "The comfort threshold should be adjustable for different passengers.",
+        "chineseExample": "舒适阈值应能针对不同乘客调整。"
+      },
+      {
+        "term": "low-motion mode",
+        "phonetic": "/loʊ ˈmoʊʃn moʊd/",
+        "meaning": "低动效模式；减少滚动、视差和大幅动画以降低不适的显示模式",
+        "example": "Low-motion mode can replace carousel browsing with a simple step-by-step list.",
+        "chineseExample": "低动效模式可以用简单的分步列表替代轮播浏览。"
+      },
+      {
+        "term": "passenger reassurance",
+        "phonetic": "/ˈpæsɪndʒər ˌriːəˈʃʊrəns/",
+        "meaning": "乘客安抚；通过解释、可控选项和舒适反馈降低乘员焦虑的设计方式",
+        "example": "Passenger reassurance works best when the system explains why it changed the display.",
+        "chineseExample": "当系统解释为什么改变显示时，乘客安抚效果最好。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "motion sickness mitigation",
+        "phonetic": "/ˈmoʊʃn ˈsɪknəs ˌmɪtɪˈɡeɪʃn/",
+        "meaning": "动晕缓解；通过界面、座椅、视觉和节奏控制降低晕车不适的设计策略",
+        "example": "Motion sickness mitigation should begin before the passenger feels severe discomfort.",
+        "chineseExample": "动晕缓解应在乘客感到严重不适之前开始。"
+      },
+      {
+        "term": "comfort-aware interaction",
+        "phonetic": "/ˈkʌmfərt əˈwer ˌɪntərˈækʃn/",
+        "meaning": "舒适感知交互；根据乘员舒适状态调整提示、显示和车内服务的交互方式",
+        "example": "Comfort-aware interaction adapts screen motion when the road becomes winding.",
+        "chineseExample": "当道路变得弯曲时，舒适感知交互会调整屏幕运动。"
+      },
+      {
+        "term": "vestibular load",
+        "phonetic": "/veˈstɪbjələr loʊd/",
+        "meaning": "前庭负荷；转弯、加减速等身体运动给平衡系统带来的负担",
+        "example": "High vestibular load makes large animated menus harder to tolerate.",
+        "chineseExample": "较高的前庭负荷会让大幅动画菜单更难忍受。"
+      },
+      {
+        "term": "visual-motion conflict",
+        "phonetic": "/ˈvɪʒuəl ˈmoʊʃn ˈkɑːnflɪkt/",
+        "meaning": "视觉运动冲突；屏幕视觉运动与身体感知运动不一致造成的不适来源",
+        "example": "Visual-motion conflict can increase when a passenger reads a scrolling list during sharp turns.",
+        "chineseExample": "乘客在急转弯时阅读滚动列表，可能会加剧视觉运动冲突。"
+      },
+      {
+        "term": "predictive comfort cue",
+        "phonetic": "/prɪˈdɪktɪv ˈkʌmfərt kjuː/",
+        "meaning": "预测性舒适提示；在即将发生转弯或加减速前提醒乘员调整注意力或姿态的提示",
+        "example": "A predictive comfort cue can warn the passenger before a series of curves.",
+        "chineseExample": "预测性舒适提示可以在连续弯道前提醒乘客。"
+      },
+      {
+        "term": "horizon reference",
+        "phonetic": "/həˈraɪzn ˈrefrəns/",
+        "meaning": "地平线参照；帮助乘员感知车辆运动方向和稳定性的视觉参照线索",
+        "example": "A subtle horizon reference can make map movement feel more stable.",
+        "chineseExample": "轻微的地平线参照可以让地图运动感觉更稳定。"
+      },
+      {
+        "term": "motion-adaptive layout",
+        "phonetic": "/ˈmoʊʃn əˈdæptɪv ˈleɪaʊt/",
+        "meaning": "运动自适应布局；根据车辆动态减少视觉复杂度、动画和阅读负荷的界面布局",
+        "example": "A motion-adaptive layout hides secondary cards when acceleration changes quickly.",
+        "chineseExample": "当加速度快速变化时，运动自适应布局会隐藏次要卡片。"
+      },
+      {
+        "term": "comfort threshold",
+        "phonetic": "/ˈkʌmfərt ˈθreʃhoʊld/",
+        "meaning": "舒适阈值；触发界面降噪、动画减弱或服务建议的舒适状态边界",
+        "example": "The comfort threshold should be adjustable for different passengers.",
+        "chineseExample": "舒适阈值应能针对不同乘客调整。"
+      },
+      {
+        "term": "low-motion mode",
+        "phonetic": "/loʊ ˈmoʊʃn moʊd/",
+        "meaning": "低动效模式；减少滚动、视差和大幅动画以降低不适的显示模式",
+        "example": "Low-motion mode can replace carousel browsing with a simple step-by-step list.",
+        "chineseExample": "低动效模式可以用简单的分步列表替代轮播浏览。"
+      },
+      {
+        "term": "passenger reassurance",
+        "phonetic": "/ˈpæsɪndʒər ˌriːəˈʃʊrəns/",
+        "meaning": "乘客安抚；通过解释、可控选项和舒适反馈降低乘员焦虑的设计方式",
+        "example": "Passenger reassurance works best when the system explains why it changed the display.",
+        "chineseExample": "当系统解释为什么改变显示时，乘客安抚效果最好。"
+      },
+      {
+        "term": "motion",
+        "phonetic": "/ˈmoʊʃn/",
+        "meaning": "运动；车辆或界面元素的位置变化",
+        "example": "Screen motion should slow down on winding roads.",
+        "chineseExample": "在这句话中，“motion”指屏幕上的运动效果。"
+      },
+      {
+        "term": "sickness",
+        "phonetic": "/ˈsɪknəs/",
+        "meaning": "不适；恶心或晕动相关的身体反应",
+        "example": "Motion sickness can begin before the passenger reports discomfort.",
+        "chineseExample": "在这句话中，“sickness”指晕动带来的不适。"
+      },
+      {
+        "term": "mitigation",
+        "phonetic": "/ˌmɪtɪˈɡeɪʃn/",
+        "meaning": "缓解；降低风险或不适程度",
+        "example": "Mitigation should happen before discomfort becomes severe.",
+        "chineseExample": "在这句话中，“mitigation”表示提前降低不适。"
+      },
+      {
+        "term": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "meaning": "舒适；身体和心理上的轻松状态",
+        "example": "Comfort should be treated as part of cockpit safety.",
+        "chineseExample": "在这句话中，“comfort”指乘员舒适状态。"
+      },
+      {
+        "term": "aware",
+        "phonetic": "/əˈwer/",
+        "meaning": "感知到的；能根据某种状态做出调整的",
+        "example": "A comfort-aware interface responds to passenger condition.",
+        "chineseExample": "在这句话中，“aware”表示系统能感知舒适状态。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/ˌɪntərˈækʃn/",
+        "meaning": "交互；人与系统之间的操作和反馈过程",
+        "example": "Interaction should remain simple during heavy motion.",
+        "chineseExample": "在这句话中，“interaction”指座舱人机交互。"
+      },
+      {
+        "term": "vestibular",
+        "phonetic": "/veˈstɪbjələr/",
+        "meaning": "前庭的；与人体平衡感知系统相关的",
+        "example": "Vestibular load rises during sharp curves.",
+        "chineseExample": "在这句话中，“vestibular”表示与平衡感知相关。"
+      },
+      {
+        "term": "load",
+        "phonetic": "/loʊd/",
+        "meaning": "负荷；系统、身体或认知承受的压力",
+        "example": "High load makes reading harder.",
+        "chineseExample": "在这句话中，“load”表示乘员承受的负担。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；与显示和观看有关的",
+        "example": "Visual cues should match vehicle motion.",
+        "chineseExample": "在这句话中，“visual”表示与视觉相关。"
+      },
+      {
+        "term": "conflict",
+        "phonetic": "/ˈkɑːnflɪkt/",
+        "meaning": "冲突；两个信号或需求不一致",
+        "example": "Conflict between body motion and screen motion may cause discomfort.",
+        "chineseExample": "在这句话中，“conflict”指感知信号不一致。"
+      },
+      {
+        "term": "predictive",
+        "phonetic": "/prɪˈdɪktɪv/",
+        "meaning": "预测性的；在事件发生前提供判断或提示",
+        "example": "Predictive cues can prepare the passenger.",
+        "chineseExample": "在这句话中，“predictive”表示提前预测。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示；引导用户理解或行动的信号",
+        "example": "A cue should be calm and optional.",
+        "chineseExample": "在这句话中，“cue”指界面提示。"
+      },
+      {
+        "term": "horizon",
+        "phonetic": "/həˈraɪzn/",
+        "meaning": "地平线；可帮助判断方向和稳定性的视觉参照",
+        "example": "The horizon reference keeps movement understandable.",
+        "chineseExample": "在这句话中，“horizon”指稳定参照。"
+      },
+      {
+        "term": "reference",
+        "phonetic": "/ˈrefrəns/",
+        "meaning": "参照；帮助理解位置、方向或状态的依据",
+        "example": "A stable reference can reduce visual confusion.",
+        "chineseExample": "在这句话中，“reference”表示视觉参照依据。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；能随情境变化调整",
+        "example": "Adaptive comfort design changes with road conditions.",
+        "chineseExample": "在这句话中，“adaptive”表示可根据情境调整。"
+      },
+      {
+        "term": "layout",
+        "phonetic": "/ˈleɪaʊt/",
+        "meaning": "布局；界面元素的排列方式",
+        "example": "The layout should become simpler during frequent braking.",
+        "chineseExample": "在这句话中，“layout”指界面布局。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种变化的边界",
+        "example": "A comfort threshold can trigger low-motion mode.",
+        "chineseExample": "在这句话中，“threshold”表示触发边界。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/moʊd/",
+        "meaning": "模式；系统运行或显示的一种状态",
+        "example": "Low-motion mode reduces animation.",
+        "chineseExample": "在这句话中，“mode”指显示模式。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/ˈpæsɪndʒər/",
+        "meaning": "乘客；车内非驾驶乘员",
+        "example": "The passenger can choose whether to reduce screen motion.",
+        "chineseExample": "在这句话中，“passenger”指乘客。"
+      },
+      {
+        "term": "reassurance",
+        "phonetic": "/ˌriːəˈʃʊrəns/",
+        "meaning": "安抚；让用户感到安心和被尊重的反馈",
+        "example": "Reassurance should avoid blaming the passenger.",
+        "chineseExample": "在这句话中，“reassurance”指降低焦虑的安抚。"
+      },
+      {
+        "term": "body",
+        "phonetic": "/ˈbɑːdi/",
+        "meaning": "身体；乘员的身体感受和生理反应",
+        "example": "Comfort design starts with the body.",
+        "chineseExample": "在这句话中，“body”指乘员身体体验。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "屏幕；显示信息的界面载体",
+        "example": "The screen should reduce movement during curves.",
+        "chineseExample": "在这句话中，“screen”指车内显示屏。"
+      },
+      {
+        "term": "settings",
+        "phonetic": "/ˈsetɪŋz/",
+        "meaning": "设置；系统可调整的参数或选项",
+        "example": "Screen settings alone cannot solve motion sickness.",
+        "chineseExample": "在这句话中，“settings”指屏幕参数。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "车辆；提供动态信号和座舱环境的移动平台",
+        "example": "Vehicle signals help predict comfort risk.",
+        "chineseExample": "在这句话中，“vehicle”指汽车。"
+      },
+      {
+        "term": "winding",
+        "phonetic": "/ˈwaɪndɪŋ/",
+        "meaning": "弯曲的；道路连续转弯的",
+        "example": "Winding roads can increase vestibular load.",
+        "chineseExample": "在这句话中，“winding”表示道路弯曲。"
+      },
+      {
+        "term": "roads",
+        "phonetic": "/roʊdz/",
+        "meaning": "道路；车辆行驶环境",
+        "example": "Winding roads require calmer screen behavior.",
+        "chineseExample": "在这句话中，“roads”指道路环境。"
+      },
+      {
+        "term": "strong",
+        "phonetic": "/strɔːŋ/",
+        "meaning": "强烈的；程度较高的",
+        "example": "Strong acceleration can make reading uncomfortable.",
+        "chineseExample": "在这句话中，“strong”表示加速度明显。"
+      },
+      {
+        "term": "acceleration",
+        "phonetic": "/əkˌseləˈreɪʃn/",
+        "meaning": "加速度；车辆速度变化的程度",
+        "example": "Acceleration changes can trigger layout simplification.",
+        "chineseExample": "在这句话中，“acceleration”指车辆加速变化。"
+      },
+      {
+        "term": "frequent",
+        "phonetic": "/ˈfriːkwənt/",
+        "meaning": "频繁的；多次重复发生的",
+        "example": "Frequent braking should reduce visual complexity.",
+        "chineseExample": "在这句话中，“frequent”表示经常发生。"
+      },
+      {
+        "term": "braking",
+        "phonetic": "/ˈbreɪkɪŋ/",
+        "meaning": "制动；车辆减速操作",
+        "example": "Braking may raise passenger discomfort.",
+        "chineseExample": "在这句话中，“braking”指制动。"
+      },
+      {
+        "term": "reduce",
+        "phonetic": "/rɪˈduːs/",
+        "meaning": "减少；降低数量、强度或影响",
+        "example": "The HMI can reduce visual-motion conflict.",
+        "chineseExample": "在这句话中，“reduce”表示降低。"
+      },
+      {
+        "term": "slowing",
+        "phonetic": "/ˈsloʊɪŋ/",
+        "meaning": "放慢；降低速度",
+        "example": "Slowing animations can protect comfort.",
+        "chineseExample": "在这句话中，“slowing”表示放慢动效。"
+      },
+      {
+        "term": "animations",
+        "phonetic": "/ˌænɪˈmeɪʃnz/",
+        "meaning": "动画；界面元素的动态变化",
+        "example": "Animations should become subtle on curvy roads.",
+        "chineseExample": "在这句话中，“animations”指界面动效。"
+      },
+      {
+        "term": "shortening",
+        "phonetic": "/ˈʃɔːrtnɪŋ/",
+        "meaning": "缩短；减少长度或数量",
+        "example": "Shortening lists lowers reading effort.",
+        "chineseExample": "在这句话中，“shortening”表示缩短列表。"
+      },
+      {
+        "term": "lists",
+        "phonetic": "/lɪsts/",
+        "meaning": "列表；一组垂直或连续排列的信息项",
+        "example": "Long lists can be hard to read during motion.",
+        "chineseExample": "在这句话中，“lists”指界面列表。"
+      },
+      {
+        "term": "keeping",
+        "phonetic": "/ˈkiːpɪŋ/",
+        "meaning": "保持；使某状态持续存在",
+        "example": "Keeping information stable can reduce discomfort.",
+        "chineseExample": "在这句话中，“keeping”表示保持。"
+      },
+      {
+        "term": "key",
+        "phonetic": "/kiː/",
+        "meaning": "关键的；最重要的",
+        "example": "Key information should stay near a stable reference.",
+        "chineseExample": "在这句话中，“key”表示关键。"
+      },
+      {
+        "term": "information",
+        "phonetic": "/ˌɪnfərˈmeɪʃn/",
+        "meaning": "信息；界面展示的内容",
+        "example": "Information should remain understandable.",
+        "chineseExample": "在这句话中，“information”指显示内容。"
+      },
+      {
+        "term": "stable",
+        "phonetic": "/ˈsteɪbl/",
+        "meaning": "稳定的；不易变化或晃动的",
+        "example": "A stable horizon reference helps orientation.",
+        "chineseExample": "在这句话中，“stable”表示稳定。"
+      },
+      {
+        "term": "model",
+        "phonetic": "/ˈmɑːdl/",
+        "meaning": "模型；描述系统如何判断和响应的规则结构",
+        "example": "The interaction model combines signals and choices.",
+        "chineseExample": "在这句话中，“model”指交互模型。"
+      },
+      {
+        "term": "combine",
+        "phonetic": "/kəmˈbaɪn/",
+        "meaning": "结合；把多个信息源一起使用",
+        "example": "The HMI should combine vehicle signals with choices.",
+        "chineseExample": "在这句话中，“combine”表示结合。"
+      },
+      {
+        "term": "signals",
+        "phonetic": "/ˈsɪɡnəlz/",
+        "meaning": "信号；系统感知到的数据或状态线索",
+        "example": "Vehicle signals include speed and braking.",
+        "chineseExample": "在这句话中，“signals”指车辆状态信号。"
+      },
+      {
+        "term": "choices",
+        "phonetic": "/ˈtʃɔɪsɪz/",
+        "meaning": "选择；用户可决定的选项",
+        "example": "Passenger choices should shape comfort behavior.",
+        "chineseExample": "在这句话中，“choices”指乘客选择。"
+      },
+      {
+        "term": "media",
+        "phonetic": "/ˈmiːdiə/",
+        "meaning": "媒体；音频、视频或娱乐内容",
+        "example": "Media controls may pause auto-scrolling content.",
+        "chineseExample": "在这句话中，“media”指娱乐媒体。"
+      },
+      {
+        "term": "controls",
+        "phonetic": "/kənˈtroʊlz/",
+        "meaning": "控制项；用于操作系统功能的界面元素",
+        "example": "Media controls should remain easy to understand.",
+        "chineseExample": "在这句话中，“controls”指界面控制项。"
+      },
+      {
+        "term": "switch",
+        "phonetic": "/swɪtʃ/",
+        "meaning": "切换；从一种状态变为另一种状态",
+        "example": "The cockpit may switch to low-motion mode.",
+        "chineseExample": "在这句话中，“switch”表示切换。"
+      },
+      {
+        "term": "pause",
+        "phonetic": "/pɔːz/",
+        "meaning": "暂停；暂时停止某项动作",
+        "example": "The system may pause auto-scrolling content.",
+        "chineseExample": "在这句话中，“pause”表示暂停。"
+      },
+      {
+        "term": "auto-scrolling",
+        "phonetic": "/ˈɔːtoʊ ˈskroʊlɪŋ/",
+        "meaning": "自动滚动；无需用户操作而持续移动内容",
+        "example": "Auto-scrolling content can increase visual-motion conflict.",
+        "chineseExample": "在这句话中，“auto-scrolling”指自动滚动。"
+      },
+      {
+        "term": "content",
+        "phonetic": "/ˈkɑːntent/",
+        "meaning": "内容；界面显示的文本、媒体或信息",
+        "example": "Content should stay readable during motion.",
+        "chineseExample": "在这句话中，“content”指界面内容。"
+      },
+      {
+        "term": "curve",
+        "phonetic": "/kɜːrv/",
+        "meaning": "弯道；道路方向发生明显变化的路段",
+        "example": "The cue appears before the next curve.",
+        "chineseExample": "在这句话中，“curve”指弯道。"
+      },
+      {
+        "term": "curvy",
+        "phonetic": "/ˈkɜːrvi/",
+        "meaning": "多弯的；包含较多弯道的",
+        "example": "Curvy roads may trigger low-motion mode.",
+        "chineseExample": "在这句话中，“curvy”表示多弯。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/ˈwɜːrdɪŋ/",
+        "meaning": "措辞；提示语的表达方式",
+        "example": "The wording should be calm and optional.",
+        "chineseExample": "在这句话中，“wording”指提示语措辞。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/kɑːm/",
+        "meaning": "平静的；不制造焦虑的",
+        "example": "A calm message supports passenger reassurance.",
+        "chineseExample": "在这句话中，“calm”表示平静。"
+      },
+      {
+        "term": "optional",
+        "phonetic": "/ˈɑːpʃənl/",
+        "meaning": "可选的；允许用户决定是否采用",
+        "example": "The prompt should be optional.",
+        "chineseExample": "在这句话中，“optional”表示可选择。"
+      },
+      {
+        "term": "ahead",
+        "phonetic": "/əˈhed/",
+        "meaning": "在前方；即将出现",
+        "example": "Curvy road ahead means the road will soon bend.",
+        "chineseExample": "在这句话中，“ahead”表示前方。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "控制权；用户对系统行为的决定能力",
+        "example": "The message gives control to the passenger.",
+        "chineseExample": "在这句话中，“control”指用户控制权。"
+      },
+      {
+        "term": "weak",
+        "phonetic": "/wiːk/",
+        "meaning": "虚弱的；这里指被提示语暗示能力不足",
+        "example": "The interface should not make the passenger feel weak.",
+        "chineseExample": "在这句话中，“weak”指被负面评价的感觉。"
+      },
+      {
+        "term": "blamed",
+        "phonetic": "/bleɪmd/",
+        "meaning": "被责备的；感觉系统把问题归咎于自己",
+        "example": "Comfort prompts should not make passengers feel blamed.",
+        "chineseExample": "在这句话中，“blamed”表示被责备。"
+      },
+      {
+        "term": "designers",
+        "phonetic": "/dɪˈzaɪnərz/",
+        "meaning": "设计师；负责定义体验和界面规则的人",
+        "example": "Designers need to protect task continuity.",
+        "chineseExample": "在这句话中，“designers”指体验设计人员。"
+      },
+      {
+        "term": "protect",
+        "phonetic": "/prəˈtekt/",
+        "meaning": "保护；避免某事受到干扰或损害",
+        "example": "The system should protect continuity.",
+        "chineseExample": "在这句话中，“protect”表示保护。"
+      },
+      {
+        "term": "continuity",
+        "phonetic": "/ˌkɑːntəˈnuːəti/",
+        "meaning": "连续性；任务状态和用户理解不被中断的特性",
+        "example": "Continuity helps passengers resume later.",
+        "chineseExample": "在这句话中，“continuity”指任务连续性。"
+      },
+      {
+        "term": "interface",
+        "phonetic": "/ˈɪntərfeɪs/",
+        "meaning": "界面；用户与系统交互的显示和控制层",
+        "example": "The interface may hide secondary panels.",
+        "chineseExample": "在这句话中，“interface”指座舱界面。"
+      },
+      {
+        "term": "hides",
+        "phonetic": "/haɪdz/",
+        "meaning": "隐藏；暂时不显示",
+        "example": "The interface hides secondary panels during heavy motion.",
+        "chineseExample": "在这句话中，“hides”表示隐藏。"
+      },
+      {
+        "term": "secondary",
+        "phonetic": "/ˈsekənderi/",
+        "meaning": "次要的；优先级低于核心任务的",
+        "example": "Secondary panels can wait until conditions improve.",
+        "chineseExample": "在这句话中，“secondary”表示次要。"
+      },
+      {
+        "term": "panels",
+        "phonetic": "/ˈpænlz/",
+        "meaning": "面板；界面中的功能区域",
+        "example": "Secondary panels should not crowd the screen.",
+        "chineseExample": "在这句话中，“panels”指功能面板。"
+      },
+      {
+        "term": "heavy",
+        "phonetic": "/ˈhevi/",
+        "meaning": "强烈的；负荷或运动程度较高的",
+        "example": "Heavy motion can make reading difficult.",
+        "chineseExample": "在这句话中，“heavy”表示运动程度较高。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/prɪˈzɜːrv/",
+        "meaning": "保留；维持原有状态",
+        "example": "The system should preserve the passenger’s place.",
+        "chineseExample": "在这句话中，“preserve”表示保留。"
+      },
+      {
+        "term": "place",
+        "phonetic": "/pleɪs/",
+        "meaning": "位置；用户在任务或界面中的当前状态",
+        "example": "The interface should restore the passenger’s place.",
+        "chineseExample": "在这句话中，“place”指任务位置。"
+      },
+      {
+        "term": "restore",
+        "phonetic": "/rɪˈstɔːr/",
+        "meaning": "恢复；让先前状态重新出现",
+        "example": "The panel should restore when conditions improve.",
+        "chineseExample": "在这句话中，“restore”表示恢复。"
+      },
+      {
+        "term": "conditions",
+        "phonetic": "/kənˈdɪʃnz/",
+        "meaning": "条件；道路、车速和车内状态等环境因素",
+        "example": "Conditions may improve after the curve.",
+        "chineseExample": "在这句话中，“conditions”指情境条件。"
+      },
+      {
+        "term": "improve",
+        "phonetic": "/ɪmˈpruːv/",
+        "meaning": "改善；变得更好",
+        "example": "The interface can restore when conditions improve.",
+        "chineseExample": "在这句话中，“improve”表示改善。"
+      },
+      {
+        "term": "personal",
+        "phonetic": "/ˈpɜːrsənl/",
+        "meaning": "个人的；因人而异的",
+        "example": "Personal comfort thresholds matter.",
+        "chineseExample": "在这句话中，“personal”表示个人化。"
+      },
+      {
+        "term": "matter",
+        "phonetic": "/ˈmætər/",
+        "meaning": "重要；有影响",
+        "example": "Comfort thresholds matter because passengers differ.",
+        "chineseExample": "在这句话中，“matter”表示重要。"
+      },
+      {
+        "term": "enjoy",
+        "phonetic": "/ɪnˈdʒɔɪ/",
+        "meaning": "喜欢；从某体验中获得愉悦",
+        "example": "One passenger may enjoy dynamic map movement.",
+        "chineseExample": "在这句话中，“enjoy”表示喜欢。"
+      },
+      {
+        "term": "dynamic",
+        "phonetic": "/daɪˈnæmɪk/",
+        "meaning": "动态的；会随状态变化或移动的",
+        "example": "Dynamic map movement may feel comfortable to some users.",
+        "chineseExample": "在这句话中，“dynamic”表示动态。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/mæp/",
+        "meaning": "地图；导航中的道路和位置显示",
+        "example": "Map movement should adapt to comfort needs.",
+        "chineseExample": "在这句话中，“map”指导航地图。"
+      },
+      {
+        "term": "movement",
+        "phonetic": "/ˈmuːvmənt/",
+        "meaning": "移动；位置或画面的变化",
+        "example": "Movement on the screen can affect comfort.",
+        "chineseExample": "在这句话中，“movement”表示画面移动。"
+      },
+      {
+        "term": "fixed",
+        "phonetic": "/fɪkst/",
+        "meaning": "固定的；不随意移动的",
+        "example": "Another passenger may prefer a fixed view.",
+        "chineseExample": "在这句话中，“fixed”表示固定。"
+      },
+      {
+        "term": "view",
+        "phonetic": "/vjuː/",
+        "meaning": "视图；用户看到的界面呈现方式",
+        "example": "A fixed view can reduce discomfort.",
+        "chineseExample": "在这句话中，“view”指显示视图。"
+      },
+      {
+        "term": "therefore",
+        "phonetic": "/ˈðerfɔːr/",
+        "meaning": "因此；表示结论",
+        "example": "Good comfort design is therefore adaptive.",
+        "chineseExample": "在这句话中，“therefore”用于引出结论。"
+      },
+      {
+        "term": "transparent",
+        "phonetic": "/trænsˈpærənt/",
+        "meaning": "透明的；能让用户理解系统为何这样做",
+        "example": "Transparent behavior helps passengers trust the system.",
+        "chineseExample": "在这句话中，“transparent”表示可解释。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "可撤销的；用户可以恢复或取消的",
+        "example": "Comfort changes should be reversible.",
+        "chineseExample": "在这句话中，“reversible”表示可撤销。"
+      },
+      {
+        "term": "discomfort",
+        "phonetic": "/dɪsˈkʌmfərt/",
+        "meaning": "不适；身体或心理上的不舒服",
+        "example": "The goal is to reduce discomfort.",
+        "chineseExample": "在这句话中，“discomfort”指不适感。"
+      },
+      {
+        "term": "entertainment",
+        "phonetic": "/ˌentərˈteɪnmənt/",
+        "meaning": "娱乐；车内媒体和休闲内容",
+        "example": "Entertainment tasks should remain understandable.",
+        "chineseExample": "在这句话中，“entertainment”指娱乐任务。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃn/",
+        "meaning": "导航；路线规划和引导功能",
+        "example": "Navigation must stay clear in low-motion mode.",
+        "chineseExample": "在这句话中，“navigation”指导航功能。"
+      },
+      {
+        "term": "climate",
+        "phonetic": "/ˈklaɪmət/",
+        "meaning": "空调；车内温度和空气控制系统",
+        "example": "Climate tasks should stay easy to adjust.",
+        "chineseExample": "在这句话中，“climate”指空调系统。"
+      },
+      {
+        "term": "tasks",
+        "phonetic": "/tæsks/",
+        "meaning": "任务；用户想完成的操作目标",
+        "example": "Comfort design should keep tasks understandable.",
+        "chineseExample": "在这句话中，“tasks”指操作任务。"
+      },
+      {
+        "term": "understandable",
+        "phonetic": "/ˌʌndərˈstændəbl/",
+        "meaning": "可理解的；用户容易明白的",
+        "example": "The interface should keep tasks understandable.",
+        "chineseExample": "在这句话中，“understandable”表示容易理解。"
+      },
+      {
+        "term": "severe",
+        "phonetic": "/sɪˈvɪr/",
+        "meaning": "严重的；程度高且可能影响舒适或安全",
+        "example": "Motion sickness mitigation should begin before the passenger feels severe discomfort.",
+        "chineseExample": "在这句话中，“severe”表示不适程度严重。"
+      },
+      {
+        "term": "comfort-aware",
+        "phonetic": "/ˈkʌmfərt əˈwer/",
+        "meaning": "舒适感知的；能根据乘员舒适状态调整的",
+        "example": "Comfort-aware interaction adapts screen motion when the road becomes winding.",
+        "chineseExample": "在这句话中，“comfort-aware”表示系统关注舒适状态。"
+      },
+      {
+        "term": "large",
+        "phonetic": "/lɑːrdʒ/",
+        "meaning": "大的；尺寸、幅度或范围较大的",
+        "example": "High vestibular load makes large animated menus harder to tolerate.",
+        "chineseExample": "在这句话中，“large”指菜单动效幅度较大。"
+      },
+      {
+        "term": "animated",
+        "phonetic": "/ˈænɪmeɪtɪd/",
+        "meaning": "带动画的；具有动态视觉变化的",
+        "example": "Animated menus can be harder to tolerate during sharp turns.",
+        "chineseExample": "在这句话中，“animated”表示带有动画效果。"
+      },
+      {
+        "term": "menus",
+        "phonetic": "/ˈmenjuːz/",
+        "meaning": "菜单；界面中组织功能选项的列表或面板",
+        "example": "Large animated menus may increase discomfort.",
+        "chineseExample": "在这句话中，“menus”指界面菜单。"
+      },
+      {
+        "term": "harder",
+        "phonetic": "/ˈhɑːrdər/",
+        "meaning": "更难的；难度或负担更高的",
+        "example": "Motion can make detailed controls harder to tolerate.",
+        "chineseExample": "在这句话中，“harder”表示更难承受。"
+      },
+      {
+        "term": "tolerate",
+        "phonetic": "/ˈtɑːləreɪt/",
+        "meaning": "忍受；在不适或压力下仍能接受",
+        "example": "Passengers may not tolerate rapid screen motion.",
+        "chineseExample": "在这句话中，“tolerate”表示忍受或接受。"
+      },
+      {
+        "term": "visual-motion",
+        "phonetic": "/ˈvɪʒuəl ˈmoʊʃn/",
+        "meaning": "视觉运动的；与屏幕运动和视觉感知有关的",
+        "example": "The HMI can reduce visual-motion conflict.",
+        "chineseExample": "在这句话中，“visual-motion”表示视觉运动相关。"
+      },
+      {
+        "term": "reads",
+        "phonetic": "/riːdz/",
+        "meaning": "阅读；查看并理解文字内容",
+        "example": "A passenger reads a scrolling list during sharp turns.",
+        "chineseExample": "在这句话中，“reads”表示阅读界面内容。"
+      },
+      {
+        "term": "scrolling",
+        "phonetic": "/ˈskroʊlɪŋ/",
+        "meaning": "滚动的；内容上下或左右移动显示的",
+        "example": "Scrolling lists can increase visual-motion conflict.",
+        "chineseExample": "在这句话中，“scrolling”指滚动显示。"
+      },
+      {
+        "term": "sharp",
+        "phonetic": "/ʃɑːrp/",
+        "meaning": "急剧的；方向或强度变化明显的",
+        "example": "Sharp turns can raise vestibular load.",
+        "chineseExample": "在这句话中，“sharp”表示急转弯的。"
+      },
+      {
+        "term": "series",
+        "phonetic": "/ˈsɪriːz/",
+        "meaning": "一连串；连续发生的一组事物",
+        "example": "A predictive comfort cue can warn before a series of curves.",
+        "chineseExample": "在这句话中，“series”指连续弯道。"
+      },
+      {
+        "term": "motion-adaptive",
+        "phonetic": "/ˈmoʊʃn əˈdæptɪv/",
+        "meaning": "运动自适应的；根据车辆动态调整界面的",
+        "example": "A motion-adaptive layout hides secondary cards when acceleration changes quickly.",
+        "chineseExample": "在这句话中，“motion-adaptive”表示根据运动状态调整。"
+      },
+      {
+        "term": "cards",
+        "phonetic": "/kɑːrdz/",
+        "meaning": "卡片；界面中承载一组信息的小模块",
+        "example": "Secondary cards can be hidden during heavy motion.",
+        "chineseExample": "在这句话中，“cards”指信息卡片。"
+      },
+      {
+        "term": "adjustable",
+        "phonetic": "/əˈdʒʌstəbl/",
+        "meaning": "可调节的；可以按用户或情境修改的",
+        "example": "The comfort threshold should be adjustable for different passengers.",
+        "chineseExample": "在这句话中，“adjustable”表示可调节。"
+      },
+      {
+        "term": "low-motion",
+        "phonetic": "/loʊ ˈmoʊʃn/",
+        "meaning": "低动效的；减少动画和视觉移动的",
+        "example": "Low-motion mode can replace carousel browsing.",
+        "chineseExample": "在这句话中，“low-motion”表示低动效。"
+      },
+      {
+        "term": "carousel",
+        "phonetic": "/ˌkærəˈsel/",
+        "meaning": "轮播；内容按卡片或页面循环切换的浏览方式",
+        "example": "Low-motion mode can replace carousel browsing with a list.",
+        "chineseExample": "在这句话中，“carousel”指轮播式浏览。"
+      },
+      {
+        "term": "step-by-step",
+        "phonetic": "/step baɪ step/",
+        "meaning": "分步的；按顺序逐步呈现的",
+        "example": "A step-by-step list can be easier to read in motion.",
+        "chineseExample": "在这句话中，“step-by-step”表示分步呈现。"
+      },
+      {
+        "term": "thresholds",
+        "phonetic": "/ˈθreʃhoʊldz/",
+        "meaning": "阈值；多个触发边界或状态界限",
+        "example": "Personal comfort thresholds matter because passengers differ.",
+        "chineseExample": "在这句话中，“thresholds”指个人舒适阈值。"
+      },
+      {
+        "term": "prefers",
+        "phonetic": "/prɪˈfɜːrz/",
+        "meaning": "更喜欢；在多个选项中倾向于某一个",
+        "example": "Another passenger prefers a fixed view.",
+        "chineseExample": "在这句话中，“prefers”表示更偏好。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing cockpit interfaces for comfort during motion",
+        "text": "Motion sickness mitigation in an intelligent cockpit starts with respect for the passenger’s body, not only with screen settings. When the vehicle enters winding roads, strong acceleration, or frequent braking, the HMI can reduce visual-motion conflict by slowing animations, shortening lists, and keeping key information near a stable horizon reference. A comfort-aware interaction model should combine vehicle signals with passenger choices. For example, if vestibular load rises while a passenger is reading media controls, the cockpit may switch to low-motion mode, pause auto-scrolling content, and offer a predictive comfort cue before the next curve. The message should be calm and optional: “Curvy road ahead. Reduce screen motion?” This wording gives control without making the passenger feel weak or blamed. Designers also need to protect continuity. If the interface hides secondary panels during heavy motion, it should preserve the passenger’s place and restore it when conditions improve. Personal comfort thresholds matter because one passenger may enjoy dynamic map movement while another prefers a fixed view. Good comfort design is therefore adaptive, transparent, and reversible. It reduces discomfort while keeping entertainment, navigation, and climate tasks understandable.",
+        "translation": "智能座舱中的动晕缓解首先要尊重乘客的身体感受，而不只是调整屏幕设置。当车辆进入弯曲道路、强加速或频繁制动场景时，HMI 可以通过放慢动画、缩短列表，并将关键信息保持在稳定的地平线参照附近，来减少视觉运动冲突。舒适感知交互模型应结合车辆信号和乘客选择。例如当前庭负荷升高且乘客正在查看媒体控制时，座舱可以切换到低动效模式，暂停自动滚动内容，并在下一个弯道前提供预测性舒适提示。提示语应平静且可选：“前方弯道，是否减少屏幕动效？”这种措辞给乘客控制权，而不会让乘客感到虚弱或被责备。设计师还需要保护连续性。如果界面在剧烈运动期间隐藏次要面板，它应保留乘客的位置，并在条件改善时恢复。个人舒适阈值很重要，因为一位乘客可能喜欢动态地图运动，而另一位乘客更偏好固定视图。因此，优秀的舒适设计应是自适应、透明且可撤销的。它在减少不适的同时，让娱乐、导航和空调任务仍然容易理解。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Motion sickness mitigation in an intelligent cockpit starts with respect for the passenger’s body, not only with screen settings.",
+        "translation": "智能座舱中的动晕缓解首先要尊重乘客的身体感受，而不只是调整屏幕设置。",
+        "breakdown": "starts with 表示设计起点；not only with screen settings 强调问题不只是显示设置，而是乘员身体体验。"
+      },
+      {
+        "sentence": "A comfort-aware interaction model should combine vehicle signals with passenger choices.",
+        "translation": "舒适感知交互模型应结合车辆信号和乘客选择。",
+        "breakdown": "should combine...with... 用来表达设计原则；vehicle signals 和 passenger choices 是两个必须同时考虑的信息源。"
+      },
+      {
+        "sentence": "This wording gives control without making the passenger feel weak or blamed.",
+        "translation": "这种措辞给乘客控制权，而不会让乘客感到虚弱或被责备。",
+        "breakdown": "gives control 是核心收益；without making... 表示避免负面情绪和污名化。"
+      },
+      {
+        "sentence": "Good comfort design is therefore adaptive, transparent, and reversible.",
+        "translation": "因此，优秀的舒适设计应是自适应、透明且可撤销的。",
+        "breakdown": "therefore 连接前文论证；adaptive, transparent, and reversible 三个形容词概括舒适设计原则。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 motion sickness mitigation、visual-motion conflict、comfort threshold 和 low-motion mode。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "task": "完整跟读英文长文，再用中文复述为什么舒适设计既要降低动效，又要保留任务连续性。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "task": "用 starts with respect for... 和 should combine...with... 各写一句智能座舱舒适交互建议。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "task": "用英文向评审说明：车辆进入连续弯道时，系统如何预测动晕风险、降低屏幕运动并保留乘客控制权。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-22-distraction-recovery-and-glance-safe-resumption",
     "date": "2026-09-22",
     "title": "Distraction recovery and glance-safe task resumption in intelligent cockpits",
