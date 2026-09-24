@@ -153,6 +153,13 @@
     "The word accountable appears in today's cockpit summary practice.",
     "在这个语境中，“accountable”可理解为“可追责的”。"
   ],
+  "accumulates": [
+    "/əˈkjuːmjəleɪts/",
+    "积累；逐渐增加",
+    "",
+    "Risk evidence accumulates across several signals.",
+    "风险证据会在多个信号中逐渐积累。"
+  ],
   "accuracy": [
     "/ˈækjərəsi/",
     "准确性；系统结果接近真实状态的程度",
@@ -255,6 +262,13 @@
     "",
     "The word actionable appears in today's cockpit summary practice.",
     "在这个语境中，“actionable”可理解为“可执行的”。"
+  ],
+  "actionable advice": [
+    "/ˈækʃənəbl ədˈvaɪs/",
+    "可执行建议；用户能马上理解并采取行动的建议",
+    "",
+    "Actionable advice is more useful than a vague safety reminder.",
+    "可执行建议比模糊的安全提醒更有用。"
   ],
   "actions": [
     "/ˈæk.ʃənz/",
@@ -363,6 +377,13 @@
     "",
     "Adaptive brightness keeps ambient feedback visible in daylight and comfortable at night.",
     "自适应亮度让环境式反馈在白天可见、夜间舒适。"
+  ],
+  "adaptive coaching": [
+    "/əˈdæptɪv ˈkoʊtʃɪŋ/",
+    "自适应指导；根据驾驶情境和用户反应调整提示语气、频率和内容",
+    "",
+    "Adaptive coaching can suggest a break after repeated lane drift events.",
+    "自适应指导可以在多次车道偏移后建议休息。"
   ],
   "adaptive comfort loop": [
     "/əˈdæptɪv ˈkʌmfərt luːp/",
@@ -488,6 +509,13 @@
     "",
     "Advanced options can stay behind a second tap.",
     "高级选项可以放在第二次点击之后。"
+  ],
+  "advice": [
+    "/ədˈvaɪs/",
+    "建议；系统给出的可执行行动提示",
+    "",
+    "The cockpit should give an explainable reason and actionable advice.",
+    "在这句话中，“advice”表示具体建议。"
   ],
   "affect": [
     "/əˈfekt/",
@@ -1392,6 +1420,20 @@
     "Attention support should be the purpose of affective cockpit features.",
     "注意力支持应是情感座舱功能的目的。"
   ],
+  "attention-aware": [
+    "/əˈtenʃn əˈwer/",
+    "注意力感知的；能够根据注意状态调整交互的",
+    "",
+    "An attention-aware nudge should guide the driver without sounding like an alarm.",
+    "在这句话中，“attention-aware”表示提示会根据注意状态调整。"
+  ],
+  "attention-aware nudge": [
+    "/əˈtenʃn əˈwer nʌdʒ/",
+    "注意力感知微提示；根据驾驶者注意状态提供轻量、非强制的提醒",
+    "",
+    "An attention-aware nudge should guide the driver without sounding like an alarm.",
+    "注意力感知微提示应引导驾驶者，而不是听起来像警报。"
+  ],
   "attribution": [
     "/ˌætrɪˈbjuːʃn/",
     "归因；说明来源或原因",
@@ -1470,6 +1512,13 @@
     "Driver state awareness helps the cockpit decide whether a prompt should be visual, auditory, or delayed.",
     "在这句话中，“auditory”可理解为“听觉的, 听觉器官的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "auditory cue": [
+    "/ˈɔːdətɔːri kjuː/",
+    "听觉线索；通过声音传达状态、提示或警告的信号",
+    "",
+    "An auditory cue can replace a long visual message.",
+    "听觉线索可以替代较长的视觉消息。"
   ],
   "auditory feedback": [
     "/ˈɔːdətɔːri ˈfiːdbæk/",
@@ -2127,6 +2176,13 @@
     "Braking may raise passenger discomfort.",
     "在这句话中，“braking”指制动。"
   ],
+  "break": [
+    "/breɪk/",
+    "休息；从驾驶或任务中短暂恢复精力",
+    "",
+    "Adaptive coaching can suggest a break after repeated lane drift events.",
+    "在这句话中，“break”指短暂休息。"
+  ],
   "breathing": [
     "/ˈbriːðɪŋ/",
     "呼吸；可用于放松提示的身体节奏",
@@ -2458,6 +2514,13 @@
     "The cockpit should return to a calm status after recovery.",
     "恢复后座舱应回到平静状态。"
   ],
+  "calm tone": [
+    "/kɑːm toʊn/",
+    "平和语气；降低紧张感、避免责备的提示风格",
+    "",
+    "A calm tone prevents the feedback from feeling punitive.",
+    "平和语气能避免反馈让人感觉被惩罚。"
+  ],
   "calm update": [
     "/kɑːm ˈʌpdeɪt/",
     "平静更新；以低干扰方式告知用户状态变化的信息",
@@ -2585,6 +2648,13 @@
     "",
     "Capability boundary messages should be short, specific, and action oriented.",
     "能力边界提示应简短、具体，并指向可执行操作。"
+  ],
+  "capacity": [
+    "/kəˈpæsəti/",
+    "容量；可处理信息或任务的能力",
+    "",
+    "Capacity is limited during high workload.",
+    "在这句话中，“capacity”表示处理能力。"
   ],
   "car": [
     "/kɑː/",
@@ -2958,6 +3028,13 @@
     "在这句话中，“choice”可理解为“选择, 精选品, 选择权；精选的, 挑三拣四的, 上等的；该命令用于提示用户作出选择, 决定批处理文件的流程”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "choice set": [
+    "/tʃɔɪs set/",
+    "选择集合；界面一次呈现给用户的可选项范围",
+    "",
+    "The choice set should shrink during high workload.",
+    "高负荷时选择集合应缩小。"
+  ],
   "choices": [
     "/ˈt͡ʃɔɪsɪz/",
     "名词：选择, 精选品, 选择权；精选的, 挑三拣四的, 上等的；该命令用于提示用户作出选择, 决定批处理文件的流程",
@@ -2972,6 +3049,13 @@
     "",
     "The assistant may choose a private display.",
     "在这句话中，“choose”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "chooses": [
+    "/ˈtʃuːzɪz/",
+    "选择；choose 的第三人称单数形式",
+    "",
+    "The system chooses a moment that protects the driver’s glance budget.",
+    "在这句话中，“chooses”表示系统选择合适时刻。"
   ],
   "choosing": [
     "/ˈtʃuːzɪŋ/",
@@ -3087,6 +3171,13 @@
     "",
     "The cockpit uses clear label to make privacy decisions easier to understand.",
     "座舱使用“clear label”让隐私决策更容易理解。"
+  ],
+  "clearer": [
+    "/ˈklɪrər/",
+    "更清晰的；clear 的比较级",
+    "",
+    "Repeated long glances may justify a clearer warning.",
+    "在这句话中，“clearer”表示更明确。"
   ],
   "clearly": [
     "/ˈklɪɚli/",
@@ -3239,6 +3330,20 @@
     "A haptic affordance can reduce clutter by moving some feedback away from the screen.",
     "触觉可供性可以把部分反馈从屏幕转移出去，从而减少杂乱。"
   ],
+  "coaching": [
+    "/ˈkoʊtʃɪŋ/",
+    "指导；用建议帮助用户改善行为",
+    "",
+    "Coaching should be brief and actionable.",
+    "在这句话中，“coaching”指系统指导。"
+  ],
+  "coaching intensity": [
+    "/ˈkoʊtʃɪŋ ɪnˈtensəti/",
+    "指导强度；提示频率、语气和显著性的综合程度",
+    "",
+    "Coaching intensity should rise only when risk evidence accumulates.",
+    "只有当风险证据积累时，指导强度才应提高。"
+  ],
   "cockpit": [
     "/'kɒkpit/",
     "名词：驾驶员座舱, 战场",
@@ -3310,6 +3415,13 @@
     "",
     "Good cockpit HMI reduces cognitive reload after a phone call or safety interruption.",
     "优秀的座舱 HMI 会降低电话或安全中断后的认知重载。"
+  ],
+  "cognitive spare capacity": [
+    "/ˈkɑːɡnətɪv sper kəˈpæsəti/",
+    "认知余量；驾驶者处理额外信息的剩余心理资源",
+    "",
+    "The system should present secondary content only when cognitive spare capacity is available.",
+    "系统应只在有认知余量时呈现次要内容。"
   ],
   "cold": [
     "/按语境朗读/",
@@ -5879,6 +5991,13 @@
     "Contextual timing prevents a helpful offer from becoming a distraction.",
     "在这句话中，distraction 指会分散驾驶注意力的干扰。"
   ],
+  "distraction prevention": [
+    "/dɪˈstrækʃn prɪˈvenʃn/",
+    "分心预防；在分心变成风险前降低视觉、认知或操作负荷",
+    "",
+    "Distraction prevention starts with removing unnecessary choices at high speed.",
+    "分心预防始于在高速场景中移除不必要选项。"
+  ],
   "distraction recovery": [
     "/dɪˈstrækʃn rɪˈkʌvəri/",
     "分心恢复；驾驶员注意力离开后重新回到驾驶任务的过程",
@@ -5943,6 +6062,13 @@
     "",
     "The word dramatic appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“dramatic”用于表达相关系统状态或用户影响。"
+  ],
+  "drift": [
+    "/drɪft/",
+    "偏移；车辆或注意力逐渐离开目标位置",
+    "",
+    "Lane drift may show that the driver needs support.",
+    "在这句话中，“drift”表示车道偏移。"
   ],
   "drift warning": [
     "/drɪft ˈwɔːrnɪŋ/",
@@ -6050,6 +6176,13 @@
     "Driver identification should be fast, but the interface must still offer a manual correction path.",
     "驾驶员识别应足够快速，但界面仍必须提供手动纠正路径。"
   ],
+  "driver monitoring": [
+    "/ˈdraɪvər ˈmɑːnɪtərɪŋ/",
+    "驾驶者监测；识别视线、姿态、困倦或注意状态的系统能力",
+    "",
+    "Driver monitoring can detect repeated long glances.",
+    "驾驶者监测可以发现重复的长时间扫视。"
+  ],
   "driver monitoring system": [
     "/ˈdraɪvər ˈmɑːnɪtərɪŋ ˈsɪstəm/",
     "驾驶员监测系统；用于识别视线、姿态、困倦、分心和接管准备度的车内感知系统",
@@ -6077,6 +6210,13 @@
     "",
     "Driver response should be measured before the alert becomes more forceful.",
     "在警告变得更强之前，应先测量驾驶员响应。"
+  ],
+  "driver self-regulation": [
+    "/ˈdraɪvər ˌself ˌreɡjuˈleɪʃn/",
+    "驾驶者自我调节；让驾驶者理解状态并主动恢复注意力的能力",
+    "",
+    "Driver self-regulation improves when feedback is specific and respectful.",
+    "当反馈具体且尊重用户时，驾驶者自我调节会提升。"
   ],
   "driver state": [
     "/ˈdraɪvər steɪt/",
@@ -6972,6 +7112,13 @@
     "An explainable pause reduces frustration when the system delays a task.",
     "当系统延后任务时，可解释暂停会减少挫败感。"
   ],
+  "explainable reason": [
+    "/ɪkˈspleɪnəbl ˈriːzn/",
+    "可解释原因；系统能说明提示依据的简短理由",
+    "",
+    "An explainable reason helps the driver accept a coaching nudge.",
+    "可解释原因有助于驾驶者接受指导性微提示。"
+  ],
   "explainable recommendation": [
     "/ɪkˈspleɪnəbl ˌrekəmenˈdeɪʃn/",
     "可解释推荐；说明依据、风险和替代方案的系统建议",
@@ -7175,6 +7322,13 @@
     "Safety warnings, system failures, and time-sensitive navigation instructions may need sound, color, and a clear next action.",
     "在这句话中，“failures”可理解为“失败, 失败者, 不足, 缺乏, 破产”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fair": [
+    "/fer/",
+    "公平的；用户觉得合理、不带责备的",
+    "",
+    "A fair message avoids blaming the driver.",
+    "公平的消息避免责备驾驶者。"
   ],
   "fallback": [
     "/'fɒ:lbæk/",
@@ -7802,6 +7956,13 @@
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
+  "frequency": [
+    "/ˈfriːkwənsi/",
+    "频率；提示出现的次数或间隔",
+    "",
+    "Coaching frequency should decrease after the driver responds.",
+    "驾驶者响应后，指导频率应降低。"
+  ],
   "frequent": [
     "/ˈfɹiː.kwənt/",
     "形容词：时常发生的, 频繁的, 快速的；时常来访, 常常聚集, 常与...交往",
@@ -7926,6 +8087,13 @@
     "",
     "Gaze behavior can reveal whether a secondary task is pulling attention away from the road.",
     "视线行为可以反映次要任务是否正在把注意力从道路上拉走。"
+  ],
+  "gaze pattern": [
+    "/ɡeɪz ˈpætərn/",
+    "视线模式；驾驶者视线分布和停留时间的变化",
+    "",
+    "A changing gaze pattern can reveal rising distraction.",
+    "变化的视线模式可以暴露分心上升。"
   ],
   "general": [
     "/ˈd͡ʒɛn.(ə.)ɹəl/",
@@ -8411,6 +8579,13 @@
     "",
     "Haptic confirmation tells the driver that the climate control has changed without requiring a long glance.",
     "触觉确认能在不要求长时间注视的情况下告诉驾驶员空调控制已改变。"
+  ],
+  "haptic cue": [
+    "/ˈhæptɪk kjuː/",
+    "触觉线索；通过震动或力反馈传达提示",
+    "",
+    "A haptic cue can redirect attention without adding screen demand.",
+    "触觉线索可以在不增加屏幕需求的情况下重新引导注意力。"
   ],
   "haptic feedback": [
     "/ˈhæptɪk ˈfiːdbæk/",
@@ -9763,6 +9938,13 @@
     "An irreversible action requires explicit consent.",
     "不可逆动作需要明确同意。"
   ],
+  "irritation": [
+    "/ˌɪrɪˈteɪʃn/",
+    "烦躁；用户因过度提示或不合时宜提示产生的不满",
+    "",
+    "Irritation rises when the system repeats obvious advice.",
+    "当系统重复显而易见的建议时，烦躁会上升。"
+  ],
   "is": [
     "/bi:/",
     "动词：是, 表示, 在",
@@ -9895,6 +10077,13 @@
     "Each step should explain why the current modality mix is justified.",
     "每一步都应解释为什么当前模态组合是有依据的。"
   ],
+  "justify": [
+    "/ˈdʒʌstɪfaɪ/",
+    "证明有理由；说明某种升级或动作是合理的",
+    "",
+    "Repeated long glances and lane drift may justify a clearer warning.",
+    "在这句话中，“justify”表示证明更明确警告是合理的。"
+  ],
   "keep": [
     "/ki:p/",
     "动词：生计, 维持, 保持；保持, 保存, 遵守, 看守, 整理, 维持, 履行, 经营, 拘留, 记帐；保持, 继续不断",
@@ -10007,6 +10196,13 @@
     "Lane complexity should influence whether the interface resumes a task.",
     "车道复杂度应影响界面是否续接任务。"
   ],
+  "lane drift": [
+    "/leɪn drɪft/",
+    "车道偏移；车辆相对车道中心逐渐偏离",
+    "",
+    "Lane drift may trigger a coaching message before a warning.",
+    "车道偏移可能先触发指导消息，再触发警告。"
+  ],
   "lane guidance": [
     "/leɪn ˈɡaɪdəns/",
     "车道引导；提示驾驶员选择或保持正确车道的信息",
@@ -10034,6 +10230,13 @@
     "",
     "During a lane merge, the cockpit should avoid low-value prompts.",
     "并线期间，座舱应避免低价值提示。"
+  ],
+  "lane position": [
+    "/leɪn pəˈzɪʃn/",
+    "车道位置；车辆在车道内相对中心线的位置",
+    "",
+    "Lane position can help confirm whether distraction is affecting control.",
+    "车道位置有助于确认分心是否影响控制。"
   ],
   "lane-level": [
     "/暂无音标/",
@@ -11067,6 +11270,13 @@
     "The maneuver window should be shown with distance, time, and a simple visual cue.",
     "操作窗口应通过距离、时间和简单视觉提示来呈现。"
   ],
+  "maneuvers": [
+    "/məˈnuːvərz/",
+    "驾驶操作；变道、转弯、汇入等动作的复数形式",
+    "",
+    "The interface should protect the driver’s glance budget during complex maneuvers.",
+    "在这句话中，“maneuvers”表示多个复杂驾驶操作。"
+  ],
   "manual": [
     "/ˈmænjuəl/",
     "手动的；需要手部操作的",
@@ -11549,6 +11759,13 @@
     "Micro-feedback is useful when a touch target is small or the cabin is noisy.",
     "当触控目标较小或车内较吵时，微反馈很有用。"
   ],
+  "micro-interruption": [
+    "/ˈmaɪkroʊ ˌɪntəˈrʌpʃn/",
+    "微打断；短暂且轻量的提示，用于阻止风险升级而不打断主任务",
+    "",
+    "A micro-interruption can pause a nonessential message until the road is calmer.",
+    "微打断可以把非必要消息暂停到路况更平稳时。"
+  ],
   "micro-summary": [
     "/ˈmaɪkroʊ ˈsʌməri/",
     "微摘要；用极短文本概括中断前状态或下一步动作",
@@ -11789,6 +12006,13 @@
     "",
     "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
     "在这句话中，“modal”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "modal mix": [
+    "/ˈmoʊdl mɪks/",
+    "模态组合；视觉、声音、触觉等提示方式的搭配",
+    "",
+    "The modal mix should match urgency and driver workload.",
+    "模态组合应匹配紧急程度和驾驶负荷。"
   ],
   "modality": [
     "/moʊˈdæləti/",
@@ -12521,6 +12745,20 @@
     "Nonessential controls can be hidden in heavy traffic.",
     "非必要控件可以在拥堵交通中隐藏。"
   ],
+  "nonurgent": [
+    "/nɑːnˈɜːrdʒənt/",
+    "非紧急的；可以延迟处理而不影响安全的",
+    "",
+    "A nonurgent prompt should wait until the maneuver ends.",
+    "在这句话中，“nonurgent”表示非紧急。"
+  ],
+  "nonurgent prompt": [
+    "/nɑːnˈɜːrdʒənt prɑːmpt/",
+    "非紧急提示；可以延迟而不会影响安全的提醒",
+    "",
+    "A nonurgent prompt should wait until the maneuver ends.",
+    "非紧急提示应等到操作结束后再出现。"
+  ],
   "nonverbal": [
     "/ˌnɑːnˈvɜːrbl/",
     "非语言的；不用口头语言表达的",
@@ -12635,6 +12873,13 @@
     "",
     "The prompt explains why it appears now.",
     "提示解释为什么现在出现。"
+  ],
+  "nudge": [
+    "/nʌdʒ/",
+    "微提示；轻量引导行为的小提醒",
+    "",
+    "A soft nudge is enough when the risk is still low.",
+    "在这句话中，“nudge”表示轻量提醒。"
   ],
   "number": [
     "/按语境朗读/",
@@ -14326,6 +14571,13 @@
     "Clear wording can prevent misunderstanding.",
     "清晰措辞可以防止误解。"
   ],
+  "prevention": [
+    "/prɪˈvenʃn/",
+    "预防；在问题发生前降低风险",
+    "",
+    "Prevention is easier than emergency recovery.",
+    "在这句话中，“prevention”表示提前防止风险。"
+  ],
   "prevents": [
     "/pri'vent/",
     "动词：预防, 防止, 阻止, 妨碍",
@@ -14397,6 +14649,13 @@
     "",
     "Primary driving information must stay visible during resumption.",
     "续接期间主要驾驶信息必须保持可见。"
+  ],
+  "primary focus": [
+    "/ˈpraɪmeri ˈfoʊkəs/",
+    "主要焦点；当前最重要的注意对象",
+    "",
+    "Primary focus belongs on traffic, not menus.",
+    "主要焦点应放在交通上，而不是菜单上。"
   ],
   "principle": [
     "/ˈprɪnsəpl/",
@@ -14821,6 +15080,13 @@
     "A single stress cue is not proof of emotion.",
     "单一压力线索不是情绪证据。"
   ],
+  "proportional": [
+    "/prəˈpɔːrʃənl/",
+    "成比例的；提示强度与风险程度匹配",
+    "",
+    "Feedback should be proportional to the detected risk.",
+    "反馈强度应与检测到的风险成比例。"
+  ],
   "proposed": [
     "/待补充/",
     "语境词：proposed；用于理解今天健康舒适提示主题中的英文表达",
@@ -14887,6 +15153,13 @@
     "",
     "Pulse should support a safer and clearer cockpit experience.",
     "在这句话中，“pulse”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "punishment": [
+    "/ˈpʌnɪʃmənt/",
+    "惩罚；让用户感觉被责备或处罚的反馈方式",
+    "",
+    "The goal is distraction prevention, not punishment.",
+    "在这句话中，“punishment”表示惩罚式反馈。"
   ],
   "purchase": [
     "/ˈpɜːrtʃəs/",
@@ -16137,6 +16410,13 @@
     "在这句话中，“respectful”可理解为“表示尊敬的, 有礼貌的, 谦恭的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "respectful feedback": [
+    "/rɪˈspektfl ˈfiːdbæk/",
+    "尊重式反馈；避免责备，用事实和可操作建议帮助驾驶者恢复状态",
+    "",
+    "Respectful feedback says what changed and what the driver can do next.",
+    "尊重式反馈会说明发生了什么变化以及驾驶者下一步能做什么。"
+  ],
   "respectful interaction": [
     "/rɪˈspektfl ˌɪntərˈækʃn/",
     "尊重式交互；保留用户选择权并避免冒犯的交互方式",
@@ -16569,6 +16849,13 @@
     "在这句话中，“risk”可理解为“冒险, 危险, 保险额；冒...的危险, 冒险干”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "risk evidence": [
+    "/rɪsk ˈevɪdəns/",
+    "风险证据；支持系统判断存在风险的行为或环境信号",
+    "",
+    "Risk evidence may include long glances and unstable lane position.",
+    "风险证据可能包括长时间扫视和不稳定车道位置。"
+  ],
   "risk level": [
     "/rɪsk ˈlevl/",
     "风险等级；用于区分信息紧急性和安全影响的级别",
@@ -16596,6 +16883,20 @@
     "",
     "Risk-based confirmation keeps simple tasks fast and critical tasks safe.",
     "基于风险的确认让简单任务保持快速，让关键任务保持安全。"
+  ],
+  "risk-sensitive": [
+    "/rɪsk ˈsensətɪv/",
+    "风险敏感的；根据风险高低调整时机或强度的",
+    "",
+    "Risk-sensitive timing avoids coaching during a lane change.",
+    "在这句话中，“risk-sensitive”表示提示时机会考虑风险。"
+  ],
+  "risk-sensitive timing": [
+    "/rɪsk ˈsensətɪv ˈtaɪmɪŋ/",
+    "风险敏感时机；根据速度、道路复杂度和驾驶负荷选择提示时刻",
+    "",
+    "Risk-sensitive timing avoids coaching during a lane change.",
+    "风险敏感时机会避免在变道过程中进行指导。"
   ],
   "risky": [
     "/'riski/",
@@ -17468,6 +17769,13 @@
     "Deferred tasks belong in a secondary area.",
     "延后任务应放在次要区域。"
   ],
+  "secondary content": [
+    "/ˈsekənderi ˈkɑːntent/",
+    "次要内容；不影响即时安全的界面信息",
+    "",
+    "Secondary content should be delayed during a turn.",
+    "转弯时应延迟次要内容。"
+  ],
   "secondary details": [
     "/ˈsekənderi dɪˈteɪlz/",
     "次要细节；支持理解但不必立刻显示的信息",
@@ -17531,6 +17839,13 @@
     "",
     "The driver selects an energy route.",
     "驾驶员选择一条能耗路线。"
+  ],
+  "self-regulation": [
+    "/ˌself ˌreɡjuˈleɪʃn/",
+    "自我调节；用户主动调整行为或状态的能力",
+    "",
+    "Self-regulation improves when feedback is understandable.",
+    "在这句话中，“self-regulation”表示自我调节能力。"
   ],
   "semantic": [
     "/sɪˈmæntɪk/",
@@ -18430,6 +18745,13 @@
     "An escalation ladder can move from a soft tone to a visual warning and then to a takeover request.",
     "在这句话中，“soft”表示提示音较轻柔。"
   ],
+  "soft cue": [
+    "/sɔːft kjuː/",
+    "柔和提示；低强度、不惊扰的提醒",
+    "",
+    "A soft cue can start the escalation ladder.",
+    "柔和提示可以作为升级阶梯的起点。"
+  ],
   "soft pulse": [
     "/sɔːft pʌls/",
     "柔和脉冲；短暂、低强度的灯光或触觉变化",
@@ -18507,6 +18829,13 @@
     "",
     "A source label helps the driver check where the summary came from.",
     "来源标签帮助驾驶员核对摘要来自哪里。"
+  ],
+  "spare": [
+    "/sper/",
+    "剩余的；尚未被占用的",
+    "",
+    "Spare capacity can disappear in dense traffic.",
+    "在这句话中，“spare”表示剩余。"
   ],
   "spare attention": [
     "/sper əˈtenʃn/",
@@ -19436,6 +19765,13 @@
     "",
     "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
     "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
+  ],
+  "suppressed": [
+    "/səˈprest/",
+    "被抑制的；被暂时隐藏、延迟或降低强度的",
+    "",
+    "During dense traffic, the same nonurgent prompt should be suppressed.",
+    "在这句话中，“suppressed”表示提示应被暂时抑制。"
   ],
   "suppression": [
     "/səˈpreʃn/",
@@ -20812,6 +21148,13 @@
     "Unless can be understood in the cockpit design context.",
     "在这句话中，“unless”可结合座舱设计语境理解。"
   ],
+  "unmistakable": [
+    "/ˌʌnmɪˈsteɪkəbl/",
+    "清晰明确的；不会被误解的",
+    "",
+    "A critical warning must be unmistakable.",
+    "关键警告必须清晰明确。"
+  ],
   "unnecessary": [
     "/ʌnˈnesəseri/",
     "不必要的；可通过更好设计避免的",
@@ -20934,6 +21277,13 @@
     "",
     "An urgency ladder helps designers decide when a calm reminder must become an interruptive alert.",
     "紧急度阶梯帮助设计师判断平静提醒何时必须变成打断式警告。"
+  ],
+  "urgency level": [
+    "/ˈɜːrdʒənsi ˈlevl/",
+    "紧急等级；提示需要被处理的时间压力",
+    "",
+    "Urgency level decides whether the system nudges or warns.",
+    "紧急等级决定系统是微提示还是警告。"
   ],
   "urgent": [
     "/'ә:dʒәnt/",
@@ -22043,6 +22393,13 @@
     "",
     "Workload control keeps the summary short during dense traffic.",
     "负荷控制让密集交通中的摘要保持简短。"
+  ],
+  "workload estimate": [
+    "/ˈwɜːrkloʊd ˈestɪmət/",
+    "负荷估计；系统对当前驾驶任务复杂度和心理负担的判断",
+    "",
+    "A workload estimate helps delay nonurgent prompts.",
+    "负荷估计有助于延迟非紧急提示。"
   ],
   "workload-aware timing": [
     "/ˈwɜːrkloʊd əˈwer ˈtaɪmɪŋ/",

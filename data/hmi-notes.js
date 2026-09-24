@@ -1,5 +1,851 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-24-attention-aware-nudges-and-distraction-prevention",
+    "date": "2026-09-24",
+    "title": "Attention-aware nudges and distraction prevention in intelligent cockpits",
+    "topic": "智能座舱注意力感知微提示与分心预防",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明注意力感知微提示、分心预防、自适应指导、扫视预算、风险敏感时机和尊重式反馈。",
+    "words": [
+      {
+        "term": "attention-aware nudge",
+        "phonetic": "/əˈtenʃn əˈwer nʌdʒ/",
+        "meaning": "注意力感知微提示；根据驾驶者注意状态提供轻量、非强制的提醒",
+        "example": "An attention-aware nudge should guide the driver without sounding like an alarm.",
+        "chineseExample": "注意力感知微提示应引导驾驶者，而不是听起来像警报。"
+      },
+      {
+        "term": "distraction prevention",
+        "phonetic": "/dɪˈstrækʃn prɪˈvenʃn/",
+        "meaning": "分心预防；在分心变成风险前降低视觉、认知或操作负荷",
+        "example": "Distraction prevention starts with removing unnecessary choices at high speed.",
+        "chineseExample": "分心预防始于在高速场景中移除不必要选项。"
+      },
+      {
+        "term": "adaptive coaching",
+        "phonetic": "/əˈdæptɪv ˈkoʊtʃɪŋ/",
+        "meaning": "自适应指导；根据驾驶情境和用户反应调整提示语气、频率和内容",
+        "example": "Adaptive coaching can suggest a break after repeated lane drift events.",
+        "chineseExample": "自适应指导可以在多次车道偏移后建议休息。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶者可安全离开道路视线的有限时间或次数",
+        "example": "The interface should protect the driver’s glance budget during complex maneuvers.",
+        "chineseExample": "界面应在复杂操作期间保护驾驶者的扫视预算。"
+      },
+      {
+        "term": "micro-interruption",
+        "phonetic": "/ˈmaɪkroʊ ˌɪntəˈrʌpʃn/",
+        "meaning": "微打断；短暂且轻量的提示，用于阻止风险升级而不打断主任务",
+        "example": "A micro-interruption can pause a nonessential message until the road is calmer.",
+        "chineseExample": "微打断可以把非必要消息暂停到路况更平稳时。"
+      },
+      {
+        "term": "risk-sensitive timing",
+        "phonetic": "/rɪsk ˈsensətɪv ˈtaɪmɪŋ/",
+        "meaning": "风险敏感时机；根据速度、道路复杂度和驾驶负荷选择提示时刻",
+        "example": "Risk-sensitive timing avoids coaching during a lane change.",
+        "chineseExample": "风险敏感时机会避免在变道过程中进行指导。"
+      },
+      {
+        "term": "driver self-regulation",
+        "phonetic": "/ˈdraɪvər ˌself ˌreɡjuˈleɪʃn/",
+        "meaning": "驾驶者自我调节；让驾驶者理解状态并主动恢复注意力的能力",
+        "example": "Driver self-regulation improves when feedback is specific and respectful.",
+        "chineseExample": "当反馈具体且尊重用户时，驾驶者自我调节会提升。"
+      },
+      {
+        "term": "cognitive spare capacity",
+        "phonetic": "/ˈkɑːɡnətɪv sper kəˈpæsəti/",
+        "meaning": "认知余量；驾驶者处理额外信息的剩余心理资源",
+        "example": "The system should present secondary content only when cognitive spare capacity is available.",
+        "chineseExample": "系统应只在有认知余量时呈现次要内容。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级阶梯；从柔和提示到明确警告的分级提醒策略",
+        "example": "An escalation ladder keeps early coaching calm and later warnings unmistakable.",
+        "chineseExample": "升级阶梯让早期指导保持平和，并让后续警告清晰明确。"
+      },
+      {
+        "term": "respectful feedback",
+        "phonetic": "/rɪˈspektfl ˈfiːdbæk/",
+        "meaning": "尊重式反馈；避免责备，用事实和可操作建议帮助驾驶者恢复状态",
+        "example": "Respectful feedback says what changed and what the driver can do next.",
+        "chineseExample": "尊重式反馈会说明发生了什么变化以及驾驶者下一步能做什么。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "attention-aware nudge",
+        "phonetic": "/əˈtenʃn əˈwer nʌdʒ/",
+        "meaning": "注意力感知微提示；根据驾驶者注意状态提供轻量、非强制的提醒",
+        "example": "An attention-aware nudge should guide the driver without sounding like an alarm.",
+        "chineseExample": "注意力感知微提示应引导驾驶者，而不是听起来像警报。"
+      },
+      {
+        "term": "distraction prevention",
+        "phonetic": "/dɪˈstrækʃn prɪˈvenʃn/",
+        "meaning": "分心预防；在分心变成风险前降低视觉、认知或操作负荷",
+        "example": "Distraction prevention starts with removing unnecessary choices at high speed.",
+        "chineseExample": "分心预防始于在高速场景中移除不必要选项。"
+      },
+      {
+        "term": "adaptive coaching",
+        "phonetic": "/əˈdæptɪv ˈkoʊtʃɪŋ/",
+        "meaning": "自适应指导；根据驾驶情境和用户反应调整提示语气、频率和内容",
+        "example": "Adaptive coaching can suggest a break after repeated lane drift events.",
+        "chineseExample": "自适应指导可以在多次车道偏移后建议休息。"
+      },
+      {
+        "term": "glance budget",
+        "phonetic": "/ɡlæns ˈbʌdʒɪt/",
+        "meaning": "扫视预算；驾驶者可安全离开道路视线的有限时间或次数",
+        "example": "The interface should protect the driver’s glance budget during complex maneuvers.",
+        "chineseExample": "界面应在复杂操作期间保护驾驶者的扫视预算。"
+      },
+      {
+        "term": "micro-interruption",
+        "phonetic": "/ˈmaɪkroʊ ˌɪntəˈrʌpʃn/",
+        "meaning": "微打断；短暂且轻量的提示，用于阻止风险升级而不打断主任务",
+        "example": "A micro-interruption can pause a nonessential message until the road is calmer.",
+        "chineseExample": "微打断可以把非必要消息暂停到路况更平稳时。"
+      },
+      {
+        "term": "risk-sensitive timing",
+        "phonetic": "/rɪsk ˈsensətɪv ˈtaɪmɪŋ/",
+        "meaning": "风险敏感时机；根据速度、道路复杂度和驾驶负荷选择提示时刻",
+        "example": "Risk-sensitive timing avoids coaching during a lane change.",
+        "chineseExample": "风险敏感时机会避免在变道过程中进行指导。"
+      },
+      {
+        "term": "driver self-regulation",
+        "phonetic": "/ˈdraɪvər ˌself ˌreɡjuˈleɪʃn/",
+        "meaning": "驾驶者自我调节；让驾驶者理解状态并主动恢复注意力的能力",
+        "example": "Driver self-regulation improves when feedback is specific and respectful.",
+        "chineseExample": "当反馈具体且尊重用户时，驾驶者自我调节会提升。"
+      },
+      {
+        "term": "cognitive spare capacity",
+        "phonetic": "/ˈkɑːɡnətɪv sper kəˈpæsəti/",
+        "meaning": "认知余量；驾驶者处理额外信息的剩余心理资源",
+        "example": "The system should present secondary content only when cognitive spare capacity is available.",
+        "chineseExample": "系统应只在有认知余量时呈现次要内容。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃn ˈlædər/",
+        "meaning": "升级阶梯；从柔和提示到明确警告的分级提醒策略",
+        "example": "An escalation ladder keeps early coaching calm and later warnings unmistakable.",
+        "chineseExample": "升级阶梯让早期指导保持平和，并让后续警告清晰明确。"
+      },
+      {
+        "term": "respectful feedback",
+        "phonetic": "/rɪˈspektfl ˈfiːdbæk/",
+        "meaning": "尊重式反馈；避免责备，用事实和可操作建议帮助驾驶者恢复状态",
+        "example": "Respectful feedback says what changed and what the driver can do next.",
+        "chineseExample": "尊重式反馈会说明发生了什么变化以及驾驶者下一步能做什么。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "meaning": "注意力；驾驶者对道路、界面或任务的关注资源",
+        "example": "Attention can shift quickly when a notification appears.",
+        "chineseExample": "在这句话中，“attention”指驾驶注意力。"
+      },
+      {
+        "term": "aware",
+        "phonetic": "/əˈwer/",
+        "meaning": "感知的；能够识别某种状态并做出调整的",
+        "example": "An aware assistant adapts to driver workload.",
+        "chineseExample": "在这句话中，“aware”表示系统能感知状态。"
+      },
+      {
+        "term": "nudge",
+        "phonetic": "/nʌdʒ/",
+        "meaning": "微提示；轻量引导行为的小提醒",
+        "example": "A soft nudge is enough when the risk is still low.",
+        "chineseExample": "在这句话中，“nudge”表示轻量提醒。"
+      },
+      {
+        "term": "distraction",
+        "phonetic": "/dɪˈstrækʃn/",
+        "meaning": "分心；注意力从驾驶任务转移到其他对象",
+        "example": "Distraction may begin with a long glance at the center display.",
+        "chineseExample": "在这句话中，“distraction”表示驾驶分心。"
+      },
+      {
+        "term": "prevention",
+        "phonetic": "/prɪˈvenʃn/",
+        "meaning": "预防；在问题发生前降低风险",
+        "example": "Prevention is easier than emergency recovery.",
+        "chineseExample": "在这句话中，“prevention”表示提前防止风险。"
+      },
+      {
+        "term": "adaptive",
+        "phonetic": "/əˈdæptɪv/",
+        "meaning": "自适应的；能随情境或用户状态变化",
+        "example": "Adaptive feedback changes with road complexity.",
+        "chineseExample": "在这句话中，“adaptive”表示能动态调整。"
+      },
+      {
+        "term": "coaching",
+        "phonetic": "/ˈkoʊtʃɪŋ/",
+        "meaning": "指导；用建议帮助用户改善行为",
+        "example": "Coaching should be brief and actionable.",
+        "chineseExample": "在这句话中，“coaching”指系统指导。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "扫视；短暂看向界面或道路目标",
+        "example": "A glance should be short enough for safe driving.",
+        "chineseExample": "在这句话中，“glance”指短暂视线转移。"
+      },
+      {
+        "term": "budget",
+        "phonetic": "/ˈbʌdʒɪt/",
+        "meaning": "预算；可用资源的限额",
+        "example": "A glance budget limits how much visual demand the interface can create.",
+        "chineseExample": "在这句话中，“budget”表示可用限额。"
+      },
+      {
+        "term": "micro",
+        "phonetic": "/ˈmaɪkroʊ/",
+        "meaning": "微小的；短而轻量的",
+        "example": "Micro feedback should not dominate the display.",
+        "chineseExample": "在这句话中，“micro”表示轻量、短暂。"
+      },
+      {
+        "term": "interruption",
+        "phonetic": "/ˌɪntəˈrʌpʃn/",
+        "meaning": "打断；中断当前任务或注意流的提示",
+        "example": "Interruption cost rises during demanding traffic.",
+        "chineseExample": "在这句话中，“interruption”表示打断。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "风险；可能造成安全或体验问题的状态",
+        "example": "Risk increases when the driver looks away too long.",
+        "chineseExample": "在这句话中，“risk”指驾驶风险。"
+      },
+      {
+        "term": "sensitive",
+        "phonetic": "/ˈsensətɪv/",
+        "meaning": "敏感的；会根据某因素谨慎调整",
+        "example": "Sensitive timing respects the driving situation.",
+        "chineseExample": "在这句话中，“sensitive”表示对风险变化敏感。"
+      },
+      {
+        "term": "timing",
+        "phonetic": "/ˈtaɪmɪŋ/",
+        "meaning": "时机；提示或动作发生的时间选择",
+        "example": "Good timing can make feedback feel helpful.",
+        "chineseExample": "在这句话中，“timing”指提示时机。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶者；控制车辆或监督自动驾驶的人",
+        "example": "The driver remains responsible for the road scene.",
+        "chineseExample": "在这句话中，“driver”指驾驶者。"
+      },
+      {
+        "term": "self-regulation",
+        "phonetic": "/ˌself ˌreɡjuˈleɪʃn/",
+        "meaning": "自我调节；用户主动调整行为或状态的能力",
+        "example": "Self-regulation improves when feedback is understandable.",
+        "chineseExample": "在这句话中，“self-regulation”表示自我调节能力。"
+      },
+      {
+        "term": "cognitive",
+        "phonetic": "/ˈkɑːɡnətɪv/",
+        "meaning": "认知的；与理解、判断和注意资源有关",
+        "example": "Cognitive load should stay low near intersections.",
+        "chineseExample": "在这句话中，“cognitive”表示认知相关。"
+      },
+      {
+        "term": "spare",
+        "phonetic": "/sper/",
+        "meaning": "剩余的；尚未被占用的",
+        "example": "Spare capacity can disappear in dense traffic.",
+        "chineseExample": "在这句话中，“spare”表示剩余。"
+      },
+      {
+        "term": "capacity",
+        "phonetic": "/kəˈpæsəti/",
+        "meaning": "容量；可处理信息或任务的能力",
+        "example": "Capacity is limited during high workload.",
+        "chineseExample": "在这句话中，“capacity”表示处理能力。"
+      },
+      {
+        "term": "escalation",
+        "phonetic": "/ˌeskəˈleɪʃn/",
+        "meaning": "升级；提醒强度逐步提高",
+        "example": "Escalation should be predictable and proportional.",
+        "chineseExample": "在这句话中，“escalation”表示提示升级。"
+      },
+      {
+        "term": "ladder",
+        "phonetic": "/ˈlædər/",
+        "meaning": "阶梯；分层推进的结构",
+        "example": "The warning ladder starts with a soft cue.",
+        "chineseExample": "在这句话中，“ladder”表示分级结构。"
+      },
+      {
+        "term": "respectful",
+        "phonetic": "/rɪˈspektfl/",
+        "meaning": "尊重的；语气不过度责备或命令",
+        "example": "Respectful language helps preserve user trust.",
+        "chineseExample": "在这句话中，“respectful”表示尊重用户。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/ˈfiːdbæk/",
+        "meaning": "反馈；系统对用户状态或操作给出的回应",
+        "example": "Feedback should tell the driver what changed.",
+        "chineseExample": "在这句话中，“feedback”指系统反馈。"
+      },
+      {
+        "term": "driver monitoring",
+        "phonetic": "/ˈdraɪvər ˈmɑːnɪtərɪŋ/",
+        "meaning": "驾驶者监测；识别视线、姿态、困倦或注意状态的系统能力",
+        "example": "Driver monitoring can detect repeated long glances.",
+        "chineseExample": "驾驶者监测可以发现重复的长时间扫视。"
+      },
+      {
+        "term": "gaze pattern",
+        "phonetic": "/ɡeɪz ˈpætərn/",
+        "meaning": "视线模式；驾驶者视线分布和停留时间的变化",
+        "example": "A changing gaze pattern can reveal rising distraction.",
+        "chineseExample": "变化的视线模式可以暴露分心上升。"
+      },
+      {
+        "term": "lane drift",
+        "phonetic": "/leɪn drɪft/",
+        "meaning": "车道偏移；车辆相对车道中心逐渐偏离",
+        "example": "Lane drift may trigger a coaching message before a warning.",
+        "chineseExample": "车道偏移可能先触发指导消息，再触发警告。"
+      },
+      {
+        "term": "workload estimate",
+        "phonetic": "/ˈwɜːrkloʊd ˈestɪmət/",
+        "meaning": "负荷估计；系统对当前驾驶任务复杂度和心理负担的判断",
+        "example": "A workload estimate helps delay nonurgent prompts.",
+        "chineseExample": "负荷估计有助于延迟非紧急提示。"
+      },
+      {
+        "term": "nonurgent prompt",
+        "phonetic": "/nɑːnˈɜːrdʒənt prɑːmpt/",
+        "meaning": "非紧急提示；可以延迟而不会影响安全的提醒",
+        "example": "A nonurgent prompt should wait until the maneuver ends.",
+        "chineseExample": "非紧急提示应等到操作结束后再出现。"
+      },
+      {
+        "term": "calm tone",
+        "phonetic": "/kɑːm toʊn/",
+        "meaning": "平和语气；降低紧张感、避免责备的提示风格",
+        "example": "A calm tone prevents the feedback from feeling punitive.",
+        "chineseExample": "平和语气能避免反馈让人感觉被惩罚。"
+      },
+      {
+        "term": "actionable advice",
+        "phonetic": "/ˈækʃənəbl ədˈvaɪs/",
+        "meaning": "可执行建议；用户能马上理解并采取行动的建议",
+        "example": "Actionable advice is more useful than a vague safety reminder.",
+        "chineseExample": "可执行建议比模糊的安全提醒更有用。"
+      },
+      {
+        "term": "visual demand",
+        "phonetic": "/ˈvɪʒuəl dɪˈmænd/",
+        "meaning": "视觉需求；界面对视线时间和视觉理解的要求",
+        "example": "Visual demand should decrease when road complexity increases.",
+        "chineseExample": "道路复杂度增加时，视觉需求应降低。"
+      },
+      {
+        "term": "auditory cue",
+        "phonetic": "/ˈɔːdətɔːri kjuː/",
+        "meaning": "听觉线索；通过声音传达状态、提示或警告的信号",
+        "example": "An auditory cue can replace a long visual message.",
+        "chineseExample": "听觉线索可以替代较长的视觉消息。"
+      },
+      {
+        "term": "haptic cue",
+        "phonetic": "/ˈhæptɪk kjuː/",
+        "meaning": "触觉线索；通过震动或力反馈传达提示",
+        "example": "A haptic cue can redirect attention without adding screen demand.",
+        "chineseExample": "触觉线索可以在不增加屏幕需求的情况下重新引导注意力。"
+      },
+      {
+        "term": "modal mix",
+        "phonetic": "/ˈmoʊdl mɪks/",
+        "meaning": "模态组合；视觉、声音、触觉等提示方式的搭配",
+        "example": "The modal mix should match urgency and driver workload.",
+        "chineseExample": "模态组合应匹配紧急程度和驾驶负荷。"
+      },
+      {
+        "term": "urgency level",
+        "phonetic": "/ˈɜːrdʒənsi ˈlevl/",
+        "meaning": "紧急等级；提示需要被处理的时间压力",
+        "example": "Urgency level decides whether the system nudges or warns.",
+        "chineseExample": "紧急等级决定系统是微提示还是警告。"
+      },
+      {
+        "term": "false positive",
+        "phonetic": "/fɔːls ˈpɑːzətɪv/",
+        "meaning": "误报；系统错误判断风险存在",
+        "example": "Too many false positives make drivers ignore coaching.",
+        "chineseExample": "过多误报会让驾驶者忽略指导。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户对系统能力形成适度、准确的信任",
+        "example": "Trust calibration depends on clear reasons and consistent timing.",
+        "chineseExample": "信任校准依赖清晰原因和一致时机。"
+      },
+      {
+        "term": "explainable reason",
+        "phonetic": "/ɪkˈspleɪnəbl ˈriːzn/",
+        "meaning": "可解释原因；系统能说明提示依据的简短理由",
+        "example": "An explainable reason helps the driver accept a coaching nudge.",
+        "chineseExample": "可解释原因有助于驾驶者接受指导性微提示。"
+      },
+      {
+        "term": "user control",
+        "phonetic": "/ˈjuːzər kənˈtroʊl/",
+        "meaning": "用户控制；用户可以调整提示强度、频率或模式的能力",
+        "example": "User control lets experienced drivers tune coaching intensity.",
+        "chineseExample": "用户控制让有经验的驾驶者调节指导强度。"
+      },
+      {
+        "term": "coaching intensity",
+        "phonetic": "/ˈkoʊtʃɪŋ ɪnˈtensəti/",
+        "meaning": "指导强度；提示频率、语气和显著性的综合程度",
+        "example": "Coaching intensity should rise only when risk evidence accumulates.",
+        "chineseExample": "只有当风险证据积累时，指导强度才应提高。"
+      },
+      {
+        "term": "risk evidence",
+        "phonetic": "/rɪsk ˈevɪdəns/",
+        "meaning": "风险证据；支持系统判断存在风险的行为或环境信号",
+        "example": "Risk evidence may include long glances and unstable lane position.",
+        "chineseExample": "风险证据可能包括长时间扫视和不稳定车道位置。"
+      },
+      {
+        "term": "lane position",
+        "phonetic": "/leɪn pəˈzɪʃn/",
+        "meaning": "车道位置；车辆在车道内相对中心线的位置",
+        "example": "Lane position can help confirm whether distraction is affecting control.",
+        "chineseExample": "车道位置有助于确认分心是否影响控制。"
+      },
+      {
+        "term": "traffic density",
+        "phonetic": "/ˈtræfɪk ˈdensəti/",
+        "meaning": "交通密度；道路周围车辆和交通参与者的密集程度",
+        "example": "Traffic density changes how much coaching the driver can handle.",
+        "chineseExample": "交通密度会影响驾驶者能处理多少指导。"
+      },
+      {
+        "term": "intersection",
+        "phonetic": "/ˌɪntərˈsekʃn/",
+        "meaning": "路口；道路交汇且驾驶任务复杂度较高的位置",
+        "example": "The system should suppress optional tips near an intersection.",
+        "chineseExample": "系统应在路口附近抑制可选提示。"
+      },
+      {
+        "term": "maneuver",
+        "phonetic": "/məˈnuːvər/",
+        "meaning": "驾驶操作；变道、转弯、汇入等需要控制的动作",
+        "example": "A maneuver is a poor moment for a long explanation.",
+        "chineseExample": "驾驶操作期间不适合长解释。"
+      },
+      {
+        "term": "threshold",
+        "phonetic": "/ˈθreʃhoʊld/",
+        "meaning": "阈值；触发某种提示或升级的边界",
+        "example": "The threshold should adapt to driver history and context.",
+        "chineseExample": "阈值应根据驾驶者历史和上下文调整。"
+      },
+      {
+        "term": "history",
+        "phonetic": "/ˈhɪstəri/",
+        "meaning": "历史；过去的行为、偏好或系统记录",
+        "example": "Driver history can help reduce unnecessary reminders.",
+        "chineseExample": "驾驶者历史有助于减少不必要提醒。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "上下文；影响交互判断的道路、用户和任务环境",
+        "example": "Context determines whether coaching is helpful or intrusive.",
+        "chineseExample": "上下文决定指导是有帮助还是打扰。"
+      },
+      {
+        "term": "intrusive",
+        "phonetic": "/ɪnˈtruːsɪv/",
+        "meaning": "打扰性的；过度介入并破坏用户任务的",
+        "example": "Intrusive feedback may increase irritation instead of attention.",
+        "chineseExample": "打扰性反馈可能增加烦躁而不是注意力。"
+      },
+      {
+        "term": "irritation",
+        "phonetic": "/ˌɪrɪˈteɪʃn/",
+        "meaning": "烦躁；用户因过度提示或不合时宜提示产生的不满",
+        "example": "Irritation rises when the system repeats obvious advice.",
+        "chineseExample": "当系统重复显而易见的建议时，烦躁会上升。"
+      },
+      {
+        "term": "acceptance",
+        "phonetic": "/əkˈseptəns/",
+        "meaning": "接受度；用户愿意采纳系统提示的程度",
+        "example": "Acceptance improves when the message sounds fair.",
+        "chineseExample": "当消息听起来公平时，接受度会提高。"
+      },
+      {
+        "term": "proportional",
+        "phonetic": "/prəˈpɔːrʃənl/",
+        "meaning": "成比例的；提示强度与风险程度匹配",
+        "example": "Feedback should be proportional to the detected risk.",
+        "chineseExample": "反馈强度应与检测到的风险成比例。"
+      },
+      {
+        "term": "unmistakable",
+        "phonetic": "/ˌʌnmɪˈsteɪkəbl/",
+        "meaning": "清晰明确的；不会被误解的",
+        "example": "A critical warning must be unmistakable.",
+        "chineseExample": "关键警告必须清晰明确。"
+      },
+      {
+        "term": "nonessential",
+        "phonetic": "/ˌnɑːnɪˈsenʃl/",
+        "meaning": "非必要的；对当前安全任务不关键的",
+        "example": "Nonessential content can wait until the road is simpler.",
+        "chineseExample": "非必要内容可以等到道路更简单时再出现。"
+      },
+      {
+        "term": "complex",
+        "phonetic": "/kəmˈpleks/",
+        "meaning": "复杂的；包含多个需要判断的因素",
+        "example": "Complex traffic reduces spare attention.",
+        "chineseExample": "复杂交通会减少剩余注意力。"
+      },
+      {
+        "term": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "meaning": "选择；用户可选的操作或路径",
+        "example": "Too many choices increase visual demand.",
+        "chineseExample": "过多选择会增加视觉需求。"
+      },
+      {
+        "term": "choice set",
+        "phonetic": "/tʃɔɪs set/",
+        "meaning": "选择集合；界面一次呈现给用户的可选项范围",
+        "example": "The choice set should shrink during high workload.",
+        "chineseExample": "高负荷时选择集合应缩小。"
+      },
+      {
+        "term": "frequency",
+        "phonetic": "/ˈfriːkwənsi/",
+        "meaning": "频率；提示出现的次数或间隔",
+        "example": "Coaching frequency should decrease after the driver responds.",
+        "chineseExample": "驾驶者响应后，指导频率应降低。"
+      },
+      {
+        "term": "recover",
+        "phonetic": "/rɪˈkʌvər/",
+        "meaning": "恢复；重新回到稳定或安全状态",
+        "example": "The goal is to help the driver recover attention.",
+        "chineseExample": "目标是帮助驾驶者恢复注意力。"
+      },
+      {
+        "term": "restore",
+        "phonetic": "/rɪˈstɔːr/",
+        "meaning": "恢复；把状态带回合适水平",
+        "example": "A short cue can restore focus faster than a long lecture.",
+        "chineseExample": "短提示比长篇说教更快恢复专注。"
+      },
+      {
+        "term": "specific",
+        "phonetic": "/spəˈsɪfɪk/",
+        "meaning": "具体的；明确指出原因或动作",
+        "example": "Specific feedback is easier to accept.",
+        "chineseExample": "具体反馈更容易被接受。"
+      },
+      {
+        "term": "fair",
+        "phonetic": "/fer/",
+        "meaning": "公平的；用户觉得合理、不带责备的",
+        "example": "A fair message avoids blaming the driver.",
+        "chineseExample": "公平的消息避免责备驾驶者。"
+      },
+      {
+        "term": "blaming",
+        "phonetic": "/ˈbleɪmɪŋ/",
+        "meaning": "责备的；把问题归咎于用户的语气",
+        "example": "Blaming language reduces acceptance.",
+        "chineseExample": "责备式语言会降低接受度。"
+      },
+      {
+        "term": "repeated",
+        "phonetic": "/rɪˈpiːtɪd/",
+        "meaning": "重复的；多次发生的",
+        "example": "Repeated long glances may justify stronger coaching.",
+        "chineseExample": "重复长时间扫视可能证明需要更强指导。"
+      },
+      {
+        "term": "evidence",
+        "phonetic": "/ˈevɪdəns/",
+        "meaning": "证据；支持系统判断的数据或观察",
+        "example": "Evidence should be strong before escalation.",
+        "chineseExample": "升级前证据应足够充分。"
+      },
+      {
+        "term": "accumulates",
+        "phonetic": "/əˈkjuːmjəleɪts/",
+        "meaning": "积累；逐渐增加",
+        "example": "Risk evidence accumulates across several signals.",
+        "chineseExample": "风险证据会在多个信号中逐渐积累。"
+      },
+      {
+        "term": "suppress",
+        "phonetic": "/səˈpres/",
+        "meaning": "抑制；暂时隐藏或降低显示",
+        "example": "Suppress optional tips during demanding moments.",
+        "chineseExample": "在高要求时刻抑制可选提示。"
+      },
+      {
+        "term": "optional",
+        "phonetic": "/ˈɑːpʃənl/",
+        "meaning": "可选的；不是当前任务必须处理的",
+        "example": "Optional content should never compete with a safety cue.",
+        "chineseExample": "可选内容不应与安全提示竞争。"
+      },
+      {
+        "term": "compete",
+        "phonetic": "/kəmˈpiːt/",
+        "meaning": "竞争；争夺同一注意资源",
+        "example": "Messages can compete for the same glance budget.",
+        "chineseExample": "消息会争夺同一扫视预算。"
+      },
+      {
+        "term": "stable",
+        "phonetic": "/ˈsteɪbl/",
+        "meaning": "稳定的；变化少且易预测的",
+        "example": "Stable lane position suggests the driver has recovered.",
+        "chineseExample": "稳定的车道位置表明驾驶者已恢复。"
+      },
+      {
+        "term": "position",
+        "phonetic": "/pəˈzɪʃn/",
+        "meaning": "位置；物体或车辆所在的相对地点",
+        "example": "Position data helps interpret the driving situation.",
+        "chineseExample": "位置数据有助于理解驾驶情境。"
+      },
+      {
+        "term": "road scene",
+        "phonetic": "/roʊd siːn/",
+        "meaning": "道路场景；驾驶者需要观察和判断的道路环境",
+        "example": "The road scene should remain the driver’s primary focus.",
+        "chineseExample": "道路场景应始终是驾驶者的主要关注点。"
+      },
+      {
+        "term": "primary focus",
+        "phonetic": "/ˈpraɪmeri ˈfoʊkəs/",
+        "meaning": "主要焦点；当前最重要的注意对象",
+        "example": "Primary focus belongs on traffic, not menus.",
+        "chineseExample": "主要焦点应放在交通上，而不是菜单上。"
+      },
+      {
+        "term": "secondary content",
+        "phonetic": "/ˈsekənderi ˈkɑːntent/",
+        "meaning": "次要内容；不影响即时安全的界面信息",
+        "example": "Secondary content should be delayed during a turn.",
+        "chineseExample": "转弯时应延迟次要内容。"
+      },
+      {
+        "term": "center display",
+        "phonetic": "/ˈsentər dɪˈspleɪ/",
+        "meaning": "中控屏；座舱中央用于信息和控制的显示屏",
+        "example": "The center display should reduce animation during high workload.",
+        "chineseExample": "高负荷时中控屏应减少动画。"
+      },
+      {
+        "term": "long glance",
+        "phonetic": "/lɔːŋ ɡlæns/",
+        "meaning": "长时间扫视；离开道路视线过久的一次看屏行为",
+        "example": "A long glance can signal growing distraction.",
+        "chineseExample": "长时间扫视可能表示分心正在上升。"
+      },
+      {
+        "term": "soft cue",
+        "phonetic": "/sɔːft kjuː/",
+        "meaning": "柔和提示；低强度、不惊扰的提醒",
+        "example": "A soft cue can start the escalation ladder.",
+        "chineseExample": "柔和提示可以作为升级阶梯的起点。"
+      },
+      {
+        "term": "warning",
+        "phonetic": "/ˈwɔːrnɪŋ/",
+        "meaning": "警告；明确提示风险或需要立即处理的消息",
+        "example": "The warning should be short and unmistakable.",
+        "chineseExample": "警告应简短且清晰明确。"
+      },
+      {
+        "term": "attention-aware",
+        "phonetic": "/əˈtenʃn əˈwer/",
+        "meaning": "注意力感知的；能够根据注意状态调整交互的",
+        "example": "An attention-aware nudge should guide the driver without sounding like an alarm.",
+        "chineseExample": "在这句话中，“attention-aware”表示提示会根据注意状态调整。"
+      },
+      {
+        "term": "break",
+        "phonetic": "/breɪk/",
+        "meaning": "休息；从驾驶或任务中短暂恢复精力",
+        "example": "Adaptive coaching can suggest a break after repeated lane drift events.",
+        "chineseExample": "在这句话中，“break”指短暂休息。"
+      },
+      {
+        "term": "drift",
+        "phonetic": "/drɪft/",
+        "meaning": "偏移；车辆或注意力逐渐离开目标位置",
+        "example": "Lane drift may show that the driver needs support.",
+        "chineseExample": "在这句话中，“drift”表示车道偏移。"
+      },
+      {
+        "term": "maneuvers",
+        "phonetic": "/məˈnuːvərz/",
+        "meaning": "驾驶操作；变道、转弯、汇入等动作的复数形式",
+        "example": "The interface should protect the driver’s glance budget during complex maneuvers.",
+        "chineseExample": "在这句话中，“maneuvers”表示多个复杂驾驶操作。"
+      },
+      {
+        "term": "risk-sensitive",
+        "phonetic": "/rɪsk ˈsensətɪv/",
+        "meaning": "风险敏感的；根据风险高低调整时机或强度的",
+        "example": "Risk-sensitive timing avoids coaching during a lane change.",
+        "chineseExample": "在这句话中，“risk-sensitive”表示提示时机会考虑风险。"
+      },
+      {
+        "term": "punishment",
+        "phonetic": "/ˈpʌnɪʃmənt/",
+        "meaning": "惩罚；让用户感觉被责备或处罚的反馈方式",
+        "example": "The goal is distraction prevention, not punishment.",
+        "chineseExample": "在这句话中，“punishment”表示惩罚式反馈。"
+      },
+      {
+        "term": "nonurgent",
+        "phonetic": "/nɑːnˈɜːrdʒənt/",
+        "meaning": "非紧急的；可以延迟处理而不影响安全的",
+        "example": "A nonurgent prompt should wait until the maneuver ends.",
+        "chineseExample": "在这句话中，“nonurgent”表示非紧急。"
+      },
+      {
+        "term": "suppressed",
+        "phonetic": "/səˈprest/",
+        "meaning": "被抑制的；被暂时隐藏、延迟或降低强度的",
+        "example": "During dense traffic, the same nonurgent prompt should be suppressed.",
+        "chineseExample": "在这句话中，“suppressed”表示提示应被暂时抑制。"
+      },
+      {
+        "term": "chooses",
+        "phonetic": "/ˈtʃuːzɪz/",
+        "meaning": "选择；choose 的第三人称单数形式",
+        "example": "The system chooses a moment that protects the driver’s glance budget.",
+        "chineseExample": "在这句话中，“chooses”表示系统选择合适时刻。"
+      },
+      {
+        "term": "justify",
+        "phonetic": "/ˈdʒʌstɪfaɪ/",
+        "meaning": "证明有理由；说明某种升级或动作是合理的",
+        "example": "Repeated long glances and lane drift may justify a clearer warning.",
+        "chineseExample": "在这句话中，“justify”表示证明更明确警告是合理的。"
+      },
+      {
+        "term": "clearer",
+        "phonetic": "/ˈklɪrər/",
+        "meaning": "更清晰的；clear 的比较级",
+        "example": "Repeated long glances may justify a clearer warning.",
+        "chineseExample": "在这句话中，“clearer”表示更明确。"
+      },
+      {
+        "term": "advice",
+        "phonetic": "/ədˈvaɪs/",
+        "meaning": "建议；系统给出的可执行行动提示",
+        "example": "The cockpit should give an explainable reason and actionable advice.",
+        "chineseExample": "在这句话中，“advice”表示具体建议。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing coaching that protects attention",
+        "text": "An intelligent cockpit should not wait until distraction becomes a serious warning. It can use driver monitoring, gaze pattern changes, lane position, traffic density, and a workload estimate to decide whether a small coaching message is useful. The goal is distraction prevention, not punishment. When the driver has enough cognitive spare capacity, the system may offer an attention-aware nudge such as, “Keep your eyes on the road while I hold this message.” During a lane change, an intersection, or dense traffic, the same nonurgent prompt should be suppressed. This is risk-sensitive timing: the system chooses a moment that protects the driver’s glance budget. Good coaching also needs an escalation ladder. A soft cue may be enough after one long glance, while repeated long glances and lane drift may justify a clearer warning. The modal mix matters as well. A short auditory cue or haptic cue can restore attention without adding visual demand to the center display. Finally, respectful feedback improves acceptance. Instead of blaming the driver, the cockpit should give an explainable reason and actionable advice: “Traffic is complex ahead, so I paused the media search. You can continue when the road is stable.”",
+        "translation": "智能座舱不应等到分心变成严重警告才行动。它可以结合驾驶者监测、视线模式变化、车道位置、交通密度和负荷估计，判断一个小的指导消息是否有用。目标是分心预防，而不是惩罚。当驾驶者有足够认知余量时，系统可以给出注意力感知微提示，例如“请看路，我会先保留这条消息”。在变道、路口或高密度交通中，同一个非紧急提示应被抑制。这就是风险敏感时机：系统选择能够保护扫视预算的时刻。好的指导还需要升级阶梯。一次长时间扫视后，柔和提示可能就够了；重复长时间扫视并伴随车道偏移时，才可能需要更明确的警告。模态组合同样重要。简短的听觉或触觉线索可以恢复注意力，而不增加中控屏视觉需求。最后，尊重式反馈能提高接受度。座舱不应责备驾驶者，而应给出可解释原因和可执行建议。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The goal is distraction prevention, not punishment.",
+        "translation": "目标是分心预防，而不是惩罚。",
+        "points": [
+          "The goal is 用来定义设计意图。",
+          "not punishment 用对比强调系统语气不应责备用户。",
+          "distraction prevention 是本句核心名词短语。"
+        ]
+      },
+      {
+        "sentence": "This is risk-sensitive timing: the system chooses a moment that protects the driver’s glance budget.",
+        "translation": "这就是风险敏感时机：系统选择能够保护驾驶者扫视预算的时刻。",
+        "points": [
+          "冒号后解释 risk-sensitive timing 的含义。",
+          "chooses a moment 表示系统选择提示时机。",
+          "protects the driver’s glance budget 强调减少视线占用。"
+        ]
+      },
+      {
+        "sentence": "A short auditory cue or haptic cue can restore attention without adding visual demand to the center display.",
+        "translation": "简短的听觉或触觉线索可以恢复注意力，而不增加中控屏视觉需求。",
+        "points": [
+          "auditory cue 和 haptic cue 是并列主语。",
+          "without adding visual demand 表示“不增加视觉负担”。",
+          "center display 指智能座舱中控显示。"
+        ]
+      },
+      {
+        "sentence": "Instead of blaming the driver, the cockpit should give an explainable reason and actionable advice.",
+        "translation": "座舱不应责备驾驶者，而应给出可解释原因和可执行建议。",
+        "points": [
+          "Instead of blaming 表示替代不推荐做法。",
+          "should give 表示设计建议。",
+          "explainable reason and actionable advice 是尊重式反馈的两个组成部分。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "step": "朗读核心词汇，重点区分 nudge、warning、coaching、feedback 的语气差异。",
+        "time": "4 分钟"
+      },
+      {
+        "step": "跟读长文一遍，标记所有表示时机、负荷和注意力资源的表达。",
+        "time": "7 分钟"
+      },
+      {
+        "step": "用 risk-sensitive timing、glance budget、respectful feedback 各造一个智能座舱设计句。",
+        "time": "5 分钟"
+      },
+      {
+        "step": "口头复述一个场景：系统如何从 soft cue 升级到 warning，同时避免责备驾驶者。",
+        "time": "6-8 分钟"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-23-motion-sickness-mitigation-and-comfort-aware-interaction",
     "date": "2026-09-23",
     "title": "Motion sickness mitigation and comfort-aware interaction in intelligent cockpits",
