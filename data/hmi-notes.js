@@ -1,5 +1,686 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-25-generative-ai-summaries-and-verifiable-explanations",
+    "date": "2026-09-25",
+    "title": "Generative AI summaries and verifiable explanations in intelligent cockpits",
+    "topic": "智能座舱生成式 AI 摘要与可验证解释",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明车内生成式 AI 摘要、可验证解释、证据引用、幻觉防护、用户追问和安全边界。",
+    "words": [
+      {
+        "term": "generative AI summary",
+        "phonetic": "/ˈdʒenərətɪv ˌeɪ ˈaɪ ˈsʌməri/",
+        "meaning": "生成式 AI 摘要；由模型把导航、车辆状态或消息内容压缩成可理解说明",
+        "example": "A generative AI summary should shorten the message without hiding safety-critical details.",
+        "chineseExample": "生成式 AI 摘要应缩短信息，但不能隐藏安全关键细节。"
+      },
+      {
+        "term": "verifiable explanation",
+        "phonetic": "/ˈverɪfaɪəbl ˌekspləˈneɪʃn/",
+        "meaning": "可验证解释；用户能够通过来源、传感器状态或界面证据核对的说明",
+        "example": "A verifiable explanation tells the driver which signal triggered the recommendation.",
+        "chineseExample": "可验证解释会告诉驾驶者是哪一个信号触发了推荐。"
+      },
+      {
+        "term": "evidence citation",
+        "phonetic": "/ˈevɪdəns saɪˈteɪʃn/",
+        "meaning": "证据引用；在 AI 回答中标明数据来源、时间或车辆状态依据",
+        "example": "Evidence citation helps the driver distinguish a confirmed fact from a model guess.",
+        "chineseExample": "证据引用帮助驾驶者区分已确认事实和模型猜测。"
+      },
+      {
+        "term": "hallucination guardrail",
+        "phonetic": "/həˌluːsɪˈneɪʃn ˈɡɑːrdreɪl/",
+        "meaning": "幻觉防护栏；限制模型编造车辆能力、路况或系统状态的安全机制",
+        "example": "The hallucination guardrail should block an answer when vehicle data is unavailable.",
+        "chineseExample": "当车辆数据不可用时，幻觉防护栏应阻止系统回答。"
+      },
+      {
+        "term": "grounded response",
+        "phonetic": "/ˈɡraʊndɪd rɪˈspɑːns/",
+        "meaning": "有依据的回应；只基于可用上下文、传感器或授权数据生成的回答",
+        "example": "A grounded response uses current battery data instead of a generic range estimate.",
+        "chineseExample": "有依据的回应会使用当前电池数据，而不是泛泛的续航估计。"
+      },
+      {
+        "term": "uncertainty disclosure",
+        "phonetic": "/ʌnˈsɜːrtnti dɪsˈkloʊʒər/",
+        "meaning": "不确定性披露；明确说明系统不知道、未确认或需要用户复核的部分",
+        "example": "Uncertainty disclosure is essential when the assistant cannot confirm a parking rule.",
+        "chineseExample": "当助手无法确认停车规则时，不确定性披露非常重要。"
+      },
+      {
+        "term": "follow-up prompt",
+        "phonetic": "/ˈfɑːloʊ ʌp prɑːmpt/",
+        "meaning": "追问提示；引导用户澄清目标、约束或偏好的简短问题",
+        "example": "A follow-up prompt can ask whether the driver prefers the fastest or quietest route.",
+        "chineseExample": "追问提示可以询问驾驶者更偏好最快路线还是更安静的路线。"
+      },
+      {
+        "term": "source transparency",
+        "phonetic": "/sɔːrs trænsˈperənsi/",
+        "meaning": "来源透明度；让用户知道回答来自车辆数据、云服务、手册还是用户历史偏好",
+        "example": "Source transparency makes an AI suggestion easier to trust and easier to correct.",
+        "chineseExample": "来源透明度让 AI 建议更容易被信任，也更容易被纠正。"
+      },
+      {
+        "term": "safety boundary",
+        "phonetic": "/ˈseɪfti ˈbaʊndəri/",
+        "meaning": "安全边界；系统在驾驶场景中必须遵守的能力、权限和交互限制",
+        "example": "The safety boundary prevents the assistant from reading long summaries during a complex merge.",
+        "chineseExample": "安全边界会阻止助手在复杂汇入时朗读长摘要。"
+      },
+      {
+        "term": "driver review loop",
+        "phonetic": "/ˈdraɪvər rɪˈvjuː luːp/",
+        "meaning": "驾驶者复核闭环；让用户能检查、确认、修改或撤销 AI 建议的交互流程",
+        "example": "A driver review loop lets the user approve a generated reply before it is sent.",
+        "chineseExample": "驾驶者复核闭环允许用户在发送前批准生成的回复。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "generative AI summary",
+        "phonetic": "/ˈdʒenərətɪv ˌeɪ ˈaɪ ˈsʌməri/",
+        "meaning": "生成式 AI 摘要；由模型把导航、车辆状态或消息内容压缩成可理解说明",
+        "example": "A generative AI summary should shorten the message without hiding safety-critical details.",
+        "chineseExample": "生成式 AI 摘要应缩短信息，但不能隐藏安全关键细节。"
+      },
+      {
+        "term": "verifiable explanation",
+        "phonetic": "/ˈverɪfaɪəbl ˌekspləˈneɪʃn/",
+        "meaning": "可验证解释；用户能够通过来源、传感器状态或界面证据核对的说明",
+        "example": "A verifiable explanation tells the driver which signal triggered the recommendation.",
+        "chineseExample": "可验证解释会告诉驾驶者是哪一个信号触发了推荐。"
+      },
+      {
+        "term": "evidence citation",
+        "phonetic": "/ˈevɪdəns saɪˈteɪʃn/",
+        "meaning": "证据引用；在 AI 回答中标明数据来源、时间或车辆状态依据",
+        "example": "Evidence citation helps the driver distinguish a confirmed fact from a model guess.",
+        "chineseExample": "证据引用帮助驾驶者区分已确认事实和模型猜测。"
+      },
+      {
+        "term": "hallucination guardrail",
+        "phonetic": "/həˌluːsɪˈneɪʃn ˈɡɑːrdreɪl/",
+        "meaning": "幻觉防护栏；限制模型编造车辆能力、路况或系统状态的安全机制",
+        "example": "The hallucination guardrail should block an answer when vehicle data is unavailable.",
+        "chineseExample": "当车辆数据不可用时，幻觉防护栏应阻止系统回答。"
+      },
+      {
+        "term": "grounded response",
+        "phonetic": "/ˈɡraʊndɪd rɪˈspɑːns/",
+        "meaning": "有依据的回应；只基于可用上下文、传感器或授权数据生成的回答",
+        "example": "A grounded response uses current battery data instead of a generic range estimate.",
+        "chineseExample": "有依据的回应会使用当前电池数据，而不是泛泛的续航估计。"
+      },
+      {
+        "term": "uncertainty disclosure",
+        "phonetic": "/ʌnˈsɜːrtnti dɪsˈkloʊʒər/",
+        "meaning": "不确定性披露；明确说明系统不知道、未确认或需要用户复核的部分",
+        "example": "Uncertainty disclosure is essential when the assistant cannot confirm a parking rule.",
+        "chineseExample": "当助手无法确认停车规则时，不确定性披露非常重要。"
+      },
+      {
+        "term": "follow-up prompt",
+        "phonetic": "/ˈfɑːloʊ ʌp prɑːmpt/",
+        "meaning": "追问提示；引导用户澄清目标、约束或偏好的简短问题",
+        "example": "A follow-up prompt can ask whether the driver prefers the fastest or quietest route.",
+        "chineseExample": "追问提示可以询问驾驶者更偏好最快路线还是更安静的路线。"
+      },
+      {
+        "term": "source transparency",
+        "phonetic": "/sɔːrs trænsˈperənsi/",
+        "meaning": "来源透明度；让用户知道回答来自车辆数据、云服务、手册还是用户历史偏好",
+        "example": "Source transparency makes an AI suggestion easier to trust and easier to correct.",
+        "chineseExample": "来源透明度让 AI 建议更容易被信任，也更容易被纠正。"
+      },
+      {
+        "term": "safety boundary",
+        "phonetic": "/ˈseɪfti ˈbaʊndəri/",
+        "meaning": "安全边界；系统在驾驶场景中必须遵守的能力、权限和交互限制",
+        "example": "The safety boundary prevents the assistant from reading long summaries during a complex merge.",
+        "chineseExample": "安全边界会阻止助手在复杂汇入时朗读长摘要。"
+      },
+      {
+        "term": "driver review loop",
+        "phonetic": "/ˈdraɪvər rɪˈvjuː luːp/",
+        "meaning": "驾驶者复核闭环；让用户能检查、确认、修改或撤销 AI 建议的交互流程",
+        "example": "A driver review loop lets the user approve a generated reply before it is sent.",
+        "chineseExample": "驾驶者复核闭环允许用户在发送前批准生成的回复。"
+      },
+      {
+        "term": "generative AI",
+        "phonetic": "/ˈdʒenərətɪv ˌeɪ ˈaɪ/",
+        "meaning": "生成式 AI；能够生成文本、解释或摘要的人工智能能力",
+        "example": "Generative AI can compress cabin information into a short spoken update.",
+        "chineseExample": "生成式 AI 可以把座舱信息压缩成简短语音更新。"
+      },
+      {
+        "term": "generative",
+        "phonetic": "/ˈdʒenərətɪv/",
+        "meaning": "生成式的；能够创建新文本、解释、图像或建议的",
+        "example": "Generative AI can make an intelligent cockpit feel more helpful.",
+        "chineseExample": "生成式 AI 可以让智能座舱更有帮助。"
+      },
+      {
+        "term": "summary",
+        "phonetic": "/ˈsʌməri/",
+        "meaning": "摘要；对较长信息的简短概括",
+        "example": "The summary should keep the decision point visible.",
+        "chineseExample": "摘要应保留可决策的重点。"
+      },
+      {
+        "term": "verifiable",
+        "phonetic": "/ˈverɪfaɪəbl/",
+        "meaning": "可验证的；能够通过证据核对真伪或来源的",
+        "example": "Every verifiable claim should point to a reliable source.",
+        "chineseExample": "每个可验证声明都应指向可靠来源。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃn/",
+        "meaning": "解释；说明系统为什么这样判断或推荐",
+        "example": "The explanation must be short enough for a driving context.",
+        "chineseExample": "解释必须短到适合驾驶场景。"
+      },
+      {
+        "term": "evidence",
+        "phonetic": "/ˈevɪdəns/",
+        "meaning": "证据；支持某个判断的事实、数据或信号",
+        "example": "The interface shows evidence before asking for confirmation.",
+        "chineseExample": "界面会在请求确认前显示证据。"
+      },
+      {
+        "term": "citation",
+        "phonetic": "/saɪˈteɪʃn/",
+        "meaning": "引用；指出信息来源的标记或说明",
+        "example": "A citation can identify the manual page or live vehicle signal.",
+        "chineseExample": "引用可以标明手册页或实时车辆信号。"
+      },
+      {
+        "term": "hallucination",
+        "phonetic": "/həˌluːsɪˈneɪʃn/",
+        "meaning": "幻觉；AI 生成看似合理但没有依据的内容",
+        "example": "A hallucination may sound confident but still be wrong.",
+        "chineseExample": "幻觉内容可能听起来很肯定，但仍然是错的。"
+      },
+      {
+        "term": "guardrail",
+        "phonetic": "/ˈɡɑːrdreɪl/",
+        "meaning": "防护栏；限制系统越界行为的规则或机制",
+        "example": "The guardrail stops unsafe advice before it reaches the driver.",
+        "chineseExample": "防护栏会在不安全建议到达驾驶者前阻止它。"
+      },
+      {
+        "term": "grounded",
+        "phonetic": "/ˈɡraʊndɪd/",
+        "meaning": "有依据的；基于真实上下文或数据的",
+        "example": "A grounded answer refers to current vehicle information.",
+        "chineseExample": "有依据的回答会参考当前车辆信息。"
+      },
+      {
+        "term": "response",
+        "phonetic": "/rɪˈspɑːns/",
+        "meaning": "回应；系统对用户请求给出的回答或动作",
+        "example": "The response should state what the system can and cannot verify.",
+        "chineseExample": "回应应说明系统能验证和不能验证的内容。"
+      },
+      {
+        "term": "uncertainty",
+        "phonetic": "/ʌnˈsɜːrtnti/",
+        "meaning": "不确定性；系统缺少足够依据或置信度不足的状态",
+        "example": "Uncertainty should be disclosed before the user acts.",
+        "chineseExample": "用户行动前应披露不确定性。"
+      },
+      {
+        "term": "disclosure",
+        "phonetic": "/dɪsˈkloʊʒər/",
+        "meaning": "披露；把限制、来源或风险明确告诉用户",
+        "example": "Disclosure keeps the assistant honest about missing context.",
+        "chineseExample": "披露让助手诚实说明缺失的上下文。"
+      },
+      {
+        "term": "source",
+        "phonetic": "/sɔːrs/",
+        "meaning": "来源；信息来自的位置、系统或数据通道",
+        "example": "The source may be a sensor, a map service, or a user setting.",
+        "chineseExample": "来源可以是传感器、地图服务或用户设置。"
+      },
+      {
+        "term": "transparency",
+        "phonetic": "/trænsˈperənsi/",
+        "meaning": "透明度；用户能理解系统依据和限制的程度",
+        "example": "Transparency reduces confusion when the AI changes its suggestion.",
+        "chineseExample": "当 AI 改变建议时，透明度能减少困惑。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/ˈseɪfti/",
+        "meaning": "安全；避免驾驶风险或系统误导的状态",
+        "example": "Safety comes before conversational fluency in the cockpit.",
+        "chineseExample": "在座舱中，安全优先于对话流畅度。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；系统能力、权限或使用场景的限制",
+        "example": "The boundary is stricter when the vehicle is moving.",
+        "chineseExample": "车辆行驶时边界更严格。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶者；车辆控制和决策的主要用户",
+        "example": "The driver must stay in control of time-sensitive decisions.",
+        "chineseExample": "驾驶者必须掌控时间敏感决策。"
+      },
+      {
+        "term": "review",
+        "phonetic": "/rɪˈvjuː/",
+        "meaning": "复核；再次检查内容、建议或动作",
+        "example": "Review is required before sending a generated message.",
+        "chineseExample": "发送生成消息前需要复核。"
+      },
+      {
+        "term": "loop",
+        "phonetic": "/luːp/",
+        "meaning": "闭环；从建议、确认到反馈的完整流程",
+        "example": "The loop ends only after the user confirms the action.",
+        "chineseExample": "只有用户确认操作后，闭环才结束。"
+      },
+      {
+        "term": "context window",
+        "phonetic": "/ˈkɑːntekst ˈwɪndoʊ/",
+        "meaning": "上下文窗口；AI 能参考的最近信息范围",
+        "example": "The context window should include the current route and active warning.",
+        "chineseExample": "上下文窗口应包含当前路线和正在触发的警告。"
+      },
+      {
+        "term": "sensor snapshot",
+        "phonetic": "/ˈsensər ˈsnæpʃɑːt/",
+        "meaning": "传感器快照；某一时刻车辆传感器状态的简要记录",
+        "example": "A sensor snapshot can explain why the assistant suggested slower speed.",
+        "chineseExample": "传感器快照可以解释助手为什么建议降低车速。"
+      },
+      {
+        "term": "model confidence",
+        "phonetic": "/ˈmɑːdl ˈkɑːnfɪdəns/",
+        "meaning": "模型置信度；模型对自己输出可靠性的估计",
+        "example": "Low model confidence should trigger a clarification question.",
+        "chineseExample": "模型置信度低时应触发澄清问题。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信度阈值；决定是否回答、追问或拒绝的可靠性门槛",
+        "example": "The confidence threshold is higher for safety-related advice.",
+        "chineseExample": "安全相关建议的置信度阈值更高。"
+      },
+      {
+        "term": "clarification question",
+        "phonetic": "/ˌklærəfɪˈkeɪʃn ˈkwestʃən/",
+        "meaning": "澄清问题；当用户意图或信息不足时提出的问题",
+        "example": "A clarification question prevents the assistant from assuming the wrong intent.",
+        "chineseExample": "澄清问题能防止助手假设错误意图。"
+      },
+      {
+        "term": "answer provenance",
+        "phonetic": "/ˈænsər ˈprɑːvənəns/",
+        "meaning": "答案来源链；回答背后数据和推理来源的可追溯说明",
+        "example": "Answer provenance helps engineers audit a cockpit AI response.",
+        "chineseExample": "答案来源链帮助工程师审计座舱 AI 回答。"
+      },
+      {
+        "term": "traceable claim",
+        "phonetic": "/ˈtreɪsəbl kleɪm/",
+        "meaning": "可追溯声明；能够回到数据源或规则依据的说法",
+        "example": "A traceable claim is safer than a fluent but unsupported claim.",
+        "chineseExample": "可追溯声明比流畅但无依据的声明更安全。"
+      },
+      {
+        "term": "unsupported claim",
+        "phonetic": "/ˌʌnsəˈpɔːrtɪd kleɪm/",
+        "meaning": "无依据声明；缺少数据、规则或来源支撑的说法",
+        "example": "The assistant should avoid an unsupported claim about road legality.",
+        "chineseExample": "助手应避免对道路合法性作出无依据声明。"
+      },
+      {
+        "term": "user override",
+        "phonetic": "/ˈjuːzər ˈoʊvərraɪd/",
+        "meaning": "用户覆盖；用户可以修改或取消 AI 建议的机制",
+        "example": "User override keeps the driver in charge of the final decision.",
+        "chineseExample": "用户覆盖机制让驾驶者掌控最终决定。"
+      },
+      {
+        "term": "confirmation step",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn step/",
+        "meaning": "确认步骤；执行敏感动作前要求用户同意的步骤",
+        "example": "A confirmation step is necessary before changing a destination.",
+        "chineseExample": "更改目的地前需要确认步骤。"
+      },
+      {
+        "term": "critical detail",
+        "phonetic": "/ˈkrɪtɪkl dɪˈteɪl/",
+        "meaning": "关键细节；不能被摘要省略的安全或决策信息",
+        "example": "A critical detail may include a toll, a closure, or a warning.",
+        "chineseExample": "关键细节可能包括收费、封路或警告。"
+      },
+      {
+        "term": "spoken update",
+        "phonetic": "/ˈspoʊkən ˈʌpdeɪt/",
+        "meaning": "语音更新；由系统朗读给用户的简短状态变化说明",
+        "example": "A spoken update should be brief during dense traffic.",
+        "chineseExample": "车流密集时，语音更新应保持简短。"
+      },
+      {
+        "term": "visual proof",
+        "phonetic": "/ˈvɪʒuəl pruːf/",
+        "meaning": "视觉证据；界面上用于佐证 AI 说明的图标、标签或数据",
+        "example": "Visual proof can show that the low tire warning came from a live sensor.",
+        "chineseExample": "视觉证据可显示低胎压警告来自实时传感器。"
+      },
+      {
+        "term": "live vehicle signal",
+        "phonetic": "/laɪv ˈviːəkl ˈsɪɡnəl/",
+        "meaning": "实时车辆信号；来自车辆当前状态的数据",
+        "example": "A live vehicle signal is stronger evidence than an old profile setting.",
+        "chineseExample": "实时车辆信号比旧的档案设置更有证据力。"
+      },
+      {
+        "term": "authorized data",
+        "phonetic": "/ˈɔːθəraɪzd ˈdeɪtə/",
+        "meaning": "授权数据；用户或系统许可 AI 使用的数据",
+        "example": "The assistant should answer only from authorized data.",
+        "chineseExample": "助手应只基于授权数据回答。"
+      },
+      {
+        "term": "privacy-safe memory",
+        "phonetic": "/ˈpraɪvəsi seɪf ˈmeməri/",
+        "meaning": "隐私安全记忆；保存偏好时避免暴露敏感个人信息的机制",
+        "example": "Privacy-safe memory stores a route preference without exposing private messages.",
+        "chineseExample": "隐私安全记忆保存路线偏好，同时不暴露私人消息。"
+      },
+      {
+        "term": "permission scope",
+        "phonetic": "/pərˈmɪʃn skoʊp/",
+        "meaning": "权限范围；AI 可以访问或操作的数据和功能边界",
+        "example": "The permission scope should be visible before the assistant reads a calendar.",
+        "chineseExample": "助手读取日历前应显示权限范围。"
+      },
+      {
+        "term": "fallback wording",
+        "phonetic": "/ˈfɔːlbæk ˈwɜːrdɪŋ/",
+        "meaning": "回退措辞；无法确认时使用的谨慎说明方式",
+        "example": "Fallback wording says what is known and what needs checking.",
+        "chineseExample": "回退措辞说明已知内容和需要核对的内容。"
+      },
+      {
+        "term": "audit trail",
+        "phonetic": "/ˈɔːdɪt treɪl/",
+        "meaning": "审计轨迹；记录 AI 使用哪些数据、生成什么建议和用户如何确认",
+        "example": "An audit trail supports later debugging and accountability.",
+        "chineseExample": "审计轨迹支持后续调试和责任追踪。"
+      },
+      {
+        "term": "accountability",
+        "phonetic": "/əˌkaʊntəˈbɪləti/",
+        "meaning": "责任可追踪性；能够说明系统行为由谁、什么规则或什么数据导致",
+        "example": "Accountability matters when AI advice affects a driving decision.",
+        "chineseExample": "当 AI 建议影响驾驶决策时，责任可追踪性很重要。"
+      },
+      {
+        "term": "manual page",
+        "phonetic": "/ˈmænjuəl peɪdʒ/",
+        "meaning": "手册页；车辆说明书中可引用的具体页面或章节",
+        "example": "The assistant can cite a manual page for a warning light explanation.",
+        "chineseExample": "助手可以引用手册页解释警示灯。"
+      },
+      {
+        "term": "driving context",
+        "phonetic": "/ˈdraɪvɪŋ ˈkɑːntekst/",
+        "meaning": "驾驶情境；速度、道路复杂度、交通和驾驶负荷等上下文",
+        "example": "The driving context decides whether the answer should be spoken or delayed.",
+        "chineseExample": "驾驶情境决定回答应立即朗读还是延后。"
+      },
+      {
+        "term": "complex merge",
+        "phonetic": "/ˈkɑːmpleks mɜːrdʒ/",
+        "meaning": "复杂汇入；并线或进入主路时需要高注意力的交通场景",
+        "example": "The assistant should stay quiet during a complex merge.",
+        "chineseExample": "复杂汇入时助手应保持安静。"
+      },
+      {
+        "term": "time-sensitive decision",
+        "phonetic": "/taɪm ˈsensətɪv dɪˈsɪʒn/",
+        "meaning": "时间敏感决策；必须快速处理且可能影响安全的判断",
+        "example": "A time-sensitive decision should not depend on a long AI explanation.",
+        "chineseExample": "时间敏感决策不应依赖冗长的 AI 解释。"
+      },
+      {
+        "term": "distinguish",
+        "phonetic": "/dɪˈstɪŋɡwɪʃ/",
+        "meaning": "区分；识别两个概念或信息来源的不同",
+        "example": "Evidence citation helps the driver distinguish a confirmed fact from a model guess.",
+        "chineseExample": "证据引用帮助驾驶者区分已确认事实和模型猜测。"
+      },
+      {
+        "term": "fact",
+        "phonetic": "/fækt/",
+        "meaning": "事实；可被证据验证的信息",
+        "example": "A fact should be separated from a model guess.",
+        "chineseExample": "事实应与模型猜测区分开。"
+      },
+      {
+        "term": "guess",
+        "phonetic": "/ɡes/",
+        "meaning": "猜测；缺少充分证据的判断",
+        "example": "The assistant should label a guess instead of presenting it as evidence.",
+        "chineseExample": "助手应标明猜测，而不是把它当作证据呈现。"
+      },
+      {
+        "term": "unavailable",
+        "phonetic": "/ˌʌnəˈveɪləbl/",
+        "meaning": "不可用的；当前无法访问或无法确认的",
+        "example": "The hallucination guardrail should block an answer when vehicle data is unavailable.",
+        "chineseExample": "当车辆数据不可用时，幻觉防护栏应阻止系统回答。"
+      },
+      {
+        "term": "fastest",
+        "phonetic": "/ˈfæstəst/",
+        "meaning": "最快的；耗时最短的",
+        "example": "A follow-up prompt can ask whether the driver prefers the fastest route.",
+        "chineseExample": "追问提示可以询问驾驶者是否偏好最快路线。"
+      },
+      {
+        "term": "quietest",
+        "phonetic": "/ˈkwaɪətəst/",
+        "meaning": "最安静的；噪声或打扰最少的",
+        "example": "The driver may prefer the quietest route during a family trip.",
+        "chineseExample": "家庭出行时驾驶者可能偏好最安静路线。"
+      },
+      {
+        "term": "generated",
+        "phonetic": "/ˈdʒenəreɪtɪd/",
+        "meaning": "生成的；由系统或模型产生的",
+        "example": "A driver review loop lets the user approve a generated reply before it is sent.",
+        "chineseExample": "驾驶者复核闭环允许用户在发送前批准生成的回复。"
+      },
+      {
+        "term": "reply",
+        "phonetic": "/rɪˈplaɪ/",
+        "meaning": "回复；对消息或请求给出的回应",
+        "example": "The generated reply should be reviewed before it is sent.",
+        "chineseExample": "生成回复在发送前应经过复核。"
+      },
+      {
+        "term": "appeared",
+        "phonetic": "/əˈpɪrd/",
+        "meaning": "出现了；在界面或对话中被呈现出来",
+        "example": "The driver asked why an energy recommendation appeared.",
+        "chineseExample": "驾驶者询问能耗建议为什么出现。"
+      },
+      {
+        "term": "case",
+        "phonetic": "/keɪs/",
+        "meaning": "情况；具体场景或实例",
+        "example": "In each case, the assistant should give a short answer.",
+        "chineseExample": "在每种情况下，助手都应给出简短回答。"
+      },
+      {
+        "term": "pairs",
+        "phonetic": "/perz/",
+        "meaning": "配对；把两个设计元素一起使用",
+        "example": "A safe design pairs every fluent summary with a verifiable explanation.",
+        "chineseExample": "安全设计会把每个流畅摘要与可验证解释配对。"
+      },
+      {
+        "term": "fluent",
+        "phonetic": "/ˈfluːənt/",
+        "meaning": "流畅的；表达自然、连贯、容易听懂的",
+        "example": "A fluent summary still needs evidence in a safety-critical cockpit.",
+        "chineseExample": "在安全关键座舱中，流畅摘要仍然需要证据。"
+      },
+      {
+        "term": "reported",
+        "phonetic": "/rɪˈpɔːrtɪd/",
+        "meaning": "报告了；由系统、传感器或服务提供了信息",
+        "example": "The route changed because a live traffic signal reported a closure.",
+        "chineseExample": "路线改变是因为实时交通信号报告封路。"
+      },
+      {
+        "term": "closure",
+        "phonetic": "/ˈkloʊʒər/",
+        "meaning": "封闭；道路、车道或入口暂时关闭",
+        "example": "A closure should be shown as evidence for a route change.",
+        "chineseExample": "封路应作为路线变化的证据展示。"
+      },
+      {
+        "term": "entered",
+        "phonetic": "/ˈentərd/",
+        "meaning": "进入了；车辆或用户进入某个状态或场景",
+        "example": "The message was delayed because the vehicle entered a complex merge.",
+        "chineseExample": "消息延后是因为车辆进入复杂汇入。"
+      },
+      {
+        "term": "planned",
+        "phonetic": "/plænd/",
+        "meaning": "计划的；已被路线或系统预先安排的",
+        "example": "The charging suggestion used current battery temperature and planned elevation.",
+        "chineseExample": "充电建议使用了当前电池温度和计划海拔。"
+      },
+      {
+        "term": "elevation",
+        "phonetic": "/ˌelɪˈveɪʃn/",
+        "meaning": "海拔；道路或地点相对于海平面的高度",
+        "example": "Planned elevation can affect an energy recommendation.",
+        "chineseExample": "计划海拔会影响能耗建议。"
+      },
+      {
+        "term": "recommendations",
+        "phonetic": "/ˌrekəmenˈdeɪʃnz/",
+        "meaning": "建议；系统向用户提出的多个推荐动作或选择",
+        "example": "Drivers need to review generated content and override recommendations.",
+        "chineseExample": "驾驶者需要复核生成内容并覆盖推荐。"
+      },
+      {
+        "term": "authorized",
+        "phonetic": "/ˈɔːθəraɪzd/",
+        "meaning": "已授权的；得到用户或系统许可的",
+        "example": "The assistant must respect the boundary between authorized data and model inference.",
+        "chineseExample": "助手必须尊重授权数据与模型推断之间的边界。"
+      },
+      {
+        "term": "humble",
+        "phonetic": "/ˈhʌmbl/",
+        "meaning": "谦逊的；不过度承诺，愿意说明限制的",
+        "example": "The best cockpit AI feels concise, useful, and humble.",
+        "chineseExample": "最好的座舱 AI 简洁、有用且谦逊。"
+      },
+      {
+        "term": "reasoning",
+        "phonetic": "/ˈriːzənɪŋ/",
+        "meaning": "推理；系统得出结论的依据和过程",
+        "example": "The assistant should make its reasoning easier to check.",
+        "chineseExample": "助手应让自己的推理更容易被检查。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing generative explanations for the cockpit",
+        "text": "Generative AI can make an intelligent cockpit feel more helpful, but only when its summaries stay grounded in visible evidence. A driver may ask why the navigation system changed the route, why the cabin assistant delayed a message, or why an energy recommendation appeared. In each case, the assistant should give a short answer, name the source, and expose uncertainty instead of pretending to know more than it does. A safe design pairs every fluent summary with a verifiable explanation: the route changed because a live traffic signal reported a closure; the message was delayed because the vehicle entered a complex merge; the charging suggestion used current battery temperature and planned elevation. If the evidence is missing, the assistant should ask a follow-up question or use fallback wording such as, \"I cannot confirm that from vehicle data.\" This is not only a technical guardrail. It is also a trust pattern. Drivers need to review generated content, override recommendations, and understand the boundary between authorized data and model inference. The best cockpit AI feels concise, useful, and humble: it reduces information load while making its reasoning easier to check.",
+        "translation": "生成式 AI 可以让智能座舱更有帮助，但前提是摘要必须建立在可见证据上。驾驶者可能会问导航为什么改路线、座舱助手为什么延后消息、能耗建议为什么出现。每种情况下，助手都应给出简短回答，说明来源，并披露不确定性，而不是假装知道更多。安全设计会把流畅摘要与可验证解释配对：路线改变是因为实时交通信号报告封路；消息延后是因为车辆进入复杂汇入；充电建议使用了当前电池温度和计划海拔。如果缺少证据，助手应提出追问或使用回退措辞，例如“我无法从车辆数据确认这一点”。这不仅是技术防护栏，也是一种信任模式。驾驶者需要复核生成内容、覆盖推荐，并理解授权数据与模型推断之间的边界。最好的座舱 AI 简洁、有用且谦逊：它降低信息负荷，同时让推理更容易被检查。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Generative AI can make an intelligent cockpit feel more helpful, but only when its summaries stay grounded in visible evidence.",
+        "translation": "生成式 AI 可以让智能座舱更有帮助，但只有当摘要始终基于可见证据时才成立。",
+        "points": [
+          "only when 引出必要条件，强调 AI 摘要必须有依据。",
+          "stay grounded in visible evidence 表示“保持基于可见证据”。",
+          "feel more helpful 适合描述用户主观体验提升。"
+        ]
+      },
+      {
+        "sentence": "In each case, the assistant should give a short answer, name the source, and expose uncertainty instead of pretending to know more than it does.",
+        "translation": "在每种情况下，助手都应给出简短回答，说明来源，并披露不确定性，而不是假装知道更多。",
+        "points": [
+          "give, name, expose 是并列动词，形成清晰设计原则。",
+          "instead of pretending... 用来表达应避免的错误行为。",
+          "more than it does 指系统真实知道的范围。"
+        ]
+      },
+      {
+        "sentence": "A safe design pairs every fluent summary with a verifiable explanation.",
+        "translation": "安全设计会把每个流畅摘要与可验证解释配对。",
+        "points": [
+          "pairs A with B 表示“把 A 与 B 配对”。",
+          "fluent summary 强调语言流畅，verifiable explanation 强调可核查。",
+          "safe design 在 HMI 语境中指降低误导和误操作风险的设计。"
+        ]
+      },
+      {
+        "sentence": "Drivers need to review generated content, override recommendations, and understand the boundary between authorized data and model inference.",
+        "translation": "驾驶者需要复核生成内容、覆盖推荐，并理解授权数据与模型推断之间的边界。",
+        "points": [
+          "review, override, understand 是用户控制闭环的三个动作。",
+          "between authorized data and model inference 用于区分真实数据和模型推断。",
+          "boundary 在这里指能力、权限和可信度边界。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "description": "朗读 10 个核心词，重点区分 grounded response、verifiable explanation、uncertainty disclosure 和 hallucination guardrail。"
+      },
+      {
+        "title": "长文跟读",
+        "duration": "7 分钟",
+        "description": "先听读长文，再用中文复述为什么车内 AI 摘要必须同时给出证据和边界。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "description": "用 A safe design pairs...with... 和 The assistant should...instead of... 改写两个自己的座舱交互句。"
+      },
+      {
+        "title": "场景输出",
+        "duration": "6 分钟",
+        "description": "模拟用户询问“为什么改路线”，用 3 句英文回答：简短结论、证据来源、不确定性或下一步确认。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: explainable AI for automotive assistants",
+        "url": "https://www.youtube.com/results?search_query=explainable+AI+automotive+assistant+HMI",
+        "note": "可搜索相关公开演讲；本课未引用单一视频来源。"
+      }
+    ]
+  },
+  {
     "id": "2026-09-24-attention-aware-nudges-and-distraction-prevention",
     "date": "2026-09-24",
     "title": "Attention-aware nudges and distraction prevention in intelligent cockpits",
