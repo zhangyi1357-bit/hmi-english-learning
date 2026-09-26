@@ -1,5 +1,950 @@
 [
   {
+    "id": "2026-09-26-contextual-charging-stop-recommendations-and-driver-confidence",
+    "date": "2026-09-26",
+    "title": "Contextual charging stop recommendations and driver confidence in intelligent cockpits",
+    "topic": "智能座舱情境化充电停靠推荐与驾驶信心",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱在充电停靠推荐中结合电量、路线、站点可靠性、抵达缓冲和用户控制来建立驾驶信心。",
+    "words": [
+      {
+        "term": "contextual charging stop recommendation",
+        "phonetic": "/kənˈtekstʃuəl ˈtʃɑːrdʒɪŋ stɑːp ˌrekəmenˈdeɪʃn/",
+        "meaning": "情境化充电停靠推荐；结合电量、路线、天气、乘员需求和站点状态给出的充电建议",
+        "example": "A contextual charging stop recommendation should explain why this station fits the current trip.",
+        "chineseExample": "情境化充电停靠推荐应解释为什么这个站点适合当前行程。"
+      },
+      {
+        "term": "range confidence",
+        "phonetic": "/reɪndʒ ˈkɑːnfɪdəns/",
+        "meaning": "续航信心；驾驶者对车辆能否安全抵达目的地或充电站的信任程度",
+        "example": "Range confidence improves when the cockpit shows both the estimate and the reason behind it.",
+        "chineseExample": "当座舱同时展示估算值和背后原因时，续航信心会提升。"
+      },
+      {
+        "term": "charging detour cost",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr kɔːst/",
+        "meaning": "充电绕行成本；为到达充电站额外付出的时间、距离或精力",
+        "example": "The interface should compare the charging detour cost with the risk of arriving with a low battery.",
+        "chineseExample": "界面应比较充电绕行成本与低电量抵达风险。"
+      },
+      {
+        "term": "station reliability signal",
+        "phonetic": "/ˈsteɪʃn rɪˌlaɪəˈbɪləti ˈsɪɡnəl/",
+        "meaning": "站点可靠性信号；用于判断充电站是否可用、稳定、拥堵或近期故障的数据提示",
+        "example": "A station reliability signal can warn the driver before they commit to a remote charger.",
+        "chineseExample": "站点可靠性信号可以在驾驶者决定前往偏远充电桩前发出提醒。"
+      },
+      {
+        "term": "arrival buffer",
+        "phonetic": "/əˈraɪvl ˈbʌfər/",
+        "meaning": "抵达缓冲；到达目的地或充电站时保留的最低电量余量",
+        "example": "The system increased the arrival buffer because rain and heating demand reduced efficiency.",
+        "chineseExample": "由于雨天和加热需求降低了效率，系统提高了抵达缓冲。"
+      },
+      {
+        "term": "preconditioning prompt",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ prɑːmpt/",
+        "meaning": "预调节提示；提醒用户为快充提前调整电池温度或车内状态的提示",
+        "example": "A preconditioning prompt should appear early enough for the battery to reach an efficient charging temperature.",
+        "chineseExample": "预调节提示应足够提前出现，让电池达到高效充电温度。"
+      },
+      {
+        "term": "driver confidence cue",
+        "phonetic": "/ˈdraɪvər ˈkɑːnfɪdəns kjuː/",
+        "meaning": "驾驶信心线索；帮助用户理解系统判断并放心继续行程的界面提示",
+        "example": "A driver confidence cue can show that the route still has two backup chargers nearby.",
+        "chineseExample": "驾驶信心线索可以显示路线附近仍有两个备用充电站。"
+      },
+      {
+        "term": "backup charger option",
+        "phonetic": "/ˈbækʌp ˈtʃɑːrdʒər ˈɑːpʃn/",
+        "meaning": "备用充电选项；首选充电站不可用时可替代的充电点",
+        "example": "The backup charger option should be visible before the primary station becomes risky.",
+        "chineseExample": "备用充电选项应在主充电站变得有风险之前就可见。"
+      },
+      {
+        "term": "energy-aware rerouting",
+        "phonetic": "/ˈenərdʒi əˈwer ˌriːˈruːtɪŋ/",
+        "meaning": "能耗感知重规划；根据电量、坡度、速度、气候和充电资源重新规划路线",
+        "example": "Energy-aware rerouting avoids a faster road if it would leave too little battery reserve.",
+        "chineseExample": "如果更快道路会留下过少电量储备，能耗感知重规划会避开它。"
+      },
+      {
+        "term": "charging decision transparency",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ dɪˈsɪʒn trænsˈperənsi/",
+        "meaning": "充电决策透明度；让用户看到推荐充电时机、地点和取舍依据的设计原则",
+        "example": "Charging decision transparency helps the driver accept a stop that is not the closest one.",
+        "chineseExample": "充电决策透明度帮助驾驶者接受并非最近的充电停靠点。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "contextual charging stop recommendation",
+        "phonetic": "/kənˈtekstʃuəl ˈtʃɑːrdʒɪŋ stɑːp ˌrekəmenˈdeɪʃn/",
+        "meaning": "情境化充电停靠推荐；结合电量、路线、天气、乘员需求和站点状态给出的充电建议",
+        "example": "A contextual charging stop recommendation should explain why this station fits the current trip.",
+        "chineseExample": "情境化充电停靠推荐应解释为什么这个站点适合当前行程。"
+      },
+      {
+        "term": "range confidence",
+        "phonetic": "/reɪndʒ ˈkɑːnfɪdəns/",
+        "meaning": "续航信心；驾驶者对车辆能否安全抵达目的地或充电站的信任程度",
+        "example": "Range confidence improves when the cockpit shows both the estimate and the reason behind it.",
+        "chineseExample": "当座舱同时展示估算值和背后原因时，续航信心会提升。"
+      },
+      {
+        "term": "charging detour cost",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr kɔːst/",
+        "meaning": "充电绕行成本；为到达充电站额外付出的时间、距离或精力",
+        "example": "The interface should compare the charging detour cost with the risk of arriving with a low battery.",
+        "chineseExample": "界面应比较充电绕行成本与低电量抵达风险。"
+      },
+      {
+        "term": "station reliability signal",
+        "phonetic": "/ˈsteɪʃn rɪˌlaɪəˈbɪləti ˈsɪɡnəl/",
+        "meaning": "站点可靠性信号；用于判断充电站是否可用、稳定、拥堵或近期故障的数据提示",
+        "example": "A station reliability signal can warn the driver before they commit to a remote charger.",
+        "chineseExample": "站点可靠性信号可以在驾驶者决定前往偏远充电桩前发出提醒。"
+      },
+      {
+        "term": "arrival buffer",
+        "phonetic": "/əˈraɪvl ˈbʌfər/",
+        "meaning": "抵达缓冲；到达目的地或充电站时保留的最低电量余量",
+        "example": "The system increased the arrival buffer because rain and heating demand reduced efficiency.",
+        "chineseExample": "由于雨天和加热需求降低了效率，系统提高了抵达缓冲。"
+      },
+      {
+        "term": "preconditioning prompt",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ prɑːmpt/",
+        "meaning": "预调节提示；提醒用户为快充提前调整电池温度或车内状态的提示",
+        "example": "A preconditioning prompt should appear early enough for the battery to reach an efficient charging temperature.",
+        "chineseExample": "预调节提示应足够提前出现，让电池达到高效充电温度。"
+      },
+      {
+        "term": "driver confidence cue",
+        "phonetic": "/ˈdraɪvər ˈkɑːnfɪdəns kjuː/",
+        "meaning": "驾驶信心线索；帮助用户理解系统判断并放心继续行程的界面提示",
+        "example": "A driver confidence cue can show that the route still has two backup chargers nearby.",
+        "chineseExample": "驾驶信心线索可以显示路线附近仍有两个备用充电站。"
+      },
+      {
+        "term": "backup charger option",
+        "phonetic": "/ˈbækʌp ˈtʃɑːrdʒər ˈɑːpʃn/",
+        "meaning": "备用充电选项；首选充电站不可用时可替代的充电点",
+        "example": "The backup charger option should be visible before the primary station becomes risky.",
+        "chineseExample": "备用充电选项应在主充电站变得有风险之前就可见。"
+      },
+      {
+        "term": "energy-aware rerouting",
+        "phonetic": "/ˈenərdʒi əˈwer ˌriːˈruːtɪŋ/",
+        "meaning": "能耗感知重规划；根据电量、坡度、速度、气候和充电资源重新规划路线",
+        "example": "Energy-aware rerouting avoids a faster road if it would leave too little battery reserve.",
+        "chineseExample": "如果更快道路会留下过少电量储备，能耗感知重规划会避开它。"
+      },
+      {
+        "term": "charging decision transparency",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ dɪˈsɪʒn trænsˈperənsi/",
+        "meaning": "充电决策透明度；让用户看到推荐充电时机、地点和取舍依据的设计原则",
+        "example": "Charging decision transparency helps the driver accept a stop that is not the closest one.",
+        "chineseExample": "充电决策透明度帮助驾驶者接受并非最近的充电停靠点。"
+      },
+      {
+        "term": "contextual",
+        "phonetic": "/kənˈtekstʃuəl/",
+        "meaning": "情境化的；根据当前场景和上下文调整的",
+        "example": "The cockpit uses contextual to support a safer charging experience.",
+        "chineseExample": "座舱使用“contextual”来支持更安全的充电体验。"
+      },
+      {
+        "term": "charging stop",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ stɑːp/",
+        "meaning": "充电停靠；行程中为补能安排的停车点",
+        "example": "The cockpit uses charging stop to support a safer charging experience.",
+        "chineseExample": "座舱使用“charging stop”来支持更安全的充电体验。"
+      },
+      {
+        "term": "recommendation",
+        "phonetic": "/ˌrekəmenˈdeɪʃn/",
+        "meaning": "推荐；系统基于数据给出的建议",
+        "example": "The cockpit uses recommendation to support a safer charging experience.",
+        "chineseExample": "座舱使用“recommendation”来支持更安全的充电体验。"
+      },
+      {
+        "term": "driver confidence",
+        "phonetic": "/ˈdraɪvər ˈkɑːnfɪdəns/",
+        "meaning": "驾驶者信心；用户对系统建议和行程结果的信任",
+        "example": "The cockpit uses driver confidence to support a safer charging experience.",
+        "chineseExample": "座舱使用“driver confidence”来支持更安全的充电体验。"
+      },
+      {
+        "term": "live battery state",
+        "phonetic": "/laɪv ˈbætəri steɪt/",
+        "meaning": "实时电池状态；当前电量、温度和可用能量信息",
+        "example": "The cockpit uses live battery state to support a safer charging experience.",
+        "chineseExample": "座舱使用“live battery state”来支持更安全的充电体验。"
+      },
+      {
+        "term": "route grade",
+        "phonetic": "/ruːt ɡreɪd/",
+        "meaning": "路线坡度；影响能耗的道路上坡或下坡情况",
+        "example": "The cockpit uses route grade to support a safer charging experience.",
+        "chineseExample": "座舱使用“route grade”来支持更安全的充电体验。"
+      },
+      {
+        "term": "weather",
+        "phonetic": "/ˈweðər/",
+        "meaning": "天气；影响能耗、视线和驾驶负荷的外部条件",
+        "example": "The cockpit uses weather to support a safer charging experience.",
+        "chineseExample": "座舱使用“weather”来支持更安全的充电体验。"
+      },
+      {
+        "term": "cabin heating demand",
+        "phonetic": "/ˈkæbɪn ˈhiːtɪŋ dɪˈmænd/",
+        "meaning": "座舱加热需求；车内取暖带来的额外能耗",
+        "example": "The cockpit uses cabin heating demand to support a safer charging experience.",
+        "chineseExample": "座舱使用“cabin heating demand”来支持更安全的充电体验。"
+      },
+      {
+        "term": "station availability",
+        "phonetic": "/ˈsteɪʃn əˌveɪləˈbɪləti/",
+        "meaning": "站点可用性；充电站是否开放、空闲和可服务",
+        "example": "The cockpit uses station availability to support a safer charging experience.",
+        "chineseExample": "座舱使用“station availability”来支持更安全的充电体验。"
+      },
+      {
+        "term": "charger speed",
+        "phonetic": "/ˈtʃɑːrdʒər spiːd/",
+        "meaning": "充电速度；充电桩可提供的补能功率或速度",
+        "example": "The cockpit uses charger speed to support a safer charging experience.",
+        "chineseExample": "座舱使用“charger speed”来支持更安全的充电体验。"
+      },
+      {
+        "term": "driver schedule",
+        "phonetic": "/ˈdraɪvər ˈskedʒuːl/",
+        "meaning": "驾驶者日程；用户的时间安排和到达约束",
+        "example": "The cockpit uses driver schedule to support a safer charging experience.",
+        "chineseExample": "座舱使用“driver schedule”来支持更安全的充电体验。"
+      },
+      {
+        "term": "trade-off",
+        "phonetic": "/ˈtreɪd ɔːf/",
+        "meaning": "取舍；在时间、风险、能耗和便利性之间的权衡",
+        "example": "The cockpit uses trade-off to support a safer charging experience.",
+        "chineseExample": "座舱使用“trade-off”来支持更安全的充电体验。"
+      },
+      {
+        "term": "detour",
+        "phonetic": "/ˈdiːtʊr/",
+        "meaning": "绕行；偏离原路线产生的额外行驶",
+        "example": "The cockpit uses detour to support a safer charging experience.",
+        "chineseExample": "座舱使用“detour”来支持更安全的充电体验。"
+      },
+      {
+        "term": "battery reserve",
+        "phonetic": "/ˈbætəri rɪˈzɜːrv/",
+        "meaning": "电量储备；保留以应对不确定性的电池余量",
+        "example": "The cockpit uses battery reserve to support a safer charging experience.",
+        "chineseExample": "座舱使用“battery reserve”来支持更安全的充电体验。"
+      },
+      {
+        "term": "reliable station",
+        "phonetic": "/rɪˈlaɪəbl ˈsteɪʃn/",
+        "meaning": "可靠站点；可用性和稳定性较高的充电站",
+        "example": "The cockpit uses reliable station to support a safer charging experience.",
+        "chineseExample": "座舱使用“reliable station”来支持更安全的充电体验。"
+      },
+      {
+        "term": "highway exit",
+        "phonetic": "/ˈhaɪweɪ ˈeksɪt/",
+        "meaning": "高速出口；高速路驶出的路段或匝道口",
+        "example": "The cockpit uses highway exit to support a safer charging experience.",
+        "chineseExample": "座舱使用“highway exit”来支持更安全的充电体验。"
+      },
+      {
+        "term": "planning partner",
+        "phonetic": "/ˈplænɪŋ ˈpɑːrtnər/",
+        "meaning": "规划伙伴；帮助用户共同安排路线和停靠的系统角色",
+        "example": "The cockpit uses planning partner to support a safer charging experience.",
+        "chineseExample": "座舱使用“planning partner”来支持更安全的充电体验。"
+      },
+      {
+        "term": "warning banner",
+        "phonetic": "/ˈwɔːrnɪŋ ˈbænər/",
+        "meaning": "警告横幅；突出显示风险或紧急信息的界面条幅",
+        "example": "The cockpit uses warning banner to support a safer charging experience.",
+        "chineseExample": "座舱使用“warning banner”来支持更安全的充电体验。"
+      },
+      {
+        "term": "calm planning partner",
+        "phonetic": "/kɑːm ˈplænɪŋ ˈpɑːrtnər/",
+        "meaning": "冷静的规划伙伴；以低压力方式解释和协助决策的系统",
+        "example": "The cockpit uses calm planning partner to support a safer charging experience.",
+        "chineseExample": "座舱使用“calm planning partner”来支持更安全的充电体验。"
+      },
+      {
+        "term": "warning",
+        "phonetic": "/ˈwɔːrnɪŋ/",
+        "meaning": "警告；提醒用户注意风险的信息",
+        "example": "The cockpit uses warning to support a safer charging experience.",
+        "chineseExample": "座舱使用“warning”来支持更安全的充电体验。"
+      },
+      {
+        "term": "banner",
+        "phonetic": "/ˈbænər/",
+        "meaning": "横幅；界面中横向展示的信息区域",
+        "example": "The cockpit uses banner to support a safer charging experience.",
+        "chineseExample": "座舱使用“banner”来支持更安全的充电体验。"
+      },
+      {
+        "term": "combine",
+        "phonetic": "/kəmˈbaɪn/",
+        "meaning": "结合；把多个因素整合用于判断",
+        "example": "The cockpit uses combine to support a safer charging experience.",
+        "chineseExample": "座舱使用“combine”来支持更安全的充电体验。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "可用性；资源当前是否能够使用",
+        "example": "The cockpit uses availability to support a safer charging experience.",
+        "chineseExample": "座舱使用“availability”来支持更安全的充电体验。"
+      },
+      {
+        "term": "schedule",
+        "phonetic": "/ˈskedʒuːl/",
+        "meaning": "日程；时间安排或计划",
+        "example": "The cockpit uses schedule to support a safer charging experience.",
+        "chineseExample": "座舱使用“schedule”来支持更安全的充电体验。"
+      },
+      {
+        "term": "logic",
+        "phonetic": "/ˈlɑːdʒɪk/",
+        "meaning": "逻辑；建议背后的推理依据",
+        "example": "The cockpit uses logic to support a safer charging experience.",
+        "chineseExample": "座舱使用“logic”来支持更安全的充电体验。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/səɡˈdʒestʃən/",
+        "meaning": "建议；系统或人员提出的行动方案",
+        "example": "The cockpit uses suggestion to support a safer charging experience.",
+        "chineseExample": "座舱使用“suggestion”来支持更安全的充电体验。"
+      },
+      {
+        "term": "preferred station",
+        "phonetic": "/prɪˈfɜːrd ˈsteɪʃn/",
+        "meaning": "首选站点；系统推荐优先前往的充电站",
+        "example": "The cockpit uses preferred station to support a safer charging experience.",
+        "chineseExample": "座舱使用“preferred station”来支持更安全的充电体验。"
+      },
+      {
+        "term": "skip choice",
+        "phonetic": "/skɪp tʃɔɪs/",
+        "meaning": "跳过选择；允许用户暂不采纳建议的选项",
+        "example": "The cockpit uses skip choice to support a safer charging experience.",
+        "chineseExample": "座舱使用“skip choice”来支持更安全的充电体验。"
+      },
+      {
+        "term": "clear consequence",
+        "phonetic": "/klɪr ˈkɑːnsəkwens/",
+        "meaning": "明确后果；跳过或选择某项操作后可预期的影响",
+        "example": "The cockpit uses clear consequence to support a safer charging experience.",
+        "chineseExample": "座舱使用“clear consequence”来支持更安全的充电体验。"
+      },
+      {
+        "term": "plain language",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ/",
+        "meaning": "清楚语言；避免术语堆叠、容易理解的表达",
+        "example": "The cockpit uses plain language to support a safer charging experience.",
+        "chineseExample": "座舱使用“plain language”来支持更安全的充电体验。"
+      },
+      {
+        "term": "quiet update",
+        "phonetic": "/ˈkwaɪət ˈʌpdeɪt/",
+        "meaning": "安静更新；不打断驾驶任务的状态刷新",
+        "example": "The cockpit uses quiet update to support a safer charging experience.",
+        "chineseExample": "座舱使用“quiet update”来支持更安全的充电体验。"
+      },
+      {
+        "term": "reversible decision",
+        "phonetic": "/rɪˈvɜːrsəbl dɪˈsɪʒn/",
+        "meaning": "可撤销决策；用户可以修改或回退的选择",
+        "example": "The cockpit uses reversible decision to support a safer charging experience.",
+        "chineseExample": "座舱使用“reversible decision”来支持更安全的充电体验。"
+      },
+      {
+        "term": "focused on the road",
+        "phonetic": "/ˈfoʊkəst ɑːn ðə roʊd/",
+        "meaning": "专注道路；驾驶者注意力保持在驾驶环境上",
+        "example": "The cockpit uses focused on the road to support a safer charging experience.",
+        "chineseExample": "座舱使用“focused on the road”来支持更安全的充电体验。"
+      },
+      {
+        "term": "battery state",
+        "phonetic": "/ˈbætəri steɪt/",
+        "meaning": "电池状态；电量、温度、健康度和可用功率等信息",
+        "example": "The cockpit uses battery state to support a safer charging experience.",
+        "chineseExample": "座舱使用“battery state”来支持更安全的充电体验。"
+      },
+      {
+        "term": "charging decision",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ dɪˈsɪʒn/",
+        "meaning": "充电决策；关于何时何地补能的选择",
+        "example": "The cockpit uses charging decision to support a safer charging experience.",
+        "chineseExample": "座舱使用“charging decision”来支持更安全的充电体验。"
+      },
+      {
+        "term": "arrival",
+        "phonetic": "/əˈraɪvl/",
+        "meaning": "抵达；到达目的地或站点",
+        "example": "The cockpit uses arrival to support a safer charging experience.",
+        "chineseExample": "座舱使用“arrival”来支持更安全的充电体验。"
+      },
+      {
+        "term": "buffer",
+        "phonetic": "/ˈbʌfər/",
+        "meaning": "缓冲；用于吸收不确定性的余量",
+        "example": "The cockpit uses buffer to support a safer charging experience.",
+        "chineseExample": "座舱使用“buffer”来支持更安全的充电体验。"
+      },
+      {
+        "term": "preconditioning",
+        "phonetic": "/ˌpriːkənˈdɪʃənɪŋ/",
+        "meaning": "预调节；提前调整电池或座舱状态以提升效率",
+        "example": "The cockpit uses preconditioning to support a safer charging experience.",
+        "chineseExample": "座舱使用“preconditioning”来支持更安全的充电体验。"
+      },
+      {
+        "term": "backup",
+        "phonetic": "/ˈbækʌp/",
+        "meaning": "备用；作为主要方案失效时的替代方案",
+        "example": "The cockpit uses backup to support a safer charging experience.",
+        "chineseExample": "座舱使用“backup”来支持更安全的充电体验。"
+      },
+      {
+        "term": "charger",
+        "phonetic": "/ˈtʃɑːrdʒər/",
+        "meaning": "充电桩；为车辆补能的设备",
+        "example": "The cockpit uses charger to support a safer charging experience.",
+        "chineseExample": "座舱使用“charger”来支持更安全的充电体验。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃn/",
+        "meaning": "选项；用户可选择的行动方案",
+        "example": "The cockpit uses option to support a safer charging experience.",
+        "chineseExample": "座舱使用“option”来支持更安全的充电体验。"
+      },
+      {
+        "term": "energy-aware",
+        "phonetic": "/ˈenərdʒi əˈwer/",
+        "meaning": "能耗感知的；考虑能量消耗和余量的",
+        "example": "The cockpit uses energy-aware to support a safer charging experience.",
+        "chineseExample": "座舱使用“energy-aware”来支持更安全的充电体验。"
+      },
+      {
+        "term": "rerouting",
+        "phonetic": "/ˌriːˈruːtɪŋ/",
+        "meaning": "重规划路线；根据新条件改变行驶路径",
+        "example": "The cockpit uses rerouting to support a safer charging experience.",
+        "chineseExample": "座舱使用“rerouting”来支持更安全的充电体验。"
+      },
+      {
+        "term": "transparent",
+        "phonetic": "/trænsˈperənt/",
+        "meaning": "透明的；原因和依据清晰可见的",
+        "example": "The cockpit uses transparent to support a safer charging experience.",
+        "chineseExample": "座舱使用“transparent”来支持更安全的充电体验。"
+      },
+      {
+        "term": "transparency",
+        "phonetic": "/trænsˈperənsi/",
+        "meaning": "透明度；系统解释依据和取舍的清晰程度",
+        "example": "The cockpit uses transparency to support a safer charging experience.",
+        "chineseExample": "座舱使用“transparency”来支持更安全的充电体验。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "可撤销的；可以改变、取消或回退的",
+        "example": "The cockpit uses reversible to support a safer charging experience.",
+        "chineseExample": "座舱使用“reversible”来支持更安全的充电体验。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trʌst/",
+        "meaning": "信任；用户相信系统判断可靠的状态",
+        "example": "The cockpit uses trust to support a safer charging experience.",
+        "chineseExample": "座舱使用“trust”来支持更安全的充电体验。"
+      },
+      {
+        "term": "availability changes",
+        "phonetic": "/əˌveɪləˈbɪləti ˈtʃeɪndʒɪz/",
+        "meaning": "可用性变化；资源状态从可用到不可用或反向变化",
+        "example": "The cockpit uses availability changes to support a safer charging experience.",
+        "chineseExample": "座舱使用“availability changes”来支持更安全的充电体验。"
+      },
+      {
+        "term": "temperature",
+        "phonetic": "/ˈtemprətʃər/",
+        "meaning": "温度；影响电池效率和舒适性的热状态",
+        "example": "The cockpit uses temperature to support a safer charging experience.",
+        "chineseExample": "座舱使用“temperature”来支持更安全的充电体验。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/ˈtræfɪk/",
+        "meaning": "交通；道路拥堵、速度和通行状况",
+        "example": "The cockpit uses traffic to support a safer charging experience.",
+        "chineseExample": "座舱使用“traffic”来支持更安全的充电体验。"
+      },
+      {
+        "term": "pressure",
+        "phonetic": "/ˈpreʃər/",
+        "meaning": "压力；用户感到被催促或紧张的心理负担",
+        "example": "The cockpit uses pressure to support a safer charging experience.",
+        "chineseExample": "座舱使用“pressure”来支持更安全的充电体验。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "控制权；用户对系统建议和行动的主导能力",
+        "example": "The cockpit uses control to support a safer charging experience.",
+        "chineseExample": "座舱使用“control”来支持更安全的充电体验。"
+      },
+      {
+        "term": "user control",
+        "phonetic": "/ˈjuːzər kənˈtroʊl/",
+        "meaning": "用户控制；让用户确认、修改或拒绝系统建议的设计原则",
+        "example": "The cockpit uses user control to support a safer charging experience.",
+        "chineseExample": "座舱使用“user control”来支持更安全的充电体验。"
+      },
+      {
+        "term": "current trip",
+        "phonetic": "/ˈkɜːrənt trɪp/",
+        "meaning": "当前行程；正在进行的导航或出行任务",
+        "example": "The cockpit uses current trip to support a safer charging experience.",
+        "chineseExample": "座舱使用“current trip”来支持更安全的充电体验。"
+      },
+      {
+        "term": "low battery",
+        "phonetic": "/loʊ ˈbætəri/",
+        "meaning": "低电量；剩余电量较低且可能影响抵达的状态",
+        "example": "The cockpit uses low battery to support a safer charging experience.",
+        "chineseExample": "座舱使用“low battery”来支持更安全的充电体验。"
+      },
+      {
+        "term": "efficient charging temperature",
+        "phonetic": "/ɪˈfɪʃnt ˈtʃɑːrdʒɪŋ ˈtemprətʃər/",
+        "meaning": "高效充电温度；适合快速、安全补能的电池温度区间",
+        "example": "The cockpit uses efficient charging temperature to support a safer charging experience.",
+        "chineseExample": "座舱使用“efficient charging temperature”来支持更安全的充电体验。"
+      },
+      {
+        "term": "primary station",
+        "phonetic": "/ˈpraɪmeri ˈsteɪʃn/",
+        "meaning": "主站点；首选或当前计划前往的充电站",
+        "example": "The cockpit uses primary station to support a safer charging experience.",
+        "chineseExample": "座舱使用“primary station”来支持更安全的充电体验。"
+      },
+      {
+        "term": "remote charger",
+        "phonetic": "/rɪˈmoʊt ˈtʃɑːrdʒər/",
+        "meaning": "偏远充电桩；距离主要道路或服务区较远的充电设备",
+        "example": "The cockpit uses remote charger to support a safer charging experience.",
+        "chineseExample": "座舱使用“remote charger”来支持更安全的充电体验。"
+      },
+      {
+        "term": "estimated range",
+        "phonetic": "/ˈestɪmeɪtɪd reɪndʒ/",
+        "meaning": "估算续航；系统预测车辆还能行驶的距离",
+        "example": "The cockpit uses estimated range to support a safer charging experience.",
+        "chineseExample": "座舱使用“estimated range”来支持更安全的充电体验。"
+      },
+      {
+        "term": "route planning",
+        "phonetic": "/ruːt ˈplænɪŋ/",
+        "meaning": "路线规划；为出行选择路径、停靠点和时间安排",
+        "example": "The cockpit uses route planning to support a safer charging experience.",
+        "chineseExample": "座舱使用“route planning”来支持更安全的充电体验。"
+      },
+      {
+        "term": "charging plan",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ plæn/",
+        "meaning": "充电计划；关于补能时间、地点和顺序的安排",
+        "example": "The cockpit uses charging plan to support a safer charging experience.",
+        "chineseExample": "座舱使用“charging plan”来支持更安全的充电体验。"
+      },
+      {
+        "term": "decision point",
+        "phonetic": "/dɪˈsɪʒn pɔɪnt/",
+        "meaning": "决策点；用户需要选择或确认的关键时刻",
+        "example": "The cockpit uses decision point to support a safer charging experience.",
+        "chineseExample": "座舱使用“decision point”来支持更安全的充电体验。"
+      },
+      {
+        "term": "consequence",
+        "phonetic": "/ˈkɑːnsəkwens/",
+        "meaning": "后果；某个选择导致的结果或影响",
+        "example": "The cockpit uses consequence to support a safer charging experience.",
+        "chineseExample": "座舱使用“consequence”来支持更安全的充电体验。"
+      },
+      {
+        "term": "protect",
+        "phonetic": "/prəˈtekt/",
+        "meaning": "保护；避免风险或保持安全余量",
+        "example": "The cockpit uses protect to support a safer charging experience.",
+        "chineseExample": "座舱使用“protect”来支持更安全的充电体验。"
+      },
+      {
+        "term": "avoid",
+        "phonetic": "/əˈvɔɪd/",
+        "meaning": "避免；主动避开风险或低效路径",
+        "example": "The cockpit uses avoid to support a safer charging experience.",
+        "chineseExample": "座舱使用“avoid”来支持更安全的充电体验。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steɪt/",
+        "meaning": "状态；系统、车辆或资源当前情况",
+        "example": "The cockpit uses state to support a safer charging experience.",
+        "chineseExample": "座舱使用“state”来支持更安全的充电体验。"
+      },
+      {
+        "term": "grade",
+        "phonetic": "/ɡreɪd/",
+        "meaning": "坡度；道路倾斜程度",
+        "example": "The cockpit uses grade to support a safer charging experience.",
+        "chineseExample": "座舱使用“grade”来支持更安全的充电体验。"
+      },
+      {
+        "term": "heating",
+        "phonetic": "/ˈhiːtɪŋ/",
+        "meaning": "加热；提升座舱或电池温度的过程",
+        "example": "The cockpit uses heating to support a safer charging experience.",
+        "chineseExample": "座舱使用“heating”来支持更安全的充电体验。"
+      },
+      {
+        "term": "demand",
+        "phonetic": "/dɪˈmænd/",
+        "meaning": "需求；某项资源或功能的消耗要求",
+        "example": "The cockpit uses demand to support a safer charging experience.",
+        "chineseExample": "座舱使用“demand”来支持更安全的充电体验。"
+      },
+      {
+        "term": "speed",
+        "phonetic": "/spiːd/",
+        "meaning": "速度；动作或过程完成的快慢",
+        "example": "The cockpit uses speed to support a safer charging experience.",
+        "chineseExample": "座舱使用“speed”来支持更安全的充电体验。"
+      },
+      {
+        "term": "partner",
+        "phonetic": "/ˈpɑːrtnər/",
+        "meaning": "伙伴；共同完成任务的一方",
+        "example": "The cockpit uses partner to support a safer charging experience.",
+        "chineseExample": "座舱使用“partner”来支持更安全的充电体验。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明原因、依据或步骤",
+        "example": "The cockpit uses explain to support a safer charging experience.",
+        "chineseExample": "座舱使用“explain”来支持更安全的充电体验。"
+      },
+      {
+        "term": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "meaning": "选择；用户可采取的选项",
+        "example": "The cockpit uses choice to support a safer charging experience.",
+        "chineseExample": "座舱使用“choice”来支持更安全的充电体验。"
+      },
+      {
+        "term": "early",
+        "phonetic": "/ˈɜːrli/",
+        "meaning": "提前的；在需要动作前出现的",
+        "example": "The cockpit uses early to support a safer charging experience.",
+        "chineseExample": "座舱使用“early”来支持更安全的充电体验。"
+      },
+      {
+        "term": "quietly",
+        "phonetic": "/ˈkwaɪətli/",
+        "meaning": "安静地；低打扰地执行或更新",
+        "example": "The cockpit uses quietly to support a safer charging experience.",
+        "chineseExample": "座舱使用“quietly”来支持更安全的充电体验。"
+      },
+      {
+        "term": "focused",
+        "phonetic": "/ˈfoʊkəst/",
+        "meaning": "专注的；注意力集中在主要任务上",
+        "example": "The cockpit uses focused to support a safer charging experience.",
+        "chineseExample": "座舱使用“focused”来支持更安全的充电体验。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/roʊd/",
+        "meaning": "道路；驾驶者需要持续观察的交通环境",
+        "example": "The cockpit uses road to support a safer charging experience.",
+        "chineseExample": "座舱使用“road”来支持更安全的充电体验。"
+      },
+      {
+        "term": "experience",
+        "phonetic": "/ɪkˈspɪriəns/",
+        "meaning": "体验；用户与系统交互时的整体感受",
+        "example": "The cockpit uses experience to support a safer charging experience.",
+        "chineseExample": "座舱使用“experience”来支持更安全的充电体验。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/ˈjuːsfl/",
+        "meaning": "有用的；能帮助用户完成任务或理解信息的",
+        "example": "The cockpit uses useful to support a safer charging experience.",
+        "chineseExample": "座舱使用“useful”来支持更安全的充电体验。"
+      },
+      {
+        "term": "soon",
+        "phonetic": "/suːn/",
+        "meaning": "很快；在短时间之后",
+        "example": "The cockpit uses soon to support a safer charging experience.",
+        "chineseExample": "座舱使用“soon”来支持更安全的充电体验。"
+      },
+      {
+        "term": "minutes",
+        "phonetic": "/ˈmɪnɪts/",
+        "meaning": "分钟；时间单位",
+        "example": "The cockpit uses minutes to support a safer charging experience.",
+        "chineseExample": "座舱使用“minutes”来支持更安全的充电体验。"
+      },
+      {
+        "term": "percent",
+        "phonetic": "/pərˈsent/",
+        "meaning": "百分比；每一百中的比例",
+        "example": "The cockpit uses percent to support a safer charging experience.",
+        "chineseExample": "座舱使用“percent”来支持更安全的充电体验。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃn/",
+        "meaning": "解释；说明原因和依据的内容",
+        "example": "The cockpit uses explanation to support a safer charging experience.",
+        "chineseExample": "座舱使用“explanation”来支持更安全的充电体验。"
+      },
+      {
+        "term": "builds",
+        "phonetic": "/bɪldz/",
+        "meaning": "建立；逐步形成信任或信心",
+        "example": "The cockpit uses builds to support a safer charging experience.",
+        "chineseExample": "座舱使用“builds”来支持更安全的充电体验。"
+      },
+      {
+        "term": "offer",
+        "phonetic": "/ˈɔːfər/",
+        "meaning": "提供；给出可用选项",
+        "example": "The cockpit uses offer to support a safer charging experience.",
+        "chineseExample": "座舱使用“offer”来支持更安全的充电体验。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户注意或行动的信息",
+        "example": "The cockpit uses prompt to support a safer charging experience.",
+        "chineseExample": "座舱使用“prompt”来支持更安全的充电体验。"
+      },
+      {
+        "term": "display",
+        "phonetic": "/dɪˈspleɪ/",
+        "meaning": "显示；界面展示信息的区域或动作",
+        "example": "The cockpit uses display to support a safer charging experience.",
+        "chineseExample": "座舱使用“display”来支持更安全的充电体验。"
+      },
+      {
+        "term": "update",
+        "phonetic": "/ˈʌpdeɪt/",
+        "meaning": "更新；根据新状态刷新信息",
+        "example": "The cockpit uses update to support a safer charging experience.",
+        "chineseExample": "座舱使用“update”来支持更安全的充电体验。"
+      },
+      {
+        "term": "goal",
+        "phonetic": "/ɡoʊl/",
+        "meaning": "目标；设计希望实现的结果",
+        "example": "The cockpit uses goal to support a safer charging experience.",
+        "chineseExample": "座舱使用“goal”来支持更安全的充电体验。"
+      },
+      {
+        "term": "stays",
+        "phonetic": "/steɪz/",
+        "meaning": "保持；持续处于某种状态",
+        "example": "The cockpit uses stays to support a safer charging experience.",
+        "chineseExample": "座舱使用“stays”来支持更安全的充电体验。"
+      },
+      {
+        "term": "fits",
+        "phonetic": "/fɪts/",
+        "meaning": "适合；与当前行程、约束或用户需求匹配",
+        "example": "The cockpit uses fits in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“fits”。"
+      },
+      {
+        "term": "arriving",
+        "phonetic": "/əˈraɪvɪŋ/",
+        "meaning": "正在抵达；接近目的地或站点的过程",
+        "example": "The cockpit uses arriving in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“arriving”。"
+      },
+      {
+        "term": "reliability",
+        "phonetic": "/rɪˌlaɪəˈbɪləti/",
+        "meaning": "可靠性；站点或系统持续可用、稳定工作的程度",
+        "example": "The cockpit uses reliability in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“reliability”。"
+      },
+      {
+        "term": "commit",
+        "phonetic": "/kəˈmɪt/",
+        "meaning": "决定采用；在这里指驾驶者决定前往某个充电站",
+        "example": "The cockpit uses commit in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“commit”。"
+      },
+      {
+        "term": "efficiency",
+        "phonetic": "/ɪˈfɪʃnsi/",
+        "meaning": "效率；车辆能耗或充电过程的有效程度",
+        "example": "The cockpit uses efficiency in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“efficiency”。"
+      },
+      {
+        "term": "chargers",
+        "phonetic": "/ˈtʃɑːrdʒərz/",
+        "meaning": "充电桩；charger 的复数形式",
+        "example": "The cockpit uses chargers in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“chargers”。"
+      },
+      {
+        "term": "little",
+        "phonetic": "/ˈlɪtl/",
+        "meaning": "少量的；在电量语境中表示余量不足",
+        "example": "The cockpit uses little in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“little”。"
+      },
+      {
+        "term": "reserve",
+        "phonetic": "/rɪˈzɜːrv/",
+        "meaning": "储备；为风险或变化保留的余量",
+        "example": "The cockpit uses reserve in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“reserve”。"
+      },
+      {
+        "term": "closest",
+        "phonetic": "/ˈkloʊsɪst/",
+        "meaning": "最近的；距离当前位置或路线最近的",
+        "example": "The cockpit uses closest in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“closest”。"
+      },
+      {
+        "term": "twenty",
+        "phonetic": "/ˈtwenti/",
+        "meaning": "二十；时间或数量表达中的数字",
+        "example": "The cockpit uses twenty in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“twenty”。"
+      },
+      {
+        "term": "six",
+        "phonetic": "/sɪks/",
+        "meaning": "六；时间或数量表达中的数字",
+        "example": "The cockpit uses six in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“six”。"
+      },
+      {
+        "term": "fifteen",
+        "phonetic": "/ˌfɪfˈtiːn/",
+        "meaning": "十五；时间、电量或百分比表达中的数字",
+        "example": "The cockpit uses fifteen in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“fifteen”。"
+      },
+      {
+        "term": "kind",
+        "phonetic": "/kaɪnd/",
+        "meaning": "种类；也可表示“这类”的指代词",
+        "example": "The cockpit uses kind in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“kind”。"
+      },
+      {
+        "term": "skip",
+        "phonetic": "/skɪp/",
+        "meaning": "跳过；暂不采纳系统建议",
+        "example": "The cockpit uses skip in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“skip”。"
+      },
+      {
+        "term": "consequences",
+        "phonetic": "/ˈkɑːnsəkwensɪz/",
+        "meaning": "后果；某个选择带来的影响，consequence 的复数形式",
+        "example": "The cockpit uses consequences in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“consequences”。"
+      },
+      {
+        "term": "arrive",
+        "phonetic": "/əˈraɪv/",
+        "meaning": "抵达；到达目的地或充电站",
+        "example": "The cockpit uses arrive in context when explaining a charging recommendation.",
+        "chineseExample": "在解释充电推荐时，座舱会结合语境使用“arrive”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "text": "When an intelligent cockpit recommends a charging stop, the experience should feel like a calm planning partner rather than a warning banner. A useful recommendation combines live battery state, route grade, weather, cabin heating demand, station availability, charger speed, and the driver's schedule. The system should not simply say, \"charge soon.\" It should explain the trade-off: stopping in twenty minutes adds six minutes of detour, but it protects a fifteen percent arrival buffer and avoids a less reliable station near the highway exit. This kind of explanation builds range confidence because the driver can see the logic behind the suggestion. Good HMI design also keeps control with the user. The cockpit can offer a preferred station, a backup charger option, and a skip choice with clear consequences. If the battery needs preconditioning, the prompt should arrive early and state what will happen in plain language. During the trip, the display should update quietly when traffic, temperature, or charger availability changes. The goal is not to create pressure. The goal is to make the charging decision transparent, reversible, and easy to trust while the driver stays focused on the road.",
+        "translation": "当智能座舱推荐充电停靠点时，体验应像冷静的行程规划伙伴，而不是警告横幅。有效的推荐会结合实时电池状态、路线坡度、天气、座舱加热需求、站点可用性、充电速度和驾驶者日程。系统不应只说“尽快充电”，而要解释取舍：二十分钟后停靠会增加六分钟绕行，但能保留百分之十五的抵达缓冲，并避开高速出口附近可靠性较低的站点。这类解释能建立续航信心，因为驾驶者能看到建议背后的逻辑。优秀的 HMI 设计也会把控制权留给用户：座舱可以提供首选站点、备用充电选项，以及带明确后果的跳过选择。如果电池需要预调节，提示应提前出现，并用清楚语言说明将发生什么。行程中，当交通、温度或充电桩可用性变化时，界面应安静更新。目标不是制造压力，而是让充电决策透明、可撤销、可信任，同时让驾驶者专注道路。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A useful recommendation combines live battery state, route grade, weather, cabin heating demand, station availability, charger speed, and the driver's schedule.",
+        "explanation": "主语是 A useful recommendation，谓语是 combines，后面并列列出系统需要融合的实时因素。",
+        "translation": "一个有效推荐会结合实时电池状态、路线坡度、天气、座舱加热需求、站点可用性、充电速度和驾驶者日程。"
+      },
+      {
+        "sentence": "It should explain the trade-off: stopping in twenty minutes adds six minutes of detour, but it protects a fifteen percent arrival buffer and avoids a less reliable station near the highway exit.",
+        "explanation": "冒号后给出 trade-off 的具体内容；but 连接“额外绕行”和“保护电量缓冲、避开低可靠站点”的对比。",
+        "translation": "它应解释取舍：二十分钟后停靠会增加六分钟绕行，但能保护百分之十五的抵达缓冲，并避开高速出口附近可靠性较低的站点。"
+      },
+      {
+        "sentence": "Good HMI design also keeps control with the user.",
+        "explanation": "keep control with the user 表示把控制权保留在用户侧，是讨论 AI 推荐和自动化建议时常用的表达。",
+        "translation": "优秀的 HMI 设计也会把控制权留给用户。"
+      },
+      {
+        "sentence": "The goal is to make the charging decision transparent, reversible, and easy to trust while the driver stays focused on the road.",
+        "explanation": "make + object + adjectives 结构表达设计目标；while 引出驾驶者保持道路注意力的背景条件。",
+        "translation": "目标是让充电决策透明、可撤销、可信任，同时让驾驶者专注道路。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "description": "朗读 10 个核心词，重点区分 recommendation、confidence、buffer、transparency 的设计语境。"
+      },
+      {
+        "title": "跟读长文",
+        "time": "7 分钟",
+        "description": "先听或朗读英文长文，再用中文复述“为什么不是最近的充电站也可能更好”。"
+      },
+      {
+        "title": "句型替换",
+        "time": "6 分钟",
+        "description": "用 It should explain the trade-off 和 The goal is to make... 造 2 个智能座舱场景句。"
+      },
+      {
+        "title": "产品表达练习",
+        "time": "5 分钟",
+        "description": "用英语向设计评审说明一个充电推荐界面如何提升 range confidence。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-09-25-generative-ai-summaries-and-verifiable-explanations",
     "date": "2026-09-25",
     "title": "Generative AI summaries and verifiable explanations in intelligent cockpits",

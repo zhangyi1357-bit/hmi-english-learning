@@ -1209,6 +1209,13 @@
     "The arrival estimate must update when the driver changes cabin temperature or speed.",
     "在这句话中，“arrival”可理解为“到达；抵达目的地或充电点”。"
   ],
+  "arrival buffer": [
+    "/əˈraɪvl ˈbʌfər/",
+    "抵达缓冲；到达目的地或充电站时保留的最低电量余量",
+    "",
+    "The system increased the arrival buffer because rain and heating demand reduced efficiency.",
+    "由于雨天和加热需求降低了效率，系统提高了抵达缓冲。"
+  ],
   "arrival estimate": [
     "/əˈraɪvəl ˈestɪmət/",
     "到达估算；系统预测到达目的地或充电站时的时间、电量或状态",
@@ -1216,12 +1223,26 @@
     "The arrival estimate must update when the driver changes cabin temperature or speed.",
     "当驾驶员改变座舱温度或车速时，到达估算必须更新。"
   ],
+  "arrive": [
+    "/əˈraɪv/",
+    "抵达；到达目的地或充电站",
+    "",
+    "The cockpit uses arrive in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“arrive”。"
+  ],
   "arrives": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“arrives”。",
     "",
     "Arrives appears in today's navigation prompt timing lesson.",
     "在这句话中，“arrives”来自今天的导航提示时机学习内容。"
+  ],
+  "arriving": [
+    "/əˈraɪvɪŋ/",
+    "正在抵达；接近目的地或站点的过程",
+    "",
+    "The cockpit uses arriving in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“arriving”。"
   ],
   "arrow": [
     "/ˈæroʊ/",
@@ -1744,6 +1765,13 @@
     "Charger availability is useful only when the timestamp is visible and recent.",
     "在这句话中，“availability”可理解为“可用性；资源是否可用的状态”。"
   ],
+  "availability changes": [
+    "/əˌveɪləˈbɪləti ˈtʃeɪndʒɪz/",
+    "可用性变化；资源状态从可用到不可用或反向变化",
+    "",
+    "The cockpit uses availability changes to support a safer charging experience.",
+    "座舱使用“availability changes”来支持更安全的充电体验。"
+  ],
   "available": [
     "/ә'veilәbl/",
     "形容词：可利用的, 可获得的, 有效的",
@@ -1833,6 +1861,13 @@
     "A backup grammar can handle simple commands offline.",
     "备份语法可以离线处理简单指令。"
   ],
+  "backup charger option": [
+    "/ˈbækʌp ˈtʃɑːrdʒər ˈɑːpʃn/",
+    "备用充电选项；首选充电站不可用时可替代的充电点",
+    "",
+    "The backup charger option should be visible before the primary station becomes risky.",
+    "备用充电选项应在主充电站变得有风险之前就可见。"
+  ],
   "balances": [
     "/'bælәns/",
     "名词：平衡, 差额；平衡, 相等；称, 权衡, 比较, 使平衡, 结算, 抵消",
@@ -1862,6 +1897,20 @@
     "",
     "Battery details are useful after route selection.",
     "路线选择后电池细节很有用。"
+  ],
+  "battery reserve": [
+    "/ˈbætəri rɪˈzɜːrv/",
+    "电量储备；保留以应对不确定性的电池余量",
+    "",
+    "The cockpit uses battery reserve to support a safer charging experience.",
+    "座舱使用“battery reserve”来支持更安全的充电体验。"
+  ],
+  "battery state": [
+    "/ˈbætəri steɪt/",
+    "电池状态；电量、温度、健康度和可用功率等信息",
+    "",
+    "The cockpit uses battery state to support a safer charging experience.",
+    "座舱使用“battery state”来支持更安全的充电体验。"
   ],
   "be": [
     "/bi:/",
@@ -2370,6 +2419,13 @@
     "A cabin command may affect climate, media, lighting, navigation, or comfort.",
     "在这句话中，“cabin command”用于描述智能座舱多人语音控制。"
   ],
+  "cabin heating demand": [
+    "/ˈkæbɪn ˈhiːtɪŋ dɪˈmænd/",
+    "座舱加热需求；车内取暖带来的额外能耗",
+    "",
+    "The cockpit uses cabin heating demand to support a safer charging experience.",
+    "座舱使用“cabin heating demand”来支持更安全的充电体验。"
+  ],
   "cabin lighting": [
     "/ˈkæbɪn ˈlaɪtɪŋ/",
     "座舱灯光；车内用于舒适、提示和氛围表达的光照系统",
@@ -2527,6 +2583,13 @@
     "",
     "A calm lane change is more likely when the prompt arrives before the last moment.",
     "在这句话中，“calm lane change”用于描述智能座舱导航提示设计。"
+  ],
+  "calm planning partner": [
+    "/kɑːm ˈplænɪŋ ˈpɑːrtnər/",
+    "冷静的规划伙伴；以低压力方式解释和协助决策的系统",
+    "",
+    "The cockpit uses calm planning partner to support a safer charging experience.",
+    "座舱使用“calm planning partner”来支持更安全的充电体验。"
   ],
   "calm prompt": [
     "/kɑːm prɑːmpt/",
@@ -2954,6 +3017,20 @@
     "Charger availability is useful only when the timestamp is visible and recent.",
     "只有时间戳可见且足够新时，充电桩可用性才有参考价值。"
   ],
+  "charger speed": [
+    "/ˈtʃɑːrdʒər spiːd/",
+    "充电速度；充电桩可提供的补能功率或速度",
+    "",
+    "The cockpit uses charger speed to support a safer charging experience.",
+    "座舱使用“charger speed”来支持更安全的充电体验。"
+  ],
+  "chargers": [
+    "/ˈtʃɑːrdʒərz/",
+    "充电桩；charger 的复数形式",
+    "",
+    "The cockpit uses chargers in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“chargers”。"
+  ],
   "charging": [
     "/ˈt͡ʃɑɹd͡ʒɪŋ/",
     "名词：指控, 费用, 冲锋, 电荷, 炸药, 主管, 被托管人, 命令；控诉, 加罪于, 使充满, 使充电, 使承担；冲锋, 要价, 收费",
@@ -2962,12 +3039,40 @@
     "在这句话中，“charging”可理解为“指控, 费用, 冲锋, 电荷, 炸药, 主管, 被托管人, 命令；控诉, 加罪于, 使充满, 使充电, 使承担；冲锋, 要价, 收费”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "charging decision": [
+    "/ˈtʃɑːrdʒɪŋ dɪˈsɪʒn/",
+    "充电决策；关于何时何地补能的选择",
+    "",
+    "The cockpit uses charging decision to support a safer charging experience.",
+    "座舱使用“charging decision”来支持更安全的充电体验。"
+  ],
+  "charging decision transparency": [
+    "/ˈtʃɑːrdʒɪŋ dɪˈsɪʒn trænsˈperənsi/",
+    "充电决策透明度；让用户看到推荐充电时机、地点和取舍依据的设计原则",
+    "",
+    "Charging decision transparency helps the driver accept a stop that is not the closest one.",
+    "充电决策透明度帮助驾驶者接受并非最近的充电停靠点。"
+  ],
   "charging detour": [
     "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr/",
     "充电绕行；为了补能而偏离原路线的行程调整",
     "",
     "A charging detour feels acceptable when the interface explains the saved waiting time.",
     "当界面解释节省的等待时间时，充电绕行会更容易被接受。"
+  ],
+  "charging detour cost": [
+    "/ˈtʃɑːrdʒɪŋ ˈdiːtʊr kɔːst/",
+    "充电绕行成本；为到达充电站额外付出的时间、距离或精力",
+    "",
+    "The interface should compare the charging detour cost with the risk of arriving with a low battery.",
+    "界面应比较充电绕行成本与低电量抵达风险。"
+  ],
+  "charging plan": [
+    "/ˈtʃɑːrdʒɪŋ plæn/",
+    "充电计划；关于补能时间、地点和顺序的安排",
+    "",
+    "The cockpit uses charging plan to support a safer charging experience.",
+    "座舱使用“charging plan”来支持更安全的充电体验。"
   ],
   "charging session": [
     "/ˈtʃɑːrdʒɪŋ ˈseʃn/",
@@ -2982,6 +3087,13 @@
     "",
     "Charging status should support a safer and clearer cockpit experience.",
     "在这句话中，“charging status”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "charging stop": [
+    "/ˈtʃɑːrdʒɪŋ stɑːp/",
+    "充电停靠；行程中为补能安排的停车点",
+    "",
+    "The cockpit uses charging stop to support a safer charging experience.",
+    "座舱使用“charging stop”来支持更安全的充电体验。"
   ],
   "check": [
     "/t͡ʃɛk/",
@@ -3207,6 +3319,13 @@
     "在这句话中，“clear”可理解为“清楚的, 明确的, 澄清的；清晰地；澄清, 清除障碍；放晴, 变清澈；空隙”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "clear consequence": [
+    "/klɪr ˈkɑːnsəkwens/",
+    "明确后果；跳过或选择某项操作后可预期的影响",
+    "",
+    "The cockpit uses clear consequence to support a safer charging experience.",
+    "座舱使用“clear consequence”来支持更安全的充电体验。"
+  ],
   "clear contrast": [
     "/klɪr ˈkɑːntræst/",
     "清晰对比；让信息容易区分的视觉差异",
@@ -3335,6 +3454,13 @@
     "",
     "The design keeps the driver's eyes closer to the road.",
     "该设计让驾驶员视线更接近道路。"
+  ],
+  "closest": [
+    "/ˈkloʊsɪst/",
+    "最近的；距离当前位置或路线最近的",
+    "",
+    "The cockpit uses closest in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“closest”。"
   ],
   "closure": [
     "/ˈkloʊʒər/",
@@ -3742,6 +3868,13 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“commands”可理解为“命令, 指挥, 控制, 部队, 司令部；命令, 指挥, 控制”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "commit": [
+    "/kəˈmɪt/",
+    "决定采用；在这里指驾驶者决定前往某个充电站",
+    "",
+    "The cockpit uses commit in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“commit”。"
   ],
   "communicate": [
     "/暂无音标/",
@@ -4258,6 +4391,20 @@
     "The consent screen should separate comfort data from safety-critical data.",
     "授权界面应区分舒适数据和安全关键数据。"
   ],
+  "consequence": [
+    "/ˈkɑːnsəkwens/",
+    "后果；某个选择导致的结果或影响",
+    "",
+    "The cockpit uses consequence to support a safer charging experience.",
+    "座舱使用“consequence”来支持更安全的充电体验。"
+  ],
+  "consequences": [
+    "/ˈkɑːnsəkwensɪz/",
+    "后果；某个选择带来的影响，consequence 的复数形式",
+    "",
+    "The cockpit uses consequences in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“consequences”。"
+  ],
   "conservative": [
     "/待补充/",
     "语境词：conservative；用于理解今天健康舒适提示主题中的英文表达",
@@ -4488,6 +4635,13 @@
     "A contextual recommendation should appear only when it supports the current driving task.",
     "在这句话中，“contextual”可理解为“上下文的, 前后关系的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "contextual charging stop recommendation": [
+    "/kənˈtekstʃuəl ˈtʃɑːrdʒɪŋ stɑːp ˌrekəmenˈdeɪʃn/",
+    "情境化充电停靠推荐；结合电量、路线、天气、乘员需求和站点状态给出的充电建议",
+    "",
+    "A contextual charging stop recommendation should explain why this station fits the current trip.",
+    "情境化充电停靠推荐应解释为什么这个站点适合当前行程。"
   ],
   "contextual confidence": [
     "/kənˈtekstʃuəl ˈkɑːnfɪdəns/",
@@ -5050,6 +5204,13 @@
     "The current screen gives context to the assistant.",
     "当前屏幕为助手提供上下文。"
   ],
+  "current trip": [
+    "/ˈkɜːrənt trɪp/",
+    "当前行程；正在进行的导航或出行任务",
+    "",
+    "The cockpit uses current trip to support a safer charging experience.",
+    "座舱使用“current trip”来支持更安全的充电体验。"
+  ],
   "curvature": [
     "/待补充/",
     "语境词：curvature；用于理解今天健康舒适提示主题中的英文表达",
@@ -5206,6 +5367,13 @@
     "",
     "Decision burden should stay low while driving.",
     "驾驶时决策负担应保持较低。"
+  ],
+  "decision point": [
+    "/dɪˈsɪʒn pɔɪnt/",
+    "决策点；用户需要选择或确认的关键时刻",
+    "",
+    "The cockpit uses decision point to support a safer charging experience.",
+    "座舱使用“decision point”来支持更安全的充电体验。"
   ],
   "decisions": [
     "/dɪˈsɪʒənz/",
@@ -6218,6 +6386,20 @@
     "The cockpit uses driver authority to make privacy decisions easier to understand.",
     "座舱使用“driver authority”让隐私决策更容易理解。"
   ],
+  "driver confidence": [
+    "/ˈdraɪvər ˈkɑːnfɪdəns/",
+    "驾驶者信心；用户对系统建议和行程结果的信任",
+    "",
+    "The cockpit uses driver confidence to support a safer charging experience.",
+    "座舱使用“driver confidence”来支持更安全的充电体验。"
+  ],
+  "driver confidence cue": [
+    "/ˈdraɪvər ˈkɑːnfɪdəns kjuː/",
+    "驾驶信心线索；帮助用户理解系统判断并放心继续行程的界面提示",
+    "",
+    "A driver confidence cue can show that the route still has two backup chargers nearby.",
+    "驾驶信心线索可以显示路线附近仍有两个备用充电站。"
+  ],
   "driver confirmation": [
     "/ˈdraɪvər ˌkɑːnfərˈmeɪʃn/",
     "驾驶员确认；在关键控制变化前要求驾驶员明确确认的交互步骤",
@@ -6308,6 +6490,13 @@
     "",
     "A driver review loop lets the user approve a generated reply before it is sent.",
     "驾驶者复核闭环允许用户在发送前批准生成的回复。"
+  ],
+  "driver schedule": [
+    "/ˈdraɪvər ˈskedʒuːl/",
+    "驾驶者日程；用户的时间安排和到达约束",
+    "",
+    "The cockpit uses driver schedule to support a safer charging experience.",
+    "座舱使用“driver schedule”来支持更安全的充电体验。"
   ],
   "driver self-regulation": [
     "/ˈdraɪvər ˌself ˌreɡjuˈleɪʃn/",
@@ -6628,6 +6817,13 @@
     "在这句话中，“editing”可理解为“编辑, 编校, 修订, 剪辑”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "efficiency": [
+    "/ɪˈfɪʃnsi/",
+    "效率；车辆能耗或充电过程的有效程度",
+    "",
+    "The cockpit uses efficiency in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“efficiency”。"
+  ],
   "efficient": [
     "/ɪˈfɪʃənt/",
     "形容词：有效率的, 能干的",
@@ -6635,6 +6831,13 @@
     "Personalization can make an intelligent cockpit feel calm, familiar, and efficient, but it also changes the privacy responsibilities of the HMI team.",
     "在这句话中，“efficient”可理解为“有效率的, 能干的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "efficient charging temperature": [
+    "/ɪˈfɪʃnt ˈtʃɑːrdʒɪŋ ˈtemprətʃər/",
+    "高效充电温度；适合快速、安全补能的电池温度区间",
+    "",
+    "The cockpit uses efficient charging temperature to support a safer charging experience.",
+    "座舱使用“efficient charging temperature”来支持更安全的充电体验。"
   ],
   "effort": [
     "/ˈɛf.ət/",
@@ -6741,6 +6944,20 @@
     "",
     "An energy route may show charging and battery details.",
     "能耗路线可能显示充电和电池细节。"
+  ],
+  "energy-aware": [
+    "/ˈenərdʒi əˈwer/",
+    "能耗感知的；考虑能量消耗和余量的",
+    "",
+    "The cockpit uses energy-aware to support a safer charging experience.",
+    "座舱使用“energy-aware”来支持更安全的充电体验。"
+  ],
+  "energy-aware rerouting": [
+    "/ˈenərdʒi əˈwer ˌriːˈruːtɪŋ/",
+    "能耗感知重规划；根据电量、坡度、速度、气候和充电资源重新规划路线",
+    "",
+    "Energy-aware rerouting avoids a faster road if it would leave too little battery reserve.",
+    "如果更快道路会留下过少电量储备，能耗感知重规划会避开它。"
   ],
   "engaged": [
     "/待查/",
@@ -6934,6 +7151,13 @@
     "",
     "The arrival estimate must update when the driver changes cabin temperature or speed.",
     "在这句话中，“estimate”可理解为“估算；基于模型的预测值”。"
+  ],
+  "estimated range": [
+    "/ˈestɪmeɪtɪd reɪndʒ/",
+    "估算续航；系统预测车辆还能行驶的距离",
+    "",
+    "The cockpit uses estimated range to support a safer charging experience.",
+    "座舱使用“estimated range”来支持更安全的充电体验。"
   ],
   "evaluate": [
     "/ɪˈvæljueɪt/",
@@ -7789,6 +8013,13 @@
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
+  "fifteen": [
+    "/ˌfɪfˈtiːn/",
+    "十五；时间、电量或百分比表达中的数字",
+    "",
+    "The cockpit uses fifteen in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“fifteen”。"
+  ],
   "fighting": [
     "/ˈfaɪtɪŋ/",
     "语境词：对抗；与系统辅助产生冲突",
@@ -7885,6 +8116,13 @@
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“fit”可结合车内助手澄清场景理解。"
   ],
+  "fits": [
+    "/fɪts/",
+    "适合；与当前行程、约束或用户需求匹配",
+    "",
+    "The cockpit uses fits in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“fits”。"
+  ],
   "fixed": [
     "/fɪkst/",
     "固定的；确定不变的",
@@ -7949,6 +8187,13 @@
     "Data minimization keeps the recommendation engine focused on useful signals instead of collecting every interaction.",
     "在这句话中，“focused”可理解为“焦点, 焦距；聚焦, 注视；使聚焦, 调焦, 集中”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "focused on the road": [
+    "/ˈfoʊkəst ɑːn ðə roʊd/",
+    "专注道路；驾驶者注意力保持在驾驶环境上",
+    "",
+    "The cockpit uses focused on the road to support a safer charging experience.",
+    "座舱使用“focused on the road”来支持更安全的充电体验。"
   ],
   "focused question": [
     "/ˈfoʊkəst ˈkwestʃən/",
@@ -8535,6 +8780,13 @@
     "",
     "Graceful handback prevents the assistant from repeating the whole dialogue after reconnection.",
     "平滑交还能避免重连后助手重复整个对话。"
+  ],
+  "grade": [
+    "/ɡreɪd/",
+    "坡度；道路倾斜程度",
+    "",
+    "The cockpit uses grade to support a safer charging experience.",
+    "座舱使用“grade”来支持更安全的充电体验。"
   ],
   "grammar": [
     "/ˈɡræmər/",
@@ -9148,6 +9400,13 @@
     "If the driver is looking at the road, speaking a short command, and driving on a quiet highway, the system can use a light visual confirmation or a brief tone.",
     "在这句话中，“highway”可理解为“公路, 大道, 捷径”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "highway exit": [
+    "/ˈhaɪweɪ ˈeksɪt/",
+    "高速出口；高速路驶出的路段或匝道口",
+    "",
+    "The cockpit uses highway exit to support a safer charging experience.",
+    "座舱使用“highway exit”来支持更安全的充电体验。"
   ],
   "hills": [
     "/按语境朗读/",
@@ -10347,6 +10606,13 @@
     "在这句话中，“key”可理解为“钥匙, 键, 解答, 关键, 要害, 基调, 线索, 答案, 暗礁；调音, 锁上, 提供线索；使用钥匙”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "kind": [
+    "/kaɪnd/",
+    "种类；也可表示“这类”的指代词",
+    "",
+    "The cockpit uses kind in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“kind”。"
+  ],
   "know": [
     "/待查/",
     "课堂词汇；在今日座舱语音交互语境中理解为“know”。",
@@ -10884,12 +11150,26 @@
     "Long lists can be hard to read during motion.",
     "在这句话中，“lists”指界面列表。"
   ],
+  "little": [
+    "/ˈlɪtl/",
+    "少量的；在电量语境中表示余量不足",
+    "",
+    "The cockpit uses little in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“little”。"
+  ],
   "live": [
     "/按语境朗读/",
     "实时的；来自当前状态的数据",
     "",
     "When live charger availability is uncertain, the cockpit should show the timestamp and offer a fallback station.",
     "在这句话中，“live”可理解为“实时的；来自当前状态的数据”。"
+  ],
+  "live battery state": [
+    "/laɪv ˈbætəri steɪt/",
+    "实时电池状态；当前电量、温度和可用能量信息",
+    "",
+    "The cockpit uses live battery state to support a safer charging experience.",
+    "座舱使用“live battery state”来支持更安全的充电体验。"
   ],
   "live vehicle signal": [
     "/laɪv ˈviːəkl ˈsɪɡnəl/",
@@ -11041,6 +11321,13 @@
     "A review log can show which alerts were postponed, dismissed, or escalated during real trips.",
     "在这句话中，“log”可理解为“记录, 圆木, 日志, 计程仪；伐木, 切, 航行；伐木”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "logic": [
+    "/ˈlɑːdʒɪk/",
+    "逻辑；建议背后的推理依据",
+    "",
+    "The cockpit uses logic to support a safer charging experience.",
+    "座舱使用“logic”来支持更安全的充电体验。"
   ],
   "logs": [
     "/暂无音标/",
@@ -14031,6 +14318,13 @@
     "在这句话中，“perceive”可理解为“感觉; 认识, 理解; 察觉到, 意识到, 注意到”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "percent": [
+    "/pərˈsent/",
+    "百分比；每一百中的比例",
+    "",
+    "The cockpit uses percent to support a safer charging experience.",
+    "座舱使用“percent”来支持更安全的充电体验。"
+  ],
   "percentage": [
     "/pərˈsentɪdʒ/",
     "语境词：百分比；以百分数呈现的状态值",
@@ -14411,6 +14705,13 @@
     "Trip planning can stay on a secondary surface.",
     "行程规划可以留在次级显示表面。"
   ],
+  "planning partner": [
+    "/ˈplænɪŋ ˈpɑːrtnər/",
+    "规划伙伴；帮助用户共同安排路线和停靠的系统角色",
+    "",
+    "The cockpit uses planning partner to support a safer charging experience.",
+    "座舱使用“planning partner”来支持更安全的充电体验。"
+  ],
   "plans": [
     "/按语境朗读/",
     "规划；制定路线或策略",
@@ -14616,6 +14917,13 @@
     "A preconditioning cue tells the driver why the battery is warming before arrival.",
     "预调节提示会告诉驾驶员为什么电池在到达前升温。"
   ],
+  "preconditioning prompt": [
+    "/ˌpriːkənˈdɪʃənɪŋ prɑːmpt/",
+    "预调节提示；提醒用户为快充提前调整电池温度或车内状态的提示",
+    "",
+    "A preconditioning prompt should appear early enough for the battery to reach an efficient charging temperature.",
+    "预调节提示应足够提前出现，让电池达到高效充电温度。"
+  ],
   "predictable": [
     "/prɪˈdɪktəbl/",
     "可预测的；用户能预期其位置或行为",
@@ -14716,6 +15024,13 @@
     "A preference profile can store climate settings, display themes, and preferred navigation views.",
     "在这句话中，“preferred”可理解为“宁可, 较喜欢, 提出”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "preferred station": [
+    "/prɪˈfɜːrd ˈsteɪʃn/",
+    "首选站点；系统推荐优先前往的充电站",
+    "",
+    "The cockpit uses preferred station to support a safer charging experience.",
+    "座舱使用“preferred station”来支持更安全的充电体验。"
   ],
   "prefers": [
     "/prɪˈfɜːrz/",
@@ -14915,6 +15230,13 @@
     "",
     "Primary focus belongs on traffic, not menus.",
     "主要焦点应放在交通上，而不是菜单上。"
+  ],
+  "primary station": [
+    "/ˈpraɪmeri ˈsteɪʃn/",
+    "主站点；首选或当前计划前往的充电站",
+    "",
+    "The cockpit uses primary station to support a safer charging experience.",
+    "座舱使用“primary station”来支持更安全的充电体验。"
   ],
   "principle": [
     "/ˈprɪnsəpl/",
@@ -15538,6 +15860,13 @@
     "A quiet banner is suitable for low-risk limitation messages.",
     "低打断横幅适合低风险的限制提示。"
   ],
+  "quiet update": [
+    "/ˈkwaɪət ˈʌpdeɪt/",
+    "安静更新；不打断驾驶任务的状态刷新",
+    "",
+    "The cockpit uses quiet update to support a safer charging experience.",
+    "座舱使用“quiet update”来支持更安全的充电体验。"
+  ],
   "quieter": [
     "/ˈkwaɪətər/",
     "更安静的；噪声或干扰更少的",
@@ -15558,6 +15887,13 @@
     "",
     "The driver may prefer the quietest route during a family trip.",
     "家庭出行时驾驶者可能偏好最安静路线。"
+  ],
+  "quietly": [
+    "/ˈkwaɪətli/",
+    "安静地；低打扰地执行或更新",
+    "",
+    "The cockpit uses quietly to support a safer charging experience.",
+    "座舱使用“quietly”来支持更安全的充电体验。"
   ],
   "radar": [
     "/ˈreɪdɑːr/",
@@ -16335,12 +16671,26 @@
     "A visual cue may appear near the relevant display area.",
     "视觉线索可以出现在相关显示区域附近。"
   ],
+  "reliability": [
+    "/rɪˌlaɪəˈbɪləti/",
+    "可靠性；站点或系统持续可用、稳定工作的程度",
+    "",
+    "The cockpit uses reliability in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“reliability”。"
+  ],
   "reliable": [
     "/按语境朗读/",
     "可靠的；更值得信任的",
     "",
     "The route trade-off compares a shorter trip with a more reliable charging stop.",
     "在这句话中，“reliable”可理解为“可靠的；更值得信任的”。"
+  ],
+  "reliable station": [
+    "/rɪˈlaɪəbl ˈsteɪʃn/",
+    "可靠站点；可用性和稳定性较高的充电站",
+    "",
+    "The cockpit uses reliable station to support a safer charging experience.",
+    "座舱使用“reliable station”来支持更安全的充电体验。"
   ],
   "reliable trigger": [
     "/rɪˈlaɪəbl ˈtrɪɡər/",
@@ -16414,6 +16764,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "remote charger": [
+    "/rɪˈmoʊt ˈtʃɑːrdʒər/",
+    "偏远充电桩；距离主要道路或服务区较远的充电设备",
+    "",
+    "The cockpit uses remote charger to support a safer charging experience.",
+    "座舱使用“remote charger”来支持更安全的充电体验。"
   ],
   "remote notification": [
     "/rɪˈmoʊt ˌnoʊtɪfɪˈkeɪʃn/",
@@ -16643,6 +17000,20 @@
     "",
     "A reroute should explain the delay and the benefit.",
     "路线重规划应说明延误和收益。"
+  ],
+  "rerouting": [
+    "/ˌriːˈruːtɪŋ/",
+    "重规划路线；根据新条件改变行驶路径",
+    "",
+    "The cockpit uses rerouting to support a safer charging experience.",
+    "座舱使用“rerouting”来支持更安全的充电体验。"
+  ],
+  "reserve": [
+    "/rɪˈzɜːrv/",
+    "储备；为风险或变化保留的余量",
+    "",
+    "The cockpit uses reserve in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“reserve”。"
   ],
   "reserved": [
     "/ɹɪˈzɝvd/",
@@ -17020,6 +17391,13 @@
     "Every reversible change should include a clear undo action.",
     "每个可撤销变化都应包含清晰的撤销动作。"
   ],
+  "reversible decision": [
+    "/rɪˈvɜːrsəbl dɪˈsɪʒn/",
+    "可撤销决策；用户可以修改或回退的选择",
+    "",
+    "The cockpit uses reversible decision to support a safer charging experience.",
+    "座舱使用“reversible decision”来支持更安全的充电体验。"
+  ],
   "reversible request": [
     "/rɪˈvɜːrsəbl rɪˈkwest/",
     "可撤销请求；执行后可以快速恢复或取消的请求",
@@ -17343,6 +17721,13 @@
     "Route exactness depends on map quality and positioning signals.",
     "在这句话中，“route exactness”用于描述智能座舱导航提示设计。"
   ],
+  "route grade": [
+    "/ruːt ɡreɪd/",
+    "路线坡度；影响能耗的道路上坡或下坡情况",
+    "",
+    "The cockpit uses route grade to support a safer charging experience.",
+    "座舱使用“route grade”来支持更安全的充电体验。"
+  ],
   "route guidance": [
     "/ruːt ˈɡaɪdns/",
     "路线引导；导航系统提供的行驶提示",
@@ -17356,6 +17741,13 @@
     "",
     "The next safe route option should appear immediately after a missed turn.",
     "在这句话中，“route option”用于描述智能座舱导航提示设计。"
+  ],
+  "route planning": [
+    "/ruːt ˈplænɪŋ/",
+    "路线规划；为出行选择路径、停靠点和时间安排",
+    "",
+    "The cockpit uses route planning to support a safer charging experience.",
+    "座舱使用“route planning”来支持更安全的充电体验。"
   ],
   "route preference": [
     "/ruːt ˈprefrəns/",
@@ -17839,6 +18231,13 @@
     "",
     "Scene appears in today's navigation prompt timing lesson.",
     "在这句话中，“scene”来自今天的导航提示时机学习内容。"
+  ],
+  "schedule": [
+    "/ˈskedʒuːl/",
+    "日程；时间安排或计划",
+    "",
+    "The cockpit uses schedule to support a safer charging experience.",
+    "座舱使用“schedule”来支持更安全的充电体验。"
   ],
   "scope": [
     "/skoʊp/",
@@ -18960,6 +19359,27 @@
     "A situational trigger can surface a charging reminder when range, weather, and destination all indicate risk.",
     "当续航、天气和目的地都显示风险时，情境触发条件可以呈现充电提醒。"
   ],
+  "six": [
+    "/sɪks/",
+    "六；时间或数量表达中的数字",
+    "",
+    "The cockpit uses six in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“six”。"
+  ],
+  "skip": [
+    "/skɪp/",
+    "跳过；暂不采纳系统建议",
+    "",
+    "The cockpit uses skip in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“skip”。"
+  ],
+  "skip choice": [
+    "/skɪp tʃɔɪs/",
+    "跳过选择；允许用户暂不采纳建议的选项",
+    "",
+    "The cockpit uses skip choice to support a safer charging experience.",
+    "座舱使用“skip choice”来支持更安全的充电体验。"
+  ],
   "slightly": [
     "/按语境朗读/",
     "稍微；幅度很小。",
@@ -19545,6 +19965,20 @@
     "The fallback station should appear before the driver feels locked into one plan.",
     "在这句话中，“station”可理解为“站点；充电或服务地点”。"
   ],
+  "station availability": [
+    "/ˈsteɪʃn əˌveɪləˈbɪləti/",
+    "站点可用性；充电站是否开放、空闲和可服务",
+    "",
+    "The cockpit uses station availability to support a safer charging experience.",
+    "座舱使用“station availability”来支持更安全的充电体验。"
+  ],
+  "station reliability signal": [
+    "/ˈsteɪʃn rɪˌlaɪəˈbɪləti ˈsɪɡnəl/",
+    "站点可靠性信号；用于判断充电站是否可用、稳定、拥堵或近期故障的数据提示",
+    "",
+    "A station reliability signal can warn the driver before they commit to a remote charger.",
+    "站点可靠性信号可以在驾驶者决定前往偏远充电桩前发出提醒。"
+  ],
   "status": [
     "/ˈsteɪ.təs/",
     "雕像；特级雪花白",
@@ -19630,6 +20064,13 @@
     "",
     "The word stayed appears in the comfort recommendation context.",
     "“stayed”出现在座椅舒适推荐的语境中。"
+  ],
+  "stays": [
+    "/steɪz/",
+    "保持；持续处于某种状态",
+    "",
+    "The cockpit uses stays to support a safer charging experience.",
+    "座舱使用“stays”来支持更安全的充电体验。"
   ],
   "stealing": [
     "/ˈstiːlɪŋ/",
@@ -21331,6 +21772,13 @@
     "The word twelve appears in today's cockpit summary practice.",
     "在这个语境中，“twelve”可理解为“十二”。"
   ],
+  "twenty": [
+    "/ˈtwenti/",
+    "二十；时间或数量表达中的数字",
+    "",
+    "The cockpit uses twenty in context when explaining a charging recommendation.",
+    "在解释充电推荐时，座舱会结合语境使用“twenty”。"
+  ],
   "twice": [
     "/twaɪs/",
     "副词：两次, 两倍",
@@ -22427,6 +22875,13 @@
     "An escalation ladder keeps the first warning polite and reserves stronger signals for repeated risk.",
     "在这句话中，“warning”可理解为“警告, 提醒, 通知；发出警告”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "warning banner": [
+    "/ˈwɔːrnɪŋ ˈbænər/",
+    "警告横幅；突出显示风险或紧急信息的界面条幅",
+    "",
+    "The cockpit uses warning banner to support a safer charging experience.",
+    "座舱使用“warning banner”来支持更安全的充电体验。"
   ],
   "warning hierarchy": [
     "/ˈwɔːrnɪŋ ˈhaɪərɑːrki/",
