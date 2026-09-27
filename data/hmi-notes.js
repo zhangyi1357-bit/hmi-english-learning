@@ -1,5 +1,595 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-27-context-memory-and-controllable-personalization-in-intelligent-cockpits",
+    "date": "2026-09-27",
+    "title": "Context memory and controllable personalization in intelligent cockpits",
+    "topic": "智能座舱情境记忆与可控个性化",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱在保存偏好、召回情境和同步档案时，通过同意、解释、可编辑记忆和隐私边界保持用户控制。",
+    "words": [
+      {
+        "term": "context memory",
+        "phonetic": "/ˈkɑːntekst ˈmeməri/",
+        "meaning": "情境记忆；系统对近期用户选择、环境和任务状态的可解释记忆",
+        "example": "Context memory should help the cockpit remember a driver preference without hiding the source of that memory.",
+        "chineseExample": "情境记忆应帮助座舱记住驾驶者偏好，同时不隐藏记忆来源。"
+      },
+      {
+        "term": "personalization boundary",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn ˈbaʊndəri/",
+        "meaning": "个性化边界；系统在主动适配时不得越过的权限、场景或隐私限制",
+        "example": "A clear personalization boundary prevents the assistant from changing comfort settings during a shared trip.",
+        "chineseExample": "清晰的个性化边界可防止助手在多人出行时擅自改变舒适性设置。"
+      },
+      {
+        "term": "memory consent prompt",
+        "phonetic": "/ˈmeməri kənˈsent prɑːmpt/",
+        "meaning": "记忆同意提示；在保存偏好或行为模式前向用户请求授权的提示",
+        "example": "The memory consent prompt should name the benefit, the data, and the delete path in one short message.",
+        "chineseExample": "记忆同意提示应在一条短消息中说明收益、数据和删除路径。"
+      },
+      {
+        "term": "preference trace",
+        "phonetic": "/ˈprefrəns treɪs/",
+        "meaning": "偏好痕迹；界面中展示某项推荐来自哪些历史选择或当前信号的说明",
+        "example": "A preference trace can show that the seat suggestion came from repeated lumbar adjustments.",
+        "chineseExample": "偏好痕迹可以说明座椅建议来自多次腰托调整。"
+      },
+      {
+        "term": "shared-cabin profile",
+        "phonetic": "/ʃerd ˈkæbɪn ˈproʊfaɪl/",
+        "meaning": "共享座舱档案；多人使用同一车辆时可切换、可隔离的偏好档案",
+        "example": "A shared-cabin profile must separate the driver profile from passenger entertainment choices.",
+        "chineseExample": "共享座舱档案必须将驾驶员档案与乘客娱乐选择分离。"
+      },
+      {
+        "term": "explainable adaptation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌædæpˈteɪʃn/",
+        "meaning": "可解释适配；系统说明为什么自动调整界面、声音、座椅或推荐内容",
+        "example": "Explainable adaptation makes an automatic climate change feel helpful instead of intrusive.",
+        "chineseExample": "可解释适配让自动空调变化显得有帮助，而不是唐突打扰。"
+      },
+      {
+        "term": "memory reset control",
+        "phonetic": "/ˈmeməri ˈriːset kənˈtroʊl/",
+        "meaning": "记忆重置控件；允许用户清除、暂停或恢复个性化记忆的控制项",
+        "example": "The memory reset control should be reachable before the user lends the car to someone else.",
+        "chineseExample": "在用户把车借给他人之前，记忆重置控件应容易找到。"
+      },
+      {
+        "term": "situational recall",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl rɪˈkɔːl/",
+        "meaning": "情境召回；系统根据地点、时间、乘员或任务重新调用相关偏好",
+        "example": "Situational recall can restore a quiet navigation style when the baby is asleep in the rear seat.",
+        "chineseExample": "当婴儿在后排睡觉时，情境召回可以恢复安静的导航风格。"
+      },
+      {
+        "term": "privacy-preserving profile sync",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈproʊfaɪl sɪŋk/",
+        "meaning": "隐私保护型档案同步；在车辆、手机和云端之间同步偏好时最小化敏感数据暴露",
+        "example": "Privacy-preserving profile sync should move only the preference label, not the raw conversation history.",
+        "chineseExample": "隐私保护型档案同步应只传递偏好标签，而不是原始对话历史。"
+      },
+      {
+        "term": "user-editable memory",
+        "phonetic": "/ˈjuːzər ˈedɪtəbl ˈmeməri/",
+        "meaning": "用户可编辑记忆；用户可查看、修改、删除系统保存的偏好和推断",
+        "example": "User-editable memory turns personalization into a controllable design material.",
+        "chineseExample": "用户可编辑记忆把个性化变成一种可控的设计材料。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "context memory",
+        "phonetic": "/ˈkɑːntekst ˈmeməri/",
+        "meaning": "情境记忆；系统对近期用户选择、环境和任务状态的可解释记忆",
+        "example": "Context memory should help the cockpit remember a driver preference without hiding the source of that memory.",
+        "chineseExample": "情境记忆应帮助座舱记住驾驶者偏好，同时不隐藏记忆来源。"
+      },
+      {
+        "term": "personalization boundary",
+        "phonetic": "/ˌpɜːrsənələˈzeɪʃn ˈbaʊndəri/",
+        "meaning": "个性化边界；系统在主动适配时不得越过的权限、场景或隐私限制",
+        "example": "A clear personalization boundary prevents the assistant from changing comfort settings during a shared trip.",
+        "chineseExample": "清晰的个性化边界可防止助手在多人出行时擅自改变舒适性设置。"
+      },
+      {
+        "term": "memory consent prompt",
+        "phonetic": "/ˈmeməri kənˈsent prɑːmpt/",
+        "meaning": "记忆同意提示；在保存偏好或行为模式前向用户请求授权的提示",
+        "example": "The memory consent prompt should name the benefit, the data, and the delete path in one short message.",
+        "chineseExample": "记忆同意提示应在一条短消息中说明收益、数据和删除路径。"
+      },
+      {
+        "term": "preference trace",
+        "phonetic": "/ˈprefrəns treɪs/",
+        "meaning": "偏好痕迹；界面中展示某项推荐来自哪些历史选择或当前信号的说明",
+        "example": "A preference trace can show that the seat suggestion came from repeated lumbar adjustments.",
+        "chineseExample": "偏好痕迹可以说明座椅建议来自多次腰托调整。"
+      },
+      {
+        "term": "shared-cabin profile",
+        "phonetic": "/ʃerd ˈkæbɪn ˈproʊfaɪl/",
+        "meaning": "共享座舱档案；多人使用同一车辆时可切换、可隔离的偏好档案",
+        "example": "A shared-cabin profile must separate the driver profile from passenger entertainment choices.",
+        "chineseExample": "共享座舱档案必须将驾驶员档案与乘客娱乐选择分离。"
+      },
+      {
+        "term": "explainable adaptation",
+        "phonetic": "/ɪkˈspleɪnəbl ˌædæpˈteɪʃn/",
+        "meaning": "可解释适配；系统说明为什么自动调整界面、声音、座椅或推荐内容",
+        "example": "Explainable adaptation makes an automatic climate change feel helpful instead of intrusive.",
+        "chineseExample": "可解释适配让自动空调变化显得有帮助，而不是唐突打扰。"
+      },
+      {
+        "term": "memory reset control",
+        "phonetic": "/ˈmeməri ˈriːset kənˈtroʊl/",
+        "meaning": "记忆重置控件；允许用户清除、暂停或恢复个性化记忆的控制项",
+        "example": "The memory reset control should be reachable before the user lends the car to someone else.",
+        "chineseExample": "在用户把车借给他人之前，记忆重置控件应容易找到。"
+      },
+      {
+        "term": "situational recall",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl rɪˈkɔːl/",
+        "meaning": "情境召回；系统根据地点、时间、乘员或任务重新调用相关偏好",
+        "example": "Situational recall can restore a quiet navigation style when the baby is asleep in the rear seat.",
+        "chineseExample": "当婴儿在后排睡觉时，情境召回可以恢复安静的导航风格。"
+      },
+      {
+        "term": "privacy-preserving profile sync",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈproʊfaɪl sɪŋk/",
+        "meaning": "隐私保护型档案同步；在车辆、手机和云端之间同步偏好时最小化敏感数据暴露",
+        "example": "Privacy-preserving profile sync should move only the preference label, not the raw conversation history.",
+        "chineseExample": "隐私保护型档案同步应只传递偏好标签，而不是原始对话历史。"
+      },
+      {
+        "term": "user-editable memory",
+        "phonetic": "/ˈjuːzər ˈedɪtəbl ˈmeməri/",
+        "meaning": "用户可编辑记忆；用户可查看、修改、删除系统保存的偏好和推断",
+        "example": "User-editable memory turns personalization into a controllable design material.",
+        "chineseExample": "用户可编辑记忆把个性化变成一种可控的设计材料。"
+      },
+      {
+        "term": "adaptive recall",
+        "phonetic": "/əˈdæptɪv rɪˈkɔːl/",
+        "meaning": "自适应召回；根据场景重新调用合适设置",
+        "example": "Adaptive recall should stay quiet when the context is uncertain.",
+        "chineseExample": "当情境不确定时，自适应召回应保持克制。"
+      },
+      {
+        "term": "driver preference",
+        "phonetic": "/ˈdraɪvər ˈprefrəns/",
+        "meaning": "驾驶者偏好；用户对座舱功能的稳定选择倾向",
+        "example": "The driver preference is useful only when the driver can inspect it.",
+        "chineseExample": "只有驾驶者能够查看时，驾驶者偏好才有用。"
+      },
+      {
+        "term": "temporary preference",
+        "phonetic": "/ˈtempəreri ˈprefrəns/",
+        "meaning": "临时偏好；只适用于当前行程或短时间窗口的设置",
+        "example": "A temporary preference should expire after the trip.",
+        "chineseExample": "临时偏好应在行程结束后过期。"
+      },
+      {
+        "term": "default setting",
+        "phonetic": "/dɪˈfɔːlt ˈsetɪŋ/",
+        "meaning": "默认设置；没有个性化判断时采用的基础配置",
+        "example": "The default setting must remain safe for a first-time user.",
+        "chineseExample": "默认设置必须对首次用户保持安全。"
+      },
+      {
+        "term": "profile switch",
+        "phonetic": "/ˈproʊfaɪl swɪtʃ/",
+        "meaning": "档案切换；在不同用户或模式之间切换保存配置",
+        "example": "The profile switch needs clear feedback before the seat moves.",
+        "chineseExample": "座椅移动前，档案切换需要给出清晰反馈。"
+      },
+      {
+        "term": "delete path",
+        "phonetic": "/dɪˈliːt pæθ/",
+        "meaning": "删除路径；用户清除数据或记忆的入口与流程",
+        "example": "The delete path should be visible near the saved memory.",
+        "chineseExample": "删除路径应显示在已保存记忆附近。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集和保存实现功能所需的数据",
+        "example": "Data minimization reduces the risk of over-personalized cockpit behavior.",
+        "chineseExample": "数据最小化降低座舱过度个性化行为的风险。"
+      },
+      {
+        "term": "transparent reason",
+        "phonetic": "/trænsˈperənt ˈriːzn/",
+        "meaning": "透明理由；系统用简洁语言说明某个适配动作的依据",
+        "example": "A transparent reason can reduce surprise after an automatic change.",
+        "chineseExample": "透明理由可以减少自动变化后的惊讶感。"
+      },
+      {
+        "term": "current context",
+        "phonetic": "/ˈkɜːrənt ˈkɑːntekst/",
+        "meaning": "当前情境；车辆、道路、乘员、时间和任务的实时组合",
+        "example": "The current context may override an old preference.",
+        "chineseExample": "当前情境可能覆盖旧偏好。"
+      },
+      {
+        "term": "recent choice",
+        "phonetic": "/ˈriːsnt tʃɔɪs/",
+        "meaning": "近期选择；用户最近做出的操作或确认",
+        "example": "A recent choice is stronger evidence than a distant habit.",
+        "chineseExample": "近期选择比久远习惯更能作为证据。"
+      },
+      {
+        "term": "repeated adjustment",
+        "phonetic": "/rɪˈpiːtɪd əˈdʒʌstmənt/",
+        "meaning": "重复调节；用户多次手动调整同一功能的行为",
+        "example": "Repeated adjustment may signal a stable comfort preference.",
+        "chineseExample": "重复调节可能表示稳定的舒适偏好。"
+      },
+      {
+        "term": "comfort setting",
+        "phonetic": "/ˈkʌmfərt ˈsetɪŋ/",
+        "meaning": "舒适性设置；座椅、空调、灯光、声音等体验参数",
+        "example": "Comfort settings should not expose private routines to passengers.",
+        "chineseExample": "舒适性设置不应向乘客暴露私人习惯。"
+      },
+      {
+        "term": "climate adjustment",
+        "phonetic": "/ˈklaɪmət əˈdʒʌstmənt/",
+        "meaning": "空调调节；温度、风量或除雾相关调整",
+        "example": "Climate adjustment needs a short explanation in a shared cabin.",
+        "chineseExample": "共享座舱中的空调调节需要简短解释。"
+      },
+      {
+        "term": "seat position",
+        "phonetic": "/siːt pəˈzɪʃn/",
+        "meaning": "座椅位置；座椅前后、高低、角度等位置配置",
+        "example": "Seat position is a sensitive memory because it can affect safety.",
+        "chineseExample": "座椅位置是敏感记忆，因为它可能影响安全。"
+      },
+      {
+        "term": "lumbar adjustment",
+        "phonetic": "/ˈlʌmbɑːr əˈdʒʌstmənt/",
+        "meaning": "腰托调节；座椅腰部支撑设置的调整",
+        "example": "Lumbar adjustment can become a useful preference trace.",
+        "chineseExample": "腰托调节可以成为有用的偏好痕迹。"
+      },
+      {
+        "term": "navigation style",
+        "phonetic": "/ˌnævɪˈɡeɪʃn staɪl/",
+        "meaning": "导航风格；语音频率、提示详细度和路线偏好的组合",
+        "example": "Navigation style should adapt to both driver focus and passenger needs.",
+        "chineseExample": "导航风格应同时适配驾驶者专注度和乘客需求。"
+      },
+      {
+        "term": "quiet mode",
+        "phonetic": "/ˈkwaɪət moʊd/",
+        "meaning": "安静模式；减少声音、动画或主动提示的座舱模式",
+        "example": "Quiet mode is useful when a passenger is sleeping.",
+        "chineseExample": "当乘客睡觉时，安静模式很有用。"
+      },
+      {
+        "term": "passenger privacy",
+        "phonetic": "/ˈpæsɪndʒər ˈpraɪvəsi/",
+        "meaning": "乘客隐私；保护乘客身份、偏好和活动不被不当暴露",
+        "example": "Passenger privacy matters when the cockpit remembers media choices.",
+        "chineseExample": "当座舱记住媒体选择时，乘客隐私很重要。"
+      },
+      {
+        "term": "permission state",
+        "phonetic": "/pərˈmɪʃn steɪt/",
+        "meaning": "权限状态；某项记忆、同步或个性化功能当前是否被允许",
+        "example": "The permission state should be readable at a glance.",
+        "chineseExample": "权限状态应能一眼看懂。"
+      },
+      {
+        "term": "consent banner",
+        "phonetic": "/kənˈsent ˈbænər/",
+        "meaning": "同意横幅；用于请求或确认授权的界面提示条",
+        "example": "A consent banner must not block a critical driving task.",
+        "chineseExample": "同意横幅不得阻挡关键驾驶任务。"
+      },
+      {
+        "term": "memory card",
+        "phonetic": "/ˈmeməri kɑːrd/",
+        "meaning": "记忆卡片；展示一条已保存偏好及其来源的界面单元",
+        "example": "Each memory card should include edit and delete actions.",
+        "chineseExample": "每张记忆卡片都应包含编辑和删除操作。"
+      },
+      {
+        "term": "saved inference",
+        "phonetic": "/seɪvd ˈɪnfərəns/",
+        "meaning": "已保存推断；系统根据行为推测并保存的偏好结论",
+        "example": "A saved inference should be labeled as an inference, not a fact.",
+        "chineseExample": "已保存推断应标注为推断，而不是事实。"
+      },
+      {
+        "term": "confidence level",
+        "phonetic": "/ˈkɑːnfɪdəns ˈlevl/",
+        "meaning": "置信度；系统对某项推断或推荐可靠性的估计",
+        "example": "A low confidence level should trigger a question, not an automatic change.",
+        "chineseExample": "低置信度应触发询问，而不是自动更改。"
+      },
+      {
+        "term": "automatic change",
+        "phonetic": "/ˌɔːtəˈmætɪk tʃeɪndʒ/",
+        "meaning": "自动变化；系统无需用户即时操作而执行的设置调整",
+        "example": "An automatic change needs clear undo support.",
+        "chineseExample": "自动变化需要清晰的撤销支持。"
+      },
+      {
+        "term": "undo affordance",
+        "phonetic": "/ʌnˈduː əˈfɔːrdəns/",
+        "meaning": "撤销可供性；让用户立即恢复上一步系统动作的界面能力",
+        "example": "The undo affordance should remain visible after a memory-based action.",
+        "chineseExample": "基于记忆的动作之后，撤销可供性应保持可见。"
+      },
+      {
+        "term": "memory audit",
+        "phonetic": "/ˈmeməri ˈɔːdɪt/",
+        "meaning": "记忆审计；用户查看系统保存内容、来源和使用记录的过程",
+        "example": "A memory audit helps users find outdated assumptions.",
+        "chineseExample": "记忆审计帮助用户发现过时假设。"
+      },
+      {
+        "term": "outdated assumption",
+        "phonetic": "/ˌaʊtˈdeɪtɪd əˈsʌmpʃn/",
+        "meaning": "过时假设；曾经有效但当前不再适用的系统判断",
+        "example": "Outdated assumptions should be easy to correct.",
+        "chineseExample": "过时假设应易于纠正。"
+      },
+      {
+        "term": "cross-device sync",
+        "phonetic": "/krɔːs dɪˈvaɪs sɪŋk/",
+        "meaning": "跨设备同步；在车机、手机、账号或云服务之间同步状态",
+        "example": "Cross-device sync needs the same consent language across screens.",
+        "chineseExample": "跨设备同步需要在不同屏幕上使用一致的同意语言。"
+      },
+      {
+        "term": "raw conversation history",
+        "phonetic": "/rɔː ˌkɑːnvərˈseɪʃn ˈhɪstri/",
+        "meaning": "原始对话历史；未过滤、未摘要的用户语音或文本交互记录",
+        "example": "Raw conversation history is rarely necessary for profile sync.",
+        "chineseExample": "档案同步很少需要原始对话历史。"
+      },
+      {
+        "term": "preference label",
+        "phonetic": "/ˈprefrəns ˈleɪbl/",
+        "meaning": "偏好标签；对用户偏好的简洁、可读分类名称",
+        "example": "A preference label is safer to sync than a full transcript.",
+        "chineseExample": "偏好标签比完整转录更适合同步。"
+      },
+      {
+        "term": "full transcript",
+        "phonetic": "/fʊl ˈtrænskrɪpt/",
+        "meaning": "完整转录；语音或文本对话的完整记录",
+        "example": "A full transcript may contain sensitive passenger details.",
+        "chineseExample": "完整转录可能包含敏感乘客细节。"
+      },
+      {
+        "term": "local processing",
+        "phonetic": "/ˈloʊkl ˈprɑːsesɪŋ/",
+        "meaning": "本地处理；在车端完成分析以减少外传数据",
+        "example": "Local processing can support personalization without sending raw data.",
+        "chineseExample": "本地处理可以在不发送原始数据的情况下支持个性化。"
+      },
+      {
+        "term": "cloud profile",
+        "phonetic": "/klaʊd ˈproʊfaɪl/",
+        "meaning": "云端档案；保存在云服务中、可跨设备使用的用户配置",
+        "example": "A cloud profile needs stronger recovery and deletion controls.",
+        "chineseExample": "云端档案需要更强的恢复和删除控制。"
+      },
+      {
+        "term": "trip-only memory",
+        "phonetic": "/trɪp ˈoʊnli ˈmeməri/",
+        "meaning": "仅本次行程记忆；行程结束后自动失效的记忆",
+        "example": "Trip-only memory is useful for borrowed vehicles.",
+        "chineseExample": "仅本次行程记忆适合借用车辆。"
+      },
+      {
+        "term": "borrowed vehicle",
+        "phonetic": "/ˈbɑːroʊd ˈviːəkl/",
+        "meaning": "借用车辆；非长期归属当前用户的车辆",
+        "example": "A borrowed vehicle should default to trip-only memory.",
+        "chineseExample": "借用车辆应默认使用仅本次行程记忆。"
+      },
+      {
+        "term": "family account",
+        "phonetic": "/ˈfæməli əˈkaʊnt/",
+        "meaning": "家庭账号；多人共享车辆或服务时使用的账号结构",
+        "example": "A family account must not merge every member’s cockpit memory.",
+        "chineseExample": "家庭账号不得合并每个成员的座舱记忆。"
+      },
+      {
+        "term": "role-aware access",
+        "phonetic": "/roʊl əˈwer ˈækses/",
+        "meaning": "角色感知访问；按驾驶员、乘客、车主等角色分配控制权限",
+        "example": "Role-aware access protects owner settings during guest use.",
+        "chineseExample": "角色感知访问在访客使用期间保护车主设置。"
+      },
+      {
+        "term": "owner setting",
+        "phonetic": "/ˈoʊnər ˈsetɪŋ/",
+        "meaning": "车主设置；由车辆所有者控制的长期配置",
+        "example": "Owner settings should be protected from casual passenger edits.",
+        "chineseExample": "车主设置应避免被乘客随意修改。"
+      },
+      {
+        "term": "guest mode",
+        "phonetic": "/ɡest moʊd/",
+        "meaning": "访客模式；为临时用户提供有限记忆和有限权限的模式",
+        "example": "Guest mode should explain what will be forgotten after the drive.",
+        "chineseExample": "访客模式应说明驾驶结束后哪些内容会被遗忘。"
+      },
+      {
+        "term": "attention load",
+        "phonetic": "/əˈtenʃn loʊd/",
+        "meaning": "注意力负荷；交互对驾驶者视觉、认知和操作资源的占用",
+        "example": "Memory controls must keep attention load low while driving.",
+        "chineseExample": "驾驶时记忆控件必须保持低注意力负荷。"
+      },
+      {
+        "term": "glanceable summary",
+        "phonetic": "/ˈɡlænsəbl ˈsʌməri/",
+        "meaning": "可扫视摘要；驾驶者短时间扫视即可理解的信息概括",
+        "example": "A glanceable summary can show why a profile changed.",
+        "chineseExample": "可扫视摘要可以说明档案为何改变。"
+      },
+      {
+        "term": "low-friction correction",
+        "phonetic": "/loʊ ˈfrɪkʃn kəˈrekʃn/",
+        "meaning": "低摩擦纠正；用户用很少步骤修正系统记忆或推断",
+        "example": "Low-friction correction builds trust after a wrong recall.",
+        "chineseExample": "错误召回后，低摩擦纠正可以建立信任。"
+      },
+      {
+        "term": "wrong recall",
+        "phonetic": "/rɔːŋ rɪˈkɔːl/",
+        "meaning": "错误召回；系统调用了不适合当前情境的记忆或设置",
+        "example": "Wrong recall should be treated as a recoverable design moment.",
+        "chineseExample": "错误召回应被视为可恢复的设计时刻。"
+      },
+      {
+        "term": "recoverable design moment",
+        "phonetic": "/rɪˈkʌvərəbl dɪˈzaɪn ˈmoʊmənt/",
+        "meaning": "可恢复设计时刻；系统出错但可通过解释、撤销和学习恢复信任的时刻",
+        "example": "A recoverable design moment needs both explanation and control.",
+        "chineseExample": "可恢复设计时刻既需要解释，也需要控制。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户既不过度信任也不过度怀疑系统能力",
+        "example": "Trust calibration depends on honest memory explanations.",
+        "chineseExample": "信任校准依赖诚实的记忆解释。"
+      },
+      {
+        "term": "memory explanation",
+        "phonetic": "/ˈmeməri ˌekspləˈneɪʃn/",
+        "meaning": "记忆解释；说明系统保存、调用或忽略某条记忆的原因",
+        "example": "A memory explanation should fit into one short cockpit sentence.",
+        "chineseExample": "记忆解释应能压缩成一句简短座舱提示。"
+      },
+      {
+        "term": "sensitive routine",
+        "phonetic": "/ˈsensətɪv ruːˈtiːn/",
+        "meaning": "敏感习惯；可能暴露健康、家庭、地点或个人偏好的行为模式",
+        "example": "Sensitive routines require stronger consent than simple display themes.",
+        "chineseExample": "敏感习惯比简单显示主题需要更强授权。"
+      },
+      {
+        "term": "display theme",
+        "phonetic": "/dɪˈspleɪ θiːm/",
+        "meaning": "显示主题；屏幕颜色、亮暗和视觉风格配置",
+        "example": "A display theme is usually less sensitive than a location routine.",
+        "chineseExample": "显示主题通常不如地点习惯敏感。"
+      },
+      {
+        "term": "location routine",
+        "phonetic": "/loʊˈkeɪʃn ruːˈtiːn/",
+        "meaning": "地点习惯；与常去地点、时间和路线有关的行为模式",
+        "example": "Location routines should not appear on a shared screen without consent.",
+        "chineseExample": "未经同意，地点习惯不应出现在共享屏幕上。"
+      },
+      {
+        "term": "shared screen",
+        "phonetic": "/ʃerd skriːn/",
+        "meaning": "共享屏幕；驾驶员和乘客都可能看到的座舱显示区域",
+        "example": "A shared screen can accidentally reveal private profile details.",
+        "chineseExample": "共享屏幕可能意外暴露私人档案细节。"
+      },
+      {
+        "term": "private profile detail",
+        "phonetic": "/ˈpraɪvət ˈproʊfaɪl dɪˈteɪl/",
+        "meaning": "私人档案细节；不应向其他乘员公开的个性化信息",
+        "example": "Private profile details should stay behind an authenticated view.",
+        "chineseExample": "私人档案细节应保留在已认证视图之后。"
+      },
+      {
+        "term": "authenticated view",
+        "phonetic": "/ɔːˈθentɪkeɪtɪd vjuː/",
+        "meaning": "已认证视图；需要身份确认后才能查看的界面",
+        "example": "An authenticated view is appropriate for memory audits.",
+        "chineseExample": "已认证视图适合用于记忆审计。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing cockpit memory that users can trust",
+        "text": "Personalization in an intelligent cockpit becomes more valuable when it is supported by context memory that users can inspect and control. The system may notice a repeated climate adjustment, a preferred navigation style, or a quiet mode used during school pickups. However, a saved inference should never feel like a secret decision. A good memory consent prompt explains what will be remembered, why it helps, and how the driver can delete it later. In a shared cabin, personalization also needs boundaries. A seat position, a media preference, and a location routine do not have the same privacy risk. Designers should separate trip-only memory, guest mode, and long-term owner settings, especially when a family account or borrowed vehicle is involved. The cockpit can build trust by showing a preference trace before it makes an automatic change. For example, it might say, “Using quiet navigation because this profile often chooses fewer voice prompts at night.” If the recall is wrong, the undo affordance and memory reset control should be immediate. Controllable memory turns adaptation from a hidden algorithm into a transparent partnership between the driver and the vehicle.",
+        "translation": "当智能座舱的个性化由用户可查看、可控制的情境记忆支撑时，它会更有价值。系统可能注意到重复的空调调节、偏好的导航风格，或接送孩子时使用的安静模式。然而，已保存推断绝不应像一个秘密决定。好的记忆同意提示会说明将记住什么、为什么有帮助，以及驾驶者之后如何删除。共享座舱中的个性化也需要边界。座椅位置、媒体偏好和地点习惯并不具有相同的隐私风险。设计师应区分仅本次行程记忆、访客模式和长期车主设置，尤其在家庭账号或借用车辆场景中。座舱可以在自动变化前展示偏好痕迹来建立信任。例如，它可以提示：“由于该档案夜间常选择更少语音提示，因此使用安静导航。” 如果召回错误，撤销可供性和记忆重置控件应立即可用。可控记忆把适配从隐藏算法变成驾驶者与车辆之间透明的协作。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Personalization in an intelligent cockpit becomes more valuable when it is supported by context memory that users can inspect and control.",
+        "translation": "当智能座舱个性化由用户可查看、可控制的情境记忆支撑时，它会更有价值。",
+        "points": [
+          "Personalization becomes more valuable 是主干。",
+          "when 引导条件状语从句，说明价值提升的前提。",
+          "that users can inspect and control 修饰 context memory，强调可查看和可控制。"
+        ]
+      },
+      {
+        "sentence": "A good memory consent prompt explains what will be remembered, why it helps, and how the driver can delete it later.",
+        "translation": "好的记忆同意提示会说明将记住什么、为什么有帮助，以及驾驶者之后如何删除。",
+        "points": [
+          "explains 后接三个并列宾语从句。",
+          "what, why, how 分别对应数据范围、功能收益和删除路径。",
+          "later 强调用户控制不是一次性的。"
+        ]
+      },
+      {
+        "sentence": "Designers should separate trip-only memory, guest mode, and long-term owner settings, especially when a family account or borrowed vehicle is involved.",
+        "translation": "设计师应区分仅本次行程记忆、访客模式和长期车主设置，尤其在涉及家庭账号或借用车辆时。",
+        "points": [
+          "should separate 表示设计建议。",
+          "三个并列名词短语代表不同记忆范围。",
+          "especially when 引出高风险场景。"
+        ]
+      },
+      {
+        "sentence": "Controllable memory turns adaptation from a hidden algorithm into a transparent partnership between the driver and the vehicle.",
+        "translation": "可控记忆把适配从隐藏算法变成驾驶者与车辆之间透明的协作。",
+        "points": [
+          "turns A from B into C 是“把 A 从 B 变成 C”的结构。",
+          "hidden algorithm 对比 transparent partnership。",
+          "between the driver and the vehicle 说明协作双方。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "5 分钟",
+        "description": "朗读 10 个核心词，重点区分 context memory、preference trace、memory consent prompt 和 user-editable memory。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "description": "先听或朗读英文长文，再用中文复述“保存什么、为何保存、如何删除”三点。"
+      },
+      {
+        "title": "句型替换",
+        "time": "6 分钟",
+        "description": "用 turns A from B into C 和 explains what, why, and how 各造一句智能座舱设计说明。"
+      },
+      {
+        "title": "设计表达练习",
+        "time": "6 分钟",
+        "description": "用英语描述一个错误召回场景，并说明 undo affordance 与 memory reset control 如何恢复信任。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive personalization privacy UX",
+        "url": "",
+        "description": "可搜索车载个性化、隐私同意和用户可控记忆相关公开资料；本课未引用特定视频来源。"
+      }
+    ]
+  },
+  {
     "id": "2026-09-26-contextual-charging-stop-recommendations-and-driver-confidence",
     "date": "2026-09-26",
     "title": "Contextual charging stop recommendations and driver confidence in intelligent cockpits",
