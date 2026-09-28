@@ -1,5 +1,791 @@
 [
   {
+    "id": "2026-09-28-co-pilot-mode-awareness-and-driver-override-cues",
+    "date": "2026-09-28",
+    "title": "Co-pilot mode awareness and driver override cues",
+    "topic": "智能座舱 AI 副驾模式感知与驾驶员覆盖提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱 AI 副驾在建议、执行、等待确认和交还责任之间切换时，通过模式提示、动作预览、覆盖入口和安全回退保持驾驶者主导权。",
+    "words": [
+      {
+        "term": "co-pilot mode awareness",
+        "phonetic": "/ˈkoʊ ˈpaɪlət moʊd əˈwernəs/",
+        "meaning": "副驾式 AI 模式感知；让用户清楚知道智能助手当前能做什么、不能做什么",
+        "example": "Co-pilot mode awareness helps the driver know when the assistant is advising, acting, or waiting for confirmation.",
+        "chineseExample": "副驾式 AI 模式感知帮助驾驶者知道助手是在建议、执行，还是等待确认。"
+      },
+      {
+        "term": "driver override cue",
+        "phonetic": "/ˈdraɪvər ˈoʊvərraɪd kjuː/",
+        "meaning": "驾驶员覆盖提示；提醒用户可随时接管或撤销系统动作的界面线索",
+        "example": "A driver override cue must be visible before the cockpit changes a driving-related setting.",
+        "chineseExample": "在座舱改变与驾驶相关的设置前，驾驶员覆盖提示必须清晰可见。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能力、权限和责任不应越过的范围",
+        "example": "The automation boundary should be explained before the assistant starts a complex route adjustment.",
+        "chineseExample": "在助手开始复杂路线调整前，应解释自动化边界。"
+      },
+      {
+        "term": "intent checkpoint",
+        "phonetic": "/ɪnˈtent ˈtʃekpɔɪnt/",
+        "meaning": "意图检查点；执行关键动作前确认用户真实意图的交互节点",
+        "example": "An intent checkpoint can prevent the AI co-pilot from accepting a vague command as final approval.",
+        "chineseExample": "意图检查点可以防止 AI 副驾把模糊指令当作最终批准。"
+      },
+      {
+        "term": "recoverable takeover",
+        "phonetic": "/rɪˈkʌvərəbl ˈteɪkoʊvər/",
+        "meaning": "可恢复接管；用户接管后仍能回到先前任务状态的设计",
+        "example": "Recoverable takeover keeps the route plan available after the driver cancels an automatic detour.",
+        "chineseExample": "当驾驶者取消自动绕行后，可恢复接管会保留路线方案。"
+      },
+      {
+        "term": "mode confidence indicator",
+        "phonetic": "/moʊd ˈkɑːnfɪdəns ˈɪndɪkeɪtər/",
+        "meaning": "模式置信度指示；展示系统对当前模式判断有多确定的提示",
+        "example": "A mode confidence indicator should stay modest when sensor evidence is incomplete.",
+        "chineseExample": "当传感证据不完整时，模式置信度指示应保持克制。"
+      },
+      {
+        "term": "responsibility handback",
+        "phonetic": "/rɪˌspɑːnsəˈbɪləti ˈhændbæk/",
+        "meaning": "责任交还；系统把决策或控制权明确交回驾驶者的过程",
+        "example": "Responsibility handback needs a short reason, a safe option, and enough time for the driver to respond.",
+        "chineseExample": "责任交还需要简短原因、安全选项和足够响应时间。"
+      },
+      {
+        "term": "AI action preview",
+        "phonetic": "/ˌeɪ ˈaɪ ˈækʃn ˈpriːvjuː/",
+        "meaning": "AI 动作预览；在执行前展示系统将采取的具体步骤和影响",
+        "example": "An AI action preview turns a hidden automation step into a reviewable choice.",
+        "chineseExample": "AI 动作预览把隐藏的自动化步骤变成可审查的选择。"
+      },
+      {
+        "term": "shared authority display",
+        "phonetic": "/ʃerd əˈθɔːrəti dɪˈspleɪ/",
+        "meaning": "共享权限显示；呈现人和系统各自控制范围的界面区域",
+        "example": "The shared authority display should separate advisory control from direct vehicle control.",
+        "chineseExample": "共享权限显示应区分建议控制和直接车辆控制。"
+      },
+      {
+        "term": "safe fallback path",
+        "phonetic": "/seɪf ˈfɔːlbæk pæθ/",
+        "meaning": "安全回退路径；在 AI 判断不确定或用户拒绝时回到稳定状态的方法",
+        "example": "A safe fallback path lets the cockpit return to manual guidance without losing the user goal.",
+        "chineseExample": "安全回退路径让座舱在不丢失用户目标的情况下回到手动引导。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "co-pilot mode awareness",
+        "phonetic": "/ˈkoʊ ˈpaɪlət moʊd əˈwernəs/",
+        "meaning": "副驾式 AI 模式感知；让用户清楚知道智能助手当前能做什么、不能做什么",
+        "example": "Co-pilot mode awareness helps the driver know when the assistant is advising, acting, or waiting for confirmation.",
+        "chineseExample": "副驾式 AI 模式感知帮助驾驶者知道助手是在建议、执行，还是等待确认。"
+      },
+      {
+        "term": "driver override cue",
+        "phonetic": "/ˈdraɪvər ˈoʊvərraɪd kjuː/",
+        "meaning": "驾驶员覆盖提示；提醒用户可随时接管或撤销系统动作的界面线索",
+        "example": "A driver override cue must be visible before the cockpit changes a driving-related setting.",
+        "chineseExample": "在座舱改变与驾驶相关的设置前，驾驶员覆盖提示必须清晰可见。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃn ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能力、权限和责任不应越过的范围",
+        "example": "The automation boundary should be explained before the assistant starts a complex route adjustment.",
+        "chineseExample": "在助手开始复杂路线调整前，应解释自动化边界。"
+      },
+      {
+        "term": "intent checkpoint",
+        "phonetic": "/ɪnˈtent ˈtʃekpɔɪnt/",
+        "meaning": "意图检查点；执行关键动作前确认用户真实意图的交互节点",
+        "example": "An intent checkpoint can prevent the AI co-pilot from accepting a vague command as final approval.",
+        "chineseExample": "意图检查点可以防止 AI 副驾把模糊指令当作最终批准。"
+      },
+      {
+        "term": "recoverable takeover",
+        "phonetic": "/rɪˈkʌvərəbl ˈteɪkoʊvər/",
+        "meaning": "可恢复接管；用户接管后仍能回到先前任务状态的设计",
+        "example": "Recoverable takeover keeps the route plan available after the driver cancels an automatic detour.",
+        "chineseExample": "当驾驶者取消自动绕行后，可恢复接管会保留路线方案。"
+      },
+      {
+        "term": "mode confidence indicator",
+        "phonetic": "/moʊd ˈkɑːnfɪdəns ˈɪndɪkeɪtər/",
+        "meaning": "模式置信度指示；展示系统对当前模式判断有多确定的提示",
+        "example": "A mode confidence indicator should stay modest when sensor evidence is incomplete.",
+        "chineseExample": "当传感证据不完整时，模式置信度指示应保持克制。"
+      },
+      {
+        "term": "responsibility handback",
+        "phonetic": "/rɪˌspɑːnsəˈbɪləti ˈhændbæk/",
+        "meaning": "责任交还；系统把决策或控制权明确交回驾驶者的过程",
+        "example": "Responsibility handback needs a short reason, a safe option, and enough time for the driver to respond.",
+        "chineseExample": "责任交还需要简短原因、安全选项和足够响应时间。"
+      },
+      {
+        "term": "AI action preview",
+        "phonetic": "/ˌeɪ ˈaɪ ˈækʃn ˈpriːvjuː/",
+        "meaning": "AI 动作预览；在执行前展示系统将采取的具体步骤和影响",
+        "example": "An AI action preview turns a hidden automation step into a reviewable choice.",
+        "chineseExample": "AI 动作预览把隐藏的自动化步骤变成可审查的选择。"
+      },
+      {
+        "term": "shared authority display",
+        "phonetic": "/ʃerd əˈθɔːrəti dɪˈspleɪ/",
+        "meaning": "共享权限显示；呈现人和系统各自控制范围的界面区域",
+        "example": "The shared authority display should separate advisory control from direct vehicle control.",
+        "chineseExample": "共享权限显示应区分建议控制和直接车辆控制。"
+      },
+      {
+        "term": "safe fallback path",
+        "phonetic": "/seɪf ˈfɔːlbæk pæθ/",
+        "meaning": "安全回退路径；在 AI 判断不确定或用户拒绝时回到稳定状态的方法",
+        "example": "A safe fallback path lets the cockpit return to manual guidance without losing the user goal.",
+        "chineseExample": "安全回退路径让座舱在不丢失用户目标的情况下回到手动引导。"
+      },
+      {
+        "term": "AI co-pilot",
+        "phonetic": "/ˌeɪ ˈaɪ ˈkoʊ ˈpaɪlət/",
+        "meaning": "AI 副驾；协助驾驶、导航和座舱任务的智能助手",
+        "example": "The AI co-pilot should describe its role before taking initiative.",
+        "chineseExample": "AI 副驾在主动操作前应说明自己的角色。"
+      },
+      {
+        "term": "advisory control",
+        "phonetic": "/ədˈvaɪzəri kənˈtroʊl/",
+        "meaning": "建议性控制；系统只提供建议而不直接执行车辆动作",
+        "example": "Advisory control is easier to accept when the interface labels it clearly.",
+        "chineseExample": "当界面清楚标注时，建议性控制更容易被接受。"
+      },
+      {
+        "term": "direct vehicle control",
+        "phonetic": "/dəˈrekt ˈviːəkl kənˈtroʊl/",
+        "meaning": "直接车辆控制；系统实际改变车辆行为的控制",
+        "example": "Direct vehicle control requires stronger confirmation than a media suggestion.",
+        "chineseExample": "直接车辆控制比媒体建议需要更强确认。"
+      },
+      {
+        "term": "mode transition",
+        "phonetic": "/moʊd trænˈzɪʃn/",
+        "meaning": "模式切换；系统在建议、辅助、执行和等待之间转换",
+        "example": "Every mode transition should be announced with the same visual language.",
+        "chineseExample": "每次模式切换都应使用一致的视觉语言提示。"
+      },
+      {
+        "term": "status banner",
+        "phonetic": "/ˈsteɪtəs ˈbænər/",
+        "meaning": "状态横幅；持续说明当前自动化状态的界面区域",
+        "example": "A status banner can show whether the assistant is monitoring or acting.",
+        "chineseExample": "状态横幅可以显示助手正在监测还是正在执行。"
+      },
+      {
+        "term": "control token",
+        "phonetic": "/kənˈtroʊl ˈtoʊkən/",
+        "meaning": "控制权标记；表示当前控制权归属的视觉或语音标识",
+        "example": "A control token reduces confusion in shared driving tasks.",
+        "chineseExample": "控制权标记能减少共享驾驶任务中的困惑。"
+      },
+      {
+        "term": "manual guidance",
+        "phonetic": "/ˈmænjuəl ˈɡaɪdns/",
+        "meaning": "手动引导；由驾驶者主导、系统只提供基础提示的引导方式",
+        "example": "Manual guidance should remain available after automation is declined.",
+        "chineseExample": "自动化被拒绝后，手动引导仍应可用。"
+      },
+      {
+        "term": "route adjustment",
+        "phonetic": "/ruːt əˈdʒʌstmənt/",
+        "meaning": "路线调整；对导航路径、停靠点或避让策略的改变",
+        "example": "A route adjustment should show the time cost before confirmation.",
+        "chineseExample": "路线调整应在确认前显示时间成本。"
+      },
+      {
+        "term": "automatic detour",
+        "phonetic": "/ˌɔːtəˈmætɪk ˈdiːtʊr/",
+        "meaning": "自动绕行；系统基于拥堵、天气或安全信息主动建议的绕行",
+        "example": "An automatic detour needs a quick cancel path.",
+        "chineseExample": "自动绕行需要快速取消路径。"
+      },
+      {
+        "term": "reviewable choice",
+        "phonetic": "/rɪˈvjuːəbl tʃɔɪs/",
+        "meaning": "可审查选择；用户能查看理由和影响后再决定的选项",
+        "example": "A reviewable choice builds trust in proactive cockpit behavior.",
+        "chineseExample": "可审查选择能增强用户对主动座舱行为的信任。"
+      },
+      {
+        "term": "vague command",
+        "phonetic": "/veɪɡ kəˈmænd/",
+        "meaning": "模糊指令；意图、对象或范围不清晰的语音或触控输入",
+        "example": "A vague command should trigger clarification instead of action.",
+        "chineseExample": "模糊指令应触发澄清，而不是直接执行。"
+      },
+      {
+        "term": "final approval",
+        "phonetic": "/ˈfaɪnl əˈpruːvl/",
+        "meaning": "最终批准；执行高影响动作前用户给出的明确同意",
+        "example": "Final approval should not be inferred from silence.",
+        "chineseExample": "最终批准不应从沉默中推断。"
+      },
+      {
+        "term": "sensor evidence",
+        "phonetic": "/ˈsensər ˈevɪdəns/",
+        "meaning": "传感证据；摄像头、定位、车辆状态等用于判断的信号",
+        "example": "Weak sensor evidence should lower the assistant confidence.",
+        "chineseExample": "较弱的传感证据应降低助手置信度。"
+      },
+      {
+        "term": "confidence label",
+        "phonetic": "/ˈkɑːnfɪdəns ˈleɪbl/",
+        "meaning": "置信度标签；用文字或图标表达系统判断可靠性的标签",
+        "example": "A confidence label should be understandable during a quick glance.",
+        "chineseExample": "置信度标签应能在快速扫视中理解。"
+      },
+      {
+        "term": "uncertain context",
+        "phonetic": "/ʌnˈsɜːrtn ˈkɑːntekst/",
+        "meaning": "不确定情境；系统无法稳定判断用户目标或道路状态的场景",
+        "example": "In an uncertain context, the assistant should ask before acting.",
+        "chineseExample": "在不确定情境中，助手应先询问再执行。"
+      },
+      {
+        "term": "silent assumption",
+        "phonetic": "/ˈsaɪlənt əˈsʌmpʃn/",
+        "meaning": "静默假设；系统未说明却据此行动的隐含判断",
+        "example": "A silent assumption can make automation feel unpredictable.",
+        "chineseExample": "静默假设会让自动化显得不可预测。"
+      },
+      {
+        "term": "visible reasoning",
+        "phonetic": "/ˈvɪzəbl ˈriːzənɪŋ/",
+        "meaning": "可见推理；把系统判断依据以简短形式展示给用户",
+        "example": "Visible reasoning helps the driver check why a suggestion appeared.",
+        "chineseExample": "可见推理帮助驾驶者检查建议为何出现。"
+      },
+      {
+        "term": "handover tone",
+        "phonetic": "/ˈhændoʊvər toʊn/",
+        "meaning": "交接提示音；控制权变化时使用的听觉提示",
+        "example": "The handover tone should be distinct from entertainment sounds.",
+        "chineseExample": "交接提示音应区别于娱乐声音。"
+      },
+      {
+        "term": "glance-safe message",
+        "phonetic": "/ɡlæns seɪf ˈmesɪdʒ/",
+        "meaning": "低扫视安全消息；短、可预期、适合驾驶中查看的提示",
+        "example": "A glance-safe message uses one action and one reason.",
+        "chineseExample": "低扫视安全消息只包含一个动作和一个原因。"
+      },
+      {
+        "term": "response window",
+        "phonetic": "/rɪˈspɑːns ˈwɪndoʊ/",
+        "meaning": "响应窗口；系统等待用户确认或接管的时间范围",
+        "example": "The response window must match the driving workload.",
+        "chineseExample": "响应窗口必须匹配驾驶负荷。"
+      },
+      {
+        "term": "override affordance",
+        "phonetic": "/ˈoʊvərraɪd əˈfɔːrdns/",
+        "meaning": "覆盖可供性；让用户看出可取消、暂停或接管的设计线索",
+        "example": "An override affordance should be reachable without menu hunting.",
+        "chineseExample": "覆盖可供性应无需层层找菜单即可触达。"
+      },
+      {
+        "term": "cancel path",
+        "phonetic": "/ˈkænsl pæθ/",
+        "meaning": "取消路径；用户撤销建议或自动动作的操作路径",
+        "example": "The cancel path should be as fast as the acceptance path.",
+        "chineseExample": "取消路径应和接受路径一样快速。"
+      },
+      {
+        "term": "acceptance path",
+        "phonetic": "/əkˈseptəns pæθ/",
+        "meaning": "接受路径；用户同意系统建议的操作路径",
+        "example": "The acceptance path should not hide the cost of the action.",
+        "chineseExample": "接受路径不应隐藏动作成本。"
+      },
+      {
+        "term": "fallback state",
+        "phonetic": "/ˈfɔːlbæk steɪt/",
+        "meaning": "回退状态；系统出错或被拒绝后返回的稳定状态",
+        "example": "A fallback state should preserve navigation safety.",
+        "chineseExample": "回退状态应保持导航安全。"
+      },
+      {
+        "term": "task continuity",
+        "phonetic": "/tæsk ˌkɑːntɪˈnuːəti/",
+        "meaning": "任务连续性；中断、取消或接管后任务信息仍可延续",
+        "example": "Task continuity prevents the driver from rebuilding the plan.",
+        "chineseExample": "任务连续性避免驾驶者重新构建计划。"
+      },
+      {
+        "term": "decision preview",
+        "phonetic": "/dɪˈsɪʒn ˈpriːvjuː/",
+        "meaning": "决策预览；执行前预览原因、动作和结果",
+        "example": "A decision preview gives the driver one last chance to inspect the change.",
+        "chineseExample": "决策预览给驾驶者最后一次检查变化的机会。"
+      },
+      {
+        "term": "permission threshold",
+        "phonetic": "/pərˈmɪʃn ˈθreʃhoʊld/",
+        "meaning": "许可阈值；动作达到某种风险或影响后必须请求同意的界限",
+        "example": "The permission threshold should rise when the car is moving fast.",
+        "chineseExample": "车辆高速行驶时，许可阈值应提高。"
+      },
+      {
+        "term": "low-risk suggestion",
+        "phonetic": "/loʊ rɪsk səˈdʒestʃən/",
+        "meaning": "低风险建议；影响较小、可轻松忽略的系统建议",
+        "example": "A low-risk suggestion can be shown quietly in the side panel.",
+        "chineseExample": "低风险建议可以安静地显示在侧边面板中。"
+      },
+      {
+        "term": "high-impact action",
+        "phonetic": "/haɪ ˈɪmpækt ˈækʃn/",
+        "meaning": "高影响动作；会改变路线、安全、费用或控制权的动作",
+        "example": "A high-impact action needs explicit approval.",
+        "chineseExample": "高影响动作需要明确批准。"
+      },
+      {
+        "term": "explicit approval",
+        "phonetic": "/ɪkˈsplɪsɪt əˈpruːvl/",
+        "meaning": "明确批准；通过清晰按钮、语音或手势给出的同意",
+        "example": "Explicit approval protects the user from accidental automation.",
+        "chineseExample": "明确批准保护用户免受意外自动化影响。"
+      },
+      {
+        "term": "proactive suggestion",
+        "phonetic": "/proʊˈæktɪv səˈdʒestʃən/",
+        "meaning": "主动建议；系统在用户请求前基于情境提出的建议",
+        "example": "A proactive suggestion should include a reason and an easy dismissal.",
+        "chineseExample": "主动建议应包含理由和易用的忽略方式。"
+      },
+      {
+        "term": "easy dismissal",
+        "phonetic": "/ˈiːzi dɪsˈmɪsl/",
+        "meaning": "易忽略方式；用户能轻松关闭建议且不受惩罚的设计",
+        "example": "Easy dismissal keeps the assistant from feeling pushy.",
+        "chineseExample": "易忽略方式让助手不显得强硬。"
+      },
+      {
+        "term": "role clarity",
+        "phonetic": "/roʊl ˈklærəti/",
+        "meaning": "角色清晰度；用户清楚系统是在观察、建议还是控制",
+        "example": "Role clarity is essential when AI features become more active.",
+        "chineseExample": "当 AI 功能变得更主动时，角色清晰度至关重要。"
+      },
+      {
+        "term": "active assistance",
+        "phonetic": "/ˈæktɪv əˈsɪstəns/",
+        "meaning": "主动辅助；系统不仅提示，还可能组织或执行下一步",
+        "example": "Active assistance should be paired with transparent control.",
+        "chineseExample": "主动辅助应搭配透明控制。"
+      },
+      {
+        "term": "transparent control",
+        "phonetic": "/trænsˈpærənt kənˈtroʊl/",
+        "meaning": "透明控制；用户能看见系统控制范围、原因和退出方式",
+        "example": "Transparent control makes shared authority easier to trust.",
+        "chineseExample": "透明控制让共享权限更容易被信任。"
+      },
+      {
+        "term": "shared task model",
+        "phonetic": "/ʃerd tæsk ˈmɑːdl/",
+        "meaning": "共享任务模型；人和系统对当前目标、步骤和责任的共同理解",
+        "example": "A shared task model keeps the driver and assistant aligned.",
+        "chineseExample": "共享任务模型让驾驶者与助手保持一致。"
+      },
+      {
+        "term": "system initiative",
+        "phonetic": "/ˈsɪstəm ɪˈnɪʃətɪv/",
+        "meaning": "系统主动性；系统主动提出或执行下一步的程度",
+        "example": "System initiative should scale with confidence and user permission.",
+        "chineseExample": "系统主动性应随置信度和用户许可而调整。"
+      },
+      {
+        "term": "driver agency",
+        "phonetic": "/ˈdraɪvər ˈeɪdʒənsi/",
+        "meaning": "驾驶者主导权；驾驶者保留决定、接管和纠正的能力",
+        "example": "Driver agency is preserved when every automated step has a visible exit.",
+        "chineseExample": "当每个自动步骤都有可见退出方式时，驾驶者主导权得以保留。"
+      },
+      {
+        "term": "visible exit",
+        "phonetic": "/ˈvɪzəbl ˈeɡzɪt/",
+        "meaning": "可见退出；界面中明确可见的退出、取消或恢复入口",
+        "example": "A visible exit reduces anxiety during automation.",
+        "chineseExample": "可见退出能降低自动化过程中的焦虑。"
+      },
+      {
+        "term": "confirmation layer",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈleɪər/",
+        "meaning": "确认层；关键动作前用于复核意图的交互层",
+        "example": "The confirmation layer should be brief but specific.",
+        "chineseExample": "确认层应简短但具体。"
+      },
+      {
+        "term": "action summary",
+        "phonetic": "/ˈækʃn ˈsʌməri/",
+        "meaning": "动作摘要；把系统将要做什么浓缩成一句话",
+        "example": "An action summary should mention the destination, timing, and consequence.",
+        "chineseExample": "动作摘要应说明目的地、时机和后果。"
+      },
+      {
+        "term": "consequence display",
+        "phonetic": "/ˈkɑːnsəkwens dɪˈspleɪ/",
+        "meaning": "后果显示；展示动作带来的时间、费用、安全或体验影响",
+        "example": "A consequence display helps users compare choices quickly.",
+        "chineseExample": "后果显示帮助用户快速比较选择。"
+      },
+      {
+        "term": "safe option",
+        "phonetic": "/seɪf ˈɑːpʃn/",
+        "meaning": "安全选项；在不确定或紧急状态下优先提供的低风险选择",
+        "example": "A safe option should be highlighted during responsibility handback.",
+        "chineseExample": "责任交还时应突出安全选项。"
+      },
+      {
+        "term": "navigation safety",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈseɪfti/",
+        "meaning": "导航安全；路线提示在时间、位置和注意力上保持安全",
+        "example": "Navigation safety matters more than showing every possible shortcut.",
+        "chineseExample": "导航安全比展示所有可能捷径更重要。"
+      },
+      {
+        "term": "interface label",
+        "phonetic": "/ˈɪntərfeɪs ˈleɪbl/",
+        "meaning": "界面标签；说明控件、模式或状态含义的短文本",
+        "example": "The interface label should avoid technical automation jargon.",
+        "chineseExample": "界面标签应避免技术化自动化术语。"
+      },
+      {
+        "term": "technical jargon",
+        "phonetic": "/ˈteknɪkl ˈdʒɑːrɡən/",
+        "meaning": "技术术语；普通用户难以快速理解的专业表达",
+        "example": "Technical jargon can hide who is responsible for the next step.",
+        "chineseExample": "技术术语可能掩盖下一步由谁负责。"
+      },
+      {
+        "term": "side panel",
+        "phonetic": "/saɪd ˈpænl/",
+        "meaning": "侧边面板；承载次要信息或低风险建议的区域",
+        "example": "The side panel can hold optional AI suggestions.",
+        "chineseExample": "侧边面板可以承载可选的 AI 建议。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；驾驶者当前需要处理的感知和操作压力",
+        "example": "High driving workload calls for fewer choices and clearer timing.",
+        "chineseExample": "高驾驶负荷需要更少选项和更清晰时机。"
+      },
+      {
+        "term": "traffic complexity",
+        "phonetic": "/ˈtræfɪk kəmˈpleksəti/",
+        "meaning": "交通复杂度；道路环境中车辆、行人、路线和风险的复杂程度",
+        "example": "Traffic complexity should reduce the number of on-screen options.",
+        "chineseExample": "交通复杂度应减少屏幕选项数量。"
+      },
+      {
+        "term": "confirmation burden",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈbɜːrdn/",
+        "meaning": "确认负担；过多确认给用户带来的操作和注意力成本",
+        "example": "The confirmation burden should match the risk of the action.",
+        "chineseExample": "确认负担应与动作风险匹配。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trʌst ˌkælɪˈbreɪʃn/",
+        "meaning": "信任校准；让用户既不过度信任也不过度怀疑系统能力",
+        "example": "Trust calibration depends on honest limits, not confident wording alone.",
+        "chineseExample": "信任校准依赖真实限制，而不仅是自信措辞。"
+      },
+      {
+        "term": "honest limit",
+        "phonetic": "/ˈɑːnɪst ˈlɪmɪt/",
+        "meaning": "真实限制；系统明确承认当前能力或证据不足的边界",
+        "example": "An honest limit can be more reassuring than a perfect-sounding claim.",
+        "chineseExample": "真实限制有时比听起来完美的声明更让人安心。"
+      },
+      {
+        "term": "monitoring state",
+        "phonetic": "/ˈmɑːnɪtərɪŋ steɪt/",
+        "meaning": "监测状态；系统观察情境但尚未采取动作的状态",
+        "example": "The monitoring state should be visually different from acting mode.",
+        "chineseExample": "监测状态应在视觉上不同于执行模式。"
+      },
+      {
+        "term": "acting mode",
+        "phonetic": "/ˈæktɪŋ moʊd/",
+        "meaning": "执行模式；系统正在执行或准备执行动作的状态",
+        "example": "Acting mode needs stronger feedback than monitoring state.",
+        "chineseExample": "执行模式需要比监测状态更强的反馈。"
+      },
+      {
+        "term": "waiting state",
+        "phonetic": "/ˈweɪtɪŋ steɪt/",
+        "meaning": "等待状态；系统暂停并等待用户确认、选择或接管的状态",
+        "example": "Waiting state should show what input is needed next.",
+        "chineseExample": "等待状态应显示下一步需要什么输入。"
+      },
+      {
+        "term": "user goal",
+        "phonetic": "/ˈjuːzər ɡoʊl/",
+        "meaning": "用户目标；用户希望通过当前任务达成的结果",
+        "example": "The user goal should survive a canceled automation step.",
+        "chineseExample": "用户目标应在自动化步骤被取消后继续保留。"
+      },
+      {
+        "term": "one-step undo",
+        "phonetic": "/wʌn step ʌnˈduː/",
+        "meaning": "一步撤销；用户可用单个动作撤回刚发生的自动化变化",
+        "example": "One-step undo is valuable after an AI action preview.",
+        "chineseExample": "AI 动作预览之后，一步撤销很有价值。"
+      },
+      {
+        "term": "interaction recovery",
+        "phonetic": "/ˌɪntərˈækʃn rɪˈkʌvəri/",
+        "meaning": "交互恢复；错误、中断或拒绝后把用户带回清晰任务路径的设计",
+        "example": "Interaction recovery should explain what changed and what remains possible.",
+        "chineseExample": "交互恢复应解释发生了什么变化以及仍可做什么。"
+      },
+      {
+        "term": "mode badge",
+        "phonetic": "/moʊd bædʒ/",
+        "meaning": "模式徽标；用短标签或图标显示当前自动化模式",
+        "example": "A mode badge can sit near the navigation card.",
+        "chineseExample": "模式徽标可以放在导航卡片附近。"
+      },
+      {
+        "term": "navigation card",
+        "phonetic": "/ˌnævɪˈɡeɪʃn kɑːrd/",
+        "meaning": "导航卡片；显示路线、动作和关键导航提示的界面模块",
+        "example": "The navigation card should not be crowded with every AI detail.",
+        "chineseExample": "导航卡片不应塞满所有 AI 细节。"
+      },
+      {
+        "term": "crowded display",
+        "phonetic": "/ˈkraʊdɪd dɪˈspleɪ/",
+        "meaning": "拥挤显示；信息密度过高、影响扫视理解的界面",
+        "example": "A crowded display weakens mode awareness.",
+        "chineseExample": "拥挤显示会削弱模式感知。"
+      },
+      {
+        "term": "clear timing",
+        "phonetic": "/klɪr ˈtaɪmɪŋ/",
+        "meaning": "清晰时机；提示在用户最容易理解和行动的时刻出现",
+        "example": "Clear timing can make a takeover request feel manageable.",
+        "chineseExample": "清晰时机能让接管请求显得可处理。"
+      },
+      {
+        "term": "manageable request",
+        "phonetic": "/ˈmænɪdʒəbl rɪˈkwest/",
+        "meaning": "可处理请求；用户在当前负荷下能够理解并回应的请求",
+        "example": "A manageable request uses familiar wording and a single decision.",
+        "chineseExample": "可处理请求使用熟悉措辞和单一决策。"
+      },
+      {
+        "term": "familiar wording",
+        "phonetic": "/fəˈmɪliər ˈwɜːrdɪŋ/",
+        "meaning": "熟悉措辞；用户无需学习即可理解的表达方式",
+        "example": "Familiar wording is safer than clever technical labels.",
+        "chineseExample": "熟悉措辞比巧妙的技术标签更安全。"
+      },
+      {
+        "term": "single decision",
+        "phonetic": "/ˈsɪŋɡl dɪˈsɪʒn/",
+        "meaning": "单一决策；一次只让用户判断一个关键问题",
+        "example": "A single decision reduces errors during high workload.",
+        "chineseExample": "单一决策能减少高负荷下的错误。"
+      },
+      {
+        "term": "co-pilot",
+        "phonetic": "/ˈkoʊ ˈpaɪlət/",
+        "meaning": "副驾；在本文中指协助驾驶者完成任务的 AI 助手",
+        "example": "The co-pilot supports decisions without hiding driver control.",
+        "chineseExample": "在本文中，“co-pilot”指支持决策但不隐藏驾驶者控制权的 AI 助手。"
+      },
+      {
+        "term": "advising",
+        "phonetic": "/ədˈvaɪzɪŋ/",
+        "meaning": "正在建议；提供建议但尚未直接执行",
+        "example": "When the system is advising, the interface should avoid control-like language.",
+        "chineseExample": "当系统正在建议时，界面应避免类似控制的措辞。"
+      },
+      {
+        "term": "driving-related",
+        "phonetic": "/ˈdraɪvɪŋ rɪˌleɪtɪd/",
+        "meaning": "与驾驶相关的；会影响驾驶任务、路线或车辆行为的",
+        "example": "A driving-related action needs clearer approval than a media action.",
+        "chineseExample": "与驾驶相关的动作比媒体动作需要更清晰的批准。"
+      },
+      {
+        "term": "checkpoint",
+        "phonetic": "/ˈtʃekpɔɪnt/",
+        "meaning": "检查点；流程中用于复核状态或意图的节点",
+        "example": "A checkpoint can slow automation just enough to prevent a mistake.",
+        "chineseExample": "检查点可以适度放慢自动化，以防止错误。"
+      },
+      {
+        "term": "accepting",
+        "phonetic": "/əkˈseptɪŋ/",
+        "meaning": "正在接受；把建议或输入作为有效指令处理",
+        "example": "Accepting a vague command too early can create safety risk.",
+        "chineseExample": "过早接受模糊指令可能造成安全风险。"
+      },
+      {
+        "term": "cancels",
+        "phonetic": "/ˈkænslz/",
+        "meaning": "取消；停止或撤销某个动作的第三人称单数形式",
+        "example": "The driver cancels the detour when the road looks clear.",
+        "chineseExample": "当道路看起来通畅时，驾驶者取消绕行。"
+      },
+      {
+        "term": "modest",
+        "phonetic": "/ˈmɑːdɪst/",
+        "meaning": "克制的；不过度自信或不过度打扰的",
+        "example": "A modest prompt is useful when confidence is low.",
+        "chineseExample": "当置信度较低时，克制的提示更有用。"
+      },
+      {
+        "term": "reviewable",
+        "phonetic": "/rɪˈvjuːəbl/",
+        "meaning": "可审查的；用户能查看依据和影响后再决定的",
+        "example": "A reviewable automation step feels easier to trust.",
+        "chineseExample": "可审查的自动化步骤更容易被信任。"
+      },
+      {
+        "term": "advisory",
+        "phonetic": "/ədˈvaɪzəri/",
+        "meaning": "建议性的；只提供建议而不直接控制的",
+        "example": "Advisory output should be labeled separately from control output.",
+        "chineseExample": "建议性输出应与控制输出分开标注。"
+      },
+      {
+        "term": "watching",
+        "phonetic": "/ˈwɑːtʃɪŋ/",
+        "meaning": "正在观察；系统监测环境但不执行动作",
+        "example": "Watching traffic is different from steering the vehicle.",
+        "chineseExample": "观察交通不同于操控车辆。"
+      },
+      {
+        "term": "requesting",
+        "phonetic": "/rɪˈkwestɪŋ/",
+        "meaning": "正在请求；向用户索取确认、选择或接管",
+        "example": "Requesting approval should use short and familiar wording.",
+        "chineseExample": "请求批准应使用简短且熟悉的措辞。"
+      },
+      {
+        "term": "eight",
+        "phonetic": "/eɪt/",
+        "meaning": "八；数字 8",
+        "example": "The action summary says the arrival time is eight minutes later.",
+        "chineseExample": "动作摘要说明到达时间晚八分钟。"
+      },
+      {
+        "term": "assumption",
+        "phonetic": "/əˈsʌmpʃn/",
+        "meaning": "假设；系统基于有限线索形成但尚未确认的判断",
+        "example": "An assumption should be shown before it changes vehicle behavior.",
+        "chineseExample": "假设在改变车辆行为前应被展示出来。"
+      },
+      {
+        "term": "one-step",
+        "phonetic": "/wʌn step/",
+        "meaning": "一步的；只需一个动作即可完成的",
+        "example": "One-step undo helps drivers recover from unwanted automation.",
+        "chineseExample": "一步撤销帮助驾驶者从不想要的自动化中恢复。"
+      },
+      {
+        "term": "steady",
+        "phonetic": "/ˈstedi/",
+        "meaning": "稳定的；一致、不突然、不夸张的",
+        "example": "A steady status display is better than dramatic animation.",
+        "chineseExample": "稳定的状态显示比戏剧化动画更好。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing clear authority for an AI co-pilot",
+        "text": "An AI co-pilot in an intelligent cockpit should never make authority feel mysterious. When the assistant recommends a detour, changes a comfort setting, or prepares a driving-related action, the interface needs to show its current mode, its confidence, and the driver override cue in the same glance. Good mode awareness separates monitoring state from acting mode and waiting state. The driver should know whether the system is only watching traffic, offering advisory control, or requesting explicit approval for a high-impact action. Before the assistant acts, an AI action preview can summarize the reason, the step, and the consequence: for example, “Heavy rain ahead; switch to a safer route; arrival is eight minutes later.” If the context is uncertain, the cockpit should lower system initiative and offer a safe fallback path instead of turning a silent assumption into action. After any manual takeover, recoverable takeover preserves task continuity, so the route plan, user goal, and one-step undo remain available. This design protects driver agency while still allowing active assistance to be useful. The best shared authority display is not dramatic; it is steady, glance-safe, and honest about what the AI can and cannot do.",
+        "translation": "智能座舱中的 AI 副驾不应让控制权显得神秘。当助手建议绕行、改变舒适设置或准备执行与驾驶相关的动作时，界面需要在同一次扫视中显示当前模式、置信度和驾驶员覆盖提示。良好的模式感知会区分监测状态、执行模式和等待状态。驾驶者应知道系统只是观察交通、提供建议性控制，还是在为高影响动作请求明确批准。助手执行前，AI 动作预览可以概括原因、步骤和后果，例如：“前方大雨；切换到更安全路线；到达时间晚八分钟。”如果情境不确定，座舱应降低系统主动性，并提供安全回退路径，而不是把静默假设变成动作。任何手动接管后，可恢复接管会保持任务连续性，让路线方案、用户目标和一步撤销仍然可用。这种设计保护驾驶者主导权，同时仍允许主动辅助发挥价值。最好的共享权限显示并不戏剧化，而是稳定、低扫视安全，并诚实说明 AI 能做什么和不能做什么。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "When the assistant recommends a detour, changes a comfort setting, or prepares a driving-related action, the interface needs to show its current mode, its confidence, and the driver override cue in the same glance.",
+        "translation": "当助手建议绕行、改变舒适设置或准备执行与驾驶相关的动作时，界面需要在同一次扫视中显示当前模式、置信度和驾驶员覆盖提示。",
+        "points": [
+          "When 引导时间状语从句，列出三种系统主动行为。",
+          "needs to show 表示设计要求。",
+          "in the same glance 强调低扫视负荷。"
+        ]
+      },
+      {
+        "sentence": "The driver should know whether the system is only watching traffic, offering advisory control, or requesting explicit approval for a high-impact action.",
+        "translation": "驾驶者应知道系统只是在观察交通、提供建议性控制，还是在为高影响动作请求明确批准。",
+        "points": [
+          "whether 引导宾语从句，说明用户需要辨认的状态。",
+          "only watching / offering / requesting 形成并列结构。",
+          "high-impact action 指路线、安全、费用或控制权影响较高的动作。"
+        ]
+      },
+      {
+        "sentence": "If the context is uncertain, the cockpit should lower system initiative and offer a safe fallback path instead of turning a silent assumption into action.",
+        "translation": "如果情境不确定，座舱应降低系统主动性，并提供安全回退路径，而不是把静默假设变成动作。",
+        "points": [
+          "If 引导条件状语从句。",
+          "lower system initiative 表示减少主动执行程度。",
+          "instead of turning...into action 强调不要基于未说明假设直接行动。"
+        ]
+      },
+      {
+        "sentence": "After any manual takeover, recoverable takeover preserves task continuity, so the route plan, user goal, and one-step undo remain available.",
+        "translation": "任何手动接管后，可恢复接管会保持任务连续性，让路线方案、用户目标和一步撤销仍然可用。",
+        "points": [
+          "After any manual takeover 给出时间背景。",
+          "preserves task continuity 是核心谓语。",
+          "so 引导结果，说明哪些信息仍可用。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "5 分钟",
+        "task": "朗读 10 个核心词，重点区分 advisory control、direct vehicle control、driver override cue 和 safe fallback path。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "8 分钟",
+        "task": "逐句跟读长文，标记所有表示模式、权限、确认和回退的表达。"
+      },
+      {
+        "title": "句型复用",
+        "time": "6 分钟",
+        "task": "用 When..., the interface needs to show... 和 If the context is uncertain... 各造一句智能座舱设计说明。"
+      },
+      {
+        "title": "场景输出",
+        "time": "5 分钟",
+        "task": "用英文说明一个 AI 副驾建议绕行的界面：当前模式、动作预览、取消路径和责任交还分别如何呈现。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive AI co-pilot human machine interface override cues",
+        "url": "",
+        "description": "可搜索车载 AI 副驾、自动化模式感知、驾驶员覆盖和共享控制相关公开资料；本课未引用特定视频来源。"
+      }
+    ]
+  },
+  {
     "id": "2026-09-27-context-memory-and-controllable-personalization-in-intelligent-cockpits",
     "date": "2026-09-27",
     "title": "Context memory and controllable personalization in intelligent cockpits",

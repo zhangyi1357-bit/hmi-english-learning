@@ -67,12 +67,26 @@
     "在这句话中，“acceptance”可理解为“接受, 接纳, 承认, 同意, 赞同, 容忍, 相信”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "acceptance path": [
+    "/əkˈseptəns pæθ/",
+    "接受路径；用户同意系统建议的操作路径",
+    "",
+    "The acceptance path should not hide the cost of the action.",
+    "接受路径不应隐藏动作成本。"
+  ],
   "accepted": [
     "/əkˈseptɪd/",
     "已接受的；系统已接收并认可输入的状态",
     "",
     "The system accepted the input and changed the setting.",
     "系统已接受输入并改变设置。"
+  ],
+  "accepting": [
+    "/əkˈseptɪŋ/",
+    "正在接受；把建议或输入作为有效指令处理",
+    "",
+    "Accepting a vague command too early can create safety risk.",
+    "过早接受模糊指令可能造成安全风险。"
   ],
   "accepts": [
     "/əkˈsepts/",
@@ -241,6 +255,13 @@
     "在这句话中，“acting”可理解为“行动, 行为, 幕, 法案；行动, 表演, 假装, 见效, 表现, 担当；扮演, 装作”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "acting mode": [
+    "/ˈæktɪŋ moʊd/",
+    "执行模式；系统正在执行或准备执行动作的状态",
+    "",
+    "Acting mode needs stronger feedback than monitoring state.",
+    "执行模式需要比监测状态更强的反馈。"
+  ],
   "action": [
     "/'ækʃәn/",
     "名词：行动, 活动, 动作, 作用, 战斗, 行为, 诉讼；对...起诉",
@@ -262,6 +283,13 @@
     "",
     "Navigation copy should be action oriented when the driver has little time.",
     "在这句话中，“action oriented”用于描述智能座舱导航提示设计。"
+  ],
+  "action summary": [
+    "/ˈækʃn ˈsʌməri/",
+    "动作摘要；把系统将要做什么浓缩成一句话",
+    "",
+    "An action summary should mention the destination, timing, and consequence.",
+    "动作摘要应说明目的地、时机和后果。"
   ],
   "actionable": [
     "/按语境朗读/",
@@ -306,6 +334,13 @@
     "",
     "Only one active alert should dominate the cockpit at a time.",
     "同一时刻只应有一个生效警告主导座舱。"
+  ],
+  "active assistance": [
+    "/ˈæktɪv əˈsɪstəns/",
+    "主动辅助；系统不仅提示，还可能组织或执行下一步",
+    "",
+    "Active assistance should be paired with transparent control.",
+    "主动辅助应搭配透明控制。"
   ],
   "active seat zone": [
     "/ˈæktɪv siːt zoʊn/",
@@ -531,6 +566,27 @@
     "The cockpit should give an explainable reason and actionable advice.",
     "在这句话中，“advice”表示具体建议。"
   ],
+  "advising": [
+    "/ədˈvaɪzɪŋ/",
+    "正在建议；提供建议但尚未直接执行",
+    "",
+    "When the system is advising, the interface should avoid control-like language.",
+    "当系统正在建议时，界面应避免类似控制的措辞。"
+  ],
+  "advisory": [
+    "/ədˈvaɪzəri/",
+    "建议性的；只提供建议而不直接控制的",
+    "",
+    "Advisory output should be labeled separately from control output.",
+    "建议性输出应与控制输出分开标注。"
+  ],
+  "advisory control": [
+    "/ədˈvaɪzəri kənˈtroʊl/",
+    "建议性控制；系统只提供建议而不直接执行车辆动作",
+    "",
+    "Advisory control is easier to accept when the interface labels it clearly.",
+    "当界面清楚标注时，建议性控制更容易被接受。"
+  ],
   "affect": [
     "/əˈfekt/",
     "影响；改变某个状态或结果",
@@ -637,12 +693,26 @@
     "AI can support natural cockpit dialogue.",
     "人工智能可以支持自然的座舱对话。"
   ],
+  "ai action preview": [
+    "/ˌeɪ ˈaɪ ˈækʃn ˈpriːvjuː/",
+    "AI 动作预览；在执行前展示系统将采取的具体步骤和影响",
+    "",
+    "An AI action preview turns a hidden automation step into a reviewable choice.",
+    "AI 动作预览把隐藏的自动化步骤变成可审查的选择。"
+  ],
   "ai assistant": [
     "/ˌeɪ ˈaɪ əˈsɪstənt/",
     "AI 助手；在座舱中理解请求、整合上下文并提供建议的智能系统",
     "",
     "The AI assistant explains the delay before suggesting a new route.",
     "AI 助手在建议新路线前解释延误原因。"
+  ],
+  "ai co-pilot": [
+    "/ˌeɪ ˈaɪ ˈkoʊ ˈpaɪlət/",
+    "AI 副驾；协助驾驶、导航和座舱任务的智能助手",
+    "",
+    "The AI co-pilot should describe its role before taking initiative.",
+    "AI 副驾在主动操作前应说明自己的角色。"
   ],
   "air": [
     "/er/",
@@ -1369,6 +1439,13 @@
     "在这句话中，“assuming”可理解为“假定, 承担, 呈现；装腔作势, 僭越”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "assumption": [
+    "/əˈsʌmpʃn/",
+    "假设；系统基于有限线索形成但尚未确认的判断",
+    "",
+    "An assumption should be shown before it changes vehicle behavior.",
+    "假设在改变车辆行为前应被展示出来。"
+  ],
   "assumptions": [
     "/按语境朗读/",
     "假设；系统推理所依赖的条件",
@@ -1729,6 +1806,13 @@
     "",
     "An automatic change needs clear undo support.",
     "自动变化需要清晰的撤销支持。"
+  ],
+  "automatic detour": [
+    "/ˌɔːtəˈmætɪk ˈdiːtʊr/",
+    "自动绕行；系统基于拥堵、天气或安全信息主动建议的绕行",
+    "",
+    "An automatic detour needs a quick cancel path.",
+    "自动绕行需要快速取消路径。"
   ],
   "automatic execution": [
     "/ˌɔːtəˈmætɪk ˌeksɪˈkjuːʃn/",
@@ -2768,6 +2852,13 @@
     "A cancel option must be available during confirmation.",
     "确认期间必须提供取消选项。"
   ],
+  "cancel path": [
+    "/ˈkænsl pæθ/",
+    "取消路径；用户撤销建议或自动动作的操作路径",
+    "",
+    "The cancel path should be as fast as the acceptance path.",
+    "取消路径应和接受路径一样快速。"
+  ],
   "cancellation": [
     "/ˌkænsəˈleɪʃn/",
     "取消；终止某项操作或服务",
@@ -2781,6 +2872,13 @@
     "",
     "Cancelled should support a safer and clearer cockpit experience.",
     "在这句话中，“cancelled”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "cancels": [
+    "/ˈkænslz/",
+    "取消；停止或撤销某个动作的第三人称单数形式",
+    "",
+    "The driver cancels the detour when the road looks clear.",
+    "当道路看起来通畅时，驾驶者取消绕行。"
   ],
   "candidate": [
     "/ˈkændɪdət/",
@@ -3202,6 +3300,13 @@
     "Checkout starts only after the user confirms the payment intent.",
     "只有用户确认支付意图后才开始结账。"
   ],
+  "checkpoint": [
+    "/ˈtʃekpɔɪnt/",
+    "检查点；流程中用于复核状态或意图的节点",
+    "",
+    "A checkpoint can slow automation just enough to prevent a mistake.",
+    "检查点可以适度放慢自动化，以防止错误。"
+  ],
   "checks": [
     "/tʃeks/",
     "检查；核对状态、差距或风险",
@@ -3417,6 +3522,13 @@
     "The cockpit uses clear label to make privacy decisions easier to understand.",
     "座舱使用“clear label”让隐私决策更容易理解。"
   ],
+  "clear timing": [
+    "/klɪr ˈtaɪmɪŋ/",
+    "清晰时机；提示在用户最容易理解和行动的时刻出现",
+    "",
+    "Clear timing can make a takeover request feel manageable.",
+    "清晰时机能让接管请求显得可处理。"
+  ],
   "clearer": [
     "/ˈklɪrər/",
     "更清晰的；clear 的比较级",
@@ -3595,6 +3707,20 @@
     "",
     "A haptic affordance can reduce clutter by moving some feedback away from the screen.",
     "触觉可供性可以把部分反馈从屏幕转移出去，从而减少杂乱。"
+  ],
+  "co-pilot": [
+    "/ˈkoʊ ˈpaɪlət/",
+    "副驾；在本文中指协助驾驶者完成任务的 AI 助手",
+    "",
+    "The co-pilot supports decisions without hiding driver control.",
+    "在本文中，“co-pilot”指支持决策但不隐藏驾驶者控制权的 AI 助手。"
+  ],
+  "co-pilot mode awareness": [
+    "/ˈkoʊ ˈpaɪlət moʊd əˈwernəs/",
+    "副驾式 AI 模式感知；让用户清楚知道智能助手当前能做什么、不能做什么",
+    "",
+    "Co-pilot mode awareness helps the driver know when the assistant is advising, acting, or waiting for confirmation.",
+    "副驾式 AI 模式感知帮助驾驶者知道助手是在建议、执行，还是等待确认。"
   ],
   "coaching": [
     "/ˈkoʊtʃɪŋ/",
@@ -4177,6 +4303,13 @@
     "A small confidence gap means the cockpit should confirm before changing a safety-related setting.",
     "置信度差距较小时，座舱在改变安全相关设置前应先确认。"
   ],
+  "confidence label": [
+    "/ˈkɑːnfɪdəns ˈleɪbl/",
+    "置信度标签；用文字或图标表达系统判断可靠性的标签",
+    "",
+    "A confidence label should be understandable during a quick glance.",
+    "置信度标签应能在快速扫视中理解。"
+  ],
   "confidence level": [
     "/ˈkɑːnfɪdəns ˈlevl/",
     "置信水平；系统对检测结果可靠性的判断程度",
@@ -4255,6 +4388,13 @@
     "If the driver is looking at the road, speaking a short command, and driving on a quiet highway, the system can use a light visual confirmation or a brief tone.",
     "在这句话中，“confirmation”可理解为“证实, 证明, 批准, 确认”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "confirmation burden": [
+    "/ˌkɑːnfərˈmeɪʃn ˈbɜːrdn/",
+    "确认负担；过多确认给用户带来的操作和注意力成本",
+    "",
+    "The confirmation burden should match the risk of the action.",
+    "确认负担应与动作风险匹配。"
   ],
   "confirmation cue": [
     "/ˌkɑːnfərˈmeɪʃn kjuː/",
@@ -4481,6 +4621,13 @@
     "",
     "The cockpit uses consequence to support a safer charging experience.",
     "座舱使用“consequence”来支持更安全的充电体验。"
+  ],
+  "consequence display": [
+    "/ˈkɑːnsəkwens dɪˈspleɪ/",
+    "后果显示；展示动作带来的时间、费用、安全或体验影响",
+    "",
+    "A consequence display helps users compare choices quickly.",
+    "后果显示帮助用户快速比较选择。"
   ],
   "consequences": [
     "/ˈkɑːnsəkwensɪz/",
@@ -4897,6 +5044,13 @@
     "The control state should be visible at a glance.",
     "控制状态应一眼可见。"
   ],
+  "control token": [
+    "/kənˈtroʊl ˈtoʊkən/",
+    "控制权标记；表示当前控制权归属的视觉或语音标识",
+    "",
+    "A control token reduces confusion in shared driving tasks.",
+    "控制权标记能减少共享驾驶任务中的困惑。"
+  ],
   "controllable": [
     "/待查/",
     "可控制的；可以由系统或用户调节的",
@@ -5236,6 +5390,13 @@
     "Distraction recovery should begin with a calm cue, not a crowded warning screen.",
     "在这句话中，“crowded”表示警告屏内容过多、过于拥挤。"
   ],
+  "crowded display": [
+    "/ˈkraʊdɪd dɪˈspleɪ/",
+    "拥挤显示；信息密度过高、影响扫视理解的界面",
+    "",
+    "A crowded display weakens mode awareness.",
+    "拥挤显示会削弱模式感知。"
+  ],
   "crowded warning screen": [
     "/ˈkraʊdɪd ˈwɔːrnɪŋ skriːn/",
     "拥挤警告屏；信息过多、难以快速理解的警告界面",
@@ -5479,6 +5640,13 @@
     "",
     "The cockpit uses decision point to support a safer charging experience.",
     "座舱使用“decision point”来支持更安全的充电体验。"
+  ],
+  "decision preview": [
+    "/dɪˈsɪʒn ˈpriːvjuː/",
+    "决策预览；执行前预览原因、动作和结果",
+    "",
+    "A decision preview gives the driver one last chance to inspect the change.",
+    "决策预览给驾驶者最后一次检查变化的机会。"
   ],
   "decisions": [
     "/dɪˈsɪʒənz/",
@@ -6131,6 +6299,13 @@
     "The word direct appears in today's cockpit summary practice.",
     "在这个语境中，“direct”可理解为“直接的”。"
   ],
+  "direct vehicle control": [
+    "/dəˈrekt ˈviːəkl kənˈtroʊl/",
+    "直接车辆控制；系统实际改变车辆行为的控制",
+    "",
+    "Direct vehicle control requires stronger confirmation than a media suggestion.",
+    "直接车辆控制比媒体建议需要更强确认。"
+  ],
   "directional": [
     "/dəˈrekʃənl/",
     "方向性的；指向某个方向或来源的",
@@ -6589,6 +6764,13 @@
     "Driver override keeps the person responsible for driving in control of high-impact actions.",
     "驾驶员覆盖确保负责驾驶的人掌控高影响动作。"
   ],
+  "driver override cue": [
+    "/ˈdraɪvər ˈoʊvərraɪd kjuː/",
+    "驾驶员覆盖提示；提醒用户可随时接管或撤销系统动作的界面线索",
+    "",
+    "A driver override cue must be visible before the cockpit changes a driving-related setting.",
+    "在座舱改变与驾驶相关的设置前，驾驶员覆盖提示必须清晰可见。"
+  ],
   "driver preference": [
     "/ˈdraɪvər ˈprefrəns/",
     "驾驶者偏好；用户对座舱功能的稳定选择倾向",
@@ -6782,6 +6964,13 @@
     "在这句话中，“driving-mode”可理解为“驱动方式”。",
     "https://en.wiktionary.org"
   ],
+  "driving-related": [
+    "/ˈdraɪvɪŋ rɪˌleɪtɪd/",
+    "与驾驶相关的；会影响驾驶任务、路线或车辆行为的",
+    "",
+    "A driving-related action needs clearer approval than a media action.",
+    "与驾驶相关的动作比媒体动作需要更清晰的批准。"
+  ],
   "drop": [
     "/drɑːp/",
     "下降；降低某个数值或等级",
@@ -6898,6 +7087,13 @@
     "The prompt should be easy to dismiss.",
     "提示应容易关闭。"
   ],
+  "easy dismissal": [
+    "/ˈiːzi dɪsˈmɪsl/",
+    "易忽略方式；用户能轻松关闭建议且不受惩罚的设计",
+    "",
+    "Easy dismissal keeps the assistant from feeling pushy.",
+    "易忽略方式让助手不显得强硬。"
+  ],
   "easy to reject": [
     "/ˈiːzi tu rɪˈdʒekt/",
     "易于拒绝；用户可以快速取消或否定系统建议",
@@ -6972,6 +7168,13 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“effort”可理解为“努力, 成就”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "eight": [
+    "/eɪt/",
+    "八；数字 8",
+    "",
+    "The action summary says the arrival time is eight minutes later.",
+    "动作摘要说明到达时间晚八分钟。"
   ],
   "electric": [
     "/按语境朗读/",
@@ -7660,6 +7863,13 @@
     "在这句话中，“explicit”可理解为“详述的, 清楚的, 直言的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "explicit approval": [
+    "/ɪkˈsplɪsɪt əˈpruːvl/",
+    "明确批准；通过清晰按钮、语音或手势给出的同意",
+    "",
+    "Explicit approval protects the user from accidental automation.",
+    "明确批准保护用户免受意外自动化影响。"
+  ],
   "explicit confirmation": [
     "/ɪkˈsplɪsɪt ˌkɑːnfərˈmeɪʃn/",
     "明确确认；要求用户清楚表达同意、取消或选择的确认方式",
@@ -7877,6 +8087,13 @@
     "The cockpit uses fallback prompt to make privacy decisions easier to understand.",
     "座舱使用“fallback prompt”让隐私决策更容易理解。"
   ],
+  "fallback state": [
+    "/ˈfɔːlbæk steɪt/",
+    "回退状态；系统出错或被拒绝后返回的稳定状态",
+    "",
+    "A fallback state should preserve navigation safety.",
+    "回退状态应保持导航安全。"
+  ],
   "fallback station": [
     "/ˈfɔːlbæk ˈsteɪʃn/",
     "备用充电站；首选充电点不可用时可切换的备选地点",
@@ -7941,6 +8158,13 @@
     "",
     "Familiar nouns reduce interpretation time in moving vehicles.",
     "熟悉名词会减少车辆行驶中的理解时间。"
+  ],
+  "familiar wording": [
+    "/fəˈmɪliər ˈwɜːrdɪŋ/",
+    "熟悉措辞；用户无需学习即可理解的表达方式",
+    "",
+    "Familiar wording is safer than clever technical labels.",
+    "熟悉措辞比巧妙的技术标签更安全。"
   ],
   "family": [
     "/ˈfæməli/",
@@ -8196,6 +8420,13 @@
     "A multimodal handoff lets the driver start a destination search by voice and confirm the final route on the screen.",
     "在这句话中，“final”可理解为“期末考试, 结局, 决赛；最后的, 终极的, 决定性的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "final approval": [
+    "/ˈfaɪnl əˈpruːvl/",
+    "最终批准；执行高影响动作前用户给出的明确同意",
+    "",
+    "Final approval should not be inferred from silence.",
+    "最终批准不应从沉默中推断。"
   ],
   "finally": [
     "/ˈfaɪnəli/",
@@ -8812,6 +9043,13 @@
     "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
     "在这句话中，“glance-safe”表示适合短暂扫视的安全续接方式。"
   ],
+  "glance-safe message": [
+    "/ɡlæns seɪf ˈmesɪdʒ/",
+    "低扫视安全消息；短、可预期、适合驾驶中查看的提示",
+    "",
+    "A glance-safe message uses one action and one reason.",
+    "低扫视安全消息只包含一个动作和一个原因。"
+  ],
   "glance-safe resumption": [
     "/ɡlæns seɪf rɪˈzʌmpʃn/",
     "低扫视续接；让用户以很短扫视恢复中断任务的交互方式",
@@ -9142,6 +9380,13 @@
     "",
     "The passenger display can become the handover target.",
     "乘客屏可以成为交接目标。"
+  ],
+  "handover tone": [
+    "/ˈhændoʊvər toʊn/",
+    "交接提示音；控制权变化时使用的听觉提示",
+    "",
+    "The handover tone should be distinct from entertainment sounds.",
+    "交接提示音应区别于娱乐声音。"
   ],
   "hands": [
     "/hæn(d)z/",
@@ -9661,6 +9906,13 @@
     "",
     "An honest explanation is better than silently ignoring a command.",
     "在这句话中，“honest explanation”用于描述智能座舱多人语音控制。"
+  ],
+  "honest limit": [
+    "/ˈɑːnɪst ˈlɪmɪt/",
+    "真实限制；系统明确承认当前能力或证据不足的边界",
+    "",
+    "An honest limit can be more reassuring than a perfect-sounding claim.",
+    "真实限制有时比听起来完美的声明更让人安心。"
   ],
   "horizon": [
     "/həˈraɪzn/",
@@ -10295,6 +10547,13 @@
     "The assistant can show two intent candidates when confidence is too close to call.",
     "当置信度过于接近时，助手可以显示两个意图候选项。"
   ],
+  "intent checkpoint": [
+    "/ɪnˈtent ˈtʃekpɔɪnt/",
+    "意图检查点；执行关键动作前确认用户真实意图的交互节点",
+    "",
+    "An intent checkpoint can prevent the AI co-pilot from accepting a vague command as final approval.",
+    "意图检查点可以防止 AI 副驾把模糊指令当作最终批准。"
+  ],
   "intent confirmation": [
     "/ɪnˈtent ˌkɑːnfərˈmeɪʃn/",
     "意图确认；系统在执行车内操作前确认用户真实目标和关键条件的交互步骤",
@@ -10436,6 +10695,13 @@
     "The interface should postpone nonessential input when driving workload is high.",
     "在这句话中，“interface”可理解为“分界面, 接触面, 界面”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "interface label": [
+    "/ˈɪntərfeɪs ˈleɪbl/",
+    "界面标签；说明控件、模式或状态含义的短文本",
+    "",
+    "The interface label should avoid technical automation jargon.",
+    "界面标签应避免技术化自动化术语。"
   ],
   "interface memory": [
     "/ˈɪntərfeɪs ˈmeməri/",
@@ -11842,6 +12108,13 @@
     "A low-risk request can be completed with a brief visual acknowledgement.",
     "在这句话中，“low-risk request”用于描述智能座舱多人语音控制。"
   ],
+  "low-risk suggestion": [
+    "/loʊ rɪsk səˈdʒestʃən/",
+    "低风险建议；影响较小、可轻松忽略的系统建议",
+    "",
+    "A low-risk suggestion can be shown quietly in the side panel.",
+    "低风险建议可以安静地显示在侧边面板中。"
+  ],
   "low-value": [
     "/loʊ ˈvæljuː/",
     "低价值的；对当前驾驶任务帮助较小的",
@@ -11961,6 +12234,13 @@
     "在这句话中，“manage”可理解为“处理；管理, 控制, 维持, 达成, 经营, 运用”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "manageable request": [
+    "/ˈmænɪdʒəbl rɪˈkwest/",
+    "可处理请求；用户在当前负荷下能够理解并回应的请求",
+    "",
+    "A manageable request uses familiar wording and a single decision.",
+    "可处理请求使用熟悉措辞和单一决策。"
+  ],
   "managed": [
     "/暂无音标/",
     "形容词：受管理的",
@@ -12032,6 +12312,13 @@
     "",
     "The transition from assistance to manual driving should be staged and calm.",
     "在这句话中，“manual driving”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "manual guidance": [
+    "/ˈmænjuəl ˈɡaɪdns/",
+    "手动引导；由驾驶者主导、系统只提供基础提示的引导方式",
+    "",
+    "Manual guidance should remain available after automation is declined.",
+    "自动化被拒绝后，手动引导仍应可用。"
   ],
   "manual interaction": [
     "/ˈmænjuəl ˌɪntərˈækʃn/",
@@ -12813,12 +13100,26 @@
     "Mode awareness improves when alerts use consistent labels across screens.",
     "当警告在多个屏幕上使用一致标签时，模式感知会提高。"
   ],
+  "mode badge": [
+    "/moʊd bædʒ/",
+    "模式徽标；用短标签或图标显示当前自动化模式",
+    "",
+    "A mode badge can sit near the navigation card.",
+    "模式徽标可以放在导航卡片附近。"
+  ],
   "mode boundary": [
     "/moʊd ˈbaʊndəri/",
     "模式边界；辅助驾驶、自动化和人工驾驶之间的能力与责任分界",
     "",
     "A visible mode boundary prevents the driver from overestimating the automation.",
     "可见的模式边界能防止驾驶员高估自动化能力。"
+  ],
+  "mode confidence indicator": [
+    "/moʊd ˈkɑːnfɪdəns ˈɪndɪkeɪtər/",
+    "模式置信度指示；展示系统对当前模式判断有多确定的提示",
+    "",
+    "A mode confidence indicator should stay modest when sensor evidence is incomplete.",
+    "当传感证据不完整时，模式置信度指示应保持克制。"
   ],
   "mode label": [
     "/moʊd ˈleɪbl/",
@@ -12863,6 +13164,13 @@
     "在这句话中，“modes”可理解为“模态, 调式, 样式, 文体, 状态, 方式, 风尚”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "modest": [
+    "/ˈmɑːdɪst/",
+    "克制的；不过度自信或不过度打扰的",
+    "",
+    "A modest prompt is useful when confidence is low.",
+    "当置信度较低时，克制的提示更有用。"
+  ],
   "modify": [
     "/ˈmɑːdɪfaɪ/",
     "修改；调整系统理解的目标、范围或参数",
@@ -12899,6 +13207,13 @@
     "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
     "在这句话中，“monitoring”可理解为“监督器, 级长, 监听员, 班长, 监视器, 告诫物；监视, 监听, 监督”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "monitoring state": [
+    "/ˈmɑːnɪtərɪŋ steɪt/",
+    "监测状态；系统观察情境但尚未采取动作的状态",
+    "",
+    "The monitoring state should be visually different from acting mode.",
+    "监测状态应在视觉上不同于执行模式。"
   ],
   "mood": [
     "/muːd/",
@@ -13173,6 +13488,13 @@
     "在这句话中，“navigation”可理解为“航行, 航海, 导航”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "navigation card": [
+    "/ˌnævɪˈɡeɪʃn kɑːrd/",
+    "导航卡片；显示路线、动作和关键导航提示的界面模块",
+    "",
+    "The navigation card should not be crowded with every AI detail.",
+    "导航卡片不应塞满所有 AI 细节。"
+  ],
   "navigation change": [
     "/ˌnævɪˈɡeɪʃn tʃeɪndʒ/",
     "导航变更；对路线、目的地或途经点的修改",
@@ -13228,6 +13550,13 @@
     "",
     "Navigation review can resume with a short route summary.",
     "导航查看可以通过简短路线摘要续接。"
+  ],
+  "navigation safety": [
+    "/ˌnævɪˈɡeɪʃn ˈseɪfti/",
+    "导航安全；路线提示在时间、位置和注意力上保持安全",
+    "",
+    "Navigation safety matters more than showing every possible shortcut.",
+    "导航安全比展示所有可能捷径更重要。"
   ],
   "navigation shortcut": [
     "/ˌnævɪˈɡeɪʃn ˈʃɔːrtkʌt/",
@@ -13923,6 +14252,20 @@
     "A one-glance message should use plain verbs and familiar nouns.",
     "一眼可读信息应使用清楚动词和熟悉名词。"
   ],
+  "one-step": [
+    "/wʌn step/",
+    "一步的；只需一个动作即可完成的",
+    "",
+    "One-step undo helps drivers recover from unwanted automation.",
+    "一步撤销帮助驾驶者从不想要的自动化中恢复。"
+  ],
+  "one-step undo": [
+    "/wʌn step ʌnˈduː/",
+    "一步撤销；用户可用单个动作撤回刚发生的自动化变化",
+    "",
+    "One-step undo is valuable after an AI action preview.",
+    "AI 动作预览之后，一步撤销很有价值。"
+  ],
   "one-tap postpone": [
     "/wʌn tæp poʊstˈpoʊn/",
     "一键稍后；让用户快速延后非紧急更新的控件",
@@ -14197,6 +14540,13 @@
     "",
     "The word override appears in the comfort recommendation context.",
     "“override”出现在座椅舒适推荐的语境中。"
+  ],
+  "override affordance": [
+    "/ˈoʊvərraɪd əˈfɔːrdns/",
+    "覆盖可供性；让用户看出可取消、暂停或接管的设计线索",
+    "",
+    "An override affordance should be reachable without menu hunting.",
+    "覆盖可供性应无需层层找菜单即可触达。"
   ],
   "override control": [
     "/ˈoʊvərraɪd kənˈtroʊl/",
@@ -14731,6 +15081,13 @@
     "",
     "The permission state should be readable at a glance.",
     "权限状态应能一眼看懂。"
+  ],
+  "permission threshold": [
+    "/pərˈmɪʃn ˈθreʃhoʊld/",
+    "许可阈值；动作达到某种风险或影响后必须请求同意的界限",
+    "",
+    "The permission threshold should rise when the car is moving fast.",
+    "车辆高速行驶时，许可阈值应提高。"
   ],
   "persistent": [
     "/pərˈsɪstənt/",
@@ -16804,6 +17161,13 @@
     "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
     "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
   ],
+  "recoverable takeover": [
+    "/rɪˈkʌvərəbl ˈteɪkoʊvər/",
+    "可恢复接管；用户接管后仍能回到先前任务状态的设计",
+    "",
+    "Recoverable takeover keeps the route plan available after the driver cancels an automatic detour.",
+    "当驾驶者取消自动绕行后，可恢复接管会保留路线方案。"
+  ],
   "recoverable task": [
     "/rɪˈkʌvərəbl tæsk/",
     "可恢复任务；中断后能以清楚上下文继续的任务",
@@ -17349,6 +17713,13 @@
     "Requester location helps decide which display should show confirmation.",
     "在这句话中，“requester location”用于描述智能座舱多人语音控制。"
   ],
+  "requesting": [
+    "/rɪˈkwestɪŋ/",
+    "正在请求；向用户索取确认、选择或接管",
+    "",
+    "Requesting approval should use short and familiar wording.",
+    "请求批准应使用简短且熟悉的措辞。"
+  ],
   "requests": [
     "/ɹɪˈkwɛsts/",
     "名词：请求, 需要, 申请书；请求, 要求, 邀请",
@@ -17552,6 +17923,13 @@
     "A response timeout should move the system to the next escalation step.",
     "响应超时应让系统进入下一步升级。"
   ],
+  "response window": [
+    "/rɪˈspɑːns ˈwɪndoʊ/",
+    "响应窗口；系统等待用户确认或接管的时间范围",
+    "",
+    "The response window must match the driving workload.",
+    "响应窗口必须匹配驾驶负荷。"
+  ],
   "responsibilities": [
     "/ɹɪˌspɒn.səˈbɪl.ɪ.tiz/",
     "名词：责任, 职责, 负担, 可靠性",
@@ -17566,6 +17944,13 @@
     "",
     "Good mode design must communicate responsibility before control changes.",
     "在这句话中，“responsibility”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "responsibility handback": [
+    "/rɪˌspɑːnsəˈbɪləti ˈhændbæk/",
+    "责任交还；系统把决策或控制权明确交回驾驶者的过程",
+    "",
+    "Responsibility handback needs a short reason, a safe option, and enough time for the driver to respond.",
+    "责任交还需要简短原因、安全选项和足够响应时间。"
   ],
   "responsibility map": [
     "/rɪˌspɑːnsəˈbɪləti mæp/",
@@ -17840,6 +18225,20 @@
     "The review strip can show what changed.",
     "回顾条可以显示发生了什么变化。"
   ],
+  "reviewable": [
+    "/rɪˈvjuːəbl/",
+    "可审查的；用户能查看依据和影响后再决定的",
+    "",
+    "A reviewable automation step feels easier to trust.",
+    "可审查的自动化步骤更容易被信任。"
+  ],
+  "reviewable choice": [
+    "/rɪˈvjuːəbl tʃɔɪs/",
+    "可审查选择；用户能查看理由和影响后再决定的选项",
+    "",
+    "A reviewable choice builds trust in proactive cockpit behavior.",
+    "可审查选择能增强用户对主动座舱行为的信任。"
+  ],
   "revocation": [
     "/ˌrevəˈkeɪʃn/",
     "撤销；取消先前授权或停止自动化能力",
@@ -18048,6 +18447,13 @@
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“role”可结合车内助手澄清场景理解。"
   ],
+  "role clarity": [
+    "/roʊl ˈklærəti/",
+    "角色清晰度；用户清楚系统是在观察、建议还是控制",
+    "",
+    "Role clarity is essential when AI features become more active.",
+    "当 AI 功能变得更主动时，角色清晰度至关重要。"
+  ],
   "role-aware access": [
     "/roʊl əˈwer ˈækses/",
     "角色感知访问；按驾驶员、乘客、车主等角色分配控制权限",
@@ -18091,6 +18497,13 @@
     "A multimodal handoff lets the driver start a destination search by voice and confirm the final route on the screen.",
     "在这句话中，“route”可理解为“路径, 途径, 路线；确定路线, 按规定路线发送”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "route adjustment": [
+    "/ruːt əˈdʒʌstmənt/",
+    "路线调整；对导航路径、停靠点或避让策略的改变",
+    "",
+    "A route adjustment should show the time cost before confirmation.",
+    "路线调整应在确认前显示时间成本。"
   ],
   "route cancellation": [
     "/ruːt ˌkænsəˈleɪʃn/",
@@ -18286,6 +18699,13 @@
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
+  "safe fallback path": [
+    "/seɪf ˈfɔːlbæk pæθ/",
+    "安全回退路径；在 AI 判断不确定或用户拒绝时回到稳定状态的方法",
+    "",
+    "A safe fallback path lets the cockpit return to manual guidance without losing the user goal.",
+    "安全回退路径让座舱在不丢失用户目标的情况下回到手动引导。"
+  ],
   "safe fallback state": [
     "/seɪf ˈfɔːlbæk steɪt/",
     "安全回退状态；更新异常时系统保持可驾驶和可理解的最低功能状态",
@@ -18306,6 +18726,13 @@
     "",
     "A safe next step is easier to follow than a vague warning.",
     "安全下一步比模糊警告更容易执行。"
+  ],
+  "safe option": [
+    "/seɪf ˈɑːpʃn/",
+    "安全选项；在不确定或紧急状态下优先提供的低风险选择",
+    "",
+    "A safe option should be highlighted during responsibility handback.",
+    "责任交还时应突出安全选项。"
   ],
   "safe path": [
     "/seɪf pæθ/",
@@ -19131,6 +19558,13 @@
     "Sensor confidence should be translated into a driver-facing message, not hidden as a diagnostic code.",
     "传感器置信度应转化为面向驾驶员的信息，而不是隐藏成诊断代码。"
   ],
+  "sensor evidence": [
+    "/ˈsensər ˈevɪdəns/",
+    "传感证据；摄像头、定位、车辆状态等用于判断的信号",
+    "",
+    "Weak sensor evidence should lower the assistant confidence.",
+    "较弱的传感证据应降低助手置信度。"
+  ],
   "sensor fusion": [
     "/ˈsensər ˈfjuːʒn/",
     "传感器融合；整合摄像头、定位、地图和车辆信号来提升判断准确性",
@@ -19352,6 +19786,13 @@
     "在这句话中，“shared”可理解为“部分, 参与, 一份, 参股, 份额；均分, 分担, 分享, 分配, 共有；分享；文件锁定及检测磁盘更动和对超过32MB硬盘分区的支持”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "shared authority display": [
+    "/ʃerd əˈθɔːrəti dɪˈspleɪ/",
+    "共享权限显示；呈现人和系统各自控制范围的界面区域",
+    "",
+    "The shared authority display should separate advisory control from direct vehicle control.",
+    "共享权限显示应区分建议控制和直接车辆控制。"
+  ],
   "shared cabin": [
     "/ʃerd ˈkæbɪn/",
     "共享座舱；多个乘员共同处于车内并可能听到或看到系统反馈的场景",
@@ -19400,6 +19841,13 @@
     "",
     "A shared screen can accidentally reveal private profile details.",
     "共享屏幕可能意外暴露私人档案细节。"
+  ],
+  "shared task model": [
+    "/ʃerd tæsk ˈmɑːdl/",
+    "共享任务模型；人和系统对当前目标、步骤和责任的共同理解",
+    "",
+    "A shared task model keeps the driver and assistant aligned.",
+    "共享任务模型让驾驶者与助手保持一致。"
   ],
   "shared vehicle": [
     "/ʃerd ˈviːəkl/",
@@ -19614,6 +20062,13 @@
     "A context-aware in-cabin assistant should not treat every voice command as an isolated sentence. It has to consider the driving context, the dialogue state, the occupant role, and the confidence score behind speech recognition. When a driver says, 'make it cooler,' the safest response may not be silent execution. The cockpit should check the active climate zone, recent conversation history, seat context, and current workload before it changes a setting. If the intent is clear and the action is low risk, a brief audible summary and glanceable visual confirmation may be enough. If the request is ambiguous, the assistant should ask a low-friction prompt such as, 'Driver side or rear zone?' Good turn-taking matters here: the system should wait during a merge, keep wording minimal, and avoid reading a long menu aloud. For tasks that need browsing or comparison, intent handover can move the unfinished request to a passenger display or a parked state. A recoverable misunderstanding is not a failure if the user can correct it quickly with a repair phrase. The design goal is not to make the assistant talk more. The goal is to make each system response fit the situation, protect attention, and give the user a clear path to confirm, correct, or cancel.",
     "在这句话中，“side”可结合车内助手澄清场景理解。"
   ],
+  "side panel": [
+    "/saɪd ˈpænl/",
+    "侧边面板；承载次要信息或低风险建议的区域",
+    "",
+    "The side panel can hold optional AI suggestions.",
+    "侧边面板可以承载可选的 AI 建议。"
+  ],
   "sightline": [
     "/ˈsaɪtlaɪn/",
     "视线；视野方向",
@@ -19680,6 +20135,13 @@
     "The escalation rule changes a silent banner into an audible alert only when the issue becomes time-sensitive.",
     "在这句话中，“silent”可理解为“沉默的, 安静的, 无声的, 静止的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "silent assumption": [
+    "/ˈsaɪlənt əˈsʌmpʃn/",
+    "静默假设；系统未说明却据此行动的隐含判断",
+    "",
+    "A silent assumption can make automation feel unpredictable.",
+    "静默假设会让自动化显得不可预测。"
   ],
   "silent banner": [
     "/ˈsaɪlənt ˈbænər/",
@@ -19777,6 +20239,13 @@
     "",
     "Shared control is not a single handoff moment.",
     "共享控制并不是单一的交接瞬间。"
+  ],
+  "single decision": [
+    "/ˈsɪŋɡl dɪˈsɪʒn/",
+    "单一决策；一次只让用户判断一个关键问题",
+    "",
+    "A single decision reduces errors during high workload.",
+    "单一决策能减少高负荷下的错误。"
   ],
   "single-tap resume": [
     "/ˈsɪŋɡl tæp rɪˈzuːm/",
@@ -20547,6 +21016,13 @@
     "",
     "The cockpit uses stays to support a safer charging experience.",
     "座舱使用“stays”来支持更安全的充电体验。"
+  ],
+  "steady": [
+    "/ˈstedi/",
+    "稳定的；一致、不突然、不夸张的",
+    "",
+    "A steady status display is better than dramatic animation.",
+    "稳定的状态显示比戏剧化动画更好。"
   ],
   "stealing": [
     "/ˈstiːlɪŋ/",
@@ -21414,6 +21890,13 @@
     "",
     "A fallback prompt gives one clear next step instead of a technical explanation.",
     "在这句话中，“technical explanation”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "technical jargon": [
+    "/ˈteknɪkl ˈdʒɑːrɡən/",
+    "技术术语；普通用户难以快速理解的专业表达",
+    "",
+    "Technical jargon can hide who is responsible for the next step.",
+    "技术术语可能掩盖下一步由谁负责。"
   ],
   "technical label": [
     "/ˈteknɪkl ˈleɪbl/",
@@ -22363,6 +22846,13 @@
     "在这句话中，“uncertain”可理解为“不确定的, 无常的, 不确信的, 不可预测的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "uncertain context": [
+    "/ʌnˈsɜːrtn ˈkɑːntekst/",
+    "不确定情境；系统无法稳定判断用户目标或道路状态的场景",
+    "",
+    "In an uncertain context, the assistant should ask before acting.",
+    "在不确定情境中，助手应先询问再执行。"
+  ],
   "uncertain input": [
     "/ʌnˈsɜːrtn ˈɪnpʊt/",
     "不确定输入；可能有用但不能单独作为确定判断的数据",
@@ -22746,6 +23236,13 @@
     "User control should support clear control in a shared intelligent cockpit.",
     "在这句话中，“user control”用于描述共享智能座舱中的清晰控制。"
   ],
+  "user goal": [
+    "/ˈjuːzər ɡoʊl/",
+    "用户目标；用户希望通过当前任务达成的结果",
+    "",
+    "The user goal should survive a canceled automation step.",
+    "用户目标应在自动化步骤被取消后继续保留。"
+  ],
   "user intent": [
     "/ˈjuːzər ɪnˈtent/",
     "用户意图；用户真正想完成的目标或动作",
@@ -22840,6 +23337,13 @@
     "",
     "The interface should not become vague when sensors disagree.",
     "当传感器不一致时，界面不应变得含糊。"
+  ],
+  "vague command": [
+    "/veɪɡ kəˈmænd/",
+    "模糊指令；意图、对象或范围不清晰的语音或触控输入",
+    "",
+    "A vague command should trigger clarification instead of action.",
+    "模糊指令应触发澄清，而不是直接执行。"
   ],
   "valet": [
     "/væˈleɪ/",
@@ -23070,6 +23574,20 @@
     "",
     "Visible evidence makes an AI recommendation easier to question.",
     "可见证据让 AI 推荐更容易被质疑。"
+  ],
+  "visible exit": [
+    "/ˈvɪzəbl ˈeɡzɪt/",
+    "可见退出；界面中明确可见的退出、取消或恢复入口",
+    "",
+    "A visible exit reduces anxiety during automation.",
+    "可见退出能降低自动化过程中的焦虑。"
+  ],
+  "visible reasoning": [
+    "/ˈvɪzəbl ˈriːzənɪŋ/",
+    "可见推理；把系统判断依据以简短形式展示给用户",
+    "",
+    "Visible reasoning helps the driver check why a suggestion appeared.",
+    "可见推理帮助驾驶者检查建议为何出现。"
   ],
   "visible status": [
     "/ˈvɪzəbl ˈsteɪtəs/",
@@ -23371,6 +23889,13 @@
     "A charging detour feels acceptable when the interface explains the saved waiting time.",
     "在这句话中，“waiting”可理解为“等待；为充电或服务停留”。"
   ],
+  "waiting state": [
+    "/ˈweɪtɪŋ steɪt/",
+    "等待状态；系统暂停并等待用户确认、选择或接管的状态",
+    "",
+    "Waiting state should show what input is needed next.",
+    "等待状态应显示下一步需要什么输入。"
+  ],
   "walk": [
     "/wɔːk/",
     "走查；逐步检查",
@@ -23464,6 +23989,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "watching": [
+    "/ˈwɑːtʃɪŋ/",
+    "正在观察；系统监测环境但不执行动作",
+    "",
+    "Watching traffic is different from steering the vehicle.",
+    "观察交通不同于操控车辆。"
   ],
   "way": [
     "/weɪ/",
