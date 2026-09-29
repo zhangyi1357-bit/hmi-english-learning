@@ -1980,6 +1980,13 @@
     "在这句话中，“background”可理解为“背景, 背景资料”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "background speech": [
+    "/ˈbækɡraʊnd spiːtʃ/",
+    "背景语音；非目标用户或环境中的说话声",
+    "",
+    "Background speech can reduce voice match confidence.",
+    "背景语音可能降低声纹匹配置信度。"
+  ],
   "backrest": [
     "/ˈbækrest/",
     "靠背；支撑背部的座椅部分。",
@@ -2016,6 +2023,20 @@
     "The escalation rule changes a silent banner into an audible alert only when the issue becomes time-sensitive.",
     "在这句话中，“banner”可理解为“旗帜；显著的, 特别好的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "basic": [
+    "/ˈbeɪsɪk/",
+    "基础的；最低必要的",
+    "",
+    "Basic access should remain available after deletion.",
+    "删除后，基础访问仍应可用。"
+  ],
+  "basic vehicle access": [
+    "/ˈbeɪsɪk ˈviːəkl ˈækses/",
+    "基础车辆访问；开车门、启动车辆等最低必要能力",
+    "",
+    "Basic vehicle access should not depend on a perfect face scan.",
+    "基础车辆访问不应依赖完美的人脸扫描。"
   ],
   "battery": [
     "/按语境朗读/",
@@ -2241,6 +2262,13 @@
     "",
     "The cockpit uses the word biometric in privacy prompts when it fits the user context.",
     "在隐私提示中，“biometric”可结合用户场景理解。"
+  ],
+  "biometric authentication": [
+    "/ˌbaɪoʊˈmetrɪk ɔːˌθentɪˈkeɪʃn/",
+    "生物识别认证；通过面部、声纹、指纹等特征确认车内用户身份",
+    "",
+    "Biometric authentication should unlock personal settings only after the driver understands what data is being checked.",
+    "生物识别认证应在驾驶者理解系统正在检查哪些数据后，再解锁个人设置。"
   ],
   "biometric data": [
     "/ˌbaɪoʊˈmetrɪk ˈdeɪtə/",
@@ -3602,6 +3630,13 @@
     "Climate settings are common inputs for cockpit personalization.",
     "空调设置是座舱个性化的常见输入。"
   ],
+  "climate settings": [
+    "/ˈklaɪmət ˈsetɪŋz/",
+    "空调与温度设置",
+    "",
+    "Climate settings can load before higher-risk permissions unlock.",
+    "空调设置可以在更高风险权限解锁前加载。"
+  ],
   "climate zone": [
     "/ˈklaɪmət zoʊn/",
     "空调区域；车内可独立控制温度或风量的区域",
@@ -3985,6 +4020,13 @@
     "",
     "A comfort preset can combine seat angle, heating, ventilation, and display distance.",
     "舒适预设可以组合座椅角度、加热、通风和显示距离。"
+  ],
+  "comfort presets": [
+    "/ˈkʌmfərt ˈpriːsets/",
+    "舒适预设；座椅、空调等个性化配置",
+    "",
+    "Comfort presets are lower risk than payment permissions.",
+    "舒适预设的风险低于支付权限。"
   ],
   "comfort profile": [
     "/ˈkʌmfərt ˈproʊfaɪl/",
@@ -5542,6 +5584,13 @@
     "A clear data boundary helps drivers trust the personalization feature.",
     "清晰的数据边界有助于驾驶员信任个性化功能。"
   ],
+  "data export": [
+    "/ˈdeɪtə ˈekspɔːrt/",
+    "数据导出；把车内数据输出到外部位置",
+    "",
+    "Data export needs stronger authentication than seat adjustment.",
+    "数据导出需要比座椅调节更强的认证。"
+  ],
   "data minimization": [
     "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
     "数据最小化；只收集完成目标所必需的数据",
@@ -5894,6 +5943,13 @@
     "The delete path should be visible near the saved memory.",
     "删除路径应显示在已保存记忆附近。"
   ],
+  "deletion": [
+    "/dɪˈliːʃn/",
+    "删除；移除已保存的数据或授权",
+    "",
+    "Deletion should not erase the user’s ability to unlock the car.",
+    "删除不应抹掉用户解锁车辆的能力。"
+  ],
   "demand": [
     "/di'mɑ:nd/",
     "名词：要求, 需求, 需要；要求, 查询",
@@ -5915,6 +5971,13 @@
     "",
     "Shared control does not make every command democratic.",
     "在这句话中，“democratic”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "denial": [
+    "/dɪˈnaɪəl/",
+    "拒绝；系统不允许访问或执行请求",
+    "",
+    "A clear denial is better than a silent failure.",
+    "清楚的拒绝比无声失败更好。"
   ],
   "dense": [
     "/dens/",
@@ -7169,6 +7232,13 @@
     "在这句话中，“effort”可理解为“努力, 成就”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "effortless": [
+    "/ˈefərtləs/",
+    "轻松的；几乎不需要操作的",
+    "",
+    "Biometric access can make the cockpit feel effortless.",
+    "生物识别访问可以让座舱感觉很轻松。"
+  ],
   "eight": [
     "/eɪt/",
     "八；数字 8",
@@ -7331,6 +7401,20 @@
     "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
     "在这句话中，“enough”可理解为“充足, 够, 很多；充足的, 足够；足够；interj. 够了”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "enrollment": [
+    "/ɪnˈroʊlmənt/",
+    "注册；录入身份样本的过程",
+    "",
+    "Enrollment should explain storage and removal options.",
+    "注册过程应解释存储和移除选项。"
+  ],
+  "enrollment prompt": [
+    "/ɪnˈroʊlmənt prɑːmpt/",
+    "注册提示；引导用户录入或更新身份特征的界面提示",
+    "",
+    "An enrollment prompt should say why the sample is needed and how the driver can remove it later.",
+    "注册提示应说明为什么需要样本，以及驾驶者之后如何删除它。"
   ],
   "enter": [
     "/暂无音标/",
@@ -7540,6 +7624,13 @@
     "在这句话中，“every”可理解为“每一, 所有的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "everyone": [
+    "/ˈevriwʌn/",
+    "每个人；所有乘员或用户",
+    "",
+    "The cockpit should not expose everyone’s profile at once.",
+    "座舱不应一次暴露每个人的档案。"
+  ],
   "evidence": [
     "/按语境朗读/",
     "证据；支撑结论的信息依据",
@@ -7690,6 +7781,13 @@
     "",
     "The parking view expands to a larger display.",
     "泊车视图扩展到更大的屏幕。"
+  ],
+  "expect": [
+    "/ɪkˈspekt/",
+    "期待；认为某事应该发生",
+    "",
+    "A driver may expect personal settings to appear automatically.",
+    "驾驶者可能期待个人设置自动出现。"
   ],
   "expected": [
     "/待查/",
@@ -7884,6 +7982,20 @@
     "Cloud synchronization should require explicit consent before a new profile is uploaded.",
     "新档案上传到云端前，云同步应要求用户明确同意。"
   ],
+  "export": [
+    "/ˈekspɔːrt/",
+    "导出；把数据输出到外部",
+    "",
+    "Data export should require a stronger confirmation step.",
+    "数据导出应需要更强的确认步骤。"
+  ],
+  "export actions": [
+    "/ˈekspɔːrt ˈækʃnz/",
+    "导出动作；发送或输出数据的操作",
+    "",
+    "Export actions should stay locked until authority is clear.",
+    "在权限明确前，导出动作应保持锁定。"
+  ],
   "expose": [
     "/ɪkˈspəʊz/",
     "动词：使暴露, 使曝光, 揭穿, 陈列",
@@ -7957,6 +8069,13 @@
     "",
     "The cockpit uses the word face in privacy prompts when it fits the user context.",
     "在隐私提示中，“face”可结合用户场景理解。"
+  ],
+  "face match": [
+    "/feɪs mætʃ/",
+    "人脸匹配；通过面部特征确认身份",
+    "",
+    "A face match can unlock seat memory.",
+    "人脸匹配可以解锁座椅记忆。"
   ],
   "facial expression": [
     "/ˈfeɪʃl ɪkˈspreʃn/",
@@ -8058,6 +8177,13 @@
     "",
     "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
     "回退行为在屏幕、声音和方向盘控制之间都应保持可预测。"
+  ],
+  "fallback credential": [
+    "/ˈfɔːlbæk krɪˈdenʃl/",
+    "备用凭证；生物识别不可用时用于验证身份的替代方式",
+    "",
+    "A fallback credential lets a passenger verify a profile without forcing repeated face scans.",
+    "备用凭证让乘员无需反复刷脸也能验证个人档案。"
   ],
   "fallback interaction": [
     "/ˈfɔːlbæk ˌɪntərˈækʃn/",
@@ -8179,6 +8305,13 @@
     "",
     "The cockpit uses family account to make privacy decisions easier to understand.",
     "座舱使用“family account”让隐私决策更容易理解。"
+  ],
+  "family car": [
+    "/ˈfæməli kɑːr/",
+    "家庭共享车辆",
+    "",
+    "A family car needs clear identity switching.",
+    "家庭共享车辆需要清晰的身份切换。"
   ],
   "family cockpit": [
     "/ˈfæməli ˈkɑːkpɪt/",
@@ -8712,6 +8845,13 @@
     "The word four appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“four”用于表达相关系统状态或用户影响。"
   ],
+  "fragile": [
+    "/ˈfrædʒl/",
+    "脆弱的；容易出错的",
+    "",
+    "The experience becomes fragile when recognition fails.",
+    "当识别失败时，体验会变得脆弱。"
+  ],
   "fraud": [
     "/frɔːd/",
     "欺诈；异常或非法的支付风险",
@@ -9179,6 +9319,13 @@
     "",
     "Graceful handback prevents the assistant from repeating the whole dialogue after reconnection.",
     "平滑交还能避免重连后助手重复整个对话。"
+  ],
+  "graceful lockout": [
+    "/ˈɡreɪsfl ˈlɑːkaʊt/",
+    "温和锁定；认证失败后保持礼貌、可恢复且不制造恐慌的限制状态",
+    "",
+    "A graceful lockout explains the reason for denial and offers a calm secondary path.",
+    "温和锁定会解释拒绝原因，并提供平静的备用路径。"
   ],
   "grade": [
     "/ɡreɪd/",
@@ -10073,12 +10220,26 @@
     "Payment is a sensitive action that touches identity and privacy.",
     "支付是一项涉及身份和隐私的敏感操作。"
   ],
+  "identity confidence score": [
+    "/aɪˈdentəti ˈkɑːnfɪdəns skɔːr/",
+    "身份置信分数；系统判断当前用户身份可靠程度的内部或可视化指标",
+    "",
+    "The identity confidence score should remain hidden unless it helps the driver make a safe decision.",
+    "身份置信分数只有在帮助驾驶者做出安全决定时才应展示。"
+  ],
   "identity confirmation": [
     "/aɪˈdentəti ˌkɑːnfərˈmeɪʃn/",
     "身份确认；系统确认当前操作者是否有权执行敏感操作的过程",
     "",
     "Identity confirmation protects shared vehicles when several profiles can access the same cockpit.",
     "当多个档案可访问同一座舱时，身份确认能保护共享车辆。"
+  ],
+  "identity experience": [
+    "/aɪˈdentəti ɪkˈspɪriəns/",
+    "身份体验；用户被识别、授权和恢复的整体体验",
+    "",
+    "The identity experience should be understandable during travel.",
+    "身份体验在出行中应可理解。"
   ],
   "identity switch": [
     "/aɪˈdentəti swɪtʃ/",
@@ -10436,6 +10597,13 @@
     "",
     "The word installs appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“installs”用于表达相关系统状态或用户影响。"
+  ],
+  "instantly": [
+    "/ˈɪnstəntli/",
+    "立刻；马上发生",
+    "",
+    "Instantly unlocking every feature can create privacy risk.",
+    "立刻解锁所有功能可能带来隐私风险。"
   ],
   "instead": [
     "/ɪnˈstɛd/",
@@ -10833,6 +11001,13 @@
     "",
     "Mood labels may feel intrusive without user consent.",
     "没有用户同意时，情绪标签可能显得侵入。"
+  ],
+  "invalid": [
+    "/ɪnˈvælɪd/",
+    "无效的；不被系统接受的",
+    "",
+    "Avoid telling the user they are invalid.",
+    "避免告诉用户“你无效”。"
   ],
   "invite": [
     "/ɪnˈvaɪt/",
@@ -11762,6 +11937,13 @@
     "The fallback station should appear before the driver feels locked into one plan.",
     "在这句话中，“locked”可理解为“被锁定的；缺少切换自由的”。"
   ],
+  "lockout": [
+    "/ˈlɑːkaʊt/",
+    "锁定状态；暂时阻止访问的安全状态",
+    "",
+    "Lockout should explain the reason and provide a recovery path.",
+    "锁定状态应解释原因并提供恢复路径。"
+  ],
   "locks": [
     "/lɑːks/",
     "锁上；lock 的第三人称单数形式",
@@ -11914,6 +12096,13 @@
     "",
     "A multimodal alert system should not simply become louder whenever risk increases.",
     "多模态警告系统不应在风险增加时只是简单变得更响。"
+  ],
+  "loudest": [
+    "/ˈlaʊdəst/",
+    "最大声的；声音最突出的",
+    "",
+    "The loudest voice should not automatically own the session.",
+    "最大声的人不应自动拥有会话。"
   ],
   "low": [
     "/ləʊ/",
@@ -12180,6 +12369,13 @@
     "",
     "The assistant increased lumbar support after detecting a long period of static posture.",
     "助手检测到长时间静态坐姿后增加了腰部支撑。"
+  ],
+  "made": [
+    "/meɪd/",
+    "造成；使某种状态发生",
+    "",
+    "Background speech made the match uncertain.",
+    "背景语音让匹配变得不确定。"
   ],
   "main": [
     "/meɪn/",
@@ -13543,6 +13739,13 @@
     "",
     "Navigation hint should support a safer and clearer cockpit experience.",
     "在这句话中，“navigation hint”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "navigation history": [
+    "/ˌnævɪˈɡeɪʃn ˈhɪstri/",
+    "导航历史；用户过去的路线和目的地记录",
+    "",
+    "Navigation history is more sensitive than a seat preset.",
+    "导航历史比座椅预设更敏感。"
   ],
   "navigation review": [
     "/ˌnævɪˈɡeɪʃn rɪˈvjuː/",
@@ -14912,6 +15115,13 @@
     "The default payment method should be easy to identify.",
     "默认支付方式应易于识别。"
   ],
+  "payment permissions": [
+    "/ˈpeɪmənt pərˈmɪʃnz/",
+    "支付权限；允许完成车内支付的授权",
+    "",
+    "Payment permissions require explicit confirmation.",
+    "支付权限需要明确确认。"
+  ],
   "payment status": [
     "/ˈpeɪmənt ˈstætəs/",
     "支付状态；交易当前是成功、失败、处理中或待确认",
@@ -15089,6 +15299,13 @@
     "The permission threshold should rise when the car is moving fast.",
     "车辆高速行驶时，许可阈值应提高。"
   ],
+  "permissions": [
+    "/pərˈmɪʃnz/",
+    "权限；被允许访问或执行的范围",
+    "",
+    "The cockpit must show which permissions remain locked.",
+    "座舱必须显示哪些权限仍被锁定。"
+  ],
   "persistent": [
     "/pərˈsɪstənt/",
     "持续的；在一段时间内保持存在的",
@@ -15204,6 +15421,13 @@
     "",
     "A phone call can create cognitive reload when the driver returns to a menu.",
     "电话通话会在驾驶员返回菜单时造成认知重载。"
+  ],
+  "phone key": [
+    "/foʊn kiː/",
+    "手机钥匙；用手机作为车钥匙或验证凭证",
+    "",
+    "A phone key can serve as a fallback credential.",
+    "手机钥匙可以作为备用凭证。"
   ],
   "phrase": [
     "/ˈfɹeɪ̯z/",
@@ -15796,6 +16020,13 @@
     "The cockpit uses preset to keep comfort assistance understandable and controllable.",
     "座舱使用“preset”让舒适辅助更容易理解和控制。"
   ],
+  "presets": [
+    "/ˈpriːsets/",
+    "预设；提前保存的个性化配置",
+    "",
+    "Presets can load after a low-risk identity match.",
+    "低风险身份匹配后可以加载预设。"
+  ],
   "pressure": [
     "/ˈpreʃər/",
     "压力；座椅或身体接触面的受力。",
@@ -16039,6 +16270,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "privacy-preserving match": [
+    "/ˈpraɪvəsi prɪˈzɜːrvɪŋ mætʃ/",
+    "隐私保护匹配；尽量在本地、安全地完成身份比对的设计",
+    "",
+    "A privacy-preserving match reduces the need to send sensitive cabin data to the cloud.",
+    "隐私保护匹配减少了把敏感座舱数据发送到云端的需要。"
+  ],
   "privacy-preserving occupant sensing": [
     "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ˈɑːkjəpənt ˈsensɪŋ/",
     "隐私保护型乘员感知；在识别乘员状态和需求时尽量减少敏感数据暴露的座舱能力",
@@ -16222,6 +16460,13 @@
     "",
     "Profile switching needs a visible preview when the vehicle is shared by family members.",
     "当车辆由家庭成员共享时，档案切换需要提供可见预览。"
+  ],
+  "profile unlock boundary": [
+    "/ˈproʊfaɪl ʌnˈlɑːk ˈbaʊndəri/",
+    "档案解锁边界；说明哪些个性化数据已开放、哪些仍受保护的范围",
+    "",
+    "The profile unlock boundary separates comfort presets from payment or vehicle-control permissions.",
+    "档案解锁边界区分舒适预设与支付或车辆控制权限。"
   ],
   "profile-level": [
     "/ˈproʊfaɪl ˈlevl/",
@@ -17046,6 +17291,13 @@
     "在这句话中，“recognized”可理解为“认出, 认可, 承认, 公认, 识别, 赏识；承认, 具结”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "recognizes": [
+    "/ˈrekəɡnaɪzɪz/",
+    "识别；系统确认某人或某物",
+    "",
+    "The safest system is not always the one that recognizes everyone instantly.",
+    "最安全的系统并不总是立刻识别所有人的系统。"
+  ],
   "recommend": [
     "/ˌɹɛkəˈmɛnd/",
     "动词：推荐, 介绍, 劝告, 使受欢迎, 托付",
@@ -17196,6 +17448,13 @@
     "",
     "A recovery cue should be short enough to read in one glance.",
     "恢复提示应短到一次扫视即可读完。"
+  ],
+  "recovery path": [
+    "/rɪˈkʌvəri pæθ/",
+    "恢复路径；失败后继续完成任务的方法",
+    "",
+    "The recovery path should be short and visible.",
+    "恢复路径应简短且可见。"
   ],
   "recovery prompt": [
     "/rɪˈkʌvəri prɑːmpt/",
@@ -18182,6 +18441,13 @@
     "The cockpit uses reversible decision to support a safer charging experience.",
     "座舱使用“reversible decision”来支持更安全的充电体验。"
   ],
+  "reversible privacy choice": [
+    "/rɪˈvɜːrsəbl ˈpraɪvəsi tʃɔɪs/",
+    "可撤销隐私选择；用户之后可以修改、暂停或删除授权的设计",
+    "",
+    "A reversible privacy choice makes biometric convenience feel less permanent and more trustworthy.",
+    "可撤销隐私选择让生物识别便利性显得不那么永久，也更值得信任。"
+  ],
   "reversible request": [
     "/rɪˈvɜːrsəbl rɪˈkwest/",
     "可撤销请求；执行后可以快速恢复或取消的请求",
@@ -18977,6 +19243,20 @@
     "在这句话中，“same”可理解为“相同的, 同样的；相同的人(或事物)；同样地”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "sample": [
+    "/ˈsæmpl/",
+    "样本；用于比对的生物识别数据",
+    "",
+    "The sample should be stored with clear consent.",
+    "样本应在明确同意下存储。"
+  ],
+  "samples": [
+    "/ˈsæmpəlz/",
+    "样本；多个用于身份比对的数据片段",
+    "",
+    "Users should know how biometric samples are stored.",
+    "用户应知道生物识别样本如何存储。"
+  ],
   "save": [
     "/seɪv/",
     "保存；将记录留存供之后查看",
@@ -19005,6 +19285,13 @@
     "Hands-free correction lets the driver say “no, the second option” while keeping eyes on the road.",
     "在这句话中，“say”可理解为“说；告诉；讲；表达；发言权；决定权；int. 啧啧；我说；念；比如说”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "saying": [
+    "/ˈseɪɪŋ/",
+    "说；表达某种提示文本",
+    "",
+    "Instead of saying the user is invalid, explain the uncertainty.",
+    "与其说用户无效，不如解释不确定性。"
   ],
   "says": [
     "/sɛz/",
@@ -19042,6 +19329,13 @@
     "",
     "Quick scanning reduces visual workload.",
     "在这句话中，“scanning”表示“扫视”。"
+  ],
+  "scans": [
+    "/skænz/",
+    "扫描；系统采集面部、指纹或其他特征的动作",
+    "",
+    "Repeated scans can make authentication feel stressful.",
+    "反复扫描会让认证体验变得紧张。"
   ],
   "scenario": [
     "/səˈnærioʊ/",
@@ -19307,6 +19601,20 @@
     "A context gate can suppress a seatbelt reminder while a higher priority hazard alert is active.",
     "当更高优先级的危险警告正在生效时，上下文门控可以抑制安全带提醒。"
   ],
+  "seating": [
+    "/ˈsiːtɪŋ/",
+    "就座；座椅位置和乘坐状态相关的",
+    "",
+    "Seating position may affect camera recognition.",
+    "坐姿可能影响摄像头识别。"
+  ],
+  "seating position": [
+    "/ˈsiːtɪŋ pəˈzɪʃn/",
+    "坐姿；用户在座椅中的位置和角度",
+    "",
+    "Seating position can affect camera recognition.",
+    "坐姿会影响摄像头识别。"
+  ],
   "second": [
     "/ˈsɛk.ənd/",
     "秒, 瞬间, 第二名, 支持者, 助手；第二的, 其次的, 次要的, 附加的, 辅助的；第二；当...助手, 支持",
@@ -19364,6 +19672,13 @@
     "",
     "A secondary task should not dominate attention.",
     "次级任务不应占用主要注意力。"
+  ],
+  "secondary verification path": [
+    "/ˈsekənderi ˌverɪfɪˈkeɪʃn pæθ/",
+    "二次验证路径；当主识别失败时帮助用户继续任务的替代流程",
+    "",
+    "The secondary verification path should be reachable before the user feels trapped at the start screen.",
+    "二次验证路径应在用户觉得被困在启动界面之前就可到达。"
   ],
   "secret": [
     "/ˈsiːkrət/",
@@ -19436,6 +19751,13 @@
     "Semantics should support a safer and clearer cockpit experience.",
     "在这句话中，“semantics”用于描述更安全、更清晰的座舱体验。"
   ],
+  "send": [
+    "/send/",
+    "发送；把数据传到外部位置",
+    "",
+    "The system should not send sensitive cabin data without consent.",
+    "系统不应在未经同意时发送敏感座舱数据。"
+  ],
   "sending": [
     "/ˈsɛndɪŋ/",
     "动词：发送, 使进入, 寄, 派遣, 发射, 使陷于；寄信, 派人, 播送；(船的)上升运动",
@@ -19487,6 +19809,13 @@
     "",
     "A sensitive action requires explicit confirmation.",
     "敏感操作需要明确确认。"
+  ],
+  "sensitive cabin data": [
+    "/ˈsensətɪv ˈkæbɪn ˈdeɪtə/",
+    "敏感座舱数据；可能暴露身份、位置或习惯的车内数据",
+    "",
+    "Sensitive cabin data needs local protection.",
+    "敏感座舱数据需要本地保护。"
   ],
   "sensitive context": [
     "/ˈsensətɪv ˈkɑːntekst/",
@@ -19683,6 +20012,13 @@
     "在这句话中，“services”可理解为“服务, 贡献, 雇佣, 公职, 服役, 功劳, 仪式, 送达, 行政部门；保养, 维修；武装部队的, 服务性的, 仆人的, 耐用的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "session": [
+    "/ˈseʃn/",
+    "会话；一次连续使用或登录状态",
+    "",
+    "The session should show who is currently in control.",
+    "会话应显示当前由谁控制。"
+  ],
   "session-only": [
     "/ˈseʃn ˈoʊnli/",
     "仅本次会话；只在当前使用周期内有效",
@@ -19778,6 +20114,13 @@
     "Privacy shapes the interaction model.",
     "隐私会塑造交互模型。"
   ],
+  "share": [
+    "/ʃer/",
+    "共享；多人共同使用同一车辆或空间",
+    "",
+    "Several occupants may share the same cabin.",
+    "多名乘员可能共享同一座舱。"
+  ],
   "shared": [
     "/ʃɛːd/",
     "动词：部分, 参与, 一份, 参股, 份额；均分, 分担, 分享, 分配, 共有；分享；文件锁定及检测磁盘更动和对超过32MB硬盘分区的支持",
@@ -19869,6 +20212,13 @@
     "adjective",
     "A shared-cabin profile must separate driver and passenger choices.",
     "在这句话中，“shared-cabin”表示“共享座舱的”。"
+  ],
+  "shared-cabin identity conflict": [
+    "/ʃerd ˈkæbɪn aɪˈdentəti ˈkɑːnflɪkt/",
+    "共享座舱身份冲突；多人同时在车内时系统难以判断主用户的情况",
+    "",
+    "A shared-cabin identity conflict needs a neutral question instead of assuming the loudest voice owns the session.",
+    "共享座舱身份冲突需要中性的询问，而不是默认声音最大的人拥有会话。"
   ],
   "shared-cabin profile": [
     "/ʃerd ˈkæbɪn ˈproʊfaɪl/",
@@ -22542,6 +22892,20 @@
     "A transparent status chip can show that cabin sensing is active for climate comfort only.",
     "透明状态标签可以显示舱内感知仅为气候舒适功能而开启。"
   ],
+  "trapped": [
+    "/træpt/",
+    "被困住的；无法继续下一步的体验状态",
+    "",
+    "A visible fallback prevents the user from feeling trapped.",
+    "可见的备用路径可防止用户感到被困住。"
+  ],
+  "travel": [
+    "/ˈtrævl/",
+    "出行；车辆使用过程中的真实移动场景",
+    "",
+    "Identity choices must stay understandable during travel.",
+    "身份选择在出行中必须保持可理解。"
+  ],
   "tray": [
     "/treɪ/",
     "托盘；界面中暂存项目的小区域",
@@ -22672,6 +23036,20 @@
     "",
     "Trust calibration depends on honest explanations when the assistant is uncertain.",
     "在这句话中，“trust calibration”用于描述智能座舱多人语音控制。"
+  ],
+  "trusted": [
+    "/ˈtrʌstɪd/",
+    "可信的；已经被绑定或认可的",
+    "",
+    "A trusted device can act as a fallback credential.",
+    "可信设备可以作为备用凭证。"
+  ],
+  "trusted device": [
+    "/ˈtrʌstɪd dɪˈvaɪs/",
+    "可信设备；已绑定且可用于验证的手机或钥匙",
+    "",
+    "A trusted device can confirm identity when face recognition fails.",
+    "当人脸识别失败时，可信设备可以确认身份。"
   ],
   "trustworthy": [
     "/ˈtrʌstwɜːrði/",
@@ -22974,6 +23352,13 @@
     "",
     "Unless can be understood in the cockpit design context.",
     "在这句话中，“unless”可结合座舱设计语境理解。"
+  ],
+  "unlock": [
+    "/ʌnˈlɑːk/",
+    "解锁；开放某项功能、档案或权限",
+    "",
+    "The cockpit can unlock comfort settings after identity is confirmed.",
+    "身份确认后，座舱可以解锁舒适设置。"
   ],
   "unmistakable": [
     "/ˌʌnmɪˈsteɪkəbl/",
@@ -23425,6 +23810,20 @@
     "Vehicle motion should match what the interface says about control.",
     "车辆运动应与界面对控制权的说明一致。"
   ],
+  "vehicle-control": [
+    "/ˈviːəkl kənˈtroʊl/",
+    "车辆控制；影响车辆运行状态的功能类别",
+    "",
+    "Vehicle-control permissions should remain locked until authority is clear.",
+    "车辆控制权限应保持锁定，直到控制权明确。"
+  ],
+  "vehicle-control actions": [
+    "/ˈviːəkl kənˈtroʊl ˈækʃnz/",
+    "车辆控制动作；影响车辆运行或驾驶状态的操作",
+    "",
+    "Vehicle-control actions require a stronger authority check.",
+    "车辆控制动作需要更强的权限检查。"
+  ],
   "vehicles": [
     "/ˈviːəkəlz/",
     "车辆；vehicle 的复数形式",
@@ -23480,6 +23879,13 @@
     "",
     "The verification stage should be visible but not distracting.",
     "验证阶段应可见但不分散注意力。"
+  ],
+  "verify": [
+    "/ˈverɪfaɪ/",
+    "验证；确认身份或权限是否有效",
+    "",
+    "The passenger can verify the profile with a trusted device.",
+    "乘员可以用可信设备验证个人档案。"
   ],
   "version": [
     "/暂无音标/",
@@ -23816,6 +24222,13 @@
     "",
     "Voice fallback can resume a simple task without extra touch input.",
     "语音回退可以在无需额外触控的情况下续接简单任务。"
+  ],
+  "voice match": [
+    "/vɔɪs mætʃ/",
+    "声纹匹配；通过声音确认身份",
+    "",
+    "A voice match may fail when background speech is loud.",
+    "背景语音很大时，声纹匹配可能失败。"
   ],
   "voice negotiation": [
     "/vɔɪs nɪˌɡoʊʃiˈeɪʃn/",

@@ -1,5 +1,755 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-29-biometric-authentication-and-graceful-lockout",
+    "date": "2026-09-29",
+    "title": "Biometric authentication and graceful lockout in intelligent cockpits",
+    "topic": "智能座舱生物识别认证与温和锁定体验",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明智能座舱在面部、声纹或设备钥匙识别失败时，通过身份置信、权限边界、备用凭证和温和锁定体验保护隐私并保持任务可恢复。",
+    "words": [
+      {
+        "term": "biometric authentication",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk ɔːˌθentɪˈkeɪʃn/",
+        "meaning": "生物识别认证；通过面部、声纹、指纹等特征确认车内用户身份",
+        "example": "Biometric authentication should unlock personal settings only after the driver understands what data is being checked.",
+        "chineseExample": "生物识别认证应在驾驶者理解系统正在检查哪些数据后，再解锁个人设置。"
+      },
+      {
+        "term": "graceful lockout",
+        "phonetic": "/ˈɡreɪsfl ˈlɑːkaʊt/",
+        "meaning": "温和锁定；认证失败后保持礼貌、可恢复且不制造恐慌的限制状态",
+        "example": "A graceful lockout explains the reason for denial and offers a calm secondary path.",
+        "chineseExample": "温和锁定会解释拒绝原因，并提供平静的备用路径。"
+      },
+      {
+        "term": "identity confidence score",
+        "phonetic": "/aɪˈdentəti ˈkɑːnfɪdəns skɔːr/",
+        "meaning": "身份置信分数；系统判断当前用户身份可靠程度的内部或可视化指标",
+        "example": "The identity confidence score should remain hidden unless it helps the driver make a safe decision.",
+        "chineseExample": "身份置信分数只有在帮助驾驶者做出安全决定时才应展示。"
+      },
+      {
+        "term": "fallback credential",
+        "phonetic": "/ˈfɔːlbæk krɪˈdenʃl/",
+        "meaning": "备用凭证；生物识别不可用时用于验证身份的替代方式",
+        "example": "A fallback credential lets a passenger verify a profile without forcing repeated face scans.",
+        "chineseExample": "备用凭证让乘员无需反复刷脸也能验证个人档案。"
+      },
+      {
+        "term": "profile unlock boundary",
+        "phonetic": "/ˈproʊfaɪl ʌnˈlɑːk ˈbaʊndəri/",
+        "meaning": "档案解锁边界；说明哪些个性化数据已开放、哪些仍受保护的范围",
+        "example": "The profile unlock boundary separates comfort presets from payment or vehicle-control permissions.",
+        "chineseExample": "档案解锁边界区分舒适预设与支付或车辆控制权限。"
+      },
+      {
+        "term": "enrollment prompt",
+        "phonetic": "/ɪnˈroʊlmənt prɑːmpt/",
+        "meaning": "注册提示；引导用户录入或更新身份特征的界面提示",
+        "example": "An enrollment prompt should say why the sample is needed and how the driver can remove it later.",
+        "chineseExample": "注册提示应说明为什么需要样本，以及驾驶者之后如何删除它。"
+      },
+      {
+        "term": "privacy-preserving match",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ mætʃ/",
+        "meaning": "隐私保护匹配；尽量在本地、安全地完成身份比对的设计",
+        "example": "A privacy-preserving match reduces the need to send sensitive cabin data to the cloud.",
+        "chineseExample": "隐私保护匹配减少了把敏感座舱数据发送到云端的需要。"
+      },
+      {
+        "term": "secondary verification path",
+        "phonetic": "/ˈsekənderi ˌverɪfɪˈkeɪʃn pæθ/",
+        "meaning": "二次验证路径；当主识别失败时帮助用户继续任务的替代流程",
+        "example": "The secondary verification path should be reachable before the user feels trapped at the start screen.",
+        "chineseExample": "二次验证路径应在用户觉得被困在启动界面之前就可到达。"
+      },
+      {
+        "term": "shared-cabin identity conflict",
+        "phonetic": "/ʃerd ˈkæbɪn aɪˈdentəti ˈkɑːnflɪkt/",
+        "meaning": "共享座舱身份冲突；多人同时在车内时系统难以判断主用户的情况",
+        "example": "A shared-cabin identity conflict needs a neutral question instead of assuming the loudest voice owns the session.",
+        "chineseExample": "共享座舱身份冲突需要中性的询问，而不是默认声音最大的人拥有会话。"
+      },
+      {
+        "term": "reversible privacy choice",
+        "phonetic": "/rɪˈvɜːrsəbl ˈpraɪvəsi tʃɔɪs/",
+        "meaning": "可撤销隐私选择；用户之后可以修改、暂停或删除授权的设计",
+        "example": "A reversible privacy choice makes biometric convenience feel less permanent and more trustworthy.",
+        "chineseExample": "可撤销隐私选择让生物识别便利性显得不那么永久，也更值得信任。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "biometric authentication",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk ɔːˌθentɪˈkeɪʃn/",
+        "meaning": "生物识别认证；通过面部、声纹、指纹等特征确认车内用户身份",
+        "example": "Biometric authentication should unlock personal settings only after the driver understands what data is being checked.",
+        "chineseExample": "生物识别认证应在驾驶者理解系统正在检查哪些数据后，再解锁个人设置。"
+      },
+      {
+        "term": "graceful lockout",
+        "phonetic": "/ˈɡreɪsfl ˈlɑːkaʊt/",
+        "meaning": "温和锁定；认证失败后保持礼貌、可恢复且不制造恐慌的限制状态",
+        "example": "A graceful lockout explains the reason for denial and offers a calm secondary path.",
+        "chineseExample": "温和锁定会解释拒绝原因，并提供平静的备用路径。"
+      },
+      {
+        "term": "identity confidence score",
+        "phonetic": "/aɪˈdentəti ˈkɑːnfɪdəns skɔːr/",
+        "meaning": "身份置信分数；系统判断当前用户身份可靠程度的内部或可视化指标",
+        "example": "The identity confidence score should remain hidden unless it helps the driver make a safe decision.",
+        "chineseExample": "身份置信分数只有在帮助驾驶者做出安全决定时才应展示。"
+      },
+      {
+        "term": "fallback credential",
+        "phonetic": "/ˈfɔːlbæk krɪˈdenʃl/",
+        "meaning": "备用凭证；生物识别不可用时用于验证身份的替代方式",
+        "example": "A fallback credential lets a passenger verify a profile without forcing repeated face scans.",
+        "chineseExample": "备用凭证让乘员无需反复刷脸也能验证个人档案。"
+      },
+      {
+        "term": "profile unlock boundary",
+        "phonetic": "/ˈproʊfaɪl ʌnˈlɑːk ˈbaʊndəri/",
+        "meaning": "档案解锁边界；说明哪些个性化数据已开放、哪些仍受保护的范围",
+        "example": "The profile unlock boundary separates comfort presets from payment or vehicle-control permissions.",
+        "chineseExample": "档案解锁边界区分舒适预设与支付或车辆控制权限。"
+      },
+      {
+        "term": "enrollment prompt",
+        "phonetic": "/ɪnˈroʊlmənt prɑːmpt/",
+        "meaning": "注册提示；引导用户录入或更新身份特征的界面提示",
+        "example": "An enrollment prompt should say why the sample is needed and how the driver can remove it later.",
+        "chineseExample": "注册提示应说明为什么需要样本，以及驾驶者之后如何删除它。"
+      },
+      {
+        "term": "privacy-preserving match",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ mætʃ/",
+        "meaning": "隐私保护匹配；尽量在本地、安全地完成身份比对的设计",
+        "example": "A privacy-preserving match reduces the need to send sensitive cabin data to the cloud.",
+        "chineseExample": "隐私保护匹配减少了把敏感座舱数据发送到云端的需要。"
+      },
+      {
+        "term": "secondary verification path",
+        "phonetic": "/ˈsekənderi ˌverɪfɪˈkeɪʃn pæθ/",
+        "meaning": "二次验证路径；当主识别失败时帮助用户继续任务的替代流程",
+        "example": "The secondary verification path should be reachable before the user feels trapped at the start screen.",
+        "chineseExample": "二次验证路径应在用户觉得被困在启动界面之前就可到达。"
+      },
+      {
+        "term": "shared-cabin identity conflict",
+        "phonetic": "/ʃerd ˈkæbɪn aɪˈdentəti ˈkɑːnflɪkt/",
+        "meaning": "共享座舱身份冲突；多人同时在车内时系统难以判断主用户的情况",
+        "example": "A shared-cabin identity conflict needs a neutral question instead of assuming the loudest voice owns the session.",
+        "chineseExample": "共享座舱身份冲突需要中性的询问，而不是默认声音最大的人拥有会话。"
+      },
+      {
+        "term": "reversible privacy choice",
+        "phonetic": "/rɪˈvɜːrsəbl ˈpraɪvəsi tʃɔɪs/",
+        "meaning": "可撤销隐私选择；用户之后可以修改、暂停或删除授权的设计",
+        "example": "A reversible privacy choice makes biometric convenience feel less permanent and more trustworthy.",
+        "chineseExample": "可撤销隐私选择让生物识别便利性显得不那么永久，也更值得信任。"
+      },
+      {
+        "term": "access",
+        "phonetic": "/ˈækses/",
+        "meaning": "访问；使用车辆功能或数据的入口",
+        "example": "Basic vehicle access should remain available after biometric deletion.",
+        "chineseExample": "删除生物识别数据后，基础车辆访问仍应可用。"
+      },
+      {
+        "term": "active",
+        "phonetic": "/ˈæktɪv/",
+        "meaning": "有效的；处于启用状态的",
+        "example": "The profile remains active until the driver locks the session.",
+        "chineseExample": "该档案会保持有效，直到驾驶者锁定会话。"
+      },
+      {
+        "term": "automatically",
+        "phonetic": "/ˌɔːtəˈmætɪkli/",
+        "meaning": "自动地；无需额外操作地",
+        "example": "Comfort settings may load automatically after a confident match.",
+        "chineseExample": "在可靠匹配后，舒适设置可以自动加载。"
+      },
+      {
+        "term": "authority",
+        "phonetic": "/əˈθɔːrəti/",
+        "meaning": "权限；执行高影响动作的控制权",
+        "example": "Authority should be confirmed before payment or control changes.",
+        "chineseExample": "在支付或控制变更前应确认权限。"
+      },
+      {
+        "term": "background speech",
+        "phonetic": "/ˈbækɡraʊnd spiːtʃ/",
+        "meaning": "背景语音；非目标用户或环境中的说话声",
+        "example": "Background speech can reduce voice match confidence.",
+        "chineseExample": "背景语音可能降低声纹匹配置信度。"
+      },
+      {
+        "term": "basic vehicle access",
+        "phonetic": "/ˈbeɪsɪk ˈviːəkl ˈækses/",
+        "meaning": "基础车辆访问；开车门、启动车辆等最低必要能力",
+        "example": "Basic vehicle access should not depend on a perfect face scan.",
+        "chineseExample": "基础车辆访问不应依赖完美的人脸扫描。"
+      },
+      {
+        "term": "blame",
+        "phonetic": "/bleɪm/",
+        "meaning": "责备；把问题归咎于用户",
+        "example": "Avoid blame when recognition fails in poor lighting.",
+        "chineseExample": "在光线较差导致识别失败时要避免责备。"
+      },
+      {
+        "term": "cabin",
+        "phonetic": "/ˈkæbɪn/",
+        "meaning": "座舱；车内空间",
+        "example": "The cabin may contain several users with different profiles.",
+        "chineseExample": "座舱内可能有多个拥有不同档案的用户。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/kɑːm/",
+        "meaning": "平静的；不制造紧张的",
+        "example": "A calm message can make lockout feel recoverable.",
+        "chineseExample": "平静的信息能让锁定显得可恢复。"
+      },
+      {
+        "term": "climate settings",
+        "phonetic": "/ˈklaɪmət ˈsetɪŋz/",
+        "meaning": "空调与温度设置",
+        "example": "Climate settings can load before higher-risk permissions unlock.",
+        "chineseExample": "空调设置可以在更高风险权限解锁前加载。"
+      },
+      {
+        "term": "cloud",
+        "phonetic": "/klaʊd/",
+        "meaning": "云端；远程服务器环境",
+        "example": "Sensitive identity data should not be sent to the cloud unless necessary.",
+        "chineseExample": "除非必要，敏感身份数据不应发送到云端。"
+      },
+      {
+        "term": "comfort presets",
+        "phonetic": "/ˈkʌmfərt ˈpriːsets/",
+        "meaning": "舒适预设；座椅、空调等个性化配置",
+        "example": "Comfort presets are lower risk than payment permissions.",
+        "chineseExample": "舒适预设的风险低于支付权限。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统判断可靠程度",
+        "example": "Confidence may drop when lighting changes quickly.",
+        "chineseExample": "当光线快速变化时，置信度可能下降。"
+      },
+      {
+        "term": "confirmation step",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn step/",
+        "meaning": "确认步骤；执行前再次确认的交互环节",
+        "example": "Payment requires a clearer confirmation step.",
+        "chineseExample": "支付需要更明确的确认步骤。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "控制；对功能或决策的掌控",
+        "example": "Control should stay understandable during real travel.",
+        "chineseExample": "真实出行中，控制权应保持可理解。"
+      },
+      {
+        "term": "data export",
+        "phonetic": "/ˈdeɪtə ˈekspɔːrt/",
+        "meaning": "数据导出；把车内数据输出到外部位置",
+        "example": "Data export needs stronger authentication than seat adjustment.",
+        "chineseExample": "数据导出需要比座椅调节更强的认证。"
+      },
+      {
+        "term": "deletion",
+        "phonetic": "/dɪˈliːʃn/",
+        "meaning": "删除；移除已保存的数据或授权",
+        "example": "Deletion should not erase the user’s ability to unlock the car.",
+        "chineseExample": "删除不应抹掉用户解锁车辆的能力。"
+      },
+      {
+        "term": "effortless",
+        "phonetic": "/ˈefərtləs/",
+        "meaning": "轻松的；几乎不需要操作的",
+        "example": "Biometric access can make the cockpit feel effortless.",
+        "chineseExample": "生物识别访问可以让座舱感觉很轻松。"
+      },
+      {
+        "term": "enrollment",
+        "phonetic": "/ɪnˈroʊlmənt/",
+        "meaning": "注册；录入身份样本的过程",
+        "example": "Enrollment should explain storage and removal options.",
+        "chineseExample": "注册过程应解释存储和移除选项。"
+      },
+      {
+        "term": "export actions",
+        "phonetic": "/ˈekspɔːrt ˈækʃnz/",
+        "meaning": "导出动作；发送或输出数据的操作",
+        "example": "Export actions should stay locked until authority is clear.",
+        "chineseExample": "在权限明确前，导出动作应保持锁定。"
+      },
+      {
+        "term": "face match",
+        "phonetic": "/feɪs mætʃ/",
+        "meaning": "人脸匹配；通过面部特征确认身份",
+        "example": "A face match can unlock seat memory.",
+        "chineseExample": "人脸匹配可以解锁座椅记忆。"
+      },
+      {
+        "term": "family car",
+        "phonetic": "/ˈfæməli kɑːr/",
+        "meaning": "家庭共享车辆",
+        "example": "A family car needs clear identity switching.",
+        "chineseExample": "家庭共享车辆需要清晰的身份切换。"
+      },
+      {
+        "term": "fragile",
+        "phonetic": "/ˈfrædʒl/",
+        "meaning": "脆弱的；容易出错的",
+        "example": "The experience becomes fragile when recognition fails.",
+        "chineseExample": "当识别失败时，体验会变得脆弱。"
+      },
+      {
+        "term": "guest mode",
+        "phonetic": "/ɡest moʊd/",
+        "meaning": "访客模式；不使用完整个人档案的临时模式",
+        "example": "Guest mode helps someone drive without exposing another profile.",
+        "chineseExample": "访客模式帮助他人在不暴露他人档案的情况下用车。"
+      },
+      {
+        "term": "identity experience",
+        "phonetic": "/aɪˈdentəti ɪkˈspɪriəns/",
+        "meaning": "身份体验；用户被识别、授权和恢复的整体体验",
+        "example": "The identity experience should be understandable during travel.",
+        "chineseExample": "身份体验在出行中应可理解。"
+      },
+      {
+        "term": "invalid",
+        "phonetic": "/ɪnˈvælɪd/",
+        "meaning": "无效的；不被系统接受的",
+        "example": "Avoid telling the user they are invalid.",
+        "chineseExample": "避免告诉用户“你无效”。"
+      },
+      {
+        "term": "lighting",
+        "phonetic": "/ˈlaɪtɪŋ/",
+        "meaning": "光线；影响摄像头识别的环境条件",
+        "example": "Lighting can make the face match uncertain.",
+        "chineseExample": "光线会让人脸匹配变得不确定。"
+      },
+      {
+        "term": "locked",
+        "phonetic": "/lɑːkt/",
+        "meaning": "已锁定的；暂不可访问的",
+        "example": "Payment permissions remain locked until verification succeeds.",
+        "chineseExample": "支付权限会保持锁定，直到验证成功。"
+      },
+      {
+        "term": "match",
+        "phonetic": "/mætʃ/",
+        "meaning": "匹配；身份样本之间的比对结果",
+        "example": "The match is uncertain when the camera view is blocked.",
+        "chineseExample": "当摄像头视野受阻时，匹配是不确定的。"
+      },
+      {
+        "term": "mirrors",
+        "phonetic": "/ˈmɪrərz/",
+        "meaning": "后视镜；可个性化调整的车辆部件",
+        "example": "Mirrors may adjust after profile recognition.",
+        "chineseExample": "档案识别后，后视镜可以调整。"
+      },
+      {
+        "term": "navigation history",
+        "phonetic": "/ˌnævɪˈɡeɪʃn ˈhɪstri/",
+        "meaning": "导航历史；用户过去的路线和目的地记录",
+        "example": "Navigation history is more sensitive than a seat preset.",
+        "chineseExample": "导航历史比座椅预设更敏感。"
+      },
+      {
+        "term": "occupants",
+        "phonetic": "/ˈɑːkjəpənts/",
+        "meaning": "乘员；车内人员",
+        "example": "Several occupants may share the same cabin.",
+        "chineseExample": "多名乘员可能共享同一座舱。"
+      },
+      {
+        "term": "payment permissions",
+        "phonetic": "/ˈpeɪmənt pərˈmɪʃnz/",
+        "meaning": "支付权限；允许完成车内支付的授权",
+        "example": "Payment permissions require explicit confirmation.",
+        "chineseExample": "支付权限需要明确确认。"
+      },
+      {
+        "term": "permissions",
+        "phonetic": "/pərˈmɪʃnz/",
+        "meaning": "权限；被允许访问或执行的范围",
+        "example": "The cockpit must show which permissions remain locked.",
+        "chineseExample": "座舱必须显示哪些权限仍被锁定。"
+      },
+      {
+        "term": "phone key",
+        "phonetic": "/foʊn kiː/",
+        "meaning": "手机钥匙；用手机作为车钥匙或验证凭证",
+        "example": "A phone key can serve as a fallback credential.",
+        "chineseExample": "手机钥匙可以作为备用凭证。"
+      },
+      {
+        "term": "pin",
+        "phonetic": "/pɪn/",
+        "meaning": "个人识别码；用于验证身份的数字密码",
+        "example": "A PIN gives the driver a quick recovery option.",
+        "chineseExample": "PIN 码为驾驶者提供快速恢复选项。"
+      },
+      {
+        "term": "profile",
+        "phonetic": "/ˈproʊfaɪl/",
+        "meaning": "个人档案；保存偏好和权限的用户记录",
+        "example": "The active profile should be visible to the driver.",
+        "chineseExample": "当前激活的个人档案应对驾驶者可见。"
+      },
+      {
+        "term": "recognition",
+        "phonetic": "/ˌrekəɡˈnɪʃn/",
+        "meaning": "识别；系统判断用户身份的过程",
+        "example": "Recognition can fail when the seating position changes.",
+        "chineseExample": "坐姿变化时识别可能失败。"
+      },
+      {
+        "term": "recovery path",
+        "phonetic": "/rɪˈkʌvəri pæθ/",
+        "meaning": "恢复路径；失败后继续完成任务的方法",
+        "example": "The recovery path should be short and visible.",
+        "chineseExample": "恢复路径应简短且可见。"
+      },
+      {
+        "term": "sample",
+        "phonetic": "/ˈsæmpl/",
+        "meaning": "样本；用于比对的生物识别数据",
+        "example": "The sample should be stored with clear consent.",
+        "chineseExample": "样本应在明确同意下存储。"
+      },
+      {
+        "term": "seat",
+        "phonetic": "/siːt/",
+        "meaning": "座椅；常见个性化对象",
+        "example": "The seat can move after a successful match.",
+        "chineseExample": "匹配成功后座椅可以移动。"
+      },
+      {
+        "term": "seating position",
+        "phonetic": "/ˈsiːtɪŋ pəˈzɪʃn/",
+        "meaning": "坐姿；用户在座椅中的位置和角度",
+        "example": "Seating position can affect camera recognition.",
+        "chineseExample": "坐姿会影响摄像头识别。"
+      },
+      {
+        "term": "sensitive cabin data",
+        "phonetic": "/ˈsensətɪv ˈkæbɪn ˈdeɪtə/",
+        "meaning": "敏感座舱数据；可能暴露身份、位置或习惯的车内数据",
+        "example": "Sensitive cabin data needs local protection.",
+        "chineseExample": "敏感座舱数据需要本地保护。"
+      },
+      {
+        "term": "session",
+        "phonetic": "/ˈseʃn/",
+        "meaning": "会话；一次连续使用或登录状态",
+        "example": "The session should show who is currently in control.",
+        "chineseExample": "会话应显示当前由谁控制。"
+      },
+      {
+        "term": "stored",
+        "phonetic": "/stɔːrd/",
+        "meaning": "已存储的；被保存的",
+        "example": "Users should know where samples are stored.",
+        "chineseExample": "用户应知道样本存储在哪里。"
+      },
+      {
+        "term": "temporary",
+        "phonetic": "/ˈtempəreri/",
+        "meaning": "临时的；非永久状态的",
+        "example": "Temporary guest mode can keep the trip moving.",
+        "chineseExample": "临时访客模式可以让行程继续。"
+      },
+      {
+        "term": "trusted device",
+        "phonetic": "/ˈtrʌstɪd dɪˈvaɪs/",
+        "meaning": "可信设备；已绑定且可用于验证的手机或钥匙",
+        "example": "A trusted device can confirm identity when face recognition fails.",
+        "chineseExample": "当人脸识别失败时，可信设备可以确认身份。"
+      },
+      {
+        "term": "uncertain",
+        "phonetic": "/ʌnˈsɜːrtn/",
+        "meaning": "不确定的；系统置信不足的",
+        "example": "The cockpit needs another check when the match is uncertain.",
+        "chineseExample": "当匹配不确定时，座舱需要再次检查。"
+      },
+      {
+        "term": "understandable",
+        "phonetic": "/ˌʌndərˈstændəbl/",
+        "meaning": "可理解的；用户能明白原因和下一步的",
+        "example": "Fallback choices must be understandable during real travel.",
+        "chineseExample": "回退选择在真实出行中必须可理解。"
+      },
+      {
+        "term": "vehicle-control actions",
+        "phonetic": "/ˈviːəkl kənˈtroʊl ˈækʃnz/",
+        "meaning": "车辆控制动作；影响车辆运行或驾驶状态的操作",
+        "example": "Vehicle-control actions require a stronger authority check.",
+        "chineseExample": "车辆控制动作需要更强的权限检查。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "可见的；界面上容易发现的",
+        "example": "The fallback path should be visible on the start screen.",
+        "chineseExample": "备用路径应在启动界面上可见。"
+      },
+      {
+        "term": "voice match",
+        "phonetic": "/vɔɪs mætʃ/",
+        "meaning": "声纹匹配；通过声音确认身份",
+        "example": "A voice match may fail when background speech is loud.",
+        "chineseExample": "背景语音很大时，声纹匹配可能失败。"
+      },
+      {
+        "term": "unlock",
+        "phonetic": "/ʌnˈlɑːk/",
+        "meaning": "解锁；开放某项功能、档案或权限",
+        "example": "The cockpit can unlock comfort settings after identity is confirmed.",
+        "chineseExample": "身份确认后，座舱可以解锁舒适设置。"
+      },
+      {
+        "term": "lockout",
+        "phonetic": "/ˈlɑːkaʊt/",
+        "meaning": "锁定状态；暂时阻止访问的安全状态",
+        "example": "Lockout should explain the reason and provide a recovery path.",
+        "chineseExample": "锁定状态应解释原因并提供恢复路径。"
+      },
+      {
+        "term": "denial",
+        "phonetic": "/dɪˈnaɪəl/",
+        "meaning": "拒绝；系统不允许访问或执行请求",
+        "example": "A clear denial is better than a silent failure.",
+        "chineseExample": "清楚的拒绝比无声失败更好。"
+      },
+      {
+        "term": "verify",
+        "phonetic": "/ˈverɪfaɪ/",
+        "meaning": "验证；确认身份或权限是否有效",
+        "example": "The passenger can verify the profile with a trusted device.",
+        "chineseExample": "乘员可以用可信设备验证个人档案。"
+      },
+      {
+        "term": "scans",
+        "phonetic": "/skænz/",
+        "meaning": "扫描；系统采集面部、指纹或其他特征的动作",
+        "example": "Repeated scans can make authentication feel stressful.",
+        "chineseExample": "反复扫描会让认证体验变得紧张。"
+      },
+      {
+        "term": "presets",
+        "phonetic": "/ˈpriːsets/",
+        "meaning": "预设；提前保存的个性化配置",
+        "example": "Presets can load after a low-risk identity match.",
+        "chineseExample": "低风险身份匹配后可以加载预设。"
+      },
+      {
+        "term": "vehicle-control",
+        "phonetic": "/ˈviːəkl kənˈtroʊl/",
+        "meaning": "车辆控制；影响车辆运行状态的功能类别",
+        "example": "Vehicle-control permissions should remain locked until authority is clear.",
+        "chineseExample": "车辆控制权限应保持锁定，直到控制权明确。"
+      },
+      {
+        "term": "send",
+        "phonetic": "/send/",
+        "meaning": "发送；把数据传到外部位置",
+        "example": "The system should not send sensitive cabin data without consent.",
+        "chineseExample": "系统不应在未经同意时发送敏感座舱数据。"
+      },
+      {
+        "term": "trapped",
+        "phonetic": "/træpt/",
+        "meaning": "被困住的；无法继续下一步的体验状态",
+        "example": "A visible fallback prevents the user from feeling trapped.",
+        "chineseExample": "可见的备用路径可防止用户感到被困住。"
+      },
+      {
+        "term": "loudest",
+        "phonetic": "/ˈlaʊdəst/",
+        "meaning": "最大声的；声音最突出的",
+        "example": "The loudest voice should not automatically own the session.",
+        "chineseExample": "最大声的人不应自动拥有会话。"
+      },
+      {
+        "term": "share",
+        "phonetic": "/ʃer/",
+        "meaning": "共享；多人共同使用同一车辆或空间",
+        "example": "Several occupants may share the same cabin.",
+        "chineseExample": "多名乘员可能共享同一座舱。"
+      },
+      {
+        "term": "expect",
+        "phonetic": "/ɪkˈspekt/",
+        "meaning": "期待；认为某事应该发生",
+        "example": "A driver may expect personal settings to appear automatically.",
+        "chineseExample": "驾驶者可能期待个人设置自动出现。"
+      },
+      {
+        "term": "export",
+        "phonetic": "/ˈekspɔːrt/",
+        "meaning": "导出；把数据输出到外部",
+        "example": "Data export should require a stronger confirmation step.",
+        "chineseExample": "数据导出应需要更强的确认步骤。"
+      },
+      {
+        "term": "saying",
+        "phonetic": "/ˈseɪɪŋ/",
+        "meaning": "说；表达某种提示文本",
+        "example": "Instead of saying the user is invalid, explain the uncertainty.",
+        "chineseExample": "与其说用户无效，不如解释不确定性。"
+      },
+      {
+        "term": "seating",
+        "phonetic": "/ˈsiːtɪŋ/",
+        "meaning": "就座；座椅位置和乘坐状态相关的",
+        "example": "Seating position may affect camera recognition.",
+        "chineseExample": "坐姿可能影响摄像头识别。"
+      },
+      {
+        "term": "made",
+        "phonetic": "/meɪd/",
+        "meaning": "造成；使某种状态发生",
+        "example": "Background speech made the match uncertain.",
+        "chineseExample": "背景语音让匹配变得不确定。"
+      },
+      {
+        "term": "trusted",
+        "phonetic": "/ˈtrʌstɪd/",
+        "meaning": "可信的；已经被绑定或认可的",
+        "example": "A trusted device can act as a fallback credential.",
+        "chineseExample": "可信设备可以作为备用凭证。"
+      },
+      {
+        "term": "samples",
+        "phonetic": "/ˈsæmpəlz/",
+        "meaning": "样本；多个用于身份比对的数据片段",
+        "example": "Users should know how biometric samples are stored.",
+        "chineseExample": "用户应知道生物识别样本如何存储。"
+      },
+      {
+        "term": "basic",
+        "phonetic": "/ˈbeɪsɪk/",
+        "meaning": "基础的；最低必要的",
+        "example": "Basic access should remain available after deletion.",
+        "chineseExample": "删除后，基础访问仍应可用。"
+      },
+      {
+        "term": "recognizes",
+        "phonetic": "/ˈrekəɡnaɪzɪz/",
+        "meaning": "识别；系统确认某人或某物",
+        "example": "The safest system is not always the one that recognizes everyone instantly.",
+        "chineseExample": "最安全的系统并不总是立刻识别所有人的系统。"
+      },
+      {
+        "term": "everyone",
+        "phonetic": "/ˈevriwʌn/",
+        "meaning": "每个人；所有乘员或用户",
+        "example": "The cockpit should not expose everyone’s profile at once.",
+        "chineseExample": "座舱不应一次暴露每个人的档案。"
+      },
+      {
+        "term": "instantly",
+        "phonetic": "/ˈɪnstəntli/",
+        "meaning": "立刻；马上发生",
+        "example": "Instantly unlocking every feature can create privacy risk.",
+        "chineseExample": "立刻解锁所有功能可能带来隐私风险。"
+      },
+      {
+        "term": "travel",
+        "phonetic": "/ˈtrævl/",
+        "meaning": "出行；车辆使用过程中的真实移动场景",
+        "example": "Identity choices must stay understandable during travel.",
+        "chineseExample": "身份选择在出行中必须保持可理解。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing identity recovery for shared intelligent cockpits",
+        "text": "Biometric access can make an intelligent cockpit feel effortless, but the experience becomes fragile when recognition fails or when several occupants share the cabin. A driver may expect the seat, mirrors, navigation history, and preferred climate settings to appear automatically, yet the cockpit must still explain which profile is active and which permissions remain locked. Good authentication design separates convenience from authority. It can unlock comfort presets with a confident face or voice match, while keeping payment, vehicle-control, and data export actions behind a clearer confirmation step. When confidence is low, the interface should avoid blame. Instead of saying that the user is invalid, it can say that the cabin needs another check because lighting, seating position, or background speech made the match uncertain. The recovery path should be short, visible, and calm: use a PIN, phone key, trusted device, or temporary guest mode. Designers also need to consider enrollment and deletion. People should know where biometric samples are stored, how long they remain active, and how to remove them without losing basic vehicle access. In a shared family car, the safest identity experience is not the one that recognizes everyone instantly; it is the one that makes control, privacy, and fallback choices understandable during real travel.",
+        "translation": "生物识别访问可以让智能座舱感觉毫不费力，但当识别失败，或多名乘员共享座舱时，体验会变得脆弱。驾驶者可能期待座椅、后视镜、导航历史和偏好的空调设置自动出现，但座舱仍必须解释当前激活的是哪个档案，以及哪些权限仍然被锁定。好的认证设计会区分便利性与控制权。它可以在面部或声纹匹配足够可靠时解锁舒适预设，同时把支付、车辆控制和数据导出动作放在更明确的确认步骤之后。当置信度较低时，界面应避免责备。与其说用户无效，不如说明因为光线、坐姿或背景语音让匹配不确定，座舱需要再次检查。恢复路径应短、可见且平静：使用 PIN、手机钥匙、可信设备或临时访客模式。设计者还需要考虑注册和删除。用户应知道生物识别样本存储在哪里、保持激活多久，以及如何在不失去基础车辆访问能力的情况下删除它们。在共享家庭车辆中，最安全的身份体验并不是立刻识别每个人，而是在真实出行中让控制、隐私和回退选择变得可理解。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Good authentication design separates convenience from authority.",
+        "translation": "好的认证设计会区分便利性与控制权。",
+        "points": [
+          "separates A from B 表示“把 A 与 B 区分开”。",
+          "convenience 指快捷、舒适的体验收益。",
+          "authority 在这里指执行高风险动作的权限。"
+        ]
+      },
+      {
+        "sentence": "When confidence is low, the interface should avoid blame.",
+        "translation": "当置信度较低时，界面应避免责备。",
+        "points": [
+          "when 引导条件背景。",
+          "confidence is low 指系统识别不够确定。",
+          "avoid blame 强调错误恢复文案不要指责用户。"
+        ]
+      },
+      {
+        "sentence": "The recovery path should be short, visible, and calm.",
+        "translation": "恢复路径应短、可见且平静。",
+        "points": [
+          "recovery path 指失败后的继续路径。",
+          "short, visible, and calm 是三个并列设计标准。",
+          "calm 表示语气和视觉状态都不制造紧张。"
+        ]
+      },
+      {
+        "sentence": "People should know where biometric samples are stored, how long they remain active, and how to remove them without losing basic vehicle access.",
+        "translation": "用户应知道生物识别样本存储在哪里、保持激活多久，以及如何在不失去基础车辆访问能力的情况下删除它们。",
+        "points": [
+          "where, how long, and how to 构成三个并列信息需求。",
+          "remain active 表示持续有效。",
+          "without losing basic vehicle access 说明删除授权不应切断基础用车能力。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "time": "4 分钟",
+        "task": "朗读 10 个核心词汇，重点区分 authentication、authorization、authority 和 credential。"
+      },
+      {
+        "time": "6 分钟",
+        "task": "跟读长文一遍，标出生物识别失败后的原因解释、备用路径和隐私说明。"
+      },
+      {
+        "time": "7 分钟",
+        "task": "用英语复述一个共享家庭车场景：谁被识别、哪些权限解锁、失败后如何恢复。"
+      },
+      {
+        "time": "5 分钟",
+        "task": "改写一句锁定提示，让它同时包含低责备语气、明确原因和下一步操作。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive biometric authentication UX",
+        "url": ""
+      },
+      {
+        "title": "Suggested search: privacy preserving face recognition in vehicles",
+        "url": ""
+      }
+    ]
+  },
+  {
     "id": "2026-09-28-co-pilot-mode-awareness-and-driver-override-cues",
     "date": "2026-09-28",
     "title": "Co-pilot mode awareness and driver override cues",
