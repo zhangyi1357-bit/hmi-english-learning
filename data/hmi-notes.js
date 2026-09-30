@@ -1,5 +1,794 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-09-30-uncertainty-aware-ai-recommendations",
+    "date": "2026-09-30",
+    "title": "Uncertainty-aware AI recommendations in intelligent cockpits",
+    "topic": "智能座舱 AI 建议的不确定性表达与可解释交互",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语说明车内 AI 助手在推荐路线、座舱模式或下一步操作时，用置信度语言、证据提示、可编辑前提和可恢复建议保护驾驶者主导权。",
+    "words": [
+      {
+        "term": "uncertainty-aware recommendation",
+        "phonetic": "/ʌnˈsɜːrtnti əˈwer ˌrekəmenˈdeɪʃn/",
+        "meaning": "不确定性感知建议；系统在给出建议时同时表达置信度和限制条件",
+        "example": "An uncertainty-aware recommendation tells the driver why the assistant is not fully certain.",
+        "chineseExample": "不确定性感知建议会告诉驾驶者为什么助手并非完全确定。"
+      },
+      {
+        "term": "confidence language",
+        "phonetic": "/ˈkɑːnfɪdəns ˈlæŋɡwɪdʒ/",
+        "meaning": "置信度语言；用 could、likely、I am not sure 等表达把握程度的措辞",
+        "example": "Confidence language helps a cockpit assistant avoid sounding more certain than the data supports.",
+        "chineseExample": "置信度语言帮助座舱助手避免听起来比数据支持的程度更确定。"
+      },
+      {
+        "term": "evidence cue",
+        "phonetic": "/ˈevɪdəns kjuː/",
+        "meaning": "证据提示；简短展示建议依据的数据、来源或观察结果",
+        "example": "An evidence cue can mention traffic density, battery trend, or driver preference in one short line.",
+        "chineseExample": "证据提示可以用一句短话说明交通密度、电池趋势或驾驶者偏好。"
+      },
+      {
+        "term": "driver-confirmed action",
+        "phonetic": "/ˈdraɪvər kənˈfɜːrmd ˈækʃn/",
+        "meaning": "驾驶者确认动作；需要驾驶者明确同意后才执行的系统操作",
+        "example": "A driver-confirmed action protects autonomy when the assistant wants to change the route or cabin mode.",
+        "chineseExample": "当助手想改变路线或座舱模式时，驾驶者确认动作可以保护自主权。"
+      },
+      {
+        "term": "explanation depth",
+        "phonetic": "/ˌekspləˈneɪʃn depθ/",
+        "meaning": "解释深度；系统说明原因时从简短提示到详细依据的层级",
+        "example": "Explanation depth should expand only when the driver asks for more detail.",
+        "chineseExample": "解释深度应只在驾驶者要求更多细节时展开。"
+      },
+      {
+        "term": "source transparency",
+        "phonetic": "/sɔːrs trænsˈpærənsi/",
+        "meaning": "来源透明度；清楚说明建议来自传感器、地图、历史偏好还是云端服务",
+        "example": "Source transparency lets users separate vehicle facts from learned habits.",
+        "chineseExample": "来源透明度让用户区分车辆事实和学习到的习惯。"
+      },
+      {
+        "term": "low-confidence fallback",
+        "phonetic": "/loʊ ˈkɑːnfɪdəns ˈfɔːlbæk/",
+        "meaning": "低置信度备用方案；当系统把握不足时采用保守、可确认的替代流程",
+        "example": "A low-confidence fallback may ask a clarifying question instead of starting navigation automatically.",
+        "chineseExample": "低置信度备用方案可能会先问澄清问题，而不是自动开始导航。"
+      },
+      {
+        "term": "assumption check",
+        "phonetic": "/əˈsʌmpʃn tʃek/",
+        "meaning": "假设核对；在执行前确认系统推断是否符合用户真实意图",
+        "example": "An assumption check turns a hidden inference into a quick, respectful question.",
+        "chineseExample": "假设核对把隐藏推断变成快速且尊重用户的问题。"
+      },
+      {
+        "term": "model limitation notice",
+        "phonetic": "/ˈmɑːdl ˌlɪmɪˈteɪʃn ˈnoʊtɪs/",
+        "meaning": "模型限制提示；说明 AI 可能看不到、不了解或无法保证的内容",
+        "example": "A model limitation notice is useful when road closures or parking rules may have changed recently.",
+        "chineseExample": "当道路封闭或停车规则最近可能变化时，模型限制提示很有用。"
+      },
+      {
+        "term": "recoverable suggestion",
+        "phonetic": "/rɪˈkʌvərəbl səɡˈdʒestʃən/",
+        "meaning": "可恢复建议；用户拒绝、撤销或修改后仍能顺畅继续任务的建议",
+        "example": "A recoverable suggestion lets the driver undo the assistant choice without rebuilding the whole plan.",
+        "chineseExample": "可恢复建议让驾驶者无需重建整个计划，也能撤销助手的选择。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "uncertainty-aware recommendation",
+        "phonetic": "/ʌnˈsɜːrtnti əˈwer ˌrekəmenˈdeɪʃn/",
+        "meaning": "不确定性感知建议；系统在给出建议时同时表达置信度和限制条件",
+        "example": "An uncertainty-aware recommendation tells the driver why the assistant is not fully certain.",
+        "chineseExample": "不确定性感知建议会告诉驾驶者为什么助手并非完全确定。"
+      },
+      {
+        "term": "confidence language",
+        "phonetic": "/ˈkɑːnfɪdəns ˈlæŋɡwɪdʒ/",
+        "meaning": "置信度语言；用 could、likely、I am not sure 等表达把握程度的措辞",
+        "example": "Confidence language helps a cockpit assistant avoid sounding more certain than the data supports.",
+        "chineseExample": "置信度语言帮助座舱助手避免听起来比数据支持的程度更确定。"
+      },
+      {
+        "term": "evidence cue",
+        "phonetic": "/ˈevɪdəns kjuː/",
+        "meaning": "证据提示；简短展示建议依据的数据、来源或观察结果",
+        "example": "An evidence cue can mention traffic density, battery trend, or driver preference in one short line.",
+        "chineseExample": "证据提示可以用一句短话说明交通密度、电池趋势或驾驶者偏好。"
+      },
+      {
+        "term": "driver-confirmed action",
+        "phonetic": "/ˈdraɪvər kənˈfɜːrmd ˈækʃn/",
+        "meaning": "驾驶者确认动作；需要驾驶者明确同意后才执行的系统操作",
+        "example": "A driver-confirmed action protects autonomy when the assistant wants to change the route or cabin mode.",
+        "chineseExample": "当助手想改变路线或座舱模式时，驾驶者确认动作可以保护自主权。"
+      },
+      {
+        "term": "explanation depth",
+        "phonetic": "/ˌekspləˈneɪʃn depθ/",
+        "meaning": "解释深度；系统说明原因时从简短提示到详细依据的层级",
+        "example": "Explanation depth should expand only when the driver asks for more detail.",
+        "chineseExample": "解释深度应只在驾驶者要求更多细节时展开。"
+      },
+      {
+        "term": "source transparency",
+        "phonetic": "/sɔːrs trænsˈpærənsi/",
+        "meaning": "来源透明度；清楚说明建议来自传感器、地图、历史偏好还是云端服务",
+        "example": "Source transparency lets users separate vehicle facts from learned habits.",
+        "chineseExample": "来源透明度让用户区分车辆事实和学习到的习惯。"
+      },
+      {
+        "term": "low-confidence fallback",
+        "phonetic": "/loʊ ˈkɑːnfɪdəns ˈfɔːlbæk/",
+        "meaning": "低置信度备用方案；当系统把握不足时采用保守、可确认的替代流程",
+        "example": "A low-confidence fallback may ask a clarifying question instead of starting navigation automatically.",
+        "chineseExample": "低置信度备用方案可能会先问澄清问题，而不是自动开始导航。"
+      },
+      {
+        "term": "assumption check",
+        "phonetic": "/əˈsʌmpʃn tʃek/",
+        "meaning": "假设核对；在执行前确认系统推断是否符合用户真实意图",
+        "example": "An assumption check turns a hidden inference into a quick, respectful question.",
+        "chineseExample": "假设核对把隐藏推断变成快速且尊重用户的问题。"
+      },
+      {
+        "term": "model limitation notice",
+        "phonetic": "/ˈmɑːdl ˌlɪmɪˈteɪʃn ˈnoʊtɪs/",
+        "meaning": "模型限制提示；说明 AI 可能看不到、不了解或无法保证的内容",
+        "example": "A model limitation notice is useful when road closures or parking rules may have changed recently.",
+        "chineseExample": "当道路封闭或停车规则最近可能变化时，模型限制提示很有用。"
+      },
+      {
+        "term": "recoverable suggestion",
+        "phonetic": "/rɪˈkʌvərəbl səɡˈdʒestʃən/",
+        "meaning": "可恢复建议；用户拒绝、撤销或修改后仍能顺畅继续任务的建议",
+        "example": "A recoverable suggestion lets the driver undo the assistant choice without rebuilding the whole plan.",
+        "chineseExample": "可恢复建议让驾驶者无需重建整个计划，也能撤销助手的选择。"
+      },
+      {
+        "term": "uncertainty",
+        "phonetic": "/ʌnˈsɜːrtnti/",
+        "meaning": "不确定性；信息不足或条件变化导致系统不能完全确认的状态",
+        "example": "The cockpit interface uses uncertainty to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“uncertainty”来让建议更容易理解。"
+      },
+      {
+        "term": "aware",
+        "phonetic": "/əˈwer/",
+        "meaning": "感知到的；意识到某个条件或限制",
+        "example": "The cockpit interface uses aware to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“aware”来让建议更容易理解。"
+      },
+      {
+        "term": "recommendation",
+        "phonetic": "/ˌrekəmenˈdeɪʃn/",
+        "meaning": "建议；系统提供的行动选项",
+        "example": "The cockpit interface uses recommendation to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“recommendation”来让建议更容易理解。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统或用户对判断可靠性的把握",
+        "example": "The cockpit interface uses confidence to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“confidence”来让建议更容易理解。"
+      },
+      {
+        "term": "language",
+        "phonetic": "/ˈlæŋɡwɪdʒ/",
+        "meaning": "语言；界面和语音提示中的措辞",
+        "example": "The cockpit interface uses language to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“language”来让建议更容易理解。"
+      },
+      {
+        "term": "evidence",
+        "phonetic": "/ˈevɪdəns/",
+        "meaning": "证据；支持建议的观察或数据",
+        "example": "The cockpit interface uses evidence to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“evidence”来让建议更容易理解。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/kjuː/",
+        "meaning": "提示线索；帮助用户理解状态的简短信号",
+        "example": "The cockpit interface uses cue to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“cue”来让建议更容易理解。"
+      },
+      {
+        "term": "confirmed",
+        "phonetic": "/kənˈfɜːrmd/",
+        "meaning": "已确认的；经过用户明确同意的",
+        "example": "The cockpit interface uses confirmed to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“confirmed”来让建议更容易理解。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃn/",
+        "meaning": "动作；系统准备执行的操作",
+        "example": "The cockpit interface uses action to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“action”来让建议更容易理解。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃn/",
+        "meaning": "解释；说明系统为什么这么建议",
+        "example": "The cockpit interface uses explanation to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“explanation”来让建议更容易理解。"
+      },
+      {
+        "term": "depth",
+        "phonetic": "/depθ/",
+        "meaning": "深度；信息展开的详细程度",
+        "example": "The cockpit interface uses depth to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“depth”来让建议更容易理解。"
+      },
+      {
+        "term": "source",
+        "phonetic": "/sɔːrs/",
+        "meaning": "来源；信息或数据来自哪里",
+        "example": "The cockpit interface uses source to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“source”来让建议更容易理解。"
+      },
+      {
+        "term": "transparency",
+        "phonetic": "/trænsˈpærənsi/",
+        "meaning": "透明度；让用户看清依据和限制的程度",
+        "example": "The cockpit interface uses transparency to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“transparency”来让建议更容易理解。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "备用方案；主路径不合适时的替代流程",
+        "example": "The cockpit interface uses fallback to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“fallback”来让建议更容易理解。"
+      },
+      {
+        "term": "assumption",
+        "phonetic": "/əˈsʌmpʃn/",
+        "meaning": "假设；系统基于线索作出的推断",
+        "example": "The cockpit interface uses assumption to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“assumption”来让建议更容易理解。"
+      },
+      {
+        "term": "check",
+        "phonetic": "/tʃek/",
+        "meaning": "核对；确认信息是否正确",
+        "example": "The cockpit interface uses check to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“check”来让建议更容易理解。"
+      },
+      {
+        "term": "limitation",
+        "phonetic": "/ˌlɪmɪˈteɪʃn/",
+        "meaning": "限制；能力、数据或场景边界",
+        "example": "The cockpit interface uses limitation to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“limitation”来让建议更容易理解。"
+      },
+      {
+        "term": "notice",
+        "phonetic": "/ˈnoʊtɪs/",
+        "meaning": "提示；提醒用户注意的简短信息",
+        "example": "The cockpit interface uses notice to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“notice”来让建议更容易理解。"
+      },
+      {
+        "term": "recoverable",
+        "phonetic": "/rɪˈkʌvərəbl/",
+        "meaning": "可恢复的；错误或拒绝后仍能继续",
+        "example": "The cockpit interface uses recoverable to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“recoverable”来让建议更容易理解。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/səɡˈdʒestʃən/",
+        "meaning": "建议；可接受也可拒绝的提议",
+        "example": "The cockpit interface uses suggestion to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“suggestion”来让建议更容易理解。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/əˈsɪstənt/",
+        "meaning": "助手；车内语音或智能系统",
+        "example": "The cockpit interface uses assistant to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“assistant”来让建议更容易理解。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶者；负责车辆决策的人",
+        "example": "The cockpit interface uses driver to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“driver”来让建议更容易理解。"
+      },
+      {
+        "term": "certain",
+        "phonetic": "/ˈsɜːrtn/",
+        "meaning": "确定的；有足够把握的",
+        "example": "The cockpit interface uses certain to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“certain”来让建议更容易理解。"
+      },
+      {
+        "term": "data",
+        "phonetic": "/ˈdeɪtə/",
+        "meaning": "数据；传感器、地图或历史行为信息",
+        "example": "The cockpit interface uses data to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“data”来让建议更容易理解。"
+      },
+      {
+        "term": "supports",
+        "phonetic": "/səˈpɔːrts/",
+        "meaning": "支持；为判断提供依据",
+        "example": "The cockpit interface uses supports to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“supports”来让建议更容易理解。"
+      },
+      {
+        "term": "traffic density",
+        "phonetic": "/ˈtræfɪk ˈdensəti/",
+        "meaning": "交通密度；道路上车辆拥挤程度",
+        "example": "The cockpit interface uses traffic density to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“traffic density”来让建议更容易理解。"
+      },
+      {
+        "term": "battery trend",
+        "phonetic": "/ˈbætəri trend/",
+        "meaning": "电池趋势；电量变化和续航走向",
+        "example": "The cockpit interface uses battery trend to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“battery trend”来让建议更容易理解。"
+      },
+      {
+        "term": "driver preference",
+        "phonetic": "/ˈdraɪvər ˈprefrəns/",
+        "meaning": "驾驶者偏好；用户长期选择形成的习惯",
+        "example": "The cockpit interface uses driver preference to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“driver preference”来让建议更容易理解。"
+      },
+      {
+        "term": "autonomy",
+        "phonetic": "/ɔːˈtɑːnəmi/",
+        "meaning": "自主权；用户保持最终决定的能力",
+        "example": "The cockpit interface uses autonomy to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“autonomy”来让建议更容易理解。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "路线；导航规划路径",
+        "example": "The cockpit interface uses route to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“route”来让建议更容易理解。"
+      },
+      {
+        "term": "cabin mode",
+        "phonetic": "/ˈkæbɪn moʊd/",
+        "meaning": "座舱模式；车内舒适、隐私或驾驶相关状态组合",
+        "example": "The cockpit interface uses cabin mode to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“cabin mode”来让建议更容易理解。"
+      },
+      {
+        "term": "detail",
+        "phonetic": "/ˈdiːteɪl/",
+        "meaning": "细节；更具体的信息",
+        "example": "The cockpit interface uses detail to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“detail”来让建议更容易理解。"
+      },
+      {
+        "term": "sensor",
+        "phonetic": "/ˈsensər/",
+        "meaning": "传感器；采集车辆或环境信息的设备",
+        "example": "The cockpit interface uses sensor to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“sensor”来让建议更容易理解。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/mæp/",
+        "meaning": "地图；导航和道路信息源",
+        "example": "The cockpit interface uses map to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“map”来让建议更容易理解。"
+      },
+      {
+        "term": "history",
+        "phonetic": "/ˈhɪstri/",
+        "meaning": "历史记录；过去的使用行为或偏好",
+        "example": "The cockpit interface uses history to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“history”来让建议更容易理解。"
+      },
+      {
+        "term": "cloud service",
+        "phonetic": "/klaʊd ˈsɜːrvɪs/",
+        "meaning": "云端服务；远程计算或数据服务",
+        "example": "The cockpit interface uses cloud service to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“cloud service”来让建议更容易理解。"
+      },
+      {
+        "term": "vehicle fact",
+        "phonetic": "/ˈviːəkl fækt/",
+        "meaning": "车辆事实；来自车辆状态的客观信息",
+        "example": "The cockpit interface uses vehicle fact to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“vehicle fact”来让建议更容易理解。"
+      },
+      {
+        "term": "learned habit",
+        "phonetic": "/lɜːrnd ˈhæbɪt/",
+        "meaning": "学习到的习惯；系统从用户行为中推断的偏好",
+        "example": "The cockpit interface uses learned habit to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“learned habit”来让建议更容易理解。"
+      },
+      {
+        "term": "clarifying question",
+        "phonetic": "/ˈklærɪfaɪɪŋ ˈkwestʃən/",
+        "meaning": "澄清问题；用于消除歧义的追问",
+        "example": "The cockpit interface uses clarifying question to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“clarifying question”来让建议更容易理解。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃn/",
+        "meaning": "导航；路线引导功能",
+        "example": "The cockpit interface uses navigation to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“navigation”来让建议更容易理解。"
+      },
+      {
+        "term": "automatically",
+        "phonetic": "/ˌɔːtəˈmætɪkli/",
+        "meaning": "自动地；无需用户手动操作",
+        "example": "The cockpit interface uses automatically to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“automatically”来让建议更容易理解。"
+      },
+      {
+        "term": "hidden inference",
+        "phonetic": "/ˈhɪdn ˈɪnfərəns/",
+        "meaning": "隐藏推断；系统没有明说的内部判断",
+        "example": "The cockpit interface uses hidden inference to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“hidden inference”来让建议更容易理解。"
+      },
+      {
+        "term": "respectful question",
+        "phonetic": "/rɪˈspektfl ˈkwestʃən/",
+        "meaning": "尊重式问题；不冒犯用户且保留选择权的询问",
+        "example": "The cockpit interface uses respectful question to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“respectful question”来让建议更容易理解。"
+      },
+      {
+        "term": "road closure",
+        "phonetic": "/roʊd ˈkloʊʒər/",
+        "meaning": "道路封闭；道路临时不可通行",
+        "example": "The cockpit interface uses road closure to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“road closure”来让建议更容易理解。"
+      },
+      {
+        "term": "parking rule",
+        "phonetic": "/ˈpɑːrkɪŋ ruːl/",
+        "meaning": "停车规则；停车限制或收费要求",
+        "example": "The cockpit interface uses parking rule to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“parking rule”来让建议更容易理解。"
+      },
+      {
+        "term": "undo",
+        "phonetic": "/ʌnˈduː/",
+        "meaning": "撤销；取消刚刚的选择或操作",
+        "example": "The cockpit interface uses undo to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“undo”来让建议更容易理解。"
+      },
+      {
+        "term": "assistant choice",
+        "phonetic": "/əˈsɪstənt tʃɔɪs/",
+        "meaning": "助手选择；系统替用户建议或预选的选项",
+        "example": "The cockpit interface uses assistant choice to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“assistant choice”来让建议更容易理解。"
+      },
+      {
+        "term": "whole plan",
+        "phonetic": "/hoʊl plæn/",
+        "meaning": "整个计划；完整路线或任务方案",
+        "example": "The cockpit interface uses whole plan to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“whole plan”来让建议更容易理解。"
+      },
+      {
+        "term": "glanceable rationale",
+        "phonetic": "/ˈɡlænsəbl ˌræʃəˈnæl/",
+        "meaning": "可扫视理由；一眼能看懂的建议原因",
+        "example": "The cockpit interface uses glanceable rationale to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“glanceable rationale”来让建议更容易理解。"
+      },
+      {
+        "term": "calibrated trust",
+        "phonetic": "/ˈkælɪbreɪtɪd trʌst/",
+        "meaning": "校准后的信任；用户信任程度与系统真实能力相匹配",
+        "example": "The cockpit interface uses calibrated trust to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“calibrated trust”来让建议更容易理解。"
+      },
+      {
+        "term": "decision boundary",
+        "phonetic": "/dɪˈsɪʒn ˈbaʊndəri/",
+        "meaning": "决策边界；系统可建议但不应越权执行的范围",
+        "example": "The cockpit interface uses decision boundary to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“decision boundary”来让建议更容易理解。"
+      },
+      {
+        "term": "editable premise",
+        "phonetic": "/ˈedɪtəbl ˈpremɪs/",
+        "meaning": "可编辑前提；用户可以修改的系统假设",
+        "example": "The cockpit interface uses editable premise to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“editable premise”来让建议更容易理解。"
+      },
+      {
+        "term": "safety-critical claim",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl kleɪm/",
+        "meaning": "安全关键声明；可能影响驾驶安全的系统判断",
+        "example": "The cockpit interface uses safety-critical claim to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“safety-critical claim”来让建议更容易理解。"
+      },
+      {
+        "term": "plain-language rationale",
+        "phonetic": "/pleɪn ˈlæŋɡwɪdʒ ˌræʃəˈnæl/",
+        "meaning": "通俗理由；不用技术黑话解释建议原因",
+        "example": "The cockpit interface uses plain-language rationale to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“plain-language rationale”来让建议更容易理解。"
+      },
+      {
+        "term": "confidence threshold",
+        "phonetic": "/ˈkɑːnfɪdəns ˈθreʃhoʊld/",
+        "meaning": "置信阈值；系统执行或追问前要求达到的把握程度",
+        "example": "The cockpit interface uses confidence threshold to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“confidence threshold”来让建议更容易理解。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/ˈjuːzər ˈeɪdʒənsi/",
+        "meaning": "用户主导权；用户能理解、选择和改变系统行为的能力",
+        "example": "The cockpit interface uses user agency to keep the recommendation understandable.",
+        "chineseExample": "座舱界面使用“user agency”来让建议更容易理解。"
+      },
+      {
+        "term": "uncertainty-aware",
+        "phonetic": "/ʌnˈsɜːrtnti əˈwer/",
+        "meaning": "不确定性感知的；能表达把握不足的",
+        "example": "The cockpit interface uses uncertainty-aware in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“uncertainty-aware”这个表达。"
+      },
+      {
+        "term": "fully",
+        "phonetic": "/ˈfʊli/",
+        "meaning": "完全地；充分地",
+        "example": "The cockpit interface uses fully in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“fully”这个表达。"
+      },
+      {
+        "term": "trend",
+        "phonetic": "/trend/",
+        "meaning": "趋势；变化方向",
+        "example": "The cockpit interface uses trend in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“trend”这个表达。"
+      },
+      {
+        "term": "line",
+        "phonetic": "/laɪn/",
+        "meaning": "一句话；界面中的一行提示",
+        "example": "The cockpit interface uses line in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“line”这个表达。"
+      },
+      {
+        "term": "driver-confirmed",
+        "phonetic": "/ˈdraɪvər kənˈfɜːrmd/",
+        "meaning": "由驾驶者确认的",
+        "example": "The cockpit interface uses driver-confirmed in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“driver-confirmed”这个表达。"
+      },
+      {
+        "term": "wants",
+        "phonetic": "/wɑːnts/",
+        "meaning": "想要；希望执行",
+        "example": "The cockpit interface uses wants in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“wants”这个表达。"
+      },
+      {
+        "term": "facts",
+        "phonetic": "/fækts/",
+        "meaning": "事实；客观信息",
+        "example": "The cockpit interface uses facts in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“facts”这个表达。"
+      },
+      {
+        "term": "learned",
+        "phonetic": "/lɜːrnd/",
+        "meaning": "学习到的；由历史行为推断的",
+        "example": "The cockpit interface uses learned in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“learned”这个表达。"
+      },
+      {
+        "term": "closures",
+        "phonetic": "/ˈkloʊʒərz/",
+        "meaning": "封闭；道路关闭情况",
+        "example": "The cockpit interface uses closures in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“closures”这个表达。"
+      },
+      {
+        "term": "recently",
+        "phonetic": "/ˈriːsntli/",
+        "meaning": "最近；近期",
+        "example": "The cockpit interface uses recently in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“recently”这个表达。"
+      },
+      {
+        "term": "rebuilding",
+        "phonetic": "/ˌriːˈbɪldɪŋ/",
+        "meaning": "重新构建；重新规划",
+        "example": "The cockpit interface uses rebuilding in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“rebuilding”这个表达。"
+      },
+      {
+        "term": "smoother",
+        "phonetic": "/ˈsmuːðər/",
+        "meaning": "更顺畅的",
+        "example": "The cockpit interface uses smoother in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“smoother”这个表达。"
+      },
+      {
+        "term": "magical",
+        "phonetic": "/ˈmædʒɪkl/",
+        "meaning": "像魔法般的；缺少解释的",
+        "example": "The cockpit interface uses magical in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“magical”这个表达。"
+      },
+      {
+        "term": "knows",
+        "phonetic": "/noʊz/",
+        "meaning": "知道；掌握信息",
+        "example": "The cockpit interface uses knows in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“knows”这个表达。"
+      },
+      {
+        "term": "assumes",
+        "phonetic": "/əˈsuːmz/",
+        "meaning": "假设；基于线索推断",
+        "example": "The cockpit interface uses assumes in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“assumes”这个表达。"
+      },
+      {
+        "term": "building",
+        "phonetic": "/ˈbɪldɪŋ/",
+        "meaning": "正在增加；逐渐形成",
+        "example": "The cockpit interface uses building in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“building”这个表达。"
+      },
+      {
+        "term": "tunnel",
+        "phonetic": "/ˈtʌnl/",
+        "meaning": "隧道",
+        "example": "The cockpit interface uses tunnel in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“tunnel”这个表达。"
+      },
+      {
+        "term": "phrases",
+        "phonetic": "/ˈfreɪzɪz/",
+        "meaning": "短语；表达方式",
+        "example": "The cockpit interface uses phrases in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“phrases”这个表达。"
+      },
+      {
+        "term": "calibrated",
+        "phonetic": "/ˈkælɪbreɪtɪd/",
+        "meaning": "校准的；与真实能力匹配的",
+        "example": "The cockpit interface uses calibrated in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“calibrated”这个表达。"
+      },
+      {
+        "term": "premise",
+        "phonetic": "/ˈpremɪs/",
+        "meaning": "前提；推理或建议的基础",
+        "example": "The cockpit interface uses premise in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“premise”这个表达。"
+      },
+      {
+        "term": "scenic",
+        "phonetic": "/ˈsiːnɪk/",
+        "meaning": "风景优美的",
+        "example": "The cockpit interface uses scenic in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“scenic”这个表达。"
+      },
+      {
+        "term": "child-friendly",
+        "phonetic": "/tʃaɪld ˈfrendli/",
+        "meaning": "适合儿童的",
+        "example": "The cockpit interface uses child-friendly in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“child-friendly”这个表达。"
+      },
+      {
+        "term": "human",
+        "phonetic": "/ˈhjuːmən/",
+        "meaning": "人类的；以人为主的",
+        "example": "The cockpit interface uses human in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“human”这个表达。"
+      },
+      {
+        "term": "invites",
+        "phonetic": "/ɪnˈvaɪts/",
+        "meaning": "邀请；引导用户参与",
+        "example": "The cockpit interface uses invites in the recommendation context.",
+        "chineseExample": "在推荐语境中，座舱界面使用“invites”这个表达。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Explaining uncertain recommendations without slowing the drive",
+        "text": "A generative cockpit assistant can make driving feel smoother, but its recommendations must not sound magical or final. When the assistant suggests a route change, a charging stop, or a quieter cabin mode, the interface should show what the system knows, what it assumes, and how confident it is. A short evidence cue, such as \"traffic is building near the tunnel\" or \"your battery trend is lower than usual,\" gives the driver a reason to listen without forcing a long explanation. If the model is unsure, confidence language matters. Phrases like \"this may help\" or \"I am not fully certain\" keep trust calibrated and invite the driver to confirm the next step. Designers should also make the premise editable: the driver may prefer a scenic road, need a child-friendly stop, or know that a parking rule has changed. A good cockpit does not hide uncertainty; it turns uncertainty into a respectful choice. The safest pattern is a recoverable suggestion: explain the reason, ask before acting, and let the driver undo the assistant choice quickly. This approach keeps AI useful while preserving human agency in the cabin.",
+        "translation": "生成式座舱助手可以让驾驶更顺畅，但它的建议不能听起来像魔法或最终决定。当助手建议改路线、增加充电停靠或切换更安静的座舱模式时，界面应展示系统知道什么、假设什么以及有多大把握。简短的证据提示，比如“隧道附近交通正在变密”或“你的电池趋势低于平常”，能给驾驶者一个愿意听取的理由，而不强迫其阅读冗长解释。如果模型不确定，置信度语言就很重要。“这可能有帮助”或“我并不完全确定”等表达能校准信任，并邀请驾驶者确认下一步。设计师还应让前提可编辑：驾驶者可能更喜欢风景道路，需要适合儿童的停靠点，或知道某条停车规则已经变化。好的座舱不会隐藏不确定性，而是把不确定性转化为尊重用户的选择。最安全的模式是可恢复建议：解释原因，执行前询问，并允许驾驶者快速撤销助手选择。这样既能保持 AI 的有用性，也能保留座舱中的人类主导权。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "When the assistant suggests a route change, the interface should show what the system knows, what it assumes, and how confident it is.",
+        "translation": "当助手建议改变路线时，界面应展示系统知道什么、假设什么以及有多大把握。",
+        "points": [
+          "When 引导时间状语从句，说明触发场景。",
+          "what the system knows / assumes 是并列宾语从句。",
+          "how confident it is 用于表达系统置信度。"
+        ]
+      },
+      {
+        "sentence": "A short evidence cue gives the driver a reason to listen without forcing a long explanation.",
+        "translation": "简短的证据提示给驾驶者一个愿意听取的理由，而不强迫其阅读冗长解释。",
+        "points": [
+          "A short evidence cue 是主语。",
+          "gives the driver a reason 是双宾结构。",
+          "without forcing 表示避免造成额外负担。"
+        ]
+      },
+      {
+        "sentence": "If the model is unsure, confidence language keeps trust calibrated and invites the driver to confirm the next step.",
+        "translation": "如果模型不确定，置信度语言会让信任保持校准，并邀请驾驶者确认下一步。",
+        "points": [
+          "If 引导条件从句。",
+          "keeps trust calibrated 表示让信任与能力匹配。",
+          "invites the driver to confirm 强调用户主导权。"
+        ]
+      },
+      {
+        "sentence": "A good cockpit does not hide uncertainty; it turns uncertainty into a respectful choice.",
+        "translation": "好的座舱不会隐藏不确定性，而是把不确定性转化为尊重用户的选择。",
+        "points": [
+          "分号连接两个紧密相关的完整句。",
+          "does not hide 与 turns into 形成对比。",
+          "respectful choice 强调设计态度。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "task": "朗读 10 个核心词，重点区分 confidence language、evidence cue 和 recoverable suggestion。"
+      },
+      {
+        "title": "跟读长文",
+        "time": "7 分钟",
+        "task": "逐句跟读长文，遇到 uncertainty、assumes、calibrated 时停顿并复述中文含义。"
+      },
+      {
+        "title": "句型替换",
+        "time": "6 分钟",
+        "task": "用 “The assistant suggests..., because..., but asks before...” 造 3 个座舱建议句。"
+      },
+      {
+        "title": "场景输出",
+        "time": "5 分钟",
+        "task": "用英文说明一个低置信度导航建议，必须包含证据提示、确认问题和撤销路径。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: explainable AI in automotive UX",
+        "url": "https://www.youtube.com/results?search_query=explainable+AI+automotive+UX"
+      },
+      {
+        "title": "Suggested search: AI assistant uncertainty design",
+        "url": "https://www.youtube.com/results?search_query=AI+assistant+uncertainty+design"
+      }
+    ]
+  },
+  {
     "id": "2026-09-29-biometric-authentication-and-graceful-lockout",
     "date": "2026-09-29",
     "title": "Biometric authentication and graceful lockout in intelligent cockpits",

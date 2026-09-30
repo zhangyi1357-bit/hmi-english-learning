@@ -1417,6 +1417,13 @@
     "在这句话中，“assistant”可理解为“助手, 助理, 助教；有帮助的, 辅助的, 助理的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "assistant choice": [
+    "/əˈsɪstənt tʃɔɪs/",
+    "助手选择；系统替用户建议或预选的选项",
+    "",
+    "The cockpit interface uses assistant choice to keep the recommendation understandable.",
+    "座舱界面使用“assistant choice”来让建议更容易理解。"
+  ],
   "assisted": [
     "/əˈsɪstɪd/",
     "辅助的；由系统提供部分支持的",
@@ -1430,6 +1437,13 @@
     "",
     "Assisted driving still requires clear driver supervision.",
     "辅助驾驶仍需要清晰的驾驶员监督。"
+  ],
+  "assumes": [
+    "/əˈsuːmz/",
+    "假设；基于线索推断",
+    "",
+    "The cockpit interface uses assumes in the recommendation context.",
+    "在推荐语境中，座舱界面使用“assumes”这个表达。"
   ],
   "assuming": [
     "/əˈsjuːmɪŋ/",
@@ -1445,6 +1459,13 @@
     "",
     "An assumption should be shown before it changes vehicle behavior.",
     "假设在改变车辆行为前应被展示出来。"
+  ],
+  "assumption check": [
+    "/əˈsʌmpʃn tʃek/",
+    "假设核对；在执行前确认系统推断是否符合用户真实意图",
+    "",
+    "An assumption check turns a hidden inference into a quick, respectful question.",
+    "假设核对把隐藏推断变成快速且尊重用户的问题。"
   ],
   "assumptions": [
     "/按语境朗读/",
@@ -1884,6 +1905,13 @@
     "Automation scope should be narrower while the system is still learning preferences.",
     "当系统仍在学习偏好时，自动化范围应更窄。"
   ],
+  "autonomy": [
+    "/ɔːˈtɑːnəmi/",
+    "自主权；用户保持最终决定的能力",
+    "",
+    "The cockpit interface uses autonomy to keep the recommendation understandable.",
+    "座舱界面使用“autonomy”来让建议更容易理解。"
+  ],
   "availability": [
     "/əˌveɪləˈbɪləti/",
     "可用性；资源是否可用的状态",
@@ -2065,6 +2093,13 @@
     "",
     "The cockpit uses battery state to support a safer charging experience.",
     "座舱使用“battery state”来支持更安全的充电体验。"
+  ],
+  "battery trend": [
+    "/ˈbætəri trend/",
+    "电池趋势；电量变化和续航走向",
+    "",
+    "The cockpit interface uses battery trend to keep the recommendation understandable.",
+    "座舱界面使用“battery trend”来让建议更容易理解。"
   ],
   "be": [
     "/bi:/",
@@ -2520,6 +2555,13 @@
     "Build can be understood in the cockpit design context.",
     "在这句话中，“build”可结合座舱设计语境理解。"
   ],
+  "building": [
+    "/ˈbɪldɪŋ/",
+    "正在增加；逐渐形成",
+    "",
+    "The cockpit interface uses building in the recommendation context.",
+    "在推荐语境中，座舱界面使用“building”这个表达。"
+  ],
   "builds": [
     "/bɪldz/",
     "建立；build 的第三人称单数形式",
@@ -2608,6 +2650,13 @@
     "Cabin lighting can shift gradually to avoid surprising the driver.",
     "座舱灯光可以逐步变化，避免让驾驶员感到突然。"
   ],
+  "cabin mode": [
+    "/ˈkæbɪn moʊd/",
+    "座舱模式；车内舒适、隐私或驾驶相关状态组合",
+    "",
+    "The cockpit interface uses cabin mode to keep the recommendation understandable.",
+    "座舱界面使用“cabin mode”来让建议更容易理解。"
+  ],
   "cabin noise": [
     "/ˈkæbɪn nɔɪz/",
     "车内噪声；影响听觉反馈可感知性的声音环境",
@@ -2685,6 +2734,20 @@
     "",
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
+  ],
+  "calibrated": [
+    "/ˈkælɪbreɪtɪd/",
+    "校准的；与真实能力匹配的",
+    "",
+    "The cockpit interface uses calibrated in the recommendation context.",
+    "在推荐语境中，座舱界面使用“calibrated”这个表达。"
+  ],
+  "calibrated trust": [
+    "/ˈkælɪbreɪtɪd trʌst/",
+    "校准后的信任；用户信任程度与系统真实能力相匹配",
+    "",
+    "The cockpit interface uses calibrated trust to keep the recommendation understandable.",
+    "座舱界面使用“calibrated trust”来让建议更容易理解。"
   ],
   "calibrates": [
     "/ˈkælɪbreɪts/",
@@ -3370,6 +3433,13 @@
     "Child safety messages should be direct and free of technical jargon.",
     "儿童安全信息应直接表达，并避免技术术语。"
   ],
+  "child-friendly": [
+    "/tʃaɪld ˈfrendli/",
+    "适合儿童的",
+    "",
+    "The cockpit interface uses child-friendly in the recommendation context.",
+    "在推荐语境中，座舱界面使用“child-friendly”这个表达。"
+  ],
   "chip": [
     "/tʃɪp/",
     "标签；界面中用于显示短状态或属性的小型控件",
@@ -3685,6 +3755,13 @@
     "",
     "A closure should be shown as evidence for a route change.",
     "封路应作为路线变化的证据展示。"
+  ],
+  "closures": [
+    "/ˈkloʊʒərz/",
+    "封闭；道路关闭情况",
+    "",
+    "The cockpit interface uses closures in the recommendation context.",
+    "在推荐语境中，座舱界面使用“closures”这个表达。"
   ],
   "cloud": [
     "/klaud/",
@@ -4351,6 +4428,13 @@
     "",
     "A confidence label should be understandable during a quick glance.",
     "置信度标签应能在快速扫视中理解。"
+  ],
+  "confidence language": [
+    "/ˈkɑːnfɪdəns ˈlæŋɡwɪdʒ/",
+    "置信度语言；用 could、likely、I am not sure 等表达把握程度的措辞",
+    "",
+    "Confidence language helps a cockpit assistant avoid sounding more certain than the data supports.",
+    "置信度语言帮助座舱助手避免听起来比数据支持的程度更确定。"
   ],
   "confidence level": [
     "/ˈkɑːnfɪdəns ˈlevl/",
@@ -5676,6 +5760,13 @@
     "The core decision should be visible first.",
     "核心决策应先可见。"
   ],
+  "decision boundary": [
+    "/dɪˈsɪʒn ˈbaʊndəri/",
+    "决策边界；系统可建议但不应越权执行的范围",
+    "",
+    "The cockpit interface uses decision boundary to keep the recommendation understandable.",
+    "座舱界面使用“decision boundary”来让建议更容易理解。"
+  ],
   "decision burden": [
     "/dɪˈsɪʒn ˈbɜːrdn/",
     "决策负担；用户比较选项并作出选择所需的心理成本",
@@ -6918,6 +7009,20 @@
     "Driver workload should influence how much explanation the assistant gives.",
     "在这句话中，“driver workload”用于描述智能座舱多人语音控制。"
   ],
+  "driver-confirmed": [
+    "/ˈdraɪvər kənˈfɜːrmd/",
+    "由驾驶者确认的",
+    "",
+    "The cockpit interface uses driver-confirmed in the recommendation context.",
+    "在推荐语境中，座舱界面使用“driver-confirmed”这个表达。"
+  ],
+  "driver-confirmed action": [
+    "/ˈdraɪvər kənˈfɜːrmd ˈækʃn/",
+    "驾驶者确认动作；需要驾驶者明确同意后才执行的系统操作",
+    "",
+    "A driver-confirmed action protects autonomy when the assistant wants to change the route or cabin mode.",
+    "当助手想改变路线或座舱模式时，驾驶者确认动作可以保护自主权。"
+  ],
   "driver-critical": [
     "/待补充/",
     "语境词：driver-critical；用于理解今天健康舒适提示主题中的英文表达",
@@ -7193,6 +7298,13 @@
     "During the handoff, task continuity matters: the query, filters, and previous choices should remain visible and editable.",
     "在这句话中，“editable”可理解为“可编辑的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "editable premise": [
+    "/ˈedɪtəbl ˈpremɪs/",
+    "可编辑前提；用户可以修改的系统假设",
+    "",
+    "The cockpit interface uses editable premise to keep the recommendation understandable.",
+    "座舱界面使用“editable premise”来让建议更容易理解。"
   ],
   "editing": [
     "/ˈɛdɪtɪŋ/",
@@ -7645,6 +7757,13 @@
     "Evidence citation helps the driver distinguish a confirmed fact from a model guess.",
     "证据引用帮助驾驶者区分已确认事实和模型猜测。"
   ],
+  "evidence cue": [
+    "/ˈevɪdəns kjuː/",
+    "证据提示；简短展示建议依据的数据、来源或观察结果",
+    "",
+    "An evidence cue can mention traffic density, battery trend, or driver preference in one short line.",
+    "证据提示可以用一句短话说明交通密度、电池趋势或驾驶者偏好。"
+  ],
   "evidence trail": [
     "/ˈevɪdəns treɪl/",
     "证据链；让用户追溯系统结论来自哪些数据、事件或用户偏好的解释路径",
@@ -7946,6 +8065,13 @@
     "Explanation copy should be short enough for a quick glance.",
     "解释文案应足够简短，便于快速扫视。"
   ],
+  "explanation depth": [
+    "/ˌekspləˈneɪʃn depθ/",
+    "解释深度；系统说明原因时从简短提示到详细依据的层级",
+    "",
+    "Explanation depth should expand only when the driver asks for more detail.",
+    "解释深度应只在驾驶者要求更多细节时展开。"
+  ],
   "explanations": [
     "/ˌekspləˈneɪʃnz/",
     "解释；说明原因或机制的内容",
@@ -8090,6 +8216,13 @@
     "",
     "A fact should be separated from a model guess.",
     "事实应与模型猜测区分开。"
+  ],
+  "facts": [
+    "/fækts/",
+    "事实；客观信息",
+    "",
+    "The cockpit interface uses facts in the recommendation context.",
+    "在推荐语境中，座舱界面使用“facts”这个表达。"
   ],
   "fade": [
     "/feɪd/",
@@ -8960,6 +9093,13 @@
     "A full transcript may contain sensitive passenger details.",
     "完整转录可能包含敏感乘客细节。"
   ],
+  "fully": [
+    "/ˈfʊli/",
+    "完全地；充分地",
+    "",
+    "The cockpit interface uses fully in the recommendation context.",
+    "在推荐语境中，座舱界面使用“fully”这个表达。"
+  ],
   "function": [
     "/ˈfʌŋkʃn/",
     "功能；系统能够完成的任务能力",
@@ -9823,6 +9963,13 @@
     "在这句话中，“hidden”可理解为“兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "hidden inference": [
+    "/ˈhɪdn ˈɪnfərəns/",
+    "隐藏推断；系统没有明说的内部判断",
+    "",
+    "The cockpit interface uses hidden inference to keep the recommendation understandable.",
+    "座舱界面使用“hidden inference”来让建议更容易理解。"
+  ],
   "hidden task": [
     "/ˈhɪdn tæsk/",
     "隐藏任务；用户无法立即看见但系统仍在保留或执行的任务",
@@ -10111,6 +10258,13 @@
     "",
     "Hud appears in today's navigation prompt timing lesson.",
     "在这句话中，“hud”来自今天的导航提示时机学习内容。"
+  ],
+  "human": [
+    "/ˈhjuːmən/",
+    "人类的；以人为主的",
+    "",
+    "The cockpit interface uses human in the recommendation context.",
+    "在推荐语境中，座舱界面使用“human”这个表达。"
   ],
   "human factors": [
     "/ˈhjuːmən ˈfæktərz/",
@@ -11016,6 +11170,13 @@
     "A soft pulse can invite the driver to place both hands on the wheel.",
     "轻微脉冲可以提示驾驶员双手握住方向盘。"
   ],
+  "invites": [
+    "/ɪnˈvaɪts/",
+    "邀请；引导用户参与",
+    "",
+    "The cockpit interface uses invites in the recommendation context.",
+    "在推荐语境中，座舱界面使用“invites”这个表达。"
+  ],
   "involved": [
     "/ɪnˈvɑːlvd/",
     "被涉及的；参与某个流程或处理链路的",
@@ -11242,6 +11403,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "knows": [
+    "/noʊz/",
+    "知道；掌握信息",
+    "",
+    "The cockpit interface uses knows in the recommendation context.",
+    "在推荐语境中，座舱界面使用“knows”这个表达。"
   ],
   "label": [
     "/ˈleɪbl/",
@@ -11512,6 +11680,20 @@
     "在这句话中，“learn”可理解为“学习；认识到；得知”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "learned": [
+    "/lɜːrnd/",
+    "学习到的；由历史行为推断的",
+    "",
+    "The cockpit interface uses learned in the recommendation context.",
+    "在推荐语境中，座舱界面使用“learned”这个表达。"
+  ],
+  "learned habit": [
+    "/lɜːrnd ˈhæbɪt/",
+    "学习到的习惯；系统从用户行为中推断的偏好",
+    "",
+    "The cockpit interface uses learned habit to keep the recommendation understandable.",
+    "座舱界面使用“learned habit”来让建议更容易理解。"
+  ],
   "learns": [
     "/lɜːrnz/",
     "学习；系统从用户行为和反馈中改进",
@@ -11728,6 +11910,13 @@
     "",
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“limits”可理解为“限制”。"
+  ],
+  "line": [
+    "/laɪn/",
+    "一句话；界面中的一行提示",
+    "",
+    "The cockpit interface uses line in the recommendation context.",
+    "在推荐语境中，座舱界面使用“line”这个表达。"
   ],
   "linking": [
     "/待补充/",
@@ -12155,6 +12344,13 @@
     "A low-confidence alert can ask the driver to check without sounding severe.",
     "低置信度告警可以要求驾驶员检查，但不必听起来很严重。"
   ],
+  "low-confidence fallback": [
+    "/loʊ ˈkɑːnfɪdəns ˈfɔːlbæk/",
+    "低置信度备用方案；当系统把握不足时采用保守、可确认的替代流程",
+    "",
+    "A low-confidence fallback may ask a clarifying question instead of starting navigation automatically.",
+    "低置信度备用方案可能会先问澄清问题，而不是自动开始导航。"
+  ],
   "low-distraction": [
     "/暂无音标/",
     "低分心",
@@ -12376,6 +12572,13 @@
     "",
     "Background speech made the match uncertain.",
     "背景语音让匹配变得不确定。"
+  ],
+  "magical": [
+    "/ˈmædʒɪkl/",
+    "像魔法般的；缺少解释的",
+    "",
+    "The cockpit interface uses magical in the recommendation context.",
+    "在推荐语境中，座舱界面使用“magical”这个表达。"
   ],
   "main": [
     "/meɪn/",
@@ -13344,6 +13547,13 @@
     "",
     "Low model confidence should trigger a clarification question.",
     "模型置信度低时应触发澄清问题。"
+  ],
+  "model limitation notice": [
+    "/ˈmɑːdl ˌlɪmɪˈteɪʃn ˈnoʊtɪs/",
+    "模型限制提示；说明 AI 可能看不到、不了解或无法保证的内容",
+    "",
+    "A model limitation notice is useful when road closures or parking rules may have changed recently.",
+    "当道路封闭或停车规则最近可能变化时，模型限制提示很有用。"
   ],
   "modern": [
     "/ˈmɑːdərn/",
@@ -14899,6 +15109,13 @@
     "Parking information can move to the center display.",
     "泊车信息可以转移到中控屏。"
   ],
+  "parking rule": [
+    "/ˈpɑːrkɪŋ ruːl/",
+    "停车规则；停车限制或收费要求",
+    "",
+    "The cockpit interface uses parking rule to keep the recommendation understandable.",
+    "座舱界面使用“parking rule”来让建议更容易理解。"
+  ],
   "parking sensor": [
     "/ˈpɑːrkɪŋ ˈsensər/",
     "泊车传感器；用于检测车辆周边障碍物并发出提示的传感器",
@@ -15437,6 +15654,13 @@
     "在这句话中，“phrase”可理解为“惯用语, 词组, 成语, 措词, 乐句；用短语表达, 把(乐曲)分成短句”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "phrases": [
+    "/ˈfreɪzɪz/",
+    "短语；表达方式",
+    "",
+    "The cockpit interface uses phrases in the recommendation context.",
+    "在推荐语境中，座舱界面使用“phrases”这个表达。"
+  ],
   "phrasing": [
     "/ˈfreɪzɪŋ/",
     "措辞；表达方式和句子组织",
@@ -15544,6 +15768,13 @@
     "",
     "Plain-language copy can make a rollback feel manageable.",
     "直白文案可以让回滚显得可控。"
+  ],
+  "plain-language rationale": [
+    "/pleɪn ˈlæŋɡwɪdʒ ˌræʃəˈnæl/",
+    "通俗理由；不用技术黑话解释建议原因",
+    "",
+    "The cockpit interface uses plain-language rationale to keep the recommendation understandable.",
+    "座舱界面使用“plain-language rationale”来让建议更容易理解。"
   ],
   "plain-language reason": [
     "/pleɪn ˈlæŋɡwɪdʒ ˈriːzn/",
@@ -15941,6 +16172,13 @@
     "",
     "Another passenger prefers a fixed view.",
     "在这句话中，“prefers”表示更偏好。"
+  ],
+  "premise": [
+    "/ˈpremɪs/",
+    "前提；推理或建议的基础",
+    "",
+    "The cockpit interface uses premise in the recommendation context.",
+    "在推荐语境中，座舱界面使用“premise”这个表达。"
   ],
   "prepare": [
     "/prɪˈper/",
@@ -17211,6 +17449,13 @@
     "Drivers should not rebuild the mental model while driving.",
     "驾驶员不应在行驶中重新建立心智模型。"
   ],
+  "rebuilding": [
+    "/ˌriːˈbɪldɪŋ/",
+    "重新构建；重新规划",
+    "",
+    "The cockpit interface uses rebuilding in the recommendation context.",
+    "在推荐语境中，座舱界面使用“rebuilding”这个表达。"
+  ],
   "recall": [
     "/rɪˈkɔːl/",
     "名词/动词：召回；重新调用记忆或设置",
@@ -17252,6 +17497,13 @@
     "",
     "A recent choice is stronger evidence than a distant habit.",
     "近期选择比久远习惯更能作为证据。"
+  ],
+  "recently": [
+    "/ˈriːsntli/",
+    "最近；近期",
+    "",
+    "The cockpit interface uses recently in the recommendation context.",
+    "在推荐语境中，座舱界面使用“recently”这个表达。"
   ],
   "recognition": [
     "/.rekәg'niʃәn/",
@@ -17412,6 +17664,13 @@
     "",
     "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
     "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
+  ],
+  "recoverable suggestion": [
+    "/rɪˈkʌvərəbl səɡˈdʒestʃən/",
+    "可恢复建议；用户拒绝、撤销或修改后仍能顺畅继续任务的建议",
+    "",
+    "A recoverable suggestion lets the driver undo the assistant choice without rebuilding the whole plan.",
+    "可恢复建议让驾驶者无需重建整个计划，也能撤销助手的选择。"
   ],
   "recoverable takeover": [
     "/rɪˈkʌvərəbl ˈteɪkoʊvər/",
@@ -18125,6 +18384,13 @@
     "Respectful interaction avoids blaming the passenger for discomfort.",
     "尊重式交互避免把不适归咎于乘客。"
   ],
+  "respectful question": [
+    "/rɪˈspektfl ˈkwestʃən/",
+    "尊重式问题；不冒犯用户且保留选择权的询问",
+    "",
+    "The cockpit interface uses respectful question to keep the recommendation understandable.",
+    "座舱界面使用“respectful question”来让建议更容易理解。"
+  ],
   "respecting": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“respecting”。",
@@ -18664,6 +18930,13 @@
     "Road attention is the main target of the message.",
     "道路注意力是提示的主要目标。"
   ],
+  "road closure": [
+    "/roʊd ˈkloʊʒər/",
+    "道路封闭；道路临时不可通行",
+    "",
+    "The cockpit interface uses road closure to keep the recommendation understandable.",
+    "座舱界面使用“road closure”来让建议更容易理解。"
+  ],
   "road context": [
     "/roʊd ˈkɑːntekst/",
     "道路上下文；道路类型、交通密度、车道环境和周边风险信息",
@@ -19171,6 +19444,13 @@
     "A safety-critical alert should never compete visually with entertainment content.",
     "安全关键提醒不应该在视觉上与娱乐内容竞争。"
   ],
+  "safety-critical claim": [
+    "/ˈseɪfti ˈkrɪtɪkl kleɪm/",
+    "安全关键声明；可能影响驾驶安全的系统判断",
+    "",
+    "The cockpit interface uses safety-critical claim to keep the recommendation understandable.",
+    "座舱界面使用“safety-critical claim”来让建议更容易理解。"
+  ],
   "safety-critical prompt": [
     "/ˈseɪfti ˈkrɪtɪkl prɑːmpt/",
     "安全关键提示；与碰撞风险、接管、路径选择或紧急状态相关的高优先级提示",
@@ -19365,6 +19645,13 @@
     "",
     "Scene appears in today's navigation prompt timing lesson.",
     "在这句话中，“scene”来自今天的导航提示时机学习内容。"
+  ],
+  "scenic": [
+    "/ˈsiːnɪk/",
+    "风景优美的",
+    "",
+    "The cockpit interface uses scenic in the recommendation context.",
+    "在推荐语境中，座舱界面使用“scenic”这个表达。"
   ],
   "schedule": [
     "/ˈskedʒuːl/",
@@ -20738,6 +21025,13 @@
     "",
     "Trust calibration prevents the driver from overtrusting the automation after several smooth trips.",
     "在这句话中，“smooth”表示行程很顺畅。"
+  ],
+  "smoother": [
+    "/ˈsmuːðər/",
+    "更顺畅的",
+    "",
+    "The cockpit interface uses smoother in the recommendation context.",
+    "在推荐语境中，座舱界面使用“smoother”这个表达。"
   ],
   "snapshot": [
     "/按语境朗读/",
@@ -22942,6 +23236,13 @@
     "The interface treats the road as the primary display.",
     "在这句话中，“treats”表示“视为”。"
   ],
+  "trend": [
+    "/trend/",
+    "趋势；变化方向",
+    "",
+    "The cockpit interface uses trend in the recommendation context.",
+    "在推荐语境中，座舱界面使用“trend”这个表达。"
+  ],
   "trigger": [
     "/ˈtɹɪɡəː/",
     "动词：触发器, 扳机；触发, 发射, 引起；松开扳柄",
@@ -23092,6 +23393,13 @@
     "",
     "Focal distance should be tuned for comfortable reading.",
     "在这句话中，“tuned”表示“经过调校的”。"
+  ],
+  "tunnel": [
+    "/ˈtʌnl/",
+    "隧道",
+    "",
+    "The cockpit interface uses tunnel in the recommendation context.",
+    "在推荐语境中，座舱界面使用“tunnel”这个表达。"
   ],
   "turn": [
     "/暂无音标/",
@@ -23272,6 +23580,20 @@
     "",
     "Uncertainty wording should be honest but still actionable for a time-sensitive decision.",
     "不确定性措辞应诚实，同时仍能支持有时限的决策。"
+  ],
+  "uncertainty-aware": [
+    "/ʌnˈsɜːrtnti əˈwer/",
+    "不确定性感知的；能表达把握不足的",
+    "",
+    "The cockpit interface uses uncertainty-aware in the recommendation context.",
+    "在推荐语境中，座舱界面使用“uncertainty-aware”这个表达。"
+  ],
+  "uncertainty-aware recommendation": [
+    "/ʌnˈsɜːrtnti əˈwer ˌrekəmenˈdeɪʃn/",
+    "不确定性感知建议；系统在给出建议时同时表达置信度和限制条件",
+    "",
+    "An uncertainty-aware recommendation tells the driver why the assistant is not fully certain.",
+    "不确定性感知建议会告诉驾驶者为什么助手并非完全确定。"
   ],
   "unclear": [
     "/待查/",
@@ -23788,6 +24110,13 @@
     "",
     "Vehicle behavior should not change because of a hidden resumed task.",
     "车辆行为不应因隐藏的续接任务而变化。"
+  ],
+  "vehicle fact": [
+    "/ˈviːəkl fækt/",
+    "车辆事实；来自车辆状态的客观信息",
+    "",
+    "The cockpit interface uses vehicle fact to keep the recommendation understandable.",
+    "座舱界面使用“vehicle fact”来让建议更容易理解。"
   ],
   "vehicle horn": [
     "/ˈviːəkl hɔːrn/",
@@ -24324,6 +24653,13 @@
     "在这句话中，“want”可理解为“想要”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "wants": [
+    "/wɑːnts/",
+    "想要；希望执行",
+    "",
+    "The cockpit interface uses wants in the recommendation context.",
+    "在推荐语境中，座舱界面使用“wants”这个表达。"
+  ],
   "warm": [
     "/wɔːrm/",
     "温暖的；温度偏高的",
@@ -24568,6 +24904,13 @@
     "Good error recovery gives the driver a simple way to correct the destination without restarting the whole flow.",
     "在这句话中，“whole”可理解为“全部, 全体, 整体, 完全之体系；所有的, 完整的, 完全的, 纯粹的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "whole plan": [
+    "/hoʊl plæn/",
+    "整个计划；完整路线或任务方案",
+    "",
+    "The cockpit interface uses whole plan to keep the recommendation understandable.",
+    "座舱界面使用“whole plan”来让建议更容易理解。"
   ],
   "whole route": [
     "/hoʊl ruːt/",
