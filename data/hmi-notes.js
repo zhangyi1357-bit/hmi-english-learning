@@ -1,5 +1,955 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-01-transparent-automation-user-veto",
+    "date": "2026-10-01",
+    "title": "Transparent automation and user veto design in intelligent cockpits",
+    "topic": "智能座舱透明自动化与用户否决权设计",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在自动调节、路线变更或隐私相关动作前，清楚说明意图、范围、倒计时和用户否决入口，让自动化既高效又可控。",
+    "words": [
+      {
+        "term": "transparent automation",
+        "phonetic": "/trænsˈpærənt ˌɔːtəˈmeɪʃn/",
+        "meaning": "透明自动化；系统在自动执行前说明动作、原因、范围和用户选择",
+        "example": "Transparent automation tells the driver what will change, why it will change, and how to stop it.",
+        "chineseExample": "透明自动化会告诉驾驶者什么将改变、为什么改变，以及如何停止。"
+      },
+      {
+        "term": "user veto",
+        "phonetic": "/ˈjuːzər ˈviːtoʊ/",
+        "meaning": "用户否决权；用户快速阻止、取消或覆盖系统自动动作的能力",
+        "example": "A user veto is meaningful only when the cancel action is visible before the automation starts.",
+        "chineseExample": "只有在自动化开始前取消动作可见，用户否决权才有意义。"
+      },
+      {
+        "term": "pre-action preview",
+        "phonetic": "/priː ˈækʃn ˈpriːvjuː/",
+        "meaning": "执行前预览；自动动作执行前展示将发生的具体变化",
+        "example": "The pre-action preview should name the cabin mode, affected settings, and remaining countdown window.",
+        "chineseExample": "执行前预览应说明座舱模式、受影响设置和剩余倒计时窗口。"
+      },
+      {
+        "term": "scope boundary",
+        "phonetic": "/skoʊp ˈbaʊndəri/",
+        "meaning": "范围边界；明确自动化会影响和不会影响哪些功能",
+        "example": "A scope boundary prevents a comfort suggestion from sounding like a full vehicle takeover.",
+        "chineseExample": "范围边界能避免舒适建议听起来像完整车辆接管。"
+      },
+      {
+        "term": "glance-safe veto",
+        "phonetic": "/ɡlæns seɪf ˈviːtoʊ/",
+        "meaning": "低扫视否决；驾驶中无需长时间看屏即可完成的否决动作",
+        "example": "A glance-safe veto uses a stable cancel target, short wording, and optional voice control.",
+        "chineseExample": "低扫视否决使用稳定取消目标、短措辞和可选语音控制。"
+      },
+      {
+        "term": "automation receipt",
+        "phonetic": "/ˌɔːtəˈmeɪʃn rɪˈsiːt/",
+        "meaning": "自动化回执；动作完成后说明系统做了什么并提供撤销入口",
+        "example": "An automation receipt helps the driver review a cabin change without opening a settings menu.",
+        "chineseExample": "自动化回执帮助驾驶者无需打开设置菜单也能查看座舱变化。"
+      },
+      {
+        "term": "consent checkpoint",
+        "phonetic": "/kənˈsent ˈtʃekpɔɪnt/",
+        "meaning": "同意检查点；执行敏感或高影响动作前的确认环节",
+        "example": "A consent checkpoint is required when automation touches identity, payment, or location sharing.",
+        "chineseExample": "当自动化涉及身份、支付或位置共享时，需要同意检查点。"
+      },
+      {
+        "term": "confirmation burden",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃn ˈbɜːrdn/",
+        "meaning": "确认负担；频繁确认给用户带来的认知和操作成本",
+        "example": "Designers should reduce confirmation burden for low-risk comfort actions but keep strong consent for high-risk actions.",
+        "chineseExample": "设计师应降低低风险舒适动作的确认负担，但保留高风险动作的强同意。"
+      },
+      {
+        "term": "manual fallback",
+        "phonetic": "/ˈmænjuəl ˈfɔːlbæk/",
+        "meaning": "手动回退；自动化失败、取消或被拒绝后回到用户手动控制",
+        "example": "Manual fallback reassures the driver that automation is helpful, not compulsory.",
+        "chineseExample": "手动回退让驾驶者相信自动化是帮助性的，而不是强制性的。"
+      },
+      {
+        "term": "automation surprise",
+        "phonetic": "/ˌɔːtəˈmeɪʃn sərˈpraɪz/",
+        "meaning": "自动化惊讶感；系统突然动作导致用户困惑或不适",
+        "example": "Automation surprise usually means the system hid its intent until it was too late to intervene.",
+        "chineseExample": "自动化惊讶感通常意味着系统隐藏意图，直到用户来不及介入。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "transparent automation",
+        "phonetic": "/transparent automation/",
+        "meaning": "透明自动化；系统清楚说明将要自动执行什么以及为什么",
+        "example": "Transparent automation shows the planned action before the cabin changes state.",
+        "chineseExample": "透明自动化会在座舱改变状态前展示计划动作。"
+      },
+      {
+        "term": "user veto",
+        "phonetic": "/user veto/",
+        "meaning": "用户否决权；用户可快速阻止、取消或覆盖系统自动动作的能力",
+        "example": "A clear user veto keeps automation from feeling forced.",
+        "chineseExample": "清晰的用户否决权能避免自动化显得强迫。"
+      },
+      {
+        "term": "automation intent",
+        "phonetic": "/automation intent/",
+        "meaning": "自动化意图；系统准备执行某个动作的目的或理由",
+        "example": "The automation intent should be visible before the assistant acts.",
+        "chineseExample": "助手行动前，应让自动化意图可见。"
+      },
+      {
+        "term": "scope boundary",
+        "phonetic": "/scope boundary/",
+        "meaning": "范围边界；自动化动作可以影响哪些功能、不可影响哪些功能",
+        "example": "A scope boundary tells the driver which settings will remain unchanged.",
+        "chineseExample": "范围边界告诉驾驶者哪些设置不会改变。"
+      },
+      {
+        "term": "veto affordance",
+        "phonetic": "/veto affordance/",
+        "meaning": "否决可供性；让用户一眼看到并易于触发的取消或阻止入口",
+        "example": "The veto affordance must be reachable without a long visual search.",
+        "chineseExample": "否决可供性必须无需长时间视觉搜索即可触达。"
+      },
+      {
+        "term": "hold-to-cancel control",
+        "phonetic": "/hold-to-cancel control/",
+        "meaning": "长按取消控件；通过持续按压防止误触的取消方式",
+        "example": "A hold-to-cancel control can protect critical actions from accidental taps.",
+        "chineseExample": "长按取消控件可以防止关键动作被误触取消。"
+      },
+      {
+        "term": "pre-action preview",
+        "phonetic": "/pre-action preview/",
+        "meaning": "执行前预览；在系统执行前展示即将改变的内容",
+        "example": "A pre-action preview gives users time to correct a wrong assumption.",
+        "chineseExample": "执行前预览让用户有时间纠正错误假设。"
+      },
+      {
+        "term": "countdown window",
+        "phonetic": "/countdown window/",
+        "meaning": "倒计时窗口；自动动作执行前留给用户反应的短时间段",
+        "example": "The countdown window should match the urgency of the driving context.",
+        "chineseExample": "倒计时窗口应匹配驾驶场景的紧急程度。"
+      },
+      {
+        "term": "override path",
+        "phonetic": "/override path/",
+        "meaning": "覆盖路径；用户接管或改写系统动作的流程",
+        "example": "The override path should remain simple when the vehicle is moving.",
+        "chineseExample": "车辆行驶时，覆盖路径应保持简单。"
+      },
+      {
+        "term": "manual fallback",
+        "phonetic": "/manual fallback/",
+        "meaning": "手动回退；自动化失败或被拒绝后回到用户手动控制",
+        "example": "Manual fallback reassures drivers that they are still in control.",
+        "chineseExample": "手动回退让驾驶者相信自己仍掌控局面。"
+      },
+      {
+        "term": "explainable automation",
+        "phonetic": "/explainable automation/",
+        "meaning": "可解释自动化；自动行为能用简洁语言说明理由",
+        "example": "Explainable automation builds trust only when the reason is specific.",
+        "chineseExample": "只有理由具体时，可解释自动化才会建立信任。"
+      },
+      {
+        "term": "driver authority",
+        "phonetic": "/driver authority/",
+        "meaning": "驾驶者主导权；驾驶者对车辆和座舱关键动作的最终控制权",
+        "example": "Driver authority is preserved when the system asks before changing a safety-related setting.",
+        "chineseExample": "系统在改变安全相关设置前询问，可以保留驾驶者主导权。"
+      },
+      {
+        "term": "consent checkpoint",
+        "phonetic": "/consent checkpoint/",
+        "meaning": "同意检查点；执行敏感或高影响动作前的确认环节",
+        "example": "A consent checkpoint is useful before sharing location or changing payment details.",
+        "chineseExample": "在共享位置或更改支付信息前，同意检查点很有用。"
+      },
+      {
+        "term": "silent automation",
+        "phonetic": "/silent automation/",
+        "meaning": "静默自动化；系统在不明显提示用户的情况下自动执行",
+        "example": "Silent automation is risky when the action affects comfort, privacy, or safety.",
+        "chineseExample": "当动作影响舒适、隐私或安全时，静默自动化有风险。"
+      },
+      {
+        "term": "status banner",
+        "phonetic": "/status banner/",
+        "meaning": "状态横幅；用短文本显示自动化当前状态的界面区域",
+        "example": "A status banner can say that seat ventilation will start in ten seconds.",
+        "chineseExample": "状态横幅可以说明座椅通风将在十秒后启动。"
+      },
+      {
+        "term": "interruptible flow",
+        "phonetic": "/interruptible flow/",
+        "meaning": "可中断流程；用户可在过程中暂停、取消或修改的交互流程",
+        "example": "An interruptible flow lets the driver stop automation without losing the destination.",
+        "chineseExample": "可中断流程让驾驶者停止自动化而不丢失目的地。"
+      },
+      {
+        "term": "reversible automation",
+        "phonetic": "/reversible automation/",
+        "meaning": "可撤销自动化；执行后仍能恢复到先前状态的自动动作",
+        "example": "Reversible automation is easier to accept than a one-way decision.",
+        "chineseExample": "可撤销自动化比单向决定更容易被接受。"
+      },
+      {
+        "term": "confirmation burden",
+        "phonetic": "/confirmation burden/",
+        "meaning": "确认负担；系统要求用户确认造成的认知和操作成本",
+        "example": "Too many prompts increase confirmation burden and reduce trust.",
+        "chineseExample": "过多提示会增加确认负担并降低信任。"
+      },
+      {
+        "term": "glance-safe veto",
+        "phonetic": "/glance-safe veto/",
+        "meaning": "低扫视否决；驾驶中无需长时间看屏即可完成的否决动作",
+        "example": "A glance-safe veto uses large targets and plain wording.",
+        "chineseExample": "低扫视否决使用大触控目标和清晰措辞。"
+      },
+      {
+        "term": "automation receipt",
+        "phonetic": "/automation receipt/",
+        "meaning": "自动化回执；动作完成后说明系统做了什么和如何撤销",
+        "example": "An automation receipt should include a short undo option.",
+        "chineseExample": "自动化回执应包含简短的撤销选项。"
+      },
+      {
+        "term": "intent banner",
+        "phonetic": "/intent banner/",
+        "meaning": "意图横幅；显示系统即将执行动作及原因的提示条",
+        "example": "The intent banner should separate the reason from the command.",
+        "chineseExample": "意图横幅应把理由和命令分开。"
+      },
+      {
+        "term": "driver veto",
+        "phonetic": "/driver veto/",
+        "meaning": "驾驶者否决；驾驶者阻止系统建议或自动动作",
+        "example": "Driver veto must work even when the assistant believes its choice is optimal.",
+        "chineseExample": "即使助手认为选择最优，驾驶者否决也必须有效。"
+      },
+      {
+        "term": "automation transparency",
+        "phonetic": "/automation transparency/",
+        "meaning": "自动化透明度；用户理解系统状态、依据和后果的程度",
+        "example": "Automation transparency reduces surprise during cabin adjustments.",
+        "chineseExample": "自动化透明度减少座舱调节中的意外感。"
+      },
+      {
+        "term": "action preview",
+        "phonetic": "/action preview/",
+        "meaning": "动作预览；展示将发生的具体变化",
+        "example": "The action preview names the exact setting and target value.",
+        "chineseExample": "动作预览会说明确切设置和目标值。"
+      },
+      {
+        "term": "cancel target",
+        "phonetic": "/cancel target/",
+        "meaning": "取消目标；用于停止动作的可点击或可说控件",
+        "example": "The cancel target should be visually stable during the countdown.",
+        "chineseExample": "倒计时时，取消目标应视觉稳定。"
+      },
+      {
+        "term": "voice veto",
+        "phonetic": "/voice veto/",
+        "meaning": "语音否决；通过语音命令阻止系统动作",
+        "example": "A voice veto such as 'stop that' should map to the current automation.",
+        "chineseExample": "“停止这个”等语音否决应映射到当前自动化。"
+      },
+      {
+        "term": "gesture veto",
+        "phonetic": "/gesture veto/",
+        "meaning": "手势否决；通过手势取消或拒绝系统动作",
+        "example": "A gesture veto can help when speech recognition is unreliable.",
+        "chineseExample": "当语音识别不可靠时，手势否决很有帮助。"
+      },
+      {
+        "term": "touch veto",
+        "phonetic": "/touch veto/",
+        "meaning": "触控否决；通过屏幕或物理按键取消动作",
+        "example": "A touch veto needs a large hit area in a moving vehicle.",
+        "chineseExample": "移动车辆中的触控否决需要较大的点击区域。"
+      },
+      {
+        "term": "fallback state",
+        "phonetic": "/fallback state/",
+        "meaning": "回退状态；取消或失败后系统返回的安全状态",
+        "example": "The fallback state should be predictable and easy to explain.",
+        "chineseExample": "回退状态应可预测且易解释。"
+      },
+      {
+        "term": "decision window",
+        "phonetic": "/decision window/",
+        "meaning": "决策窗口；用户可接受、拒绝或修改建议的时间",
+        "example": "The decision window becomes shorter when the event is urgent.",
+        "chineseExample": "事件越紧急，决策窗口越短。"
+      },
+      {
+        "term": "automation queue",
+        "phonetic": "/automation queue/",
+        "meaning": "自动化队列；系统等待执行的一组自动动作",
+        "example": "The automation queue should not hide high-impact changes.",
+        "chineseExample": "自动化队列不应隐藏高影响改变。"
+      },
+      {
+        "term": "high-impact action",
+        "phonetic": "/high-impact action/",
+        "meaning": "高影响动作；会显著影响安全、隐私、路线或费用的动作",
+        "example": "A high-impact action requires stronger confirmation than a comfort tweak.",
+        "chineseExample": "高影响动作比舒适微调需要更强确认。"
+      },
+      {
+        "term": "comfort tweak",
+        "phonetic": "/comfort tweak/",
+        "meaning": "舒适微调；对温度、通风、座椅等舒适功能的小幅调整",
+        "example": "A comfort tweak can use a lightweight preview instead of a modal dialog.",
+        "chineseExample": "舒适微调可使用轻量预览，而不是模态弹窗。"
+      },
+      {
+        "term": "modal prompt",
+        "phonetic": "/modal prompt/",
+        "meaning": "模态提示；需要用户处理后才能继续的强打断提示",
+        "example": "A modal prompt should be reserved for decisions that cannot wait.",
+        "chineseExample": "模态提示应保留给不能等待的决定。"
+      },
+      {
+        "term": "ambient prompt",
+        "phonetic": "/ambient prompt/",
+        "meaning": "环境式提示；用灯光、声音或轻量视觉状态提示用户",
+        "example": "An ambient prompt can announce automation without stealing attention.",
+        "chineseExample": "环境式提示可以告知自动化而不夺走注意力。"
+      },
+      {
+        "term": "attention cost",
+        "phonetic": "/attention cost/",
+        "meaning": "注意力成本；理解或处理提示需要占用的注意力资源",
+        "example": "The attention cost of a veto should be lower than the cost of fixing the result.",
+        "chineseExample": "否决的注意力成本应低于事后修正结果的成本。"
+      },
+      {
+        "term": "driving context",
+        "phonetic": "/driving context/",
+        "meaning": "驾驶情境；速度、道路、交通和驾驶负荷等实时条件",
+        "example": "The driving context determines whether the system should wait or act.",
+        "chineseExample": "驾驶情境决定系统应等待还是行动。"
+      },
+      {
+        "term": "road complexity",
+        "phonetic": "/road complexity/",
+        "meaning": "道路复杂度；交叉口、车道、交通参与者等造成的场景难度",
+        "example": "High road complexity calls for shorter messages and fewer choices.",
+        "chineseExample": "高道路复杂度需要更短信息和更少选择。"
+      },
+      {
+        "term": "user agency",
+        "phonetic": "/user agency/",
+        "meaning": "用户能动性；用户理解、决定并改变系统行为的能力",
+        "example": "User agency increases when automation has a visible exit.",
+        "chineseExample": "当自动化有可见退出口时，用户能动性会增强。"
+      },
+      {
+        "term": "system initiative",
+        "phonetic": "/system initiative/",
+        "meaning": "系统主动性；系统先提出或执行动作的程度",
+        "example": "System initiative should rise only when the benefit is clear.",
+        "chineseExample": "只有收益明确时，系统主动性才应提高。"
+      },
+      {
+        "term": "context trigger",
+        "phonetic": "/context trigger/",
+        "meaning": "情境触发器；使自动化开始的条件或事件",
+        "example": "A context trigger can be rain, low battery, or repeated cabin behavior.",
+        "chineseExample": "情境触发器可以是下雨、低电量或重复的座舱行为。"
+      },
+      {
+        "term": "automation rationale",
+        "phonetic": "/automation rationale/",
+        "meaning": "自动化理由；解释系统为什么建议或执行动作的简短依据",
+        "example": "The automation rationale should mention the trigger and expected benefit.",
+        "chineseExample": "自动化理由应说明触发条件和预期收益。"
+      },
+      {
+        "term": "expected benefit",
+        "phonetic": "/expected benefit/",
+        "meaning": "预期收益；自动动作希望带来的安全、舒适或效率改善",
+        "example": "The expected benefit must be concrete enough for a driver to judge.",
+        "chineseExample": "预期收益必须足够具体，便于驾驶者判断。"
+      },
+      {
+        "term": "possible downside",
+        "phonetic": "/possible downside/",
+        "meaning": "可能缺点；自动动作可能带来的不便、风险或误判",
+        "example": "A possible downside helps users make an informed veto decision.",
+        "chineseExample": "可能缺点帮助用户做出知情否决决定。"
+      },
+      {
+        "term": "undo option",
+        "phonetic": "/undo option/",
+        "meaning": "撤销选项；执行后快速恢复前一状态的入口",
+        "example": "The undo option should stay available long enough to notice the outcome.",
+        "chineseExample": "撤销选项应保留足够长时间，让用户看到结果。"
+      },
+      {
+        "term": "state change",
+        "phonetic": "/state change/",
+        "meaning": "状态变化；系统设置、模式或任务进度的改变",
+        "example": "Every visible state change should have a plain-language label.",
+        "chineseExample": "每个可见状态变化都应有通俗标签。"
+      },
+      {
+        "term": "cabin mode",
+        "phonetic": "/cabin mode/",
+        "meaning": "座舱模式；座舱在驾驶、休息、娱乐等场景下的组合状态",
+        "example": "Cabin mode changes should be previewed before lighting and seat settings move together.",
+        "chineseExample": "灯光和座椅设置联动前，应预览座舱模式变化。"
+      },
+      {
+        "term": "seat ventilation",
+        "phonetic": "/seat ventilation/",
+        "meaning": "座椅通风；通过座椅空气流动改善舒适性的功能",
+        "example": "Seat ventilation is a low-risk automation when the user can stop it quickly.",
+        "chineseExample": "如果用户能快速停止，座椅通风属于低风险自动化。"
+      },
+      {
+        "term": "climate adjustment",
+        "phonetic": "/climate adjustment/",
+        "meaning": "空调调节；改变温度、风量或出风模式的动作",
+        "example": "A climate adjustment can be automated after repeated manual corrections.",
+        "chineseExample": "多次手动修正后，可以自动化空调调节。"
+      },
+      {
+        "term": "route change",
+        "phonetic": "/route change/",
+        "meaning": "路线变更；导航路径发生改变",
+        "example": "A route change needs a stronger preview than a climate adjustment.",
+        "chineseExample": "路线变更比空调调节需要更强预览。"
+      },
+      {
+        "term": "privacy-sensitive action",
+        "phonetic": "/privacy-sensitive action/",
+        "meaning": "隐私敏感动作；涉及位置、身份、联系人或个人习惯的动作",
+        "example": "A privacy-sensitive action should never be silent.",
+        "chineseExample": "隐私敏感动作绝不应静默执行。"
+      },
+      {
+        "term": "safety-related setting",
+        "phonetic": "/safety-related setting/",
+        "meaning": "安全相关设置；可能影响驾驶安全或法规合规的功能设置",
+        "example": "A safety-related setting requires clear authority and traceable confirmation.",
+        "chineseExample": "安全相关设置需要清晰权限和可追踪确认。"
+      },
+      {
+        "term": "traceable confirmation",
+        "phonetic": "/traceable confirmation/",
+        "meaning": "可追踪确认；可在记录中说明谁确认了什么动作",
+        "example": "Traceable confirmation matters for payment and shared vehicle scenarios.",
+        "chineseExample": "可追踪确认对支付和共享车辆场景很重要。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/shared vehicle/",
+        "meaning": "共享车辆；由多个用户或家庭成员共同使用的车辆",
+        "example": "A shared vehicle needs visible profile and consent boundaries.",
+        "chineseExample": "共享车辆需要可见的账号和同意边界。"
+      },
+      {
+        "term": "profile boundary",
+        "phonetic": "/profile boundary/",
+        "meaning": "档案边界；不同用户偏好和权限之间的分隔",
+        "example": "A profile boundary prevents one driver's automation from surprising another driver.",
+        "chineseExample": "档案边界防止一个驾驶者的自动化设置影响另一个驾驶者。"
+      },
+      {
+        "term": "permission scope",
+        "phonetic": "/permission scope/",
+        "meaning": "权限范围；用户授权系统可访问或改变的内容范围",
+        "example": "Permission scope should be shown before automation uses personal data.",
+        "chineseExample": "自动化使用个人数据前应展示权限范围。"
+      },
+      {
+        "term": "sensitive data",
+        "phonetic": "/sensitive data/",
+        "meaning": "敏感数据；身份、位置、支付或生物识别等需保护的数据",
+        "example": "Sensitive data requires a stronger consent checkpoint.",
+        "chineseExample": "敏感数据需要更强的同意检查点。"
+      },
+      {
+        "term": "event log",
+        "phonetic": "/event log/",
+        "meaning": "事件日志；记录系统动作、触发条件和用户选择的列表",
+        "example": "An event log helps explain why the cabin changed mode.",
+        "chineseExample": "事件日志有助于解释座舱为何改变模式。"
+      },
+      {
+        "term": "plain wording",
+        "phonetic": "/plain wording/",
+        "meaning": "清晰措辞；避免技术黑话、便于快速理解的文字",
+        "example": "Plain wording is essential in a moving cockpit.",
+        "chineseExample": "清晰措辞在移动座舱中至关重要。"
+      },
+      {
+        "term": "short label",
+        "phonetic": "/short label/",
+        "meaning": "短标签；用几个词概括动作或状态的界面文字",
+        "example": "A short label should name the action, not the algorithm.",
+        "chineseExample": "短标签应命名动作，而不是命名算法。"
+      },
+      {
+        "term": "specific reason",
+        "phonetic": "/specific reason/",
+        "meaning": "具体原因；可验证、与当前情境直接相关的解释",
+        "example": "A specific reason is better than saying the system optimized the experience.",
+        "chineseExample": "具体原因比说系统优化了体验更好。"
+      },
+      {
+        "term": "current automation",
+        "phonetic": "/current automation/",
+        "meaning": "当前自动化；正在准备、倒计时或执行中的系统动作",
+        "example": "The current automation should be easy to identify before a voice veto.",
+        "chineseExample": "语音否决前，应容易识别当前自动化。"
+      },
+      {
+        "term": "user correction",
+        "phonetic": "/user correction/",
+        "meaning": "用户修正；用户对系统假设、建议或动作的修改",
+        "example": "User correction should update future automation cautiously.",
+        "chineseExample": "用户修正应谨慎地更新未来自动化。"
+      },
+      {
+        "term": "future automation",
+        "phonetic": "/future automation/",
+        "meaning": "未来自动化；之后可能由系统主动执行的动作",
+        "example": "Future automation should remember the rule only with user consent.",
+        "chineseExample": "未来自动化只有在用户同意后才应记住规则。"
+      },
+      {
+        "term": "learning rule",
+        "phonetic": "/learning rule/",
+        "meaning": "学习规则；系统从用户行为中形成的自动化条件",
+        "example": "A learning rule should be editable and easy to delete.",
+        "chineseExample": "学习规则应可编辑且易删除。"
+      },
+      {
+        "term": "editable rule",
+        "phonetic": "/editable rule/",
+        "meaning": "可编辑规则；用户能查看并修改的自动化规则",
+        "example": "An editable rule makes personalization feel controllable.",
+        "chineseExample": "可编辑规则让个性化更可控。"
+      },
+      {
+        "term": "delete rule",
+        "phonetic": "/delete rule/",
+        "meaning": "删除规则；移除自动化学习结果的操作",
+        "example": "A delete rule option matters when a borrowed car learns the wrong habit.",
+        "chineseExample": "当借用车辆学习了错误习惯时，删除规则选项很重要。"
+      },
+      {
+        "term": "borrowed car",
+        "phonetic": "/borrowed car/",
+        "meaning": "借用车辆；临时由非主要用户驾驶的车辆",
+        "example": "A borrowed car should ask before saving a new automation preference.",
+        "chineseExample": "借用车辆在保存新自动化偏好前应询问。"
+      },
+      {
+        "term": "family account",
+        "phonetic": "/family account/",
+        "meaning": "家庭账号；多个家庭成员共享车辆服务的账号结构",
+        "example": "A family account needs clear ownership of automation rules.",
+        "chineseExample": "家庭账号需要清楚说明自动化规则归属。"
+      },
+      {
+        "term": "ownership cue",
+        "phonetic": "/ownership cue/",
+        "meaning": "归属提示；说明某个规则、设置或数据属于谁的提示",
+        "example": "An ownership cue can prevent confusion in family vehicles.",
+        "chineseExample": "归属提示可以防止家庭车辆中的混淆。"
+      },
+      {
+        "term": "critical moment",
+        "phonetic": "/critical moment/",
+        "meaning": "关键时刻；驾驶任务负荷较高或风险较高的瞬间",
+        "example": "At a critical moment, automation should reduce choices instead of adding them.",
+        "chineseExample": "在关键时刻，自动化应减少选择，而不是增加选择。"
+      },
+      {
+        "term": "visual hierarchy",
+        "phonetic": "/visual hierarchy/",
+        "meaning": "视觉层级；通过大小、位置和对比组织信息优先级",
+        "example": "Visual hierarchy should make the veto more visible than secondary details.",
+        "chineseExample": "视觉层级应让否决入口比次要细节更明显。"
+      },
+      {
+        "term": "secondary detail",
+        "phonetic": "/secondary detail/",
+        "meaning": "次要细节；当前不必立即处理的补充信息",
+        "example": "Secondary detail can wait until the vehicle is stopped.",
+        "chineseExample": "次要细节可以等车辆停止后再显示。"
+      },
+      {
+        "term": "safety guardrail",
+        "phonetic": "/safety guardrail/",
+        "meaning": "安全护栏；防止系统或用户操作造成风险的限制",
+        "example": "A safety guardrail may block automation during complex maneuvers.",
+        "chineseExample": "安全护栏可能会在复杂操作中阻止自动化。"
+      },
+      {
+        "term": "complex maneuver",
+        "phonetic": "/complex maneuver/",
+        "meaning": "复杂操作；并线、转弯、泊车等需要高注意力的驾驶动作",
+        "example": "A complex maneuver is a poor time for a long confirmation prompt.",
+        "chineseExample": "复杂操作时不适合出现长确认提示。"
+      },
+      {
+        "term": "minimal prompt",
+        "phonetic": "/minimal prompt/",
+        "meaning": "最小提示；只包含必要动作、原因和选择的提示",
+        "example": "A minimal prompt can reduce attention cost.",
+        "chineseExample": "最小提示可以降低注意力成本。"
+      },
+      {
+        "term": "automation surprise",
+        "phonetic": "/automation surprise/",
+        "meaning": "自动化惊讶感；用户对系统突然动作产生的不适或困惑",
+        "example": "Automation surprise often means the preview arrived too late.",
+        "chineseExample": "自动化惊讶感通常意味着预览出现得太晚。"
+      },
+      {
+        "term": "late preview",
+        "phonetic": "/late preview/",
+        "meaning": "过晚预览；在用户几乎无法反应时才提示即将执行的动作",
+        "example": "A late preview weakens the value of the veto.",
+        "chineseExample": "过晚预览会削弱否决权的价值。"
+      },
+      {
+        "term": "early preview",
+        "phonetic": "/early preview/",
+        "meaning": "提前预览；在执行前足够早提示系统动作",
+        "example": "An early preview gives the user a realistic chance to intervene.",
+        "chineseExample": "提前预览给用户真实介入机会。"
+      },
+      {
+        "term": "intervene",
+        "phonetic": "/intervene/",
+        "meaning": "介入；用户打断、修改或接管系统动作",
+        "example": "Drivers should be able to intervene without hunting through menus.",
+        "chineseExample": "驾驶者应能介入，而不必在菜单中寻找入口。"
+      },
+      {
+        "term": "hunting",
+        "phonetic": "/hunting/",
+        "meaning": "费力寻找；为了找到控件而在界面中反复搜索",
+        "example": "Hunting for a cancel control is unsafe while driving.",
+        "chineseExample": "驾驶中费力寻找取消控件是不安全的。"
+      },
+      {
+        "term": "plain-language label",
+        "phonetic": "/plain-language label/",
+        "meaning": "通俗语言标签；不用专业术语描述状态或动作的标签",
+        "example": "A plain-language label can say 'Cooling seat soon' instead of a technical rule name.",
+        "chineseExample": "通俗语言标签可以写“即将开启座椅降温”，而不是技术规则名。"
+      },
+      {
+        "term": "safe default",
+        "phonetic": "/safe default/",
+        "meaning": "安全默认值；在不确定或无回应时采用的保守选择",
+        "example": "A safe default should avoid high-impact changes.",
+        "chineseExample": "安全默认值应避免高影响改变。"
+      },
+      {
+        "term": "no response",
+        "phonetic": "/no response/",
+        "meaning": "无回应；用户没有在决策窗口内做出选择",
+        "example": "No response should not be treated as consent for sensitive actions.",
+        "chineseExample": "对敏感动作而言，无回应不应视为同意。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/explicit consent/",
+        "meaning": "明确同意；用户清楚表达允许系统执行动作",
+        "example": "Explicit consent is necessary for payment, sharing, or identity actions.",
+        "chineseExample": "支付、共享或身份动作需要明确同意。"
+      },
+      {
+        "term": "implicit consent",
+        "phonetic": "/implicit consent/",
+        "meaning": "默示同意；系统根据行为推断用户同意",
+        "example": "Implicit consent is acceptable only for low-risk comfort actions.",
+        "chineseExample": "默示同意只适合低风险舒适动作。"
+      },
+      {
+        "term": "low-risk action",
+        "phonetic": "/low-risk action/",
+        "meaning": "低风险动作；容易撤销且影响较小的动作",
+        "example": "A low-risk action can use a smaller prompt.",
+        "chineseExample": "低风险动作可使用更轻量提示。"
+      },
+      {
+        "term": "high-risk action",
+        "phonetic": "/high-risk action/",
+        "meaning": "高风险动作；难撤销或可能影响安全、隐私、费用的动作",
+        "example": "A high-risk action needs explicit consent.",
+        "chineseExample": "高风险动作需要明确同意。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/driver workload/",
+        "meaning": "驾驶者负荷；驾驶者当前承受的信息、操作和注意压力",
+        "example": "Driver workload should shape how much automation detail appears.",
+        "chineseExample": "驾驶者负荷应影响自动化细节的展示量。"
+      },
+      {
+        "term": "information density",
+        "phonetic": "/information density/",
+        "meaning": "信息密度；单位界面区域内的信息量",
+        "example": "Information density should drop when workload rises.",
+        "chineseExample": "负荷上升时，信息密度应下降。"
+      },
+      {
+        "term": "progress indicator",
+        "phonetic": "/progress indicator/",
+        "meaning": "进度指示器；显示自动化准备、倒计时或完成进度的控件",
+        "example": "A progress indicator helps users understand how much time remains.",
+        "chineseExample": "进度指示器帮助用户理解剩余时间。"
+      },
+      {
+        "term": "completion message",
+        "phonetic": "/completion message/",
+        "meaning": "完成消息；动作完成后展示的简短状态说明",
+        "example": "A completion message should include the new state and undo option.",
+        "chineseExample": "完成消息应包含新状态和撤销选项。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trust calibration/",
+        "meaning": "信任校准；让用户对系统能力和限制形成准确预期",
+        "example": "Trust calibration depends on clear limits as much as clear benefits.",
+        "chineseExample": "信任校准既依赖清晰收益，也依赖清晰限制。"
+      },
+      {
+        "term": "capability limit",
+        "phonetic": "/capability limit/",
+        "meaning": "能力限制；系统无法可靠完成或判断的边界",
+        "example": "A capability limit should be stated before automation becomes risky.",
+        "chineseExample": "在自动化变得有风险前，应说明能力限制。"
+      },
+      {
+        "term": "automation policy",
+        "phonetic": "/automation policy/",
+        "meaning": "自动化策略；决定系统何时建议、等待或执行的规则",
+        "example": "An automation policy should be understandable to non-expert users.",
+        "chineseExample": "自动化策略应能被非专业用户理解。"
+      },
+      {
+        "term": "non-expert user",
+        "phonetic": "/non-expert user/",
+        "meaning": "非专业用户；不具备专业背景的普通用户",
+        "example": "A non-expert user needs outcome-focused wording.",
+        "chineseExample": "非专业用户需要以结果为中心的措辞。"
+      },
+      {
+        "term": "outcome-focused wording",
+        "phonetic": "/outcome-focused wording/",
+        "meaning": "结果导向措辞；直接说明用户会看到或感受到什么变化",
+        "example": "Outcome-focused wording is better than naming internal models.",
+        "chineseExample": "结果导向措辞比命名内部模型更好。"
+      },
+      {
+        "term": "internal model",
+        "phonetic": "/internal model/",
+        "meaning": "内部模型；系统内部用于预测或决策的算法模型",
+        "example": "The internal model can stay hidden if the user sees the practical result.",
+        "chineseExample": "如果用户看到实际结果，内部模型可以不展示。"
+      },
+      {
+        "term": "veto",
+        "phonetic": "/veto/",
+        "meaning": "否决；拒绝或阻止某个系统动作",
+        "example": "The driver can veto the automation before it starts.",
+        "chineseExample": "驾驶者可以在自动化开始前否决该动作。"
+      },
+      {
+        "term": "pre-action",
+        "phonetic": "/pre-action/",
+        "meaning": "执行前的；发生在动作执行之前的",
+        "example": "A pre-action message gives the user time to respond.",
+        "chineseExample": "执行前消息给用户回应时间。"
+      },
+      {
+        "term": "burden",
+        "phonetic": "/burden/",
+        "meaning": "负担；额外的认知或操作成本",
+        "example": "A long prompt can add burden during driving.",
+        "chineseExample": "长提示会在驾驶中增加负担。"
+      },
+      {
+        "term": "reassures",
+        "phonetic": "/reassures/",
+        "meaning": "使放心；让用户确信系统仍可控",
+        "example": "Manual fallback reassures the driver after a failed automation.",
+        "chineseExample": "手动回退会在自动化失败后让驾驶者放心。"
+      },
+      {
+        "term": "compulsory",
+        "phonetic": "/compulsory/",
+        "meaning": "强制性的；必须接受的",
+        "example": "Automation should feel helpful, not compulsory.",
+        "chineseExample": "自动化应让人感觉是帮助性的，而不是强制性的。"
+      },
+      {
+        "term": "hid",
+        "phonetic": "/hid/",
+        "meaning": "隐藏了；hide 的过去式",
+        "example": "The system hid its intent until the prompt appeared.",
+        "chineseExample": "系统一直隐藏意图，直到提示出现。"
+      },
+      {
+        "term": "cooling",
+        "phonetic": "/cooling/",
+        "meaning": "降温；冷却",
+        "example": "Cooling the seat can improve comfort in a hot cabin.",
+        "chineseExample": "为座椅降温可以改善炎热座舱中的舒适性。"
+      },
+      {
+        "term": "rising",
+        "phonetic": "/rising/",
+        "meaning": "上升的；正在增加的",
+        "example": "Rising cabin temperature can trigger a comfort suggestion.",
+        "chineseExample": "上升的座舱温度可以触发舒适建议。"
+      },
+      {
+        "term": "realistic",
+        "phonetic": "/realistic/",
+        "meaning": "现实可行的；符合真实使用条件的",
+        "example": "A realistic decision window gives the driver enough time.",
+        "chineseExample": "现实可行的决策窗口给驾驶者足够时间。"
+      },
+      {
+        "term": "tweaks",
+        "phonetic": "/tweaks/",
+        "meaning": "微调；小幅修改",
+        "example": "Small comfort tweaks should be easy to undo.",
+        "chineseExample": "小的舒适微调应容易撤销。"
+      },
+      {
+        "term": "implicit",
+        "phonetic": "/implicit/",
+        "meaning": "隐含的；未直接明说但可推断的",
+        "example": "Implicit consent is unsuitable for sensitive actions.",
+        "chineseExample": "默示同意不适合敏感动作。"
+      },
+      {
+        "term": "tweak",
+        "phonetic": "/tweak/",
+        "meaning": "微调；小幅修改",
+        "example": "A reversible tweak can use a lightweight prompt.",
+        "chineseExample": "可撤销微调可以使用轻量提示。"
+      },
+      {
+        "term": "judge",
+        "phonetic": "/judge/",
+        "meaning": "判断；评估某事是否合适",
+        "example": "The driver needs enough information to judge the automation.",
+        "chineseExample": "驾驶者需要足够信息来判断自动化。"
+      },
+      {
+        "term": "downside",
+        "phonetic": "/downside/",
+        "meaning": "缺点；潜在不利影响",
+        "example": "A possible downside should be visible before a route change.",
+        "chineseExample": "路线变更前应显示可能缺点。"
+      },
+      {
+        "term": "obedience",
+        "phonetic": "/obedience/",
+        "meaning": "服从；无条件执行命令",
+        "example": "Good automation is not silent obedience.",
+        "chineseExample": "好的自动化不是静默服从。"
+      },
+      {
+        "term": "cooperation",
+        "phonetic": "/cooperation/",
+        "meaning": "协作；系统与用户共同完成任务",
+        "example": "Visible cooperation keeps the driver involved.",
+        "chineseExample": "可见协作让驾驶者保持参与。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing automation that drivers can stop",
+        "text": "Transparent automation in an intelligent cockpit should never feel like a hidden takeover. When the cabin assistant wants to start seat ventilation, change the route, or apply a learned climate adjustment, the interface should show the automation intent, the expected benefit, and the scope boundary before the state change happens. A short intent banner can say, \"Cooling the seat soon because cabin temperature is rising,\" while a countdown window gives the driver a realistic chance to intervene. The veto affordance must be glance-safe: a stable cancel target, a voice veto such as \"stop that,\" and a manual fallback if the driver gives no response. Designers also need to separate low-risk comfort tweaks from high-impact actions. Implicit consent may be acceptable for a reversible comfort tweak, but explicit consent is necessary for payment, location sharing, identity confirmation, or a route change with safety consequences. After the action, an automation receipt should explain what changed and provide an undo option. This pattern reduces automation surprise because the driver can see the trigger, judge the possible downside, and keep authority without fighting the system. Good automation is not silent obedience; it is visible cooperation.",
+        "translation": "智能座舱中的透明自动化不应让人感觉像隐藏的接管。当座舱助手想要开启座椅通风、改变路线或应用学习到的空调调节时，界面应在状态变化发生前展示自动化意图、预期收益和范围边界。简短的意图横幅可以写“座舱温度正在上升，即将为座椅降温”，同时倒计时窗口给驾驶者真实的介入机会。否决入口必须低扫视：稳定的取消目标、“停止这个”这样的语音否决，以及用户无回应时的手动回退。设计师还需要区分低风险舒适微调和高影响动作。对于可撤销的舒适微调，默示同意也许可以接受；但支付、位置共享、身份确认或带来安全后果的路线变更需要明确同意。动作完成后，自动化回执应解释改变了什么并提供撤销选项。这种模式能减少自动化惊讶感，因为驾驶者可以看到触发条件、判断可能缺点，并在不对抗系统的情况下保持主导权。好的自动化不是静默服从，而是可见协作。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Transparent automation tells the driver what will change, why it will change, and how to stop it.",
+        "translation": "透明自动化会告诉驾驶者什么将改变、为什么改变，以及如何停止。",
+        "points": [
+          "what will change / why it will change / how to stop it 是三个并列宾语从句。",
+          "stop it 指停止当前自动化动作，而不是关闭整个系统。"
+        ]
+      },
+      {
+        "sentence": "The veto affordance must be glance-safe: a stable cancel target, a voice veto such as \"stop that,\" and a manual fallback if the driver gives no response.",
+        "translation": "否决可供性必须是低扫视的：稳定取消目标、例如“停止这个”的语音否决，以及驾驶者无回应时的手动回退。",
+        "points": [
+          "glance-safe 用于说明驾驶中低视觉负荷的交互设计。",
+          "such as 引出语音命令示例；if 引导无回应条件。"
+        ]
+      },
+      {
+        "sentence": "Implicit consent may be acceptable for a reversible comfort tweak, but explicit consent is necessary for payment, location sharing, identity confirmation, or a route change with safety consequences.",
+        "translation": "对于可撤销的舒适微调，默示同意也许可以接受；但支付、位置共享、身份确认或带来安全后果的路线变更需要明确同意。",
+        "points": [
+          "may be acceptable 表示有条件的可接受，而不是绝对允许。",
+          "but explicit consent is necessary 强调高风险动作的确认要求。"
+        ]
+      },
+      {
+        "sentence": "Good automation is not silent obedience; it is visible cooperation.",
+        "translation": "好的自动化不是静默服从，而是可见协作。",
+        "points": [
+          "not A; it is B 是适合设计评审的对比句式。",
+          "visible cooperation 强调系统主动性与用户主导权的平衡。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "task": "朗读 transparent automation、user veto、pre-action preview、glance-safe veto，并用中文说出每个词的设计含义。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "task": "跟读长文两遍，重点练习 what will change, why it will change, and how to stop it 这一类三段式说明。"
+      },
+      {
+        "title": "设计改写",
+        "time": "6 分钟",
+        "task": "把一句模糊提示改写成英文透明自动化提示，例如从 The system will optimize comfort 改成 Cooling the seat soon because cabin temperature is rising. Tap cancel to stop."
+      },
+      {
+        "title": "场景口述",
+        "time": "5 分钟",
+        "task": "用 4 句英文说明一个路线变更自动化：触发条件、预期收益、可能缺点、用户否决入口。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Today's speaking focus",
+        "url": "",
+        "note": "围绕 intent, boundary, veto, fallback 四个关键词进行口语复述；本课不依赖外部视频。"
+      }
+    ]
+  },
+  {
     "id": "2026-09-30-uncertainty-aware-ai-recommendations",
     "date": "2026-09-30",
     "title": "Uncertainty-aware AI recommendations in intelligent cockpits",
