@@ -349,6 +349,13 @@
     "Active assistance should be paired with transparent control.",
     "主动辅助应搭配透明控制。"
   ],
+  "active call": [
+    "/active call/",
+    "进行中的通话",
+    "",
+    "An active call lowers the tolerance for extra speech.",
+    "在这句话中，“active call”可理解为“进行中的通话”。"
+  ],
   "active seat zone": [
     "/ˈæktɪv siːt zoʊn/",
     "活跃座位区域；当前正在说话或被系统响应的座位区域",
@@ -461,6 +468,13 @@
     "",
     "Adaptive simplification can hide nonessential controls when the vehicle enters heavy urban traffic.",
     "自适应简化可以在车辆进入拥堵城市交通时隐藏非必要控件。"
+  ],
+  "adaptive timing": [
+    "/adaptive timing/",
+    "自适应时机",
+    "",
+    "Adaptive timing makes the same message feel respectful.",
+    "在这句话中，“adaptive timing”可理解为“自适应时机”。"
   ],
   "adapts": [
     "/əˈdæpts/",
@@ -778,6 +792,13 @@
     "Alert fatigue increases when every service message uses the same visual weight as a safety warning.",
     "当每条服务消息都使用和安全警告一样的视觉重量时，告警疲劳会增加。"
   ],
+  "alert style": [
+    "/alert style/",
+    "警示样式",
+    "",
+    "The alert style changes from speech to a subtle icon.",
+    "在这句话中，“alert style”可理解为“警示样式”。"
+  ],
   "alerts": [
     "/ә'lә:t/",
     "动词：警觉的, 灵敏的, 留心的；警报；使警觉, 通知, 使意识到",
@@ -887,6 +908,13 @@
     "",
     "Alternative routes should wait until the driver can compare them safely.",
     "备选路线应等到驾驶员能安全比较时再显示。"
+  ],
+  "always": [
+    "/always/",
+    "始终；总是",
+    "",
+    "Safety-critical warnings should always override quiet mode.",
+    "在这句话中，“always”可理解为“始终；总是”。"
   ],
   "am": [
     "/æm/",
@@ -1609,6 +1637,13 @@
     "Attention support should be the purpose of affective cockpit features.",
     "注意力支持应是情感座舱功能的目的。"
   ],
+  "attention window": [
+    "/əˈtenʃn ˈwɪndoʊ/",
+    "注意力窗口；用户适合接收、判断或操作信息的短时间段",
+    "",
+    "The assistant waits for a safer attention window before showing a subscription renewal message.",
+    "助手会等待更安全的注意力窗口，再展示订阅续费信息。"
+  ],
   "attention-aware": [
     "/əˈtenʃn əˈwer/",
     "注意力感知的；能够根据注意状态调整交互的",
@@ -1693,6 +1728,13 @@
     "",
     "The cockpit uses audit trail to make privacy decisions easier to understand.",
     "座舱使用“audit trail”让隐私决策更容易理解。"
+  ],
+  "auditable": [
+    "/auditable/",
+    "可审计的；可追溯的",
+    "",
+    "Auditable quiet mode shows what was delayed.",
+    "在这句话中，“auditable”可理解为“可审计的；可追溯的”。"
   ],
   "auditory": [
     "/'ɒ:ditәri/",
@@ -1863,6 +1905,13 @@
     "Automatic execution belongs only inside a narrow permission scope.",
     "自动执行只应发生在狭窄的许可范围内。"
   ],
+  "automatic expiry": [
+    "/automatic expiry/",
+    "自动到期",
+    "",
+    "Automatic expiry prevents the cabin from staying quiet forever.",
+    "在这句话中，“automatic expiry”可理解为“自动到期”。"
+  ],
   "automatic restart": [
     "/ˌɔːtəˈmætɪk ˈriːstɑːrt/",
     "自动重启；无需用户确认就恢复任务或动作",
@@ -2026,6 +2075,13 @@
     "在这句话中，“avoid”可理解为“避免, 防止, 撤消”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "avoidable distraction": [
+    "/avoidable distraction/",
+    "可避免分心",
+    "",
+    "Quiet mode removes avoidable distraction.",
+    "在这句话中，“avoidable distraction”可理解为“可避免分心”。"
+  ],
   "avoids": [
     "/əˈvɔɪdz/",
     "避免；avoid 的第三人称单数形式",
@@ -2178,6 +2234,13 @@
     "Interaction cost should be low for functions that drivers use during motion.",
     "在这句话中，“be”可理解为“是, 表示, 在”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "became": [
+    "/became/",
+    "变得；成为",
+    "",
+    "The notification became visible again after the call.",
+    "在这句话中，“became”可理解为“变得；成为”。"
   ],
   "because": [
     "/bi'kɒ:z/",
@@ -2675,6 +2738,13 @@
     "If confidence drops, it should name the reason: colder weather, a faster highway segment, a busy charger, or a recent change in the driver's speed.",
     "在这句话中，“busy”可理解为“繁忙的；资源占用较高的”。"
   ],
+  "busy junction": [
+    "/busy junction/",
+    "繁忙路口",
+    "",
+    "A busy junction leaves little room for secondary messages.",
+    "在这句话中，“busy junction”可理解为“繁忙路口”。"
+  ],
   "but": [
     "/bət/",
     "而；然而；只有；尽管如此；除了；除…之外；只有；仅仅；借口；托辞；对(某人)讲“但是”(以示反对,拒绝等)；不过；而是",
@@ -2705,6 +2775,20 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“cabin”可理解为“小屋, 客舱；关在小屋”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "cabin assistant": [
+    "/cabin assistant/",
+    "座舱助手",
+    "",
+    "The cabin assistant chooses when to speak.",
+    "在这句话中，“cabin assistant”可理解为“座舱助手”。"
+  ],
+  "cabin audio": [
+    "/cabin audio/",
+    "座舱音频",
+    "",
+    "Cabin audio helps detect an ongoing conversation.",
+    "在这句话中，“cabin audio”可理解为“座舱音频”。"
   ],
   "cabin camera": [
     "/ˈkæbɪn ˈkæmərə/",
@@ -3424,6 +3508,13 @@
     "The interface should compare the charging detour cost with the risk of arriving with a low battery.",
     "界面应比较充电绕行成本与低电量抵达风险。"
   ],
+  "charging offer": [
+    "/charging offer/",
+    "充电优惠",
+    "",
+    "A charging offer can move to the review tray.",
+    "在这句话中，“charging offer”可理解为“充电优惠”。"
+  ],
   "charging plan": [
     "/ˈtʃɑːrdʒɪŋ plæn/",
     "充电计划；关于补能时间、地点和顺序的安排",
@@ -3516,6 +3607,13 @@
     "",
     "Child lock status should be considered before accepting a rear-seat command.",
     "在这句话中，“child lock”用于描述智能座舱多人语音控制。"
+  ],
+  "child passenger": [
+    "/child passenger/",
+    "儿童乘员",
+    "",
+    "A child passenger context may change reminder timing.",
+    "在这句话中，“child passenger”可理解为“儿童乘员”。"
   ],
   "child presence detection": [
     "/tʃaɪld ˈprezns dɪˈtekʃn/",
@@ -4210,6 +4308,13 @@
     "A comfort profile should be easy to reset after a shared vehicle trip.",
     "共享车辆行程后，舒适档案应易于重置。"
   ],
+  "comfort reminder": [
+    "/comfort reminder/",
+    "舒适提醒",
+    "",
+    "A comfort reminder can be downgraded during a call.",
+    "在这句话中，“comfort reminder”可理解为“舒适提醒”。"
+  ],
   "comfort setting": [
     "/ˈkʌmfərt ˈsetɪŋ/",
     "舒适性设置；温度、座椅、氛围灯等体验类配置",
@@ -4525,6 +4630,13 @@
     "",
     "Conditions may improve after the curve.",
     "在这句话中，“conditions”指情境条件。"
+  ],
+  "conditions improve": [
+    "/conditions improve/",
+    "条件改善",
+    "",
+    "The prompt returns when conditions improve.",
+    "在这句话中，“conditions improve”可理解为“条件改善”。"
   ],
   "confidence": [
     "/'kɒnfidәns/",
@@ -5110,6 +5222,13 @@
     "A context-aware interface can reduce visual demand when the vehicle enters a complex junction.",
     "当车辆进入复杂路口时，情境感知界面可以降低视觉负担。"
   ],
+  "context-aware quiet mode": [
+    "/ˈkɑːntekst əˈwer ˈkwaɪət moʊd/",
+    "情境感知静音模式；系统根据驾驶、乘员和环境状态临时降低提示打扰",
+    "",
+    "Context-aware quiet mode reduces non-urgent prompts when the driver is taking a phone call.",
+    "当驾驶者正在接电话时，情境感知静音模式会减少非紧急提示。"
+  ],
   "context-aware timing": [
     "/ˈkɑːntekst əˈwer ˈtaɪmɪŋ/",
     "情境感知时机；根据道路、速度、任务和用户状态选择通知呈现时间",
@@ -5593,6 +5712,13 @@
     "在这句话中，“critical”可理解为“批评的, 决定性的, 危险的, 临界的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "critical alert": [
+    "/critical alert/",
+    "关键警报",
+    "",
+    "A critical alert overrides suppression rules.",
+    "在这句话中，“critical alert”可理解为“关键警报”。"
+  ],
   "critical control": [
     "/ˈkrɪtɪkl kənˈtroʊl/",
     "关键控制；与安全、驾驶或基础舒适直接相关的控制项",
@@ -6064,6 +6190,13 @@
     "The cockpit uses the word defaults in privacy prompts when it fits the user context.",
     "在隐私提示中，“defaults”可结合用户场景理解。"
   ],
+  "defer": [
+    "/defer/",
+    "延后；推迟",
+    "",
+    "The assistant can defer a message without deleting it.",
+    "在这句话中，“defer”可理解为“延后；推迟”。"
+  ],
   "deferrable": [
     "/dɪˈfɜːrəbl/",
     "可延后的；不必立即处理的",
@@ -6113,6 +6246,13 @@
     "",
     "A deferred update should return at a better time, not during a complex merge.",
     "延后更新应在更合适的时间返回，而不是在复杂并线时出现。"
+  ],
+  "defers": [
+    "/defers/",
+    "延后；推迟",
+    "",
+    "The system defers non-urgent prompts during a maneuver.",
+    "在这句话中，“defers”可理解为“延后；推迟”。"
   ],
   "define": [
     "/dɪˈfaɪn/",
@@ -6194,6 +6334,13 @@
     "在这句话中，“delayed”可理解为“耽搁, 迟滞；耽搁, 延迟”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "delayed prompt": [
+    "/delayed prompt/",
+    "延后提示",
+    "",
+    "A delayed prompt should show its reason.",
+    "在这句话中，“delayed prompt”可理解为“延后提示”。"
+  ],
   "delete": [
     "/dɪˈliːt/",
     "动词：删除",
@@ -6223,6 +6370,13 @@
     "A delete rule option matters when a borrowed car learns the wrong habit.",
     "当借用车辆学习了错误习惯时，删除规则选项很重要。"
   ],
+  "deleting": [
+    "/deleting/",
+    "删除；移除",
+    "",
+    "A recoverable prompt avoids deleting useful information.",
+    "在这句话中，“deleting”可理解为“删除；移除”。"
+  ],
   "deletion": [
     "/dɪˈliːʃn/",
     "删除；移除已保存的数据或授权",
@@ -6244,6 +6398,13 @@
     "",
     "A demanding drive calls for simpler interface behavior.",
     "高要求驾驶需要更简单的界面行为。"
+  ],
+  "demanding maneuver": [
+    "/demanding maneuver/",
+    "高负荷操作",
+    "",
+    "A demanding maneuver is not the right time for marketing.",
+    "在这句话中，“demanding maneuver”可理解为“高负荷操作”。"
   ],
   "democratic": [
     "/ˌdeməˈkrætɪk/",
@@ -6701,6 +6862,13 @@
     "Low-priority controls can disappear during riskier moments.",
     "低优先级控件可以在高风险时刻暂时消失。"
   ],
+  "disappeared": [
+    "/disappeared/",
+    "消失了",
+    "",
+    "Recoverable prompts reduce the fear that information disappeared.",
+    "在这句话中，“disappeared”可理解为“消失了”。"
+  ],
   "disappears": [
     "/ˌdɪsəˈpɪrz/",
     "消失；不再存在或不再可见",
@@ -6944,6 +7112,13 @@
     "",
     "Turn it down may refer to volume or temperature.",
     "“调低一点”可能指音量或温度。"
+  ],
+  "downgrade": [
+    "/downgrade/",
+    "降级；降低强度",
+    "",
+    "The system may downgrade a promotional message.",
+    "在这句话中，“downgrade”可理解为“降级；降低强度”。"
   ],
   "download": [
     "/暂无音标/",
@@ -7652,6 +7827,13 @@
     "Ending can be understood in the cockpit design context.",
     "在这句话中，“ending”可结合座舱设计语境理解。"
   ],
+  "ends": [
+    "/ends/",
+    "结束",
+    "",
+    "The resumption cue appears after the call ends.",
+    "在这句话中，“ends”可理解为“结束”。"
+  ],
   "energy": [
     "/ˈenərdʒi/",
     "能量；车辆电池电量或消耗能力",
@@ -8024,6 +8206,20 @@
     "If response latency exceeds a defined threshold, the cockpit can add another signal.",
     "如果响应延迟超过已定义阈值，座舱可以加入另一种信号。"
   ],
+  "exception": [
+    "/exception/",
+    "例外",
+    "",
+    "Each suppression rule needs an exception for urgent warnings.",
+    "在这句话中，“exception”可理解为“例外”。"
+  ],
+  "exception rule": [
+    "/exception rule/",
+    "例外规则",
+    "",
+    "An exception rule lets urgent warnings interrupt quiet mode.",
+    "在这句话中，“exception rule”可理解为“例外规则”。"
+  ],
   "execute": [
     "/ˈeksɪkjuːt/",
     "执行；系统开始完成已确认的操作",
@@ -8175,6 +8371,13 @@
     "在这句话中，“experience”可理解为“经历, 经验, 体验；经历, 经验, 体验”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "expire": [
+    "/expire/",
+    "到期；结束",
+    "",
+    "Quiet mode should expire after the call.",
+    "在这句话中，“expire”可理解为“到期；结束”。"
+  ],
   "explain": [
     "/ik'splein/",
     "动词：解释, 说明",
@@ -8245,6 +8448,13 @@
     "",
     "An explainable pause reduces frustration when the system delays a task.",
     "当系统延后任务时，可解释暂停会减少挫败感。"
+  ],
+  "explainable quiet mode": [
+    "/explainable quiet mode/",
+    "可解释静音模式",
+    "",
+    "Explainable quiet mode tells users what changed.",
+    "在这句话中，“explainable quiet mode”可理解为“可解释静音模式”。"
   ],
   "explainable reason": [
     "/ɪkˈspleɪnəbl ˈriːzn/",
@@ -10170,6 +10380,20 @@
     "Height appears in today's seat memory profile lesson.",
     "在这句话中，“height”来自今天的座椅记忆档案学习内容。"
   ],
+  "held": [
+    "/held/",
+    "被保留；被暂缓",
+    "",
+    "The receipt explains which prompts were held back.",
+    "在这句话中，“held”可理解为“被保留；被暂缓”。"
+  ],
+  "held back": [
+    "/held back/",
+    "被暂缓",
+    "",
+    "The message was held back because attention demand was high.",
+    "在这句话中，“held back”可理解为“被暂缓”。"
+  ],
   "help": [
     "/help/",
     "动词：帮忙, 帮助者, 补救办法, 有益的东西；帮助, 帮忙, 接济, 治疗, 款待；有用, 救命, 招待",
@@ -11405,6 +11629,13 @@
     "在这句话中，“interruption”可理解为“打扰, 中断, 障碍物”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "interruption budget": [
+    "/ˌɪntəˈrʌpʃn ˈbʌdʒɪt/",
+    "打扰预算；在特定驾驶场景中允许系统占用用户注意力的限度",
+    "",
+    "The interruption budget should shrink during complex merges, school zones, and voice calls.",
+    "在复杂并线、学校区域和语音通话中，打扰预算应缩小。"
+  ],
   "interruption hierarchy": [
     "/ˌɪntəˈrʌpʃn ˈhaɪərɑːrki/",
     "中断层级；根据安全性、紧急性和上下文安排打断优先级的规则",
@@ -12622,6 +12853,13 @@
     "A quiet banner may be enough for a temporary loss.",
     "对于暂时丢失，低打断横幅可能足够。"
   ],
+  "lost": [
+    "/lost/",
+    "丢失的",
+    "",
+    "The receipt reassures users that alerts were not lost.",
+    "在这句话中，“lost”可理解为“丢失的”。"
+  ],
   "loud": [
     "/laʊd/",
     "响亮的；声音强度高的",
@@ -12814,6 +13052,13 @@
     "Context-aware timing prevents a low-priority media suggestion from appearing during lane guidance.",
     "在这句话中，“low-priority”可理解为“un. 低优先级；次要；低优先性；低紧要性”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "low-priority reminder": [
+    "/low-priority reminder/",
+    "低优先级提醒",
+    "",
+    "A low-priority reminder should not interrupt a difficult merge.",
+    "在这句话中，“low-priority reminder”可理解为“低优先级提醒”。"
   ],
   "low-priority task": [
     "/loʊ praɪˈɔːrəti tæsk/",
@@ -13506,6 +13751,13 @@
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
+  "merges": [
+    "/merges/",
+    "并线；汇入车流",
+    "",
+    "Complex merges require the interface to stay quiet.",
+    "在这句话中，“merges”可理解为“并线；汇入车流”。"
+  ],
   "merging": [
     "/mә:dʒ/",
     "动词：使合并, 使消失, 吞没；合并, 渐渐消失",
@@ -13528,6 +13780,13 @@
     "",
     "Message hierarchy should put immediate safety information above comfort advice.",
     "信息层级应把即时安全信息置于舒适性建议之上。"
+  ],
+  "message queue": [
+    "/message queue/",
+    "消息队列",
+    "",
+    "The message queue orders reminders by risk and timing.",
+    "在这句话中，“message queue”可理解为“消息队列”。"
   ],
   "message tone": [
     "/ˈmesɪdʒ toʊn/",
@@ -14198,6 +14457,20 @@
     "在这句话中，“must”可理解为“必须, 未发酵葡萄汁, 绝对必要的事物；aux. 必须”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "mute": [
+    "/mute/",
+    "静音；降低声音提示",
+    "",
+    "The system can mute a reminder during a phone call.",
+    "在这句话中，“mute”可理解为“静音；降低声音提示”。"
+  ],
+  "muted alert": [
+    "/muted alert/",
+    "静音警报",
+    "",
+    "A muted alert still needs a trace in the interface.",
+    "在这句话中，“muted alert”可理解为“静音警报”。"
+  ],
   "my": [
     "/maɪ/",
     "我的；指用户个人授权或个人数据",
@@ -14211,6 +14484,13 @@
     "",
     "The word mysterious appears in today's cockpit summary practice.",
     "在这个语境中，“mysterious”可理解为“神秘的”。"
+  ],
+  "mystery": [
+    "/mystery/",
+    "谜团；难以理解的状态",
+    "",
+    "Clear logic keeps automation from feeling like a mystery.",
+    "在这句话中，“mystery”可理解为“谜团；难以理解的状态”。"
   ],
   "name": [
     "/neɪm/",
@@ -14362,6 +14642,13 @@
     "",
     "Navigation style should adapt to both driver focus and passenger needs.",
     "导航风格应同时适配驾驶者专注度和乘客需求。"
+  ],
+  "navigation update": [
+    "/navigation update/",
+    "导航更新",
+    "",
+    "A navigation update can wait if the next turn is far away.",
+    "在这句话中，“navigation update”可理解为“导航更新”。"
   ],
   "navigation view": [
     "/ˌnævɪˈɡeɪʃn vjuː/",
@@ -14612,6 +14899,13 @@
     "在这句话中，“non-urgent”可理解为“不急；非急迫”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "non-urgent prompt": [
+    "/non-urgent prompt/",
+    "非紧急提示",
+    "",
+    "A non-urgent prompt can wait until the maneuver is complete.",
+    "在这句话中，“non-urgent prompt”可理解为“非紧急提示”。"
+  ],
   "non-urgent suggestion": [
     "/nɑːn ˈɜːrdʒənt səˈdʒestʃən/",
     "非紧急建议；不会影响即时安全、可以延后呈现的建议",
@@ -14719,6 +15013,13 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“not”可理解为“不, 非, 未”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "not lost": [
+    "/not lost/",
+    "没有丢失",
+    "",
+    "The receipt shows that important alerts were not lost.",
+    "在这句话中，“not lost”可理解为“没有丢失”。"
   ],
   "note": [
     "/暂无音标/",
@@ -16296,6 +16597,13 @@
     "在这句话中，“polite”可理解为“有礼貌的, 文雅的, 客气的, 有教养的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "pop-up": [
+    "/pop-up/",
+    "弹窗",
+    "",
+    "A pop-up can become a status icon during dense traffic.",
+    "在这句话中，“pop-up”可理解为“弹窗”。"
+  ],
   "pose": [
     "/待查/",
     "姿态；身体或头部朝向状态",
@@ -16664,6 +16972,13 @@
     "在这句话中，“present”可理解为“现在, 礼品, 瞄准；现在的, 出席的；介绍, 引见, 赠送, 提出, 呈现, 上演；举枪瞄准”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "presentation strength": [
+    "/presentation strength/",
+    "呈现强度",
+    "",
+    "Presentation strength should match urgency.",
+    "在这句话中，“presentation strength”可理解为“呈现强度”。"
+  ],
   "preservation": [
     "/ˌprezərˈveɪʃn/",
     "保留；维持某个信息或状态",
@@ -16848,6 +17163,13 @@
     "Notification priority helps the cockpit decide whether a message should interrupt navigation or wait in the background.",
     "在这句话中，“priority”可理解为“优先权, 优先”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "priority downgrade": [
+    "/praɪˈɔːrəti ˈdaʊnɡreɪd/",
+    "优先级降级；在高负荷情境中降低非关键提示的展示强度",
+    "",
+    "Priority downgrade changes a visual pop-up into a small status icon during a busy junction.",
+    "在繁忙路口，优先级降级会把视觉弹窗改成小状态图标。"
   ],
   "priority queue": [
     "/praɪˈɔːrəti kjuː/",
@@ -17519,6 +17841,20 @@
     "The cockpit uses quiet update to support a safer charging experience.",
     "座舱使用“quiet update”来支持更安全的充电体验。"
   ],
+  "quiet-state": [
+    "/quiet-state/",
+    "静音状态的",
+    "",
+    "A quiet-state receipt explains the muted period.",
+    "在这句话中，“quiet-state”可理解为“静音状态的”。"
+  ],
+  "quiet-state receipt": [
+    "/ˈkwaɪət steɪt rɪˈsiːt/",
+    "静音状态回执；说明哪些提示被静音、保留或稍后恢复的简短反馈",
+    "",
+    "A quiet-state receipt helps the driver trust that important alerts were not lost.",
+    "静音状态回执帮助驾驶者相信重要警报没有丢失。"
+  ],
   "quieter": [
     "/ˈkwaɪətər/",
     "更安静的；噪声或干扰更少的",
@@ -18141,6 +18477,13 @@
     "A recoverable misunderstanding is easier to accept when the system explains what it heard.",
     "当系统解释自己听到了什么时，可恢复误解更容易被接受。"
   ],
+  "recoverable prompt": [
+    "/rɪˈkʌvərəbl prɑːmpt/",
+    "可恢复提示；被暂缓或静音后仍能被用户找回的提示",
+    "",
+    "A recoverable prompt moves a low-priority reminder into a later review tray instead of deleting it.",
+    "可恢复提示会把低优先级提醒移入稍后查看区，而不是直接删除。"
+  ],
   "recoverable suggestion": [
     "/rɪˈkʌvərəbl səɡˈdʒestʃən/",
     "可恢复建议；用户拒绝、撤销或修改后仍能顺畅继续任务的建议",
@@ -18550,6 +18893,13 @@
     "Do not improve convenience by removing control.",
     "不要通过移除控制来提升便利性。"
   ],
+  "renewal": [
+    "/renewal/",
+    "续费；续订",
+    "",
+    "A renewal reminder belongs in the review tray during high workload.",
+    "在这句话中，“renewal”可理解为“续费；续订”。"
+  ],
   "rental": [
     "/ˈrentl/",
     "租赁的；临时租用车辆相关的",
@@ -18846,6 +19196,13 @@
     "在这句话中，“respectful”可理解为“表示尊敬的, 有礼貌的, 谦恭的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "respectful automation": [
+    "/respectful automation/",
+    "尊重用户的自动化",
+    "",
+    "Respectful automation avoids unnecessary interruption.",
+    "在这句话中，“respectful automation”可理解为“尊重用户的自动化”。"
+  ],
   "respectful feedback": [
     "/rɪˈspektfl ˈfiːdbæk/",
     "尊重式反馈；避免责备，用事实和可操作建议帮助驾驶者恢复状态",
@@ -19075,6 +19432,13 @@
     "Glance-safe resumption lets the driver continue navigation review without rereading the whole route.",
     "在这句话中，“resumption”指任务中断后的恢复继续。"
   ],
+  "resumption cue": [
+    "/rɪˈzʌmpʃn kjuː/",
+    "恢复提示线索；帮助用户稍后继续查看被延后信息的提示",
+    "",
+    "A resumption cue should appear after the call ends, not during the most demanding maneuver.",
+    "恢复提示线索应在通话结束后出现，而不是在最高负荷操作期间出现。"
+  ],
   "resumption timing": [
     "/rɪˈzʌmpʃn ˈtaɪmɪŋ/",
     "续接时机；系统选择何时恢复任务的判断",
@@ -19226,6 +19590,13 @@
     "在这句话中，“review”可理解为“检讨, 复习, 回顾, 检阅, 评论；温习, 检讨, 评论, 再检察, 复审；复习功课, 写评论”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "review later": [
+    "/review later/",
+    "稍后查看",
+    "",
+    "Review later is useful when the driver is busy.",
+    "在这句话中，“review later”可理解为“稍后查看”。"
+  ],
   "review screen": [
     "/rɪˈvjuː skriːn/",
     "复核页面；用于检查详情、历史或结果的界面",
@@ -19239,6 +19610,13 @@
     "",
     "The review strip can show what changed.",
     "回顾条可以显示发生了什么变化。"
+  ],
+  "review tray": [
+    "/review tray/",
+    "稍后查看区；保存延后信息的区域",
+    "",
+    "The review tray stores reminders that were not shown immediately.",
+    "在这句话中，“review tray”可理解为“稍后查看区；保存延后信息的区域”。"
   ],
   "reviewable": [
     "/rɪˈvjuːəbl/",
@@ -19375,6 +19753,13 @@
     "",
     "The risk threshold should be stricter while the vehicle is moving.",
     "车辆行驶时，风险阈值应更严格。"
+  ],
+  "risk tier": [
+    "/risk tier/",
+    "风险层级",
+    "",
+    "Each risk tier needs a different presentation style.",
+    "在这句话中，“risk tier”可理解为“风险层级”。"
   ],
   "risk-based confirmation": [
     "/rɪsk beɪst ˌkɑːnfərˈmeɪʃn/",
@@ -19756,6 +20141,13 @@
     "A safe glance uses short labels, stable placement, and clear contrast for the most time-sensitive message.",
     "安全扫视会用短标签、稳定位置和清晰对比呈现最有时效性的消息。"
   ],
+  "safe moment": [
+    "/safe moment/",
+    "安全时刻",
+    "",
+    "The message returns at the next safe moment.",
+    "在这句话中，“safe moment”可理解为“安全时刻”。"
+  ],
   "safe next step": [
     "/seɪf nekst step/",
     "安全下一步；风险出现时界面建议的明确后续动作",
@@ -19969,6 +20361,13 @@
     "A safety-critical setting should require driver approval.",
     "在这句话中，“safety-critical setting”用于描述智能座舱多人语音控制。"
   ],
+  "safety-critical warning": [
+    "/safety-critical warning/",
+    "安全关键警告",
+    "",
+    "A safety-critical warning must break through quiet mode.",
+    "在这句话中，“safety-critical warning”可理解为“安全关键警告”。"
+  ],
   "safety-related": [
     "/暂无音标/",
     "形容词：安全相关性；安全有关",
@@ -20178,6 +20577,13 @@
     "Quiet mode may be used during school pickups.",
     "在这句话中，“school”表示“学校”。"
   ],
+  "school zone": [
+    "/school zone/",
+    "学校区域",
+    "",
+    "A school zone requires extra attention to speed and pedestrians.",
+    "在这句话中，“school zone”可理解为“学校区域”。"
+  ],
   "scope": [
     "/skoʊp/",
     "范围；指令影响的对象、区域或持续时间",
@@ -20293,6 +20699,13 @@
     "",
     "The cockpit uses seat angle to keep comfort assistance understandable and controllable.",
     "座舱使用“seat angle”让舒适辅助更容易理解和控制。"
+  ],
+  "seat belt": [
+    "/seat belt/",
+    "安全带",
+    "",
+    "A seat belt alert should not be suppressed.",
+    "在这句话中，“seat belt”可理解为“安全带”。"
   ],
   "seat context": [
     "/siːt ˈkɑːntekst/",
@@ -20477,6 +20890,13 @@
     "",
     "Secondary information should support a safer and clearer cockpit experience.",
     "在这句话中，“secondary information”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "secondary message": [
+    "/secondary message/",
+    "次要信息",
+    "",
+    "A secondary message should wait behind a safety warning.",
+    "在这句话中，“secondary message”可理解为“次要信息”。"
   ],
   "secondary surface": [
     "/ˈsekənderi ˈsɜːrfɪs/",
@@ -21217,6 +21637,13 @@
     "在这句话中，“shows”可理解为“显示, 表现, 展览, 卖弄, 炫耀, 外观, 演出, 洋相；表示, 显示, 展现, 陈列, 演出, 表明, 指出, 带领；露面, 显现, 演出”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "shrink": [
+    "/shrink/",
+    "缩小；减少",
+    "",
+    "The interruption budget should shrink during difficult driving.",
+    "在这句话中，“shrink”可理解为“缩小；减少”。"
+  ],
   "sickness": [
     "/待补充/",
     "语境词：sickness；用于理解今天健康舒适提示主题中的英文表达",
@@ -21913,6 +22340,13 @@
     "A spoken message should be brief when conversation is already active.",
     "在这句话中，“spoken message”用于描述智能座舱多人语音控制。"
   ],
+  "spoken prompt": [
+    "/spoken prompt/",
+    "语音提示",
+    "",
+    "A spoken prompt can interrupt an ongoing conversation.",
+    "在这句话中，“spoken prompt”可理解为“语音提示”。"
+  ],
   "spoken request": [
     "/ˈspoʊkən rɪˈkwest/",
     "语音请求；用户通过语音提出的目标或指令",
@@ -22164,6 +22598,13 @@
     "A status hint should not interrupt a navigation instruction.",
     "状态提示不应打断导航指令。"
   ],
+  "status icon": [
+    "/status icon/",
+    "状态图标",
+    "",
+    "A status icon can replace a large pop-up.",
+    "在这句话中，“status icon”可理解为“状态图标”。"
+  ],
   "status message": [
     "/ˈstætəs ˈmesɪdʒ/",
     "状态消息；说明当前处理结果或等待原因的提示",
@@ -22397,6 +22838,13 @@
     "A stress cue should trigger gentler interaction, not a distracting emotional label.",
     "压力线索应触发更温和的交互，而不是分散注意力的情绪标签。"
   ],
+  "stressful segment": [
+    "/stressful segment/",
+    "高压力路段",
+    "",
+    "The assistant delays reminders during a stressful segment.",
+    "在这句话中，“stressful segment”可理解为“高压力路段”。"
+  ],
   "stricter": [
     "/strikt/",
     "形容词：严厉的, 绝对的, 详尽的, 严格的, 精确的",
@@ -22462,6 +22910,20 @@
     "The cockpit restored a quiet navigation style.",
     "在这句话中，“style”表示“风格”。"
   ],
+  "subscription": [
+    "/subscription/",
+    "订阅",
+    "",
+    "A subscription message can usually wait.",
+    "在这句话中，“subscription”可理解为“订阅”。"
+  ],
+  "subscription renewal": [
+    "/subscription renewal/",
+    "订阅续费",
+    "",
+    "A subscription renewal message rarely needs immediate attention.",
+    "在这句话中，“subscription renewal”可理解为“订阅续费”。"
+  ],
   "subtle": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“subtle”。",
@@ -22482,6 +22944,13 @@
     "",
     "A subtle HUD cue can guide attention without covering the road.",
     "在这句话中，“subtle HUD cue”用于描述智能座舱导航提示设计。"
+  ],
+  "subtle icon": [
+    "/subtle icon/",
+    "细微图标",
+    "",
+    "A subtle icon keeps information present without shouting.",
+    "在这句话中，“subtle icon”可理解为“细微图标”。"
   ],
   "subtle signal": [
     "/ˈsʌtl ˈsɪɡnəl/",
@@ -23173,6 +23642,13 @@
     "Temporary loss of lane detection should not feel like a system crash.",
     "车道检测暂时丢失不应让人感觉像系统崩溃。"
   ],
+  "temporary mute": [
+    "/temporary mute/",
+    "临时静音",
+    "",
+    "Temporary mute should expire automatically.",
+    "在这句话中，“temporary mute”可理解为“临时静音”。"
+  ],
   "temporary preference": [
     "/ˈtempəreri ˈprefrəns/",
     "临时偏好；只适用于当前行程或短时间窗口的设置",
@@ -23357,6 +23833,13 @@
     "",
     "Walk through the task from start to finish.",
     "从开始到结束走查任务。"
+  ],
+  "tiers": [
+    "/tiers/",
+    "层级",
+    "",
+    "Risk tiers help designers choose the right alert style.",
+    "在这句话中，“tiers”可理解为“层级”。"
   ],
   "time": [
     "/taɪm/",
@@ -23582,6 +24065,13 @@
     "",
     "Traceable confirmation matters for payment and shared vehicle scenarios.",
     "可追踪确认对支付和共享车辆场景很重要。"
+  ],
+  "traceable history": [
+    "/traceable history/",
+    "可追溯历史",
+    "",
+    "Traceable history helps users audit what happened.",
+    "在这句话中，“traceable history”可理解为“可追溯历史”。"
   ],
   "trade-off": [
     "/ˈtreɪd ɔːf/",
@@ -24356,6 +24846,13 @@
     "Update confidence can help the cockpit decide whether to install now or postpone the release.",
     "更新置信度可以帮助座舱判断是立即安装还是推迟发布。"
   ],
+  "updates": [
+    "/updates/",
+    "更新",
+    "",
+    "Navigation updates may be deferred when safe.",
+    "在这句话中，“updates”可理解为“更新”。"
+  ],
   "uploaded": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“uploaded”。",
@@ -24406,6 +24903,13 @@
     "",
     "Urgency level decides whether the system nudges or warns.",
     "紧急等级决定系统是微提示还是警告。"
+  ],
+  "urgency threshold": [
+    "/urgency threshold/",
+    "紧急阈值",
+    "",
+    "The urgency threshold decides whether speech is allowed.",
+    "在这句话中，“urgency threshold”可理解为“紧急阈值”。"
   ],
   "urgent": [
     "/'ә:dʒәnt/",
@@ -24593,6 +25097,20 @@
     "",
     "User-facing status should map technical progress to understandable steps.",
     "面向用户的状态应把技术进度映射为易懂步骤。"
+  ],
+  "user-visible": [
+    "/user-visible/",
+    "用户可见的",
+    "",
+    "User-visible logic makes quiet mode easier to understand.",
+    "在这句话中，“user-visible”可理解为“用户可见的”。"
+  ],
+  "user-visible logic": [
+    "/ˈjuːzər ˈvɪzəbl ˈlɑːdʒɪk/",
+    "用户可见逻辑；让用户理解系统为什么静音或恢复某条提示的说明",
+    "",
+    "User-visible logic turns quiet mode from a mystery into an understandable design decision.",
+    "用户可见逻辑会把静音模式从谜团变成可理解的设计决策。"
   ],
   "users": [
     "/'ju:zә/",
@@ -24898,6 +25416,13 @@
     "The cockpit uses visible affordance to make privacy decisions easier to understand.",
     "座舱使用“visible affordance”让隐私决策更容易理解。"
   ],
+  "visible again": [
+    "/visible again/",
+    "重新可见",
+    "",
+    "The notification becomes visible again after the stressful segment.",
+    "在这句话中，“visible again”可理解为“重新可见”。"
+  ],
   "visible before": [
     "/ˈvɪzəbl bɪˈfɔːr/",
     "提前可见；在影响体验或安全前先被用户看到",
@@ -25039,6 +25564,13 @@
     "The team reduced visual load by pairing a short banner with a haptic pulse.",
     "团队通过将短横幅与触觉脉冲配对来降低视觉负荷。"
   ],
+  "visual pop-up": [
+    "/visual pop-up/",
+    "视觉弹窗",
+    "",
+    "A visual pop-up may be too disruptive in dense traffic.",
+    "在这句话中，“visual pop-up”可理解为“视觉弹窗”。"
+  ],
   "visual proof": [
     "/ˈvɪʒuəl pruːf/",
     "视觉证据；界面上用于佐证 AI 说明的图标、标签或数据",
@@ -25132,6 +25664,13 @@
     "",
     "Voice brevity matters when navigation, safety alerts, and passenger conversation compete for attention.",
     "当导航、安全警告和乘客对话争夺注意力时，语音简洁度很重要。"
+  ],
+  "voice call": [
+    "/voice call/",
+    "语音通话",
+    "",
+    "Voice call context can reduce spoken prompts.",
+    "在这句话中，“voice call”可理解为“语音通话”。"
   ],
   "voice command": [
     "/vɔɪs kəˈmænd/",
@@ -25253,6 +25792,13 @@
     "",
     "Waiting state should show what input is needed next.",
     "等待状态应显示下一步需要什么输入。"
+  ],
+  "waits": [
+    "/waits/",
+    "等待",
+    "",
+    "The assistant waits for a safer attention window.",
+    "在这句话中，“waits”可理解为“等待”。"
   ],
   "walk": [
     "/wɔːk/",

@@ -1,5 +1,906 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-02-context-aware-quiet-mode-recoverable-prompts",
+    "date": "2026-10-02",
+    "title": "Context-aware quiet mode and recoverable prompts in intelligent cockpits",
+    "topic": "智能座舱情境感知静音模式与可恢复提示",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在电话、儿童乘员、学校区域或高驾驶负荷下，临时降低提示打扰，并用可恢复的方式保留重要信息。",
+    "words": [
+      {
+        "term": "context-aware quiet mode",
+        "phonetic": "/ˈkɑːntekst əˈwer ˈkwaɪət moʊd/",
+        "meaning": "情境感知静音模式；系统根据驾驶、乘员和环境状态临时降低提示打扰",
+        "example": "Context-aware quiet mode reduces non-urgent prompts when the driver is taking a phone call.",
+        "chineseExample": "当驾驶者正在接电话时，情境感知静音模式会减少非紧急提示。"
+      },
+      {
+        "term": "recoverable prompt",
+        "phonetic": "/rɪˈkʌvərəbl prɑːmpt/",
+        "meaning": "可恢复提示；被暂缓或静音后仍能被用户找回的提示",
+        "example": "A recoverable prompt moves a low-priority reminder into a later review tray instead of deleting it.",
+        "chineseExample": "可恢复提示会把低优先级提醒移入稍后查看区，而不是直接删除。"
+      },
+      {
+        "term": "interruption budget",
+        "phonetic": "/ˌɪntəˈrʌpʃn ˈbʌdʒɪt/",
+        "meaning": "打扰预算；在特定驾驶场景中允许系统占用用户注意力的限度",
+        "example": "The interruption budget should shrink during complex merges, school zones, and voice calls.",
+        "chineseExample": "在复杂并线、学校区域和语音通话中，打扰预算应缩小。"
+      },
+      {
+        "term": "deferred notification",
+        "phonetic": "/dɪˈfɜːrd ˌnoʊtɪfɪˈkeɪʃn/",
+        "meaning": "延后通知；被系统推迟到更合适时机展示的通知",
+        "example": "A deferred notification should explain why it was held back and when it became visible again.",
+        "chineseExample": "延后通知应说明它为何被暂缓，以及何时重新可见。"
+      },
+      {
+        "term": "attention window",
+        "phonetic": "/əˈtenʃn ˈwɪndoʊ/",
+        "meaning": "注意力窗口；用户适合接收、判断或操作信息的短时间段",
+        "example": "The assistant waits for a safer attention window before showing a subscription renewal message.",
+        "chineseExample": "助手会等待更安全的注意力窗口，再展示订阅续费信息。"
+      },
+      {
+        "term": "quiet-state receipt",
+        "phonetic": "/ˈkwaɪət steɪt rɪˈsiːt/",
+        "meaning": "静音状态回执；说明哪些提示被静音、保留或稍后恢复的简短反馈",
+        "example": "A quiet-state receipt helps the driver trust that important alerts were not lost.",
+        "chineseExample": "静音状态回执帮助驾驶者相信重要警报没有丢失。"
+      },
+      {
+        "term": "priority downgrade",
+        "phonetic": "/praɪˈɔːrəti ˈdaʊnɡreɪd/",
+        "meaning": "优先级降级；在高负荷情境中降低非关键提示的展示强度",
+        "example": "Priority downgrade changes a visual pop-up into a small status icon during a busy junction.",
+        "chineseExample": "在繁忙路口，优先级降级会把视觉弹窗改成小状态图标。"
+      },
+      {
+        "term": "resumption cue",
+        "phonetic": "/rɪˈzʌmpʃn kjuː/",
+        "meaning": "恢复提示线索；帮助用户稍后继续查看被延后信息的提示",
+        "example": "A resumption cue should appear after the call ends, not during the most demanding maneuver.",
+        "chineseExample": "恢复提示线索应在通话结束后出现，而不是在最高负荷操作期间出现。"
+      },
+      {
+        "term": "suppression rule",
+        "phonetic": "/səˈpreʃn ruːl/",
+        "meaning": "抑制规则；决定何时静音、延后或降级提示的系统规则",
+        "example": "Each suppression rule needs a clear exception for safety-critical warnings.",
+        "chineseExample": "每条抑制规则都需要为安全关键警告设置清晰例外。"
+      },
+      {
+        "term": "user-visible logic",
+        "phonetic": "/ˈjuːzər ˈvɪzəbl ˈlɑːdʒɪk/",
+        "meaning": "用户可见逻辑；让用户理解系统为什么静音或恢复某条提示的说明",
+        "example": "User-visible logic turns quiet mode from a mystery into an understandable design decision.",
+        "chineseExample": "用户可见逻辑会把静音模式从谜团变成可理解的设计决策。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "context-aware quiet mode",
+        "phonetic": "/context-aware quiet mode/",
+        "meaning": "根据情境降低提示打扰的静音模式",
+        "example": "Context-aware quiet mode adapts the alert style to the driving situation.",
+        "chineseExample": "在这句话中，“context-aware quiet mode”可理解为“根据情境降低提示打扰的静音模式”。"
+      },
+      {
+        "term": "recoverable prompt",
+        "phonetic": "/recoverable prompt/",
+        "meaning": "可恢复提示；稍后仍能找回的信息",
+        "example": "A recoverable prompt remains available after it is deferred.",
+        "chineseExample": "在这句话中，“recoverable prompt”可理解为“可恢复提示；稍后仍能找回的信息”。"
+      },
+      {
+        "term": "interruption budget",
+        "phonetic": "/interruption budget/",
+        "meaning": "打扰预算；可占用注意力的限度",
+        "example": "The interruption budget is smaller when workload is high.",
+        "chineseExample": "在这句话中，“interruption budget”可理解为“打扰预算；可占用注意力的限度”。"
+      },
+      {
+        "term": "deferred notification",
+        "phonetic": "/deferred notification/",
+        "meaning": "延后通知；推迟展示的信息",
+        "example": "A deferred notification returns when conditions improve.",
+        "chineseExample": "在这句话中，“deferred notification”可理解为“延后通知；推迟展示的信息”。"
+      },
+      {
+        "term": "attention window",
+        "phonetic": "/attention window/",
+        "meaning": "注意力窗口；适合接收信息的时间段",
+        "example": "The assistant waits for a safer attention window.",
+        "chineseExample": "在这句话中，“attention window”可理解为“注意力窗口；适合接收信息的时间段”。"
+      },
+      {
+        "term": "quiet-state receipt",
+        "phonetic": "/quiet-state receipt/",
+        "meaning": "静音状态回执；说明提示处理结果",
+        "example": "A quiet-state receipt summarizes what was muted.",
+        "chineseExample": "在这句话中，“quiet-state receipt”可理解为“静音状态回执；说明提示处理结果”。"
+      },
+      {
+        "term": "priority downgrade",
+        "phonetic": "/priority downgrade/",
+        "meaning": "优先级降级；降低提示强度",
+        "example": "Priority downgrade keeps the message visible but less intrusive.",
+        "chineseExample": "在这句话中，“priority downgrade”可理解为“优先级降级；降低提示强度”。"
+      },
+      {
+        "term": "resumption cue",
+        "phonetic": "/resumption cue/",
+        "meaning": "恢复提示线索；提示用户稍后继续",
+        "example": "A resumption cue appears after the call ends.",
+        "chineseExample": "在这句话中，“resumption cue”可理解为“恢复提示线索；提示用户稍后继续”。"
+      },
+      {
+        "term": "suppression rule",
+        "phonetic": "/suppression rule/",
+        "meaning": "抑制规则；决定何时静音或延后",
+        "example": "The suppression rule protects the driver from avoidable distraction.",
+        "chineseExample": "在这句话中，“suppression rule”可理解为“抑制规则；决定何时静音或延后”。"
+      },
+      {
+        "term": "user-visible logic",
+        "phonetic": "/user-visible logic/",
+        "meaning": "用户可见逻辑；解释系统处理依据",
+        "example": "User-visible logic explains why the prompt was delayed.",
+        "chineseExample": "在这句话中，“user-visible logic”可理解为“用户可见逻辑；解释系统处理依据”。"
+      },
+      {
+        "term": "non-urgent prompt",
+        "phonetic": "/non-urgent prompt/",
+        "meaning": "非紧急提示",
+        "example": "A non-urgent prompt can wait until the maneuver is complete.",
+        "chineseExample": "在这句话中，“non-urgent prompt”可理解为“非紧急提示”。"
+      },
+      {
+        "term": "review tray",
+        "phonetic": "/review tray/",
+        "meaning": "稍后查看区；保存延后信息的区域",
+        "example": "The review tray stores reminders that were not shown immediately.",
+        "chineseExample": "在这句话中，“review tray”可理解为“稍后查看区；保存延后信息的区域”。"
+      },
+      {
+        "term": "low-priority reminder",
+        "phonetic": "/low-priority reminder/",
+        "meaning": "低优先级提醒",
+        "example": "A low-priority reminder should not interrupt a difficult merge.",
+        "chineseExample": "在这句话中，“low-priority reminder”可理解为“低优先级提醒”。"
+      },
+      {
+        "term": "phone call",
+        "phonetic": "/phone call/",
+        "meaning": "电话通话",
+        "example": "The cockpit detects an active phone call before speaking.",
+        "chineseExample": "在这句话中，“phone call”可理解为“电话通话”。"
+      },
+      {
+        "term": "voice call",
+        "phonetic": "/voice call/",
+        "meaning": "语音通话",
+        "example": "Voice call context can reduce spoken prompts.",
+        "chineseExample": "在这句话中，“voice call”可理解为“语音通话”。"
+      },
+      {
+        "term": "school zone",
+        "phonetic": "/school zone/",
+        "meaning": "学校区域",
+        "example": "A school zone requires extra attention to speed and pedestrians.",
+        "chineseExample": "在这句话中，“school zone”可理解为“学校区域”。"
+      },
+      {
+        "term": "complex merge",
+        "phonetic": "/complex merge/",
+        "meaning": "复杂并线",
+        "example": "The system should stay quiet during a complex merge.",
+        "chineseExample": "在这句话中，“complex merge”可理解为“复杂并线”。"
+      },
+      {
+        "term": "busy junction",
+        "phonetic": "/busy junction/",
+        "meaning": "繁忙路口",
+        "example": "A busy junction leaves little room for secondary messages.",
+        "chineseExample": "在这句话中，“busy junction”可理解为“繁忙路口”。"
+      },
+      {
+        "term": "driver workload",
+        "phonetic": "/driver workload/",
+        "meaning": "驾驶负荷",
+        "example": "Driver workload rises when navigation, traffic, and conversation compete.",
+        "chineseExample": "在这句话中，“driver workload”可理解为“驾驶负荷”。"
+      },
+      {
+        "term": "cognitive load",
+        "phonetic": "/cognitive load/",
+        "meaning": "认知负荷",
+        "example": "Cognitive load increases when several decisions arrive together.",
+        "chineseExample": "在这句话中，“cognitive load”可理解为“认知负荷”。"
+      },
+      {
+        "term": "alert style",
+        "phonetic": "/alert style/",
+        "meaning": "警示样式",
+        "example": "The alert style changes from speech to a subtle icon.",
+        "chineseExample": "在这句话中，“alert style”可理解为“警示样式”。"
+      },
+      {
+        "term": "status icon",
+        "phonetic": "/status icon/",
+        "meaning": "状态图标",
+        "example": "A status icon can replace a large pop-up.",
+        "chineseExample": "在这句话中，“status icon”可理解为“状态图标”。"
+      },
+      {
+        "term": "visual pop-up",
+        "phonetic": "/visual pop-up/",
+        "meaning": "视觉弹窗",
+        "example": "A visual pop-up may be too disruptive in dense traffic.",
+        "chineseExample": "在这句话中，“visual pop-up”可理解为“视觉弹窗”。"
+      },
+      {
+        "term": "spoken prompt",
+        "phonetic": "/spoken prompt/",
+        "meaning": "语音提示",
+        "example": "A spoken prompt can interrupt an ongoing conversation.",
+        "chineseExample": "在这句话中，“spoken prompt”可理解为“语音提示”。"
+      },
+      {
+        "term": "subtle icon",
+        "phonetic": "/subtle icon/",
+        "meaning": "细微图标",
+        "example": "A subtle icon keeps information present without shouting.",
+        "chineseExample": "在这句话中，“subtle icon”可理解为“细微图标”。"
+      },
+      {
+        "term": "review later",
+        "phonetic": "/review later/",
+        "meaning": "稍后查看",
+        "example": "Review later is useful when the driver is busy.",
+        "chineseExample": "在这句话中，“review later”可理解为“稍后查看”。"
+      },
+      {
+        "term": "held back",
+        "phonetic": "/held back/",
+        "meaning": "被暂缓",
+        "example": "The message was held back because attention demand was high.",
+        "chineseExample": "在这句话中，“held back”可理解为“被暂缓”。"
+      },
+      {
+        "term": "visible again",
+        "phonetic": "/visible again/",
+        "meaning": "重新可见",
+        "example": "The notification becomes visible again after the stressful segment.",
+        "chineseExample": "在这句话中，“visible again”可理解为“重新可见”。"
+      },
+      {
+        "term": "safety-critical warning",
+        "phonetic": "/safety-critical warning/",
+        "meaning": "安全关键警告",
+        "example": "A safety-critical warning must break through quiet mode.",
+        "chineseExample": "在这句话中，“safety-critical warning”可理解为“安全关键警告”。"
+      },
+      {
+        "term": "critical alert",
+        "phonetic": "/critical alert/",
+        "meaning": "关键警报",
+        "example": "A critical alert overrides suppression rules.",
+        "chineseExample": "在这句话中，“critical alert”可理解为“关键警报”。"
+      },
+      {
+        "term": "comfort reminder",
+        "phonetic": "/comfort reminder/",
+        "meaning": "舒适提醒",
+        "example": "A comfort reminder can be downgraded during a call.",
+        "chineseExample": "在这句话中，“comfort reminder”可理解为“舒适提醒”。"
+      },
+      {
+        "term": "subscription renewal",
+        "phonetic": "/subscription renewal/",
+        "meaning": "订阅续费",
+        "example": "A subscription renewal message rarely needs immediate attention.",
+        "chineseExample": "在这句话中，“subscription renewal”可理解为“订阅续费”。"
+      },
+      {
+        "term": "charging offer",
+        "phonetic": "/charging offer/",
+        "meaning": "充电优惠",
+        "example": "A charging offer can move to the review tray.",
+        "chineseExample": "在这句话中，“charging offer”可理解为“充电优惠”。"
+      },
+      {
+        "term": "seat belt",
+        "phonetic": "/seat belt/",
+        "meaning": "安全带",
+        "example": "A seat belt alert should not be suppressed.",
+        "chineseExample": "在这句话中，“seat belt”可理解为“安全带”。"
+      },
+      {
+        "term": "child passenger",
+        "phonetic": "/child passenger/",
+        "meaning": "儿童乘员",
+        "example": "A child passenger context may change reminder timing.",
+        "chineseExample": "在这句话中，“child passenger”可理解为“儿童乘员”。"
+      },
+      {
+        "term": "rear-seat reminder",
+        "phonetic": "/rear-seat reminder/",
+        "meaning": "后排提醒",
+        "example": "A rear-seat reminder remains safety critical.",
+        "chineseExample": "在这句话中，“rear-seat reminder”可理解为“后排提醒”。"
+      },
+      {
+        "term": "active call",
+        "phonetic": "/active call/",
+        "meaning": "进行中的通话",
+        "example": "An active call lowers the tolerance for extra speech.",
+        "chineseExample": "在这句话中，“active call”可理解为“进行中的通话”。"
+      },
+      {
+        "term": "demanding maneuver",
+        "phonetic": "/demanding maneuver/",
+        "meaning": "高负荷操作",
+        "example": "A demanding maneuver is not the right time for marketing.",
+        "chineseExample": "在这句话中，“demanding maneuver”可理解为“高负荷操作”。"
+      },
+      {
+        "term": "safe moment",
+        "phonetic": "/safe moment/",
+        "meaning": "安全时刻",
+        "example": "The message returns at the next safe moment.",
+        "chineseExample": "在这句话中，“safe moment”可理解为“安全时刻”。"
+      },
+      {
+        "term": "delayed prompt",
+        "phonetic": "/delayed prompt/",
+        "meaning": "延后提示",
+        "example": "A delayed prompt should show its reason.",
+        "chineseExample": "在这句话中，“delayed prompt”可理解为“延后提示”。"
+      },
+      {
+        "term": "muted alert",
+        "phonetic": "/muted alert/",
+        "meaning": "静音警报",
+        "example": "A muted alert still needs a trace in the interface.",
+        "chineseExample": "在这句话中，“muted alert”可理解为“静音警报”。"
+      },
+      {
+        "term": "traceable history",
+        "phonetic": "/traceable history/",
+        "meaning": "可追溯历史",
+        "example": "Traceable history helps users audit what happened.",
+        "chineseExample": "在这句话中，“traceable history”可理解为“可追溯历史”。"
+      },
+      {
+        "term": "driver trust",
+        "phonetic": "/driver trust/",
+        "meaning": "驾驶者信任",
+        "example": "Driver trust improves when quiet mode is explainable.",
+        "chineseExample": "在这句话中，“driver trust”可理解为“驾驶者信任”。"
+      },
+      {
+        "term": "explainable quiet mode",
+        "phonetic": "/explainable quiet mode/",
+        "meaning": "可解释静音模式",
+        "example": "Explainable quiet mode tells users what changed.",
+        "chineseExample": "在这句话中，“explainable quiet mode”可理解为“可解释静音模式”。"
+      },
+      {
+        "term": "temporary mute",
+        "phonetic": "/temporary mute/",
+        "meaning": "临时静音",
+        "example": "Temporary mute should expire automatically.",
+        "chineseExample": "在这句话中，“temporary mute”可理解为“临时静音”。"
+      },
+      {
+        "term": "automatic expiry",
+        "phonetic": "/automatic expiry/",
+        "meaning": "自动到期",
+        "example": "Automatic expiry prevents the cabin from staying quiet forever.",
+        "chineseExample": "在这句话中，“automatic expiry”可理解为“自动到期”。"
+      },
+      {
+        "term": "exception rule",
+        "phonetic": "/exception rule/",
+        "meaning": "例外规则",
+        "example": "An exception rule lets urgent warnings interrupt quiet mode.",
+        "chineseExample": "在这句话中，“exception rule”可理解为“例外规则”。"
+      },
+      {
+        "term": "message queue",
+        "phonetic": "/message queue/",
+        "meaning": "消息队列",
+        "example": "The message queue orders reminders by risk and timing.",
+        "chineseExample": "在这句话中，“message queue”可理解为“消息队列”。"
+      },
+      {
+        "term": "risk tier",
+        "phonetic": "/risk tier/",
+        "meaning": "风险层级",
+        "example": "Each risk tier needs a different presentation style.",
+        "chineseExample": "在这句话中，“risk tier”可理解为“风险层级”。"
+      },
+      {
+        "term": "presentation strength",
+        "phonetic": "/presentation strength/",
+        "meaning": "呈现强度",
+        "example": "Presentation strength should match urgency.",
+        "chineseExample": "在这句话中，“presentation strength”可理解为“呈现强度”。"
+      },
+      {
+        "term": "urgency threshold",
+        "phonetic": "/urgency threshold/",
+        "meaning": "紧急阈值",
+        "example": "The urgency threshold decides whether speech is allowed.",
+        "chineseExample": "在这句话中，“urgency threshold”可理解为“紧急阈值”。"
+      },
+      {
+        "term": "interaction cost",
+        "phonetic": "/interaction cost/",
+        "meaning": "交互成本",
+        "example": "Interaction cost rises when the driver must search the screen.",
+        "chineseExample": "在这句话中，“interaction cost”可理解为“交互成本”。"
+      },
+      {
+        "term": "glance demand",
+        "phonetic": "/glance demand/",
+        "meaning": "扫视需求",
+        "example": "Glance demand should stay low in dense traffic.",
+        "chineseExample": "在这句话中，“glance demand”可理解为“扫视需求”。"
+      },
+      {
+        "term": "dense traffic",
+        "phonetic": "/dense traffic/",
+        "meaning": "密集交通",
+        "example": "Dense traffic makes extra prompts more disruptive.",
+        "chineseExample": "在这句话中，“dense traffic”可理解为“密集交通”。"
+      },
+      {
+        "term": "route change",
+        "phonetic": "/route change/",
+        "meaning": "路线变化",
+        "example": "A route change may justify a stronger prompt.",
+        "chineseExample": "在这句话中，“route change”可理解为“路线变化”。"
+      },
+      {
+        "term": "navigation update",
+        "phonetic": "/navigation update/",
+        "meaning": "导航更新",
+        "example": "A navigation update can wait if the next turn is far away.",
+        "chineseExample": "在这句话中，“navigation update”可理解为“导航更新”。"
+      },
+      {
+        "term": "cabin assistant",
+        "phonetic": "/cabin assistant/",
+        "meaning": "座舱助手",
+        "example": "The cabin assistant chooses when to speak.",
+        "chineseExample": "在这句话中，“cabin assistant”可理解为“座舱助手”。"
+      },
+      {
+        "term": "adaptive timing",
+        "phonetic": "/adaptive timing/",
+        "meaning": "自适应时机",
+        "example": "Adaptive timing makes the same message feel respectful.",
+        "chineseExample": "在这句话中，“adaptive timing”可理解为“自适应时机”。"
+      },
+      {
+        "term": "respectful automation",
+        "phonetic": "/respectful automation/",
+        "meaning": "尊重用户的自动化",
+        "example": "Respectful automation avoids unnecessary interruption.",
+        "chineseExample": "在这句话中，“respectful automation”可理解为“尊重用户的自动化”。"
+      },
+      {
+        "term": "not lost",
+        "phonetic": "/not lost/",
+        "meaning": "没有丢失",
+        "example": "The receipt shows that important alerts were not lost.",
+        "chineseExample": "在这句话中，“not lost”可理解为“没有丢失”。"
+      },
+      {
+        "term": "conditions improve",
+        "phonetic": "/conditions improve/",
+        "meaning": "条件改善",
+        "example": "The prompt returns when conditions improve.",
+        "chineseExample": "在这句话中，“conditions improve”可理解为“条件改善”。"
+      },
+      {
+        "term": "secondary message",
+        "phonetic": "/secondary message/",
+        "meaning": "次要信息",
+        "example": "A secondary message should wait behind a safety warning.",
+        "chineseExample": "在这句话中，“secondary message”可理解为“次要信息”。"
+      },
+      {
+        "term": "avoidable distraction",
+        "phonetic": "/avoidable distraction/",
+        "meaning": "可避免分心",
+        "example": "Quiet mode removes avoidable distraction.",
+        "chineseExample": "在这句话中，“avoidable distraction”可理解为“可避免分心”。"
+      },
+      {
+        "term": "traffic density",
+        "phonetic": "/traffic density/",
+        "meaning": "交通密度",
+        "example": "Traffic density can change the interruption budget.",
+        "chineseExample": "在这句话中，“traffic density”可理解为“交通密度”。"
+      },
+      {
+        "term": "lane change",
+        "phonetic": "/lane change/",
+        "meaning": "变道",
+        "example": "Lane change support should avoid unrelated speech.",
+        "chineseExample": "在这句话中，“lane change”可理解为“变道”。"
+      },
+      {
+        "term": "stressful segment",
+        "phonetic": "/stressful segment/",
+        "meaning": "高压力路段",
+        "example": "The assistant delays reminders during a stressful segment.",
+        "chineseExample": "在这句话中，“stressful segment”可理解为“高压力路段”。"
+      },
+      {
+        "term": "context signal",
+        "phonetic": "/context signal/",
+        "meaning": "情境信号",
+        "example": "A context signal can come from speed, location, or cabin audio.",
+        "chineseExample": "在这句话中，“context signal”可理解为“情境信号”。"
+      },
+      {
+        "term": "cabin audio",
+        "phonetic": "/cabin audio/",
+        "meaning": "座舱音频",
+        "example": "Cabin audio helps detect an ongoing conversation.",
+        "chineseExample": "在这句话中，“cabin audio”可理解为“座舱音频”。"
+      },
+      {
+        "term": "location context",
+        "phonetic": "/location context/",
+        "meaning": "位置情境",
+        "example": "Location context can identify a school zone.",
+        "chineseExample": "在这句话中，“location context”可理解为“位置情境”。"
+      },
+      {
+        "term": "speed context",
+        "phonetic": "/speed context/",
+        "meaning": "车速情境",
+        "example": "Speed context helps estimate workload.",
+        "chineseExample": "在这句话中，“speed context”可理解为“车速情境”。"
+      },
+      {
+        "term": "recover",
+        "phonetic": "/recover/",
+        "meaning": "恢复；重新出现",
+        "example": "The prompt can recover when the drive becomes calmer.",
+        "chineseExample": "在这句话中，“recover”可理解为“恢复；重新出现”。"
+      },
+      {
+        "term": "defer",
+        "phonetic": "/defer/",
+        "meaning": "延后；推迟",
+        "example": "The assistant can defer a message without deleting it.",
+        "chineseExample": "在这句话中，“defer”可理解为“延后；推迟”。"
+      },
+      {
+        "term": "mute",
+        "phonetic": "/mute/",
+        "meaning": "静音；降低声音提示",
+        "example": "The system can mute a reminder during a phone call.",
+        "chineseExample": "在这句话中，“mute”可理解为“静音；降低声音提示”。"
+      },
+      {
+        "term": "suppress",
+        "phonetic": "/suppress/",
+        "meaning": "抑制；暂不展示",
+        "example": "Do not suppress safety-critical warnings.",
+        "chineseExample": "在这句话中，“suppress”可理解为“抑制；暂不展示”。"
+      },
+      {
+        "term": "downgrade",
+        "phonetic": "/downgrade/",
+        "meaning": "降级；降低强度",
+        "example": "The system may downgrade a promotional message.",
+        "chineseExample": "在这句话中，“downgrade”可理解为“降级；降低强度”。"
+      },
+      {
+        "term": "expire",
+        "phonetic": "/expire/",
+        "meaning": "到期；结束",
+        "example": "Quiet mode should expire after the call.",
+        "chineseExample": "在这句话中，“expire”可理解为“到期；结束”。"
+      },
+      {
+        "term": "preserve",
+        "phonetic": "/preserve/",
+        "meaning": "保留",
+        "example": "The interface should preserve delayed reminders.",
+        "chineseExample": "在这句话中，“preserve”可理解为“保留”。"
+      },
+      {
+        "term": "summarize",
+        "phonetic": "/summarize/",
+        "meaning": "总结",
+        "example": "The receipt can summarize muted prompts.",
+        "chineseExample": "在这句话中，“summarize”可理解为“总结”。"
+      },
+      {
+        "term": "override",
+        "phonetic": "/override/",
+        "meaning": "覆盖；优先于",
+        "example": "Critical alerts override quiet mode.",
+        "chineseExample": "在这句话中，“override”可理解为“覆盖；优先于”。"
+      },
+      {
+        "term": "intrusive",
+        "phonetic": "/intrusive/",
+        "meaning": "打扰性强的",
+        "example": "Intrusive alerts are risky during complex driving.",
+        "chineseExample": "在这句话中，“intrusive”可理解为“打扰性强的”。"
+      },
+      {
+        "term": "demanding",
+        "phonetic": "/demanding/",
+        "meaning": "要求高的；负荷高的",
+        "example": "A demanding maneuver deserves a quieter interface.",
+        "chineseExample": "在这句话中，“demanding”可理解为“要求高的；负荷高的”。"
+      },
+      {
+        "term": "subtle",
+        "phonetic": "/subtle/",
+        "meaning": "细微的；不突兀的",
+        "example": "A subtle icon can reduce interruption.",
+        "chineseExample": "在这句话中，“subtle”可理解为“细微的；不突兀的”。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/visible/",
+        "meaning": "可见的",
+        "example": "The delayed prompt becomes visible again later.",
+        "chineseExample": "在这句话中，“visible”可理解为“可见的”。"
+      },
+      {
+        "term": "urgent",
+        "phonetic": "/urgent/",
+        "meaning": "紧急的",
+        "example": "Urgent warnings should always break through.",
+        "chineseExample": "在这句话中，“urgent”可理解为“紧急的”。"
+      },
+      {
+        "term": "calmer",
+        "phonetic": "/calmer/",
+        "meaning": "更平稳的",
+        "example": "A calmer driving moment supports review.",
+        "chineseExample": "在这句话中，“calmer”可理解为“更平稳的”。"
+      },
+      {
+        "term": "respectful",
+        "phonetic": "/respectful/",
+        "meaning": "尊重用户状态的",
+        "example": "Respectful prompts arrive at a better time.",
+        "chineseExample": "在这句话中，“respectful”可理解为“尊重用户状态的”。"
+      },
+      {
+        "term": "auditable",
+        "phonetic": "/auditable/",
+        "meaning": "可审计的；可追溯的",
+        "example": "Auditable quiet mode shows what was delayed.",
+        "chineseExample": "在这句话中，“auditable”可理解为“可审计的；可追溯的”。"
+      },
+      {
+        "term": "deleting",
+        "phonetic": "/deleting/",
+        "meaning": "删除；移除",
+        "example": "A recoverable prompt avoids deleting useful information.",
+        "chineseExample": "在这句话中，“deleting”可理解为“删除；移除”。"
+      },
+      {
+        "term": "shrink",
+        "phonetic": "/shrink/",
+        "meaning": "缩小；减少",
+        "example": "The interruption budget should shrink during difficult driving.",
+        "chineseExample": "在这句话中，“shrink”可理解为“缩小；减少”。"
+      },
+      {
+        "term": "merges",
+        "phonetic": "/merges/",
+        "meaning": "并线；汇入车流",
+        "example": "Complex merges require the interface to stay quiet.",
+        "chineseExample": "在这句话中，“merges”可理解为“并线；汇入车流”。"
+      },
+      {
+        "term": "held",
+        "phonetic": "/held/",
+        "meaning": "被保留；被暂缓",
+        "example": "The receipt explains which prompts were held back.",
+        "chineseExample": "在这句话中，“held”可理解为“被保留；被暂缓”。"
+      },
+      {
+        "term": "became",
+        "phonetic": "/became/",
+        "meaning": "变得；成为",
+        "example": "The notification became visible again after the call.",
+        "chineseExample": "在这句话中，“became”可理解为“变得；成为”。"
+      },
+      {
+        "term": "waits",
+        "phonetic": "/waits/",
+        "meaning": "等待",
+        "example": "The assistant waits for a safer attention window.",
+        "chineseExample": "在这句话中，“waits”可理解为“等待”。"
+      },
+      {
+        "term": "subscription",
+        "phonetic": "/subscription/",
+        "meaning": "订阅",
+        "example": "A subscription message can usually wait.",
+        "chineseExample": "在这句话中，“subscription”可理解为“订阅”。"
+      },
+      {
+        "term": "renewal",
+        "phonetic": "/renewal/",
+        "meaning": "续费；续订",
+        "example": "A renewal reminder belongs in the review tray during high workload.",
+        "chineseExample": "在这句话中，“renewal”可理解为“续费；续订”。"
+      },
+      {
+        "term": "quiet-state",
+        "phonetic": "/quiet-state/",
+        "meaning": "静音状态的",
+        "example": "A quiet-state receipt explains the muted period.",
+        "chineseExample": "在这句话中，“quiet-state”可理解为“静音状态的”。"
+      },
+      {
+        "term": "lost",
+        "phonetic": "/lost/",
+        "meaning": "丢失的",
+        "example": "The receipt reassures users that alerts were not lost.",
+        "chineseExample": "在这句话中，“lost”可理解为“丢失的”。"
+      },
+      {
+        "term": "pop-up",
+        "phonetic": "/pop-up/",
+        "meaning": "弹窗",
+        "example": "A pop-up can become a status icon during dense traffic.",
+        "chineseExample": "在这句话中，“pop-up”可理解为“弹窗”。"
+      },
+      {
+        "term": "ends",
+        "phonetic": "/ends/",
+        "meaning": "结束",
+        "example": "The resumption cue appears after the call ends.",
+        "chineseExample": "在这句话中，“ends”可理解为“结束”。"
+      },
+      {
+        "term": "exception",
+        "phonetic": "/exception/",
+        "meaning": "例外",
+        "example": "Each suppression rule needs an exception for urgent warnings.",
+        "chineseExample": "在这句话中，“exception”可理解为“例外”。"
+      },
+      {
+        "term": "user-visible",
+        "phonetic": "/user-visible/",
+        "meaning": "用户可见的",
+        "example": "User-visible logic makes quiet mode easier to understand.",
+        "chineseExample": "在这句话中，“user-visible”可理解为“用户可见的”。"
+      },
+      {
+        "term": "mystery",
+        "phonetic": "/mystery/",
+        "meaning": "谜团；难以理解的状态",
+        "example": "Clear logic keeps automation from feeling like a mystery.",
+        "chineseExample": "在这句话中，“mystery”可理解为“谜团；难以理解的状态”。"
+      },
+      {
+        "term": "defers",
+        "phonetic": "/defers/",
+        "meaning": "延后；推迟",
+        "example": "The system defers non-urgent prompts during a maneuver.",
+        "chineseExample": "在这句话中，“defers”可理解为“延后；推迟”。"
+      },
+      {
+        "term": "disappeared",
+        "phonetic": "/disappeared/",
+        "meaning": "消失了",
+        "example": "Recoverable prompts reduce the fear that information disappeared.",
+        "chineseExample": "在这句话中，“disappeared”可理解为“消失了”。"
+      },
+      {
+        "term": "tiers",
+        "phonetic": "/tiers/",
+        "meaning": "层级",
+        "example": "Risk tiers help designers choose the right alert style.",
+        "chineseExample": "在这句话中，“tiers”可理解为“层级”。"
+      },
+      {
+        "term": "updates",
+        "phonetic": "/updates/",
+        "meaning": "更新",
+        "example": "Navigation updates may be deferred when safe.",
+        "chineseExample": "在这句话中，“updates”可理解为“更新”。"
+      },
+      {
+        "term": "always",
+        "phonetic": "/always/",
+        "meaning": "始终；总是",
+        "example": "Safety-critical warnings should always override quiet mode.",
+        "chineseExample": "在这句话中，“always”可理解为“始终；总是”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing quiet mode without hiding information",
+        "text": "In an intelligent cockpit, quiet mode should not simply silence the interface. A better design uses context signals such as traffic density, location context, cabin audio, an active phone call, and driver workload to decide which prompts can wait. For example, a charging offer or subscription renewal message can move into a review tray during a complex merge, while a seat belt alert or rear-seat reminder must still break through. The key is to make suppression recoverable and explainable. When the system defers a non-urgent prompt, it should preserve the message, show a subtle status icon, and provide a quiet-state receipt later. That receipt can say, “Three comfort reminders were held back during your call.” After the call ends or the route becomes calmer, a resumption cue can invite the driver to review the delayed prompts. This pattern protects attention without creating the fear that information disappeared. It also gives designers a useful language for risk tiers: suppress marketing, downgrade comfort, defer navigation updates when safe, and always override quiet mode for safety-critical warnings.",
+        "translation": "在智能座舱中，静音模式不应只是让界面沉默。更好的设计会利用交通密度、位置情境、座舱音频、进行中的电话和驾驶负荷等情境信号，判断哪些提示可以等待。例如，在复杂并线时，充电优惠或订阅续费信息可以进入稍后查看区，而安全带警报或后排提醒必须仍然突破静音。关键是让抑制可恢复、可解释。当系统延后非紧急提示时，应保留消息、显示细微状态图标，并在稍后提供静音状态回执。回执可以说：“通话期间已暂缓 3 条舒适提醒。”通话结束或路线变得更平稳后，恢复提示线索可以邀请驾驶者查看延后提示。这种模式保护注意力，同时避免用户担心信息消失。它也为设计师提供了风险层级语言：抑制营销、降级舒适提示、在安全时延后导航更新，并始终让安全关键警告覆盖静音模式。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A better design uses context signals such as traffic density, location context, cabin audio, an active phone call, and driver workload to decide which prompts can wait.",
+        "translation": "更好的设计会利用交通密度、位置情境、座舱音频、进行中的电话和驾驶负荷等情境信号，判断哪些提示可以等待。",
+        "points": [
+          "uses context signals 表示“使用情境信号”，后面 such as 列举信号来源。",
+          "to decide which prompts can wait 表示目的：判断哪些提示可以延后。"
+        ]
+      },
+      {
+        "sentence": "The key is to make suppression recoverable and explainable.",
+        "translation": "关键是让抑制可恢复、可解释。",
+        "points": [
+          "The key is to... 是设计汇报中常用的总结句式。",
+          "recoverable and explainable 用两个形容词概括交互原则。"
+        ]
+      },
+      {
+        "sentence": "This pattern protects attention without creating the fear that information disappeared.",
+        "translation": "这种模式保护注意力，同时不会制造信息消失的担忧。",
+        "points": [
+          "protects attention 表示保护用户注意力资源。",
+          "without creating the fear that... 表示避免带来某种负面感受。"
+        ]
+      },
+      {
+        "sentence": "Suppress marketing, downgrade comfort, defer navigation updates when safe, and always override quiet mode for safety-critical warnings.",
+        "translation": "抑制营销信息、降级舒适提示、在安全时延后导航更新，并始终让安全关键警告覆盖静音模式。",
+        "points": [
+          "四个并列动词 suppress, downgrade, defer, override 适合用于设计原则清单。",
+          "when safe 限定了延后导航更新的条件。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "description": "朗读 context-aware quiet mode、recoverable prompt、interruption budget、quiet-state receipt，并用中文复述区别。"
+      },
+      {
+        "title": "场景复述",
+        "time": "6 分钟",
+        "description": "用英文说明为什么电话通话、学校区域和复杂并线会缩小 interruption budget。"
+      },
+      {
+        "title": "句式替换",
+        "time": "6 分钟",
+        "description": "套用 “The key is to make ... recoverable and explainable.” 造 3 个座舱提示设计句。"
+      },
+      {
+        "title": "设计表达",
+        "time": "8 分钟",
+        "description": "设计一个 quiet-state receipt 文案，说明哪些信息被静音、为什么静音、用户如何稍后查看。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive HMI notification management",
+        "url": "https://www.youtube.com/results?search_query=automotive+HMI+notification+management",
+        "description": "可搜索 automotive HMI notification management，观察车载系统如何处理通知优先级与驾驶注意力。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-01-transparent-automation-user-veto",
     "date": "2026-10-01",
     "title": "Transparent automation and user veto design in intelligent cockpits",
