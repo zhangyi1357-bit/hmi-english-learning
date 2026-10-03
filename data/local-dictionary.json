@@ -153,6 +153,13 @@
     "Account details need stronger masking in passenger view.",
     "乘客视图中的账户细节需要更强脱敏。"
   ],
+  "account exposure": [
+    "/account exposure/",
+    "账户暴露",
+    "",
+    "Account exposure can happen during poor identity handoff.",
+    "在这句话中，“account exposure”可理解为“账户暴露”。"
+  ],
   "account sync": [
     "/əˈkaʊnt sɪŋk/",
     "账号同步；跨设备或服务同步用户设置和数据",
@@ -362,6 +369,13 @@
     "",
     "Highlighting the active seat zone makes feedback attribution clearer.",
     "在这句话中，“active seat zone”用于描述智能座舱多人语音控制。"
+  ],
+  "active user context": [
+    "/active user context/",
+    "当前用户上下文",
+    "",
+    "Active user context controls personalization.",
+    "在这句话中，“active user context”可理解为“当前用户上下文”。"
   ],
   "activities": [
     "/ækˈtɪvətiz/",
@@ -1218,6 +1232,13 @@
     "",
     "The system can apply the setting after confirmation.",
     "系统可在确认后应用设置。"
+  ],
+  "applying": [
+    "/applying/",
+    "应用",
+    "",
+    "The system should confirm before applying preferences.",
+    "在这句话中，“applying”可理解为“应用”。"
   ],
   "approach": [
     "/əˈproʊtʃ/",
@@ -2804,6 +2825,13 @@
     "A cabin command may affect climate, media, lighting, navigation, or comfort.",
     "在这句话中，“cabin command”用于描述智能座舱多人语音控制。"
   ],
+  "cabin display": [
+    "/cabin display/",
+    "座舱显示屏",
+    "",
+    "The cabin display may expose personal information.",
+    "在这句话中，“cabin display”可理解为“座舱显示屏”。"
+  ],
   "cabin heating demand": [
     "/ˈkæbɪn ˈhiːtɪŋ dɪˈmænd/",
     "座舱加热需求；车内取暖带来的额外能耗",
@@ -2859,6 +2887,13 @@
     "",
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
+  ],
+  "cabins": [
+    "/cabins/",
+    "座舱；cabin 的复数形式",
+    "",
+    "Shared cabins require stronger privacy defaults.",
+    "在这句话中，“cabins”可理解为“座舱；cabin 的复数形式”。"
   ],
   "cafe": [
     "/ˌkæˈfeɪ/",
@@ -4002,6 +4037,13 @@
     "Cloud synchronization should support clear control in a shared intelligent cockpit.",
     "在这句话中，“cloud synchronization”用于描述共享智能座舱中的清晰控制。"
   ],
+  "cloud transfer": [
+    "/cloud transfer/",
+    "云端传输",
+    "",
+    "Cloud transfer needs a clear explanation.",
+    "在这句话中，“cloud transfer”可理解为“云端传输”。"
+  ],
   "cluster": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“cluster”。",
@@ -4986,6 +5028,20 @@
     "The consent screen should separate comfort data from safety-critical data.",
     "授权界面应区分舒适数据和安全关键数据。"
   ],
+  "consent-based": [
+    "/consent-based/",
+    "基于同意的",
+    "",
+    "Consent-based design asks before using personal data.",
+    "在这句话中，“consent-based”可理解为“基于同意的”。"
+  ],
+  "consent-based voice profile": [
+    "/kənˈsent beɪst vɔɪs ˈproʊfaɪl/",
+    "基于同意的声纹档案；只有在用户明确允许后才创建或使用的声音识别配置",
+    "",
+    "A consent-based voice profile should be created only after the driver understands what data will be stored.",
+    "基于同意的声纹档案只应在驾驶者理解将保存哪些数据后创建。"
+  ],
   "consequence": [
     "/ˈkɑːnsəkwens/",
     "后果；某个选择导致的结果或影响",
@@ -5683,6 +5739,13 @@
     "在这句话中，“create”可理解为“创造, 建造, 引起, 任命”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "created": [
+    "/created/",
+    "被创建",
+    "",
+    "A profile is created after permission.",
+    "在这句话中，“created”可理解为“被创建”。"
+  ],
   "creates": [
     "/kriˈeɪts/",
     "造成；产生某种结果或影响",
@@ -6362,6 +6425,13 @@
     "",
     "The delete path should be visible near the saved memory.",
     "删除路径应显示在已保存记忆附近。"
+  ],
+  "delete profile": [
+    "/delete profile/",
+    "删除档案",
+    "",
+    "Delete profile removes the stored voice template.",
+    "在这句话中，“delete profile”可理解为“删除档案”。"
   ],
   "delete rule": [
     "/delete rule/",
@@ -7920,6 +7990,13 @@
     "Enrollment should explain storage and removal options.",
     "注册过程应解释存储和移除选项。"
   ],
+  "enrollment flow": [
+    "/ɪnˈroʊlmənt floʊ/",
+    "注册流程；创建声纹或个人档案时的步骤和说明",
+    "",
+    "The enrollment flow should explain how to pause, delete, or retrain a voice profile.",
+    "注册流程应说明如何暂停、删除或重新训练声纹档案。"
+  ],
   "enrollment prompt": [
     "/ɪnˈroʊlmənt prɑːmpt/",
     "注册提示；引导用户录入或更新身份特征的界面提示",
@@ -8787,6 +8864,13 @@
     "The cockpit uses fallback prompt to make privacy decisions easier to understand.",
     "座舱使用“fallback prompt”让隐私决策更容易理解。"
   ],
+  "fallback question": [
+    "/fallback question/",
+    "兜底问题",
+    "",
+    "A fallback question asks who should control the session.",
+    "在这句话中，“fallback question”可理解为“兜底问题”。"
+  ],
   "fallback state": [
     "/ˈfɔːlbæk steɪt/",
     "回退状态；系统出错或被拒绝后返回的稳定状态",
@@ -9615,6 +9699,13 @@
     "在这句话中，“general”可理解为“一般, 将军, 大体；全面的, 大体的, 总的, 一般的, 普遍的；常规”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "general setup screen": [
+    "/general setup screen/",
+    "通用设置页",
+    "",
+    "A general setup screen is not enough for sensitive permission.",
+    "在这句话中，“general setup screen”可理解为“通用设置页”。"
+  ],
   "generated": [
     "/ˈdʒenəreɪtɪd/",
     "生成的；由系统或模型产生的",
@@ -9971,6 +10062,13 @@
     "Trust grows when the cockpit explains its limits.",
     "在这句话中，grows 表示信任逐渐增强。"
   ],
+  "guardian consent": [
+    "/guardian consent/",
+    "监护人同意",
+    "",
+    "Guardian consent may be required for children.",
+    "在这句话中，“guardian consent”可理解为“监护人同意”。"
+  ],
   "guardrail": [
     "/ˈɡɑːrdreɪl/",
     "防护栏；防止错误操作或风险行为的设计限制",
@@ -10012,6 +10110,13 @@
     "",
     "Guest mode avoids exposing the owner's home address and media history.",
     "访客模式避免暴露车主的家庭地址和媒体历史。"
+  ],
+  "guests": [
+    "/guests/",
+    "访客；临时乘员",
+    "",
+    "Guests can use temporary guest mode.",
+    "在这句话中，“guests”可理解为“访客；临时乘员”。"
   ],
   "guidance": [
     "/'gaidns/",
@@ -10309,6 +10414,20 @@
     "",
     "A head-up display should show only the most time-critical content.",
     "抬头显示应只展示最具时效性的内容。"
+  ],
+  "headphone route": [
+    "/headphone route/",
+    "耳机路径",
+    "",
+    "A headphone route can keep audio private.",
+    "在这句话中，“headphone route”可理解为“耳机路径”。"
+  ],
+  "headphones": [
+    "/headphones/",
+    "耳机",
+    "",
+    "The prompt can move to headphones.",
+    "在这句话中，“headphones”可理解为“耳机”。"
   ],
   "heads-up display": [
     "/ˌhedz ˈʌp dɪˌspleɪ/",
@@ -10899,6 +11018,13 @@
     "The identity experience should be understandable during travel.",
     "身份体验在出行中应可理解。"
   ],
+  "identity handoff": [
+    "/aɪˈdentəti ˈhændɔːf/",
+    "身份交接；系统在驾驶者或主要说话人改变时切换个人身份上下文",
+    "",
+    "Identity handoff should ask for confirmation before applying another person's seat and media preferences.",
+    "身份交接在应用另一人的座椅和媒体偏好前应请求确认。"
+  ],
   "identity switch": [
     "/aɪˈdentəti swɪtʃ/",
     "身份切换；在不同用户档案或访客状态之间切换",
@@ -11211,6 +11337,13 @@
     "When priority, timing, and visual weight are aligned, the cockpit protects attention while still keeping the driver informed.",
     "在这句话中，“informed”可理解为“通知, 使了解, 使充满；提供资料, 告发”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "initial": [
+    "/initial/",
+    "初始的",
+    "",
+    "Initial setup must explain consent.",
+    "在这句话中，“initial”可理解为“初始的”。"
   ],
   "initiative": [
     "/ɪˈnɪʃətɪv/",
@@ -12391,6 +12524,13 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“level”可理解为“水平, 水准, 平地；同高的, 平坦的, 齐平的, 水平的；弄平, 夷平, 使同等, 瞄准, 对准；变平, 拉平”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "li": [
+    "/li/",
+    "Li；示例中的用户姓名",
+    "",
+    "The assistant asks whether the message belongs to Li.",
+    "在这句话中，“li”可理解为“Li；示例中的用户姓名”。"
   ],
   "license condition": [
     "/ˈlaɪsns kənˈdɪʃn/",
@@ -13587,6 +13727,13 @@
     "",
     "The cockpit uses media history to make privacy decisions easier to understand.",
     "座舱使用“media history”让隐私决策更容易理解。"
+  ],
+  "media preference": [
+    "/media preference/",
+    "媒体偏好",
+    "",
+    "Media preference should switch only with confirmation.",
+    "在这句话中，“media preference”可理解为“媒体偏好”。"
   ],
   "media source": [
     "/ˈmiːdiə sɔːrs/",
@@ -15206,6 +15353,13 @@
     "An occupant-aware interface can route feedback to the right seat.",
     "在这句话中，“occupant-aware”用于补充今天英文文本的可点击词义覆盖。"
   ],
+  "occupant-aware prompt": [
+    "/ˈɑːkjəpənt əˈwer prɑːmpt/",
+    "乘员感知提示；根据车内不同乘员身份和位置调整的提示",
+    "",
+    "An occupant-aware prompt can ask whether a message should stay on screen or move to headphones.",
+    "乘员感知提示可以询问信息应留在屏幕上还是转到耳机中。"
+  ],
   "occupant-aware system": [
     "/ˈɑːkjəpənt əˈwer ˈsɪstəm/",
     "乘员感知系统；能识别座位、角色和上下文的车内交互系统",
@@ -15532,6 +15686,13 @@
     "When traffic is light and the road is straight, a short climate adjustment or media choice may be acceptable.",
     "在这句话中，“or”可理解为“或, 或者”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "ordinary": [
+    "/ordinary/",
+    "普通的",
+    "",
+    "Ordinary setup language may hide risk.",
+    "在这句话中，“ordinary”可理解为“普通的”。"
   ],
   "oriented": [
     "/ˈɔːrientɪd/",
@@ -15990,6 +16151,13 @@
     "Pause a profile should support clear control in a shared intelligent cockpit.",
     "在这句话中，“pause a profile”用于描述共享智能座舱中的清晰控制。"
   ],
+  "pause profile": [
+    "/pause profile/",
+    "暂停档案",
+    "",
+    "Pause profile gives the user temporary control.",
+    "在这句话中，“pause profile”可理解为“暂停档案”。"
+  ],
   "paused": [
     "/pɔːzd/",
     "已暂停的；临时停止但仍可继续的",
@@ -16216,6 +16384,13 @@
     "A permission model should be visible enough for passengers to understand rejected commands.",
     "在这句话中，“permission model”用于描述智能座舱多人语音控制。"
   ],
+  "permission prompt": [
+    "/permission prompt/",
+    "授权提示",
+    "",
+    "A permission prompt should use plain language.",
+    "在这句话中，“permission prompt”可理解为“授权提示”。"
+  ],
   "permission scope": [
     "/pərˈmɪʃn skoʊp/",
     "许可范围；用户授权覆盖的数据、功能和动作边界",
@@ -16323,12 +16498,26 @@
     "A personalization rule should be editable in a familiar settings page.",
     "个性化规则应能在熟悉的设置页中编辑。"
   ],
+  "personalization scope": [
+    "/personalization scope/",
+    "个性化范围",
+    "",
+    "Personalization scope defines which settings may change.",
+    "在这句话中，“personalization scope”可理解为“个性化范围”。"
+  ],
   "personalization workflow": [
     "/ˌpɜːrsənələˈzeɪʃn ˈwɜːrkfloʊ/",
     "个性化流程；从识别到应用用户偏好的完整流程",
     "",
     "Personalization workflow should support clear control in a shared intelligent cockpit.",
     "在这句话中，“personalization workflow”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "personalize": [
+    "/personalize/",
+    "个性化",
+    "",
+    "Speaker recognition can personalize settings.",
+    "在这句话中，“personalize”可理解为“个性化”。"
   ],
   "personalized": [
     "/'pә:sәnәlaiz/",
@@ -16337,6 +16526,13 @@
     "Trust calibration prevents users from assuming that every personalized prompt is safety-critical.",
     "在这句话中，“personalized”可理解为“(贬)使个人化, 体现, 使人格化, 在(物品)上标明姓名/标出地址/标出记号”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "persons": [
+    "/persons/",
+    "人；个人的复数形式",
+    "",
+    "Another person's preferences should not be applied without confirmation.",
+    "在这句话中，“persons”可理解为“人；个人的复数形式”。"
   ],
   "phone": [
     "/ˈfəʊ̯n/",
@@ -17142,6 +17338,13 @@
     "Primary focus belongs on traffic, not menus.",
     "主要焦点应放在交通上，而不是菜单上。"
   ],
+  "primary speaker": [
+    "/primary speaker/",
+    "主要说话人",
+    "",
+    "The primary speaker may change during a shared ride.",
+    "在这句话中，“primary speaker”可理解为“主要说话人”。"
+  ],
   "primary station": [
     "/ˈpraɪmeri ˈsteɪʃn/",
     "主站点；首选或当前计划前往的充电站",
@@ -17235,6 +17438,20 @@
     "The cockpit uses privacy panel to make privacy decisions easier to understand.",
     "座舱使用“privacy panel”让隐私决策更容易理解。"
   ],
+  "privacy receipt": [
+    "/privacy receipt/",
+    "隐私回执",
+    "",
+    "A privacy receipt summarizes what was stored or changed.",
+    "在这句话中，“privacy receipt”可理解为“隐私回执”。"
+  ],
+  "privacy setting": [
+    "/privacy setting/",
+    "隐私设置",
+    "",
+    "A privacy setting should be easy to find.",
+    "在这句话中，“privacy setting”可理解为“隐私设置”。"
+  ],
   "privacy state": [
     "/ˈpraɪvəsi steɪt/",
     "隐私状态；麦克风、摄像头或数据共享是否启用的状态",
@@ -17306,6 +17523,13 @@
     "Privacy-preserving sensing can detect movement without storing identifiable cabin images.",
     "隐私保护型感知可以检测动作，而不存储可识别的座舱图像。"
   ],
+  "privacy-safe default": [
+    "/privacy-safe default/",
+    "隐私安全默认值",
+    "",
+    "A privacy-safe default avoids unwanted disclosure.",
+    "在这句话中，“privacy-safe default”可理解为“隐私安全默认值”。"
+  ],
   "privacy-safe memory": [
     "/ˈpraɪvəsi seɪf ˈmeməri/",
     "隐私安全记忆；保存偏好时避免暴露敏感个人信息的机制",
@@ -17333,6 +17557,13 @@
     "",
     "Private information should stay within the right display.",
     "在这句话中，“private”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "private message": [
+    "/private message/",
+    "私人消息",
+    "",
+    "A private message should not be read to every passenger.",
+    "在这句话中，“private message”可理解为“私人消息”。"
   ],
   "private notification": [
     "/ˈpraɪvət ˌnoʊtɪfɪˈkeɪʃn/",
@@ -17441,6 +17672,13 @@
     "Profile access determines which payment methods are available.",
     "档案访问权限决定哪些支付方式可用。"
   ],
+  "profile action": [
+    "/profile action/",
+    "档案操作",
+    "",
+    "Every profile action should be traceable.",
+    "在这句话中，“profile action”可理解为“档案操作”。"
+  ],
   "profile boundary": [
     "/profile boundary/",
     "档案边界；不同用户偏好和权限之间的分隔",
@@ -17454,6 +17692,13 @@
     "",
     "The cockpit uses profile memory to keep comfort assistance understandable and controllable.",
     "座舱使用“profile memory”让舒适辅助更容易理解和控制。"
+  ],
+  "profile owner": [
+    "/profile owner/",
+    "档案所有者",
+    "",
+    "The profile owner controls consent.",
+    "在这句话中，“profile owner”可理解为“档案所有者”。"
   ],
   "profile ownership": [
     "/ˈproʊfaɪl ˈoʊnərʃɪp/",
@@ -17991,6 +18236,13 @@
     "Raw behavior data may be more revealing than a simple preference.",
     "原始行为数据可能比简单偏好更能暴露用户信息。"
   ],
+  "raw command recording": [
+    "/raw command recording/",
+    "原始指令录音",
+    "",
+    "A raw command recording may contain sensitive details.",
+    "在这句话中，“raw command recording”可理解为“原始指令录音”。"
+  ],
   "raw conversation history": [
     "/rɔː ˌkɑːnvərˈseɪʃn ˈhɪstri/",
     "原始对话历史；未过滤、未摘要的用户语音或文本交互记录",
@@ -18419,6 +18671,13 @@
     "",
     "A passenger preference may be on record.",
     "在这句话中，“record”表示“记录”。"
+  ],
+  "recording": [
+    "/recording/",
+    "录音",
+    "",
+    "A command recording may include personal content.",
+    "在这句话中，“recording”可理解为“录音”。"
   ],
   "recover": [
     "/ɹɪˈkʌvə/",
@@ -19446,6 +19705,13 @@
     "Resumption timing should consider speed, workload, and urgency.",
     "续接时机应考虑车速、负荷和紧急性。"
   ],
+  "retained": [
+    "/retained/",
+    "被保留的",
+    "",
+    "The user should know how long voice data will be retained.",
+    "在这句话中，“retained”可理解为“被保留的”。"
+  ],
   "retention": [
     "/rɪˈtenʃn/",
     "保留期限；数据被保存的时间长度",
@@ -19466,6 +19732,20 @@
     "",
     "A short retention window helps teams delete temporary sensing data after the comfort action is complete.",
     "较短的保留窗口有助于团队在舒适性动作完成后删除临时感知数据。"
+  ],
+  "retrain": [
+    "/retrain/",
+    "重新训练",
+    "",
+    "Users can retrain a voice profile.",
+    "在这句话中，“retrain”可理解为“重新训练”。"
+  ],
+  "retrain profile": [
+    "/retrain profile/",
+    "重新训练档案",
+    "",
+    "Retrain profile improves recognition after errors.",
+    "在这句话中，“retrain profile”可理解为“重新训练档案”。"
   ],
   "retry": [
     "/ˌriːˈtraɪ/",
@@ -19639,6 +19919,13 @@
     "Revocation must not be hidden in a deep settings page.",
     "撤销不应被隐藏在很深的设置页中。"
   ],
+  "revocation control": [
+    "/ˌrevəˈkeɪʃn kənˈtroʊl/",
+    "撤销控制；让用户随时撤回授权或删除相关配置的控制项",
+    "",
+    "Revocation control must be easy to find after the initial setup is complete.",
+    "初始设置完成后，撤销控制也必须容易找到。"
+  ],
   "revocation path": [
     "/ˌrevəˈkeɪʃn pæθ/",
     "撤销路径；用户取消授权、撤回自动化或恢复原设置的清晰路径",
@@ -19680,6 +19967,13 @@
     "",
     "Richer settings can appear while parked.",
     "更丰富的设置可在停车时出现。"
+  ],
+  "ride-share": [
+    "/ride-share/",
+    "网约车或拼车",
+    "",
+    "Ride-share scenarios need strict privacy defaults.",
+    "在这句话中，“ride-share”可理解为“网约车或拼车”。"
   ],
   "right": [
     "/ˈɹaɪt/",
@@ -20635,6 +20929,13 @@
     "Lower screen dependence reduces distraction.",
     "降低屏幕依赖可以减少分心。"
   ],
+  "screen masking": [
+    "/screen masking/",
+    "屏幕遮蔽",
+    "",
+    "Screen masking hides sensitive content.",
+    "在这句话中，“screen masking”可理解为“屏幕遮蔽”。"
+  ],
   "screen use": [
     "/skriːn juːs/",
     "屏幕使用；乘员观看、阅读或操作屏幕的行为",
@@ -21070,6 +21371,13 @@
     "Sensitive data should never be collected only for decorative personalization.",
     "敏感数据绝不应只为装饰性个性化而收集。"
   ],
+  "sensitive detail": [
+    "/sensitive detail/",
+    "敏感细节",
+    "",
+    "A sensitive detail should stay private.",
+    "在这句话中，“sensitive detail”可理解为“敏感细节”。"
+  ],
   "sensitive personalization": [
     "/ˈsensətɪv ˌpɜːrsənələˈzeɪʃn/",
     "敏感个性化；涉及个人习惯、身份或隐私的个性化",
@@ -21316,6 +21624,13 @@
     "The settings surface should list active permissions clearly.",
     "设置界面应清楚列出已启用权限。"
   ],
+  "setup": [
+    "/setup/",
+    "设置；配置",
+    "",
+    "Initial setup must explain the privacy choices.",
+    "在这句话中，“setup”可理解为“设置；配置”。"
+  ],
   "several": [
     "/'sevәrәl/",
     "副词：几个的, 一些的, 各自的；几个",
@@ -21382,6 +21697,13 @@
     "A shared cabin changes how the assistant reads personal information aloud.",
     "共享座舱会改变助手朗读个人信息的方式。"
   ],
+  "shared cabin privacy": [
+    "/ʃerd ˈkæbɪn ˈpraɪvəsi/",
+    "共享座舱隐私；多名乘员共处车内时对个人数据、语音和偏好的保护",
+    "",
+    "Shared cabin privacy matters when one passenger asks the assistant to read a private message aloud.",
+    "当一名乘员要求助手朗读私人消息时，共享座舱隐私就很重要。"
+  ],
   "shared control": [
     "/ʃerd kənˈtroʊl/",
     "共享控制；驾驶员和乘员共同影响座舱功能但权限不同的交互模式",
@@ -21416,6 +21738,13 @@
     "",
     "A shared intelligent cockpit needs clear rules for voice control.",
     "在这句话中，“shared intelligent cockpit”用于描述智能座舱多人语音控制。"
+  ],
+  "shared ride": [
+    "/shared ride/",
+    "多人乘坐",
+    "",
+    "A shared ride creates more privacy constraints.",
+    "在这句话中，“shared ride”可理解为“多人乘坐”。"
   ],
   "shared screen": [
     "/ʃerd skriːn/",
@@ -21900,6 +22229,13 @@
     "A situational trigger can surface a charging reminder when range, weather, and destination all indicate risk.",
     "当续航、天气和目的地都显示风险时，情境触发条件可以呈现充电提醒。"
   ],
+  "situations": [
+    "/situations/",
+    "情况；场景",
+    "",
+    "Ride-share situations need privacy-safe defaults.",
+    "在这句话中，“situations”可理解为“情况；场景”。"
+  ],
   "six": [
     "/sɪks/",
     "六；时间或数量表达中的数字",
@@ -22190,6 +22526,13 @@
     "Speaker localization helps the assistant apply a command to the correct seat zone.",
     "说话人定位帮助助手把指令应用到正确的座位区域。"
   ],
+  "speaker recognition": [
+    "/ˈspiːkər ˌrekəɡˈnɪʃn/",
+    "说话人识别；判断当前语音来自哪位用户的能力",
+    "",
+    "Speaker recognition can personalize settings, but it must avoid exposing another occupant's account.",
+    "说话人识别可以个性化设置，但必须避免暴露另一位乘员的账户。"
+  ],
   "speaking": [
     "/ˈspiː.kɪŋ/",
     "动词：说, 说话, 演说, 发言；说, 讲, 说出",
@@ -22318,6 +22661,13 @@
     "",
     "Driver workload should determine whether the answer is spoken, delayed, or moved to the display.",
     "在这句话中，“spoken”可理解为“口头播报的；以语音形式输出的”。"
+  ],
+  "spoken command": [
+    "/spoken command/",
+    "语音指令",
+    "",
+    "A spoken command can reveal private intent.",
+    "在这句话中，“spoken command”可理解为“语音指令”。"
   ],
   "spoken cue": [
     "/ˈspoʊkən kjuː/",
@@ -22801,6 +23151,27 @@
     "",
     "Stored appears in today's seat memory profile lesson.",
     "在这句话中，“stored”来自今天的座椅记忆档案学习内容。"
+  ],
+  "stored data": [
+    "/stored data/",
+    "已存储数据",
+    "",
+    "Stored data should be visible and manageable.",
+    "在这句话中，“stored data”可理解为“已存储数据”。"
+  ],
+  "stored locally": [
+    "/stored locally/",
+    "本地保存",
+    "",
+    "Stored locally means the template stays in the vehicle.",
+    "在这句话中，“stored locally”可理解为“本地保存”。"
+  ],
+  "stores": [
+    "/stores/",
+    "保存；存储",
+    "",
+    "The cockpit stores only the necessary voice template.",
+    "在这句话中，“stores”可理解为“保存；存储”。"
   ],
   "storing": [
     "/ˈstɔːrɪŋ/",
@@ -23600,6 +23971,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "template": [
+    "/template/",
+    "模板；声纹模板",
+    "",
+    "A voice template supports recognition without storing every recording.",
+    "在这句话中，“template”可理解为“模板；声纹模板”。"
+  ],
   "temporary": [
     "/暂无音标/",
     "形容词：临时的",
@@ -23620,6 +23998,13 @@
     "",
     "Temporary consent is useful when a passenger shares a destination for one trip.",
     "当乘客只为一次行程共享目的地时，临时同意很有用。"
+  ],
+  "temporary guest mode": [
+    "/temporary guest mode/",
+    "临时访客模式",
+    "",
+    "Temporary guest mode avoids permanent data collection.",
+    "在这句话中，“temporary guest mode”可理解为“临时访客模式”。"
   ],
   "temporary hold": [
     "/ˈtempəreri hoʊld/",
@@ -25658,6 +26043,13 @@
     "Voice arbitration should resolve conflicting requests without making the driver negotiate every cabin command.",
     "语音仲裁应解决冲突请求，而不是让驾驶员逐个协调车内指令。"
   ],
+  "voice assistant": [
+    "/voice assistant/",
+    "语音助手",
+    "",
+    "The voice assistant should respect privacy boundaries.",
+    "在这句话中，“voice assistant”可理解为“语音助手”。"
+  ],
   "voice brevity": [
     "/vɔɪs ˈbrevəti/",
     "语音简洁度；语音提示在保持清楚的同时尽量减少字数和打断",
@@ -25734,6 +26126,13 @@
     "",
     "Voice settings should support clear control in a shared intelligent cockpit.",
     "在这句话中，“voice settings”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "voice template": [
+    "/voice template/",
+    "声纹模板",
+    "",
+    "A voice template is safer than storing raw recordings.",
+    "在这句话中，“voice template”可理解为“声纹模板”。"
   ],
   "voice tone": [
     "/vɔɪs toʊn/",
@@ -26265,6 +26664,13 @@
     "Context-sensitive timing is critical because a simple card can become distracting at the wrong moment.",
     "在这句话中，“wrong”可理解为“错误的, 不正当的, 失常的；错误地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "wrong person": [
+    "/wrong person/",
+    "错误的人",
+    "",
+    "The wrong person should not hear protected information.",
+    "在这句话中，“wrong person”可理解为“错误的人”。"
   ],
   "wrong recall": [
     "/rɔːŋ rɪˈkɔːl/",

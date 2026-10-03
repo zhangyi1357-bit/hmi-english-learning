@@ -1,5 +1,864 @@
 [
   {
+    "id": "2026-10-03-consent-based-voice-profiles-shared-cabin-privacy",
+    "date": "2026-10-03",
+    "title": "Consent-based voice profiles and shared cabin privacy",
+    "topic": "智能座舱基于同意的声纹档案与共享座舱隐私",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在识别说话人、切换个人配置和处理共享乘坐场景时，明确征得同意、限制数据使用并保护乘员隐私。",
+    "words": [
+      {
+        "term": "consent-based voice profile",
+        "phonetic": "/kənˈsent beɪst vɔɪs ˈproʊfaɪl/",
+        "meaning": "基于同意的声纹档案；只有在用户明确允许后才创建或使用的声音识别配置",
+        "example": "A consent-based voice profile should be created only after the driver understands what data will be stored.",
+        "chineseExample": "基于同意的声纹档案只应在驾驶者理解将保存哪些数据后创建。"
+      },
+      {
+        "term": "shared cabin privacy",
+        "phonetic": "/ʃerd ˈkæbɪn ˈpraɪvəsi/",
+        "meaning": "共享座舱隐私；多名乘员共处车内时对个人数据、语音和偏好的保护",
+        "example": "Shared cabin privacy matters when one passenger asks the assistant to read a private message aloud.",
+        "chineseExample": "当一名乘员要求助手朗读私人消息时，共享座舱隐私就很重要。"
+      },
+      {
+        "term": "speaker recognition",
+        "phonetic": "/ˈspiːkər ˌrekəɡˈnɪʃn/",
+        "meaning": "说话人识别；判断当前语音来自哪位用户的能力",
+        "example": "Speaker recognition can personalize settings, but it must avoid exposing another occupant's account.",
+        "chineseExample": "说话人识别可以个性化设置，但必须避免暴露另一位乘员的账户。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/ɪkˈsplɪsɪt kənˈsent/",
+        "meaning": "明确同意；用户清楚理解并主动确认的数据授权",
+        "example": "Explicit consent is stronger than a vague notice hidden inside a general setup screen.",
+        "chineseExample": "明确同意比隐藏在通用设置页里的模糊提示更有约束力。"
+      },
+      {
+        "term": "enrollment flow",
+        "phonetic": "/ɪnˈroʊlmənt floʊ/",
+        "meaning": "注册流程；创建声纹或个人档案时的步骤和说明",
+        "example": "The enrollment flow should explain how to pause, delete, or retrain a voice profile.",
+        "chineseExample": "注册流程应说明如何暂停、删除或重新训练声纹档案。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/ˈpraɪvəsi ˈbaʊndəri/",
+        "meaning": "隐私边界；系统在个性化、朗读和数据共享时不能越过的界限",
+        "example": "A clear privacy boundary prevents the assistant from reading a message to the wrong person.",
+        "chineseExample": "清晰的隐私边界可防止助手把消息读给错误的人。"
+      },
+      {
+        "term": "identity handoff",
+        "phonetic": "/aɪˈdentəti ˈhændɔːf/",
+        "meaning": "身份交接；系统在驾驶者或主要说话人改变时切换个人身份上下文",
+        "example": "Identity handoff should ask for confirmation before applying another person's seat and media preferences.",
+        "chineseExample": "身份交接在应用另一人的座椅和媒体偏好前应请求确认。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/ˈdeɪtə ˌmɪnɪməˈzeɪʃn/",
+        "meaning": "数据最小化；只收集实现功能所必需的数据",
+        "example": "Data minimization means the cockpit stores a voice template, not every raw command recording.",
+        "chineseExample": "数据最小化意味着座舱保存声纹模板，而不是每条原始指令录音。"
+      },
+      {
+        "term": "occupant-aware prompt",
+        "phonetic": "/ˈɑːkjəpənt əˈwer prɑːmpt/",
+        "meaning": "乘员感知提示；根据车内不同乘员身份和位置调整的提示",
+        "example": "An occupant-aware prompt can ask whether a message should stay on screen or move to headphones.",
+        "chineseExample": "乘员感知提示可以询问信息应留在屏幕上还是转到耳机中。"
+      },
+      {
+        "term": "revocation control",
+        "phonetic": "/ˌrevəˈkeɪʃn kənˈtroʊl/",
+        "meaning": "撤销控制；让用户随时撤回授权或删除相关配置的控制项",
+        "example": "Revocation control must be easy to find after the initial setup is complete.",
+        "chineseExample": "初始设置完成后，撤销控制也必须容易找到。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "consent-based voice profile",
+        "phonetic": "/consent-based voice profile/",
+        "meaning": "基于同意的声纹档案",
+        "example": "A consent-based voice profile requires clear permission before use.",
+        "chineseExample": "在这句话中，“consent-based voice profile”可理解为“基于同意的声纹档案”。"
+      },
+      {
+        "term": "shared cabin privacy",
+        "phonetic": "/shared cabin privacy/",
+        "meaning": "共享座舱隐私",
+        "example": "Shared cabin privacy protects every occupant in the vehicle.",
+        "chineseExample": "在这句话中，“shared cabin privacy”可理解为“共享座舱隐私”。"
+      },
+      {
+        "term": "speaker recognition",
+        "phonetic": "/speaker recognition/",
+        "meaning": "说话人识别",
+        "example": "Speaker recognition identifies who is speaking.",
+        "chineseExample": "在这句话中，“speaker recognition”可理解为“说话人识别”。"
+      },
+      {
+        "term": "explicit consent",
+        "phonetic": "/explicit consent/",
+        "meaning": "明确同意",
+        "example": "Explicit consent asks the user to actively agree.",
+        "chineseExample": "在这句话中，“explicit consent”可理解为“明确同意”。"
+      },
+      {
+        "term": "enrollment flow",
+        "phonetic": "/enrollment flow/",
+        "meaning": "注册流程",
+        "example": "The enrollment flow explains how the profile is created.",
+        "chineseExample": "在这句话中，“enrollment flow”可理解为“注册流程”。"
+      },
+      {
+        "term": "privacy boundary",
+        "phonetic": "/privacy boundary/",
+        "meaning": "隐私边界",
+        "example": "A privacy boundary limits what the assistant may reveal.",
+        "chineseExample": "在这句话中，“privacy boundary”可理解为“隐私边界”。"
+      },
+      {
+        "term": "identity handoff",
+        "phonetic": "/identity handoff/",
+        "meaning": "身份交接",
+        "example": "Identity handoff changes the active user context.",
+        "chineseExample": "在这句话中，“identity handoff”可理解为“身份交接”。"
+      },
+      {
+        "term": "data minimization",
+        "phonetic": "/data minimization/",
+        "meaning": "数据最小化",
+        "example": "Data minimization keeps only necessary information.",
+        "chineseExample": "在这句话中，“data minimization”可理解为“数据最小化”。"
+      },
+      {
+        "term": "occupant-aware prompt",
+        "phonetic": "/occupant-aware prompt/",
+        "meaning": "乘员感知提示",
+        "example": "An occupant-aware prompt adapts to who is inside the cabin.",
+        "chineseExample": "在这句话中，“occupant-aware prompt”可理解为“乘员感知提示”。"
+      },
+      {
+        "term": "revocation control",
+        "phonetic": "/revocation control/",
+        "meaning": "撤销控制",
+        "example": "Revocation control lets the user withdraw permission.",
+        "chineseExample": "在这句话中，“revocation control”可理解为“撤销控制”。"
+      },
+      {
+        "term": "voice template",
+        "phonetic": "/voice template/",
+        "meaning": "声纹模板",
+        "example": "A voice template is safer than storing raw recordings.",
+        "chineseExample": "在这句话中，“voice template”可理解为“声纹模板”。"
+      },
+      {
+        "term": "raw command recording",
+        "phonetic": "/raw command recording/",
+        "meaning": "原始指令录音",
+        "example": "A raw command recording may contain sensitive details.",
+        "chineseExample": "在这句话中，“raw command recording”可理解为“原始指令录音”。"
+      },
+      {
+        "term": "private message",
+        "phonetic": "/private message/",
+        "meaning": "私人消息",
+        "example": "A private message should not be read to every passenger.",
+        "chineseExample": "在这句话中，“private message”可理解为“私人消息”。"
+      },
+      {
+        "term": "read aloud",
+        "phonetic": "/read aloud/",
+        "meaning": "朗读",
+        "example": "Read aloud features need privacy checks.",
+        "chineseExample": "在这句话中，“read aloud”可理解为“朗读”。"
+      },
+      {
+        "term": "account exposure",
+        "phonetic": "/account exposure/",
+        "meaning": "账户暴露",
+        "example": "Account exposure can happen during poor identity handoff.",
+        "chineseExample": "在这句话中，“account exposure”可理解为“账户暴露”。"
+      },
+      {
+        "term": "general setup screen",
+        "phonetic": "/general setup screen/",
+        "meaning": "通用设置页",
+        "example": "A general setup screen is not enough for sensitive permission.",
+        "chineseExample": "在这句话中，“general setup screen”可理解为“通用设置页”。"
+      },
+      {
+        "term": "pause profile",
+        "phonetic": "/pause profile/",
+        "meaning": "暂停档案",
+        "example": "Pause profile gives the user temporary control.",
+        "chineseExample": "在这句话中，“pause profile”可理解为“暂停档案”。"
+      },
+      {
+        "term": "delete profile",
+        "phonetic": "/delete profile/",
+        "meaning": "删除档案",
+        "example": "Delete profile removes the stored voice template.",
+        "chineseExample": "在这句话中，“delete profile”可理解为“删除档案”。"
+      },
+      {
+        "term": "retrain profile",
+        "phonetic": "/retrain profile/",
+        "meaning": "重新训练档案",
+        "example": "Retrain profile improves recognition after errors.",
+        "chineseExample": "在这句话中，“retrain profile”可理解为“重新训练档案”。"
+      },
+      {
+        "term": "wrong person",
+        "phonetic": "/wrong person/",
+        "meaning": "错误的人",
+        "example": "The wrong person should not hear protected information.",
+        "chineseExample": "在这句话中，“wrong person”可理解为“错误的人”。"
+      },
+      {
+        "term": "seat preference",
+        "phonetic": "/seat preference/",
+        "meaning": "座椅偏好",
+        "example": "Seat preference may belong to a specific driver.",
+        "chineseExample": "在这句话中，“seat preference”可理解为“座椅偏好”。"
+      },
+      {
+        "term": "media preference",
+        "phonetic": "/media preference/",
+        "meaning": "媒体偏好",
+        "example": "Media preference should switch only with confirmation.",
+        "chineseExample": "在这句话中，“media preference”可理解为“媒体偏好”。"
+      },
+      {
+        "term": "primary speaker",
+        "phonetic": "/primary speaker/",
+        "meaning": "主要说话人",
+        "example": "The primary speaker may change during a shared ride.",
+        "chineseExample": "在这句话中，“primary speaker”可理解为“主要说话人”。"
+      },
+      {
+        "term": "active user context",
+        "phonetic": "/active user context/",
+        "meaning": "当前用户上下文",
+        "example": "Active user context controls personalization.",
+        "chineseExample": "在这句话中，“active user context”可理解为“当前用户上下文”。"
+      },
+      {
+        "term": "stored data",
+        "phonetic": "/stored data/",
+        "meaning": "已存储数据",
+        "example": "Stored data should be visible and manageable.",
+        "chineseExample": "在这句话中，“stored data”可理解为“已存储数据”。"
+      },
+      {
+        "term": "permission prompt",
+        "phonetic": "/permission prompt/",
+        "meaning": "授权提示",
+        "example": "A permission prompt should use plain language.",
+        "chineseExample": "在这句话中，“permission prompt”可理解为“授权提示”。"
+      },
+      {
+        "term": "confirmation step",
+        "phonetic": "/confirmation step/",
+        "meaning": "确认步骤",
+        "example": "A confirmation step prevents accidental switching.",
+        "chineseExample": "在这句话中，“confirmation step”可理解为“确认步骤”。"
+      },
+      {
+        "term": "sensitive detail",
+        "phonetic": "/sensitive detail/",
+        "meaning": "敏感细节",
+        "example": "A sensitive detail should stay private.",
+        "chineseExample": "在这句话中，“sensitive detail”可理解为“敏感细节”。"
+      },
+      {
+        "term": "shared ride",
+        "phonetic": "/shared ride/",
+        "meaning": "多人乘坐",
+        "example": "A shared ride creates more privacy constraints.",
+        "chineseExample": "在这句话中，“shared ride”可理解为“多人乘坐”。"
+      },
+      {
+        "term": "front passenger",
+        "phonetic": "/front passenger/",
+        "meaning": "前排乘员",
+        "example": "A front passenger may speak to the assistant.",
+        "chineseExample": "在这句话中，“front passenger”可理解为“前排乘员”。"
+      },
+      {
+        "term": "rear passenger",
+        "phonetic": "/rear passenger/",
+        "meaning": "后排乘员",
+        "example": "A rear passenger may not share the driver account.",
+        "chineseExample": "在这句话中，“rear passenger”可理解为“后排乘员”。"
+      },
+      {
+        "term": "profile switch",
+        "phonetic": "/profile switch/",
+        "meaning": "档案切换",
+        "example": "Profile switch should be visible to the affected user.",
+        "chineseExample": "在这句话中，“profile switch”可理解为“档案切换”。"
+      },
+      {
+        "term": "temporary guest mode",
+        "phonetic": "/temporary guest mode/",
+        "meaning": "临时访客模式",
+        "example": "Temporary guest mode avoids permanent data collection.",
+        "chineseExample": "在这句话中，“temporary guest mode”可理解为“临时访客模式”。"
+      },
+      {
+        "term": "local processing",
+        "phonetic": "/local processing/",
+        "meaning": "本地处理",
+        "example": "Local processing can reduce privacy risk.",
+        "chineseExample": "在这句话中，“local processing”可理解为“本地处理”。"
+      },
+      {
+        "term": "cloud transfer",
+        "phonetic": "/cloud transfer/",
+        "meaning": "云端传输",
+        "example": "Cloud transfer needs a clear explanation.",
+        "chineseExample": "在这句话中，“cloud transfer”可理解为“云端传输”。"
+      },
+      {
+        "term": "retention period",
+        "phonetic": "/retention period/",
+        "meaning": "保留期限",
+        "example": "Retention period tells users how long data remains.",
+        "chineseExample": "在这句话中，“retention period”可理解为“保留期限”。"
+      },
+      {
+        "term": "audit trail",
+        "phonetic": "/audit trail/",
+        "meaning": "审计记录",
+        "example": "An audit trail shows recent profile actions.",
+        "chineseExample": "在这句话中，“audit trail”可理解为“审计记录”。"
+      },
+      {
+        "term": "privacy receipt",
+        "phonetic": "/privacy receipt/",
+        "meaning": "隐私回执",
+        "example": "A privacy receipt summarizes what was stored or changed.",
+        "chineseExample": "在这句话中，“privacy receipt”可理解为“隐私回执”。"
+      },
+      {
+        "term": "trust calibration",
+        "phonetic": "/trust calibration/",
+        "meaning": "信任校准",
+        "example": "Trust calibration helps users understand system limits.",
+        "chineseExample": "在这句话中，“trust calibration”可理解为“信任校准”。"
+      },
+      {
+        "term": "misrecognition",
+        "phonetic": "/misrecognition/",
+        "meaning": "误识别",
+        "example": "Misrecognition can apply the wrong profile.",
+        "chineseExample": "在这句话中，“misrecognition”可理解为“误识别”。"
+      },
+      {
+        "term": "fallback question",
+        "phonetic": "/fallback question/",
+        "meaning": "兜底问题",
+        "example": "A fallback question asks who should control the session.",
+        "chineseExample": "在这句话中，“fallback question”可理解为“兜底问题”。"
+      },
+      {
+        "term": "personalization scope",
+        "phonetic": "/personalization scope/",
+        "meaning": "个性化范围",
+        "example": "Personalization scope defines which settings may change.",
+        "chineseExample": "在这句话中，“personalization scope”可理解为“个性化范围”。"
+      },
+      {
+        "term": "voice assistant",
+        "phonetic": "/voice assistant/",
+        "meaning": "语音助手",
+        "example": "The voice assistant should respect privacy boundaries.",
+        "chineseExample": "在这句话中，“voice assistant”可理解为“语音助手”。"
+      },
+      {
+        "term": "cabin display",
+        "phonetic": "/cabin display/",
+        "meaning": "座舱显示屏",
+        "example": "The cabin display may expose personal information.",
+        "chineseExample": "在这句话中，“cabin display”可理解为“座舱显示屏”。"
+      },
+      {
+        "term": "headphone route",
+        "phonetic": "/headphone route/",
+        "meaning": "耳机路径",
+        "example": "A headphone route can keep audio private.",
+        "chineseExample": "在这句话中，“headphone route”可理解为“耳机路径”。"
+      },
+      {
+        "term": "screen masking",
+        "phonetic": "/screen masking/",
+        "meaning": "屏幕遮蔽",
+        "example": "Screen masking hides sensitive content.",
+        "chineseExample": "在这句话中，“screen masking”可理解为“屏幕遮蔽”。"
+      },
+      {
+        "term": "profile owner",
+        "phonetic": "/profile owner/",
+        "meaning": "档案所有者",
+        "example": "The profile owner controls consent.",
+        "chineseExample": "在这句话中，“profile owner”可理解为“档案所有者”。"
+      },
+      {
+        "term": "guardian consent",
+        "phonetic": "/guardian consent/",
+        "meaning": "监护人同意",
+        "example": "Guardian consent may be required for children.",
+        "chineseExample": "在这句话中，“guardian consent”可理解为“监护人同意”。"
+      },
+      {
+        "term": "shared control",
+        "phonetic": "/shared control/",
+        "meaning": "共享控制",
+        "example": "Shared control lets multiple occupants interact safely.",
+        "chineseExample": "在这句话中，“shared control”可理解为“共享控制”。"
+      },
+      {
+        "term": "privacy-safe default",
+        "phonetic": "/privacy-safe default/",
+        "meaning": "隐私安全默认值",
+        "example": "A privacy-safe default avoids unwanted disclosure.",
+        "chineseExample": "在这句话中，“privacy-safe default”可理解为“隐私安全默认值”。"
+      },
+      {
+        "term": "stored",
+        "phonetic": "/stored/",
+        "meaning": "已保存的",
+        "example": "Stored voice data must be easy to review.",
+        "chineseExample": "在这句话中，“stored”可理解为“已保存的”。"
+      },
+      {
+        "term": "understands",
+        "phonetic": "/understands/",
+        "meaning": "理解",
+        "example": "The driver understands what data will be stored.",
+        "chineseExample": "在这句话中，“understands”可理解为“理解”。"
+      },
+      {
+        "term": "created",
+        "phonetic": "/created/",
+        "meaning": "被创建",
+        "example": "A profile is created after permission.",
+        "chineseExample": "在这句话中，“created”可理解为“被创建”。"
+      },
+      {
+        "term": "matters",
+        "phonetic": "/matters/",
+        "meaning": "重要",
+        "example": "Shared cabin privacy matters during personal requests.",
+        "chineseExample": "在这句话中，“matters”可理解为“重要”。"
+      },
+      {
+        "term": "asks",
+        "phonetic": "/asks/",
+        "meaning": "请求",
+        "example": "One passenger asks the assistant for a message.",
+        "chineseExample": "在这句话中，“asks”可理解为“请求”。"
+      },
+      {
+        "term": "aloud",
+        "phonetic": "/aloud/",
+        "meaning": "大声地",
+        "example": "Private content should not be read aloud by default.",
+        "chineseExample": "在这句话中，“aloud”可理解为“大声地”。"
+      },
+      {
+        "term": "personalize",
+        "phonetic": "/personalize/",
+        "meaning": "个性化",
+        "example": "Speaker recognition can personalize settings.",
+        "chineseExample": "在这句话中，“personalize”可理解为“个性化”。"
+      },
+      {
+        "term": "exposing",
+        "phonetic": "/exposing/",
+        "meaning": "暴露",
+        "example": "The interface must avoid exposing another account.",
+        "chineseExample": "在这句话中，“exposing”可理解为“暴露”。"
+      },
+      {
+        "term": "vague",
+        "phonetic": "/vague/",
+        "meaning": "模糊的",
+        "example": "A vague notice is weak consent.",
+        "chineseExample": "在这句话中，“vague”可理解为“模糊的”。"
+      },
+      {
+        "term": "hidden",
+        "phonetic": "/hidden/",
+        "meaning": "隐藏的",
+        "example": "Permission should not be hidden in settings.",
+        "chineseExample": "在这句话中，“hidden”可理解为“隐藏的”。"
+      },
+      {
+        "term": "inside",
+        "phonetic": "/inside/",
+        "meaning": "在内部",
+        "example": "The notice was hidden inside a setup page.",
+        "chineseExample": "在这句话中，“inside”可理解为“在内部”。"
+      },
+      {
+        "term": "pause",
+        "phonetic": "/pause/",
+        "meaning": "暂停",
+        "example": "Users can pause voice recognition.",
+        "chineseExample": "在这句话中，“pause”可理解为“暂停”。"
+      },
+      {
+        "term": "delete",
+        "phonetic": "/delete/",
+        "meaning": "删除",
+        "example": "Users can delete a voice profile.",
+        "chineseExample": "在这句话中，“delete”可理解为“删除”。"
+      },
+      {
+        "term": "retrain",
+        "phonetic": "/retrain/",
+        "meaning": "重新训练",
+        "example": "Users can retrain a voice profile.",
+        "chineseExample": "在这句话中，“retrain”可理解为“重新训练”。"
+      },
+      {
+        "term": "prevents",
+        "phonetic": "/prevents/",
+        "meaning": "防止",
+        "example": "A privacy boundary prevents disclosure.",
+        "chineseExample": "在这句话中，“prevents”可理解为“防止”。"
+      },
+      {
+        "term": "reading",
+        "phonetic": "/reading/",
+        "meaning": "朗读",
+        "example": "Reading messages requires identity checks.",
+        "chineseExample": "在这句话中，“reading”可理解为“朗读”。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/confirmation/",
+        "meaning": "确认",
+        "example": "Identity handoff should ask for confirmation.",
+        "chineseExample": "在这句话中，“confirmation”可理解为“确认”。"
+      },
+      {
+        "term": "applying",
+        "phonetic": "/applying/",
+        "meaning": "应用",
+        "example": "The system should confirm before applying preferences.",
+        "chineseExample": "在这句话中，“applying”可理解为“应用”。"
+      },
+      {
+        "term": "recording",
+        "phonetic": "/recording/",
+        "meaning": "录音",
+        "example": "A command recording may include personal content.",
+        "chineseExample": "在这句话中，“recording”可理解为“录音”。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/screen/",
+        "meaning": "屏幕",
+        "example": "The message can stay on screen.",
+        "chineseExample": "在这句话中，“screen”可理解为“屏幕”。"
+      },
+      {
+        "term": "headphones",
+        "phonetic": "/headphones/",
+        "meaning": "耳机",
+        "example": "The prompt can move to headphones.",
+        "chineseExample": "在这句话中，“headphones”可理解为“耳机”。"
+      },
+      {
+        "term": "initial",
+        "phonetic": "/initial/",
+        "meaning": "初始的",
+        "example": "Initial setup must explain consent.",
+        "chineseExample": "在这句话中，“initial”可理解为“初始的”。"
+      },
+      {
+        "term": "complete",
+        "phonetic": "/complete/",
+        "meaning": "完成",
+        "example": "Setup is complete only after consent.",
+        "chineseExample": "在这句话中，“complete”可理解为“完成”。"
+      },
+      {
+        "term": "recognizes",
+        "phonetic": "/recognizes/",
+        "meaning": "识别",
+        "example": "The system recognizes a returning driver.",
+        "chineseExample": "在这句话中，“recognizes”可理解为“识别”。"
+      },
+      {
+        "term": "borrowed",
+        "phonetic": "/borrowed/",
+        "meaning": "借用的",
+        "example": "A borrowed vehicle needs guest mode.",
+        "chineseExample": "在这句话中，“borrowed”可理解为“借用的”。"
+      },
+      {
+        "term": "ride-share",
+        "phonetic": "/ride-share/",
+        "meaning": "网约车或拼车",
+        "example": "Ride-share scenarios need strict privacy defaults.",
+        "chineseExample": "在这句话中，“ride-share”可理解为“网约车或拼车”。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/without/",
+        "meaning": "不；没有",
+        "example": "Personalization should work without exposing private data.",
+        "chineseExample": "在这句话中，“without”可理解为“不；没有”。"
+      },
+      {
+        "term": "saying",
+        "phonetic": "/saying/",
+        "meaning": "说明",
+        "example": "The assistant can respond without saying private details.",
+        "chineseExample": "在这句话中，“saying”可理解为“说明”。"
+      },
+      {
+        "term": "instead",
+        "phonetic": "/instead/",
+        "meaning": "而是",
+        "example": "Use a private route instead of cabin audio.",
+        "chineseExample": "在这句话中，“instead”可理解为“而是”。"
+      },
+      {
+        "term": "belongs",
+        "phonetic": "/belongs/",
+        "meaning": "属于",
+        "example": "The message belongs to a specific profile owner.",
+        "chineseExample": "在这句话中，“belongs”可理解为“属于”。"
+      },
+      {
+        "term": "temporary",
+        "phonetic": "/temporary/",
+        "meaning": "临时的",
+        "example": "Temporary guest mode reduces long-term storage.",
+        "chineseExample": "在这句话中，“temporary”可理解为“临时的”。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/available/",
+        "meaning": "可用的",
+        "example": "Revocation controls should remain available.",
+        "chineseExample": "在这句话中，“available”可理解为“可用的”。"
+      },
+      {
+        "term": "ordinary",
+        "phonetic": "/ordinary/",
+        "meaning": "普通的",
+        "example": "Ordinary setup language may hide risk.",
+        "chineseExample": "在这句话中，“ordinary”可理解为“普通的”。"
+      },
+      {
+        "term": "active",
+        "phonetic": "/active/",
+        "meaning": "当前的",
+        "example": "The active profile must be visible.",
+        "chineseExample": "在这句话中，“active”可理解为“当前的”。"
+      },
+      {
+        "term": "limits",
+        "phonetic": "/limits/",
+        "meaning": "限制",
+        "example": "Clear limits support trust.",
+        "chineseExample": "在这句话中，“limits”可理解为“限制”。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/explanation/",
+        "meaning": "解释",
+        "example": "The explanation should be short and specific.",
+        "chineseExample": "在这句话中，“explanation”可理解为“解释”。"
+      },
+      {
+        "term": "stored locally",
+        "phonetic": "/stored locally/",
+        "meaning": "本地保存",
+        "example": "Stored locally means the template stays in the vehicle.",
+        "chineseExample": "在这句话中，“stored locally”可理解为“本地保存”。"
+      },
+      {
+        "term": "spoken command",
+        "phonetic": "/spoken command/",
+        "meaning": "语音指令",
+        "example": "A spoken command can reveal private intent.",
+        "chineseExample": "在这句话中，“spoken command”可理解为“语音指令”。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/shared vehicle/",
+        "meaning": "共享车辆",
+        "example": "A shared vehicle needs careful profile handling.",
+        "chineseExample": "在这句话中，“shared vehicle”可理解为“共享车辆”。"
+      },
+      {
+        "term": "profile action",
+        "phonetic": "/profile action/",
+        "meaning": "档案操作",
+        "example": "Every profile action should be traceable.",
+        "chineseExample": "在这句话中，“profile action”可理解为“档案操作”。"
+      },
+      {
+        "term": "privacy setting",
+        "phonetic": "/privacy setting/",
+        "meaning": "隐私设置",
+        "example": "A privacy setting should be easy to find.",
+        "chineseExample": "在这句话中，“privacy setting”可理解为“隐私设置”。"
+      },
+      {
+        "term": "consent-based",
+        "phonetic": "/consent-based/",
+        "meaning": "基于同意的",
+        "example": "Consent-based design asks before using personal data.",
+        "chineseExample": "在这句话中，“consent-based”可理解为“基于同意的”。"
+      },
+      {
+        "term": "setup",
+        "phonetic": "/setup/",
+        "meaning": "设置；配置",
+        "example": "Initial setup must explain the privacy choices.",
+        "chineseExample": "在这句话中，“setup”可理解为“设置；配置”。"
+      },
+      {
+        "term": "persons",
+        "phonetic": "/persons/",
+        "meaning": "人；个人的复数形式",
+        "example": "Another person's preferences should not be applied without confirmation.",
+        "chineseExample": "在这句话中，“persons”可理解为“人；个人的复数形式”。"
+      },
+      {
+        "term": "stores",
+        "phonetic": "/stores/",
+        "meaning": "保存；存储",
+        "example": "The cockpit stores only the necessary voice template.",
+        "chineseExample": "在这句话中，“stores”可理解为“保存；存储”。"
+      },
+      {
+        "term": "template",
+        "phonetic": "/template/",
+        "meaning": "模板；声纹模板",
+        "example": "A voice template supports recognition without storing every recording.",
+        "chineseExample": "在这句话中，“template”可理解为“模板；声纹模板”。"
+      },
+      {
+        "term": "cabins",
+        "phonetic": "/cabins/",
+        "meaning": "座舱；cabin 的复数形式",
+        "example": "Shared cabins require stronger privacy defaults.",
+        "chineseExample": "在这句话中，“cabins”可理解为“座舱；cabin 的复数形式”。"
+      },
+      {
+        "term": "retained",
+        "phonetic": "/retained/",
+        "meaning": "被保留的",
+        "example": "The user should know how long voice data will be retained.",
+        "chineseExample": "在这句话中，“retained”可理解为“被保留的”。"
+      },
+      {
+        "term": "guests",
+        "phonetic": "/guests/",
+        "meaning": "访客；临时乘员",
+        "example": "Guests can use temporary guest mode.",
+        "chineseExample": "在这句话中，“guests”可理解为“访客；临时乘员”。"
+      },
+      {
+        "term": "situations",
+        "phonetic": "/situations/",
+        "meaning": "情况；场景",
+        "example": "Ride-share situations need privacy-safe defaults.",
+        "chineseExample": "在这句话中，“situations”可理解为“情况；场景”。"
+      },
+      {
+        "term": "li",
+        "phonetic": "/li/",
+        "meaning": "Li；示例中的用户姓名",
+        "example": "The assistant asks whether the message belongs to Li.",
+        "chineseExample": "在这句话中，“li”可理解为“Li；示例中的用户姓名”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing voice profiles for shared cabins",
+        "text": "Voice profiles can make an intelligent cockpit feel fast and personal, but they also create a privacy problem in shared cabins. A car may recognize the driver, a front passenger, and a rear passenger during the same trip. If the assistant chooses the wrong identity, it might read a private message aloud, expose a calendar detail, or apply another person's media and seat preferences. A consent-based design starts with a clear enrollment flow. The system should say what will be stored, whether the voice template stays local or moves to the cloud, how long it will be retained, and how the profile owner can pause, delete, or retrain it. During use, the cockpit should show the active profile and ask a short confirmation question when speaker recognition is uncertain. For guests, borrowed vehicles, and ride-share situations, a temporary guest mode is often safer than silent personalization. The goal is not to remove personalization; it is to keep personalization inside a visible privacy boundary. Good prompts sound simple: “I think this message belongs to Li. Should I keep it private?” That small question protects trust better than a hidden setting.",
+        "translation": "声纹档案可以让智能座舱感觉更快速、更个性化，但在共享座舱中也会产生隐私问题。同一次行程中，车辆可能识别驾驶者、前排乘员和后排乘员。如果助手选择了错误身份，它可能会朗读私人消息、暴露日历细节，或应用另一个人的媒体和座椅偏好。基于同意的设计从清晰的注册流程开始。系统应说明将保存什么、声纹模板是保留在本地还是传到云端、保留多久，以及档案所有者如何暂停、删除或重新训练它。在使用过程中，座舱应显示当前档案，并在说话人识别不确定时提出简短确认问题。对于访客、借用车辆和拼车场景，临时访客模式通常比静默个性化更安全。目标不是移除个性化，而是把个性化保持在可见的隐私边界内。好的提示听起来很简单：“我认为这条消息属于 Li。要为你保密吗？”这个小问题比隐藏设置更能保护信任。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Voice profiles can make an intelligent cockpit feel fast and personal, but they also create a privacy problem in shared cabins.",
+        "translation": "声纹档案可以让智能座舱感觉快速且个性化，但它们也会在共享座舱中产生隐私问题。",
+        "points": [
+          "can make... feel... 用来说明设计能力带来的体验效果。",
+          "but they also create... 用转折说明收益背后的风险。"
+        ]
+      },
+      {
+        "sentence": "A consent-based design starts with a clear enrollment flow.",
+        "translation": "基于同意的设计从清晰的注册流程开始。",
+        "points": [
+          "consent-based design 表示“以用户授权为基础的设计”。",
+          "starts with 强调设计流程的第一步。"
+        ]
+      },
+      {
+        "sentence": "For guests, borrowed vehicles, and ride-share situations, a temporary guest mode is often safer than silent personalization.",
+        "translation": "对于访客、借用车辆和拼车场景，临时访客模式通常比静默个性化更安全。",
+        "points": [
+          "For guests... 放在句首，限定适用场景。",
+          "safer than silent personalization 用比较结构表达推荐方案。"
+        ]
+      },
+      {
+        "sentence": "The goal is not to remove personalization; it is to keep personalization inside a visible privacy boundary.",
+        "translation": "目标不是移除个性化，而是把个性化保持在可见的隐私边界内。",
+        "points": [
+          "The goal is not to...; it is to... 是表达设计取舍的高频句式。",
+          "inside a visible privacy boundary 强调个性化必须有清楚可见的限制。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "description": "朗读 consent-based voice profile、shared cabin privacy、speaker recognition、revocation control，并用中文说出每个短语的应用场景。"
+      },
+      {
+        "title": "隐私风险复述",
+        "time": "6 分钟",
+        "description": "用英文解释为什么 shared cabin privacy 在前排乘员、后排乘员和拼车场景中更复杂。"
+      },
+      {
+        "title": "句式替换",
+        "time": "6 分钟",
+        "description": "套用 “The goal is not to..., it is to...” 写 3 句关于个性化与隐私边界的设计表达。"
+      },
+      {
+        "title": "提示文案设计",
+        "time": "8 分钟",
+        "description": "设计一个 occupant-aware prompt，要求包含身份不确定、是否保密、如何撤销或更改设置三个信息点。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive voice assistant privacy design",
+        "url": "https://www.youtube.com/results?search_query=automotive+voice+assistant+privacy+design",
+        "description": "可搜索 automotive voice assistant privacy design，观察车载语音助手如何说明身份识别、个性化和隐私授权。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-02-context-aware-quiet-mode-recoverable-prompts",
     "date": "2026-10-02",
     "title": "Context-aware quiet mode and recoverable prompts in intelligent cockpits",
