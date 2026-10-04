@@ -693,6 +693,13 @@
     "Complex settings are safer after parking.",
     "复杂设置在停车后处理更安全。"
   ],
+  "afterthought": [
+    "/afterthought/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "afterthought is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“afterthought”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "again": [
     "/待查/",
     "再次；重新回到某状态",
@@ -1341,6 +1348,13 @@
     "",
     "A low risk notice may begin near the relevant display area.",
     "低风险通知可以从相关显示区域附近开始。"
+  ],
+  "areas": [
+    "/areas/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "areas is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“areas”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "around": [
     "/按语境朗读/",
@@ -2080,6 +2094,13 @@
     "",
     "Available attention is limited during lane changes.",
     "变道时可用注意力是有限的。"
+  ],
+  "available control": [
+    "/available control/",
+    "可用控制",
+    "",
+    "available control is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“available control”可理解为“可用控制”。"
   ],
   "available lane": [
     "/əˈveɪləbl leɪn/",
@@ -2895,6 +2916,20 @@
     "Shared cabins require stronger privacy defaults.",
     "在这句话中，“cabins”可理解为“座舱；cabin 的复数形式”。"
   ],
+  "cached": [
+    "/cached/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "cached is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“cached”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
+  "cached guidance": [
+    "/kæʃt ˈɡaɪdns/",
+    "缓存指引；提前保存在本地、可在网络中断时继续使用的信息",
+    "",
+    "Cached guidance can keep the next few turns available when map data stops refreshing.",
+    "当地图数据停止刷新时，缓存指引可以保留接下来几个转向提示。"
+  ],
   "cafe": [
     "/ˌkæˈfeɪ/",
     "名词：咖啡馆, 酒店",
@@ -3371,6 +3406,13 @@
     "",
     "A short grace period gives the driver time to look back at the road without causing panic.",
     "在这句话中，“causing”表示造成。"
+  ],
+  "cellular": [
+    "/cellular/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "cellular is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“cellular”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "center": [
     "/ˈsɛn.təː/",
@@ -3903,6 +3945,13 @@
     "Climate control is a common secondary task.",
     "空调控制是常见次级任务。"
   ],
+  "climate controls": [
+    "/climate controls/",
+    "空调控制",
+    "",
+    "climate controls is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“climate controls”可理解为“空调控制”。"
+  ],
   "climate panel": [
     "/ˈklaɪmət ˈpænl/",
     "空调面板；调整温度、风量和舒适功能的界面区域",
@@ -4023,12 +4072,26 @@
     "A cloud profile needs stronger recovery and deletion controls.",
     "云端档案需要更强的恢复和删除控制。"
   ],
+  "cloud request": [
+    "/cloud request/",
+    "云端请求",
+    "",
+    "cloud request is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“cloud request”可理解为“云端请求”。"
+  ],
   "cloud service": [
     "/klaʊd ˈsɜːrvɪs/",
     "云服务；通过远程服务器提供的数据处理或功能服务",
     "",
     "A cloud service may improve recommendations but increases data exposure.",
     "云服务可能提升推荐效果，但也增加数据暴露。"
+  ],
+  "cloud speech recognition": [
+    "/cloud speech recognition/",
+    "云端语音识别",
+    "",
+    "cloud speech recognition is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“cloud speech recognition”可理解为“云端语音识别”。"
   ],
   "cloud synchronization": [
     "/klaʊd ˌsɪŋkrənaɪˈzeɪʃn/",
@@ -4943,12 +5006,40 @@
     "Connected scenarios reveal cross-screen issues.",
     "连贯场景会暴露跨屏问题。"
   ],
+  "connected service": [
+    "/connected service/",
+    "联网服务",
+    "",
+    "connected service is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“connected service”可理解为“联网服务”。"
+  ],
   "connection": [
     "/kəˈnekʃn/",
     "连接；车辆与网络、账户、手机或云端服务之间的通信状态",
     "",
     "Connection status should be described in plain language.",
     "连接状态应使用自然语言说明。"
+  ],
+  "connection loss": [
+    "/connection loss/",
+    "连接丢失",
+    "",
+    "connection loss is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“connection loss”可理解为“连接丢失”。"
+  ],
+  "connectivity": [
+    "/connectivity/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "connectivity is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“connectivity”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
+  "connectivity fallback": [
+    "/kəˌnekˈtɪvəti ˈfɔːlbæk/",
+    "连接中断时的备用交互；网络不可用时仍能完成关键任务的设计方案",
+    "",
+    "Connectivity fallback keeps the navigation and climate controls usable when the vehicle loses its network connection.",
+    "当车辆失去网络连接时，连接中断备用交互让导航和空调控制仍可使用。"
   ],
   "connects": [
     "/暂无音标/",
@@ -5664,6 +5755,13 @@
     "在这句话中，“core”可理解为“核心, 果心, 要点；挖...的核”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "core task": [
+    "/core task/",
+    "核心任务",
+    "",
+    "core task is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“core task”可理解为“核心任务”。"
+  ],
   "correct": [
     "/kəˈɹɛkt/",
     "形容词：正确的, 合适的；改正, 订正",
@@ -5781,6 +5879,13 @@
     "",
     "A critical alert overrides suppression rules.",
     "在这句话中，“critical alert”可理解为“关键警报”。"
+  ],
+  "critical command": [
+    "/critical command/",
+    "关键指令",
+    "",
+    "critical command is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“critical command”可理解为“关键指令”。"
   ],
   "critical control": [
     "/ˈkrɪtɪkl kənˈtroʊl/",
@@ -6339,6 +6444,13 @@
     "The word defogging appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“defogging”用于表达相关系统状态或用户影响。"
   ],
+  "defrost": [
+    "/defrost/",
+    "除雾",
+    "",
+    "defrost is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“defrost”可理解为“除雾”。"
+  ],
   "defrosting": [
     "/diːˈfrɔːstɪŋ/",
     "除霜；清除车窗雾气或冰霜的空调安全功能",
@@ -6388,6 +6500,13 @@
     "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
     "在这句话中，“delay”可理解为“耽搁, 迟滞；耽搁, 延迟”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "delay reason": [
+    "/delay reason/",
+    "延迟原因",
+    "",
+    "delay reason is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“delay reason”可理解为“延迟原因”。"
   ],
   "delayed": [
     "/di'lei/",
@@ -8004,6 +8123,13 @@
     "An enrollment prompt should say why the sample is needed and how the driver can remove it later.",
     "注册提示应说明为什么需要样本，以及驾驶者之后如何删除它。"
   ],
+  "ensures": [
+    "/ensures/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "ensures is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“ensures”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "enter": [
     "/暂无音标/",
     "动词：进入",
@@ -8770,6 +8896,13 @@
     "Fades can be understood in the cockpit design context.",
     "在这句话中，“fades”可结合座舱设计语境理解。"
   ],
+  "failed": [
+    "/failed/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "failed is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“failed”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "fails": [
     "/feɪlz/",
     "动词：失败, 缺乏, 中断, 衰退, 失灵；忘记, 使...失望, 缺乏, 不及格；不及格",
@@ -8828,6 +8961,13 @@
     "",
     "Fallback behavior should be predictable across screens, sounds, and steering-wheel controls.",
     "回退行为在屏幕、声音和方向盘控制之间都应保持可预测。"
+  ],
+  "fallback copy": [
+    "/fallback copy/",
+    "备用状态文案",
+    "",
+    "fallback copy is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“fallback copy”可理解为“备用状态文案”。"
   ],
   "fallback credential": [
     "/ˈfɔːlbæk krɪˈdenʃl/",
@@ -9546,6 +9686,13 @@
     "在这句话中，“frequent”可理解为“时常发生的, 频繁的, 快速的；时常来访, 常常聚集, 常与...交往”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "frequently": [
+    "/frequently/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "frequently is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“frequently”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "fresh": [
     "/待补充/",
     "语境词：fresh；用于理解今天健康舒适提示主题中的英文表达",
@@ -9661,6 +9808,13 @@
     "",
     "A narrow gap calls for confirmation.",
     "在这句话中，“gap”表示“差距”。"
+  ],
+  "garages": [
+    "/garages/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "garages is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“garages”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "gate": [
     "/ɡeɪt/",
@@ -10228,6 +10382,13 @@
     "A handover cue should appear before support drops away.",
     "接管线索应在支持消失前出现。"
   ],
+  "handover message": [
+    "/ˈhændoʊvər ˈmesɪdʒ/",
+    "交接提示；系统从在线能力切换到本地方案时给出的说明",
+    "",
+    "The handover message should tell users what changed and what action remains available.",
+    "交接提示应告诉用户发生了什么变化，以及还有哪些操作可用。"
+  ],
   "handover target": [
     "/ˈhændoʊvər ˈtɑːrɡɪt/",
     "交接目标；接收未完成任务的乘员、屏幕或交互通道",
@@ -10534,6 +10695,13 @@
     "",
     "The word helping appears in the comfort recommendation context.",
     "“helping”出现在座椅舒适推荐的语境中。"
+  ],
+  "helpless": [
+    "/helpless/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "helpless is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“helpless”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "helps": [
     "/help/",
@@ -11619,6 +11787,13 @@
     "Interaction intensity should decrease during stressful driving conditions.",
     "在高压力驾驶条件下，交互强度应降低。"
   ],
+  "interaction layer": [
+    "/interaction layer/",
+    "交互层",
+    "",
+    "interaction layer is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“interaction layer”可理解为“交互层”。"
+  ],
   "interaction load": [
     "/ˌɪntərˈækʃn loʊd/",
     "交互负荷；完成一次座舱操作对注意力、记忆和手眼协调造成的压力",
@@ -12625,6 +12800,13 @@
     "Limited availability should be announced with a reason and a clear recovery condition.",
     "有限可用状态应同时告知原因和清晰的恢复条件。"
   ],
+  "limited service": [
+    "/limited service/",
+    "受限服务",
+    "",
+    "limited service is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“limited service”可理解为“受限服务”。"
+  ],
   "limits": [
     "/待查/",
     "限制；系统能力边界",
@@ -12726,6 +12908,13 @@
     "Local appears in today's seat memory profile lesson.",
     "在这句话中，“local”来自今天的座椅记忆档案学习内容。"
   ],
+  "local alternative": [
+    "/local alternative/",
+    "本地替代方案",
+    "",
+    "local alternative is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“local alternative”可理解为“本地替代方案”。"
+  ],
   "local command set": [
     "/ˈloʊkl kəˈmænd set/",
     "本地指令集；无需联网即可识别和执行的车控语音命令范围",
@@ -12760,6 +12949,20 @@
     "",
     "The cockpit uses local storage to make privacy decisions easier to understand.",
     "座舱使用“local storage”让隐私决策更容易理解。"
+  ],
+  "local-first": [
+    "/local-first/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "local-first is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“local-first”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
+  "local-first control": [
+    "/ˈloʊkl fɜːrst kənˈtroʊl/",
+    "本地优先控制；安全和常用功能优先由车端本地完成",
+    "",
+    "Local-first control ensures that defrost, volume, and seat heating do not depend on a remote server.",
+    "本地优先控制确保除雾、音量和座椅加热不依赖远程服务器。"
   ],
   "localization": [
     "/ˌloʊkələˈzeɪʃn/",
@@ -13489,6 +13692,13 @@
     "The assistant can cite a manual page for a warning light explanation.",
     "助手可以引用手册页解释警示灯。"
   ],
+  "manual route": [
+    "/manual route/",
+    "手动路径",
+    "",
+    "manual route is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“manual route”可理解为“手动路径”。"
+  ],
   "many": [
     "/ˈmɛni/",
     "副词：多数, 多数人；许多的；许多",
@@ -13510,6 +13720,13 @@
     "",
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
+  "map data": [
+    "/map data/",
+    "地图数据",
+    "",
+    "map data is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“map data”可理解为“地图数据”。"
   ],
   "map matching": [
     "/mæp ˈmætʃɪŋ/",
@@ -14893,6 +15110,20 @@
     "Network quality can change quickly in tunnels.",
     "隧道中网络质量可能快速变化。"
   ],
+  "network connection": [
+    "/network connection/",
+    "网络连接",
+    "",
+    "network connection is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“network connection”可理解为“网络连接”。"
+  ],
+  "network status cue": [
+    "/ˈnetwɜːrk ˈsteɪtəs kjuː/",
+    "网络状态线索；让驾驶者快速理解连接状态和影响范围的提示",
+    "",
+    "A network status cue should be visible without forcing the driver to open a settings page.",
+    "网络状态线索应无需驾驶者打开设置页就能被看到。"
+  ],
   "network-loss": [
     "/ˈnetwɜːrk lɔːs/",
     "断网的；与网络连接丢失相关的状态或提示",
@@ -15425,6 +15656,27 @@
     "Offline mode should still support common vehicle controls.",
     "离线模式仍应支持常用车控。"
   ],
+  "offline capability": [
+    "/offline capability/",
+    "离线能力",
+    "",
+    "offline capability is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“offline capability”可理解为“离线能力”。"
+  ],
+  "offline grammar": [
+    "/offline grammar/",
+    "离线语法",
+    "",
+    "offline grammar is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“offline grammar”可理解为“离线语法”。"
+  ],
+  "offline intent handling": [
+    "/ˌɔːfˈlaɪn ɪnˈtent ˈhændlɪŋ/",
+    "离线意图处理；无网络时识别并执行本地可完成指令的能力",
+    "",
+    "Offline intent handling lets the assistant adjust temperature even when cloud speech recognition is unavailable.",
+    "即使云端语音识别不可用，离线意图处理也能让助手调节温度。"
+  ],
   "offline voice fallback": [
     "/ˈɔːflaɪn vɔɪs ˈfɔːlbæk/",
     "离线语音回退；云端语音不可用时，本地语音能力接管关键指令的机制",
@@ -15568,6 +15820,13 @@
     "",
     "Online recovery should not surprise the user.",
     "在线恢复不应让用户意外。"
+  ],
+  "online assistant": [
+    "/online assistant/",
+    "在线助手",
+    "",
+    "online assistant is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“online assistant”可理解为“在线助手”。"
   ],
   "only": [
     "/'әunli/",
@@ -15905,6 +16164,13 @@
     "",
     "The word package appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“package”用于表达相关系统状态或用户影响。"
+  ],
+  "page": [
+    "/page/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "page is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“page”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "pair": [
     "/per/",
@@ -16291,6 +16557,13 @@
     "",
     "If perception starts to degrade, the cockpit should prepare the driver early.",
     "在这句话中，“perception”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "perfect": [
+    "/perfect/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "perfect is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“perfect”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "perfectly": [
     "/ˈpɜːrfɪktli/",
@@ -17002,6 +17275,13 @@
     "",
     "Predictable behavior builds trust.",
     "可预测行为建立信任。"
+  ],
+  "predictable behavior": [
+    "/predictable behavior/",
+    "可预测行为",
+    "",
+    "predictable behavior is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“predictable behavior”可理解为“可预测行为”。"
   ],
   "predictable placement": [
     "/prɪˈdɪktəbl ˈpleɪsmənt/",
@@ -18772,6 +19052,13 @@
     "在这句话中，“recovery”可理解为“恢复, 复原, 痊愈, 重获”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "recovery affordance": [
+    "/rɪˈkʌvəri əˈfɔːrdns/",
+    "恢复可供性；提示用户如何重试、切换方式或等待服务恢复的界面线索",
+    "",
+    "A recovery affordance can offer a retry button, a manual route, or a short reason for the delay.",
+    "恢复可供性可以提供重试按钮、手动路径或延迟原因说明。"
+  ],
   "recovery condition": [
     "/rɪˈkʌvəri kənˈdɪʃn/",
     "恢复条件；系统或功能回到正常状态所需要满足的条件",
@@ -18908,6 +19195,13 @@
     "",
     "The cockpit uses the word refresh in privacy prompts when it fits the user context.",
     "在隐私提示中，“refresh”可结合用户场景理解。"
+  ],
+  "refreshing": [
+    "/refreshing/",
+    "刷新",
+    "",
+    "refreshing is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“refreshing”可理解为“刷新”。"
   ],
   "refuse": [
     "/按语境朗读/",
@@ -19130,6 +19424,13 @@
     "",
     "Remote notification helps when the caregiver has already left the vehicle.",
     "当照护者已经离开车辆时，远程通知会很有帮助。"
+  ],
+  "remote server": [
+    "/remote server/",
+    "远程服务器",
+    "",
+    "remote server is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“remote server”可理解为“远程服务器”。"
   ],
   "remote service": [
     "/rɪˈmoʊt ˈsɜːrvɪs/",
@@ -19613,6 +19914,13 @@
     "在这句话中，“restarting”可理解为“重新开始, 重新启动”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "restaurant": [
+    "/restaurant/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "restaurant is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“restaurant”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "resting": [
     "/ˈrestɪŋ/",
     "休息中的；处于放松或睡眠前状态",
@@ -19753,6 +20061,13 @@
     "",
     "A retry button should not repeat a failed payment silently.",
     "重试按钮不应静默重复失败支付。"
+  ],
+  "retry button": [
+    "/retry button/",
+    "重试按钮",
+    "",
+    "retry button is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“retry button”可理解为“重试按钮”。"
   ],
   "return": [
     "/ri'tә:n/",
@@ -20377,6 +20692,13 @@
     "Designers should define escalation rules so that a silent banner becomes an audible alert only when risk or urgency increases.",
     "在这句话中，“rules”可理解为“规则, 统治, 控制, 支配, 规律, 标准, 章程, 破折号, 铅线；规定, 统治, 管理, 控制, 支配, 裁决；统治, 管辖, 裁定”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "rural": [
+    "/rural/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "rural is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“rural”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "s": [
     "/es/",
@@ -21603,6 +21925,13 @@
     "Control authority should be visible on the cluster, not hidden in a settings menu.",
     "在这句话中，“settings menu”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "settings page": [
+    "/settings page/",
+    "设置页面",
+    "",
+    "settings page is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“settings page”可理解为“设置页面”。"
+  ],
   "settings path": [
     "/ˈsetɪŋz pæθ/",
     "设置路径；到达某项设置所经过的页面层级",
@@ -21845,6 +22174,13 @@
     "",
     "A short banner can show the selected temperature.",
     "短横幅可以显示所选温度。"
+  ],
+  "short explanation": [
+    "/short explanation/",
+    "简短解释",
+    "",
+    "short explanation is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“short explanation”可理解为“简短解释”。"
   ],
   "short label": [
     "/ʃɔːrt ˈleɪbl/",
@@ -23209,6 +23545,20 @@
     "A stress cue should trigger gentler interaction, not a distracting emotional label.",
     "压力线索应触发更温和的交互，而不是分散注意力的情绪标签。"
   ],
+  "stressful": [
+    "/stressful/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "stressful is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“stressful”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
+  "stressful drive": [
+    "/stressful drive/",
+    "高压力驾驶",
+    "",
+    "stressful drive is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“stressful drive”可理解为“高压力驾驶”。"
+  ],
   "stressful segment": [
     "/stressful segment/",
     "高压力路段",
@@ -23661,6 +24011,13 @@
     "The driver understands system assistance without fighting it.",
     "在这句话中，“system assistance”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "system boundary": [
+    "/system boundary/",
+    "系统边界",
+    "",
+    "system boundary is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“system boundary”可理解为“系统边界”。"
+  ],
   "system initiative": [
     "/ˈsɪstəm ɪˈnɪʃətɪv/",
     "系统主动性；助手主动提议、询问或执行下一步的程度",
@@ -23841,6 +24198,13 @@
     "",
     "A clear task boundary prevents navigation and media requests from mixing.",
     "清晰的任务边界能防止导航和媒体请求混在一起。"
+  ],
+  "task completion": [
+    "/task completion/",
+    "任务完成",
+    "",
+    "task completion is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“task completion”可理解为“任务完成”。"
   ],
   "task continuity": [
     "/tæsk ˌkɑːntəˈnuːəti/",
@@ -24068,6 +24432,13 @@
     "",
     "A simple range number is not enough, because the remaining distance depends on speed, cabin temperature, terrain, wind, traffic, battery temperature, and charger availability.",
     "在这句话中，“terrain”可理解为“地形；道路坡度和环境形态”。"
+  ],
+  "test": [
+    "/test/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "test is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“test”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "text": [
     "/按语境朗读/",
@@ -24843,6 +25214,13 @@
     "The cockpit interface uses tunnel in the recommendation context.",
     "在推荐语境中，座舱界面使用“tunnel”这个表达。"
   ],
+  "tunnels": [
+    "/tunnels/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "tunnels is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“tunnels”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "turn": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“turn”。",
@@ -24972,6 +25350,13 @@
     "",
     "The typed destination should be preserved during signal loss.",
     "信号丢失期间，应保留已输入目的地。"
+  ],
+  "typing": [
+    "/typing/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "typing is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“typing”可理解为“可结合智能座舱语境理解的英文单词”。"
   ],
   "unavailable": [
     "/ˌʌnəˈveɪləbl/",
@@ -25346,6 +25731,13 @@
     "Usability test should support a safer and clearer cockpit experience.",
     "在这句话中，“usability test”用于描述更安全、更清晰的座舱体验。"
   ],
+  "usable": [
+    "/usable/",
+    "可结合智能座舱语境理解的英文单词",
+    "",
+    "usable is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“usable”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
   "use": [
     "/ju:s/",
     "动词：使用, 习惯, 使用价值, 用法, 使用权；使用, 利用, 运用, 耗费；惯常",
@@ -25398,6 +25790,13 @@
     "",
     "The cockpit uses user agency to keep comfort assistance understandable and controllable.",
     "座舱使用“user agency”让舒适辅助更容易理解和控制。"
+  ],
+  "user confidence": [
+    "/user confidence/",
+    "用户信心",
+    "",
+    "user confidence is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“user confidence”可理解为“用户信心”。"
   ],
   "user confirmation": [
     "/ˈjuːzər ˌkɑːnfərˈmeɪʃn/",
@@ -25615,6 +26014,13 @@
     "",
     "The cockpit interface uses vehicle fact to keep the recommendation understandable.",
     "座舱界面使用“vehicle fact”来让建议更容易理解。"
+  ],
+  "vehicle functions": [
+    "/vehicle functions/",
+    "车辆功能",
+    "",
+    "vehicle functions is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“vehicle functions”可理解为“车辆功能”。"
   ],
   "vehicle horn": [
     "/ˈviːəkl hɔːrn/",
@@ -25842,6 +26248,13 @@
     "",
     "Visible reasoning helps the driver check why a suggestion appeared.",
     "可见推理帮助驾驶者检查建议为何出现。"
+  ],
+  "visible state": [
+    "/visible state/",
+    "可见状态",
+    "",
+    "visible state is useful when designing intelligent cockpit fallback experiences.",
+    "在这句话中，“visible state”可理解为“可见状态”。"
   ],
   "visible status": [
     "/ˈvɪzəbl ˈsteɪtəs/",

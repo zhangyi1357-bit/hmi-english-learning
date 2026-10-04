@@ -1,5 +1,1914 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-04-connectivity-fallback-degraded-cockpit-mode",
+    "date": "2026-10-04",
+    "title": "Connectivity fallback and degraded mode in intelligent cockpits",
+    "topic": "智能座舱连接中断备用交互与降级模式设计",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述智能座舱在网络连接不稳定、云端服务不可用或地图刷新中断时，通过本地优先控制、清晰状态提示和可恢复路径保持服务连续性。",
+    "words": [
+      {
+        "term": "connectivity fallback",
+        "phonetic": "/kəˌnekˈtɪvəti ˈfɔːlbæk/",
+        "meaning": "连接中断时的备用交互；网络不可用时仍能完成关键任务的设计方案",
+        "example": "Connectivity fallback keeps the navigation and climate controls usable when the vehicle loses its network connection.",
+        "chineseExample": "当车辆失去网络连接时，连接中断备用交互让导航和空调控制仍可使用。"
+      },
+      {
+        "term": "degraded mode",
+        "phonetic": "/dɪˈɡreɪdɪd moʊd/",
+        "meaning": "降级模式；部分在线能力不可用时保留核心功能的运行状态",
+        "example": "A degraded mode should explain which connected services are limited and which controls still work locally.",
+        "chineseExample": "降级模式应说明哪些联网服务受限，以及哪些控制仍可在本地工作。"
+      },
+      {
+        "term": "offline intent handling",
+        "phonetic": "/ˌɔːfˈlaɪn ɪnˈtent ˈhændlɪŋ/",
+        "meaning": "离线意图处理；无网络时识别并执行本地可完成指令的能力",
+        "example": "Offline intent handling lets the assistant adjust temperature even when cloud speech recognition is unavailable.",
+        "chineseExample": "即使云端语音识别不可用，离线意图处理也能让助手调节温度。"
+      },
+      {
+        "term": "service continuity",
+        "phonetic": "/ˈsɜːrvɪs ˌkɑːntəˈnuːəti/",
+        "meaning": "服务连续性；系统在网络、账户或后端状态变化时保持体验不断裂",
+        "example": "Service continuity is more important than a perfect online feature during a stressful drive.",
+        "chineseExample": "在压力较大的驾驶中，服务连续性比完美的在线功能更重要。"
+      },
+      {
+        "term": "local-first control",
+        "phonetic": "/ˈloʊkl fɜːrst kənˈtroʊl/",
+        "meaning": "本地优先控制；安全和常用功能优先由车端本地完成",
+        "example": "Local-first control ensures that defrost, volume, and seat heating do not depend on a remote server.",
+        "chineseExample": "本地优先控制确保除雾、音量和座椅加热不依赖远程服务器。"
+      },
+      {
+        "term": "recovery affordance",
+        "phonetic": "/rɪˈkʌvəri əˈfɔːrdns/",
+        "meaning": "恢复可供性；提示用户如何重试、切换方式或等待服务恢复的界面线索",
+        "example": "A recovery affordance can offer a retry button, a manual route, or a short reason for the delay.",
+        "chineseExample": "恢复可供性可以提供重试按钮、手动路径或延迟原因说明。"
+      },
+      {
+        "term": "network status cue",
+        "phonetic": "/ˈnetwɜːrk ˈsteɪtəs kjuː/",
+        "meaning": "网络状态线索；让驾驶者快速理解连接状态和影响范围的提示",
+        "example": "A network status cue should be visible without forcing the driver to open a settings page.",
+        "chineseExample": "网络状态线索应无需驾驶者打开设置页就能被看到。"
+      },
+      {
+        "term": "graceful degradation",
+        "phonetic": "/ˈɡreɪsfl ˌdeɡrəˈdeɪʃn/",
+        "meaning": "优雅降级；系统能力下降时仍保持清晰、可控和安全的体验",
+        "example": "Graceful degradation turns a failed cloud request into a clear local alternative.",
+        "chineseExample": "优雅降级会把失败的云端请求转化为清晰的本地替代方案。"
+      },
+      {
+        "term": "cached guidance",
+        "phonetic": "/kæʃt ˈɡaɪdns/",
+        "meaning": "缓存指引；提前保存在本地、可在网络中断时继续使用的信息",
+        "example": "Cached guidance can keep the next few turns available when map data stops refreshing.",
+        "chineseExample": "当地图数据停止刷新时，缓存指引可以保留接下来几个转向提示。"
+      },
+      {
+        "term": "handover message",
+        "phonetic": "/ˈhændoʊvər ˈmesɪdʒ/",
+        "meaning": "交接提示；系统从在线能力切换到本地方案时给出的说明",
+        "example": "The handover message should tell users what changed and what action remains available.",
+        "chineseExample": "交接提示应告诉用户发生了什么变化，以及还有哪些操作可用。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "a",
+        "phonetic": "/a/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "a is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“a”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/action/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "action is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“action”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "adjust",
+        "phonetic": "/adjust/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "adjust is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“adjust”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "admits",
+        "phonetic": "/admits/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "admits is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“admits”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "affordance",
+        "phonetic": "/affordance/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "affordance is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“affordance”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "afterthought",
+        "phonetic": "/afterthought/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "afterthought is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“afterthought”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "also",
+        "phonetic": "/also/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "also is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“also”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "alternative",
+        "phonetic": "/alternative/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "alternative is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“alternative”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "an",
+        "phonetic": "/an/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "an is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“an”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "and",
+        "phonetic": "/and/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "and is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“and”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "answer",
+        "phonetic": "/answer/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "answer is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“answer”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "are",
+        "phonetic": "/are/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "are is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“are”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "areas",
+        "phonetic": "/areas/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "areas is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“areas”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/assistant/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "assistant is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“assistant”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/available/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "available is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“available”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "available control",
+        "phonetic": "/available control/",
+        "meaning": "可用控制",
+        "example": "available control is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“available control”可理解为“可用控制”。"
+      },
+      {
+        "term": "basic",
+        "phonetic": "/basic/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "basic is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“basic”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "be",
+        "phonetic": "/be/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "be is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“be”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "begins",
+        "phonetic": "/begins/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "begins is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“begins”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "best",
+        "phonetic": "/best/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "best is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“best”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "blame",
+        "phonetic": "/blame/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "blame is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“blame”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "but",
+        "phonetic": "/but/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "but is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“but”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "button",
+        "phonetic": "/button/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "button is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“button”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "cached",
+        "phonetic": "/cached/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cached is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cached”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "cached guidance",
+        "phonetic": "/cached guidance/",
+        "meaning": "缓存指引",
+        "example": "cached guidance is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cached guidance”可理解为“缓存指引”。"
+      },
+      {
+        "term": "calm tone",
+        "phonetic": "/calm tone/",
+        "meaning": "冷静语气",
+        "example": "calm tone is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“calm tone”可理解为“冷静语气”。"
+      },
+      {
+        "term": "can",
+        "phonetic": "/can/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "can is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“can”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "cannot",
+        "phonetic": "/cannot/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cannot is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cannot”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "careful",
+        "phonetic": "/careful/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "careful is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“careful”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "cellular",
+        "phonetic": "/cellular/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cellular is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cellular”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "changed",
+        "phonetic": "/changed/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "changed is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“changed”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/clear/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "clear is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“clear”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "climate",
+        "phonetic": "/climate/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "climate is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“climate”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "climate controls",
+        "phonetic": "/climate controls/",
+        "meaning": "空调控制",
+        "example": "climate controls is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“climate controls”可理解为“空调控制”。"
+      },
+      {
+        "term": "cloud",
+        "phonetic": "/cloud/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cloud is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cloud”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "cloud request",
+        "phonetic": "/cloud request/",
+        "meaning": "云端请求",
+        "example": "cloud request is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cloud request”可理解为“云端请求”。"
+      },
+      {
+        "term": "cloud speech recognition",
+        "phonetic": "/cloud speech recognition/",
+        "meaning": "云端语音识别",
+        "example": "cloud speech recognition is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cloud speech recognition”可理解为“云端语音识别”。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/cockpit/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cockpit is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cockpit”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "commands",
+        "phonetic": "/commands/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "commands is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“commands”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "conditions",
+        "phonetic": "/conditions/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "conditions is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“conditions”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "connected",
+        "phonetic": "/connected/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "connected is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connected”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "connected service",
+        "phonetic": "/connected service/",
+        "meaning": "联网服务",
+        "example": "connected service is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connected service”可理解为“联网服务”。"
+      },
+      {
+        "term": "connection",
+        "phonetic": "/connection/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "connection is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connection”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "connection loss",
+        "phonetic": "/connection loss/",
+        "meaning": "连接丢失",
+        "example": "connection loss is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connection loss”可理解为“连接丢失”。"
+      },
+      {
+        "term": "connectivity",
+        "phonetic": "/connectivity/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "connectivity is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connectivity”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "connectivity fallback",
+        "phonetic": "/connectivity fallback/",
+        "meaning": "连接中断备用交互",
+        "example": "connectivity fallback is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“connectivity fallback”可理解为“连接中断备用交互”。"
+      },
+      {
+        "term": "continuity",
+        "phonetic": "/continuity/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "continuity is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“continuity”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/control/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "control is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“control”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "controls",
+        "phonetic": "/controls/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "controls is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“controls”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "core",
+        "phonetic": "/core/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "core is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“core”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "core task",
+        "phonetic": "/core task/",
+        "meaning": "核心任务",
+        "example": "core task is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“core task”可理解为“核心任务”。"
+      },
+      {
+        "term": "critical command",
+        "phonetic": "/critical command/",
+        "meaning": "关键指令",
+        "example": "critical command is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“critical command”可理解为“关键指令”。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/cue/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "cue is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“cue”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "data",
+        "phonetic": "/data/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "data is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“data”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "defrost",
+        "phonetic": "/defrost/",
+        "meaning": "除雾",
+        "example": "defrost is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“defrost”可理解为“除雾”。"
+      },
+      {
+        "term": "degradation",
+        "phonetic": "/degradation/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "degradation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“degradation”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "degraded",
+        "phonetic": "/degraded/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "degraded is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“degraded”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "degraded mode",
+        "phonetic": "/degraded mode/",
+        "meaning": "降级模式",
+        "example": "degraded mode is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“degraded mode”可理解为“降级模式”。"
+      },
+      {
+        "term": "delay",
+        "phonetic": "/delay/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "delay is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“delay”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "delay reason",
+        "phonetic": "/delay reason/",
+        "meaning": "延迟原因",
+        "example": "delay reason is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“delay reason”可理解为“延迟原因”。"
+      },
+      {
+        "term": "depend",
+        "phonetic": "/depend/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "depend is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“depend”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "designers",
+        "phonetic": "/designers/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "designers is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“designers”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "destinations",
+        "phonetic": "/destinations/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "destinations is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“destinations”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "do",
+        "phonetic": "/do/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "do is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“do”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "drive",
+        "phonetic": "/drive/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "drive is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“drive”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/driver/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "driver is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“driver”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "driver trust",
+        "phonetic": "/driver trust/",
+        "meaning": "驾驶者信任",
+        "example": "driver trust is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“driver trust”可理解为“驾驶者信任”。"
+      },
+      {
+        "term": "drivers",
+        "phonetic": "/drivers/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "drivers is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“drivers”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "driving",
+        "phonetic": "/driving/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "driving is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“driving”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "drops",
+        "phonetic": "/drops/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "drops is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“drops”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "during",
+        "phonetic": "/during/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "during is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“during”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "ensures",
+        "phonetic": "/ensures/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "ensures is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“ensures”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "even",
+        "phonetic": "/even/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "even is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“even”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/explain/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "explain is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“explain”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/explanation/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "explanation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“explanation”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "failed",
+        "phonetic": "/failed/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "failed is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“failed”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/fallback/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "fallback is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“fallback”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "fallback copy",
+        "phonetic": "/fallback copy/",
+        "meaning": "备用状态文案",
+        "example": "fallback copy is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“fallback copy”可理解为“备用状态文案”。"
+      },
+      {
+        "term": "fallback path",
+        "phonetic": "/fallback path/",
+        "meaning": "备用路径",
+        "example": "fallback path is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“fallback path”可理解为“备用路径”。"
+      },
+      {
+        "term": "feature",
+        "phonetic": "/feature/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "feature is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“feature”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "features",
+        "phonetic": "/features/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "features is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“features”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "feel",
+        "phonetic": "/feel/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "feel is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“feel”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "few",
+        "phonetic": "/few/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "few is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“few”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "for",
+        "phonetic": "/for/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "for is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“for”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "forcing",
+        "phonetic": "/forcing/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "forcing is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“forcing”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "frequently",
+        "phonetic": "/frequently/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "frequently is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“frequently”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "functions",
+        "phonetic": "/functions/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "functions is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“functions”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "garages",
+        "phonetic": "/garages/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "garages is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“garages”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "gives",
+        "phonetic": "/gives/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "gives is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“gives”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "good",
+        "phonetic": "/good/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "good is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“good”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "graceful",
+        "phonetic": "/graceful/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "graceful is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“graceful”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "graceful degradation",
+        "phonetic": "/graceful degradation/",
+        "meaning": "优雅降级",
+        "example": "graceful degradation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“graceful degradation”可理解为“优雅降级”。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/guidance/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "guidance is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“guidance”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "handling",
+        "phonetic": "/handling/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "handling is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“handling”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "handover",
+        "phonetic": "/handover/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "handover is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“handover”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "handover message",
+        "phonetic": "/handover message/",
+        "meaning": "交接提示",
+        "example": "handover message is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“handover message”可理解为“交接提示”。"
+      },
+      {
+        "term": "heating",
+        "phonetic": "/heating/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "heating is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“heating”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "helpless",
+        "phonetic": "/helpless/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "helpless is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“helpless”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "if",
+        "phonetic": "/if/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "if is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“if”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "important",
+        "phonetic": "/important/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "important is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“important”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "in",
+        "phonetic": "/in/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "in is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“in”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "instead",
+        "phonetic": "/instead/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "instead is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“instead”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "intelligent",
+        "phonetic": "/intelligent/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "intelligent is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“intelligent”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "intent",
+        "phonetic": "/intent/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "intent is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“intent”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "interaction layer",
+        "phonetic": "/interaction layer/",
+        "meaning": "交互层",
+        "example": "interaction layer is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“interaction layer”可理解为“交互层”。"
+      },
+      {
+        "term": "interface",
+        "phonetic": "/interface/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "interface is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“interface”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "interrupt",
+        "phonetic": "/interrupt/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "interrupt is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“interrupt”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "into",
+        "phonetic": "/into/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "into is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“into”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "is",
+        "phonetic": "/is/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "is is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“is”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "it",
+        "phonetic": "/it/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "it is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“it”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "its",
+        "phonetic": "/its/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "its is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“its”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "keep",
+        "phonetic": "/keep/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "keep is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“keep”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "keeps",
+        "phonetic": "/keeps/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "keeps is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“keeps”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "large",
+        "phonetic": "/large/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "large is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“large”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "lets",
+        "phonetic": "/lets/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "lets is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“lets”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "limitation",
+        "phonetic": "/limitation/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "limitation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“limitation”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/limited/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "limited is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“limited”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "limited service",
+        "phonetic": "/limited service/",
+        "meaning": "受限服务",
+        "example": "limited service is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“limited service”可理解为“受限服务”。"
+      },
+      {
+        "term": "local",
+        "phonetic": "/local/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "local is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“local”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "local alternative",
+        "phonetic": "/local alternative/",
+        "meaning": "本地替代方案",
+        "example": "local alternative is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“local alternative”可理解为“本地替代方案”。"
+      },
+      {
+        "term": "local-first",
+        "phonetic": "/local-first/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "local-first is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“local-first”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "local-first control",
+        "phonetic": "/local-first control/",
+        "meaning": "本地优先控制",
+        "example": "local-first control is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“local-first control”可理解为“本地优先控制”。"
+      },
+      {
+        "term": "locally",
+        "phonetic": "/locally/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "locally is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“locally”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "loses",
+        "phonetic": "/loses/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "loses is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“loses”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "manual",
+        "phonetic": "/manual/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "manual is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“manual”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "manual route",
+        "phonetic": "/manual route/",
+        "meaning": "手动路径",
+        "example": "manual route is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“manual route”可理解为“手动路径”。"
+      },
+      {
+        "term": "map",
+        "phonetic": "/map/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "map is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“map”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "map data",
+        "phonetic": "/map data/",
+        "meaning": "地图数据",
+        "example": "map data is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“map data”可理解为“地图数据”。"
+      },
+      {
+        "term": "media",
+        "phonetic": "/media/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "media is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“media”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/message/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "message is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“message”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "mode",
+        "phonetic": "/mode/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "mode is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“mode”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "moments",
+        "phonetic": "/moments/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "moments is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“moments”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "more",
+        "phonetic": "/more/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "more is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“more”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "moving",
+        "phonetic": "/moving/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "moving is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“moving”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/navigation/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "navigation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“navigation”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "need",
+        "phonetic": "/need/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "need is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“need”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "needs",
+        "phonetic": "/needs/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "needs is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“needs”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "network",
+        "phonetic": "/network/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "network is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“network”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "network connection",
+        "phonetic": "/network connection/",
+        "meaning": "网络连接",
+        "example": "network connection is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“network connection”可理解为“网络连接”。"
+      },
+      {
+        "term": "network status cue",
+        "phonetic": "/network status cue/",
+        "meaning": "网络状态线索",
+        "example": "network status cue is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“network status cue”可理解为“网络状态线索”。"
+      },
+      {
+        "term": "next",
+        "phonetic": "/next/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "next is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“next”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "not",
+        "phonetic": "/not/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "not is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“not”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "of",
+        "phonetic": "/of/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "of is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“of”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "offer",
+        "phonetic": "/offer/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "offer is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“offer”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "offline",
+        "phonetic": "/offline/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "offline is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“offline”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "offline capability",
+        "phonetic": "/offline capability/",
+        "meaning": "离线能力",
+        "example": "offline capability is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“offline capability”可理解为“离线能力”。"
+      },
+      {
+        "term": "offline grammar",
+        "phonetic": "/offline grammar/",
+        "meaning": "离线语法",
+        "example": "offline grammar is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“offline grammar”可理解为“离线语法”。"
+      },
+      {
+        "term": "offline intent handling",
+        "phonetic": "/offline intent handling/",
+        "meaning": "离线意图处理",
+        "example": "offline intent handling is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“offline intent handling”可理解为“离线意图处理”。"
+      },
+      {
+        "term": "on",
+        "phonetic": "/on/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "on is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“on”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "online",
+        "phonetic": "/online/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "online is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“online”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "online assistant",
+        "phonetic": "/online assistant/",
+        "meaning": "在线助手",
+        "example": "online assistant is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“online assistant”可理解为“在线助手”。"
+      },
+      {
+        "term": "only",
+        "phonetic": "/only/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "only is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“only”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "open",
+        "phonetic": "/open/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "open is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“open”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "or",
+        "phonetic": "/or/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "or is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“or”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "page",
+        "phonetic": "/page/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "page is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“page”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "parking",
+        "phonetic": "/parking/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "parking is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“parking”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "pause",
+        "phonetic": "/pause/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "pause is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“pause”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "perfect",
+        "phonetic": "/perfect/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "perfect is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“perfect”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "predictable behavior",
+        "phonetic": "/predictable behavior/",
+        "meaning": "可预测行为",
+        "example": "predictable behavior is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“predictable behavior”可理解为“可预测行为”。"
+      },
+      {
+        "term": "pressure",
+        "phonetic": "/pressure/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "pressure is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“pressure”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "real",
+        "phonetic": "/real/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "real is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“real”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "reason",
+        "phonetic": "/reason/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "reason is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“reason”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "recognition",
+        "phonetic": "/recognition/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "recognition is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“recognition”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/recovery/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "recovery is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“recovery”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "recovery affordance",
+        "phonetic": "/recovery affordance/",
+        "meaning": "恢复可供性",
+        "example": "recovery affordance is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“recovery affordance”可理解为“恢复可供性”。"
+      },
+      {
+        "term": "refreshing",
+        "phonetic": "/refreshing/",
+        "meaning": "刷新",
+        "example": "refreshing is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“refreshing”可理解为“刷新”。"
+      },
+      {
+        "term": "remain",
+        "phonetic": "/remain/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "remain is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“remain”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "remains",
+        "phonetic": "/remains/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "remains is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“remains”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "remote",
+        "phonetic": "/remote/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "remote is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“remote”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "remote server",
+        "phonetic": "/remote server/",
+        "meaning": "远程服务器",
+        "example": "remote server is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“remote server”可理解为“远程服务器”。"
+      },
+      {
+        "term": "request",
+        "phonetic": "/request/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "request is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“request”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "restaurant",
+        "phonetic": "/restaurant/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "restaurant is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“restaurant”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "retry",
+        "phonetic": "/retry/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "retry is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“retry”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "retry button",
+        "phonetic": "/retry button/",
+        "meaning": "重试按钮",
+        "example": "retry button is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“retry button”可理解为“重试按钮”。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/road/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "road is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“road”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "roads",
+        "phonetic": "/roads/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "roads is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“roads”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/route/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "route is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“route”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "route guidance",
+        "phonetic": "/route guidance/",
+        "meaning": "路线指引",
+        "example": "route guidance is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“route guidance”可理解为“路线指引”。"
+      },
+      {
+        "term": "rural",
+        "phonetic": "/rural/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "rural is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“rural”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "safety-critical",
+        "phonetic": "/safety-critical/",
+        "meaning": "安全关键的",
+        "example": "safety-critical is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“safety-critical”可理解为“安全关键的”。"
+      },
+      {
+        "term": "saved",
+        "phonetic": "/saved/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "saved is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“saved”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "saying",
+        "phonetic": "/saying/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "saying is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“saying”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "search",
+        "phonetic": "/search/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "search is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“search”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "seat",
+        "phonetic": "/seat/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "seat is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“seat”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "seat heating",
+        "phonetic": "/seat heating/",
+        "meaning": "座椅加热",
+        "example": "seat heating is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“seat heating”可理解为“座椅加热”。"
+      },
+      {
+        "term": "server",
+        "phonetic": "/server/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "server is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“server”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "service",
+        "phonetic": "/service/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "service is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“service”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "service continuity",
+        "phonetic": "/service continuity/",
+        "meaning": "服务连续性",
+        "example": "service continuity is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“service continuity”可理解为“服务连续性”。"
+      },
+      {
+        "term": "services",
+        "phonetic": "/services/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "services is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“services”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "settings",
+        "phonetic": "/settings/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "settings is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“settings”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "settings page",
+        "phonetic": "/settings page/",
+        "meaning": "设置页面",
+        "example": "settings page is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“settings page”可理解为“设置页面”。"
+      },
+      {
+        "term": "short",
+        "phonetic": "/short/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "short is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“short”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "short explanation",
+        "phonetic": "/short explanation/",
+        "meaning": "简短解释",
+        "example": "short explanation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“short explanation”可理解为“简短解释”。"
+      },
+      {
+        "term": "should",
+        "phonetic": "/should/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "should is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“should”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "show",
+        "phonetic": "/show/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "show is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“show”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "signal",
+        "phonetic": "/signal/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "signal is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“signal”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "slow",
+        "phonetic": "/slow/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "slow is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“slow”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "specific",
+        "phonetic": "/specific/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "specific is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“specific”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "speech",
+        "phonetic": "/speech/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "speech is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“speech”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "status",
+        "phonetic": "/status/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "status is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“status”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "still",
+        "phonetic": "/still/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "still is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“still”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "stops",
+        "phonetic": "/stops/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "stops is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“stops”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "stressful",
+        "phonetic": "/stressful/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "stressful is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“stressful”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "stressful drive",
+        "phonetic": "/stressful drive/",
+        "meaning": "高压力驾驶",
+        "example": "stressful drive is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“stressful drive”可理解为“高压力驾驶”。"
+      },
+      {
+        "term": "system",
+        "phonetic": "/system/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "system is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“system”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "system boundary",
+        "phonetic": "/system boundary/",
+        "meaning": "系统边界",
+        "example": "system boundary is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“system boundary”可理解为“系统边界”。"
+      },
+      {
+        "term": "task",
+        "phonetic": "/task/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "task is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“task”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "task completion",
+        "phonetic": "/task completion/",
+        "meaning": "任务完成",
+        "example": "task completion is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“task completion”可理解为“任务完成”。"
+      },
+      {
+        "term": "technical",
+        "phonetic": "/technical/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "technical is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“technical”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "tell",
+        "phonetic": "/tell/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "tell is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“tell”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "tells",
+        "phonetic": "/tells/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "tells is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“tells”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "temperature",
+        "phonetic": "/temperature/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "temperature is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“temperature”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "temporary",
+        "phonetic": "/temporary/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "temporary is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“temporary”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "temporary limitation",
+        "phonetic": "/temporary limitation/",
+        "meaning": "临时限制",
+        "example": "temporary limitation is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“temporary limitation”可理解为“临时限制”。"
+      },
+      {
+        "term": "test",
+        "phonetic": "/test/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "test is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“test”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "than",
+        "phonetic": "/than/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "than is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“than”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "that",
+        "phonetic": "/that/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "that is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“that”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "the",
+        "phonetic": "/the/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "the is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“the”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "these",
+        "phonetic": "/these/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "these is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“these”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "this",
+        "phonetic": "/this/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "this is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“this”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "to",
+        "phonetic": "/to/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "to is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“to”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trust/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "trust is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“trust”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "tunnels",
+        "phonetic": "/tunnels/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "tunnels is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“tunnels”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "turns",
+        "phonetic": "/turns/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "turns is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“turns”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "typing",
+        "phonetic": "/typing/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "typing is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“typing”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "unavailable",
+        "phonetic": "/unavailable/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "unavailable is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“unavailable”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "under",
+        "phonetic": "/under/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "under is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“under”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "understands",
+        "phonetic": "/understands/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "understands is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“understands”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "usable",
+        "phonetic": "/usable/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "usable is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“usable”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "used",
+        "phonetic": "/used/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "used is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“used”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/useful/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "useful is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“useful”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "user",
+        "phonetic": "/user/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "user is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“user”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "user confidence",
+        "phonetic": "/user confidence/",
+        "meaning": "用户信心",
+        "example": "user confidence is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“user confidence”可理解为“用户信心”。"
+      },
+      {
+        "term": "users",
+        "phonetic": "/users/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "users is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“users”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/vehicle/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "vehicle is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“vehicle”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "vehicle functions",
+        "phonetic": "/vehicle functions/",
+        "meaning": "车辆功能",
+        "example": "vehicle functions is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“vehicle functions”可理解为“车辆功能”。"
+      },
+      {
+        "term": "view",
+        "phonetic": "/view/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "view is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“view”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/visible/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "visible is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“visible”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "visible state",
+        "phonetic": "/visible state/",
+        "meaning": "可见状态",
+        "example": "visible state is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“visible state”可理解为“可见状态”。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/voice/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "voice is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“voice”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "volume",
+        "phonetic": "/volume/",
+        "meaning": "音量",
+        "example": "volume is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“volume”可理解为“音量”。"
+      },
+      {
+        "term": "warning",
+        "phonetic": "/warning/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "warning is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“warning”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "weak",
+        "phonetic": "/weak/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "weak is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“weak”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "what",
+        "phonetic": "/what/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "what is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“what”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/when/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "when is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“when”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "which",
+        "phonetic": "/which/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "which is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“which”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "while",
+        "phonetic": "/while/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "while is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“while”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "with",
+        "phonetic": "/with/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "with is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“with”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/without/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "without is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“without”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "wording",
+        "phonetic": "/wording/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "wording is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“wording”可理解为“可结合智能座舱语境理解的英文单词”。"
+      },
+      {
+        "term": "work",
+        "phonetic": "/work/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "work is useful when designing intelligent cockpit fallback experiences.",
+        "chineseExample": "在这句话中，“work”可理解为“可结合智能座舱语境理解的英文单词”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing calm fallback when connectivity drops",
+        "text": "An intelligent cockpit should not feel helpless when connectivity drops. Drivers still need route guidance, climate controls, media volume, defrost, and basic assistant commands, even if a cloud service is slow or unavailable. A good degraded mode begins with local-first control. Safety-critical and frequently used vehicle functions should remain on the vehicle, while online features can pause with a short explanation. The interface should show a visible network status cue, but it should not blame the driver or interrupt the road view with a large warning. The best handover message is specific: voice search is offline, but temperature, defrost, and cached guidance still work. Offline intent handling also needs careful wording. If the assistant cannot answer a restaurant search, it can offer saved destinations or manual typing instead of saying only that the request failed. This is graceful degradation: the system admits a temporary limitation, keeps the core task moving, and gives the user a recovery affordance. Designers should test these moments in tunnels, parking garages, rural roads, and weak cellular areas. Connectivity fallback is not a technical afterthought. It is a trust signal that tells drivers the cockpit understands real driving conditions and can keep useful control available under pressure.",
+        "translation": "当连接中断时，智能座舱不应显得无能为力。即使云端服务缓慢或不可用，驾驶者仍然需要路线指引、空调控制、媒体音量、除雾和基础助手指令。好的降级模式从本地优先控制开始。安全关键和高频使用的车辆功能应保留在车端，而在线功能可以暂停，并给出简短解释。界面应显示可见的网络状态线索，但不应责怪驾驶者，也不应用大警告遮挡道路视图。最好的交接提示是具体的：语音搜索离线，但温度、除雾和缓存指引仍然可用。离线意图处理也需要谨慎措辞。如果助手无法回答餐厅搜索，它可以提供已保存目的地或手动输入，而不是只说请求失败。这就是优雅降级：系统承认临时限制，保持核心任务推进，并给用户恢复可供性。设计师应在隧道、停车库、乡村道路和弱蜂窝信号区域测试这些时刻。连接中断备用交互不是技术上的事后补救，而是一种信任信号，告诉驾驶者座舱理解真实驾驶条件，并能在压力下保持有用控制。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "An intelligent cockpit should not feel helpless when connectivity drops.",
+        "translation": "当连接中断时，智能座舱不应显得无能为力。",
+        "points": [
+          "should not feel helpless 用拟人化方式表达系统体验不应失控。",
+          "when connectivity drops 用来说明触发场景。"
+        ]
+      },
+      {
+        "sentence": "Safety-critical and frequently used vehicle functions should remain on the vehicle, while online features can pause with a short explanation.",
+        "translation": "安全关键和高频使用的车辆功能应保留在车端，而在线功能可以暂停，并给出简短解释。",
+        "points": [
+          "Safety-critical and frequently used 用并列形容词限定功能优先级。",
+          "while 引出本地功能与在线功能的不同处理方式。"
+        ]
+      },
+      {
+        "sentence": "This is graceful degradation: the system admits a temporary limitation, keeps the core task moving, and gives the user a recovery affordance.",
+        "translation": "这就是优雅降级：系统承认临时限制，保持核心任务推进，并给用户恢复可供性。",
+        "points": [
+          "冒号后用三个并列动词解释术语含义。",
+          "keeps the core task moving 是描述体验连续性的实用表达。"
+        ]
+      },
+      {
+        "sentence": "Connectivity fallback is not a technical afterthought.",
+        "translation": "连接中断备用交互不是技术上的事后补救。",
+        "points": [
+          "is not a technical afterthought 用来强调该设计不应被低估。",
+          "可接 It is... 补充真正的设计价值。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "description": "朗读 connectivity fallback、degraded mode、local-first control、graceful degradation，并用中文解释每个短语适合出现在哪类座舱故障场景。"
+      },
+      {
+        "title": "场景复述",
+        "time": "6 分钟",
+        "description": "用英文复述长文中的连接中断场景，必须包含 network status cue、handover message 和 recovery affordance。"
+      },
+      {
+        "title": "句式替换",
+        "time": "6 分钟",
+        "description": "套用 “The best handover message is specific: ... still work.” 写 3 条降级模式提示文案。"
+      },
+      {
+        "title": "交互设计练习",
+        "time": "8 分钟",
+        "description": "设计一个 weak cellular area 中的语音助手失败提示，要求说明限制、保留可用功能，并提供一个手动恢复路径。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive HMI graceful degradation connectivity",
+        "url": "https://www.youtube.com/results?search_query=automotive+HMI+graceful+degradation+connectivity",
+        "description": "可搜索 automotive HMI graceful degradation connectivity，观察车载系统如何说明离线、网络中断和本地备用控制。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-03-consent-based-voice-profiles-shared-cabin-privacy",
     "date": "2026-10-03",
     "title": "Consent-based voice profiles and shared cabin privacy",
