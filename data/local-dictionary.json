@@ -160,6 +160,13 @@
     "Account exposure can happen during poor identity handoff.",
     "在这句话中，“account exposure”可理解为“账户暴露”。"
   ],
+  "account recovery path": [
+    "/əˈkaʊnt rɪˈkʌvəri pæθ/",
+    "账户恢复路径；设备丢失、钥匙失效或身份冲突时恢复访问的步骤",
+    "",
+    "An account recovery path should guide users through verification without blocking urgent vehicle use.",
+    "账户恢复路径应引导用户完成验证，同时不阻断紧急用车。"
+  ],
   "account sync": [
     "/əˈkaʊnt sɪŋk/",
     "账号同步；跨设备或服务同步用户设置和数据",
@@ -363,6 +370,13 @@
     "An active call lowers the tolerance for extra speech.",
     "在这句话中，“active call”可理解为“进行中的通话”。"
   ],
+  "active profile": [
+    "/ˈæktɪv ˈproʊfaɪl/",
+    "当前激活档案；系统正在使用的用户配置",
+    "",
+    "active profile should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“active profile”可理解为“当前激活档案；系统正在使用的用户配置”。"
+  ],
   "active seat zone": [
     "/ˈæktɪv siːt zoʊn/",
     "活跃座位区域；当前正在说话或被系统响应的座位区域",
@@ -526,6 +540,13 @@
     "",
     "The cockpit uses the word address in privacy prompts when it fits the user context.",
     "在隐私提示中，“address”可结合用户场景理解。"
+  ],
+  "addresses": [
+    "/addresses/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "addresses is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“addresses”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "adds": [
     "/ædz/",
@@ -2551,6 +2572,13 @@
     "A blocked feature should show how to recover it.",
     "被阻断功能应显示如何恢复。"
   ],
+  "blocking": [
+    "/blocking/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "blocking is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“blocking”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "blocks": [
     "/待补充/",
     "语境词：blocks；用于理解今天健康舒适提示主题中的英文表达",
@@ -3421,6 +3449,13 @@
     "The fallback interaction can move the user from voice input to a short tappable list on the center display.",
     "在这句话中，“center”可理解为“中心, 中心点, 中锋；中央的, 位在正中的；集中, 定中心；居中”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "center console": [
+    "/ˈsentər ˈkɑːnsoʊl/",
+    "中控台；前排中央控制区域",
+    "",
+    "center console should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“center console”可理解为“中控台；前排中央控制区域”。"
   ],
   "center display": [
     "/ˈsentər dɪˈspleɪ/",
@@ -5196,6 +5231,13 @@
     "Consistent can be understood in the cockpit design context.",
     "在这句话中，“consistent”可结合座舱设计语境理解。"
   ],
+  "console": [
+    "/console/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "console is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“console”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "constant": [
     "/ˈkɑːnstənt/",
     "语境词：持续的；一直存在的",
@@ -5655,6 +5697,13 @@
     "A convenience suggestion can wait until the vehicle is stopped.",
     "便利性建议可以等到车辆停止后再出现。"
   ],
+  "convenient": [
+    "/convenient/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "convenient is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“convenient”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "conversation": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“conversation”。",
@@ -5914,6 +5963,20 @@
     "",
     "Critical warnings should override low-priority comfort settings.",
     "关键警告应覆盖低优先级的舒适设置。"
+  ],
+  "cross-device": [
+    "/cross-device/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "cross-device is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“cross-device”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
+  "cross-device digital key": [
+    "/krɔːs dɪˈvaɪs ˈdɪdʒɪtl kiː/",
+    "跨设备数字钥匙；可在手机、手表或其他可信设备上授权车辆访问的钥匙体验",
+    "",
+    "A cross-device digital key should unlock the vehicle without hiding which device granted access.",
+    "跨设备数字钥匙应能解锁车辆，同时不隐藏是哪个设备授予了访问权限。"
   ],
   "cross-device sync": [
     "/krɔːs dɪˈvaɪs sɪŋk/",
@@ -6901,6 +6964,13 @@
     "在这句话中，“device”可理解为“装置, 设计, 策略, 发明物, 设备”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "devices": [
+    "/devices/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "devices is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“devices”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "diagnose": [
     "/ˌdaɪəɡˈnoʊz/",
     "诊断；判断疾病或心理状态，通常属于医疗语境",
@@ -6950,6 +7020,13 @@
     "The dialogue state keeps the destination request separate from a later climate command.",
     "对话状态会把目的地请求与之后的空调指令区分开。"
   ],
+  "dies": [
+    "/dies/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "dies is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“dies”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "difference": [
     "/ˈdɪfrəns/",
     "差异；两个设计选择之间的不同",
@@ -6964,12 +7041,26 @@
     "Different labels may create confusion.",
     "不同标签可能造成困惑。"
   ],
+  "difficult": [
+    "/difficult/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "difficult is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“difficult”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "digital": [
     "/ˈdɪdʒɪtl/",
     "数字的；由软件和显示系统生成的",
     "",
     "A digital arrow should not hide real road information.",
     "在这句话中，“digital”表示“数字的”。"
+  ],
+  "digital key": [
+    "/ˈdɪdʒɪtl kiː/",
+    "数字钥匙；用于车辆访问的电子凭证",
+    "",
+    "digital key should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“digital key”可理解为“数字钥匙；用于车辆访问的电子凭证”。"
   ],
   "digital overlay": [
     "/ˈdɪdʒɪtl ˈoʊvərleɪ/",
@@ -7180,6 +7271,13 @@
     "The display theme may change by driver profile.",
     "显示主题可能随驾驶员画像而变化。"
   ],
+  "displaying": [
+    "/displaying/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "displaying is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“displaying”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "displays": [
     "/dɪˈspleɪz/",
     "显示屏；显示",
@@ -7287,6 +7385,13 @@
     "A useful HMI does not ask for the same level of effort in every situation.",
     "在这句话中，“does”可理解为“做, 进行, 完成”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "door": [
+    "/door/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "door is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“door”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "door panel": [
     "/dɔːr ˈpænl/",
@@ -7456,6 +7561,13 @@
     "",
     "Driver identification should be fast, but the interface must still offer a manual correction path.",
     "驾驶员识别应足够快速，但界面仍必须提供手动纠正路径。"
+  ],
+  "driver identity": [
+    "/ˈdraɪvər aɪˈdentəti/",
+    "驾驶者身份；当前承担驾驶任务的用户身份",
+    "",
+    "driver identity should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“driver identity”可理解为“驾驶者身份；当前承担驾驶任务的用户身份”。"
   ],
   "driver monitoring": [
     "/ˈdraɪvər ˈmɑːnɪtərɪŋ/",
@@ -8175,6 +8287,13 @@
     "Interaction recovery gives the driver a safe way to edit the route instead of restarting the entire task.",
     "在这句话中，“entire”可理解为“整个, 全部；全体的, 完全的, 全部的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "entry": [
+    "/entry/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "entry is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“entry”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "environmental": [
     "/ɪnˌvaɪrənˈmentl/",
@@ -9117,6 +9236,13 @@
     "",
     "A family cockpit often includes adults, children, and personal devices.",
     "在这句话中，“family cockpit”用于描述智能座舱多人语音控制。"
+  ],
+  "family profile": [
+    "/ˈfæməli ˈproʊfaɪl/",
+    "家庭档案；家庭成员共享或切换的用户配置",
+    "",
+    "family profile should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“family profile”可理解为“家庭档案；家庭成员共享或切换的用户配置”。"
   ],
   "fan": [
     "/fæn/",
@@ -10188,6 +10314,13 @@
     "A small grammar can be reliable for safety commands.",
     "小范围语法可让安全指令更可靠。"
   ],
+  "granted": [
+    "/granted/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "granted is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“granted”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+  ],
   "graphics": [
     "/待补充/",
     "语境词：graphics；用于理解今天健康舒适提示主题中的英文表达",
@@ -10257,6 +10390,13 @@
     "",
     "The cockpit uses the word guest in privacy prompts when it fits the user context.",
     "在隐私提示中，“guest”可结合用户场景理解。"
+  ],
+  "guest key": [
+    "/ɡest kiː/",
+    "访客钥匙；临时授予非车主的访问凭证",
+    "",
+    "guest key should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“guest key”可理解为“访客钥匙；临时授予非车主的访问凭证”。"
   ],
   "guest mode": [
     "/ɡest moʊd/",
@@ -16494,6 +16634,13 @@
     "Payment permissions require explicit confirmation.",
     "支付权限需要明确确认。"
   ],
+  "payment settings": [
+    "/ˈpeɪmənt ˈsetɪŋz/",
+    "支付设置；车内支付相关账户和权限",
+    "",
+    "payment settings should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“payment settings”可理解为“支付设置；车内支付相关账户和权限”。"
+  ],
   "payment status": [
     "/ˈpeɪmənt ˈstætəs/",
     "支付状态；交易当前是成功、失败、处理中或待确认",
@@ -17050,6 +17197,13 @@
     "",
     "Lane confidence is low ahead. Please look up and hold the wheel.",
     "在这句话中，“please”用于描述协同驾驶模式切换与边界提示。"
+  ],
+  "pocket": [
+    "/pocket/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "pocket is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“pocket”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "point": [
     "/pɔɪnt/",
@@ -17803,6 +17957,13 @@
     "Privacy-preserving sensing can detect movement without storing identifiable cabin images.",
     "隐私保护型感知可以检测动作，而不存储可识别的座舱图像。"
   ],
+  "privacy-preserving unlock": [
+    "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ʌnˈlɑːk/",
+    "隐私保护型解锁；完成解锁时最小化个人数据展示和共享的方案",
+    "",
+    "Privacy-preserving unlock confirms access without displaying private calendar details on the center screen.",
+    "隐私保护型解锁会确认访问权限，但不会在中控屏显示私人日历细节。"
+  ],
   "privacy-safe default": [
     "/privacy-safe default/",
     "隐私安全默认值",
@@ -17958,6 +18119,13 @@
     "",
     "Every profile action should be traceable.",
     "在这句话中，“profile action”可理解为“档案操作”。"
+  ],
+  "profile arbitration": [
+    "/ˈproʊfaɪl ˌɑːrbɪˈtreɪʃn/",
+    "档案仲裁；多个身份同时出现时判断应激活哪个个性化档案的规则",
+    "",
+    "Profile arbitration is needed when the owner phone and a passenger watch enter the cabin together.",
+    "当车主手机和乘客手表同时进入座舱时，需要档案仲裁。"
   ],
   "profile boundary": [
     "/profile boundary/",
@@ -20241,6 +20409,13 @@
     "Revocation control must be easy to find after the initial setup is complete.",
     "初始设置完成后，撤销控制也必须容易找到。"
   ],
+  "revocation cue": [
+    "/ˌrevəˈkeɪʃn kjuː/",
+    "撤销线索；提醒用户某个数字钥匙、设备或权限已被移除的界面提示",
+    "",
+    "A revocation cue reassures the owner that a borrowed key no longer opens the vehicle.",
+    "撤销线索让车主确认借出的钥匙已无法再打开车辆。"
+  ],
   "revocation path": [
     "/ˌrevəˈkeɪʃn pæθ/",
     "撤销路径；用户取消授权、撤回自动化或恢复原设置的清晰路径",
@@ -21076,6 +21251,13 @@
     "",
     "A charging detour feels acceptable when the interface explains the saved waiting time.",
     "在这句话中，“saved”可理解为“节省的；被减少的”。"
+  ],
+  "saved destinations": [
+    "/seɪvd ˌdestɪˈneɪʃnz/",
+    "已保存目的地；用户保存的导航地点",
+    "",
+    "saved destinations should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“saved destinations”可理解为“已保存目的地；用户保存的导航地点”。"
   ],
   "saved inference": [
     "/seɪvd ˈɪnfərəns/",
@@ -22025,6 +22207,13 @@
     "",
     "A shared cabin changes how the assistant reads personal information aloud.",
     "共享座舱会改变助手朗读个人信息的方式。"
+  ],
+  "shared cabin context": [
+    "/ʃerd ˈkæbɪn ˈkɑːntekst/",
+    "共享座舱上下文；多人同车时系统需要理解的身份、座位和权限关系",
+    "",
+    "Shared cabin context helps the interface separate driver settings from passenger entertainment choices.",
+    "共享座舱上下文帮助界面区分驾驶者设置和乘客娱乐选择。"
   ],
   "shared cabin privacy": [
     "/ʃerd ˈkæbɪn ˈpraɪvəsi/",
@@ -24349,6 +24538,13 @@
     "The word temporary appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“temporary”用于表达相关系统状态或用户影响。"
   ],
+  "temporary access": [
+    "/ˈtempəreri ˈækses/",
+    "临时访问；在限定时间、地点或功能范围内授予他人的车辆使用权限",
+    "",
+    "Temporary access should expire clearly and avoid exposing personal routes or contacts.",
+    "临时访问应清楚过期，并避免暴露个人路线或联系人。"
+  ],
   "temporary automation": [
     "/ˈtempəreri ˌɔːtəˈmeɪʃn/",
     "临时自动化；只在当前行程或短时间内生效的自动化",
@@ -24362,6 +24558,13 @@
     "",
     "Temporary consent is useful when a passenger shares a destination for one trip.",
     "当乘客只为一次行程共享目的地时，临时同意很有用。"
+  ],
+  "temporary guest key": [
+    "/ˈtempəreri ɡest kiː/",
+    "临时访客钥匙；短期有效的车辆访问凭证",
+    "",
+    "temporary guest key should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“temporary guest key”可理解为“临时访客钥匙；短期有效的车辆访问凭证”。"
   ],
   "temporary guest mode": [
     "/temporary guest mode/",
@@ -24552,6 +24755,13 @@
     "",
     "Users may think the system changed modes.",
     "用户可能以为系统切换了模式。"
+  ],
+  "thinks": [
+    "/thinks/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "thinks is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“thinks”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "this": [
     "/ðɪs/",
@@ -25956,12 +26166,26 @@
     "The cockpit uses the word valet in privacy prompts when it fits the user context.",
     "在隐私提示中，“valet”可结合用户场景理解。"
   ],
+  "valet key": [
+    "/væˈleɪ kiː/",
+    "代客钥匙；面向代客泊车的受限车辆权限",
+    "",
+    "valet key should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“valet key”可理解为“代客钥匙；面向代客泊车的受限车辆权限”。"
+  ],
   "valet mode": [
     "/væˈleɪ moʊd/",
     "代客模式；限制个人信息和部分功能的临时车辆模式",
     "",
     "The cockpit uses valet mode to make privacy decisions easier to understand.",
     "座舱使用“valet mode”让隐私决策更容易理解。"
+  ],
+  "valid": [
+    "/valid/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "valid is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“valid”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "valuable": [
     "/ˈvælju(ə)bl̩/",
@@ -26000,6 +26224,13 @@
     "Context-sensitive timing can delay a personalization prompt until the vehicle is stopped.",
     "在这句话中，“vehicle”可理解为“交通工具, 车辆, 传播媒介”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "vehicle access": [
+    "/ˈviːəkl ˈækses/",
+    "车辆访问；进入、启动车辆或使用车辆功能的权限",
+    "",
+    "vehicle access should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“vehicle access”可理解为“车辆访问；进入、启动车辆或使用车辆功能的权限”。"
   ],
   "vehicle behavior": [
     "/ˈviːəkl bɪˈheɪvjər/",
@@ -26505,6 +26736,13 @@
     "Voice fallback can resume a simple task without extra touch input.",
     "语音回退可以在无需额外触控的情况下续接简单任务。"
   ],
+  "voice history": [
+    "/vɔɪs ˈhɪstəri/",
+    "语音历史；语音交互记录和偏好",
+    "",
+    "voice history should be clear in an intelligent cockpit identity flow.",
+    "在这句话中，“voice history”可理解为“语音历史；语音交互记录和偏好”。"
+  ],
   "voice match": [
     "/vɔɪs mætʃ/",
     "声纹匹配；通过声音确认身份",
@@ -26705,6 +26943,13 @@
     "",
     "Drivers can build mode awareness without wasting attention budget.",
     "驾驶员可以建立模式意识，而不浪费注意力预算。"
+  ],
+  "watch": [
+    "/watch/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "watch is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“watch”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "watched": [
     "/wɑːtʃt/",
@@ -27105,6 +27350,13 @@
     "",
     "The assistant keeps a turn-taking window open after asking a yes-or-no question.",
     "在这句话中，“yes-or-no”可理解为“是非式的；只需肯定或否定回答的”。"
+  ],
+  "yesterday": [
+    "/yesterday/",
+    "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+    "",
+    "yesterday is useful when explaining digital key identity handoff in an intelligent cockpit.",
+    "在这句话中，“yesterday”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
   ],
   "yet": [
     "/jet/",

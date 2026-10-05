@@ -1,5 +1,1704 @@
 [
   {
+    "id": "2026-10-05-cross-device-digital-key-identity-handoff",
+    "date": "2026-10-05",
+    "title": "Cross-device digital keys and identity handoff in intelligent cockpits",
+    "topic": "智能座舱跨设备数字钥匙与身份切换",
+    "suggestedTime": "20-25 分钟",
+    "summary": "今天练习如何用英语描述数字钥匙在手机、手表、车机和共享账户之间流转时，智能座舱如何确认身份、保护隐私并平滑切换个性化设置。",
+    "words": [
+      {
+        "term": "cross-device digital key",
+        "phonetic": "/krɔːs dɪˈvaɪs ˈdɪdʒɪtl kiː/",
+        "meaning": "跨设备数字钥匙；可在手机、手表或其他可信设备上授权车辆访问的钥匙体验",
+        "example": "A cross-device digital key should unlock the vehicle without hiding which device granted access.",
+        "chineseExample": "跨设备数字钥匙应能解锁车辆，同时不隐藏是哪个设备授予了访问权限。"
+      },
+      {
+        "term": "identity handoff",
+        "phonetic": "/aɪˈdentəti ˈhændɔːf/",
+        "meaning": "身份交接；系统在不同用户、设备或会话之间转移身份上下文的过程",
+        "example": "Identity handoff helps the cockpit switch from a family profile to the driver profile before departure.",
+        "chineseExample": "身份交接帮助座舱在出发前从家庭档案切换到驾驶者档案。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；清楚说明某个钥匙、账户或乘员可以控制哪些功能的限制",
+        "example": "A permission boundary prevents a temporary guest key from changing payment or home address settings.",
+        "chineseExample": "权限边界可防止临时访客钥匙修改支付或家庭地址设置。"
+      },
+      {
+        "term": "profile arbitration",
+        "phonetic": "/ˈproʊfaɪl ˌɑːrbɪˈtreɪʃn/",
+        "meaning": "档案仲裁；多个身份同时出现时判断应激活哪个个性化档案的规则",
+        "example": "Profile arbitration is needed when the owner phone and a passenger watch enter the cabin together.",
+        "chineseExample": "当车主手机和乘客手表同时进入座舱时，需要档案仲裁。"
+      },
+      {
+        "term": "trusted device",
+        "phonetic": "/ˈtrʌstɪd dɪˈvaɪs/",
+        "meaning": "可信设备；已被授权用于身份识别、解锁或个性化加载的设备",
+        "example": "The cockpit can show a trusted device list so users can remove an old phone safely.",
+        "chineseExample": "座舱可以显示可信设备列表，让用户安全移除旧手机。"
+      },
+      {
+        "term": "temporary access",
+        "phonetic": "/ˈtempəreri ˈækses/",
+        "meaning": "临时访问；在限定时间、地点或功能范围内授予他人的车辆使用权限",
+        "example": "Temporary access should expire clearly and avoid exposing personal routes or contacts.",
+        "chineseExample": "临时访问应清楚过期，并避免暴露个人路线或联系人。"
+      },
+      {
+        "term": "privacy-preserving unlock",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ʌnˈlɑːk/",
+        "meaning": "隐私保护型解锁；完成解锁时最小化个人数据展示和共享的方案",
+        "example": "Privacy-preserving unlock confirms access without displaying private calendar details on the center screen.",
+        "chineseExample": "隐私保护型解锁会确认访问权限，但不会在中控屏显示私人日历细节。"
+      },
+      {
+        "term": "account recovery path",
+        "phonetic": "/əˈkaʊnt rɪˈkʌvəri pæθ/",
+        "meaning": "账户恢复路径；设备丢失、钥匙失效或身份冲突时恢复访问的步骤",
+        "example": "An account recovery path should guide users through verification without blocking urgent vehicle use.",
+        "chineseExample": "账户恢复路径应引导用户完成验证，同时不阻断紧急用车。"
+      },
+      {
+        "term": "shared cabin context",
+        "phonetic": "/ʃerd ˈkæbɪn ˈkɑːntekst/",
+        "meaning": "共享座舱上下文；多人同车时系统需要理解的身份、座位和权限关系",
+        "example": "Shared cabin context helps the interface separate driver settings from passenger entertainment choices.",
+        "chineseExample": "共享座舱上下文帮助界面区分驾驶者设置和乘客娱乐选择。"
+      },
+      {
+        "term": "revocation cue",
+        "phonetic": "/ˌrevəˈkeɪʃn kjuː/",
+        "meaning": "撤销线索；提醒用户某个数字钥匙、设备或权限已被移除的界面提示",
+        "example": "A revocation cue reassures the owner that a borrowed key no longer opens the vehicle.",
+        "chineseExample": "撤销线索让车主确认借出的钥匙已无法再打开车辆。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "a",
+        "phonetic": "/a/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "a is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“a”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "about",
+        "phonetic": "/about/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "about is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“about”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "access",
+        "phonetic": "/access/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "access is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“access”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "account",
+        "phonetic": "/account/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "account is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“account”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "account recovery path",
+        "phonetic": "/əˈkaʊnt rɪˈkʌvəri pæθ/",
+        "meaning": "账户恢复路径；身份或设备异常时恢复访问的流程",
+        "example": "A visible account recovery path reduces anxiety when a phone battery dies.",
+        "chineseExample": "手机没电时，可见的账户恢复路径能降低焦虑。"
+      },
+      {
+        "term": "active",
+        "phonetic": "/active/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "active is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“active”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "active profile",
+        "phonetic": "/ˈæktɪv ˈproʊfaɪl/",
+        "meaning": "当前激活档案；系统正在使用的用户配置",
+        "example": "active profile should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“active profile”可理解为“当前激活档案；系统正在使用的用户配置”。"
+      },
+      {
+        "term": "address",
+        "phonetic": "/address/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "address is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“address”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "addresses",
+        "phonetic": "/addresses/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "addresses is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“addresses”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "also",
+        "phonetic": "/also/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "also is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“also”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "an",
+        "phonetic": "/an/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "an is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“an”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "and",
+        "phonetic": "/and/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "and is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“and”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "arbitration",
+        "phonetic": "/arbitration/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "arbitration is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“arbitration”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "are",
+        "phonetic": "/are/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "are is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“are”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "arrive",
+        "phonetic": "/arrive/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "arrive is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“arrive”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "avoid",
+        "phonetic": "/avoid/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "avoid is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“avoid”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "avoids",
+        "phonetic": "/avoids/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "avoids is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“avoids”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "battery",
+        "phonetic": "/battery/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "battery is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“battery”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "because",
+        "phonetic": "/because/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "because is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“because”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "becomes",
+        "phonetic": "/becomes/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "becomes is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“becomes”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "before",
+        "phonetic": "/before/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "before is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“before”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "blocking",
+        "phonetic": "/blocking/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "blocking is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“blocking”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "borrowed",
+        "phonetic": "/borrowed/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "borrowed is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“borrowed”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "both",
+        "phonetic": "/both/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "both is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“both”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/boundary/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "boundary is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“boundary”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "but",
+        "phonetic": "/but/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "but is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“but”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "cabin",
+        "phonetic": "/cabin/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "cabin is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“cabin”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "calendar",
+        "phonetic": "/calendar/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "calendar is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“calendar”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "calm",
+        "phonetic": "/calm/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "calm is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“calm”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "can",
+        "phonetic": "/can/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "can is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“can”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "car",
+        "phonetic": "/car/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "car is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“car”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "center",
+        "phonetic": "/center/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "center is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“center”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "center console",
+        "phonetic": "/ˈsentər ˈkɑːnsoʊl/",
+        "meaning": "中控台；前排中央控制区域",
+        "example": "center console should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“center console”可理解为“中控台；前排中央控制区域”。"
+      },
+      {
+        "term": "change",
+        "phonetic": "/change/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "change is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“change”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "changing",
+        "phonetic": "/changing/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "changing is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“changing”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "choices",
+        "phonetic": "/choices/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "choices is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“choices”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "clearly",
+        "phonetic": "/clearly/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "clearly is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“clearly”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "cockpit",
+        "phonetic": "/cockpit/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "cockpit is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“cockpit”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "confirmed",
+        "phonetic": "/confirmed/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "confirmed is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“confirmed”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "confirms",
+        "phonetic": "/confirms/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "confirms is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“confirms”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "connected",
+        "phonetic": "/connected/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "connected is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“connected”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "console",
+        "phonetic": "/console/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "console is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“console”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "contacts",
+        "phonetic": "/contacts/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "contacts is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“contacts”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/context/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "context is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“context”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "convenience",
+        "phonetic": "/convenience/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "convenience is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“convenience”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "convenient",
+        "phonetic": "/convenient/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "convenient is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“convenient”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "correct",
+        "phonetic": "/correct/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "correct is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“correct”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "creating",
+        "phonetic": "/creating/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "creating is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“creating”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "cross-device",
+        "phonetic": "/cross-device/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "cross-device is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“cross-device”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "cross-device digital key",
+        "phonetic": "/krɔːs dɪˈvaɪs ˈdɪdʒɪtl kiː/",
+        "meaning": "跨设备数字钥匙；多个个人设备都可能承载的车辆访问凭证",
+        "example": "A cross-device digital key connects access, identity, and personalization across devices.",
+        "chineseExample": "跨设备数字钥匙把访问、身份和个性化跨设备连接起来。"
+      },
+      {
+        "term": "cue",
+        "phonetic": "/cue/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "cue is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“cue”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "decision",
+        "phonetic": "/decision/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "decision is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“decision”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "departure",
+        "phonetic": "/departure/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "departure is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“departure”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "design",
+        "phonetic": "/design/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "design is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“design”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "destinations",
+        "phonetic": "/destinations/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "destinations is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“destinations”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "details",
+        "phonetic": "/details/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "details is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“details”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "device",
+        "phonetic": "/device/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "device is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“device”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "devices",
+        "phonetic": "/devices/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "devices is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“devices”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "dies",
+        "phonetic": "/dies/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "dies is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“dies”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "difficult",
+        "phonetic": "/difficult/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "difficult is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“difficult”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "digital",
+        "phonetic": "/digital/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "digital is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“digital”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "digital key",
+        "phonetic": "/ˈdɪdʒɪtl kiː/",
+        "meaning": "数字钥匙；用于车辆访问的电子凭证",
+        "example": "digital key should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“digital key”可理解为“数字钥匙；用于车辆访问的电子凭证”。"
+      },
+      {
+        "term": "displaying",
+        "phonetic": "/displaying/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "displaying is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“displaying”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "door",
+        "phonetic": "/door/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "door is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“door”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/driver/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "driver is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“driver”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "driver identity",
+        "phonetic": "/ˈdraɪvər aɪˈdentəti/",
+        "meaning": "驾驶者身份；当前承担驾驶任务的用户身份",
+        "example": "driver identity should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“driver identity”可理解为“驾驶者身份；当前承担驾驶任务的用户身份”。"
+      },
+      {
+        "term": "enter",
+        "phonetic": "/enter/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "enter is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“enter”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "entertainment",
+        "phonetic": "/entertainment/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "entertainment is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“entertainment”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "entry",
+        "phonetic": "/entry/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "entry is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“entry”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "events",
+        "phonetic": "/events/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "events is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“events”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "expire",
+        "phonetic": "/expire/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "expire is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“expire”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "explains",
+        "phonetic": "/explains/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "explains is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“explains”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "exposing",
+        "phonetic": "/exposing/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "exposing is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“exposing”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "family",
+        "phonetic": "/family/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "family is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“family”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "family profile",
+        "phonetic": "/ˈfæməli ˈproʊfaɪl/",
+        "meaning": "家庭档案；家庭成员共享或切换的用户配置",
+        "example": "family profile should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“family profile”可理解为“家庭档案；家庭成员共享或切换的用户配置”。"
+      },
+      {
+        "term": "first",
+        "phonetic": "/first/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "first is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“first”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "from",
+        "phonetic": "/from/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "from is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“from”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "good",
+        "phonetic": "/good/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "good is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“good”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "granted",
+        "phonetic": "/granted/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "granted is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“granted”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "guess",
+        "phonetic": "/guess/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "guess is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“guess”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "guest",
+        "phonetic": "/guest/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "guest is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“guest”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "guest key",
+        "phonetic": "/ɡest kiː/",
+        "meaning": "访客钥匙；临时授予非车主的访问凭证",
+        "example": "guest key should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“guest key”可理解为“访客钥匙；临时授予非车主的访问凭证”。"
+      },
+      {
+        "term": "guide",
+        "phonetic": "/guide/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "guide is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“guide”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/handoff/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "handoff is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“handoff”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "happens",
+        "phonetic": "/happens/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "happens is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“happens”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "helps",
+        "phonetic": "/helps/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "helps is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“helps”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "hiding",
+        "phonetic": "/hiding/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "hiding is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“hiding”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "history",
+        "phonetic": "/history/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "history is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“history”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "home",
+        "phonetic": "/home/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "home is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“home”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "how",
+        "phonetic": "/how/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "how is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“how”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "identity",
+        "phonetic": "/identity/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "identity is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“identity”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "identity handoff",
+        "phonetic": "/aɪˈdentəti ˈhændɔːf/",
+        "meaning": "身份交接；从一个设备或用户身份平滑过渡到另一个身份",
+        "example": "Identity handoff should happen before the cockpit loads private preferences.",
+        "chineseExample": "身份交接应在座舱加载私人偏好之前完成。"
+      },
+      {
+        "term": "if",
+        "phonetic": "/if/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "if is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“if”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "in",
+        "phonetic": "/in/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "in is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“in”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "intelligent",
+        "phonetic": "/intelligent/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "intelligent is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“intelligent”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "interface",
+        "phonetic": "/interface/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "interface is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“interface”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "is",
+        "phonetic": "/is/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "is is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“is”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "it",
+        "phonetic": "/it/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "it is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“it”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "key",
+        "phonetic": "/key/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "key is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“key”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "know",
+        "phonetic": "/know/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "know is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“know”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/limited/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "limited is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“limited”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "list",
+        "phonetic": "/list/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "list is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“list”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "longer",
+        "phonetic": "/longer/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "longer is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“longer”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "lost",
+        "phonetic": "/lost/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "lost is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“lost”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "may",
+        "phonetic": "/may/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "may is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“may”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "messages",
+        "phonetic": "/messages/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "messages is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“messages”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "mirrors",
+        "phonetic": "/mirrors/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "mirrors is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“mirrors”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "moment",
+        "phonetic": "/moment/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "moment is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“moment”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "more",
+        "phonetic": "/more/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "more is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“more”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "move",
+        "phonetic": "/move/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "move is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“move”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "must",
+        "phonetic": "/must/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "must is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“must”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/navigation/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "navigation is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“navigation”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "near",
+        "phonetic": "/near/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "near is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“near”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "need",
+        "phonetic": "/need/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "need is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“need”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "needed",
+        "phonetic": "/needed/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "needed is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“needed”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "needs",
+        "phonetic": "/needs/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "needs is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“needs”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "no",
+        "phonetic": "/no/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "no is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“no”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "not",
+        "phonetic": "/not/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "not is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“not”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "of",
+        "phonetic": "/of/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "of is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“of”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "old",
+        "phonetic": "/old/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "old is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“old”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "on",
+        "phonetic": "/on/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "on is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“on”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "one",
+        "phonetic": "/one/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "one is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“one”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "only",
+        "phonetic": "/only/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "only is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“only”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "open",
+        "phonetic": "/open/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "open is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“open”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "opens",
+        "phonetic": "/opens/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "opens is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“opens”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "or",
+        "phonetic": "/or/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "or is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“or”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "owner",
+        "phonetic": "/owner/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "owner is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“owner”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "panic",
+        "phonetic": "/panic/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "panic is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“panic”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "part",
+        "phonetic": "/part/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "part is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“part”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "passenger",
+        "phonetic": "/passenger/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "passenger is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“passenger”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "path",
+        "phonetic": "/path/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "path is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“path”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "payment",
+        "phonetic": "/payment/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "payment is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“payment”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "payment settings",
+        "phonetic": "/ˈpeɪmənt ˈsetɪŋz/",
+        "meaning": "支付设置；车内支付相关账户和权限",
+        "example": "payment settings should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“payment settings”可理解为“支付设置；车内支付相关账户和权限”。"
+      },
+      {
+        "term": "permission",
+        "phonetic": "/permission/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "permission is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“permission”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃn ˈbaʊndəri/",
+        "meaning": "权限边界；定义可访问数据和可控制功能的范围",
+        "example": "A clear permission boundary makes shared vehicle access safer.",
+        "chineseExample": "清晰的权限边界让共享车辆访问更安全。"
+      },
+      {
+        "term": "permissions",
+        "phonetic": "/permissions/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "permissions is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“permissions”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "person",
+        "phonetic": "/person/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "person is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“person”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "personal",
+        "phonetic": "/personal/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "personal is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“personal”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "personalization",
+        "phonetic": "/personalization/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "personalization is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“personalization”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "phone",
+        "phonetic": "/phone/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "phone is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“phone”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "pocket",
+        "phonetic": "/pocket/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "pocket is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“pocket”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "position",
+        "phonetic": "/position/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "position is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“position”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "prevents",
+        "phonetic": "/prevents/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "prevents is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“prevents”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "privacy",
+        "phonetic": "/privacy/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "privacy is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“privacy”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "privacy-preserving",
+        "phonetic": "/privacy-preserving/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "privacy-preserving is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“privacy-preserving”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "privacy-preserving unlock",
+        "phonetic": "/ˈpraɪvəsi prɪˈzɜːrvɪŋ ʌnˈlɑːk/",
+        "meaning": "隐私保护型解锁；解锁时只暴露完成任务所需的最少信息",
+        "example": "Privacy-preserving unlock separates access confirmation from personal data display.",
+        "chineseExample": "隐私保护型解锁把访问确认和个人数据显示分开。"
+      },
+      {
+        "term": "private",
+        "phonetic": "/private/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "private is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“private”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "profile",
+        "phonetic": "/profile/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "profile is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“profile”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "profile arbitration",
+        "phonetic": "/ˈproʊfaɪl ˌɑːrbɪˈtreɪʃn/",
+        "meaning": "档案仲裁；多档案冲突时选择当前主档案的机制",
+        "example": "Profile arbitration avoids loading the wrong seat and mirror settings.",
+        "chineseExample": "档案仲裁避免加载错误的座椅和后视镜设置。"
+      },
+      {
+        "term": "protects",
+        "phonetic": "/protects/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "protects is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“protects”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "purchase",
+        "phonetic": "/purchase/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "purchase is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“purchase”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "quickly",
+        "phonetic": "/quickly/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "quickly is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“quickly”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "reassures",
+        "phonetic": "/reassures/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "reassures is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“reassures”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/recovery/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "recovery is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“recovery”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "remember",
+        "phonetic": "/remember/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "remember is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“remember”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "remove",
+        "phonetic": "/remove/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "remove is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“remove”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "reveal",
+        "phonetic": "/reveal/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "reveal is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“reveal”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "revocation",
+        "phonetic": "/revocation/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "revocation is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“revocation”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "revocation cue",
+        "phonetic": "/ˌrevəˈkeɪʃn kjuː/",
+        "meaning": "撤销线索；权限取消后给出的确认提示",
+        "example": "A revocation cue should make the end of access unmistakable.",
+        "chineseExample": "撤销线索应让访问权限的结束非常明确。"
+      },
+      {
+        "term": "revoke",
+        "phonetic": "/revoke/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "revoke is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“revoke”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "routes",
+        "phonetic": "/routes/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "routes is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“routes”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "safely",
+        "phonetic": "/safely/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "safely is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“safely”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "safety",
+        "phonetic": "/safety/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "safety is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“safety”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "saved",
+        "phonetic": "/saved/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "saved is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“saved”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "saved destinations",
+        "phonetic": "/seɪvd ˌdestɪˈneɪʃnz/",
+        "meaning": "已保存目的地；用户保存的导航地点",
+        "example": "saved destinations should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“saved destinations”可理解为“已保存目的地；用户保存的导航地点”。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/screen/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "screen is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“screen”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "seat",
+        "phonetic": "/seat/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "seat is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“seat”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "separate",
+        "phonetic": "/separate/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "separate is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“separate”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "services",
+        "phonetic": "/services/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "services is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“services”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "settings",
+        "phonetic": "/settings/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "settings is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“settings”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "several",
+        "phonetic": "/several/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "several is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“several”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "shared",
+        "phonetic": "/shared/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "shared is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“shared”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "shared cabin context",
+        "phonetic": "/ʃerd ˈkæbɪn ˈkɑːntekst/",
+        "meaning": "共享座舱上下文；多人、座位、权限和当前任务之间的关系",
+        "example": "Shared cabin context keeps driver controls separate from passenger preferences.",
+        "chineseExample": "共享座舱上下文让驾驶控制与乘客偏好保持分离。"
+      },
+      {
+        "term": "should",
+        "phonetic": "/should/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "should is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“should”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "show",
+        "phonetic": "/show/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "show is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“show”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "showing",
+        "phonetic": "/showing/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "showing is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“showing”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "silently",
+        "phonetic": "/silently/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "silently is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“silently”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "simply",
+        "phonetic": "/simply/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "simply is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“simply”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "so",
+        "phonetic": "/so/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "so is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“so”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "start",
+        "phonetic": "/start/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "start is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“start”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "still",
+        "phonetic": "/still/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "still is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“still”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "switch",
+        "phonetic": "/switch/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "switch is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“switch”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "temporary",
+        "phonetic": "/temporary/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "temporary is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“temporary”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "temporary access",
+        "phonetic": "/ˈtempəreri ˈækses/",
+        "meaning": "临时访问；有时间或功能限制的授权用车权限",
+        "example": "Temporary access is useful for valet parking or family errands.",
+        "chineseExample": "临时访问适合代客泊车或家庭临时用车。"
+      },
+      {
+        "term": "temporary guest key",
+        "phonetic": "/ˈtempəreri ɡest kiː/",
+        "meaning": "临时访客钥匙；短期有效的车辆访问凭证",
+        "example": "temporary guest key should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“temporary guest key”可理解为“临时访客钥匙；短期有效的车辆访问凭证”。"
+      },
+      {
+        "term": "than",
+        "phonetic": "/than/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "than is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“than”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "that",
+        "phonetic": "/that/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "that is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“that”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "the",
+        "phonetic": "/the/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "the is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“the”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "therefore",
+        "phonetic": "/therefore/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "therefore is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“therefore”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "they",
+        "phonetic": "/they/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "they is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“they”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "thinks",
+        "phonetic": "/thinks/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "thinks is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“thinks”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "through",
+        "phonetic": "/through/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "through is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“through”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "to",
+        "phonetic": "/to/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "to is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“to”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "together",
+        "phonetic": "/together/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "together is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“together”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "trust",
+        "phonetic": "/trust/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "trust is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“trust”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "trusted",
+        "phonetic": "/trusted/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "trusted is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“trusted”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "trusted device",
+        "phonetic": "/ˈtrʌstɪd dɪˈvaɪs/",
+        "meaning": "可信设备；被系统认可为身份凭证的手机、手表或钥匙卡",
+        "example": "A trusted device should be easy to review and remove.",
+        "chineseExample": "可信设备应便于查看和移除。"
+      },
+      {
+        "term": "unlock",
+        "phonetic": "/unlock/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "unlock is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“unlock”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "urgent",
+        "phonetic": "/urgent/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "urgent is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“urgent”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "use",
+        "phonetic": "/use/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "use is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“use”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "user",
+        "phonetic": "/user/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "user is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“user”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "users",
+        "phonetic": "/users/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "users is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“users”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "valet",
+        "phonetic": "/valet/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "valet is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“valet”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "valet key",
+        "phonetic": "/væˈleɪ kiː/",
+        "meaning": "代客钥匙；面向代客泊车的受限车辆权限",
+        "example": "valet key should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“valet key”可理解为“代客钥匙；面向代客泊车的受限车辆权限”。"
+      },
+      {
+        "term": "valid",
+        "phonetic": "/valid/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "valid is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“valid”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/vehicle/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "vehicle is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“vehicle”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "vehicle access",
+        "phonetic": "/ˈviːəkl ˈækses/",
+        "meaning": "车辆访问；进入、启动车辆或使用车辆功能的权限",
+        "example": "vehicle access should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“vehicle access”可理解为“车辆访问；进入、启动车辆或使用车辆功能的权限”。"
+      },
+      {
+        "term": "verification",
+        "phonetic": "/verification/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "verification is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“verification”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/visible/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "visible is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“visible”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/voice/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "voice is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“voice”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "voice history",
+        "phonetic": "/vɔɪs ˈhɪstəri/",
+        "meaning": "语音历史；语音交互记录和偏好",
+        "example": "voice history should be clear in an intelligent cockpit identity flow.",
+        "chineseExample": "在这句话中，“voice history”可理解为“语音历史；语音交互记录和偏好”。"
+      },
+      {
+        "term": "watch",
+        "phonetic": "/watch/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "watch is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“watch”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "way",
+        "phonetic": "/way/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "way is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“way”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "what",
+        "phonetic": "/what/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "what is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“what”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/when/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "when is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“when”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "which",
+        "phonetic": "/which/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "which is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“which”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "who",
+        "phonetic": "/who/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "who is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“who”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "will",
+        "phonetic": "/will/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "will is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“will”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/without/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "without is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“without”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "wrong",
+        "phonetic": "/wrong/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "wrong is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“wrong”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      },
+      {
+        "term": "yesterday",
+        "phonetic": "/yesterday/",
+        "meaning": "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
+        "example": "yesterday is useful when explaining digital key identity handoff in an intelligent cockpit.",
+        "chineseExample": "在这句话中，“yesterday”可理解为“可结合智能座舱数字钥匙与身份切换语境理解的英文单词”。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing digital key handoff for shared vehicles",
+        "text": "A digital key is more than a convenient way to unlock a vehicle. In an intelligent cockpit, it becomes part of identity, privacy, and personalization. The difficult moment happens when several trusted devices arrive together: the owner phone is in the driver door pocket, a passenger watch is near the center console, and a temporary guest key is still valid from yesterday. The cockpit should not guess silently. It should show a calm identity handoff that explains which profile is active, which permissions are limited, and how the user can change the decision. Good profile arbitration protects both convenience and safety. Seat position, mirrors, payment settings, saved destinations, and voice history should not move to the wrong person simply because one device connected first. A privacy-preserving unlock also avoids showing private calendar events or home addresses before the driver identity is confirmed. When access is shared, the interface needs a visible permission boundary. A valet key may start the vehicle and open navigation, but it should not reveal messages or purchase services. If a phone is lost or a battery dies, an account recovery path must guide the user without creating panic. Digital key design is therefore not only about entry. It is about trust: users need to know who the car thinks they are, what the car will remember, and how quickly they can revoke or correct access.",
+        "translation": "数字钥匙不只是便捷解锁车辆的方式。在智能座舱中，它会成为身份、隐私和个性化的一部分。真正困难的时刻发生在多个可信设备同时到达时：车主手机在驾驶门储物格里，乘客手表靠近中控台，而昨天的临时访客钥匙仍然有效。座舱不应静默猜测，而应显示平静的身份交接，说明当前激活的是哪个档案、哪些权限受限，以及用户如何改变这个决定。良好的档案仲裁会同时保护便利性和安全性。座椅位置、后视镜、支付设置、已保存目的地和语音历史，不应仅仅因为某个设备先连接就切换到错误的人。隐私保护型解锁也会避免在确认驾驶者身份前显示私人日历事件或家庭地址。当访问被共享时，界面需要可见的权限边界。代客钥匙可以启动车辆并打开导航，但不应暴露消息或购买服务。如果手机丢失或电池没电，账户恢复路径必须引导用户而不制造恐慌。因此，数字钥匙设计不只关于进入车辆，而是关于信任：用户需要知道车辆认为自己是谁、车辆会记住什么，以及他们能多快撤销或修正访问权限。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The cockpit should not guess silently.",
+        "translation": "座舱不应静默猜测。",
+        "points": [
+          "should not guess silently 用简短句强调身份判断必须可见、可解释。",
+          "silently 在这里不是声音问题，而是指系统不能在没有提示的情况下做决定。"
+        ]
+      },
+      {
+        "sentence": "Good profile arbitration protects both convenience and safety.",
+        "translation": "良好的档案仲裁会同时保护便利性和安全性。",
+        "points": [
+          "protects both A and B 是表达双重设计目标的常用结构。",
+          "profile arbitration 可用于讨论多人同车或多设备同时出现的冲突处理。"
+        ]
+      },
+      {
+        "sentence": "A valet key may start the vehicle and open navigation, but it should not reveal messages or purchase services.",
+        "translation": "代客钥匙可以启动车辆并打开导航，但不应暴露消息或购买服务。",
+        "points": [
+          "may..., but it should not... 用来区分允许能力和禁止能力。",
+          "reveal messages 与 purchase services 是隐私和交易风险的两个例子。"
+        ]
+      },
+      {
+        "sentence": "Users need to know who the car thinks they are, what the car will remember, and how quickly they can revoke or correct access.",
+        "translation": "用户需要知道车辆认为自己是谁、车辆会记住什么，以及他们能多快撤销或修正访问权限。",
+        "points": [
+          "who / what / how quickly 三个从句并列，适合总结信任设计。",
+          "revoke or correct access 表示撤销或修正权限，是数字钥匙场景中的高频表达。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "time": "4 分钟",
+        "description": "朗读 cross-device digital key、identity handoff、permission boundary、profile arbitration，并用中文说明它们分别解决什么座舱问题。"
+      },
+      {
+        "title": "长文跟读",
+        "time": "7 分钟",
+        "description": "跟读长文两遍，第二遍重点放慢 trusted devices、temporary guest key、privacy-preserving unlock 等多词短语。"
+      },
+      {
+        "title": "句式替换",
+        "time": "6 分钟",
+        "description": "套用 “A valet key may..., but it should not...” 写 3 条临时权限说明，分别对应代客、家庭成员和维修人员。"
+      },
+      {
+        "title": "交互说明练习",
+        "time": "8 分钟",
+        "description": "用英文设计一条身份交接提示，必须包含当前档案、受限权限、切换入口和撤销入口。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive digital key UX identity handoff",
+        "url": "https://www.youtube.com/results?search_query=automotive+digital+key+UX+identity+handoff",
+        "description": "可搜索 automotive digital key UX identity handoff，观察数字钥匙、账户切换和车辆共享权限的英文表达。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-04-connectivity-fallback-degraded-cockpit-mode",
     "date": "2026-10-04",
     "title": "Connectivity fallback and degraded mode in intelligent cockpits",
