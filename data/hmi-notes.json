@@ -1,5 +1,544 @@
 [
   {
+    "id": "2026-10-06-wellbeing-signals-comfort-recommendations",
+    "date": "2026-10-06",
+    "title": "Wellbeing signals and consent-aware comfort recommendations in intelligent cockpits",
+    "topic": "智能座舱健康状态信号与同意感知舒适建议",
+    "suggestedTime": "20 分钟",
+    "summary": "学习如何用英语描述智能座舱在疲劳、压力、姿态和舒适调节场景中的健康状态信号、透明同意、建议边界和用户手动覆盖。",
+    "words": [
+      {
+        "term": "wellbeing signal",
+        "phonetic": "/ˈwelˌbiːɪŋ ˈsɪɡnəl/",
+        "meaning": "健康状态信号；用于推断乘员舒适、压力或疲劳状态的线索",
+        "example": "A wellbeing signal should support care without making the occupant feel watched.",
+        "chineseExample": "健康状态信号应支持关怀，而不让乘员感觉被监视。"
+      },
+      {
+        "term": "comfort recommendation",
+        "phonetic": "/ˈkʌmfərt ˌrekəmenˈdeɪʃən/",
+        "meaning": "舒适建议；系统基于状态和环境提出的低风险调节建议",
+        "example": "A comfort recommendation should explain why the system thinks a change may help.",
+        "chineseExample": "舒适建议应解释系统为什么认为某个调节可能有帮助。"
+      },
+      {
+        "term": "recommendation boundary",
+        "phonetic": "/ˌrekəmenˈdeɪʃən ˈbaʊndəri/",
+        "meaning": "建议边界；系统只建议、不擅自执行的权限范围",
+        "example": "A recommendation boundary keeps the cockpit from turning health signals into automatic control.",
+        "chineseExample": "建议边界防止座舱把健康信号直接变成自动控制。"
+      },
+      {
+        "term": "health-sensitive data",
+        "phonetic": "/helθ ˈsensətɪv ˈdeɪtə/",
+        "meaning": "健康敏感数据；可能暴露身体或情绪状态的数据",
+        "example": "Health-sensitive data needs clear consent and short retention.",
+        "chineseExample": "健康敏感数据需要明确同意和较短保存周期。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃən ˈbaʊndəri/",
+        "meaning": "权限边界；用户允许系统使用数据或执行动作的范围",
+        "example": "The permission boundary should be visible before the assistant uses a wellbeing signal.",
+        "chineseExample": "助手使用健康状态信号前，权限边界应可见。"
+      },
+      {
+        "term": "supportive wording",
+        "phonetic": "/səˈpɔːrtɪv ˈwɜːrdɪŋ/",
+        "meaning": "支持性措辞；避免责备、强调帮助的提示语言",
+        "example": "Supportive wording makes a wellness prompt feel respectful.",
+        "chineseExample": "支持性措辞让健康舒适提示显得更尊重用户。"
+      },
+      {
+        "term": "opt-in sensing",
+        "phonetic": "/ˌɑːpt ˈɪn ˈsensɪŋ/",
+        "meaning": "选择加入式感知；用户明确同意后才启用的感知能力",
+        "example": "Opt-in sensing is safer than assuming every passenger accepts monitoring.",
+        "chineseExample": "选择加入式感知比假设所有乘客都接受监测更安全。"
+      },
+      {
+        "term": "manual override",
+        "phonetic": "/ˈmænjuəl ˈoʊvərraɪd/",
+        "meaning": "手动覆盖；用户可随时改变或取消系统建议",
+        "example": "Manual override lets the driver reject an unwanted comfort change.",
+        "chineseExample": "手动覆盖让驾驶员能拒绝不想要的舒适调节。"
+      },
+      {
+        "term": "confidence cue",
+        "phonetic": "/ˈkɑːnfɪdəns kjuː/",
+        "meaning": "置信度提示；表达系统判断把握程度的线索",
+        "example": "A confidence cue can say that the system only sees a possible sign of fatigue.",
+        "chineseExample": "置信度提示可以说明系统只是看到可能的疲劳迹象。"
+      },
+      {
+        "term": "wellness prompt",
+        "phonetic": "/ˈwelnəs prɑːmpt/",
+        "meaning": "健康舒适提示；围绕疲劳、压力、晕车或空气质量给出的低干扰建议",
+        "example": "A wellness prompt should be easy to dismiss.",
+        "chineseExample": "健康舒适提示应易于关闭。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "wellbeing signal",
+        "phonetic": "/ˈwelˌbiːɪŋ ˈsɪɡnəl/",
+        "meaning": "健康状态信号；用于推断乘员舒适、压力或疲劳状态的线索",
+        "example": "A wellbeing signal should support care without making the occupant feel watched.",
+        "chineseExample": "健康状态信号应支持关怀，而不让乘员感觉被监视。"
+      },
+      {
+        "term": "comfort recommendation",
+        "phonetic": "/ˈkʌmfərt ˌrekəmenˈdeɪʃən/",
+        "meaning": "舒适建议；系统基于状态和环境提出的低风险调节建议",
+        "example": "A comfort recommendation should explain why the system thinks a change may help.",
+        "chineseExample": "舒适建议应解释系统为什么认为某个调节可能有帮助。"
+      },
+      {
+        "term": "recommendation boundary",
+        "phonetic": "/ˌrekəmenˈdeɪʃən ˈbaʊndəri/",
+        "meaning": "建议边界；系统只建议、不擅自执行的权限范围",
+        "example": "A recommendation boundary keeps the cockpit from turning health signals into automatic control.",
+        "chineseExample": "建议边界防止座舱把健康信号直接变成自动控制。"
+      },
+      {
+        "term": "health-sensitive data",
+        "phonetic": "/helθ ˈsensətɪv ˈdeɪtə/",
+        "meaning": "健康敏感数据；可能暴露身体或情绪状态的数据",
+        "example": "Health-sensitive data needs clear consent and short retention.",
+        "chineseExample": "健康敏感数据需要明确同意和较短保存周期。"
+      },
+      {
+        "term": "permission boundary",
+        "phonetic": "/pərˈmɪʃən ˈbaʊndəri/",
+        "meaning": "权限边界；用户允许系统使用数据或执行动作的范围",
+        "example": "The permission boundary should be visible before the assistant uses a wellbeing signal.",
+        "chineseExample": "助手使用健康状态信号前，权限边界应可见。"
+      },
+      {
+        "term": "supportive wording",
+        "phonetic": "/səˈpɔːrtɪv ˈwɜːrdɪŋ/",
+        "meaning": "支持性措辞；避免责备、强调帮助的提示语言",
+        "example": "Supportive wording makes a wellness prompt feel respectful.",
+        "chineseExample": "支持性措辞让健康舒适提示显得更尊重用户。"
+      },
+      {
+        "term": "opt-in sensing",
+        "phonetic": "/ˌɑːpt ˈɪn ˈsensɪŋ/",
+        "meaning": "选择加入式感知；用户明确同意后才启用的感知能力",
+        "example": "Opt-in sensing is safer than assuming every passenger accepts monitoring.",
+        "chineseExample": "选择加入式感知比假设所有乘客都接受监测更安全。"
+      },
+      {
+        "term": "manual override",
+        "phonetic": "/ˈmænjuəl ˈoʊvərraɪd/",
+        "meaning": "手动覆盖；用户可随时改变或取消系统建议",
+        "example": "Manual override lets the driver reject an unwanted comfort change.",
+        "chineseExample": "手动覆盖让驾驶员能拒绝不想要的舒适调节。"
+      },
+      {
+        "term": "confidence cue",
+        "phonetic": "/ˈkɑːnfɪdəns kjuː/",
+        "meaning": "置信度提示；表达系统判断把握程度的线索",
+        "example": "A confidence cue can say that the system only sees a possible sign of fatigue.",
+        "chineseExample": "置信度提示可以说明系统只是看到可能的疲劳迹象。"
+      },
+      {
+        "term": "wellness prompt",
+        "phonetic": "/ˈwelnəs prɑːmpt/",
+        "meaning": "健康舒适提示；围绕疲劳、压力、晕车或空气质量给出的低干扰建议",
+        "example": "A wellness prompt should be easy to dismiss.",
+        "chineseExample": "健康舒适提示应易于关闭。"
+      },
+      {
+        "term": "transparent consent",
+        "phonetic": "/trænsˈpærənt kənˈsent/",
+        "meaning": "透明同意；清楚说明数据用途、范围和可撤销方式的授权体验",
+        "example": "Transparent consent helps occupants understand what the cockpit will and will not do.",
+        "chineseExample": "透明同意帮助乘员理解座舱会做什么、不会做什么。"
+      },
+      {
+        "term": "privacy-respecting care",
+        "phonetic": "/ˈpraɪvəsi rɪˈspektɪŋ ker/",
+        "meaning": "尊重隐私的关怀；在提供帮助时最小化数据暴露",
+        "example": "Privacy-respecting care turns a sensitive suggestion into a controllable interaction.",
+        "chineseExample": "尊重隐私的关怀把敏感建议变成可控交互。"
+      },
+      {
+        "term": "health-sensitive",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：health-sensitive；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Health-sensitive data needs clear consent and short retention.",
+        "chineseExample": "在这句话中，“health-sensitive”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "unwanted",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：unwanted；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Manual override lets the driver reject an unwanted comfort change.",
+        "chineseExample": "在这句话中，“unwanted”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "sees",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：sees；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "A confidence cue can say that the system only sees a possible sign of fatigue.",
+        "chineseExample": "在这句话中，“sees”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "tired",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：tired；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+        "chineseExample": "在这句话中，“tired”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "tense",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：tense；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+        "chineseExample": "在这句话中，“tense”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "uncomfortable",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：uncomfortable；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+        "chineseExample": "在这句话中，“uncomfortable”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "stretch",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：stretch；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Would you like a stretch reminder or a warmer seat?",
+        "chineseExample": "在这句话中，“stretch”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "certainty",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：certainty；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "The interface should also show a confidence cue when the signal is weak, because false certainty can feel intrusive.",
+        "chineseExample": "在这句话中，“certainty”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "paternalistic",
+        "phonetic": "/按语境朗读/",
+        "meaning": "语境词：paternalistic；用于理解今天健康状态与舒适建议主题中的英文表达",
+        "example": "Good cockpit design is supportive without becoming paternalistic.",
+        "chineseExample": "在这句话中，“paternalistic”用于描述智能座舱健康舒适建议相关内容。"
+      },
+      {
+        "term": "posture change",
+        "phonetic": "/ˈpɑːstʃər tʃeɪndʒ/",
+        "meaning": "姿态变化；乘员坐姿或身体角度发生改变",
+        "example": "Posture change can support a gentle stretch reminder.",
+        "chineseExample": "姿态变化可以支持温和的伸展提醒。"
+      },
+      {
+        "term": "breathing rhythm",
+        "phonetic": "/ˈbriːðɪŋ ˈrɪðəm/",
+        "meaning": "呼吸节奏；用于推断紧张或疲劳的身体节奏信号",
+        "example": "Breathing rhythm should be processed with extra privacy care.",
+        "chineseExample": "呼吸节奏应以额外隐私保护来处理。"
+      },
+      {
+        "term": "seat pressure",
+        "phonetic": "/siːt ˈpreʃər/",
+        "meaning": "座椅压力；座椅传感器检测到的身体接触分布",
+        "example": "Seat pressure can suggest discomfort, but it is not proof.",
+        "chineseExample": "座椅压力可以提示不适，但不是证据。"
+      },
+      {
+        "term": "cabin temperature",
+        "phonetic": "/ˈkæbɪn ˈtemprətʃər/",
+        "meaning": "舱内温度；车内环境舒适度的重要上下文",
+        "example": "Cabin temperature helps explain a climate recommendation.",
+        "chineseExample": "舱内温度有助于解释空调建议。"
+      },
+      {
+        "term": "driving workload",
+        "phonetic": "/ˈdraɪvɪŋ ˈwɜːrkloʊd/",
+        "meaning": "驾驶负荷；当前驾驶任务对注意力和认知资源的要求",
+        "example": "Driving workload affects when a comfort prompt should appear.",
+        "chineseExample": "驾驶负荷影响舒适提示出现的时机。"
+      },
+      {
+        "term": "indirect signal",
+        "phonetic": "/ˌɪndəˈrekt ˈsɪɡnəl/",
+        "meaning": "间接信号；只能提示可能状态、不能直接证明感受的线索",
+        "example": "An indirect signal should lead to a suggestion, not a diagnosis.",
+        "chineseExample": "间接信号应导向建议，而不是诊断。"
+      },
+      {
+        "term": "optional action",
+        "phonetic": "/ˈɑːpʃənəl ˈækʃən/",
+        "meaning": "可选动作；用户可接受、拒绝或稍后处理的系统动作",
+        "example": "A comfort change should remain an optional action.",
+        "chineseExample": "舒适调节应保持为可选动作。"
+      },
+      {
+        "term": "decline path",
+        "phonetic": "/dɪˈklaɪn pæθ/",
+        "meaning": "拒绝路径；用户快速拒绝建议的交互入口",
+        "example": "A clear decline path makes the prompt less intrusive.",
+        "chineseExample": "清晰的拒绝路径让提示不那么冒犯。"
+      },
+      {
+        "term": "stretch reminder",
+        "phonetic": "/stretʃ rɪˈmaɪndər/",
+        "meaning": "伸展提醒；长途驾驶或久坐后的身体活动建议",
+        "example": "A stretch reminder should wait until the road is stable.",
+        "chineseExample": "伸展提醒应等道路稳定时再出现。"
+      },
+      {
+        "term": "warmer seat",
+        "phonetic": "/ˈwɔːrmər siːt/",
+        "meaning": "更暖的座椅；座椅加热建议中的用户可理解措辞",
+        "example": "Warmer seat is easier to understand than a technical heating level.",
+        "chineseExample": "“更暖的座椅”比技术化加热档位更容易理解。"
+      },
+      {
+        "term": "false certainty",
+        "phonetic": "/fɔːls ˈsɜːrtnti/",
+        "meaning": "虚假确定性；系统把不确定推断说得过于肯定",
+        "example": "False certainty can reduce trust in an AI assistant.",
+        "chineseExample": "虚假确定性会降低用户对 AI 助手的信任。"
+      },
+      {
+        "term": "intrusive prompt",
+        "phonetic": "/ɪnˈtruːsɪv prɑːmpt/",
+        "meaning": "冒犯式提示；让用户感觉被监视或被打扰的提示",
+        "example": "An intrusive prompt may be technically helpful but emotionally wrong.",
+        "chineseExample": "冒犯式提示可能技术上有帮助，但情绪上不合适。"
+      },
+      {
+        "term": "on-device processing",
+        "phonetic": "/ɑːn dɪˈvaɪs ˈprɑːsesɪŋ/",
+        "meaning": "端侧处理；在车端设备本地完成数据分析",
+        "example": "On-device processing can reduce exposure of sensitive signals.",
+        "chineseExample": "端侧处理可以减少敏感信号暴露。"
+      },
+      {
+        "term": "short retention",
+        "phonetic": "/ʃɔːrt rɪˈtenʃən/",
+        "meaning": "短期保存；只在必要时间内保留数据",
+        "example": "Short retention is important for health-sensitive data.",
+        "chineseExample": "短期保存对健康敏感数据很重要。"
+      },
+      {
+        "term": "guest mode",
+        "phonetic": "/ɡest moʊd/",
+        "meaning": "访客模式；临时乘员使用车辆时的隐私保护模式",
+        "example": "Guest mode should limit personal health and comfort history.",
+        "chineseExample": "访客模式应限制个人健康和舒适历史。"
+      },
+      {
+        "term": "delete control",
+        "phonetic": "/dɪˈliːt kənˈtroʊl/",
+        "meaning": "删除控制；用户清除数据或记录的入口",
+        "example": "An easy delete control makes consent more credible.",
+        "chineseExample": "易用的删除控制让同意机制更可信。"
+      },
+      {
+        "term": "shared vehicle",
+        "phonetic": "/ʃerd ˈviːəkl/",
+        "meaning": "共享车辆；多人使用或临时借用的车辆",
+        "example": "A shared vehicle needs stronger privacy defaults.",
+        "chineseExample": "共享车辆需要更强的隐私默认设置。"
+      },
+      {
+        "term": "paternalistic design",
+        "phonetic": "/pəˌtɜːrnəˈlɪstɪk dɪˈzaɪn/",
+        "meaning": "家长式设计；系统替用户过度决定的设计方式",
+        "example": "Paternalistic design can make comfort support feel controlling.",
+        "chineseExample": "家长式设计会让舒适支持显得像控制。"
+      },
+      {
+        "term": "calm language",
+        "phonetic": "/kɑːm ˈlæŋɡwɪdʒ/",
+        "meaning": "平静语言；不夸大、不责备的提示措辞",
+        "example": "Calm language is useful for sensitive wellbeing feedback.",
+        "chineseExample": "平静语言适合敏感的健康状态反馈。"
+      },
+      {
+        "term": "stronger action",
+        "phonetic": "/ˈstrɔːŋɡər ˈækʃən/",
+        "meaning": "更强动作；比提醒更主动或更具影响的系统操作",
+        "example": "The cockpit should ask for consent before stronger action.",
+        "chineseExample": "座舱在更强动作前应请求同意。"
+      },
+      {
+        "term": "visible override",
+        "phonetic": "/ˈvɪzəbl ˈoʊvərraɪd/",
+        "meaning": "可见覆盖入口；用户随时接管或取消的明确控件",
+        "example": "Visible override keeps the driver in control.",
+        "chineseExample": "可见覆盖入口让驾驶员保持控制。"
+      },
+      {
+        "term": "sensitive suggestion",
+        "phonetic": "/ˈsensətɪv səɡˈdʒestʃən/",
+        "meaning": "敏感建议；涉及身体、情绪或隐私状态的建议",
+        "example": "A sensitive suggestion should avoid blame.",
+        "chineseExample": "敏感建议应避免责备。"
+      },
+      {
+        "term": "fatigue hint",
+        "phonetic": "/fəˈtiːɡ hɪnt/",
+        "meaning": "疲劳线索；可能指向疲劳但不能独立证明疲劳的信号",
+        "example": "A fatigue hint should be paired with a low-pressure question.",
+        "chineseExample": "疲劳线索应搭配低压力问题。"
+      },
+      {
+        "term": "stress cue",
+        "phonetic": "/stres kjuː/",
+        "meaning": "压力线索；可能提示紧张或压力的行为或生理线索",
+        "example": "A stress cue should not trigger public feedback in a shared cabin.",
+        "chineseExample": "压力线索不应在共享座舱中触发公开反馈。"
+      },
+      {
+        "term": "low-pressure question",
+        "phonetic": "/loʊ ˈpreʃər ˈkwestʃən/",
+        "meaning": "低压力问题；让用户容易拒绝或跳过的询问",
+        "example": "A low-pressure question protects user agency.",
+        "chineseExample": "低压力问题保护用户主导权。"
+      },
+      {
+        "term": "data source label",
+        "phonetic": "/ˈdeɪtə sɔːrs ˈleɪbl/",
+        "meaning": "数据来源标签；说明系统依据何种信号做出建议的文案",
+        "example": "A data source label can say posture, temperature, or workload.",
+        "chineseExample": "数据来源标签可以说明坐姿、温度或驾驶负荷。"
+      },
+      {
+        "term": "comfort history",
+        "phonetic": "/ˈkʌmfərt ˈhɪstəri/",
+        "meaning": "舒适历史；座椅、空调或健康提示的历史偏好和记录",
+        "example": "Comfort history should not leak between profiles.",
+        "chineseExample": "舒适历史不应在不同档案之间泄露。"
+      },
+      {
+        "term": "profile separation",
+        "phonetic": "/ˈproʊfaɪl ˌsepəˈreɪʃən/",
+        "meaning": "档案隔离；不同用户资料之间的数据边界",
+        "example": "Profile separation matters when family members share a car.",
+        "chineseExample": "家人共享车辆时，档案隔离很重要。"
+      },
+      {
+        "term": "private routine",
+        "phonetic": "/ˈpraɪvət ruːˈtiːn/",
+        "meaning": "私人习惯；由数据反推出的个人生活模式",
+        "example": "Comfort data can reveal a private routine.",
+        "chineseExample": "舒适数据可能暴露私人习惯。"
+      },
+      {
+        "term": "transparent microcopy",
+        "phonetic": "/trænsˈpærənt ˈmaɪkroʊˌkɑːpi/",
+        "meaning": "透明微文案；在按钮、提示和说明中清楚表达系统行为的短文案",
+        "example": "Transparent microcopy helps users understand a wellbeing feature quickly.",
+        "chineseExample": "透明微文案帮助用户快速理解健康舒适功能。"
+      },
+      {
+        "term": "consent checkpoint",
+        "phonetic": "/kənˈsent ˈtʃekpɔɪnt/",
+        "meaning": "同意检查点；系统升级使用数据或动作前的确认节点",
+        "example": "A consent checkpoint is needed before saving health-sensitive preferences.",
+        "chineseExample": "保存健康敏感偏好前需要同意检查点。"
+      },
+      {
+        "term": "careful escalation",
+        "phonetic": "/ˈkerfəl ˌeskəˈleɪʃən/",
+        "meaning": "谨慎升级；从轻提示到更主动动作的克制升级方式",
+        "example": "Careful escalation prevents a wellness feature from feeling pushy.",
+        "chineseExample": "谨慎升级避免健康舒适功能显得强推。"
+      },
+      {
+        "term": "driver agency",
+        "phonetic": "/ˈdraɪvər ˈeɪdʒənsi/",
+        "meaning": "驾驶员主导权；驾驶员理解、选择和覆盖系统动作的能力",
+        "example": "Driver agency is central to comfort recommendations.",
+        "chineseExample": "驾驶员主导权是舒适建议的核心。"
+      },
+      {
+        "term": "occupant trust",
+        "phonetic": "/ˈɑːkjəpənt trʌst/",
+        "meaning": "乘员信任；乘员对系统意图、边界和可靠性的信任",
+        "example": "Occupant trust improves when sensitive prompts are optional.",
+        "chineseExample": "敏感提示保持可选时，乘员信任会提升。"
+      },
+      {
+        "term": "recoverable suggestion",
+        "phonetic": "/rɪˈkʌvərəbl səɡˈdʒestʃən/",
+        "meaning": "可恢复建议；用户可撤销、修改或稍后处理的建议",
+        "example": "A recoverable suggestion lowers the risk of a wrong inference.",
+        "chineseExample": "可恢复建议降低错误推断的风险。"
+      },
+      {
+        "term": "comfort autonomy",
+        "phonetic": "/ˈkʌmfərt ɔːˈtɑːnəmi/",
+        "meaning": "舒适自主性；用户对舒适调节保持选择权",
+        "example": "Comfort autonomy keeps assistance from becoming control.",
+        "chineseExample": "舒适自主性防止辅助变成控制。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Consent-aware wellbeing support in the intelligent cockpit",
+        "text": "A wellbeing feature in an intelligent cockpit should begin with permission, not prediction. Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect. The HMI should treat them as reasons to offer help, not as proof that the system knows how someone feels. A respectful flow first explains the data source and the recommendation boundary: \"Your posture has changed during a long trip. Would you like a stretch reminder or a warmer seat?\" This wording keeps the action optional and gives the user a simple way to decline. The interface should also show a confidence cue when the signal is weak, because false certainty can feel intrusive. For health-sensitive data, privacy matters as much as comfort. On-device processing, short retention, guest mode, and an easy delete control can make the feature safer for shared vehicles. Good cockpit design is supportive without becoming paternalistic. It notices possible discomfort, uses calm language, waits for consent before stronger action, and leaves manual override visible at every step.",
+        "translation": "智能座舱中的健康舒适功能应从许可开始，而不是从预测开始。座椅压力、呼吸节奏、舱内温度、摄像头姿态和驾驶负荷可能提示乘员疲劳、紧张、寒冷或不适，但这些信号仍然是间接的。HMI 应把它们当作提供帮助的理由，而不是系统知道用户感受的证据。尊重用户的流程会先解释数据来源和建议边界，例如：“长途行驶中你的坐姿发生了变化。你想要伸展提醒或更暖的座椅吗？”这样的措辞让动作保持可选，并给用户简单的拒绝方式。当信号较弱时，界面也应显示置信度提示，因为虚假的确定性会显得冒犯。对于健康敏感数据，隐私和舒适同样重要。本地处理、短期保存、访客模式和易用的删除控制，可以让共享车辆中的功能更安全。优秀的座舱设计应有支持感，但不应变成家长式控制。它会注意到可能的不适，用平静语言表达，在更强动作前等待同意，并在每一步保持手动覆盖可见。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The HMI should treat them as reasons to offer help, not as proof that the system knows how someone feels.",
+        "translation": "HMI 应把这些信号视为提供帮助的理由，而不是系统知道某人感受的证据。",
+        "points": [
+          "treat A as B 表示“把 A 视为 B”。",
+          "not as proof that... 用来限制系统判断的确定性。",
+          "适合描述传感器推断与用户体验之间的边界。"
+        ]
+      },
+      {
+        "sentence": "A respectful flow first explains the data source and the recommendation boundary.",
+        "translation": "尊重用户的流程会先解释数据来源和建议边界。",
+        "points": [
+          "respectful flow 可译为“尊重用户的流程”。",
+          "data source 和 recommendation boundary 是隐私提示中的核心名词组。",
+          "first explains 强调执行动作前先解释。"
+        ]
+      },
+      {
+        "sentence": "The interface should also show a confidence cue when the signal is weak, because false certainty can feel intrusive.",
+        "translation": "当信号较弱时，界面也应显示置信度提示，因为虚假的确定性会显得冒犯。",
+        "points": [
+          "confidence cue 指“置信度提示”。",
+          "when the signal is weak 是典型条件状语。",
+          "false certainty can feel intrusive 可用于批评过度自信的 AI 文案。"
+        ]
+      },
+      {
+        "sentence": "It notices possible discomfort, uses calm language, waits for consent before stronger action, and leaves manual override visible at every step.",
+        "translation": "它会注意到可能的不适，用平静语言表达，在更强动作前等待同意，并在每一步保持手动覆盖可见。",
+        "points": [
+          "notices、uses、waits、leaves 构成并列动作链。",
+          "before stronger action 强调升级前需要同意。",
+          "manual override visible 是可控性设计里的常用表达。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 words 中 10 个术语，重点区分 wellbeing、wellness、comfort 和 consent。",
+      "6 分钟：跟读 long reading，标出所有表示边界和权限的表达，如 permission、boundary、optional、decline。",
+      "5 分钟：用 recommendation boundary、confidence cue 和 manual override 各造 1 句座舱提示文案。",
+      "5 分钟：把 “系统检测到你可能疲劳，是否打开放松模式？” 改写成更尊重隐私和用户选择的英文提示。"
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automotive HMI wellbeing comfort consent UX",
+        "url": "https://www.youtube.com/results?search_query=automotive+HMI+wellbeing+comfort+consent+UX",
+        "description": "可搜索 automotive HMI wellbeing comfort consent UX，观察健康舒适建议、权限提示和隐私文案的英文表达。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-05-cross-device-digital-key-identity-handoff",
     "date": "2026-10-05",
     "title": "Cross-device digital keys and identity handoff in intelligent cockpits",

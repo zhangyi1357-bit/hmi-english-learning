@@ -2694,6 +2694,13 @@
     "A breathing pause should be suggested gently.",
     "呼吸暂停练习应以温和方式建议。"
   ],
+  "breathing rhythm": [
+    "/ˈbriːðɪŋ ˈrɪðəm/",
+    "呼吸节奏；用于推断紧张或疲劳的身体节奏信号",
+    "",
+    "Breathing rhythm should be processed with extra privacy care.",
+    "呼吸节奏应以额外隐私保护来处理。"
+  ],
   "brevity": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“brevity”。",
@@ -3088,6 +3095,13 @@
     "A calm lane change is more likely when the prompt arrives before the last moment.",
     "在这句话中，“calm lane change”用于描述智能座舱导航提示设计。"
   ],
+  "calm language": [
+    "/kɑːm ˈlæŋɡwɪdʒ/",
+    "平静语言；不夸大、不责备的提示措辞",
+    "",
+    "Calm language is useful for sensitive wellbeing feedback.",
+    "平静语言适合敏感的健康状态反馈。"
+  ],
   "calm planning partner": [
     "/kɑːm ˈplænɪŋ ˈpɑːrtnər/",
     "冷静的规划伙伴；以低压力方式解释和协助决策的系统",
@@ -3337,6 +3351,13 @@
     "Emotion-aware design must be careful with language.",
     "情绪感知设计必须谨慎处理语言。"
   ],
+  "careful escalation": [
+    "/ˈkerfəl ˌeskəˈleɪʃən/",
+    "谨慎升级；从轻提示到更主动动作的克制升级方式",
+    "",
+    "Careful escalation prevents a wellness feature from feeling pushy.",
+    "谨慎升级避免健康舒适功能显得强推。"
+  ],
   "careful language": [
     "/ˈkerfl ˈlæŋɡwɪdʒ/",
     "谨慎语言；避免夸大、诊断或施压的提示表达",
@@ -3484,6 +3505,13 @@
     "",
     "The word certain appears in today's cockpit summary practice.",
     "在这个语境中，“certain”可理解为“确定的”。"
+  ],
+  "certainty": [
+    "/按语境朗读/",
+    "语境词：certainty；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "The interface should also show a confidence cue when the signal is weak, because false certainty can feel intrusive.",
+    "在这句话中，“certainty”用于描述智能座舱健康舒适建议相关内容。"
   ],
   "challenge": [
     "/ˈt͡ʃæl.ɪnd͡ʒ/",
@@ -4385,6 +4413,13 @@
     "Comfort adjustment should stay quick and reversible.",
     "舒适性调节应快速且可撤销。"
   ],
+  "comfort autonomy": [
+    "/ˈkʌmfərt ɔːˈtɑːnəmi/",
+    "舒适自主性；用户对舒适调节保持选择权",
+    "",
+    "Comfort autonomy keeps assistance from becoming control.",
+    "舒适自主性防止辅助变成控制。"
+  ],
   "comfort function": [
     "/ˈkʌmfərt ˈfʌŋkʃn/",
     "舒适功能；空调、座椅、香氛、灯光等不直接影响驾驶安全的功能",
@@ -4447,6 +4482,13 @@
     "",
     "A comfort profile should be easy to reset after a shared vehicle trip.",
     "共享车辆行程后，舒适档案应易于重置。"
+  ],
+  "comfort recommendation": [
+    "/ˈkʌmfərt ˌrekəmenˈdeɪʃən/",
+    "舒适建议；系统基于状态和环境提出的低风险调节建议",
+    "",
+    "A comfort recommendation should explain why the system thinks a change may help.",
+    "舒适建议应解释系统为什么认为某个调节可能有帮助。"
   ],
   "comfort reminder": [
     "/comfort reminder/",
@@ -6221,6 +6263,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "data source label": [
+    "/ˈdeɪtə sɔːrs ˈleɪbl/",
+    "数据来源标签；说明系统依据何种信号做出建议的文案",
+    "",
+    "A data source label can say posture, temperature, or workload.",
+    "数据来源标签可以说明坐姿、温度或驾驶负荷。"
+  ],
   "data use": [
     "/ˈdeɪtə juːs/",
     "数据使用；系统收集、处理或共享数据的方式",
@@ -6348,6 +6397,13 @@
     "",
     "The message should include an obvious decline path.",
     "在这句话中，decline 表示拒绝建议。"
+  ],
+  "decline path": [
+    "/dɪˈklaɪn pæθ/",
+    "拒绝路径；用户快速拒绝建议的交互入口",
+    "",
+    "A clear decline path makes the prompt less intrusive.",
+    "清晰的拒绝路径让提示不那么冒犯。"
   ],
   "decluttered": [
     "/diːˈklʌtərd/",
@@ -6600,6 +6656,13 @@
     "",
     "Delete a profile should support clear control in a shared intelligent cockpit.",
     "在这句话中，“delete a profile”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "delete control": [
+    "/dɪˈliːt kənˈtroʊl/",
+    "删除控制；用户清除数据或记录的入口",
+    "",
+    "An easy delete control makes consent more credible.",
+    "易用的删除控制让同意机制更可信。"
   ],
   "delete path": [
     "/dɪˈliːt pæθ/",
@@ -9180,6 +9243,13 @@
     "False alert management should tune sensitivity without hiding critical safety warnings.",
     "误报警管理应调整灵敏度，同时不隐藏关键安全警告。"
   ],
+  "false certainty": [
+    "/fɔːls ˈsɜːrtnti/",
+    "虚假确定性；系统把不确定推断说得过于肯定",
+    "",
+    "False certainty can reduce trust in an AI assistant.",
+    "虚假确定性会降低用户对 AI 助手的信任。"
+  ],
   "false positive": [
     "/ˌfɔːls ˈpɑːzətɪv/",
     "误报；系统把正常状态错误判断为风险状态",
@@ -9279,6 +9349,13 @@
     "If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel.",
     "在这句话中，“fatigue”可理解为“疲乏, 疲劳；使疲劳, 使心智衰弱；疲劳；疲劳的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fatigue hint": [
+    "/fəˈtiːɡ hɪnt/",
+    "疲劳线索；可能指向疲劳但不能独立证明疲劳的信号",
+    "",
+    "A fatigue hint should be paired with a low-pressure question.",
+    "疲劳线索应搭配低压力问题。"
   ],
   "fatigue marker": [
     "/fəˈtiːɡ ˈmɑːrkər/",
@@ -10765,6 +10842,20 @@
     "A health-aware cockpit must communicate uncertainty carefully.",
     "健康感知座舱必须谨慎表达不确定性。"
   ],
+  "health-sensitive": [
+    "/按语境朗读/",
+    "语境词：health-sensitive；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Health-sensitive data needs clear consent and short retention.",
+    "在这句话中，“health-sensitive”用于描述智能座舱健康舒适建议相关内容。"
+  ],
+  "health-sensitive data": [
+    "/helθ ˈsensətɪv ˈdeɪtə/",
+    "健康敏感数据；可能暴露身体或情绪状态的数据",
+    "",
+    "Health-sensitive data needs clear consent and short retention.",
+    "健康敏感数据需要明确同意和较短保存周期。"
+  ],
   "heard": [
     "/待查/",
     "听到；系统识别到的内容",
@@ -12164,6 +12255,13 @@
     "Mood labels may feel intrusive without user consent.",
     "没有用户同意时，情绪标签可能显得侵入。"
   ],
+  "intrusive prompt": [
+    "/ɪnˈtruːsɪv prɑːmpt/",
+    "冒犯式提示；让用户感觉被监视或被打扰的提示",
+    "",
+    "An intrusive prompt may be technically helpful but emotionally wrong.",
+    "冒犯式提示可能技术上有帮助，但情绪上不合适。"
+  ],
   "invalid": [
     "/ɪnˈvælɪd/",
     "无效的；不被系统接受的",
@@ -13520,6 +13618,13 @@
     "",
     "A low-pressure suggestion lets the passenger dismiss the card without losing the current task.",
     "在这句话中，“low-pressure”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "low-pressure question": [
+    "/loʊ ˈpreʃər ˈkwestʃən/",
+    "低压力问题；让用户容易拒绝或跳过的询问",
+    "",
+    "A low-pressure question protects user agency.",
+    "低压力问题保护用户主导权。"
   ],
   "low-pressure suggestion": [
     "/loʊ ˈpreʃər səˈdʒestʃən/",
@@ -15710,6 +15815,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "occupant trust": [
+    "/ˈɑːkjəpənt trʌst/",
+    "乘员信任；乘员对系统意图、边界和可靠性的信任",
+    "",
+    "Occupant trust improves when sensitive prompts are optional.",
+    "敏感提示保持可选时，乘员信任会提升。"
+  ],
   "occupant wellbeing": [
     "/ˈɑːkjəpənt ˌwelˈbiːɪŋ/",
     "乘员健康舒适；对车内人员身体感受、压力和舒适状态的综合关注",
@@ -16055,6 +16167,13 @@
     "Emotion-aware personalization should begin as an opt-in feature.",
     "情绪感知个性化应以主动开启功能的形式开始。"
   ],
+  "opt-in sensing": [
+    "/ˌɑːpt ˈɪn ˈsensɪŋ/",
+    "选择加入式感知；用户明确同意后才启用的感知能力",
+    "",
+    "Opt-in sensing is safer than assuming every passenger accepts monitoring.",
+    "选择加入式感知比假设所有乘客都接受监测更安全。"
+  ],
   "option": [
     "/'ɒpʃәn/",
     "名词：选择权, 挑选, 选项",
@@ -16069,6 +16188,13 @@
     "",
     "The prompt should be optional.",
     "在这句话中，“optional”表示可选择。"
+  ],
+  "optional action": [
+    "/ˈɑːpʃənəl ˈækʃən/",
+    "可选动作；用户可接受、拒绝或稍后处理的系统动作",
+    "",
+    "A comfort change should remain an optional action.",
+    "舒适调节应保持为可选动作。"
   ],
   "options": [
     "/'ɒpʃәn/",
@@ -16517,6 +16643,20 @@
     "Mode awareness is critical when the cockpit moves from passive listening to active route guidance.",
     "在这句话中，“passive”可理解为“消极的, 被动的, 冷漠的, 顺从的, 无源的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "paternalistic": [
+    "/按语境朗读/",
+    "语境词：paternalistic；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Good cockpit design is supportive without becoming paternalistic.",
+    "在这句话中，“paternalistic”用于描述智能座舱健康舒适建议相关内容。"
+  ],
+  "paternalistic design": [
+    "/pəˌtɜːrnəˈlɪstɪk dɪˈzaɪn/",
+    "家长式设计；系统替用户过度决定的设计方式",
+    "",
+    "Paternalistic design can make comfort support feel controlling.",
+    "家长式设计会让舒适支持显得像控制。"
   ],
   "path": [
     "/pɑːθ/",
@@ -17344,6 +17484,13 @@
     "The cockpit uses posture to keep comfort assistance understandable and controllable.",
     "座舱使用“posture”让舒适辅助更容易理解和控制。"
   ],
+  "posture change": [
+    "/ˈpɑːstʃər tʃeɪndʒ/",
+    "姿态变化；乘员坐姿或身体角度发生改变",
+    "",
+    "Posture change can support a gentle stretch reminder.",
+    "姿态变化可以支持温和的伸展提醒。"
+  ],
   "posture prompt": [
     "/ˈpɑːstʃər prɑːmpt/",
     "姿态提示；提醒用户调整坐姿、靠背或支撑位置的座舱提示",
@@ -17964,6 +18111,13 @@
     "Privacy-preserving unlock confirms access without displaying private calendar details on the center screen.",
     "隐私保护型解锁会确认访问权限，但不会在中控屏显示私人日历细节。"
   ],
+  "privacy-respecting care": [
+    "/ˈpraɪvəsi rɪˈspektɪŋ ker/",
+    "尊重隐私的关怀；在提供帮助时最小化数据暴露",
+    "",
+    "Privacy-respecting care turns a sensitive suggestion into a controllable interaction.",
+    "尊重隐私的关怀把敏感建议变成可控交互。"
+  ],
   "privacy-safe default": [
     "/privacy-safe default/",
     "隐私安全默认值",
@@ -18019,6 +18173,13 @@
     "",
     "Private profile details should stay behind an authenticated view.",
     "私人档案细节应保留在已认证视图之后。"
+  ],
+  "private routine": [
+    "/ˈpraɪvət ruːˈtiːn/",
+    "私人习惯；由数据反推出的个人生活模式",
+    "",
+    "Comfort data can reveal a private routine.",
+    "舒适数据可能暴露私人习惯。"
   ],
   "private surface": [
     "/ˈpraɪvət ˈsɜːrfɪs/",
@@ -18161,6 +18322,13 @@
     "",
     "The profile preview should list seat height, mirror angle, and climate preference before activation.",
     "档案预览应在激活前列出座椅高度、后视镜角度和空调偏好。"
+  ],
+  "profile separation": [
+    "/ˈproʊfaɪl ˌsepəˈreɪʃən/",
+    "档案隔离；不同用户资料之间的数据边界",
+    "",
+    "Profile separation matters when family members share a car.",
+    "家人共享车辆时，档案隔离很重要。"
   ],
   "profile switch": [
     "/ˈproʊfaɪl swɪtʃ/",
@@ -19077,6 +19245,13 @@
     "Context-sensitive timing prevents a non-urgent recommendation from appearing during lane guidance.",
     "在这句话中，“recommendation”可理解为“推荐, 介绍, 推荐信, 劝告”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "recommendation boundary": [
+    "/ˌrekəmenˈdeɪʃən ˈbaʊndəri/",
+    "建议边界；系统只建议、不擅自执行的权限范围",
+    "",
+    "A recommendation boundary keeps the cockpit from turning health signals into automatic control.",
+    "建议边界防止座舱把健康信号直接变成自动控制。"
   ],
   "recommendation engine": [
     "/ˌrekəmenˈdeɪʃn ˈendʒɪn/",
@@ -21753,6 +21928,13 @@
     "The display protects passengers from seeing account details.",
     "显示屏会防止乘客看到账户细节。"
   ],
+  "sees": [
+    "/按语境朗读/",
+    "语境词：sees；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "A confidence cue can say that the system only sees a possible sign of fatigue.",
+    "在这句话中，“sees”用于描述智能座舱健康舒适建议相关内容。"
+  ],
   "segment": [
     "/ˈseɡmənt/",
     "路段；路线中的一部分",
@@ -21909,6 +22091,13 @@
     "",
     "Visibility is a sensitive setting during night driving.",
     "夜间驾驶时，可见性是敏感设置。"
+  ],
+  "sensitive suggestion": [
+    "/ˈsensətɪv səɡˈdʒestʃən/",
+    "敏感建议；涉及身体、情绪或隐私状态的建议",
+    "",
+    "A sensitive suggestion should avoid blame.",
+    "敏感建议应避免责备。"
   ],
   "sensitivity": [
     "/ˌsensəˈtɪvəti/",
@@ -22391,6 +22580,13 @@
     "",
     "A short prompt is easier to process under workload.",
     "在有负荷时，短提示更容易处理。"
+  ],
+  "short retention": [
+    "/ʃɔːrt rɪˈtenʃən/",
+    "短期保存；只在必要时间内保留数据",
+    "",
+    "Short retention is important for health-sensitive data.",
+    "短期保存对健康敏感数据很重要。"
   ],
   "short voice reminder": [
     "/ʃɔːrt vɔɪs rɪˈmaɪndər/",
@@ -23755,6 +23951,20 @@
     "The assistant delays reminders during a stressful segment.",
     "在这句话中，“stressful segment”可理解为“高压力路段”。"
   ],
+  "stretch": [
+    "/按语境朗读/",
+    "语境词：stretch；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Would you like a stretch reminder or a warmer seat?",
+    "在这句话中，“stretch”用于描述智能座舱健康舒适建议相关内容。"
+  ],
+  "stretch reminder": [
+    "/stretʃ rɪˈmaɪndər/",
+    "伸展提醒；长途驾驶或久坐后的身体活动建议",
+    "",
+    "A stretch reminder should wait until the road is stable.",
+    "伸展提醒应等道路稳定时再出现。"
+  ],
   "stricter": [
     "/strikt/",
     "形容词：严厉的, 绝对的, 详尽的, 严格的, 精确的",
@@ -23784,6 +23994,13 @@
     "An escalation ladder keeps the first warning polite and reserves stronger signals for repeated risk.",
     "在这句话中，“stronger”可理解为“强壮的, 坚固的, 坚强的, 强烈的, 有力的, 优良的；强劲地, 有力地, 猛烈地”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "stronger action": [
+    "/ˈstrɔːŋɡər ˈækʃən/",
+    "更强动作；比提醒更主动或更具影响的系统操作",
+    "",
+    "The cockpit should ask for consent before stronger action.",
+    "座舱在更强动作前应请求同意。"
   ],
   "stronger consent": [
     "/ˈstrɔːŋɡər kənˈsent/",
@@ -24055,6 +24272,13 @@
     "",
     "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
     "在这句话中，“supportive”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "supportive wording": [
+    "/səˈpɔːrtɪv ˈwɜːrdɪŋ/",
+    "支持性措辞；避免责备、强调帮助的提示语言",
+    "",
+    "Supportive wording makes a wellness prompt feel respectful.",
+    "支持性措辞让健康舒适提示显得更尊重用户。"
   ],
   "supports": [
     "/sә'pɒ:t/",
@@ -24615,6 +24839,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "tense": [
+    "/按语境朗读/",
+    "语境词：tense；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+    "在这句话中，“tense”用于描述智能座舱健康舒适建议相关内容。"
+  ],
   "tension": [
     "/ˈtenʃn/",
     "紧张；压力或不安的状态",
@@ -24901,6 +25132,13 @@
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
   ],
+  "tired": [
+    "/按语境朗读/",
+    "语境词：tired；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+    "在这句话中，“tired”用于描述智能座舱健康舒适建议相关内容。"
+  ],
   "to": [
     "/tu:/",
     "到, 向, 趋于；向前",
@@ -25167,6 +25405,13 @@
     "Transparent automation tells the driver what will change, why it will change, and how to stop it.",
     "透明自动化会告诉驾驶者什么将改变、为什么改变，以及如何停止。"
   ],
+  "transparent consent": [
+    "/trænsˈpærənt kənˈsent/",
+    "透明同意；清楚说明数据用途、范围和可撤销方式的授权体验",
+    "",
+    "Transparent consent helps occupants understand what the cockpit will and will not do.",
+    "透明同意帮助乘员理解座舱会做什么、不会做什么。"
+  ],
   "transparent control": [
     "/trænsˈpærənt kənˈtroʊl/",
     "透明控制；让用户清楚知道系统为何这样做，并能调整或关闭",
@@ -25187,6 +25432,13 @@
     "",
     "Transparent interaction helps occupants understand why the cockpit suggests a change.",
     "透明交互帮助乘员理解座舱为何提出调整建议。"
+  ],
+  "transparent microcopy": [
+    "/trænsˈpærənt ˈmaɪkroʊˌkɑːpi/",
+    "透明微文案；在按钮、提示和说明中清楚表达系统行为的短文案",
+    "",
+    "Transparent microcopy helps users understand a wellbeing feature quickly.",
+    "透明微文案帮助用户快速理解健康舒适功能。"
   ],
   "transparent reason": [
     "/trænsˈperənt ˈriːzn/",
@@ -25653,6 +25905,13 @@
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“unclear”可理解为“不清晰”。"
   ],
+  "uncomfortable": [
+    "/按语境朗读/",
+    "语境词：uncomfortable；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Seat pressure, breathing rhythm, cabin temperature, camera posture, and driving workload may suggest that an occupant is tired, tense, cold, or uncomfortable, but these signals are still indirect.",
+    "在这句话中，“uncomfortable”用于描述智能座舱健康舒适建议相关内容。"
+  ],
   "under": [
     "/ˈʌndər/",
     "在……条件下；表示压力、限制或场景约束",
@@ -25804,6 +26063,13 @@
     "Progressive disclosure keeps advanced climate options hidden until the driver asks for them.",
     "在这句话中，“until”可理解为“直到, 在...以前；直到...时, 在...以前”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "unwanted": [
+    "/按语境朗读/",
+    "语境词：unwanted；用于理解今天健康状态与舒适建议主题中的英文表达",
+    "",
+    "Manual override lets the driver reject an unwanted comfort change.",
+    "在这句话中，“unwanted”用于描述智能座舱健康舒适建议相关内容。"
   ],
   "up": [
     "/ʌp/",
@@ -26473,6 +26739,13 @@
     "A visible exit reduces anxiety during automation.",
     "可见退出能降低自动化过程中的焦虑。"
   ],
+  "visible override": [
+    "/ˈvɪzəbl ˈoʊvərraɪd/",
+    "可见覆盖入口；用户随时接管或取消的明确控件",
+    "",
+    "Visible override keeps the driver in control.",
+    "可见覆盖入口让驾驶员保持控制。"
+  ],
   "visible reasoning": [
     "/ˈvɪzəbl ˈriːzənɪŋ/",
     "可见推理；把系统判断依据以简短形式展示给用户",
@@ -26886,6 +27159,13 @@
     "Make it warmer usually refers to cabin temperature.",
     "在这句话中，“warmer”表示“更暖的”。"
   ],
+  "warmer seat": [
+    "/ˈwɔːrmər siːt/",
+    "更暖的座椅；座椅加热建议中的用户可理解措辞",
+    "",
+    "Warmer seat is easier to understand than a technical heating level.",
+    "“更暖的座椅”比技术化加热档位更容易理解。"
+  ],
   "warming": [
     "/按语境朗读/",
     "升温；温度提高",
@@ -27023,6 +27303,13 @@
     "",
     "Occupant wellbeing requires clear consent because health signals can feel personal.",
     "在这句话中，“wellbeing”用于描述智能座舱健康舒适提示相关内容。"
+  ],
+  "wellbeing signal": [
+    "/ˈwelˌbiːɪŋ ˈsɪɡnəl/",
+    "健康状态信号；用于推断乘员舒适、压力或疲劳状态的线索",
+    "",
+    "A wellbeing signal should support care without making the occupant feel watched.",
+    "健康状态信号应支持关怀，而不让乘员感觉被监视。"
   ],
   "wellness": [
     "/待补充/",
