@@ -1,5 +1,768 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-07-takeover-readiness-graded-handoff",
+    "date": "2026-10-07",
+    "title": "Takeover readiness and graded autonomy handoff in intelligent cockpits",
+    "topic": "智能座舱接管准备度与分级自动化交接提示",
+    "suggestedTime": "22 分钟",
+    "summary": "学习如何用英语描述驾驶辅助系统在控制权交接中的准备度判断、分级提示、风险解释、备用机动和驾驶员责任边界。",
+    "words": [
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkˌoʊvər ˈredi-nəs/",
+        "meaning": "接管准备度；驾驶员是否能安全重新掌控车辆的状态",
+        "example": "Takeover readiness is not a single alert, but a gradual assessment of attention and context.",
+        "chineseExample": "接管准备度不是单一警报，而是对注意力和情境的渐进评估。"
+      },
+      {
+        "term": "graded handoff",
+        "phonetic": "/ˈɡreɪdɪd ˈhændˌɔːf/",
+        "meaning": "分级交接；按风险和时间压力逐步移交控制权",
+        "example": "A graded handoff starts with awareness, then moves toward action only when needed.",
+        "chineseExample": "分级交接从建立意识开始，只在必要时推进到行动。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃən ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能力和责任停止的范围",
+        "example": "The automation boundary should be visible before the driver must act.",
+        "chineseExample": "驾驶员必须行动之前，自动化边界应当可见。"
+      },
+      {
+        "term": "control transition",
+        "phonetic": "/kənˈtroʊl trænˈzɪʃən/",
+        "meaning": "控制权切换；车辆控制从系统转向驾驶员或相反的过程",
+        "example": "A control transition needs clear timing, clear reason, and clear fallback.",
+        "chineseExample": "控制权切换需要清晰的时机、原因和备用方案。"
+      },
+      {
+        "term": "readiness cue",
+        "phonetic": "/ˈredi-nəs kjuː/",
+        "meaning": "准备度提示；表达驾驶员或系统是否已准备好交接的提示",
+        "example": "A readiness cue can combine steering touch, gaze direction, and response time.",
+        "chineseExample": "准备度提示可以结合方向盘触碰、视线方向和响应时间。"
+      },
+      {
+        "term": "handoff window",
+        "phonetic": "/ˈhændˌɔːf ˈwɪndoʊ/",
+        "meaning": "交接窗口；仍可平稳完成接管的时间范围",
+        "example": "The handoff window becomes shorter when traffic density increases.",
+        "chineseExample": "交通密度上升时，交接窗口会变短。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃən ˈlædər/",
+        "meaning": "升级阶梯；提示从轻到重逐步增强的结构",
+        "example": "The escalation ladder should avoid jumping from silence to a loud alarm.",
+        "chineseExample": "升级阶梯应避免从沉默直接跳到刺耳警报。"
+      },
+      {
+        "term": "fallback maneuver",
+        "phonetic": "/ˈfɔːlbæk məˈnuːvər/",
+        "meaning": "备用机动；接管失败或无响应时系统执行的保守动作",
+        "example": "A fallback maneuver may slow the vehicle and maintain lane position.",
+        "chineseExample": "备用机动可能会让车辆减速并保持车道位置。"
+      },
+      {
+        "term": "driver engagement",
+        "phonetic": "/ˈdraɪvər ɪnˈɡeɪdʒmənt/",
+        "meaning": "驾驶员参与度；驾驶员对驾驶任务保持注意和响应的程度",
+        "example": "Driver engagement should be checked before a complex merge.",
+        "chineseExample": "复杂并线前应检查驾驶员参与度。"
+      },
+      {
+        "term": "shared responsibility",
+        "phonetic": "/ʃerd rɪˌspɑːnsəˈbɪləti/",
+        "meaning": "共享责任；系统和驾驶员共同承担任务但边界需明确的状态",
+        "example": "Shared responsibility fails when the interface hides who is in charge.",
+        "chineseExample": "当界面隐藏谁在负责时，共享责任就会失效。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "takeover readiness",
+        "phonetic": "/ˈteɪkˌoʊvər ˈredi-nəs/",
+        "meaning": "接管准备度；驾驶员是否能安全重新掌控车辆的状态",
+        "example": "Takeover readiness is not a single alert, but a gradual assessment of attention and context.",
+        "chineseExample": "接管准备度不是单一警报，而是对注意力和情境的渐进评估。"
+      },
+      {
+        "term": "graded handoff",
+        "phonetic": "/ˈɡreɪdɪd ˈhændˌɔːf/",
+        "meaning": "分级交接；按风险和时间压力逐步移交控制权",
+        "example": "A graded handoff starts with awareness, then moves toward action only when needed.",
+        "chineseExample": "分级交接从建立意识开始，只在必要时推进到行动。"
+      },
+      {
+        "term": "automation boundary",
+        "phonetic": "/ˌɔːtəˈmeɪʃən ˈbaʊndəri/",
+        "meaning": "自动化边界；系统能力和责任停止的范围",
+        "example": "The automation boundary should be visible before the driver must act.",
+        "chineseExample": "驾驶员必须行动之前，自动化边界应当可见。"
+      },
+      {
+        "term": "control transition",
+        "phonetic": "/kənˈtroʊl trænˈzɪʃən/",
+        "meaning": "控制权切换；车辆控制从系统转向驾驶员或相反的过程",
+        "example": "A control transition needs clear timing, clear reason, and clear fallback.",
+        "chineseExample": "控制权切换需要清晰的时机、原因和备用方案。"
+      },
+      {
+        "term": "readiness cue",
+        "phonetic": "/ˈredi-nəs kjuː/",
+        "meaning": "准备度提示；表达驾驶员或系统是否已准备好交接的提示",
+        "example": "A readiness cue can combine steering touch, gaze direction, and response time.",
+        "chineseExample": "准备度提示可以结合方向盘触碰、视线方向和响应时间。"
+      },
+      {
+        "term": "handoff window",
+        "phonetic": "/ˈhændˌɔːf ˈwɪndoʊ/",
+        "meaning": "交接窗口；仍可平稳完成接管的时间范围",
+        "example": "The handoff window becomes shorter when traffic density increases.",
+        "chineseExample": "交通密度上升时，交接窗口会变短。"
+      },
+      {
+        "term": "escalation ladder",
+        "phonetic": "/ˌeskəˈleɪʃən ˈlædər/",
+        "meaning": "升级阶梯；提示从轻到重逐步增强的结构",
+        "example": "The escalation ladder should avoid jumping from silence to a loud alarm.",
+        "chineseExample": "升级阶梯应避免从沉默直接跳到刺耳警报。"
+      },
+      {
+        "term": "fallback maneuver",
+        "phonetic": "/ˈfɔːlbæk məˈnuːvər/",
+        "meaning": "备用机动；接管失败或无响应时系统执行的保守动作",
+        "example": "A fallback maneuver may slow the vehicle and maintain lane position.",
+        "chineseExample": "备用机动可能会让车辆减速并保持车道位置。"
+      },
+      {
+        "term": "driver engagement",
+        "phonetic": "/ˈdraɪvər ɪnˈɡeɪdʒmənt/",
+        "meaning": "驾驶员参与度；驾驶员对驾驶任务保持注意和响应的程度",
+        "example": "Driver engagement should be checked before a complex merge.",
+        "chineseExample": "复杂并线前应检查驾驶员参与度。"
+      },
+      {
+        "term": "shared responsibility",
+        "phonetic": "/ʃerd rɪˌspɑːnsəˈbɪləti/",
+        "meaning": "共享责任；系统和驾驶员共同承担任务但边界需明确的状态",
+        "example": "Shared responsibility fails when the interface hides who is in charge.",
+        "chineseExample": "当界面隐藏谁在负责时，共享责任就会失效。"
+      },
+      {
+        "term": "mode awareness",
+        "phonetic": "/moʊd əˈwernəs/",
+        "meaning": "模式感知；用户知道当前驾驶辅助模式及其限制的能力",
+        "example": "Mode awareness reduces surprise during a takeover request.",
+        "chineseExample": "模式感知可减少接管请求中的意外感。"
+      },
+      {
+        "term": "attention recovery",
+        "phonetic": "/əˈtenʃən rɪˈkʌvəri/",
+        "meaning": "注意力恢复；驾驶员从非驾驶任务回到道路情境的过程",
+        "example": "Attention recovery takes longer when the driver is reading or typing.",
+        "chineseExample": "驾驶员阅读或打字时，注意力恢复需要更久。"
+      },
+      {
+        "term": "request clarity",
+        "phonetic": "/rɪˈkwest ˈklærəti/",
+        "meaning": "请求清晰度；接管请求是否说明原因、动作和剩余时间",
+        "example": "Request clarity matters more than dramatic sound design.",
+        "chineseExample": "请求清晰度比戏剧化音效更重要。"
+      },
+      {
+        "term": "time budget",
+        "phonetic": "/taɪm ˈbʌdʒɪt/",
+        "meaning": "时间预算；用户理解和完成接管所剩的时间",
+        "example": "The time budget should be shown in plain language.",
+        "chineseExample": "时间预算应以直白语言显示。"
+      },
+      {
+        "term": "risk gradient",
+        "phonetic": "/rɪsk ˈɡreɪdiənt/",
+        "meaning": "风险梯度；风险从低到高变化的连续程度",
+        "example": "A risk gradient helps the HMI choose the right level of urgency.",
+        "chineseExample": "风险梯度帮助 HMI 选择合适的紧急程度。"
+      },
+      {
+        "term": "silent preparation",
+        "phonetic": "/ˈsaɪlənt ˌprepəˈreɪʃən/",
+        "meaning": "静默准备；在不打扰用户的情况下提前整理接管信息",
+        "example": "Silent preparation can load the takeover card before the alert is spoken.",
+        "chineseExample": "静默准备可以在语音警报前加载接管卡片。"
+      },
+      {
+        "term": "takeover card",
+        "phonetic": "/ˈteɪkˌoʊvər kɑːrd/",
+        "meaning": "接管卡片；集中展示接管原因、动作和倒计时的界面单元",
+        "example": "The takeover card should show the road event, not only a command.",
+        "chineseExample": "接管卡片应显示道路事件，而不只是命令。"
+      },
+      {
+        "term": "minimum risk condition",
+        "phonetic": "/ˈmɪnɪməm rɪsk kənˈdɪʃən/",
+        "meaning": "最低风险状态；系统在接管失败时努力达到的较安全状态",
+        "example": "The minimum risk condition must be explained before users need it.",
+        "chineseExample": "最低风险状态应在用户真正需要之前解释清楚。"
+      },
+      {
+        "term": "lane keeping",
+        "phonetic": "/leɪn ˈkiːpɪŋ/",
+        "meaning": "车道保持；车辆维持在当前车道内行驶的能力",
+        "example": "Lane keeping can support a fallback maneuver during a missed takeover.",
+        "chineseExample": "车道保持可支持接管失败时的备用机动。"
+      },
+      {
+        "term": "merge conflict",
+        "phonetic": "/mɜːrdʒ ˈkɑːnflɪkt/",
+        "meaning": "并线冲突；车辆并入车流时出现的路径或速度冲突",
+        "example": "A merge conflict is easier to understand when the HMI highlights the target lane.",
+        "chineseExample": "当 HMI 高亮目标车道时，并线冲突更容易理解。"
+      },
+      {
+        "term": "road event",
+        "phonetic": "/roʊd ɪˈvent/",
+        "meaning": "道路事件；需要驾驶员或系统响应的道路情境变化",
+        "example": "The alert should name the road event behind the request.",
+        "chineseExample": "警报应说明请求背后的道路事件。"
+      },
+      {
+        "term": "urgency level",
+        "phonetic": "/ˈɜːrdʒənsi ˈlevəl/",
+        "meaning": "紧急等级；提示需要多快响应的程度",
+        "example": "Urgency level should match the real time budget.",
+        "chineseExample": "紧急等级应匹配真实时间预算。"
+      },
+      {
+        "term": "visual anchor",
+        "phonetic": "/ˈvɪʒuəl ˈæŋkər/",
+        "meaning": "视觉锚点；帮助用户快速定位风险位置的显示元素",
+        "example": "A visual anchor can point to the lane where the problem is developing.",
+        "chineseExample": "视觉锚点可以指向问题正在发展的车道。"
+      },
+      {
+        "term": "haptic pre-alert",
+        "phonetic": "/ˈhæptɪk priː əˈlɜːrt/",
+        "meaning": "触觉预警；正式警报前用震动或阻尼变化提示用户",
+        "example": "A haptic pre-alert can restore attention without startling the cabin.",
+        "chineseExample": "触觉预警可以恢复注意力而不惊吓座舱。"
+      },
+      {
+        "term": "auditory prompt",
+        "phonetic": "/ˈɔːdətɔːri prɑːmpt/",
+        "meaning": "听觉提示；通过声音传达状态或动作要求的提示",
+        "example": "The auditory prompt should say why the driver is needed.",
+        "chineseExample": "听觉提示应说明为什么需要驾驶员。"
+      },
+      {
+        "term": "status strip",
+        "phonetic": "/ˈsteɪtəs strɪp/",
+        "meaning": "状态条；持续显示驾驶模式、责任和剩余时间的界面区域",
+        "example": "A status strip keeps the automation boundary visible.",
+        "chineseExample": "状态条让自动化边界保持可见。"
+      },
+      {
+        "term": "calm escalation",
+        "phonetic": "/kɑːm ˌeskəˈleɪʃən/",
+        "meaning": "平静升级；以克制方式逐步提高提示强度",
+        "example": "Calm escalation helps users act without panic.",
+        "chineseExample": "平静升级帮助用户在不恐慌的情况下行动。"
+      },
+      {
+        "term": "steering confirmation",
+        "phonetic": "/ˈstɪrɪŋ ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "转向确认；系统通过方向盘输入确认驾驶员已接管",
+        "example": "Steering confirmation should be paired with a clear mode change.",
+        "chineseExample": "转向确认应与清晰的模式变化配对。"
+      },
+      {
+        "term": "gaze confirmation",
+        "phonetic": "/ɡeɪz ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "视线确认；系统通过视线方向判断驾驶员是否看向道路",
+        "example": "Gaze confirmation is useful only when privacy expectations are clear.",
+        "chineseExample": "只有隐私预期清晰时，视线确认才有用。"
+      },
+      {
+        "term": "resume prompt",
+        "phonetic": "/rɪˈzuːm prɑːmpt/",
+        "meaning": "恢复提示；接管完成后帮助用户继续任务或确认状态的提示",
+        "example": "A resume prompt can summarize what changed during the handoff.",
+        "chineseExample": "恢复提示可以总结交接过程中发生了什么变化。"
+      },
+      {
+        "term": "missed takeover",
+        "phonetic": "/mɪst ˈteɪkˌoʊvər/",
+        "meaning": "错过接管；驾驶员未在请求时间内完成接管的情况",
+        "example": "A missed takeover should trigger a predictable fallback maneuver.",
+        "chineseExample": "错过接管应触发可预期的备用机动。"
+      },
+      {
+        "term": "automation",
+        "phonetic": "/ˌɔːtəˈmeɪʃən/",
+        "meaning": "自动化；系统自动执行感知、决策或控制任务的能力",
+        "example": "Automation can reduce workload, but it also changes responsibility.",
+        "chineseExample": "自动化可以降低负荷，但也会改变责任。"
+      },
+      {
+        "term": "boundary",
+        "phonetic": "/ˈbaʊndəri/",
+        "meaning": "边界；能力、责任或权限的范围",
+        "example": "The boundary must be visible in the interface.",
+        "chineseExample": "边界必须在界面中可见。"
+      },
+      {
+        "term": "takeover",
+        "phonetic": "/ˈteɪkˌoʊvər/",
+        "meaning": "接管；驾驶员重新承担控制任务",
+        "example": "Takeover language should be direct and specific.",
+        "chineseExample": "接管语言应直接且具体。"
+      },
+      {
+        "term": "readiness",
+        "phonetic": "/ˈredi-nəs/",
+        "meaning": "准备度；可以执行某项任务的状态",
+        "example": "Readiness is affected by attention, posture, and context.",
+        "chineseExample": "准备度受注意力、姿态和情境影响。"
+      },
+      {
+        "term": "graded",
+        "phonetic": "/ˈɡreɪdɪd/",
+        "meaning": "分级的；按程度逐步变化的",
+        "example": "A graded alert gives the user time to understand.",
+        "chineseExample": "分级警报给用户时间理解。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændˌɔːf/",
+        "meaning": "交接；任务或控制权从一方转移到另一方",
+        "example": "The handoff should be visible and reversible when possible.",
+        "chineseExample": "交接应尽可能可见且可逆。"
+      },
+      {
+        "term": "assessment",
+        "phonetic": "/əˈsesmənt/",
+        "meaning": "评估；对状态或风险的判断",
+        "example": "Assessment should combine signals instead of relying on one sensor.",
+        "chineseExample": "评估应结合多种信号，而不是依赖单一传感器。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/əˈtenʃən/",
+        "meaning": "注意力；用户对道路或任务的认知投入",
+        "example": "Attention can drift during long automated driving.",
+        "chineseExample": "长时间自动驾驶中注意力可能游移。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "情境；影响交互含义和风险的周围条件",
+        "example": "Context changes how urgent a prompt should feel.",
+        "chineseExample": "情境会改变提示应有的紧急程度。"
+      },
+      {
+        "term": "alert",
+        "phonetic": "/əˈlɜːrt/",
+        "meaning": "警报；提醒用户注意并采取行动的信息",
+        "example": "An alert should explain the reason for action.",
+        "chineseExample": "警报应解释采取行动的原因。"
+      },
+      {
+        "term": "gradual",
+        "phonetic": "/ˈɡrædʒuəl/",
+        "meaning": "渐进的；逐步发生或加强的",
+        "example": "A gradual warning is easier to process.",
+        "chineseExample": "渐进警告更容易处理。"
+      },
+      {
+        "term": "responsibility",
+        "phonetic": "/rɪˌspɑːnsəˈbɪləti/",
+        "meaning": "责任；谁需要监控、决策或执行动作",
+        "example": "Responsibility should not be ambiguous in a cockpit.",
+        "chineseExample": "座舱里的责任不应含糊。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "置信度；系统对判断的把握程度",
+        "example": "Confidence should be expressed without false certainty.",
+        "chineseExample": "置信度表达不应制造虚假的确定性。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "驾驶员；车辆控制和监督任务的主要人类角色",
+        "example": "The driver needs time to rebuild situation awareness.",
+        "chineseExample": "驾驶员需要时间重建态势感知。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkəl/",
+        "meaning": "车辆；移动交通工具",
+        "example": "The vehicle may slow down when the driver does not respond.",
+        "chineseExample": "驾驶员无响应时，车辆可能会减速。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/ˈtræfɪk/",
+        "meaning": "交通；道路上的车辆和流动状态",
+        "example": "Traffic density affects takeover timing.",
+        "chineseExample": "交通密度会影响接管时机。"
+      },
+      {
+        "term": "density",
+        "phonetic": "/ˈdensəti/",
+        "meaning": "密度；单位空间内对象的集中程度",
+        "example": "High density makes the handoff window shorter.",
+        "chineseExample": "高密度会缩短交接窗口。"
+      },
+      {
+        "term": "merge",
+        "phonetic": "/mɜːrdʒ/",
+        "meaning": "并线；进入另一条车道或车流",
+        "example": "A merge may require earlier driver engagement.",
+        "chineseExample": "并线可能需要更早的驾驶员参与。"
+      },
+      {
+        "term": "lane",
+        "phonetic": "/leɪn/",
+        "meaning": "车道；道路上供车辆行驶的分隔区域",
+        "example": "The lane should be highlighted when it matters.",
+        "chineseExample": "关键时应高亮相关车道。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "备用方案；主要方案失败时使用的保守方案",
+        "example": "Fallback behavior should be predictable.",
+        "chineseExample": "备用行为应可预期。"
+      },
+      {
+        "term": "maneuver",
+        "phonetic": "/məˈnuːvər/",
+        "meaning": "机动动作；车辆为完成路径或安全目标而执行的动作",
+        "example": "The maneuver should keep the vehicle stable.",
+        "chineseExample": "机动动作应保持车辆稳定。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "提示；引导用户理解或行动的信息",
+        "example": "The prompt must be short under pressure.",
+        "chineseExample": "压力下提示必须简短。"
+      },
+      {
+        "term": "urgency",
+        "phonetic": "/ˈɜːrdʒənsi/",
+        "meaning": "紧急性；需要快速响应的程度",
+        "example": "Urgency should rise with actual risk.",
+        "chineseExample": "紧急性应随真实风险上升。"
+      },
+      {
+        "term": "steering",
+        "phonetic": "/ˈstɪrɪŋ/",
+        "meaning": "转向；控制车辆行驶方向",
+        "example": "Steering input can confirm driver control.",
+        "chineseExample": "转向输入可确认驾驶员控制。"
+      },
+      {
+        "term": "gaze",
+        "phonetic": "/ɡeɪz/",
+        "meaning": "视线；眼睛注视的方向",
+        "example": "Gaze can indicate whether the driver is looking at the road.",
+        "chineseExample": "视线可以表明驾驶员是否看向道路。"
+      },
+      {
+        "term": "multimodal",
+        "phonetic": "/ˌmʌltiˈmoʊdəl/",
+        "meaning": "多模态的；结合视觉、声音、触觉等方式",
+        "example": "Multimodal cues support faster understanding.",
+        "chineseExample": "多模态提示支持更快理解。"
+      },
+      {
+        "term": "haptic",
+        "phonetic": "/ˈhæptɪk/",
+        "meaning": "触觉的；通过震动、阻尼或触摸反馈传达信息",
+        "example": "Haptic feedback can be felt without looking down.",
+        "chineseExample": "触觉反馈无需低头即可感知。"
+      },
+      {
+        "term": "auditory",
+        "phonetic": "/ˈɔːdətɔːri/",
+        "meaning": "听觉的；与声音相关的",
+        "example": "Auditory wording should be calm and specific.",
+        "chineseExample": "听觉文案应平静且具体。"
+      },
+      {
+        "term": "visual",
+        "phonetic": "/ˈvɪʒuəl/",
+        "meaning": "视觉的；与图像或显示相关的",
+        "example": "Visual cues should show where the risk is.",
+        "chineseExample": "视觉提示应显示风险位置。"
+      },
+      {
+        "term": "countdown",
+        "phonetic": "/ˈkaʊntdaʊn/",
+        "meaning": "倒计时；剩余时间的递减显示",
+        "example": "A countdown helps the driver understand the time budget.",
+        "chineseExample": "倒计时帮助驾驶员理解时间预算。"
+      },
+      {
+        "term": "response",
+        "phonetic": "/rɪˈspɑːns/",
+        "meaning": "响应；对提示或事件采取的反应",
+        "example": "A delayed response changes the system strategy.",
+        "chineseExample": "延迟响应会改变系统策略。"
+      },
+      {
+        "term": "delay",
+        "phonetic": "/dɪˈleɪ/",
+        "meaning": "延迟；动作或响应比预期更晚发生",
+        "example": "Delay is risky during a short handoff window.",
+        "chineseExample": "短交接窗口中的延迟有风险。"
+      },
+      {
+        "term": "monitoring",
+        "phonetic": "/ˈmɑːnɪtərɪŋ/",
+        "meaning": "监测；持续观察状态或信号",
+        "example": "Monitoring should support safety without hiding responsibility.",
+        "chineseExample": "监测应支持安全，而不隐藏责任。"
+      },
+      {
+        "term": "surprise",
+        "phonetic": "/sərˈpraɪz/",
+        "meaning": "意外感；用户未预期系统状态变化而产生的突然感受",
+        "example": "Surprise can damage trust during automation changes.",
+        "chineseExample": "自动化变化中的意外感会损害信任。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "命令；要求用户或系统执行动作的信息",
+        "example": "A command is clearer when it names the reason.",
+        "chineseExample": "命令说明原因时更清晰。"
+      },
+      {
+        "term": "specific",
+        "phonetic": "/spəˈsɪfɪk/",
+        "meaning": "具体的；明确指向某一对象或动作",
+        "example": "Specific wording reduces interpretation effort.",
+        "chineseExample": "具体措辞能降低理解成本。"
+      },
+      {
+        "term": "predictable",
+        "phonetic": "/prɪˈdɪktəbəl/",
+        "meaning": "可预测的；用户能提前理解结果的",
+        "example": "Predictable behavior supports trust.",
+        "chineseExample": "可预测行为支持信任。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbəl/",
+        "meaning": "可逆的；用户可以撤回或改变的",
+        "example": "A reversible step is less stressful.",
+        "chineseExample": "可逆步骤压力更小。"
+      },
+      {
+        "term": "stable",
+        "phonetic": "/ˈsteɪbəl/",
+        "meaning": "稳定的；不突然变化或失控的",
+        "example": "Stable control is essential during a handoff.",
+        "chineseExample": "交接期间稳定控制至关重要。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbəl/",
+        "meaning": "可见的；能被用户清楚看到的",
+        "example": "Visible mode status reduces confusion.",
+        "chineseExample": "可见的模式状态减少困惑。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "解释；说明原因、证据或下一步",
+        "example": "The HMI should explain why it needs the driver.",
+        "chineseExample": "HMI 应解释为什么需要驾驶员。"
+      },
+      {
+        "term": "respond",
+        "phonetic": "/rɪˈspɑːnd/",
+        "meaning": "响应；对请求采取动作或给出反馈",
+        "example": "Drivers need enough time to respond.",
+        "chineseExample": "驾驶员需要足够时间响应。"
+      },
+      {
+        "term": "maintain",
+        "phonetic": "/meɪnˈteɪn/",
+        "meaning": "保持；使状态继续稳定存在",
+        "example": "The vehicle can maintain lane position during fallback.",
+        "chineseExample": "车辆可以在备用动作中保持车道位置。"
+      },
+      {
+        "term": "highlight",
+        "phonetic": "/ˈhaɪlaɪt/",
+        "meaning": "高亮；突出显示重要区域或信息",
+        "example": "Highlight the target lane before asking for action.",
+        "chineseExample": "要求行动前先高亮目标车道。"
+      },
+      {
+        "term": "summarize",
+        "phonetic": "/ˈsʌməraɪz/",
+        "meaning": "总结；用简短方式概括发生的事情",
+        "example": "The resume prompt should summarize the handoff.",
+        "chineseExample": "恢复提示应总结交接过程。"
+      },
+      {
+        "term": "direction",
+        "phonetic": "/dəˈrekʃən/",
+        "meaning": "方向；视线、行驶或界面指向的位置",
+        "example": "Gaze direction can show whether the driver is looking at the road.",
+        "chineseExample": "视线方向可以显示驾驶员是否看向道路。"
+      },
+      {
+        "term": "jumping",
+        "phonetic": "/ˈdʒʌmpɪŋ/",
+        "meaning": "突然跳变；从一种状态猛然切到另一种状态",
+        "example": "The escalation ladder should avoid jumping from silence to a loud alarm.",
+        "chineseExample": "升级阶梯应避免从沉默突然跳到响亮警报。"
+      },
+      {
+        "term": "engagement",
+        "phonetic": "/ɪnˈɡeɪdʒmənt/",
+        "meaning": "参与；用户对任务保持注意和响应的状态",
+        "example": "Driver engagement should be checked before a complex merge.",
+        "chineseExample": "复杂并线前应检查驾驶员参与状态。"
+      },
+      {
+        "term": "wide",
+        "phonetic": "/waɪd/",
+        "meaning": "宽的；在时间或空间上余量较大的",
+        "example": "A wide handoff window gives the driver more time to respond.",
+        "chineseExample": "较宽的交接窗口给驾驶员更多响应时间。"
+      },
+      {
+        "term": "gradient",
+        "phonetic": "/ˈɡreɪdiənt/",
+        "meaning": "梯度；状态或风险逐步变化的程度",
+        "example": "The risk gradient rises as the vehicle approaches the merge conflict.",
+        "chineseExample": "车辆接近并线冲突时，风险梯度会上升。"
+      },
+      {
+        "term": "pre-alert",
+        "phonetic": "/priː əˈlɜːrt/",
+        "meaning": "预警；正式警报前的提前提示",
+        "example": "A pre-alert can prepare the driver before the main request.",
+        "chineseExample": "预警可以在主要请求前让驾驶员做好准备。"
+      },
+      {
+        "term": "shout",
+        "phonetic": "/ʃaʊt/",
+        "meaning": "大声要求；在提示文案中过度强硬地发出命令",
+        "example": "The interface should explain the event, not shout for control.",
+        "chineseExample": "界面应解释事件，而不是大声要求接管。"
+      },
+      {
+        "term": "within",
+        "phonetic": "/wɪˈðɪn/",
+        "meaning": "在……之内；不超过某个时间或范围",
+        "example": "Please hold the wheel within eight seconds.",
+        "chineseExample": "请在八秒内握住方向盘。"
+      },
+      {
+        "term": "seconds",
+        "phonetic": "/ˈsekəndz/",
+        "meaning": "秒；时间单位 second 的复数形式",
+        "example": "Eight seconds may be enough for a planned handoff.",
+        "chineseExample": "八秒可能足够完成一次有计划的交接。"
+      },
+      {
+        "term": "misses",
+        "phonetic": "/ˈmɪsɪz/",
+        "meaning": "错过；未能及时响应或完成",
+        "example": "If the driver misses the request, the system should use fallback behavior.",
+        "chineseExample": "如果驾驶员错过请求，系统应使用备用行为。"
+      },
+      {
+        "term": "aiming",
+        "phonetic": "/ˈeɪmɪŋ/",
+        "meaning": "朝向；以某个目标为方向进行控制",
+        "example": "The vehicle may start aiming for a minimum risk condition.",
+        "chineseExample": "车辆可能开始朝最低风险状态前进。"
+      },
+      {
+        "term": "minimum",
+        "phonetic": "/ˈmɪnɪməm/",
+        "meaning": "最低的；可接受范围内最小或最保守的",
+        "example": "Minimum risk means reducing danger when normal handoff fails.",
+        "chineseExample": "最低风险意味着在正常交接失败时降低危险。"
+      },
+      {
+        "term": "worst",
+        "phonetic": "/wɜːrst/",
+        "meaning": "最糟糕的；风险或体验最差的",
+        "example": "Do not surprise the driver at the worst possible moment.",
+        "chineseExample": "不要在最糟糕的时刻让驾驶员感到意外。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing a graded takeover handoff",
+        "text": "A takeover request in an intelligent cockpit should not appear as a sudden command unless the risk is truly immediate. Good HMI design treats takeover readiness as a changing state. Before a difficult merge, the cockpit can quietly check driver engagement, gaze direction, steering contact, traffic density, and the remaining time budget. If the handoff window is still wide, the system may show a soft status strip: automated driving is active, but a control transition may be needed soon. As the risk gradient rises, the interface can add a visual anchor on the target lane, a short auditory prompt, and a haptic pre-alert on the steering wheel. The message should explain the road event, not only shout for control. For example: \"Merge conflict ahead. Please hold the wheel within eight seconds.\" If the driver responds, steering confirmation and a clear mode change close the loop. If the driver misses the request, the vehicle should follow a predictable fallback maneuver, such as slowing down, keeping the lane, and aiming for a minimum risk condition. A graded handoff protects trust because it makes responsibility visible, gives attention time to recover, and avoids surprising the driver at the worst possible moment.",
+        "translation": "智能座舱中的接管请求不应突然以命令形式出现，除非风险确实迫在眉睫。优秀的 HMI 设计会把接管准备度视为不断变化的状态。在困难并线之前，座舱可以静默检查驾驶员参与度、视线方向、方向盘接触、交通密度和剩余时间预算。如果交接窗口仍然较宽，系统可以显示柔和的状态条：自动驾驶正在运行，但可能很快需要控制权切换。随着风险梯度上升，界面可以在目标车道上加入视觉锚点、简短听觉提示和方向盘触觉预警。信息应解释道路事件，而不只是喊用户接管。例如：“前方存在并线冲突。请在八秒内握住方向盘。”如果驾驶员响应，转向确认和清晰的模式变化会闭合反馈回路。如果驾驶员错过请求，车辆应执行可预测的备用机动，例如减速、保持车道，并朝最低风险状态前进。分级交接能保护信任，因为它让责任可见，给注意力恢复时间，并避免在最糟糕的时刻让驾驶员感到意外。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Good HMI design treats takeover readiness as a changing state.",
+        "translation": "优秀的 HMI 设计会把接管准备度视为不断变化的状态。",
+        "points": [
+          "treats A as B 表示“把 A 视为 B”。",
+          "takeover readiness 是“接管准备度”，适合描述自动驾驶交接。",
+          "a changing state 强调准备度会随情境变化。"
+        ]
+      },
+      {
+        "sentence": "If the handoff window is still wide, the system may show a soft status strip.",
+        "translation": "如果交接窗口仍然较宽，系统可以显示柔和的状态条。",
+        "points": [
+          "If 引导条件状语从句。",
+          "handoff window 指“交接窗口”，wide 表示时间仍较充足。",
+          "soft status strip 表示不打扰但持续可见的状态提示。"
+        ]
+      },
+      {
+        "sentence": "The message should explain the road event, not only shout for control.",
+        "translation": "信息应解释道路事件，而不只是喊用户接管。",
+        "points": [
+          "should explain 强调提示文案需要给原因。",
+          "road event 是接管请求背后的道路情境。",
+          "not only shout for control 可用于批评只给命令、不解释原因的设计。"
+        ]
+      },
+      {
+        "sentence": "A graded handoff protects trust because it makes responsibility visible, gives attention time to recover, and avoids surprising the driver at the worst possible moment.",
+        "translation": "分级交接能保护信任，因为它让责任可见，给注意力恢复时间，并避免在最糟糕的时刻让驾驶员感到意外。",
+        "points": [
+          "because 后面用三个并列动词说明原因。",
+          "makes responsibility visible 是自动化交接文案中的高频表达。",
+          "at the worst possible moment 表示“在最糟糕的时刻”。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      "4 分钟：朗读 words 中 10 个术语，重点区分 takeover readiness、graded handoff、control transition 和 fallback maneuver。",
+      "6 分钟：跟读 long reading，标出所有表示时间压力和责任边界的表达，如 time budget、handoff window、responsibility、mode change。",
+      "6 分钟：用 automation boundary、visual anchor、minimum risk condition 各写 1 句接管提示说明。",
+      "6 分钟：把“请立即接管”改写成包含道路事件、剩余时间和备用策略的英文接管提示。"
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: automated driving takeover request HMI handoff design",
+        "url": "https://www.youtube.com/results?search_query=automated+driving+takeover+request+HMI+handoff+design",
+        "description": "可搜索 automated driving takeover request HMI handoff design，观察自动驾驶接管请求、模式提示和分级警报的英文表达。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-06-wellbeing-signals-comfort-recommendations",
     "date": "2026-10-06",
     "title": "Wellbeing signals and consent-aware comfort recommendations in intelligent cockpits",

@@ -777,6 +777,13 @@
     "The AI co-pilot should describe its role before taking initiative.",
     "AI 副驾在主动操作前应说明自己的角色。"
   ],
+  "aiming": [
+    "/ˈeɪmɪŋ/",
+    "朝向；以某个目标为方向进行控制",
+    "",
+    "The vehicle may start aiming for a minimum risk condition.",
+    "车辆可能开始朝最低风险状态前进。"
+  ],
   "air": [
     "/er/",
     "空气；此处指空调气流或温度",
@@ -1493,6 +1500,13 @@
     "The HMI should assess takeover readiness before asking the driver to resume control.",
     "在这句话中，“assess”用于描述协同驾驶模式切换与边界提示。"
   ],
+  "assessment": [
+    "/əˈsesmənt/",
+    "评估；对状态或风险的判断",
+    "",
+    "Assessment should combine signals instead of relying on one sensor.",
+    "评估应结合多种信号，而不是依赖单一传感器。"
+  ],
   "assistance": [
     "/暂无音标/",
     "原文中的英语词汇，可结合 HMI 语境理解。",
@@ -1658,6 +1672,13 @@
     "Attention monitoring should support safety decisions without making the driver feel constantly judged.",
     "注意力监测应支持安全决策，同时避免让驾驶员感觉被持续评判。"
   ],
+  "attention recovery": [
+    "/əˈtenʃən rɪˈkʌvəri/",
+    "注意力恢复；驾驶员从非驾驶任务回到道路情境的过程",
+    "",
+    "Attention recovery takes longer when the driver is reading or typing.",
+    "驾驶员阅读或打字时，注意力恢复需要更久。"
+  ],
   "attention reorientation": [
     "/əˈtenʃn riˌɔːriənˈteɪʃn/",
     "注意力重新定向；帮助用户从非驾驶内容回到关键驾驶信息的提示过程",
@@ -1813,6 +1834,13 @@
     "",
     "Auditory feedback should be short enough to avoid covering important navigation guidance.",
     "听觉反馈应足够简短，避免覆盖重要导航引导。"
+  ],
+  "auditory prompt": [
+    "/ˈɔːdətɔːri prɑːmpt/",
+    "听觉提示；通过声音传达状态或动作要求的提示",
+    "",
+    "The auditory prompt should say why the driver is needed.",
+    "听觉提示应说明为什么需要驾驶员。"
   ],
   "auditory signal": [
     "/ˈɔːdətɔːri ˈsɪɡnəl/",
@@ -3080,6 +3108,13 @@
     "",
     "A calm cue can guide attention without adding stress.",
     "平静提示可以在不增加压力的情况下引导注意力。"
+  ],
+  "calm escalation": [
+    "/kɑːm ˌeskəˈleɪʃən/",
+    "平静升级；以克制方式逐步提高提示强度",
+    "",
+    "Calm escalation helps users act without panic.",
+    "平静升级帮助用户在不恐慌的情况下行动。"
   ],
   "calm feedback": [
     "/kɑːm ˈfiːdbæk/",
@@ -5667,6 +5702,13 @@
     "A control token reduces confusion in shared driving tasks.",
     "控制权标记能减少共享驾驶任务中的困惑。"
   ],
+  "control transition": [
+    "/kənˈtroʊl trænˈzɪʃən/",
+    "控制权切换；车辆控制从系统转向驾驶员或相反的过程",
+    "",
+    "A control transition needs clear timing, clear reason, and clear fallback.",
+    "控制权切换需要清晰的时机、原因和备用方案。"
+  ],
   "controllable": [
     "/待查/",
     "可控制的；可以由系统或用户调节的",
@@ -7153,6 +7195,13 @@
     "Direct vehicle control requires stronger confirmation than a media suggestion.",
     "直接车辆控制比媒体建议需要更强确认。"
   ],
+  "direction": [
+    "/dəˈrekʃən/",
+    "方向；视线、行驶或界面指向的位置",
+    "",
+    "Gaze direction can show whether the driver is looking at the road.",
+    "视线方向可以显示驾驶员是否看向道路。"
+  ],
   "directional": [
     "/dəˈrekʃənl/",
     "方向性的；指向某个方向或来源的",
@@ -8247,6 +8296,13 @@
     "When a vehicle supports assisted driving, the cockpit must help the driver understand when attention is required again. A driver monitoring system can detect long glances away from the road, closed eyes, unstable head pose, or hands that are not ready for control. However, the handoff message should not sound like a sudden alarm every time the signal changes. Good trust calibration starts by showing the automation boundary in plain language: lane markings are unclear, traffic is complex, or the system needs the driver to confirm control. The interface should combine a short spoken cue, a glanceable visual cue, and, when necessary, a haptic pulse on the wheel or seat. If the driver looks back quickly, the system can use a grace period and return to a calm status. If takeover readiness remains low, an escalation ladder should increase urgency step by step. The message has to say what changed, why it matters, and what action is expected now. This keeps mode awareness accurate without blaming the user. The goal is not to create fear. The goal is to keep the driver engaged at the right moment and to make the automation feel honest about its limits.",
     "在今日接管提示语境中，“engaged”可理解为“参与的”。"
   ],
+  "engagement": [
+    "/ɪnˈɡeɪdʒmənt/",
+    "参与；用户对任务保持注意和响应的状态",
+    "",
+    "Driver engagement should be checked before a complex merge.",
+    "复杂并线前应检查驾驶员参与状态。"
+  ],
   "engine": [
     "/ˈɛnd͡ʒɪn/",
     "名词：引擎, 发动机, 机车；安装发动机于",
@@ -9165,6 +9221,13 @@
     "The fallback interaction can move the user from voice input to a short tappable list on the center display.",
     "兜底交互可以把用户从语音输入转到中控屏上的短列表选择。"
   ],
+  "fallback maneuver": [
+    "/ˈfɔːlbæk məˈnuːvər/",
+    "备用机动；接管失败或无响应时系统执行的保守动作",
+    "",
+    "A fallback maneuver may slow the vehicle and maintain lane position.",
+    "备用机动可能会让车辆减速并保持车道位置。"
+  ],
   "fallback path": [
     "/ˈfɔːlbæk pæθ/",
     "兜底路径；系统无法理解或执行时提供的替代操作方式",
@@ -10041,6 +10104,13 @@
     "Gaze behavior can reveal whether a secondary task is pulling attention away from the road.",
     "视线行为可以反映次要任务是否正在把注意力从道路上拉走。"
   ],
+  "gaze confirmation": [
+    "/ɡeɪz ˌkɑːnfərˈmeɪʃən/",
+    "视线确认；系统通过视线方向判断驾驶员是否看向道路",
+    "",
+    "Gaze confirmation is useful only when privacy expectations are clear.",
+    "只有隐私预期清晰时，视线确认才有用。"
+  ],
   "gaze pattern": [
     "/ɡeɪz ˈpætərn/",
     "视线模式；驾驶者视线分布和停留时间的变化",
@@ -10384,6 +10454,34 @@
     "The cockpit uses grade to support a safer charging experience.",
     "座舱使用“grade”来支持更安全的充电体验。"
   ],
+  "graded": [
+    "/ˈɡreɪdɪd/",
+    "分级的；按程度逐步变化的",
+    "",
+    "A graded alert gives the user time to understand.",
+    "分级警报给用户时间理解。"
+  ],
+  "graded handoff": [
+    "/ˈɡreɪdɪd ˈhændˌɔːf/",
+    "分级交接；按风险和时间压力逐步移交控制权",
+    "",
+    "A graded handoff starts with awareness, then moves toward action only when needed.",
+    "分级交接从建立意识开始，只在必要时推进到行动。"
+  ],
+  "gradient": [
+    "/ˈɡreɪdiənt/",
+    "梯度；状态或风险逐步变化的程度",
+    "",
+    "The risk gradient rises as the vehicle approaches the merge conflict.",
+    "车辆接近并线冲突时，风险梯度会上升。"
+  ],
+  "gradual": [
+    "/ˈɡrædʒuəl/",
+    "渐进的；逐步发生或加强的",
+    "",
+    "A gradual warning is easier to process.",
+    "渐进警告更容易处理。"
+  ],
   "grammar": [
     "/ˈɡræmər/",
     "语法；语音系统用于匹配本地命令的限定表达集合",
@@ -10578,6 +10676,13 @@
     "The handoff message must explain what changed and what the driver should do next.",
     "接管提示必须说明发生了什么变化，以及驾驶员下一步应该做什么。"
   ],
+  "handoff window": [
+    "/ˈhændˌɔːf ˈwɪndoʊ/",
+    "交接窗口；仍可平稳完成接管的时间范围",
+    "",
+    "The handoff window becomes shorter when traffic density increases.",
+    "交通密度上升时，交接窗口会变短。"
+  ],
   "handoff wording": [
     "/ˈhændɔːf ˈwɜːrdɪŋ/",
     "交接措辞；系统把控制权或决定权交给用户时使用的表达",
@@ -10700,6 +10805,13 @@
     "",
     "Haptic feedback works well when the driver cannot spare a long glance.",
     "当驾驶员无法分出较长视线时，触觉反馈很有效。"
+  ],
+  "haptic pre-alert": [
+    "/ˈhæptɪk priː əˈlɜːrt/",
+    "触觉预警；正式警报前用震动或阻尼变化提示用户",
+    "",
+    "A haptic pre-alert can restore attention without startling the cabin.",
+    "触觉预警可以恢复注意力而不惊吓座舱。"
   ],
   "haptic pulse": [
     "/ˈhæptɪk pʌls/",
@@ -12413,6 +12525,13 @@
     "A wellness prompt should feel supportive, not judgmental, when the cockpit detects discomfort.",
     "在这句话中，“judgmental”用于描述智能座舱健康舒适提示相关内容。"
   ],
+  "jumping": [
+    "/ˈdʒʌmpɪŋ/",
+    "突然跳变；从一种状态猛然切到另一种状态",
+    "",
+    "The escalation ladder should avoid jumping from silence to a loud alarm.",
+    "升级阶梯应避免从沉默突然跳到响亮警报。"
+  ],
   "junction": [
     "/ˈd͡ʒʌŋkʃən/",
     "名词：连接, 会合处, 交叉点",
@@ -12596,6 +12715,13 @@
     "",
     "Lane guidance needs a stable position near the driving view.",
     "车道引导需要在驾驶视野附近保持稳定位置。"
+  ],
+  "lane keeping": [
+    "/leɪn ˈkiːpɪŋ/",
+    "车道保持；车辆维持在当前车道内行驶的能力",
+    "",
+    "Lane keeping can support a fallback maneuver during a missed takeover.",
+    "车道保持可支持接管失败时的备用机动。"
   ],
   "lane marking": [
     "/leɪn ˈmɑːrkɪŋ/",
@@ -14353,6 +14479,13 @@
     "A merge area requires prompts that leave room for observation.",
     "在这句话中，“merge area”用于描述智能座舱导航提示设计。"
   ],
+  "merge conflict": [
+    "/mɜːrdʒ ˈkɑːnflɪkt/",
+    "并线冲突；车辆并入车流时出现的路径或速度冲突",
+    "",
+    "A merge conflict is easier to understand when the HMI highlights the target lane.",
+    "当 HMI 高亮目标车道时，并线冲突更容易理解。"
+  ],
   "merge lane": [
     "/mɜːrdʒ leɪn/",
     "汇入车道；车辆需要并入主路或其他车流的车道",
@@ -14539,6 +14672,20 @@
     "在这句话中，“minimization”可理解为“减到最小限度, 估到最低额, 轻视”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "minimum": [
+    "/ˈmɪnɪməm/",
+    "最低的；可接受范围内最小或最保守的",
+    "",
+    "Minimum risk means reducing danger when normal handoff fails.",
+    "最低风险意味着在正常交接失败时降低危险。"
+  ],
+  "minimum risk condition": [
+    "/ˈmɪnɪməm rɪsk kənˈdɪʃən/",
+    "最低风险状态；系统在接管失败时努力达到的较安全状态",
+    "",
+    "The minimum risk condition must be explained before users need it.",
+    "最低风险状态应在用户真正需要之前解释清楚。"
+  ],
   "minor": [
     "/ˈmaɪnər/",
     "轻微的；重要性或风险较低的",
@@ -14610,6 +14757,13 @@
     "Missed appears in today's navigation prompt timing lesson.",
     "在这句话中，“missed”来自今天的导航提示时机学习内容。"
   ],
+  "missed takeover": [
+    "/mɪst ˈteɪkˌoʊvər/",
+    "错过接管；驾驶员未在请求时间内完成接管的情况",
+    "",
+    "A missed takeover should trigger a predictable fallback maneuver.",
+    "错过接管应触发可预期的备用机动。"
+  ],
   "missed-turn": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“missed-turn”。",
@@ -14623,6 +14777,13 @@
     "",
     "Missed-turn recovery should avoid blame and immediately present the next safe route option.",
     "错过转弯后的恢复应避免责备，并立即给出下一条安全路线选项。"
+  ],
+  "misses": [
+    "/ˈmɪsɪz/",
+    "错过；未能及时响应或完成",
+    "",
+    "If the driver misses the request, the system should use fallback behavior.",
+    "如果驾驶员错过请求，系统应使用备用行为。"
   ],
   "missing": [
     "/ˈmɪsɪŋ/",
@@ -17528,6 +17689,13 @@
     "The pre-action preview should name the cabin mode, affected settings, and remaining countdown window.",
     "执行前预览应说明座舱模式、受影响设置和剩余倒计时窗口。"
   ],
+  "pre-alert": [
+    "/priː əˈlɜːrt/",
+    "预警；正式警报前的提前提示",
+    "",
+    "A pre-alert can prepare the driver before the main request.",
+    "预警可以在主要请求前让驾驶员做好准备。"
+  ],
   "pre-fill": [
     "/priː fɪl/",
     "预填；系统提前准备参数但等待用户确认",
@@ -18966,6 +19134,13 @@
     "Takeover readiness drops when the driver looks away for too long.",
     "在这句话中，“readiness”表示接管准备度。"
   ],
+  "readiness cue": [
+    "/ˈredi-nəs kjuː/",
+    "准备度提示；表达驾驶员或系统是否已准备好交接的提示",
+    "",
+    "A readiness cue can combine steering touch, gaze direction, and response time.",
+    "准备度提示可以结合方向盘触碰、视线方向和响应时间。"
+  ],
   "reading": [
     "/按语境朗读/",
     "阅读；文本理解或朗读活动",
@@ -19946,6 +20121,13 @@
     "在这句话中，“request”可理解为“请求, 需要, 申请书；请求, 要求, 邀请”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "request clarity": [
+    "/rɪˈkwest ˈklærəti/",
+    "请求清晰度；接管请求是否说明原因、动作和剩余时间",
+    "",
+    "Request clarity matters more than dramatic sound design.",
+    "请求清晰度比戏剧化音效更重要。"
+  ],
   "requested": [
     "/rɪˈkwestɪd/",
     "被请求的；已经提出的",
@@ -20328,6 +20510,13 @@
     "The resume label should name the task, not just say continue.",
     "续接标签应说出任务名称，而不只是写继续。"
   ],
+  "resume prompt": [
+    "/rɪˈzuːm prɑːmpt/",
+    "恢复提示；接管完成后帮助用户继续任务或确认状态的提示",
+    "",
+    "A resume prompt can summarize what changed during the handoff.",
+    "恢复提示可以总结交接过程中发生了什么变化。"
+  ],
   "resumes": [
     "/rɪˈzuːmz/",
     "继续；恢复",
@@ -20692,6 +20881,13 @@
     "Risk evidence may include long glances and unstable lane position.",
     "风险证据可能包括长时间扫视和不稳定车道位置。"
   ],
+  "risk gradient": [
+    "/rɪsk ˈɡreɪdiənt/",
+    "风险梯度；风险从低到高变化的连续程度",
+    "",
+    "A risk gradient helps the HMI choose the right level of urgency.",
+    "风险梯度帮助 HMI 选择合适的紧急程度。"
+  ],
   "risk level": [
     "/rɪsk ˈlevl/",
     "风险等级；用于区分信息紧急性和安全影响的级别",
@@ -20791,6 +20987,13 @@
     "",
     "Road curvature can explain why the system offers visual rest mode.",
     "道路曲率可以解释系统为何提供视觉休息模式。"
+  ],
+  "road event": [
+    "/roʊd ɪˈvent/",
+    "道路事件；需要驾驶员或系统响应的道路情境变化",
+    "",
+    "The alert should name the road event behind the request.",
+    "警报应说明请求背后的道路事件。"
   ],
   "road geometry": [
     "/roʊd dʒiˈɑːmətri/",
@@ -21899,6 +22102,13 @@
     "The secondary verification path should be reachable before the user feels trapped at the start screen.",
     "二次验证路径应在用户觉得被困在启动界面之前就可到达。"
   ],
+  "seconds": [
+    "/ˈsekəndz/",
+    "秒；时间单位 second 的复数形式",
+    "",
+    "Eight seconds may be enough for a planned handoff.",
+    "八秒可能足够完成一次有计划的交接。"
+  ],
   "secret": [
     "/ˈsiːkrət/",
     "形容词/名词：秘密的；秘密",
@@ -22446,6 +22656,13 @@
     "A shared intelligent cockpit needs clear rules for voice control.",
     "在这句话中，“shared intelligent cockpit”用于描述智能座舱多人语音控制。"
   ],
+  "shared responsibility": [
+    "/ʃerd rɪˌspɑːnsəˈbɪləti/",
+    "共享责任；系统和驾驶员共同承担任务但边界需明确的状态",
+    "",
+    "Shared responsibility fails when the interface hides who is in charge.",
+    "当界面隐藏谁在负责时，共享责任就会失效。"
+  ],
   "shared ride": [
     "/shared ride/",
     "多人乘坐",
@@ -22648,6 +22865,13 @@
     "在这句话中，“should”可理解为“aux. 应该, 将要”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "shout": [
+    "/ʃaʊt/",
+    "大声要求；在提示文案中过度强硬地发出命令",
+    "",
+    "The interface should explain the event, not shout for control.",
+    "界面应解释事件，而不是大声要求接管。"
+  ],
   "show": [
     "/ʃәu/",
     "动词：显示, 表现, 展览, 卖弄, 炫耀, 外观, 演出, 洋相；表示, 显示, 展现, 陈列, 演出, 表明, 指出, 带领；露面, 显现, 演出",
@@ -22809,6 +23033,13 @@
     "",
     "Silent execution can surprise users when the request is uncertain.",
     "请求不确定时，静默执行可能让用户意外。"
+  ],
+  "silent preparation": [
+    "/ˈsaɪlənt ˌprepəˈreɪʃən/",
+    "静默准备；在不打扰用户的情况下提前整理接管信息",
+    "",
+    "Silent preparation can load the takeover card before the alert is spoken.",
+    "静默准备可以在语音警报前加载接管卡片。"
   ],
   "silently": [
     "/ˈsaɪləntli/",
@@ -23697,6 +23928,13 @@
     "Status recovery should be visible to the driver.",
     "状态恢复应对驾驶员可见。"
   ],
+  "status strip": [
+    "/ˈsteɪtəs strɪp/",
+    "状态条；持续显示驾驶模式、责任和剩余时间的界面区域",
+    "",
+    "A status strip keeps the automation boundary visible.",
+    "状态条让自动化边界保持可见。"
+  ],
   "stay": [
     "/steɪ/",
     "动词：停留, 逗留, 制止, 延缓, 停止, 支柱, 支撑物, 支索；制止, 延缓, 坚持, 支持, 支撑, 用支索固定；停留, 逗留, 暂停, 坚持, 中止",
@@ -23740,6 +23978,13 @@
     "A voice-first flow is useful when the driver needs to keep both hands near the steering wheel.",
     "在这句话中，“steering”可理解为“引导, 驾驶, 航行, 控制；驾驶, 掌舵, 行驶；驾驶指示, 劝告”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "steering confirmation": [
+    "/ˈstɪrɪŋ ˌkɑːnfərˈmeɪʃən/",
+    "转向确认；系统通过方向盘输入确认驾驶员已接管",
+    "",
+    "Steering confirmation should be paired with a clear mode change.",
+    "转向确认应与清晰的模式变化配对。"
   ],
   "steering correction": [
     "/ˈstɪrɪŋ kəˈrekʃn/",
@@ -24502,6 +24747,13 @@
     "在这句话中，“takeover”可理解为“接管, 接收”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "takeover card": [
+    "/ˈteɪkˌoʊvər kɑːrd/",
+    "接管卡片；集中展示接管原因、动作和倒计时的界面单元",
+    "",
+    "The takeover card should show the road event, not only a command.",
+    "接管卡片应显示道路事件，而不只是命令。"
+  ],
   "takeover cue": [
     "/ˈteɪkoʊvər kjuː/",
     "接管线索；提示驾驶员需要重新控制车辆或确认自动化状态的信号",
@@ -25045,6 +25297,13 @@
     "Reducing eyes-off-road time is a core goal for cockpit task design.",
     "在这句话中，“time”可理解为“时间, 时侯, 时机, 时期, 期限, 次数, 节拍, 暂停, 规定时间；测定...的时间, 记录...的时间, 计时, 定时；时间的, 记时的, 定时的, 定期的, 分期的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "time budget": [
+    "/taɪm ˈbʌdʒɪt/",
+    "时间预算；用户理解和完成接管所剩的时间",
+    "",
+    "The time budget should be shown in plain language.",
+    "时间预算应以直白语言显示。"
   ],
   "time since parking": [
     "/taɪm sɪns ˈpɑːrkɪŋ/",
@@ -26789,6 +27048,13 @@
     "Visual acknowledgement can confirm a command without adding another spoken message.",
     "在这句话中，“visual acknowledgement”用于描述智能座舱多人语音控制。"
   ],
+  "visual anchor": [
+    "/ˈvɪʒuəl ˈæŋkər/",
+    "视觉锚点；帮助用户快速定位风险位置的显示元素",
+    "",
+    "A visual anchor can point to the lane where the problem is developing.",
+    "视觉锚点可以指向问题正在发展的车道。"
+  ],
   "visual anchoring": [
     "/ˈvɪʒuəl ˈæŋkərɪŋ/",
     "视觉锚定；把导航提示固定到道路、车道或 HUD 参照物上的设计方法",
@@ -27440,6 +27706,13 @@
     "在这句话中，“why”可理解为“为何；（反问，表示不必）何必；（说明理由）为什么；原因；难解的问题；int. 嗨；为什么做；何故”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "wide": [
+    "/waɪd/",
+    "宽的；在时间或空间上余量较大的",
+    "",
+    "A wide handoff window gives the driver more time to respond.",
+    "较宽的交接窗口给驾驶员更多响应时间。"
+  ],
   "widgets": [
     "/'widʒit/",
     "名词：装饰物；小机械；未定名的主要新产品",
@@ -27506,6 +27779,13 @@
     "When users can see the benefit, change the boundary, and withdraw consent without effort, the system feels less like surveillance and more like a respectful assistant.",
     "在这句话中，“withdraw”可理解为“撤回, 取回, 撤消, 使撤退, 拉开, 移开；撤退, 离开”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "within": [
+    "/wɪˈðɪn/",
+    "在……之内；不超过某个时间或范围",
+    "",
+    "Please hold the wheel within eight seconds.",
+    "请在八秒内握住方向盘。"
   ],
   "without": [
     "/wi'ðaut/",
@@ -27587,6 +27867,13 @@
     "",
     "The word works appears in the comfort recommendation context.",
     "“works”出现在座椅舒适推荐的语境中。"
+  ],
+  "worst": [
+    "/wɜːrst/",
+    "最糟糕的；风险或体验最差的",
+    "",
+    "Do not surprise the driver at the worst possible moment.",
+    "不要在最糟糕的时刻让驾驶员感到意外。"
   ],
   "would": [
     "/wʊd/",
