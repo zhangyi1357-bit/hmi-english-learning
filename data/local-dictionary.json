@@ -1412,6 +1412,13 @@
     "The arrival estimate must update when the driver changes cabin temperature or speed.",
     "当驾驶员改变座舱温度或车速时，到达估算必须更新。"
   ],
+  "arrival reliability": [
+    "/əˈraɪvəl rɪˌlaɪəˈbɪləti/",
+    "到达可靠性；按预期时间和条件抵达目的地的可信程度",
+    "",
+    "Arrival reliability matters more than the shortest route during uncertain traffic.",
+    "交通不确定时，到达可靠性比最短路线更重要。"
+  ],
   "arrive": [
     "/əˈraɪv/",
     "抵达；到达目的地或充电站",
@@ -3200,6 +3207,13 @@
     "A calmer display can reduce visual load on a winding road.",
     "更平静的显示可以降低弯道路段的视觉负荷。"
   ],
+  "calmly": [
+    "/ˈkɑːmli/",
+    "副词：平稳地；不制造紧张感地。",
+    "",
+    "Calmly appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“calmly”用于描述路线建议、确认或驾驶情境。"
+  ],
   "came": [
     "/keɪm/",
     "动词：come 的过去式；来自；发生",
@@ -4869,6 +4883,13 @@
     "",
     "A confidence cue tells the driver when the assistant is certain and when it is only making a best effort.",
     "置信度提示告诉驾驶员助手何时很确定、何时只是尽力推断。"
+  ],
+  "confidence estimate": [
+    "/ˈkɑːnfɪdəns ˈestəmət/",
+    "置信度估计；系统对建议结果可靠性的表达",
+    "",
+    "A confidence estimate helps the driver decide whether the detour is worth the extra attention.",
+    "置信度估计帮助驾驶员判断绕行是否值得投入额外注意力。"
   ],
   "confidence gap": [
     "/ˈkɑːnfɪdəns ɡæp/",
@@ -7061,6 +7082,13 @@
     "A charging detour feels acceptable when the interface explains the saved waiting time.",
     "在这句话中，“detour”可理解为“绕行；偏离原路线”。"
   ],
+  "detour preview": [
+    "/ˈdiːtʊr ˈpriːvjuː/",
+    "绕行预览；在接受改道前展示时间、距离和关键路段变化",
+    "",
+    "The detour preview should be readable at a glance and easy to dismiss.",
+    "绕行预览应当一眼可读，并且容易关闭。"
+  ],
   "device": [
     "/dɪˈvaɪs/",
     "名词：装置, 设计, 策略, 发明物, 设备",
@@ -7289,6 +7317,13 @@
     "",
     "The word discomfort appears in the comfort recommendation context.",
     "“discomfort”出现在座椅舒适推荐的语境中。"
+  ],
+  "dislikes": [
+    "/dɪsˈlaɪks/",
+    "动词：不喜欢；对某方案产生负面偏好。",
+    "",
+    "Dislikes appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“dislikes”用于描述路线建议、确认或驾驶情境。"
   ],
   "dismiss": [
     "/dɪsˈmɪs/",
@@ -10517,6 +10552,13 @@
     "A grounded response uses current battery data instead of a generic range estimate.",
     "有依据的回应会使用当前电池数据，而不是泛泛的续航估计。"
   ],
+  "growing": [
+    "/ˈɡroʊɪŋ/",
+    "形容词：正在增加的；逐渐变大的。",
+    "",
+    "Growing appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“growing”用于描述路线建议、确认或驾驶情境。"
+  ],
   "grows": [
     "/ɡroʊz/",
     "增长；逐渐增强",
@@ -10608,6 +10650,13 @@
     "",
     "The cue can guide the driver to the right screen.",
     "提示可以引导驾驶员看向正确屏幕。"
+  ],
+  "guided": [
+    "/ˈɡaɪdɪd/",
+    "形容词：被引导的；由系统提供方向的。",
+    "",
+    "Guided appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“guided”用于描述路线建议、确认或驾驶情境。"
   ],
   "habits": [
     "/ˈhæb.ɪts/",
@@ -15013,6 +15062,13 @@
     "Money should not transfer until the confirmation is complete.",
     "确认完成前不应转移资金。"
   ],
+  "monitor": [
+    "/ˈmɑːnɪtər/",
+    "动词：监测；持续观察状态。",
+    "",
+    "Monitor appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“monitor”用于描述路线建议、确认或驾驶情境。"
+  ],
   "monitoring": [
     "/'mɒnitә/",
     "动词：监督器, 级长, 监听员, 班长, 监视器, 告诫物；监视, 监听, 监督",
@@ -15285,6 +15341,13 @@
     "Cabin noise, similar contact names, regional accents, and incomplete commands can all reduce recognition confidence.",
     "在这句话中，“names”可理解为“名字, 名称, 姓名, 名义, 名誉, 文件名；命名, 称呼, 任命, 提名, 列举；姓名的, 据以取名的”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "narrative": [
+    "/ˈnærətɪv/",
+    "名词：叙述；系统说明建议的表达方式。",
+    "",
+    "Narrative appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“narrative”用于描述路线建议、确认或驾驶情境。"
   ],
   "narrow": [
     "/ˈnæroʊ/",
@@ -16387,6 +16450,13 @@
     "Action oriented messages help the driver recover quickly.",
     "行动导向的提示帮助驾驶员快速恢复。"
   ],
+  "original": [
+    "/əˈrɪdʒənəl/",
+    "形容词：原来的；最初计划的。",
+    "",
+    "Original appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“original”用于描述路线建议、确认或驾驶情境。"
+  ],
   "original plan": [
     "/əˈrɪdʒənl plæn/",
     "原路线方案；重新规划前的导航计划",
@@ -17098,6 +17168,13 @@
     "A permission dashboard helps drivers review which cockpit features can access contacts or location data.",
     "权限看板帮助驾驶员查看哪些座舱功能可以访问联系人或位置数据。"
   ],
+  "permission gate": [
+    "/pərˈmɪʃən ɡeɪt/",
+    "许可门槛；系统从建议进入执行前必须经过的确认节点",
+    "",
+    "A permission gate is necessary when rerouting affects charging stops or toll roads.",
+    "当改道影响充电停靠或收费道路时，许可门槛是必要的。"
+  ],
   "permission model": [
     "/pərˈmɪʃn ˈmɑːdl/",
     "权限模型；定义谁能控制哪些座舱功能的规则体系",
@@ -17793,6 +17870,13 @@
     "",
     "Predictive intent helps the cockpit suggest the next action before the driver opens a menu.",
     "预测性意图帮助座舱在驾驶员打开菜单前建议下一步操作。"
+  ],
+  "predictive rerouting": [
+    "/prɪˈdɪktɪv riːˈruːtɪŋ/",
+    "预测式改道；系统基于交通、能耗或上下文提前建议更优路线",
+    "",
+    "Predictive rerouting should explain why the route changed before asking the driver to confirm.",
+    "预测式改道应先解释路线为何变化，再请求驾驶员确认。"
   ],
   "predicts": [
     "/prɪˈdɪkts/",
@@ -18954,6 +19038,13 @@
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
+  "random": [
+    "/ˈrændəm/",
+    "形容词：随机的；缺少可理解原因的。",
+    "",
+    "Random appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“random”用于描述路线建议、确认或驾驶情境。"
+  ],
   "randomly": [
     "/ˈrændəmli/",
     "随机地；没有明显原因地",
@@ -19126,6 +19217,13 @@
     "",
     "Readability depends on size, contrast, and wording.",
     "在这句话中，“readability”表示“可读性”。"
+  ],
+  "readable": [
+    "/ˈriːdəbl/",
+    "形容词：可读的；扫视时容易理解的。",
+    "",
+    "Readable appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“readable”用于描述路线建议、确认或驾驶情境。"
   ],
   "readiness": [
     "/ˈredinəs/",
@@ -20085,6 +20183,13 @@
     "Near an intersection, the assistant may replace a full sentence with an acoustic cue and a small visual fallback.",
     "在这句话中，“replace”可理解为“替换；用更合适的信息形式代替”。"
   ],
+  "replacing": [
+    "/rɪˈpleɪsɪŋ/",
+    "动词：替换；用新方案取代原方案。",
+    "",
+    "Replacing appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“replacing”用于描述路线建议、确认或驾驶情境。"
+  ],
   "replanning message": [
     "/riːˈplænɪŋ ˈmesɪdʒ/",
     "重新规划消息；路线改变时解释新方案的提示",
@@ -20674,6 +20779,13 @@
     "Every reversible change should include a clear undo action.",
     "每个可撤销变化都应包含清晰的撤销动作。"
   ],
+  "reversible choice": [
+    "/rɪˈvɜːrsəbl tʃɔɪs/",
+    "可撤销选择；用户接受后仍可恢复原方案的设计",
+    "",
+    "A reversible choice reduces pressure when the driver is unsure about a new route.",
+    "当驾驶员不确定新路线时，可撤销选择能降低决策压力。"
+  ],
   "reversible decision": [
     "/rɪˈvɜːrsəbl dɪˈsɪʒn/",
     "可撤销决策；用户可以修改或回退的选择",
@@ -21164,6 +21276,13 @@
     "",
     "Route preview helps the driver prepare for a complex interchange.",
     "在这句话中，“route preview”用于描述智能座舱导航提示设计。"
+  ],
+  "route rationale": [
+    "/ruːt ˌræʃəˈnæl/",
+    "路线理由；说明推荐路线背后依据的简短解释",
+    "",
+    "A route rationale may mention traffic speed, charging availability, and arrival reliability.",
+    "路线理由可以提到车速、充电可用性和到达可靠性。"
   ],
   "route search": [
     "/ruːt sɜːrtʃ/",
@@ -22857,6 +22976,13 @@
     "在这句话中，“shorter”可理解为“短的, 近的, 矮的, 短期的, 简短的, 少量的；简短地, 突然；扼要, 短片, 缺乏；故意少给, 使短路”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "shortest": [
+    "/ˈʃɔːrtəst/",
+    "形容词：最短的；距离或时间最少的。",
+    "",
+    "Shortest appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“shortest”用于描述路线建议、确认或驾驶情境。"
+  ],
   "should": [
     "/ʃud/",
     "动词：aux. 应该, 将要",
@@ -24267,6 +24393,13 @@
     "",
     "Predictive HMI is strongest when it preserves agency.",
     "预测式 HMI 在保留主导权时效果最佳。"
+  ],
+  "structure": [
+    "/ˈstrʌktʃər/",
+    "名词：结构；信息或流程的组织方式。",
+    "",
+    "Structure appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“structure”用于描述路线建议、确认或驾驶情境。"
   ],
   "study": [
     "/按语境朗读/",
@@ -27874,6 +28007,13 @@
     "",
     "Do not surprise the driver at the worst possible moment.",
     "不要在最糟糕的时刻让驾驶员感到意外。"
+  ],
+  "worth": [
+    "/wɜːrθ/",
+    "形容词：值得的；收益大于代价的。",
+    "",
+    "Worth appears in today's predictive rerouting scenario.",
+    "在今天的预测式改道场景中，“worth”用于描述路线建议、确认或驾驶情境。"
   ],
   "would": [
     "/wʊd/",

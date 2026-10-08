@@ -1,5 +1,787 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-08-predictive-rerouting-driver-confirmation",
+    "date": "2026-10-08",
+    "title": "Predictive rerouting and driver confirmation in intelligent cockpits",
+    "topic": "智能座舱预测式改道与驾驶员确认",
+    "suggestedTime": "24 分钟",
+    "summary": "学习如何用英语描述智能座舱在拥堵、充电、天气和驾驶偏好变化时提出预测式改道，并通过清晰理由、风险说明和确认步骤保留驾驶员控制感。",
+    "words": [
+      {
+        "term": "predictive rerouting",
+        "phonetic": "/prɪˈdɪktɪv riːˈruːtɪŋ/",
+        "meaning": "预测式改道；系统基于交通、能耗或上下文提前建议更优路线",
+        "example": "Predictive rerouting should explain why the route changed before asking the driver to confirm.",
+        "chineseExample": "预测式改道应先解释路线为何变化，再请求驾驶员确认。"
+      },
+      {
+        "term": "driver confirmation",
+        "phonetic": "/ˈdraɪvər ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "驾驶员确认；系统执行关键建议前由驾驶员明确同意",
+        "example": "Driver confirmation keeps the cockpit from silently changing a planned journey.",
+        "chineseExample": "驾驶员确认能避免座舱静默改变已规划的行程。"
+      },
+      {
+        "term": "route rationale",
+        "phonetic": "/ruːt ˌræʃəˈnæl/",
+        "meaning": "路线理由；说明推荐路线背后依据的简短解释",
+        "example": "A route rationale may mention traffic speed, charging availability, and arrival reliability.",
+        "chineseExample": "路线理由可以提到车速、充电可用性和到达可靠性。"
+      },
+      {
+        "term": "confidence estimate",
+        "phonetic": "/ˈkɑːnfɪdəns ˈestəmət/",
+        "meaning": "置信度估计；系统对建议结果可靠性的表达",
+        "example": "A confidence estimate helps the driver decide whether the detour is worth the extra attention.",
+        "chineseExample": "置信度估计帮助驾驶员判断绕行是否值得投入额外注意力。"
+      },
+      {
+        "term": "detour preview",
+        "phonetic": "/ˈdiːtʊr ˈpriːvjuː/",
+        "meaning": "绕行预览；在接受改道前展示时间、距离和关键路段变化",
+        "example": "The detour preview should be readable at a glance and easy to dismiss.",
+        "chineseExample": "绕行预览应当一眼可读，并且容易关闭。"
+      },
+      {
+        "term": "permission gate",
+        "phonetic": "/pərˈmɪʃən ɡeɪt/",
+        "meaning": "许可门槛；系统从建议进入执行前必须经过的确认节点",
+        "example": "A permission gate is necessary when rerouting affects charging stops or toll roads.",
+        "chineseExample": "当改道影响充电停靠或收费道路时，许可门槛是必要的。"
+      },
+      {
+        "term": "context trigger",
+        "phonetic": "/ˈkɑːntekst ˈtrɪɡər/",
+        "meaning": "情境触发因素；导致系统提出建议的交通、天气、能耗或日程变化",
+        "example": "The context trigger should be named so the suggestion feels timely rather than random.",
+        "chineseExample": "应说清情境触发因素，让建议显得及时而不是随机。"
+      },
+      {
+        "term": "reversible choice",
+        "phonetic": "/rɪˈvɜːrsəbl tʃɔɪs/",
+        "meaning": "可撤销选择；用户接受后仍可恢复原方案的设计",
+        "example": "A reversible choice reduces pressure when the driver is unsure about a new route.",
+        "chineseExample": "当驾驶员不确定新路线时，可撤销选择能降低决策压力。"
+      },
+      {
+        "term": "arrival reliability",
+        "phonetic": "/əˈraɪvəl rɪˌlaɪəˈbɪləti/",
+        "meaning": "到达可靠性；按预期时间和条件抵达目的地的可信程度",
+        "example": "Arrival reliability matters more than the shortest route during uncertain traffic.",
+        "chineseExample": "交通不确定时，到达可靠性比最短路线更重要。"
+      },
+      {
+        "term": "low-interruption prompt",
+        "phonetic": "/loʊ ˌɪntəˈrʌpʃən prɑːmpt/",
+        "meaning": "低干扰提示；在驾驶中尽量减少打断的建议表达方式",
+        "example": "A low-interruption prompt can wait until the next straight segment before speaking.",
+        "chineseExample": "低干扰提示可以等到下一个直线路段再播报。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "accept",
+        "phonetic": "/əkˈsept/",
+        "meaning": "动词：接受；同意采用建议或方案。",
+        "example": "Accept appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“accept”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "affects",
+        "phonetic": "/əˈfekts/",
+        "meaning": "动词：影响；改变结果、时间或体验。",
+        "example": "Affects appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“affects”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "ahead",
+        "phonetic": "/əˈhed/",
+        "meaning": "副词：提前；在前方。",
+        "example": "Ahead appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“ahead”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "alert",
+        "phonetic": "/əˈlɜːrt/",
+        "meaning": "名词：警示；提醒用户注意的信号。",
+        "example": "Alert appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“alert”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "alternative",
+        "phonetic": "/ɔːlˈtɜːrnətɪv/",
+        "meaning": "名词：替代方案；可选路线或做法。",
+        "example": "Alternative appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“alternative”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "arrive",
+        "phonetic": "/əˈraɪv/",
+        "meaning": "动词：到达目的地。",
+        "example": "Arrive appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“arrive”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "arrival",
+        "phonetic": "/əˈraɪvəl/",
+        "meaning": "名词：到达；抵达时间或结果。",
+        "example": "Arrival appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“arrival”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "ask",
+        "phonetic": "/æsk/",
+        "meaning": "动词：请求；向用户征求确认。",
+        "example": "Ask appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“ask”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "名词：可用性；资源是否可获得。",
+        "example": "Availability appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“availability”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "before",
+        "phonetic": "/bɪˈfɔːr/",
+        "meaning": "介词：在……之前。",
+        "example": "Before appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“before”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "briefly",
+        "phonetic": "/ˈbriːfli/",
+        "meaning": "副词：简短地；用少量信息表达。",
+        "example": "Briefly appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“briefly”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "busy",
+        "phonetic": "/ˈbɪzi/",
+        "meaning": "形容词：繁忙的；任务或交通负荷较高的。",
+        "example": "Busy appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“busy”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "cabin",
+        "phonetic": "/ˈkæbɪn/",
+        "meaning": "名词：座舱；车内乘坐空间。",
+        "example": "Cabin appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“cabin”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "calmly",
+        "phonetic": "/ˈkɑːmli/",
+        "meaning": "副词：平稳地；不制造紧张感地。",
+        "example": "Calmly appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“calmly”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "change",
+        "phonetic": "/tʃeɪndʒ/",
+        "meaning": "名词/动词：变化；改变路线或状态。",
+        "example": "Change appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“change”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "charging",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ/",
+        "meaning": "名词：充电；电动车补能过程。",
+        "example": "Charging appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“charging”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/klɪr/",
+        "meaning": "形容词：清晰的；容易理解的。",
+        "example": "Clear appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“clear”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "command",
+        "phonetic": "/kəˈmænd/",
+        "meaning": "名词：命令；用户或系统触发的操作。",
+        "example": "Command appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“command”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "compare",
+        "phonetic": "/kəmˈper/",
+        "meaning": "动词：比较；对照多个选择的差异。",
+        "example": "Compare appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“compare”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "confidence",
+        "phonetic": "/ˈkɑːnfɪdəns/",
+        "meaning": "名词：信心；系统对判断可靠性的估计。",
+        "example": "Confidence appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“confidence”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "名词：确认；用户明确同意的动作。",
+        "example": "Confirmation appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“confirmation”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "名词：上下文；影响决策的场景信息。",
+        "example": "Context appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“context”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "名词：控制权；用户对系统行为的掌控。",
+        "example": "Control appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“control”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "cost",
+        "phonetic": "/kɔːst/",
+        "meaning": "名词：成本；时间、金钱或注意力代价。",
+        "example": "Cost appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“cost”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "delay",
+        "phonetic": "/dɪˈleɪ/",
+        "meaning": "名词：延误；行程被拖慢的时间。",
+        "example": "Delay appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“delay”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "dense",
+        "phonetic": "/dens/",
+        "meaning": "形容词：密集的；交通或信息负荷高。",
+        "example": "Dense appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“dense”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "destination",
+        "phonetic": "/ˌdestɪˈneɪʃən/",
+        "meaning": "名词：目的地。",
+        "example": "Destination appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“destination”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "detour",
+        "phonetic": "/ˈdiːtʊr/",
+        "meaning": "名词：绕行；偏离原路线的替代路径。",
+        "example": "Detour appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“detour”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "dismiss",
+        "phonetic": "/dɪsˈmɪs/",
+        "meaning": "动词：关闭；忽略或暂不采纳提示。",
+        "example": "Dismiss appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“dismiss”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "dislikes",
+        "phonetic": "/dɪsˈlaɪks/",
+        "meaning": "动词：不喜欢；对某方案产生负面偏好。",
+        "example": "Dislikes appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“dislikes”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "distance",
+        "phonetic": "/ˈdɪstəns/",
+        "meaning": "名词：距离；路线长度。",
+        "example": "Distance appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“distance”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "名词：驾驶员。",
+        "example": "Driver appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“driver”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "energy",
+        "phonetic": "/ˈenərdʒi/",
+        "meaning": "名词：能量；车辆续航或电量相关资源。",
+        "example": "Energy appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“energy”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "estimate",
+        "phonetic": "/ˈestəmət/",
+        "meaning": "名词：估计；对时间、风险或可靠性的判断。",
+        "example": "Estimate appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“estimate”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "execute",
+        "phonetic": "/ˈeksɪkjuːt/",
+        "meaning": "动词：执行；把建议转化为实际操作。",
+        "example": "Execute appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“execute”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "动词：解释；说明原因。",
+        "example": "Explain appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“explain”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "explanation",
+        "phonetic": "/ˌekspləˈneɪʃən/",
+        "meaning": "名词：解释；帮助用户理解的说明。",
+        "example": "Explanation appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“explanation”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "fallback",
+        "phonetic": "/ˈfɔːlbæk/",
+        "meaning": "名词：备用方案；主要方案不可用时的保守选项。",
+        "example": "Fallback appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“fallback”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "faster",
+        "phonetic": "/ˈfæstər/",
+        "meaning": "形容词：更快的。",
+        "example": "Faster appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“faster”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "gate",
+        "phonetic": "/ɡeɪt/",
+        "meaning": "名词：门槛；进入下一步前的控制点。",
+        "example": "Gate appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“gate”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "glance",
+        "phonetic": "/ɡlæns/",
+        "meaning": "名词：扫视；短时间查看界面。",
+        "example": "Glance appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“glance”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "guided",
+        "phonetic": "/ˈɡaɪdɪd/",
+        "meaning": "形容词：被引导的；由系统提供方向的。",
+        "example": "Guided appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“guided”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "growing",
+        "phonetic": "/ˈɡroʊɪŋ/",
+        "meaning": "形容词：正在增加的；逐渐变大的。",
+        "example": "Growing appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“growing”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "highway",
+        "phonetic": "/ˈhaɪweɪ/",
+        "meaning": "名词：高速路；快速道路。",
+        "example": "Highway appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“highway”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "impact",
+        "phonetic": "/ˈɪmpækt/",
+        "meaning": "名词：影响；对结果的作用。",
+        "example": "Impact appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“impact”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "interruption",
+        "phonetic": "/ˌɪntəˈrʌpʃən/",
+        "meaning": "名词：打断；中断驾驶注意力的提示。",
+        "example": "Interruption appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“interruption”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "journey",
+        "phonetic": "/ˈdʒɜːrni/",
+        "meaning": "名词：行程；从出发到到达的过程。",
+        "example": "Journey appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“journey”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "lane",
+        "phonetic": "/leɪn/",
+        "meaning": "名词：车道。",
+        "example": "Lane appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“lane”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "later",
+        "phonetic": "/ˈleɪtər/",
+        "meaning": "副词：稍后；之后。",
+        "example": "Later appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“later”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "light",
+        "phonetic": "/laɪt/",
+        "meaning": "形容词：轻量的；信息负担较低。",
+        "example": "Light appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“light”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "mention",
+        "phonetic": "/ˈmenʃən/",
+        "meaning": "动词：提及；简要说明。",
+        "example": "Mention appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“mention”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "monitor",
+        "phonetic": "/ˈmɑːnɪtər/",
+        "meaning": "动词：监测；持续观察状态。",
+        "example": "Monitor appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“monitor”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "narrative",
+        "phonetic": "/ˈnærətɪv/",
+        "meaning": "名词：叙述；系统说明建议的表达方式。",
+        "example": "Narrative appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“narrative”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "option",
+        "phonetic": "/ˈɑːpʃən/",
+        "meaning": "名词：选项；可供选择的方案。",
+        "example": "Option appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“option”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "original",
+        "phonetic": "/əˈrɪdʒənəl/",
+        "meaning": "形容词：原来的；最初计划的。",
+        "example": "Original appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“original”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "permission",
+        "phonetic": "/pərˈmɪʃən/",
+        "meaning": "名词：许可；允许系统执行的同意。",
+        "example": "Permission appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“permission”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "planned",
+        "phonetic": "/plænd/",
+        "meaning": "形容词：已规划的；原先安排好的。",
+        "example": "Planned appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“planned”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "predictive",
+        "phonetic": "/prɪˈdɪktɪv/",
+        "meaning": "形容词：预测性的；基于未来变化提前判断的。",
+        "example": "Predictive appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“predictive”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "preference",
+        "phonetic": "/ˈprefrəns/",
+        "meaning": "名词：偏好；用户倾向。",
+        "example": "Preference appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“preference”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "preview",
+        "phonetic": "/ˈpriːvjuː/",
+        "meaning": "名词：预览；执行前展示结果。",
+        "example": "Preview appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“preview”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "名词：提示；系统向用户发出的短信息。",
+        "example": "Prompt appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“prompt”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "random",
+        "phonetic": "/ˈrændəm/",
+        "meaning": "形容词：随机的；缺少可理解原因的。",
+        "example": "Random appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“random”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "recommend",
+        "phonetic": "/ˌrekəˈmend/",
+        "meaning": "动词：推荐；提出更优选择。",
+        "example": "Recommend appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“recommend”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "reliability",
+        "phonetic": "/rɪˌlaɪəˈbɪləti/",
+        "meaning": "名词：可靠性；结果可信程度。",
+        "example": "Reliability appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“reliability”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "rerouting",
+        "phonetic": "/riːˈruːtɪŋ/",
+        "meaning": "名词：改道；重新规划路线。",
+        "example": "Rerouting appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“rerouting”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "restore",
+        "phonetic": "/rɪˈstɔːr/",
+        "meaning": "动词：恢复；回到原设置或原路线。",
+        "example": "Restore appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“restore”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "形容词：可撤销的；可以回退的。",
+        "example": "Reversible appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“reversible”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "名词：风险；可能的不利结果。",
+        "example": "Risk appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“risk”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/roʊd/",
+        "meaning": "名词：道路。",
+        "example": "Road appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“road”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "readable",
+        "phonetic": "/ˈriːdəbl/",
+        "meaning": "形容词：可读的；扫视时容易理解的。",
+        "example": "Readable appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“readable”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "replacing",
+        "phonetic": "/rɪˈpleɪsɪŋ/",
+        "meaning": "动词：替换；用新方案取代原方案。",
+        "example": "Replacing appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“replacing”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "名词：路线。",
+        "example": "Route appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“route”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "safe",
+        "phonetic": "/seɪf/",
+        "meaning": "形容词：安全的；风险可控的。",
+        "example": "Safe appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“safe”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "segment",
+        "phonetic": "/ˈseɡmənt/",
+        "meaning": "名词：路段；路线的一部分。",
+        "example": "Segment appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“segment”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "silently",
+        "phonetic": "/ˈsaɪləntli/",
+        "meaning": "副词：静默地；不提醒用户地。",
+        "example": "Silently appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“silently”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "speak",
+        "phonetic": "/spiːk/",
+        "meaning": "动词：播报；用语音说出。",
+        "example": "Speak appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“speak”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "speed",
+        "phonetic": "/spiːd/",
+        "meaning": "名词：速度。",
+        "example": "Speed appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“speed”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "straight",
+        "phonetic": "/streɪt/",
+        "meaning": "形容词：直的；道路方向稳定的。",
+        "example": "Straight appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“straight”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "shortest",
+        "phonetic": "/ˈʃɔːrtəst/",
+        "meaning": "形容词：最短的；距离或时间最少的。",
+        "example": "Shortest appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“shortest”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "structure",
+        "phonetic": "/ˈstrʌktʃər/",
+        "meaning": "名词：结构；信息或流程的组织方式。",
+        "example": "Structure appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“structure”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/səˈdʒestʃən/",
+        "meaning": "名词：建议；系统提出但未强制执行的方案。",
+        "example": "Suggestion appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“suggestion”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "timely",
+        "phonetic": "/ˈtaɪmli/",
+        "meaning": "形容词：及时的；在合适时机出现的。",
+        "example": "Timely appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“timely”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "toll",
+        "phonetic": "/toʊl/",
+        "meaning": "名词：过路费；收费道路费用。",
+        "example": "Toll appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“toll”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/ˈtræfɪk/",
+        "meaning": "名词：交通；道路车流情况。",
+        "example": "Traffic appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“traffic”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "trigger",
+        "phonetic": "/ˈtrɪɡər/",
+        "meaning": "名词：触发因素；导致系统行动的条件。",
+        "example": "Trigger appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“trigger”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "uncertain",
+        "phonetic": "/ʌnˈsɜːrtn/",
+        "meaning": "形容词：不确定的；结果尚不稳定的。",
+        "example": "Uncertain appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“uncertain”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "update",
+        "phonetic": "/ˈʌpdeɪt/",
+        "meaning": "名词：更新；新的信息或状态。",
+        "example": "Update appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“update”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɔɪs/",
+        "meaning": "名词：语音；口头交互方式。",
+        "example": "Voice appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“voice”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "weather",
+        "phonetic": "/ˈweðər/",
+        "meaning": "名词：天气；影响驾驶条件的环境因素。",
+        "example": "Weather appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“weather”用于描述路线建议、确认或驾驶情境。"
+      },
+      {
+        "term": "worth",
+        "phonetic": "/wɜːrθ/",
+        "meaning": "形容词：值得的；收益大于代价的。",
+        "example": "Worth appears in today's predictive rerouting scenario.",
+        "chineseExample": "在今天的预测式改道场景中，“worth”用于描述路线建议、确认或驾驶情境。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Reading: Keeping predictive rerouting under driver control",
+        "text": "Predictive rerouting in an intelligent cockpit is useful only when the driver understands both the reason and the cost of the change. A navigation assistant may notice a growing traffic delay, lower battery confidence, heavy rain near the highway, or a preferred charging station becoming unavailable. Instead of silently replacing the original plan, the cockpit should present a light detour preview: the expected arrival time, extra distance, charging impact, and the main context trigger. The prompt should be short enough for a quick glance, but specific enough to support trust. For example, the system can say, \"Traffic ahead may add twelve minutes. A faster route is available, but it uses a toll road. Accept?\" This structure separates recommendation from execution. During dense traffic, the interface can wait for a safer road segment before speaking, or show a calm visual cue and offer voice confirmation later. A reversible choice is also important. If the driver accepts the new route and then dislikes it, the cockpit should make the original route easy to restore. Predictive intelligence should feel like guided support, not hidden control.",
+        "translation": "智能座舱中的预测式改道只有在驾驶员理解变化原因和代价时才真正有用。导航助手可能发现交通延误扩大、电量置信度降低、高速附近出现强降雨，或偏好的充电站不可用。座舱不应静默替换原计划，而应展示轻量绕行预览：预计到达时间、额外距离、充电影响和主要情境触发因素。提示要足够短，方便快速扫视，同时又要足够具体以建立信任。例如系统可以说：“前方交通可能增加 12 分钟。可用更快路线，但会经过收费道路。是否接受？”这种结构把推荐和执行分开。在车流密集时，界面可以等到更安全的路段再播报，或先显示平稳的视觉提示，稍后提供语音确认。可撤销选择同样重要。如果驾驶员接受新路线后又不喜欢，座舱应让恢复原路线变得容易。预测式智能应当像有引导的支持，而不是隐藏的控制。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Predictive rerouting in an intelligent cockpit is useful only when the driver understands both the reason and the cost of the change.",
+        "translation": "智能座舱中的预测式改道只有在驾驶员理解变化原因和代价时才真正有用。",
+        "points": [
+          "only when 引出必要条件，强调理解是功能有用的前提。",
+          "both the reason and the cost 把“原因”和“代价”并列，适合说明解释型 HMI。"
+        ]
+      },
+      {
+        "sentence": "Instead of silently replacing the original plan, the cockpit should present a light detour preview.",
+        "translation": "座舱不应静默替换原计划，而应展示轻量绕行预览。",
+        "points": [
+          "Instead of ... should ... 是提出设计原则时常用的对比结构。",
+          "silently replacing 强调未经确认的自动更改会削弱控制感。"
+        ]
+      },
+      {
+        "sentence": "This structure separates recommendation from execution.",
+        "translation": "这种结构把推荐和执行分开。",
+        "points": [
+          "separates A from B 用来表达权限边界或流程边界。",
+          "recommendation 与 execution 的对比适合描述 AI 建议是否自动生效。"
+        ]
+      },
+      {
+        "sentence": "Predictive intelligence should feel like guided support, not hidden control.",
+        "translation": "预测式智能应当像有引导的支持，而不是隐藏的控制。",
+        "points": [
+          "should feel like 用于描述用户感知，而不仅是系统功能。",
+          "not hidden control 清楚表达了智能座舱自动化的设计底线。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇热身",
+        "duration": "4 分钟",
+        "instruction": "朗读 10 个核心词汇，重点区分 predictive rerouting、detour preview、permission gate 和 reversible choice。"
+      },
+      {
+        "title": "跟读长文",
+        "duration": "8 分钟",
+        "instruction": "先完整听读长文，再按句暂停，模仿 route rationale、confidence estimate、driver confirmation 的表达节奏。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "instruction": "用 Instead of silently replacing... 和 This structure separates... from... 各造 2 个智能座舱交互句。"
+      },
+      {
+        "title": "场景复述",
+        "duration": "6 分钟",
+        "instruction": "用英文复述一个导航改道场景：触发因素、预览信息、确认方式、可撤销入口各说一句。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Suggested search: predictive navigation rerouting driver confirmation HMI",
+        "url": "https://www.youtube.com/results?search_query=predictive+navigation+rerouting+driver+confirmation+HMI",
+        "description": "可搜索 predictive navigation rerouting driver confirmation HMI，观察导航改道、驾驶员确认和路线解释的英文表达。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-07-takeover-readiness-graded-handoff",
     "date": "2026-10-07",
     "title": "Takeover readiness and graded autonomy handoff in intelligent cockpits",
