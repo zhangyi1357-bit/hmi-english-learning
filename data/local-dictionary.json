@@ -1208,6 +1208,13 @@
     "Privacy-preserving occupant sensing should process seat, voice, and camera signals locally before offering a comfort suggestion.",
     "隐私保护型乘员感知应先在本地处理座椅、语音和摄像头信号，再提供舒适性建议。"
   ],
+  "anything": [
+    "/ˈeniθɪŋ/",
+    "代词：任何事物；用于强调批准前不应执行任何付款动作。",
+    "",
+    "The driver should see the details before approving anything.",
+    "驾驶员批准任何事项前都应看到详情。"
+  ],
   "apology": [
     "/əˈpɒl.ə.d͡ʒi/",
     "名词：道歉, 辩护",
@@ -1333,6 +1340,13 @@
     "",
     "The interface should separate a hint from an approved action.",
     "界面应区分提示和已批准动作。"
+  ],
+  "approves": [
+    "/əˈpruːvz/",
+    "动词：批准；用户明确同意某个操作。",
+    "",
+    "The payment should wait until the driver approves the charge.",
+    "支付应等待驾驶员批准扣费。"
   ],
   "ar": [
     "/eɪ ɑːr/",
@@ -5111,6 +5125,13 @@
     "Conflicting requests should be handled with a clear priority rule.",
     "在这句话中，“conflicting requests”用于描述智能座舱多人语音控制。"
   ],
+  "confused": [
+    "/kənˈfjuːzd/",
+    "形容词：困惑的；无法清楚区分信息或动作的。",
+    "",
+    "A parking fee should not be confused with an unrelated offer.",
+    "停车费不应与无关优惠混淆。"
+  ],
   "confusion": [
     "/kənˈfjuːʒn/",
     "困惑；混淆",
@@ -7432,6 +7453,20 @@
     "Tasks may move between displays.",
     "任务可能在屏幕之间移动。"
   ],
+  "dispute": [
+    "/dɪˈspjuːt/",
+    "名词：争议；对扣费、退款或商户提出异议。",
+    "",
+    "Dispute appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“dispute”用于描述付款确认、风险提示或恢复流程。"
+  ],
+  "dispute path": [
+    "/dɪˈspjuːt pæθ/",
+    "申诉路径；用户发现错误扣费或可疑交易后进入帮助和退款流程的入口。",
+    "",
+    "The dispute path should be visible from both the receipt and the payment history.",
+    "申诉路径应从凭证和支付历史中都能看到。"
+  ],
   "disputed charge": [
     "/dɪˈspjuːtɪd tʃɑːrdʒ/",
     "争议扣款；用户对交易提出异议的扣款",
@@ -9377,6 +9412,13 @@
     "Familiar wording is safer than clever technical labels.",
     "熟悉措辞比巧妙的技术标签更安全。"
   ],
+  "families": [
+    "/ˈfæməliz/",
+    "名词：家庭；共享车辆或共享支付设置中的用户群体。",
+    "",
+    "Families may need spending limits for shared cabin purchases.",
+    "家庭可能需要为共享座舱购买设置消费限额。"
+  ],
   "family": [
     "/ˈfæməli/",
     "家庭；亲属或家庭联系人",
@@ -9520,6 +9562,13 @@
     "A permission dashboard helps drivers review which cockpit features can access contacts or location data.",
     "在这句话中，“features”可理解为“面孔的一部分(如眼、口等), 特征, 容貌, 特色, 特写；是...的特色, 特写, 放映；起重要作用”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "fee": [
+    "/fiː/",
+    "名词：费用；停车费、服务费或通行费。",
+    "",
+    "Fee appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“fee”用于描述付款确认、风险提示或恢复流程。"
   ],
   "feedback": [
     "/'fi:dbæk/",
@@ -9683,6 +9732,13 @@
     "在这句话中，“finding”可理解为“发现, 感到, 找到, 认为, 得到；裁决；发现；寻找指定的字符串, 将符合条件的行或行数输出到标准输出设备上”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "fingerprint": [
+    "/ˈfɪŋɡərprɪnt/",
+    "名词：指纹；一种生物识别认证方式。",
+    "",
+    "Fingerprint appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“fingerprint”用于描述付款确认、风险提示或恢复流程。"
+  ],
   "finish": [
     "/待查/",
     "完成；结束任务",
@@ -9732,6 +9788,13 @@
     "",
     "The cockpit uses fits in context when explaining a charging recommendation.",
     "在解释充电推荐时，座舱会结合语境使用“fits”。"
+  ],
+  "fix": [
+    "/fɪks/",
+    "动词：修正；处理错误或恢复正确状态。",
+    "",
+    "Fix appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“fix”用于描述付款确认、风险提示或恢复流程。"
   ],
   "fixed": [
     "/fɪkst/",
@@ -9964,6 +10027,20 @@
     "",
     "A fraud signal should pause the flow and offer a safe next step.",
     "欺诈信号应暂停流程并提供安全的下一步。"
+  ],
+  "fraud-aware": [
+    "/frɔːd əˈwer/",
+    "形容词：防欺诈感知的；能识别并解释欺诈风险的。",
+    "",
+    "Fraud-aware UX combines prevention with recovery.",
+    "防欺诈感知体验会把预防与恢复结合起来。"
+  ],
+  "fraud-aware ux": [
+    "/frɔːd əˈwer ˌjuː ˈeks/",
+    "防欺诈体验；在交互中识别异常、解释风险并保护用户决策的设计方式。",
+    "",
+    "Fraud-aware UX warns the driver when a payment request does not match the current location.",
+    "当支付请求与当前位置不匹配时，防欺诈体验会提醒驾驶员。"
   ],
   "free": [
     "/friː/",
@@ -11483,6 +11560,13 @@
     "",
     "Hunting for a cancel control is unsafe while driving.",
     "驾驶中费力寻找取消控件是不安全的。"
+  ],
+  "hurry": [
+    "/ˈhɜːri/",
+    "名词：匆忙；注意力有限或时间紧张的状态。",
+    "",
+    "A reversible flow helps when the driver is in a hurry.",
+    "驾驶员匆忙时，可撤销流程会有帮助。"
   ],
   "i": [
     "/ə/",
@@ -13616,6 +13700,13 @@
     "The receipt reassures users that alerts were not lost.",
     "在这句话中，“lost”可理解为“丢失的”。"
   ],
+  "lot": [
+    "/lɑːt/",
+    "名词：场地；parking lot 指停车场。",
+    "",
+    "The driver may leave the parking lot before checking the receipt.",
+    "驾驶员可能在查看收据前已经离开停车场。"
+  ],
   "loud": [
     "/laʊd/",
     "响亮的；声音强度高的",
@@ -14514,6 +14605,13 @@
     "The merchant name must be readable before the user approves payment.",
     "用户批准付款前，商户名称必须清晰可读。"
   ],
+  "merchant verification": [
+    "/ˈmɜːrtʃənt ˌverɪfɪˈkeɪʃən/",
+    "商户核验；确认收费方身份真实且与用户场景匹配的过程。",
+    "",
+    "Merchant verification prevents a parking fee from being confused with an unrelated offer.",
+    "商户核验能避免停车费与无关优惠被混淆。"
+  ],
   "merge": [
     "/待查/",
     "并线；车辆汇入车流",
@@ -14784,6 +14882,13 @@
     "If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel.",
     "在这句话中，“mirrors”可理解为“镜子, 写真, 典范；反映, 映出”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "misleading": [
+    "/ˌmɪsˈliːdɪŋ/",
+    "形容词：误导性的；可能造成错误理解的。",
+    "",
+    "Misleading appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“misleading”用于描述付款确认、风险提示或恢复流程。"
   ],
   "mismatch": [
     "/ˈmɪsmætʃ/",
@@ -16963,12 +17068,26 @@
     "The cockpit may keep distance support active while pausing lane centering.",
     "座舱可以保持距离支持，同时暂停车道居中。"
   ],
+  "pay": [
+    "/peɪ/",
+    "动词：支付；完成付款动作。",
+    "",
+    "Pay should appear only after the amount and merchant are visible.",
+    "只有金额和商户可见后，才应出现支付按钮。"
+  ],
   "payment": [
     "/ˈpeɪmənt/",
     "支付；付款相关操作",
     "",
     "Payment actions should require clear permission.",
     "在这句话中，“payment”用于补充今天英文文本的可点击词义覆盖。"
+  ],
+  "payment confirmation": [
+    "/ˈpeɪmənt ˌkɑːnfərˈmeɪʃən/",
+    "支付确认；付款执行前要求用户明确同意的确认步骤。",
+    "",
+    "Payment confirmation should use clear verbs such as Pay, Cancel, or Review details.",
+    "支付确认应使用清晰动词，例如支付、取消或查看详情。"
   ],
   "payment flow": [
     "/ˈpeɪmənt floʊ/",
@@ -18836,6 +18955,13 @@
     "The purchase can be reversed during the revocation window.",
     "购买可在撤销窗口内撤回。"
   ],
+  "purchases": [
+    "/ˈpɜːrtʃəsɪz/",
+    "名词：购买；多次消费或购买项目。",
+    "",
+    "Shared cabin purchases should respect user permissions.",
+    "共享座舱购买应尊重用户权限。"
+  ],
   "purpose": [
     "/ˈpɜːrpəs/",
     "目的；用途",
@@ -19819,6 +19945,13 @@
     "refreshing is useful when designing intelligent cockpit fallback experiences.",
     "在这句话中，“refreshing”可理解为“刷新”。"
   ],
+  "refund": [
+    "/ˈriːfʌnd/",
+    "名词：退款；将错误或取消的款项退回用户。",
+    "",
+    "Refund appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“refund”用于描述付款确认、风险提示或恢复流程。"
+  ],
   "refuse": [
     "/按语境朗读/",
     "拒绝；不接受系统建议。",
@@ -20089,6 +20222,13 @@
     "",
     "The cockpit uses rental scenario to make privacy decisions easier to understand.",
     "座舱使用“rental scenario”让隐私决策更容易理解。"
+  ],
+  "reopen": [
+    "/riːˈoʊpən/",
+    "动词：重新打开；再次查看历史记录、凭证或详情。",
+    "",
+    "The receipt should remain easy to reopen after parking.",
+    "停车后，收据仍应便于重新打开。"
   ],
   "reorientation": [
     "/riˌɔːriənˈteɪʃn/",
@@ -20792,6 +20932,13 @@
     "",
     "The cockpit uses reversible decision to support a safer charging experience.",
     "座舱使用“reversible decision”来支持更安全的充电体验。"
+  ],
+  "reversible payment flow": [
+    "/rɪˈvɜːrsəbl ˈpeɪmənt floʊ/",
+    "可撤销支付流程；在特定窗口内允许取消、退款或恢复上一步的付款体验。",
+    "",
+    "A reversible payment flow lowers stress when the driver approves a charge in a hurry.",
+    "当驾驶员匆忙批准扣费时，可撤销支付流程能降低压力。"
   ],
   "reversible privacy choice": [
     "/rɪˈvɜːrsəbl ˈpraɪvəsi tʃɔɪs/",
@@ -21979,6 +22126,13 @@
     "",
     "Lower search time supports safer interaction.",
     "更低的查找时间支持更安全的交互。"
+  ],
+  "searchable": [
+    "/ˈsɜːrtʃəbl/",
+    "形容词：可搜索的；能够通过历史记录或关键词快速找回的。",
+    "",
+    "A searchable receipt helps the driver review a past transaction.",
+    "可搜索凭证帮助驾驶员回看过去的交易。"
   ],
   "searching": [
     "/暂无音标/",
@@ -23719,6 +23873,13 @@
     "AR guidance must stay accurate, readable, and easy to follow in a busy cockpit scene.",
     "在复杂座舱场景中，AR 引导必须保持准确、可读并易于跟随。"
   ],
+  "spending limit": [
+    "/ˈspendɪŋ ˈlɪmɪt/",
+    "消费限额；用于控制车内支付金额或频次的用户设置。",
+    "",
+    "A spending limit gives families better control over shared cabin purchases.",
+    "消费限额让家庭能更好地控制共享座舱内的购买行为。"
+  ],
   "spends": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“spends”。",
@@ -24183,6 +24344,20 @@
     "",
     "A step-by-step list can be easier to read in motion.",
     "在这句话中，“step-by-step”表示分步呈现。"
+  ],
+  "step-up": [
+    "/step ʌp/",
+    "形容词：升级的；在风险更高时增加额外验证的。",
+    "",
+    "Step-up authentication can protect a high-value payment.",
+    "升级认证可以保护高价值支付。"
+  ],
+  "step-up authentication": [
+    "/step ʌp ɔːˌθentɪˈkeɪʃən/",
+    "升级认证；在风险较高时增加 PIN、指纹、面容或手机确认等验证。",
+    "",
+    "Step-up authentication is appropriate for a large charge or a new payment account.",
+    "大额扣费或新支付账户适合使用升级认证。"
   ],
   "still": [
     "/stil/",
@@ -24722,6 +24897,13 @@
     "When users can see the benefit, change the boundary, and withdraw consent without effort, the system feels less like surveillance and more like a respectful assistant.",
     "在这句话中，“surveillance”可理解为“监视, 监督”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "suspicious": [
+    "/səˈspɪʃəs/",
+    "形容词：可疑的；可能不正常或有欺诈风险的。",
+    "",
+    "Suspicious appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“suspicious”用于描述付款确认、风险提示或恢复流程。"
   ],
   "switch": [
     "/暂无音标/",
@@ -25726,6 +25908,13 @@
     "The transaction should be easy to review after completion.",
     "交易完成后应易于复核。"
   ],
+  "transaction receipt": [
+    "/trænˈzækʃən rɪˈsiːt/",
+    "交易凭证；付款完成后的金额、商户、时间和可追溯记录。",
+    "",
+    "A transaction receipt should remain easy to reopen after the driver leaves the parking lot.",
+    "驾驶员离开停车场后，交易凭证仍应便于重新打开。"
+  ],
   "transaction summary": [
     "/trænˈzækʃn ˈsʌməri/",
     "交易摘要；付款前展示的商户、项目、金额、账户和结果信息",
@@ -26456,6 +26645,13 @@
     "在这句话中，“until”可理解为“直到, 在...以前；直到...时, 在...以前”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "unusual": [
+    "/ʌnˈjuːʒuəl/",
+    "形容词：异常的；与常规行为不同的。",
+    "",
+    "Unusual appears in today's in-cabin payment scenario.",
+    "在今天的车内支付场景中，“unusual”用于描述付款确认、风险提示或恢复流程。"
+  ],
   "unwanted": [
     "/按语境朗读/",
     "语境词：unwanted；用于理解今天健康状态与舒适建议主题中的英文表达",
@@ -26803,6 +26999,13 @@
     "在这句话中，“usually”可理解为“通常, 大抵”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "ux": [
+    "/ˌjuː ˈeks/",
+    "名词：用户体验；用户与产品交互时的整体感受和流程质量。",
+    "",
+    "Fraud-aware UX should not make normal checkout feel confusing.",
+    "防欺诈用户体验不应让正常结账变得困惑。"
+  ],
   "vague": [
     "/veɪɡ/",
     "含糊的；缺少清晰原因或动作指引的",
@@ -26973,6 +27176,13 @@
     "",
     "A verbose message competes with traffic observation.",
     "在这句话中，“verbose message”用于描述智能座舱导航提示设计。"
+  ],
+  "verbs": [
+    "/vɜːrbz/",
+    "名词：动词；按钮文案中表达动作的词。",
+    "",
+    "Clear verbs such as Pay and Cancel reduce hesitation.",
+    "Pay 和 Cancel 等清晰动词可以减少犹豫。"
   ],
   "verifiable": [
     "/按语境朗读/",
@@ -27608,6 +27818,13 @@
     "Too many false positives can make drivers ignore future attention warnings.",
     "在这句话中，“warnings”可理解为“警告, 预告, 预兆, 通知”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "warns": [
+    "/wɔːrnz/",
+    "动词：提醒；警告用户注意风险。",
+    "",
+    "The cockpit warns the driver when a payment looks unusual.",
+    "当付款看起来异常时，座舱会提醒驾驶员。"
   ],
   "was": [
     "/按语境朗读/",

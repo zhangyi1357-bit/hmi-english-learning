@@ -1,5 +1,687 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-10-09-in-cabin-payment-confirmation-fraud-aware-ux",
+    "date": "2026-10-09",
+    "title": "In-cabin payment confirmation and fraud-aware UX",
+    "topic": "智能座舱车内支付确认与防欺诈体验",
+    "suggestedTime": "25 分钟",
+    "summary": "学习如何用英语描述智能座舱中的停车、充电、订阅和通行费支付流程，重点关注身份核验、风险提示、二次确认、可撤销操作和防欺诈体验。",
+    "words": [
+      {
+        "term": "in-cabin payment",
+        "phonetic": "/ɪn ˈkæbɪn ˈpeɪmənt/",
+        "meaning": "车内支付；驾驶员或乘员在智能座舱界面中完成停车、充电、订阅或通行费等付款。",
+        "example": "In-cabin payment should keep the amount, merchant, and confirmation action visible on the same screen.",
+        "chineseExample": "车内支付应在同一屏幕上保持金额、商户和确认动作可见。"
+      },
+      {
+        "term": "fraud-aware UX",
+        "phonetic": "/frɔːd əˈwer ˌjuː ˈeks/",
+        "meaning": "防欺诈体验；在交互中识别异常、解释风险并保护用户决策的设计方式。",
+        "example": "Fraud-aware UX warns the driver when a payment request does not match the current location.",
+        "chineseExample": "当支付请求与当前位置不匹配时，防欺诈体验会提醒驾驶员。"
+      },
+      {
+        "term": "payment confirmation",
+        "phonetic": "/ˈpeɪmənt ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "支付确认；付款执行前要求用户明确同意的确认步骤。",
+        "example": "Payment confirmation should use clear verbs such as Pay, Cancel, or Review details.",
+        "chineseExample": "支付确认应使用清晰动词，例如支付、取消或查看详情。"
+      },
+      {
+        "term": "risk signal",
+        "phonetic": "/rɪsk ˈsɪɡnəl/",
+        "meaning": "风险信号；提示交易可能异常的系统依据，如位置、金额或设备变化。",
+        "example": "A risk signal is useful only when the interface explains what changed.",
+        "chineseExample": "只有当界面解释发生了什么变化时，风险信号才有用。"
+      },
+      {
+        "term": "merchant verification",
+        "phonetic": "/ˈmɜːrtʃənt ˌverɪfɪˈkeɪʃən/",
+        "meaning": "商户核验；确认收费方身份真实且与用户场景匹配的过程。",
+        "example": "Merchant verification prevents a parking fee from being confused with an unrelated offer.",
+        "chineseExample": "商户核验能避免停车费与无关优惠被混淆。"
+      },
+      {
+        "term": "step-up authentication",
+        "phonetic": "/step ʌp ɔːˌθentɪˈkeɪʃən/",
+        "meaning": "升级认证；在风险较高时增加 PIN、指纹、面容或手机确认等验证。",
+        "example": "Step-up authentication is appropriate for a large charge or a new payment account.",
+        "chineseExample": "大额扣费或新支付账户适合使用升级认证。"
+      },
+      {
+        "term": "transaction receipt",
+        "phonetic": "/trænˈzækʃən rɪˈsiːt/",
+        "meaning": "交易凭证；付款完成后的金额、商户、时间和可追溯记录。",
+        "example": "A transaction receipt should remain easy to reopen after the driver leaves the parking lot.",
+        "chineseExample": "驾驶员离开停车场后，交易凭证仍应便于重新打开。"
+      },
+      {
+        "term": "spending limit",
+        "phonetic": "/ˈspendɪŋ ˈlɪmɪt/",
+        "meaning": "消费限额；用于控制车内支付金额或频次的用户设置。",
+        "example": "A spending limit gives families better control over shared cabin purchases.",
+        "chineseExample": "消费限额让家庭能更好地控制共享座舱内的购买行为。"
+      },
+      {
+        "term": "dispute path",
+        "phonetic": "/dɪˈspjuːt pæθ/",
+        "meaning": "申诉路径；用户发现错误扣费或可疑交易后进入帮助和退款流程的入口。",
+        "example": "The dispute path should be visible from both the receipt and the payment history.",
+        "chineseExample": "申诉路径应从凭证和支付历史中都能看到。"
+      },
+      {
+        "term": "reversible payment flow",
+        "phonetic": "/rɪˈvɜːrsəbl ˈpeɪmənt floʊ/",
+        "meaning": "可撤销支付流程；在特定窗口内允许取消、退款或恢复上一步的付款体验。",
+        "example": "A reversible payment flow lowers stress when the driver approves a charge in a hurry.",
+        "chineseExample": "当驾驶员匆忙批准扣费时，可撤销支付流程能降低压力。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "accept",
+        "phonetic": "/əkˈsept/",
+        "meaning": "动词：接受；同意采用建议、收费或操作。",
+        "example": "Accept appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“accept”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "account",
+        "phonetic": "/əˈkaʊnt/",
+        "meaning": "名词：账户；用于付款、订阅或身份记录的用户账号。",
+        "example": "Account appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“account”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/ˈækʃən/",
+        "meaning": "名词：动作；界面中用户可执行的确认、取消或查看操作。",
+        "example": "Action appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“action”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "amount",
+        "phonetic": "/əˈmaʊnt/",
+        "meaning": "名词：金额；交易中需要支付的数值。",
+        "example": "Amount appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“amount”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "approve",
+        "phonetic": "/əˈpruːv/",
+        "meaning": "动词：批准；明确同意执行付款或操作。",
+        "example": "Approve appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“approve”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "authentication",
+        "phonetic": "/ɔːˌθentɪˈkeɪʃən/",
+        "meaning": "名词：认证；确认用户身份的过程。",
+        "example": "Authentication appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“authentication”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "biometric",
+        "phonetic": "/ˌbaɪoʊˈmetrɪk/",
+        "meaning": "形容词：生物识别的；与指纹、面容或声纹相关。",
+        "example": "Biometric appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“biometric”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "cancel",
+        "phonetic": "/ˈkænsl/",
+        "meaning": "动词：取消；停止付款或撤回操作。",
+        "example": "Cancel appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“cancel”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "charge",
+        "phonetic": "/tʃɑːrdʒ/",
+        "meaning": "名词：扣费；也可指一次费用或账单项目。",
+        "example": "Charge appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“charge”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "charging",
+        "phonetic": "/ˈtʃɑːrdʒɪŋ/",
+        "meaning": "名词：充电；电动车补能场景中的服务或费用。",
+        "example": "Charging appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“charging”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "checkout",
+        "phonetic": "/ˈtʃekaʊt/",
+        "meaning": "名词：结账流程；完成购买前的确认界面。",
+        "example": "Checkout appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“checkout”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "confirm",
+        "phonetic": "/kənˈfɜːrm/",
+        "meaning": "动词：确认；明确表示继续执行。",
+        "example": "Confirm appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“confirm”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "confirmation",
+        "phonetic": "/ˌkɑːnfərˈmeɪʃən/",
+        "meaning": "名词：确认；防止误触和误解的关键步骤。",
+        "example": "Confirmation appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“confirmation”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "consent",
+        "phonetic": "/kənˈsent/",
+        "meaning": "名词：同意；用户对数据使用或付款行为的明确许可。",
+        "example": "Consent appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“consent”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "meaning": "名词：控制感；用户理解并掌握系统行为的能力。",
+        "example": "Control appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“control”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "current",
+        "phonetic": "/ˈkɜːrənt/",
+        "meaning": "形容词：当前的；与现在的位置、账户或状态相关。",
+        "example": "Current appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“current”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "decline",
+        "phonetic": "/dɪˈklaɪn/",
+        "meaning": "动词：拒绝；不同意付款或建议。",
+        "example": "Decline appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“decline”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "details",
+        "phonetic": "/ˈdiːteɪlz/",
+        "meaning": "名词：详情；金额、商户、时间、条款等信息。",
+        "example": "Details appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“details”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "detect",
+        "phonetic": "/dɪˈtekt/",
+        "meaning": "动词：检测；识别系统状态或风险。",
+        "example": "Detect appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“detect”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "device",
+        "phonetic": "/dɪˈvaɪs/",
+        "meaning": "名词：设备；手机、车机或可穿戴终端。",
+        "example": "Device appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“device”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "dispute",
+        "phonetic": "/dɪˈspjuːt/",
+        "meaning": "名词：争议；对扣费、退款或商户提出异议。",
+        "example": "Dispute appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“dispute”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "error",
+        "phonetic": "/ˈerər/",
+        "meaning": "名词：错误；付款或识别过程中的异常结果。",
+        "example": "Error appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“error”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ɪkˈspleɪn/",
+        "meaning": "动词：解释；说明系统判断或建议的理由。",
+        "example": "Explain appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“explain”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "fee",
+        "phonetic": "/fiː/",
+        "meaning": "名词：费用；停车费、服务费或通行费。",
+        "example": "Fee appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“fee”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "fingerprint",
+        "phonetic": "/ˈfɪŋɡərprɪnt/",
+        "meaning": "名词：指纹；一种生物识别认证方式。",
+        "example": "Fingerprint appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“fingerprint”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "fix",
+        "phonetic": "/fɪks/",
+        "meaning": "动词：修正；处理错误或恢复正确状态。",
+        "example": "Fix appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“fix”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "fraud",
+        "phonetic": "/frɔːd/",
+        "meaning": "名词：欺诈；未经授权或带有欺骗性的交易。",
+        "example": "Fraud appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“fraud”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "guidance",
+        "phonetic": "/ˈɡaɪdəns/",
+        "meaning": "名词：指引；帮助用户完成操作或恢复流程的信息。",
+        "example": "Guidance appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“guidance”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "history",
+        "phonetic": "/ˈhɪstəri/",
+        "meaning": "名词：历史记录；过去的付款、订单或操作记录。",
+        "example": "History appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“history”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "identity",
+        "phonetic": "/aɪˈdentəti/",
+        "meaning": "名词：身份；用户或账户的可验证身份。",
+        "example": "Identity appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“identity”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "interface",
+        "phonetic": "/ˈɪntərfeɪs/",
+        "meaning": "名词：界面；用户与系统交互的屏幕和控件。",
+        "example": "Interface appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“interface”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "language",
+        "phonetic": "/ˈlæŋɡwɪdʒ/",
+        "meaning": "名词：语言；界面中用于说明风险和动作的文案。",
+        "example": "Language appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“language”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "location",
+        "phonetic": "/loʊˈkeɪʃən/",
+        "meaning": "名词：位置；车辆、商户或服务发生的地点。",
+        "example": "Location appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“location”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "merchant",
+        "phonetic": "/ˈmɜːrtʃənt/",
+        "meaning": "名词：商户；收款方或服务提供方。",
+        "example": "Merchant appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“merchant”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "misleading",
+        "phonetic": "/ˌmɪsˈliːdɪŋ/",
+        "meaning": "形容词：误导性的；可能造成错误理解的。",
+        "example": "Misleading appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“misleading”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "parking",
+        "phonetic": "/ˈpɑːrkɪŋ/",
+        "meaning": "名词：停车；智能座舱常见支付场景之一。",
+        "example": "Parking appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“parking”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "payment",
+        "phonetic": "/ˈpeɪmənt/",
+        "meaning": "名词：支付；付款行为或付款流程。",
+        "example": "Payment appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“payment”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "PIN",
+        "phonetic": "/pɪn/",
+        "meaning": "名词：个人识别码；用于身份验证的数字密码。",
+        "example": "PIN appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“PIN”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "prevent",
+        "phonetic": "/prɪˈvent/",
+        "meaning": "动词：防止；阻止错误或风险发生。",
+        "example": "Prevent appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“prevent”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "prevention",
+        "phonetic": "/prɪˈvenʃən/",
+        "meaning": "名词：预防；提前降低风险的设计策略。",
+        "example": "Prevention appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“prevention”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "purchase",
+        "phonetic": "/ˈpɜːrtʃəs/",
+        "meaning": "名词：购买；一次消费行为。",
+        "example": "Purchase appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“purchase”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "receipt",
+        "phonetic": "/rɪˈsiːt/",
+        "meaning": "名词：收据；付款后的凭证记录。",
+        "example": "Receipt appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“receipt”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "recover",
+        "phonetic": "/rɪˈkʌvər/",
+        "meaning": "动词：恢复；从错误、误触或异常交易中回到可控状态。",
+        "example": "Recover appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“recover”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/rɪˈkʌvəri/",
+        "meaning": "名词：恢复；错误发生后的修正和补救体验。",
+        "example": "Recovery appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“recovery”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "refund",
+        "phonetic": "/ˈriːfʌnd/",
+        "meaning": "名词：退款；将错误或取消的款项退回用户。",
+        "example": "Refund appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“refund”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "request",
+        "phonetic": "/rɪˈkwest/",
+        "meaning": "名词：请求；系统或商户发起的付款要求。",
+        "example": "Request appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“request”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "形容词：可撤销的；允许恢复或回退的。",
+        "example": "Reversible appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“reversible”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "risk",
+        "phonetic": "/rɪsk/",
+        "meaning": "名词：风险；可能导致错误、损失或欺诈的条件。",
+        "example": "Risk appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“risk”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "screen",
+        "phonetic": "/skriːn/",
+        "meaning": "名词：屏幕；显示支付信息和控件的界面区域。",
+        "example": "Screen appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“screen”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "sensitive",
+        "phonetic": "/ˈsensətɪv/",
+        "meaning": "形容词：敏感的；需要更谨慎处理的。",
+        "example": "Sensitive appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“sensitive”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "service",
+        "phonetic": "/ˈsɜːrvɪs/",
+        "meaning": "名词：服务；停车、充电、订阅等可付费项目。",
+        "example": "Service appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“service”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "session",
+        "phonetic": "/ˈseʃən/",
+        "meaning": "名词：会话；一次充电、停车或支付流程。",
+        "example": "Session appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“session”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "spending",
+        "phonetic": "/ˈspendɪŋ/",
+        "meaning": "名词：消费；支付金额或购买行为。",
+        "example": "Spending appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“spending”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "subscription",
+        "phonetic": "/səbˈskrɪpʃən/",
+        "meaning": "名词：订阅；周期性付费服务。",
+        "example": "Subscription appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“subscription”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "support",
+        "phonetic": "/səˈpɔːrt/",
+        "meaning": "动词：支持；帮助用户完成理解、决策或恢复。",
+        "example": "Support appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“support”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "suspicious",
+        "phonetic": "/səˈspɪʃəs/",
+        "meaning": "形容词：可疑的；可能不正常或有欺诈风险的。",
+        "example": "Suspicious appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“suspicious”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "toll",
+        "phonetic": "/toʊl/",
+        "meaning": "名词：通行费；道路或桥梁收费。",
+        "example": "Toll appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“toll”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "transaction",
+        "phonetic": "/trænˈzækʃən/",
+        "meaning": "名词：交易；一次付款或收费记录。",
+        "example": "Transaction appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“transaction”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "unrelated",
+        "phonetic": "/ˌʌnrɪˈleɪtɪd/",
+        "meaning": "形容词：无关的；与当前驾驶或支付场景不匹配的。",
+        "example": "Unrelated appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“unrelated”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "unusual",
+        "phonetic": "/ʌnˈjuːʒuəl/",
+        "meaning": "形容词：异常的；与常规行为不同的。",
+        "example": "Unusual appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“unusual”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "verify",
+        "phonetic": "/ˈverɪfaɪ/",
+        "meaning": "动词：核验；确认身份、商户或交易信息。",
+        "example": "Verify appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“verify”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "visible",
+        "phonetic": "/ˈvɪzəbl/",
+        "meaning": "形容词：可见的；用户能清楚看到的。",
+        "example": "Visible appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“visible”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "warning",
+        "phonetic": "/ˈwɔːrnɪŋ/",
+        "meaning": "名词：警告；提醒用户注意风险或异常。",
+        "example": "Warning appears in today's in-cabin payment scenario.",
+        "chineseExample": "在今天的车内支付场景中，“warning”用于描述付款确认、风险提示或恢复流程。"
+      },
+      {
+        "term": "fraud-aware",
+        "phonetic": "/frɔːd əˈwer/",
+        "meaning": "形容词：防欺诈感知的；能识别并解释欺诈风险的。",
+        "example": "Fraud-aware UX combines prevention with recovery.",
+        "chineseExample": "防欺诈感知体验会把预防与恢复结合起来。"
+      },
+      {
+        "term": "UX",
+        "phonetic": "/ˌjuː ˈeks/",
+        "meaning": "名词：用户体验；用户与产品交互时的整体感受和流程质量。",
+        "example": "Fraud-aware UX should not make normal checkout feel confusing.",
+        "chineseExample": "防欺诈用户体验不应让正常结账变得困惑。"
+      },
+      {
+        "term": "warns",
+        "phonetic": "/wɔːrnz/",
+        "meaning": "动词：提醒；警告用户注意风险。",
+        "example": "The cockpit warns the driver when a payment looks unusual.",
+        "chineseExample": "当付款看起来异常时，座舱会提醒驾驶员。"
+      },
+      {
+        "term": "verbs",
+        "phonetic": "/vɜːrbz/",
+        "meaning": "名词：动词；按钮文案中表达动作的词。",
+        "example": "Clear verbs such as Pay and Cancel reduce hesitation.",
+        "chineseExample": "Pay 和 Cancel 等清晰动词可以减少犹豫。"
+      },
+      {
+        "term": "pay",
+        "phonetic": "/peɪ/",
+        "meaning": "动词：支付；完成付款动作。",
+        "example": "Pay should appear only after the amount and merchant are visible.",
+        "chineseExample": "只有金额和商户可见后，才应出现支付按钮。"
+      },
+      {
+        "term": "confused",
+        "phonetic": "/kənˈfjuːzd/",
+        "meaning": "形容词：困惑的；无法清楚区分信息或动作的。",
+        "example": "A parking fee should not be confused with an unrelated offer.",
+        "chineseExample": "停车费不应与无关优惠混淆。"
+      },
+      {
+        "term": "step-up",
+        "phonetic": "/step ʌp/",
+        "meaning": "形容词：升级的；在风险更高时增加额外验证的。",
+        "example": "Step-up authentication can protect a high-value payment.",
+        "chineseExample": "升级认证可以保护高价值支付。"
+      },
+      {
+        "term": "reopen",
+        "phonetic": "/riːˈoʊpən/",
+        "meaning": "动词：重新打开；再次查看历史记录、凭证或详情。",
+        "example": "The receipt should remain easy to reopen after parking.",
+        "chineseExample": "停车后，收据仍应便于重新打开。"
+      },
+      {
+        "term": "lot",
+        "phonetic": "/lɑːt/",
+        "meaning": "名词：场地；parking lot 指停车场。",
+        "example": "The driver may leave the parking lot before checking the receipt.",
+        "chineseExample": "驾驶员可能在查看收据前已经离开停车场。"
+      },
+      {
+        "term": "families",
+        "phonetic": "/ˈfæməliz/",
+        "meaning": "名词：家庭；共享车辆或共享支付设置中的用户群体。",
+        "example": "Families may need spending limits for shared cabin purchases.",
+        "chineseExample": "家庭可能需要为共享座舱购买设置消费限额。"
+      },
+      {
+        "term": "purchases",
+        "phonetic": "/ˈpɜːrtʃəsɪz/",
+        "meaning": "名词：购买；多次消费或购买项目。",
+        "example": "Shared cabin purchases should respect user permissions.",
+        "chineseExample": "共享座舱购买应尊重用户权限。"
+      },
+      {
+        "term": "approves",
+        "phonetic": "/əˈpruːvz/",
+        "meaning": "动词：批准；用户明确同意某个操作。",
+        "example": "The payment should wait until the driver approves the charge.",
+        "chineseExample": "支付应等待驾驶员批准扣费。"
+      },
+      {
+        "term": "hurry",
+        "phonetic": "/ˈhɜːri/",
+        "meaning": "名词：匆忙；注意力有限或时间紧张的状态。",
+        "example": "A reversible flow helps when the driver is in a hurry.",
+        "chineseExample": "驾驶员匆忙时，可撤销流程会有帮助。"
+      },
+      {
+        "term": "anything",
+        "phonetic": "/ˈeniθɪŋ/",
+        "meaning": "代词：任何事物；用于强调批准前不应执行任何付款动作。",
+        "example": "The driver should see the details before approving anything.",
+        "chineseExample": "驾驶员批准任何事项前都应看到详情。"
+      },
+      {
+        "term": "searchable",
+        "phonetic": "/ˈsɜːrtʃəbl/",
+        "meaning": "形容词：可搜索的；能够通过历史记录或关键词快速找回的。",
+        "example": "A searchable receipt helps the driver review a past transaction.",
+        "chineseExample": "可搜索凭证帮助驾驶员回看过去的交易。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing safer payment moments inside the cockpit",
+        "text": "In-cabin payment can make parking, charging, toll, and subscription services feel smooth, but it also creates a sensitive decision moment inside the vehicle. A safe payment flow should show the amount, merchant, service, location, and final action together before the driver approves anything. If the system detects a risk signal, such as a new account, an unusual amount, or a merchant that does not match the current location, the interface should explain the change in plain language. The goal is not to frighten the driver; the goal is to support a calm and reversible choice. For low-risk purchases, one clear confirmation may be enough. For a larger charge, a new device, or a suspicious request, step-up authentication with a PIN, phone, fingerprint, or face check can protect the user. After payment, the cockpit should keep a searchable transaction receipt, a visible dispute path, and simple refund guidance for every shared vehicle. Fraud-aware UX is strongest when it combines prevention with recovery. The driver can understand the charge, decline it, verify it, or fix a mistake without leaving the main driving context.",
+        "translation": "车内支付可以让停车、充电、通行费和订阅服务更顺畅，但它也会在车内产生一个敏感的决策时刻。安全的支付流程应在驾驶员批准前同时展示金额、商户、服务、位置和最终动作。如果系统检测到风险信号，例如新账户、异常金额，或商户与当前位置不匹配，界面应使用直白语言解释变化。目标不是吓到驾驶员，而是支持冷静且可撤销的选择。低风险购买可能只需要一次清晰确认；大额扣费、新设备或可疑请求则适合通过 PIN、手机、指纹或面容进行升级认证。支付后，座舱应保留可搜索的交易凭证、可见的申诉路径和简单退款指引。防欺诈体验最强的时候，是把预防和恢复结合起来：驾驶员无需离开主要驾驶情境，也能理解、拒绝、核验或修正一笔扣费。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A safe payment flow should show the amount, merchant, service, location, and final action together before the driver approves anything.",
+        "translation": "安全的支付流程应在驾驶员批准任何操作前，同时展示金额、商户、服务、位置和最终动作。",
+        "notes": "A safe payment flow 是主语；should show 表示设计建议；before the driver approves anything 说明确认必须发生在批准之前。"
+      },
+      {
+        "sentence": "If the system detects a risk signal, the interface should explain the change in plain language.",
+        "translation": "如果系统检测到风险信号，界面应使用直白语言解释变化。",
+        "notes": "If 引导条件；detects a risk signal 表示识别异常依据；in plain language 强调解释要清楚、低负担。"
+      },
+      {
+        "sentence": "For a larger charge, a new device, or a suspicious request, step-up authentication can protect the user.",
+        "translation": "对于大额扣费、新设备或可疑请求，升级认证可以保护用户。",
+        "notes": "For 引出适用场景；step-up authentication 是核心名词短语；can protect the user 说明设计目的。"
+      },
+      {
+        "sentence": "Fraud-aware UX is strongest when it combines prevention with recovery.",
+        "translation": "当防欺诈体验把预防和恢复结合起来时，它最有力量。",
+        "notes": "when it combines prevention with recovery 解释 strongest 的条件；prevention 与 recovery 是安全体验中的两个互补目标。"
+      }
+    ],
+    "practiceSteps": [
+      {
+        "time": "5 分钟",
+        "task": "朗读 words 中 10 个术语，重点区分 payment confirmation、merchant verification、step-up authentication 和 dispute path。"
+      },
+      {
+        "time": "8 分钟",
+        "task": "跟读长文两遍，第一遍关注金额、商户、位置、风险信号等名词，第二遍关注 should、can 等建议表达。"
+      },
+      {
+        "time": "7 分钟",
+        "task": "用英文复述一个车内停车支付流程：先展示信息，再解释风险，最后让用户确认或取消。"
+      },
+      {
+        "time": "5 分钟",
+        "task": "改写句子：A suspicious request needs a calm explanation and a safe exit. 分别改成产品需求、设计评审意见和用户提示文案。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Practice prompt",
+        "url": "",
+        "note": "今天优先练习自拟产品评审口播：如何在智能座舱中解释一笔可疑车内支付请求。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-08-predictive-rerouting-driver-confirmation",
     "date": "2026-10-08",
     "title": "Predictive rerouting and driver confirmation in intelligent cockpits",
