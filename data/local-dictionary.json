@@ -1282,6 +1282,20 @@
     "The system should confirm before applying preferences.",
     "在这句话中，“applying”可理解为“应用”。"
   ],
+  "appointment": [
+    "/əˈpɔɪntmənt/",
+    "名词：预约；有时间、地点或参与人的日程事件。",
+    "",
+    "Appointment context helps the cockpit choose the right reminder level.",
+    "预约上下文帮助座舱选择合适的提醒强度。"
+  ],
+  "appointment context": [
+    "/əˈpɔɪntmənt ˈkɑːntekst/",
+    "预约上下文；日程中的地点、时间、参与人和重要性等背景信息。",
+    "",
+    "Appointment context helps the cockpit decide whether a reminder should interrupt the driver.",
+    "预约上下文帮助座舱判断提醒是否应该打断驾驶员。"
+  ],
   "approach": [
     "/əˈproʊtʃ/",
     "接近；车辆靠近某个位置或情境",
@@ -3050,6 +3064,20 @@
     "Calendar timing can support a route suggestion.",
     "日程时间可以支持路线建议。"
   ],
+  "calendar-aware": [
+    "/ˈkælɪndər əˈwer/",
+    "形容词：日程感知的；能理解日历事件和时间约束的。",
+    "",
+    "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+    "日程感知辅助会先检查会议地点，再建议出发时间。"
+  ],
+  "calendar-aware assistance": [
+    "/ˈkælɪndər əˈwer əˈsɪstəns/",
+    "日程感知辅助；系统结合日历事件、地点和时间约束提供座舱建议。",
+    "",
+    "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+    "日程感知辅助会先检查会议地点，再建议出发时间。"
+  ],
   "calibrate": [
     "/ˈkælɪbreɪt/",
     "校准；调整系统或用户理解，使其接近真实能力",
@@ -3775,6 +3803,13 @@
     "If the driver is checking mirrors, entering a roundabout, or showing signs of fatigue, the same message may need to be delayed, simplified, or moved to an auditory channel.",
     "在这句话中，“checking”可理解为“检查, 支票, 阻止物, 寄物牌, 象棋中将军；检查, 阻止, 核对, 寄存, 托运；逐项相符, 开支票”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "checklist": [
+    "/ˈtʃeklɪst/",
+    "名词：检查清单；一组待确认事项。",
+    "",
+    "The pre-departure checklist should group urgent items above comfort suggestions.",
+    "出发前检查清单应把紧急事项放在舒适性建议之前。"
   ],
   "checkout": [
     "/ˈtʃekaʊt/",
@@ -4652,6 +4687,13 @@
     "",
     "The cockpit uses commit in context when explaining a charging recommendation.",
     "在解释充电推荐时，座舱会结合语境使用“commit”。"
+  ],
+  "commitment": [
+    "/kəˈmɪtmənt/",
+    "名词：承诺；用户确认采用某个计划或策略。",
+    "",
+    "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+    "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
   ],
   "communicate": [
     "/暂无音标/",
@@ -6575,6 +6617,13 @@
     "Useful but deferrable information can wait.",
     "有用但可延后的信息可以等待。"
   ],
+  "deferrable prompt": [
+    "/dɪˈfɜːrəbl prɑːmpt/",
+    "可推迟提示；允许用户稍后处理且不会丢失上下文的提醒。",
+    "",
+    "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+    "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+  ],
   "deferred": [
     "/di'fә:/",
     "动词：推迟, 延期, 听从；使推迟, 使延期",
@@ -6869,6 +6918,13 @@
     "",
     "The cockpit uses the word departure in privacy prompts when it fits the user context.",
     "在隐私提示中，“departure”可结合用户场景理解。"
+  ],
+  "departure readiness": [
+    "/dɪˈpɑːrtʃər ˈredi nəs/",
+    "出发准备度；车辆和驾驶员是否已经满足准时、安全出发条件的状态。",
+    "",
+    "Departure readiness combines battery level, route risk, and driver availability.",
+    "出发准备度结合电量、路线风险和驾驶员可用状态。"
   ],
   "depend": [
     "/dɪˈpend/",
@@ -7560,6 +7616,13 @@
     "在这句话中，“do”可理解为“做；进行；完成；做出；auxv. 用于实义动词前构成否定句和疑问句；构成附加疑问句；社交聚会；社交活动；执行；行动”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "document": [
+    "/ˈdɑːkjumənt/",
+    "名词：证件；出发前可能需要携带或确认的文件。",
+    "",
+    "The dashboard may show a checklist with route readiness, cabin temperature, and document reminders.",
+    "仪表台可以显示路线准备度、座舱温度和证件提醒等检查清单。"
+  ],
   "does": [
     "/dəz/",
     "动词：做, 进行, 完成",
@@ -7680,6 +7743,13 @@
     "",
     "The cockpit uses driver authority to make privacy decisions easier to understand.",
     "座舱使用“driver authority”让隐私决策更容易理解。"
+  ],
+  "driver commitment": [
+    "/ˈdraɪvər kəˈmɪtmənt/",
+    "驾驶员承诺；用户明确接受出发计划、路线或提醒策略的状态。",
+    "",
+    "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+    "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
   ],
   "driver confidence": [
     "/ˈdraɪvər ˈkɑːnfɪdəns/",
@@ -8994,6 +9064,13 @@
     "",
     "The word explained appears in today's OTA rollback learning text.",
     "在今天的 OTA 回滚学习文本中，“explained”用于表达相关系统状态或用户影响。"
+  ],
+  "explaining": [
+    "/ɪkˈspleɪnɪŋ/",
+    "动名词：解释；说明系统为什么提出某个建议。",
+    "",
+    "The useful part is explaining why the route needs an earlier departure.",
+    "有用之处在于解释为什么这条路线需要更早出发。"
   ],
   "explains": [
     "/ik'splein/",
@@ -10628,6 +10705,13 @@
     "",
     "A grounded response uses current battery data instead of a generic range estimate.",
     "有依据的回应会使用当前电池数据，而不是泛泛的续航估计。"
+  ],
+  "group": [
+    "/ɡruːp/",
+    "动词：分组；把相关事项放在同一类中展示。",
+    "",
+    "The pre-departure checklist should group urgent items above comfort suggestions.",
+    "出发前检查清单应把紧急事项放在舒适性建议之前。"
   ],
   "growing": [
     "/ˈɡroʊɪŋ/",
@@ -12593,6 +12677,13 @@
     "",
     "The word item appears in today's cockpit summary practice.",
     "在这个语境中，“item”可理解为“项目”。"
+  ],
+  "items": [
+    "/ˈaɪtəmz/",
+    "名词：事项；清单中的单个检查点或任务。",
+    "",
+    "The pre-departure checklist should group urgent items above comfort suggestions.",
+    "出发前检查清单应把紧急事项放在舒适性建议之前。"
   ],
   "its": [
     "/ɪts/",
@@ -17892,6 +17983,20 @@
     "A pre-alert can prepare the driver before the main request.",
     "预警可以在主要请求前让驾驶员做好准备。"
   ],
+  "pre-departure": [
+    "/priː dɪˈpɑːrtʃər/",
+    "形容词：出发前的；发生在行程开始之前的。",
+    "",
+    "The pre-departure checklist should group urgent items above comfort suggestions.",
+    "出发前检查清单应把紧急事项放在舒适性建议之前。"
+  ],
+  "pre-departure checklist": [
+    "/priː dɪˈpɑːrtʃər ˈtʃeklɪst/",
+    "出发前检查清单；车辆、路线、充电、证件或乘员准备事项的汇总提示。",
+    "",
+    "The pre-departure checklist should group urgent items above comfort suggestions.",
+    "出发前检查清单应把紧急事项放在舒适性建议之前。"
+  ],
   "pre-fill": [
     "/priː fɪl/",
     "预填；系统提前准备参数但等待用户确认",
@@ -18983,6 +19088,13 @@
     "Pushed appears in today's navigation prompt timing lesson.",
     "在这句话中，“pushed”来自今天的导航提示时机学习内容。"
   ],
+  "pushy": [
+    "/ˈpʊʃi/",
+    "形容词：强势打扰的；过度推动用户立即行动的。",
+    "",
+    "A calendar-aware cockpit should behave like a careful planning partner, not like a pushy notification channel.",
+    "日程感知座舱应像谨慎的计划伙伴，而不是强势的通知通道。"
+  ],
   "quality": [
     "/ˈkwɒl.ɪ.ti/",
     "名词：品质, 特性, 才能, 质量；优质的",
@@ -19072,6 +19184,13 @@
     "",
     "Quiet mode is useful when a passenger is sleeping.",
     "当乘客睡觉时，安静模式很有用。"
+  ],
+  "quiet reminder": [
+    "/ˈkwaɪət rɪˈmaɪndər/",
+    "低干扰提醒；避免打断驾驶任务的轻量级提示方式。",
+    "",
+    "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+    "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
   ],
   "quiet update": [
     "/ˈkwaɪət ˈʌpdeɪt/",
@@ -19285,6 +19404,20 @@
     "",
     "A re-engagement cue should point to the driving task, not to a decorative animation.",
     "重新参与线索应指向驾驶任务，而不是装饰性动画。"
+  ],
+  "re-enter": [
+    "/riː ˈentər/",
+    "动词：重新输入；再次录入已存在的信息。",
+    "",
+    "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+    "上下文交接避免驾驶员重新输入日历中已有的地址。"
+  ],
+  "re-entering": [
+    "/riː ˈentərɪŋ/",
+    "动名词：重新输入；再次录入已有信息的动作。",
+    "",
+    "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+    "上下文交接避免驾驶员重新输入日历中已有的地址。"
   ],
   "re-entry point": [
     "/riː ˈentri pɔɪnt/",
@@ -20138,6 +20271,20 @@
     "The prompt explains what will be remembered.",
     "在这句话中，“remembered”表示“被记住”。"
   ],
+  "remind": [
+    "/rɪˈmaɪnd/",
+    "动词：提醒；让用户稍后注意某个事项。",
+    "",
+    "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+    "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+  ],
+  "remind later": [
+    "/rɪˈmaɪnd ˈleɪtər/",
+    "短语：稍后提醒；延后处理但保留提示入口。",
+    "",
+    "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+    "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+  ],
   "reminder": [
     "/ɹɪˈmaɪndə(ɹ)/",
     "名词：提醒的人, 暗示",
@@ -20350,6 +20497,13 @@
     "",
     "The generated reply should be reviewed before it is sent.",
     "生成回复在发送前应经过复核。"
+  ],
+  "report": [
+    "/rɪˈpɔːrt/",
+    "名词：报告；较长、较技术化的信息说明。",
+    "",
+    "Route readiness should be shown with simple reasons, not a long technical report.",
+    "路线准备度应通过简明原因展示，而不是长篇技术报告。"
   ],
   "reported": [
     "/rɪˈpɔːrtɪd/",
@@ -21430,6 +21584,13 @@
     "",
     "A route rationale may mention traffic speed, charging availability, and arrival reliability.",
     "路线理由可以提到车速、充电可用性和到达可靠性。"
+  ],
+  "route readiness": [
+    "/ruːt ˈredi nəs/",
+    "路线准备度；路线是否已考虑交通、天气、充电和停车等条件。",
+    "",
+    "Route readiness should be shown with simple reasons, not a long technical report.",
+    "路线准备度应通过简明原因展示，而不是长篇技术报告。"
   ],
   "route search": [
     "/ruːt sɜːrtʃ/",
@@ -25823,6 +25984,13 @@
     "Attention routing points toward urgent information.",
     "注意力路由指向紧急信息。"
   ],
+  "town": [
+    "/taʊn/",
+    "名词：城镇；在 across town 中表示城市另一端或较远城区。",
+    "",
+    "The meeting is across town, so the route needs an earlier departure.",
+    "会议在城市另一端，因此路线需要更早出发。"
+  ],
   "trace": [
     "/treɪs/",
     "名词/动词：痕迹；追踪；说明来源线索",
@@ -27375,6 +27543,13 @@
     "",
     "The cockpit uses visible undo option to keep comfort assistance understandable and controllable.",
     "座舱使用“visible undo option”让舒适辅助更容易理解和控制。"
+  ],
+  "visit": [
+    "/ˈvɪzɪt/",
+    "名词：拜访；也可指就医、客户会面等目的地活动。",
+    "",
+    "An arrival buffer makes the navigation estimate more useful for a medical visit.",
+    "到达缓冲时间让就医场景下的导航预计更有用。"
   ],
   "visual": [
     "/'viʒuәl/",

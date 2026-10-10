@@ -1,5 +1,546 @@
 [
   {
+    "id": "2026-10-10-calendar-aware-pre-departure-assistance",
+    "date": "2026-10-10",
+    "title": "Calendar-aware pre-departure assistance in intelligent cockpits",
+    "topic": "智能座舱日程感知出发准备辅助",
+    "suggestedTime": "25 分钟",
+    "summary": "学习如何用英语描述智能座舱在出发前结合日历、路线、天气、车辆状态和驾驶员偏好，提供低干扰、可确认、可推迟的准备提示。",
+    "words": [
+      {
+        "term": "calendar-aware assistance",
+        "phonetic": "/ˈkælɪndər əˈwer əˈsɪstəns/",
+        "meaning": "日程感知辅助；系统结合日历事件、地点和时间约束提供座舱建议。",
+        "example": "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+        "chineseExample": "日程感知辅助会先检查会议地点，再建议出发时间。"
+      },
+      {
+        "term": "pre-departure checklist",
+        "phonetic": "/priː dɪˈpɑːrtʃər ˈtʃeklɪst/",
+        "meaning": "出发前检查清单；车辆、路线、充电、证件或乘员准备事项的汇总提示。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "departure readiness",
+        "phonetic": "/dɪˈpɑːrtʃər ˈredi nəs/",
+        "meaning": "出发准备度；车辆和驾驶员是否已经满足准时、安全出发条件的状态。",
+        "example": "Departure readiness combines battery level, route risk, and driver availability.",
+        "chineseExample": "出发准备度结合电量、路线风险和驾驶员可用状态。"
+      },
+      {
+        "term": "appointment context",
+        "phonetic": "/əˈpɔɪntmənt ˈkɑːntekst/",
+        "meaning": "预约上下文；日程中的地点、时间、参与人和重要性等背景信息。",
+        "example": "Appointment context helps the cockpit decide whether a reminder should interrupt the driver.",
+        "chineseExample": "预约上下文帮助座舱判断提醒是否应该打断驾驶员。"
+      },
+      {
+        "term": "arrival buffer",
+        "phonetic": "/əˈraɪvəl ˈbʌfər/",
+        "meaning": "到达缓冲时间；为停车、步行、安检或不可预见延误预留的时间。",
+        "example": "An arrival buffer makes the navigation estimate more useful for a medical visit.",
+        "chineseExample": "到达缓冲时间让就医场景下的导航预计更有用。"
+      },
+      {
+        "term": "route readiness",
+        "phonetic": "/ruːt ˈredi nəs/",
+        "meaning": "路线准备度；路线是否已考虑交通、天气、充电和停车等条件。",
+        "example": "Route readiness should be shown with simple reasons, not a long technical report.",
+        "chineseExample": "路线准备度应通过简明原因展示，而不是长篇技术报告。"
+      },
+      {
+        "term": "quiet reminder",
+        "phonetic": "/ˈkwaɪət rɪˈmaɪndər/",
+        "meaning": "低干扰提醒；避免打断驾驶任务的轻量级提示方式。",
+        "example": "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+        "chineseExample": "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
+      },
+      {
+        "term": "deferrable prompt",
+        "phonetic": "/dɪˈfɜːrəbl prɑːmpt/",
+        "meaning": "可推迟提示；允许用户稍后处理且不会丢失上下文的提醒。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "context handoff",
+        "phonetic": "/ˈkɑːntekst ˈhændɔːf/",
+        "meaning": "上下文交接；在手机、车机、语音助手或导航之间传递任务背景。",
+        "example": "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+        "chineseExample": "上下文交接避免驾驶员重新输入日历中已有的地址。"
+      },
+      {
+        "term": "driver commitment",
+        "phonetic": "/ˈdraɪvər kəˈmɪtmənt/",
+        "meaning": "驾驶员承诺；用户明确接受出发计划、路线或提醒策略的状态。",
+        "example": "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+        "chineseExample": "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "accept",
+        "phonetic": "/əkˈsept/",
+        "meaning": "动词：接受；同意系统建议的出发计划或提醒方式。",
+        "example": "Accept appears in today's calendar-aware cockpit scenario.",
+        "chineseExample": "在今天的日程感知座舱场景中，“accept”用于描述用户确认建议。"
+      },
+      {
+        "term": "address",
+        "phonetic": "/əˈdres/",
+        "meaning": "名词：地址；日程或导航中的目的地位置。",
+        "example": "Address appears in today's calendar-aware cockpit scenario.",
+        "chineseExample": "在今天的日程感知座舱场景中，“address”用于描述目的地信息。"
+      },
+      {
+        "term": "appointment",
+        "phonetic": "/əˈpɔɪntmənt/",
+        "meaning": "名词：预约；有时间、地点或参与人的日程事件。",
+        "example": "Appointment context helps the cockpit choose the right reminder level.",
+        "chineseExample": "预约上下文帮助座舱选择合适的提醒强度。"
+      },
+      {
+        "term": "assistance",
+        "phonetic": "/əˈsɪstəns/",
+        "meaning": "名词：辅助；帮助用户完成出发准备或驾驶任务的支持。",
+        "example": "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+        "chineseExample": "日程感知辅助会先检查会议地点，再建议出发时间。"
+      },
+      {
+        "term": "availability",
+        "phonetic": "/əˌveɪləˈbɪləti/",
+        "meaning": "名词：可用性；驾驶员、车辆或资源是否适合执行任务。",
+        "example": "Driver availability affects whether the cockpit should speak or stay quiet.",
+        "chineseExample": "驾驶员可用性会影响座舱应语音提醒还是保持安静。"
+      },
+      {
+        "term": "battery",
+        "phonetic": "/ˈbætəri/",
+        "meaning": "名词：电池；车辆电量和续航判断的基础。",
+        "example": "Departure readiness combines battery level, route risk, and driver availability.",
+        "chineseExample": "出发准备度结合电量、路线风险和驾驶员可用状态。"
+      },
+      {
+        "term": "calendar",
+        "phonetic": "/ˈkælɪndər/",
+        "meaning": "名词：日历；记录会议、预约和出行时间的工具。",
+        "example": "Calendar data should be used only with clear permission.",
+        "chineseExample": "日历数据只应在明确许可下使用。"
+      },
+      {
+        "term": "calendar-aware",
+        "phonetic": "/ˈkælɪndər əˈwer/",
+        "meaning": "形容词：日程感知的；能理解日历事件和时间约束的。",
+        "example": "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+        "chineseExample": "日程感知辅助会先检查会议地点，再建议出发时间。"
+      },
+      {
+        "term": "checklist",
+        "phonetic": "/ˈtʃeklɪst/",
+        "meaning": "名词：检查清单；一组待确认事项。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "cluster",
+        "phonetic": "/ˈklʌstər/",
+        "meaning": "名词：仪表区；驾驶员前方显示关键驾驶信息的区域。",
+        "example": "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+        "chineseExample": "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
+      },
+      {
+        "term": "comfort",
+        "phonetic": "/ˈkʌmfərt/",
+        "meaning": "名词：舒适；座椅、温度、灯光等非紧急体验因素。",
+        "example": "Comfort suggestions should never hide urgent route information.",
+        "chineseExample": "舒适性建议不应遮挡紧急路线信息。"
+      },
+      {
+        "term": "commitment",
+        "phonetic": "/kəˈmɪtmənt/",
+        "meaning": "名词：承诺；用户确认采用某个计划或策略。",
+        "example": "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+        "chineseExample": "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+      },
+      {
+        "term": "context",
+        "phonetic": "/ˈkɑːntekst/",
+        "meaning": "名词：上下文；解释提醒原因所需的背景信息。",
+        "example": "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+        "chineseExample": "上下文交接避免驾驶员重新输入日历中已有的地址。"
+      },
+      {
+        "term": "deferrable",
+        "phonetic": "/dɪˈfɜːrəbl/",
+        "meaning": "形容词：可推迟的；可以稍后处理而不丢失任务背景。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "departure",
+        "phonetic": "/dɪˈpɑːrtʃər/",
+        "meaning": "名词：出发；开始行程或离开当前位置。",
+        "example": "Departure readiness combines battery level, route risk, and driver availability.",
+        "chineseExample": "出发准备度结合电量、路线风险和驾驶员可用状态。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/ˈdraɪvər/",
+        "meaning": "名词：驾驶员；接收提醒并做出最终决定的人。",
+        "example": "The driver should be able to edit any suggested plan.",
+        "chineseExample": "驾驶员应能编辑任何系统建议的计划。"
+      },
+      {
+        "term": "estimate",
+        "phonetic": "/ˈestɪmət/",
+        "meaning": "名词：预计；系统对到达时间或行驶时长的判断。",
+        "example": "An arrival buffer makes the navigation estimate more useful for a medical visit.",
+        "chineseExample": "到达缓冲时间让就医场景下的导航预计更有用。"
+      },
+      {
+        "term": "handoff",
+        "phonetic": "/ˈhændɔːf/",
+        "meaning": "名词：交接；在设备或模式之间传递任务上下文。",
+        "example": "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+        "chineseExample": "上下文交接避免驾驶员重新输入日历中已有的地址。"
+      },
+      {
+        "term": "interrupt",
+        "phonetic": "/ˌɪntəˈrʌpt/",
+        "meaning": "动词：打断；让提示占用驾驶员当前注意力。",
+        "example": "Appointment context helps the cockpit decide whether a reminder should interrupt the driver.",
+        "chineseExample": "预约上下文帮助座舱判断提醒是否应该打断驾驶员。"
+      },
+      {
+        "term": "location",
+        "phonetic": "/loʊˈkeɪʃən/",
+        "meaning": "名词：地点；会议、预约或目的地的位置。",
+        "example": "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+        "chineseExample": "日程感知辅助会先检查会议地点，再建议出发时间。"
+      },
+      {
+        "term": "meeting",
+        "phonetic": "/ˈmiːtɪŋ/",
+        "meaning": "名词：会议；日历中常见的出行触发事件。",
+        "example": "Calendar-aware assistance checks the meeting location before it suggests a departure time.",
+        "chineseExample": "日程感知辅助会先检查会议地点，再建议出发时间。"
+      },
+      {
+        "term": "navigation",
+        "phonetic": "/ˌnævɪˈɡeɪʃən/",
+        "meaning": "名词：导航；路线规划、到达时间和行驶指引。",
+        "example": "An arrival buffer makes the navigation estimate more useful for a medical visit.",
+        "chineseExample": "到达缓冲时间让就医场景下的导航预计更有用。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/pɑːrkt/",
+        "meaning": "形容词：已停车的；车辆不在行驶状态。",
+        "example": "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+        "chineseExample": "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
+      },
+      {
+        "term": "permission",
+        "phonetic": "/pərˈmɪʃən/",
+        "meaning": "名词：许可；用户授权系统读取日历或使用个人信息。",
+        "example": "Calendar data should be used only with clear permission.",
+        "chineseExample": "日历数据只应在明确许可下使用。"
+      },
+      {
+        "term": "postpone",
+        "phonetic": "/poʊstˈpoʊn/",
+        "meaning": "动词：推迟；把提醒或处理动作延后。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "pre-departure",
+        "phonetic": "/priː dɪˈpɑːrtʃər/",
+        "meaning": "形容词：出发前的；发生在行程开始之前的。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "prompt",
+        "phonetic": "/prɑːmpt/",
+        "meaning": "名词：提示；系统向用户呈现的建议或提醒。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "readiness",
+        "phonetic": "/ˈredi nəs/",
+        "meaning": "名词：准备度；是否已经达到可执行状态。",
+        "example": "Departure readiness combines battery level, route risk, and driver availability.",
+        "chineseExample": "出发准备度结合电量、路线风险和驾驶员可用状态。"
+      },
+      {
+        "term": "re-enter",
+        "phonetic": "/riː ˈentər/",
+        "meaning": "动词：重新输入；再次录入已存在的信息。",
+        "example": "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+        "chineseExample": "上下文交接避免驾驶员重新输入日历中已有的地址。"
+      },
+      {
+        "term": "reason",
+        "phonetic": "/ˈriːzn/",
+        "meaning": "名词：原因；系统给出建议的依据。",
+        "example": "Route readiness should be shown with simple reasons, not a long technical report.",
+        "chineseExample": "路线准备度应通过简明原因展示，而不是长篇技术报告。"
+      },
+      {
+        "term": "remind later",
+        "phonetic": "/rɪˈmaɪnd ˈleɪtər/",
+        "meaning": "短语：稍后提醒；延后处理但保留提示入口。",
+        "example": "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+        "chineseExample": "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+      },
+      {
+        "term": "reminder",
+        "phonetic": "/rɪˈmaɪndər/",
+        "meaning": "名词：提醒；帮助用户注意日程、路线或车辆状态的信息。",
+        "example": "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+        "chineseExample": "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
+      },
+      {
+        "term": "report",
+        "phonetic": "/rɪˈpɔːrt/",
+        "meaning": "名词：报告；较长、较技术化的信息说明。",
+        "example": "Route readiness should be shown with simple reasons, not a long technical report.",
+        "chineseExample": "路线准备度应通过简明原因展示，而不是长篇技术报告。"
+      },
+      {
+        "term": "route",
+        "phonetic": "/ruːt/",
+        "meaning": "名词：路线；从当前位置到目的地的行驶路径。",
+        "example": "Route readiness should be shown with simple reasons, not a long technical report.",
+        "chineseExample": "路线准备度应通过简明原因展示，而不是长篇技术报告。"
+      },
+      {
+        "term": "schedule",
+        "phonetic": "/ˈskedʒuːl/",
+        "meaning": "名词：日程；按时间排列的会议、任务或出行安排。",
+        "example": "A schedule should support the driver without hiding manual control.",
+        "chineseExample": "日程功能应支持驾驶员，同时不隐藏手动控制。"
+      },
+      {
+        "term": "stop",
+        "phonetic": "/stɑːp/",
+        "meaning": "名词：停车点；也可指驾驶中暂时停下处理任务的时机。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "suggestion",
+        "phonetic": "/səˈdʒestʃən/",
+        "meaning": "名词：建议；系统基于上下文提出但仍由用户决定的行动。",
+        "example": "A deferrable prompt lets the driver postpone a calendar suggestion until the next stop.",
+        "chineseExample": "可推迟提示允许驾驶员把日程建议延后到下一次停车时处理。"
+      },
+      {
+        "term": "traffic",
+        "phonetic": "/ˈtræfɪk/",
+        "meaning": "名词：交通；影响出发时间和路线判断的道路状态。",
+        "example": "Route readiness should include traffic and weather when they affect arrival time.",
+        "chineseExample": "当交通和天气影响到达时间时，路线准备度应纳入这些因素。"
+      },
+      {
+        "term": "urgent",
+        "phonetic": "/ˈɜːrdʒənt/",
+        "meaning": "形容词：紧急的；需要优先处理或更明显提示的。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/ˈviːəkl/",
+        "meaning": "名词：车辆；智能座舱所在的汽车系统。",
+        "example": "A quiet reminder can appear in the cluster when the vehicle is still parked.",
+        "chineseExample": "当车辆仍处于停车状态时，低干扰提醒可以出现在仪表区域。"
+      },
+      {
+        "term": "visit",
+        "phonetic": "/ˈvɪzɪt/",
+        "meaning": "名词：拜访；也可指就医、客户会面等目的地活动。",
+        "example": "An arrival buffer makes the navigation estimate more useful for a medical visit.",
+        "chineseExample": "到达缓冲时间让就医场景下的导航预计更有用。"
+      },
+      {
+        "term": "weather",
+        "phonetic": "/ˈweðər/",
+        "meaning": "名词：天气；影响路线、出发时间和舒适设置的环境因素。",
+        "example": "Route readiness should include traffic and weather when they affect arrival time.",
+        "chineseExample": "当交通和天气影响到达时间时，路线准备度应纳入这些因素。"
+      },
+      {
+        "term": "manual",
+        "phonetic": "/ˈmænjuəl/",
+        "meaning": "形容词：手动的；由用户直接输入或控制的。",
+        "example": "If calendar permission is not granted, the cockpit should still support manual route planning.",
+        "chineseExample": "如果未授予日历权限，座舱仍应支持手动路线规划。"
+      },
+      {
+        "term": "privacy",
+        "phonetic": "/ˈpraɪvəsi/",
+        "meaning": "名词：隐私；用户对日历、位置和个人计划数据的控制。",
+        "example": "The goal is a confident departure, supported by context, privacy, and reversible decisions.",
+        "chineseExample": "目标是让出发更有信心，并由上下文、隐私和可撤销决策共同支撑。"
+      },
+      {
+        "term": "reversible",
+        "phonetic": "/rɪˈvɜːrsəbl/",
+        "meaning": "形容词：可撤销的；用户可以返回、修改或取消的。",
+        "example": "The goal is a confident departure, supported by context, privacy, and reversible decisions.",
+        "chineseExample": "目标是让出发更有信心，并由上下文、隐私和可撤销决策共同支撑。"
+      },
+      {
+        "term": "temperature",
+        "phonetic": "/ˈtemprətʃər/",
+        "meaning": "名词：温度；出发前可预调的座舱舒适设置。",
+        "example": "The dashboard may show cabin temperature before the trip begins.",
+        "chineseExample": "行程开始前，仪表台可以显示座舱温度。"
+      },
+      {
+        "term": "dismiss",
+        "phonetic": "/dɪsˈmɪs/",
+        "meaning": "动词：忽略；关闭当前建议或提醒。",
+        "example": "Every recommendation needs clear choices such as accept, edit, remind later, or dismiss.",
+        "chineseExample": "每条建议都需要提供接受、编辑、稍后提醒或忽略等清晰选择。"
+      },
+      {
+        "term": "group",
+        "phonetic": "/ɡruːp/",
+        "meaning": "动词：分组；把相关事项放在同一类中展示。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "items",
+        "phonetic": "/ˈaɪtəmz/",
+        "meaning": "名词：事项；清单中的单个检查点或任务。",
+        "example": "The pre-departure checklist should group urgent items above comfort suggestions.",
+        "chineseExample": "出发前检查清单应把紧急事项放在舒适性建议之前。"
+      },
+      {
+        "term": "re-entering",
+        "phonetic": "/riː ˈentərɪŋ/",
+        "meaning": "动名词：重新输入；再次录入已有信息的动作。",
+        "example": "Context handoff prevents the driver from re-entering an address already saved in the calendar.",
+        "chineseExample": "上下文交接避免驾驶员重新输入日历中已有的地址。"
+      },
+      {
+        "term": "remind",
+        "phonetic": "/rɪˈmaɪnd/",
+        "meaning": "动词：提醒；让用户稍后注意某个事项。",
+        "example": "Driver commitment is stronger when the interface offers accept, edit, and remind later choices.",
+        "chineseExample": "当界面提供接受、编辑和稍后提醒选项时，驾驶员承诺更明确。"
+      },
+      {
+        "term": "pushy",
+        "phonetic": "/ˈpʊʃi/",
+        "meaning": "形容词：强势打扰的；过度推动用户立即行动的。",
+        "example": "A calendar-aware cockpit should behave like a careful planning partner, not like a pushy notification channel.",
+        "chineseExample": "日程感知座舱应像谨慎的计划伙伴，而不是强势的通知通道。"
+      },
+      {
+        "term": "explaining",
+        "phonetic": "/ɪkˈspleɪnɪŋ/",
+        "meaning": "动名词：解释；说明系统为什么提出某个建议。",
+        "example": "The useful part is explaining why the route needs an earlier departure.",
+        "chineseExample": "有用之处在于解释为什么这条路线需要更早出发。"
+      },
+      {
+        "term": "town",
+        "phonetic": "/taʊn/",
+        "meaning": "名词：城镇；在 across town 中表示城市另一端或较远城区。",
+        "example": "The meeting is across town, so the route needs an earlier departure.",
+        "chineseExample": "会议在城市另一端，因此路线需要更早出发。"
+      },
+      {
+        "term": "document",
+        "phonetic": "/ˈdɑːkjumənt/",
+        "meaning": "名词：证件；出发前可能需要携带或确认的文件。",
+        "example": "The dashboard may show a checklist with route readiness, cabin temperature, and document reminders.",
+        "chineseExample": "仪表台可以显示路线准备度、座舱温度和证件提醒等检查清单。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing a calendar-aware departure assistant",
+        "text": "A calendar-aware cockpit should behave like a careful planning partner, not like a pushy notification channel. Before a trip begins, it can compare the next appointment with the current vehicle state, expected traffic, weather, parking availability, and the driver's preferred arrival buffer. The useful part is not simply saying leave now. The useful part is explaining why: the meeting is across town, rain may slow the route, and the battery level is enough only if the driver avoids an extra charging stop. Good pre-departure assistance also respects attention. When the car is parked, the dashboard may show a checklist with route readiness, cabin temperature, and document reminders. When the car is moving, the same system should use a quieter reminder or wait until the next safe stop. The driver must stay in control, so every recommendation needs clear choices such as accept, edit, remind later, or dismiss. If the calendar location is missing, the assistant should ask a short question instead of guessing. If the user has not granted calendar permission, the cockpit should still provide manual route planning. The goal is a confident departure, supported by context, privacy, and reversible decisions.",
+        "translation": "日程感知座舱应像谨慎的计划伙伴，而不是强势的通知通道。出发前，它可以把下一项预约与当前车辆状态、预计交通、天气、停车可用性以及驾驶员偏好的到达缓冲时间进行比较。真正有用的不是简单地说“现在出发”，而是解释原因：会议在城市另一端，雨天可能拖慢路线，且电量只有在避免额外充电停靠时才足够。好的出发前辅助还要尊重注意力。车辆停车时，仪表台可以显示路线准备度、座舱温度和证件提醒等检查清单。车辆行驶时，同一系统应使用更安静的提醒，或等到下一个安全停车点。驾驶员必须保持控制权，因此每条建议都需要提供接受、编辑、稍后提醒或忽略等清晰选择。如果日历地点缺失，助手应提出简短问题，而不是猜测。如果用户未授权读取日历，座舱仍应提供手动路线规划。目标是让出发更有信心，并由上下文、隐私和可撤销决策共同支撑。"
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Before a trip begins, it can compare the next appointment with the current vehicle state, expected traffic, weather, parking availability, and the driver's preferred arrival buffer.",
+        "translation": "出发前，它可以把下一项预约与当前车辆状态、预计交通、天气、停车可用性以及驾驶员偏好的到达缓冲时间进行比较。",
+        "points": [
+          "Before a trip begins 表示动作发生在行程开始前。",
+          "compare A with B 用于表达把多个条件进行对照。",
+          "arrival buffer 指为了停车、步行或延误预留的缓冲时间。"
+        ]
+      },
+      {
+        "sentence": "The useful part is not simply saying leave now.",
+        "translation": "真正有用的不是简单地说“现在出发”。",
+        "points": [
+          "The useful part is not simply... 用于强调真正价值不在表层动作。",
+          "leave now 是座舱提醒中的短指令表达。",
+          "这句话适合用来批评缺少解释的提醒设计。"
+        ]
+      },
+      {
+        "sentence": "When the car is moving, the same system should use a quieter reminder or wait until the next safe stop.",
+        "translation": "车辆行驶时，同一系统应使用更安静的提醒，或等到下一个安全停车点。",
+        "points": [
+          "When the car is moving 明确驾驶负荷更高的场景。",
+          "quieter reminder 表示低干扰提醒，不一定完全静默。",
+          "wait until the next safe stop 强调把交互推迟到安全时机。"
+        ]
+      },
+      {
+        "sentence": "If the calendar location is missing, the assistant should ask a short question instead of guessing.",
+        "translation": "如果日历地点缺失，助手应提出简短问题，而不是猜测。",
+        "points": [
+          "If...is missing 描述信息缺失条件。",
+          "instead of guessing 强调系统不要自行臆测关键上下文。",
+          "ask a short question 适合描述轻量澄清交互。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇跟读",
+        "duration": "5 分钟",
+        "description": "朗读 calendar-aware assistance、pre-departure checklist、arrival buffer、deferrable prompt，并用中文说出适用场景。"
+      },
+      {
+        "title": "长文影子跟读",
+        "duration": "8 分钟",
+        "description": "跟读长文两遍，第二遍重点模仿 compare、explain、respect attention、stay in control 的语音节奏。"
+      },
+      {
+        "title": "句型替换",
+        "duration": "6 分钟",
+        "description": "用 The useful part is not simply... 改写三个座舱提醒场景，例如充电、停车、会议迟到风险。"
+      },
+      {
+        "title": "口语输出",
+        "duration": "6 分钟",
+        "description": "用英语讲解一个日程感知出发准备流程，必须包含提醒原因、用户选择、隐私许可和可推迟提示。"
+      }
+    ],
+    "videos": [
+      {
+        "title": "练习建议：出发前座舱提醒口语演练",
+        "url": "",
+        "note": "暂无可靠公开视频链接；建议围绕 calendar-aware cockpit、departure readiness 和 quiet reminder 自行录音复述。"
+      }
+    ]
+  },
+  {
     "id": "2026-10-09-in-cabin-payment-confirmation-fraud-aware-ux",
     "date": "2026-10-09",
     "title": "In-cabin payment confirmation and fraud-aware UX",
