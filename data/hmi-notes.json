@@ -1,5 +1,1408 @@
 [
   {
+    "id": "2026-10-17-message-playback-and-conversation-mute",
+    "date": "2026-10-17",
+    "title": "Message playback and conversation mute in intelligent cockpits",
+    "topic": "智能座舱消息朗读与会话静音",
+    "suggestedTime": "25 分钟",
+    "summary": "参考 Android 官方消息通知能力，通过原创情境练习朗读、静音、语音回复和消息恢复路径的设计表达。",
+    "words": [
+      {
+        "term": "message playback",
+        "phonetic": "/ˈmesɪdʒ ˈpleɪbæk/",
+        "meaning": "消息朗读播放",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "conversation mute",
+        "phonetic": "/ˌkɑːnvərˈseɪʃən mjuːt/",
+        "meaning": "会话静音",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "notification center",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən ˈsentər/",
+        "meaning": "通知中心",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "message preview",
+        "phonetic": "/ˈmesɪdʒ ˈpriːvjuː/",
+        "meaning": "消息预览",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "voice reply",
+        "phonetic": "/vɔɪs rɪˈplaɪ/",
+        "meaning": "语音回复",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "sender identity",
+        "phonetic": "/ˈsendər aɪˈdentəti/",
+        "meaning": "发送者身份",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "interruption cost",
+        "phonetic": "/ˌɪntəˈrʌpʃən kɔːst/",
+        "meaning": "打断成本",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "recovery path",
+        "phonetic": "/rɪˈkʌvəri pæθ/",
+        "meaning": "恢复路径",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "action label",
+        "phonetic": "/ˈækʃən ˈleɪbəl/",
+        "meaning": "操作标签",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃən ˈbʌdʒɪt/",
+        "meaning": "注意力预算",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "message playback",
+        "phonetic": "/ˈmesɪdʒ ˈpleɪbæk/",
+        "meaning": "消息朗读播放",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "conversation mute",
+        "phonetic": "/ˌkɑːnvərˈseɪʃən mjuːt/",
+        "meaning": "会话静音",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "notification center",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃən ˈsentər/",
+        "meaning": "通知中心",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "message preview",
+        "phonetic": "/ˈmesɪdʒ ˈpriːvjuː/",
+        "meaning": "消息预览",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "voice reply",
+        "phonetic": "/vɔɪs rɪˈplaɪ/",
+        "meaning": "语音回复",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "sender identity",
+        "phonetic": "/ˈsendər aɪˈdentəti/",
+        "meaning": "发送者身份",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "interruption cost",
+        "phonetic": "/ˌɪntəˈrʌpʃən kɔːst/",
+        "meaning": "打断成本",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "recovery path",
+        "phonetic": "/rɪˈkʌvəri pæθ/",
+        "meaning": "恢复路径",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "action label",
+        "phonetic": "/ˈækʃən ˈleɪbəl/",
+        "meaning": "操作标签",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "attention budget",
+        "phonetic": "/əˈtenʃən ˈbʌdʒɪt/",
+        "meaning": "注意力预算",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "message",
+        "phonetic": "/'mesidʒ/",
+        "meaning": "名词：消息, 通讯, 讯息, 教训, 预言, 广告词；通知；通报, 报告, 报信",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "should",
+        "phonetic": "/ʃud/",
+        "meaning": "动词：aux. 应该, 将要",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "start",
+        "phonetic": "/stɑːt/",
+        "meaning": "动词：惊起, 出发, 开端, 起点, 吃惊, 有利条件；开始, 出发, 启动, 跳起, 吃惊, 出现, 松动, 脱落, 起价, 参赛；使惊起, 开动, 发动, 启动, 开始, 创办, 提议, 使松动, 使脱落, 起用",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "only",
+        "phonetic": "/'әunli/",
+        "meaning": "副词：唯一的, 仅有的, 最佳的；只有, 仅仅, 只能；但是, 不过",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "after",
+        "phonetic": "/'ɑ:ftә/",
+        "meaning": "在...之后, 由于；在...之后；后来",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "the",
+        "phonetic": "/ði/",
+        "meaning": "这个；那个；河流；不言而喻的某事物；defa. 此；指已提到或易领会到的人或事物；这些；表示一类人",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "driver",
+        "phonetic": "/'draivә/",
+        "meaning": "名词：驾驶员, 驱动器, 驱动程序",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "requests",
+        "phonetic": "/ɹɪˈkwɛsts/",
+        "meaning": "名词：请求, 需要, 申请书；请求, 要求, 邀请",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "it",
+        "phonetic": "/.aɪ 'tiː/",
+        "meaning": "信息技术（全写为 information technology，对将电子处理程序及设备应用于存储和发送各类信息的研究和利用）；它；资讯科技",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "conversation",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“conversation”。",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "mute",
+        "phonetic": "/mute/",
+        "meaning": "静音；降低声音提示",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "gives",
+        "phonetic": "/ɡɪvz/",
+        "meaning": "动词：弹性, 适应性；给, 授予, 供给, 产生, 发表, 付出, 献出, 让出；捐赠, 支持不住, 让步",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "control",
+        "phonetic": "/kәn'trәul/",
+        "meaning": "名词：控制, 管理, 克制, 控制器, 操纵装置；控制, 操纵, 抑制",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "over",
+        "phonetic": "/ˈəʊ̯.və/",
+        "meaning": "结束, 越过, 从头到尾；在...之上, 遍于...之上, 越过；上面的；越过",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "repeated",
+        "phonetic": "/ɹɪˈpiːtɪd/",
+        "meaning": "动词：重复, 反复；重做, 重复, 复述, 使再现, 复制；重复",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "alerts",
+        "phonetic": "/ә'lә:t/",
+        "meaning": "动词：警觉的, 灵敏的, 留心的；警报；使警觉, 通知, 使意识到",
+        "example": "Conversation mute gives the driver control over repeated alerts.",
+        "chineseExample": "会话静音让驾驶员能够控制重复提醒。"
+      },
+      {
+        "term": "notification",
+        "phonetic": "/.nәutifi'keiʃәn/",
+        "meaning": "名词：通知, 通告, 告示",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "center",
+        "phonetic": "/ˈsɛn.təː/",
+        "meaning": "名词：中心, 中心点, 中锋；中央的, 位在正中的；集中, 定中心；居中",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "keeps",
+        "phonetic": "/kiːps/",
+        "meaning": "动词：生计, 维持, 保持；保持, 保存, 遵守, 看守, 整理, 维持, 履行, 经营, 拘留, 记帐；保持, 继续不断",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "messages",
+        "phonetic": "/ˈmɛs.ɪ.d͡ʒɪz/",
+        "meaning": "名词：消息, 通讯, 讯息, 教训, 预言, 广告词；通知；通报, 报告, 报信",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "available",
+        "phonetic": "/ә'veilәbl/",
+        "meaning": "形容词：可利用的, 可获得的, 有效的",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "for",
+        "phonetic": "/fɒ:/",
+        "meaning": "为, 因为, 至于；因为",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "later",
+        "phonetic": "/ˈleɪ.tə/",
+        "meaning": "形容词：迟的, 晚的, 已故的；很晚, 很迟, 晚",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "review",
+        "phonetic": "/ɹɪˈvjuː/",
+        "meaning": "名词：检讨, 复习, 回顾, 检阅, 评论；温习, 检讨, 评论, 再检察, 复审；复习功课, 写评论",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "hide",
+        "phonetic": "/haɪd/",
+        "meaning": "动词：兽皮, 迹象, 躲藏处；藏, 隐瞒, 遮避, 剥...的皮, 隐藏；躲藏",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "preview",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“preview”。",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "when",
+        "phonetic": "/hwen/",
+        "meaning": "连词：当...的时候；何时, 什么时候；什么时侯；时间",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "vehicle",
+        "phonetic": "/'vi:ikl/",
+        "meaning": "名词：交通工具, 车辆, 传播媒介",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "is",
+        "phonetic": "/bi:/",
+        "meaning": "动词：是, 表示, 在",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "moving",
+        "phonetic": "/mu:v/",
+        "meaning": "动词：移动, 迁居, 步骤；移动, 开动, 感动, 搬(家)；移动, 离开, 运行, 迁移, 摇动, 搬家, 交往, 进展, 脱手",
+        "example": "Hide the message preview when the vehicle is moving.",
+        "chineseExample": "车辆行驶时隐藏消息预览。"
+      },
+      {
+        "term": "a",
+        "phonetic": "/eɪ/",
+        "meaning": "na. 一；英文字母表的第一字母；【乐】A音；冠以不定冠词主要表示类别；按；一个",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "voice",
+        "phonetic": "/vɒis/",
+        "meaning": "名词：声音, 嗓音, 嗓子, 愿望, 发言权, 表达, 喉舌, 语态；表达, 吐露, 调音",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "reply",
+        "phonetic": "/rɪˈplaɪ/",
+        "meaning": "回复；对消息或请求给出的回应",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "lets",
+        "phonetic": "/lɛts/",
+        "meaning": "动词：让, 假设, 出租, 排放, 妨碍；出租, 被承包；出租屋, 障碍",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "respond",
+        "phonetic": "/ɹɪˈspɒnd/",
+        "meaning": "动词：以...回答；回答, 响应, 回报, 有反应, 承担责任",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "without",
+        "phonetic": "/wi'ðaut/",
+        "meaning": "没有, 不, 在...之外；在外面, 户外；外面, 外部",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "typing",
+        "phonetic": "/typing/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "A voice reply lets the driver respond without typing.",
+        "chineseExample": "语音回复让驾驶员无需打字即可回应。"
+      },
+      {
+        "term": "show",
+        "phonetic": "/ʃәu/",
+        "meaning": "动词：显示, 表现, 展览, 卖弄, 炫耀, 外观, 演出, 洋相；表示, 显示, 展现, 陈列, 演出, 表明, 指出, 带领；露面, 显现, 演出",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "identity",
+        "phonetic": "/aɪˈdentəti/",
+        "meaning": "身份；用于区分当前用户或账户的个人识别信息",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "before",
+        "phonetic": "/bi'fɒ:/",
+        "meaning": "在...之前；在...之前；在前",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "offering",
+        "phonetic": "/ˈɔːfərɪŋ/",
+        "meaning": "提供；向用户呈现建议或功能",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "interruption",
+        "phonetic": "/ˌɪntəˈɹʌpʃən/",
+        "meaning": "名词：打扰, 中断, 障碍物",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "cost",
+        "phonetic": "/kɒst/",
+        "meaning": "名词：代价, 价值, 费用；花费；使失去, 值, 使花费",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "of",
+        "phonetic": "/hæv/",
+        "meaning": "动词：有, 怀有, 拿, 进行；aux. 已经",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "every",
+        "phonetic": "/'evri/",
+        "meaning": "形容词：每一, 所有的",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "new",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱语境理解的英文词：“new”。",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "alert",
+        "phonetic": "/ә'lә:t/",
+        "meaning": "动词：警觉的, 灵敏的, 留心的；警报；使警觉, 通知, 使意识到",
+        "example": "Review the interruption cost of every new alert.",
+        "chineseExample": "评估每条新提醒造成的打断成本。"
+      },
+      {
+        "term": "clear",
+        "phonetic": "/kliә/",
+        "meaning": "形容词：清楚的, 明确的, 澄清的；清晰地；澄清, 清除障碍；放晴, 变清澈；空隙",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "recovery",
+        "phonetic": "/ri'kʌvәri/",
+        "meaning": "名词：恢复, 复原, 痊愈, 重获",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "path",
+        "phonetic": "/pɑːθ/",
+        "meaning": "名词：路径, 小路, 道路, 途径, 路线, 轨道",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "helps",
+        "phonetic": "/help/",
+        "meaning": "动词：帮忙, 帮助者, 补救办法, 有益的东西；帮助, 帮忙, 接济, 治疗, 款待；有用, 救命, 招待",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "find",
+        "phonetic": "/ˈfaɪ̯nd/",
+        "meaning": "动词：发现, 感到, 找到, 认为, 得到；裁决；发现；寻找指定的字符串, 将符合条件的行或行数输出到标准输出设备上",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "missed",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“missed”。",
+        "example": "A clear recovery path helps the driver find a missed message.",
+        "chineseExample": "清晰的恢复路径帮助驾驶员找到错过的消息。"
+      },
+      {
+        "term": "use",
+        "phonetic": "/ju:s/",
+        "meaning": "动词：使用, 习惯, 使用价值, 用法, 使用权；使用, 利用, 运用, 耗费；惯常",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "short",
+        "phonetic": "/ʃɒ:t/",
+        "meaning": "形容词：短的, 近的, 矮的, 短期的, 简短的, 少量的；简短地, 突然；扼要, 短片, 缺乏；故意少给, 使短路",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "action",
+        "phonetic": "/'ækʃәn/",
+        "meaning": "名词：行动, 活动, 动作, 作用, 战斗, 行为, 诉讼；对...起诉",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "label",
+        "phonetic": "/ˈleɪbl/",
+        "meaning": "标签；用于说明对象或动作的短文本",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "that",
+        "phonetic": "/ðæt/",
+        "meaning": "连词：那, 那个；以致, 因为；那；那么, 那样",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "describes",
+        "phonetic": "/dɪˈskraɪbz/",
+        "meaning": "描述；说明某事物的状态、原因或动作",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "next",
+        "phonetic": "/nɛkst/",
+        "meaning": "下一个；下一个的, 其次的, 贴近的；然后, 下次, 次于",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "step",
+        "phonetic": "/stɛp/",
+        "meaning": "名词：步骤, 步, 步幅, 脚步声, 踏级, 步伐, 短距离, 步态, 手段, 等级；踏, 以步测量, 跨步, 使成阶梯状；跨步, 轻快地走, 跳舞, 踩, 踏上, 行走",
+        "example": "Use a short action label that describes the next step.",
+        "chineseExample": "使用简短的操作标签描述下一步。"
+      },
+      {
+        "term": "attention",
+        "phonetic": "/ә'tenʃәn/",
+        "meaning": "名词：注意, 注意力",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "budget",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“budget”。",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "limited",
+        "phonetic": "/ˈlɪmɪtɪd/",
+        "meaning": "有限的；资源、时间或能力受到限制的",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "during",
+        "phonetic": "/'djuәriŋ/",
+        "meaning": "在...的时候",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "complex",
+        "phonetic": "/ˈkɒmplɛks/",
+        "meaning": "形容词：综合体, 情结, 络合物；复杂的, 组合的",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "turn",
+        "phonetic": "/暂无音标/",
+        "meaning": "可结合智能座舱导航语境理解的英文词：“turn”。",
+        "example": "The attention budget is limited during a complex turn.",
+        "chineseExample": "复杂转弯过程中可用的注意力有限。"
+      },
+      {
+        "term": "in",
+        "phonetic": "/暂无音标/",
+        "meaning": "祥园",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "request",
+        "phonetic": "/ɹɪˈkwɛst/",
+        "meaning": "名词：请求, 需要, 申请书；请求, 要求, 邀请",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "so",
+        "phonetic": "/səʊ/",
+        "meaning": "副词：如此, 如是, 如...那样；所以, 因此；这样",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "its",
+        "phonetic": "/ɪts/",
+        "meaning": "它的；表示系统或车辆所属的属性",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "design",
+        "phonetic": "/di'zain/",
+        "meaning": "名词：设计, 图样, 方案, 企图；设计, 计划",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "begin",
+        "phonetic": "/bɪˈɡɪn/",
+        "meaning": "开始；作为第一步出现",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "with",
+        "phonetic": "/wið/",
+        "meaning": "和...在一起, 以, 由于",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "driving",
+        "phonetic": "/draiv/",
+        "meaning": "动词：驾车, 快车道, 推进力, 驱动, 动力, 击球, 驱动器；开车, 驱使, 推动, 驾驶；开车, 猛击, 飞跑",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "task",
+        "phonetic": "/tɑ:sk/",
+        "meaning": "名词：工作, 任务, 作业, 困难的工作；派给...工作, 使辛劳",
+        "example": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "chineseExample": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。"
+      },
+      {
+        "term": "and",
+        "phonetic": "/ənd/",
+        "meaning": "与；和；而；又；附加条件；附加细节；而且；及",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "actions",
+        "phonetic": "/ˈæk.ʃənz/",
+        "meaning": "名词：行动, 活动, 动作, 作用, 战斗, 行为, 诉讼；对...起诉",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "messaging",
+        "phonetic": "/ˈmesɪdʒɪŋ/",
+        "meaning": "提示表达；界面如何组织并传达信息",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "notifications",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃnz/",
+        "meaning": "通知；向用户呈现的系统信息",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "while",
+        "phonetic": "/hwail/",
+        "meaning": "连词：一会儿, (一段)时间；当...的时候, 虽然；消磨",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "remain",
+        "phonetic": "/ɹɪˈmeɪn/",
+        "meaning": "动词：保持, 逗留, 剩余",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "these",
+        "phonetic": "/ðɪs/",
+        "meaning": "这；这里；这时；(前述二物中的)后者；这；即将来到的；今…；这个；本；这样；这么；此；这位",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "support",
+        "phonetic": "/sә'pɒ:t/",
+        "meaning": "动词：支持, 支撑, 援助, 供养, 支撑物；支援, 支撑, 帮助, 支持, 忍受, 供养, 证实",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "useful",
+        "phonetic": "/'ju:sful/",
+        "meaning": "形容词：有用的, 有益的；[机] 有用的, 有效的",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "between",
+        "phonetic": "/bɪˈtwiːn/",
+        "meaning": "在...之间",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "information",
+        "phonetic": "/ˌɪn.fəˈmeɪ.ʃn̩/",
+        "meaning": "名词：消息, 知识, 通知, 情报, 信息, 问讯处, 起诉",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "choosing",
+        "phonetic": "/ˈtʃuːzɪŋ/",
+        "meaning": "选择；从多个选项中确定目标或路径",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "to",
+        "phonetic": "/tu:/",
+        "meaning": "到, 向, 趋于；向前",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "consider",
+        "phonetic": "/待查/",
+        "meaning": "考虑；纳入判断",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "an",
+        "phonetic": "/eɪ/",
+        "meaning": "na. 一；英文字母表的第一字母；【乐】A音；冠以不定冠词主要表示类别；按；一个",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "original",
+        "phonetic": "/əˈrɪdʒənəl/",
+        "meaning": "形容词：原来的；最初计划的。",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "which",
+        "phonetic": "/hwitʃ/",
+        "meaning": "副词：哪一个, 那一个",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "several",
+        "phonetic": "/'sevәrәl/",
+        "meaning": "副词：几个的, 一些的, 各自的；几个",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "from",
+        "phonetic": "/frɒm/",
+        "meaning": "从, 来自, 根据",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "team",
+        "phonetic": "/tiːm/",
+        "meaning": "名词：队, 组；把马(牛)套在同一辆车上, 把...编成一组；驾驶卡车, 协作",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "busy",
+        "phonetic": "/按语境朗读/",
+        "meaning": "繁忙的；资源占用较高的",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "journey",
+        "phonetic": "/按语境朗读/",
+        "meaning": "旅程；驾驶行程",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "first",
+        "phonetic": "/fɜːst/",
+        "meaning": "首先, 第一, 优先；第一的；第一；开始, 第一",
+        "example": "The first card identifies the sender and offers a short action label for playback.",
+        "chineseExample": "第一张卡片标明发送者，并以简短的操作标签提供朗读入口。"
+      },
+      {
+        "term": "card",
+        "phonetic": "/kɑːd/",
+        "meaning": "名词：卡片, 纸牌, 节目单, 明信片, 梳棉机；备置卡片, 记于卡片上, 梳理",
+        "example": "The first card identifies the sender and offers a short action label for playback.",
+        "chineseExample": "第一张卡片标明发送者，并以简短的操作标签提供朗读入口。"
+      },
+      {
+        "term": "offers",
+        "phonetic": "/待查/",
+        "meaning": "提供；给出选项",
+        "example": "The first card identifies the sender and offers a short action label for playback.",
+        "chineseExample": "第一张卡片标明发送者，并以简短的操作标签提供朗读入口。"
+      },
+      {
+        "term": "does",
+        "phonetic": "/dəz/",
+        "meaning": "动词：做, 进行, 完成",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "not",
+        "phonetic": "/nɒt/",
+        "meaning": "副词：不, 非, 未",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "expose",
+        "phonetic": "/ɪkˈspəʊz/",
+        "meaning": "动词：使暴露, 使曝光, 揭穿, 陈列",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "full",
+        "phonetic": "/fʊl/",
+        "meaning": "完整的；未被缩短的",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "on",
+        "phonetic": "/ɒn/",
+        "meaning": "在...之上；...上去；正起作用的",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "display",
+        "phonetic": "/dɪsˈpleɪ/",
+        "meaning": "动词：显示, 陈列, 炫耀, 显示器；陈列, 显示, 表现, 夸示",
+        "example": "It does not expose the full conversation on the moving vehicle display.",
+        "chineseExample": "车辆行驶时，屏幕不展示完整会话内容。"
+      },
+      {
+        "term": "if",
+        "phonetic": "/ɪf/",
+        "meaning": "如果；当；倘若；假若；不确定的情况；条件；是否",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "chooses",
+        "phonetic": "/ˈtʃuːzɪz/",
+        "meaning": "选择；choose 的第三人称单数形式",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "create",
+        "phonetic": "/kɹiːˈeɪt/",
+        "meaning": "动词：创造, 建造, 引起, 任命",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "this",
+        "phonetic": "/ðɪs/",
+        "meaning": "这；这里；这时；(前述二物中的)后者；这；即将来到的；今…；这个；本；这样；这么；此；这位",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "proposed",
+        "phonetic": "/待补充/",
+        "meaning": "语境词：proposed；用于理解今天健康舒适提示主题中的英文表达",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "flow",
+        "phonetic": "/flәu/",
+        "meaning": "名词：流程, 流动, 流量, 洋溢, 泛滥, 涨潮；流动, 流泄, 畅流, 川流不息, 飘扬, 涌出；使流动, 淹没, 流出",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "however",
+        "phonetic": "/haʊˈɛvə/",
+        "meaning": "副词：然而, 无论如何, 究竟怎样；然而, 可是",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "interface",
+        "phonetic": "/'intәfeis/",
+        "meaning": "名词：分界面, 接触面, 界面",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "explain",
+        "phonetic": "/ik'splein/",
+        "meaning": "动词：解释, 说明",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "where",
+        "phonetic": "/ˈwɛə/",
+        "meaning": "连词：在哪里；哪里；地点",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "can",
+        "phonetic": "/kæn/",
+        "meaning": "动词：装罐；罐头, 容器；aux. 能, 可以",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "be",
+        "phonetic": "/bi:/",
+        "meaning": "动词：是, 表示, 在",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "found",
+        "phonetic": "/ˈfaʊ̯nd/",
+        "meaning": "动词：发现, 感到, 找到, 认为, 得到；裁决；发现；寻找指定的字符串, 将符合条件的行或行数输出到标准输出设备上",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      },
+      {
+        "term": "ask",
+        "phonetic": "/ɑ:sk/",
+        "meaning": "动词：问, 要求；问, 要求, 邀请, 需要",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "whether",
+        "phonetic": "/'hweðә/",
+        "meaning": "连词：是否, 不论；两个中的哪一个",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "understand",
+        "phonetic": "/.ʌndә'stænd/",
+        "meaning": "动词：理解, 了解, 领会, 听说, 懂；懂得, 认为",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "current",
+        "phonetic": "/'kʌrәnt/",
+        "meaning": "形容词：涌流, 趋势, 流；流通的, 现在的, 当前的, 流行的",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "state",
+        "phonetic": "/steit/",
+        "meaning": "名词：州, 状态, 情形, 国家, 政府, 领土, 国务, 社会地位；国家的, 正式的, 礼仪用的, 州的；说明, 陈述, 规定",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "reading",
+        "phonetic": "/按语境朗读/",
+        "meaning": "阅读；文本理解或朗读活动",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "check",
+        "phonetic": "/t͡ʃɛk/",
+        "meaning": "动词：检查, 支票, 阻止物, 寄物牌, 象棋中将军；检查, 阻止, 核对, 寄存, 托运；逐项相符, 开支票",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "has",
+        "phonetic": "/hæz/",
+        "meaning": "interj. 嘿, 哈, 哈哈",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "feedback",
+        "phonetic": "/'fi:dbæk/",
+        "meaning": "名词：反馈, 反应",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "easy",
+        "phonetic": "/ˈiːzi/",
+        "meaning": "容易的；操作负担低的",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "parked",
+        "phonetic": "/按语境朗读/",
+        "meaning": "已驻车的；车辆停止并适合更复杂交互",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "test",
+        "phonetic": "/test/",
+        "meaning": "可结合智能座舱语境理解的英文单词",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "how",
+        "phonetic": "/haʊ/",
+        "meaning": "副词：如何, 怎样, 多少, 多么；方式",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "assistant",
+        "phonetic": "/ә'sistәnt/",
+        "meaning": "形容词：助手, 助理, 助教；有帮助的, 辅助的, 助理的",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "unclear",
+        "phonetic": "/待查/",
+        "meaning": "不清晰；难以可靠识别",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "name",
+        "phonetic": "/neɪm/",
+        "meaning": "名词：名字, 名称, 姓名, 名义, 名誉, 文件名；命名, 称呼, 任命, 提名, 列举；姓名的, 据以取名的",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "or",
+        "phonetic": "/ɒ:/",
+        "meaning": "连词：或, 或者",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "interrupted",
+        "phonetic": "/按语境朗读/",
+        "meaning": "被打断的；任务或注意力被中断。",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "successful",
+        "phonetic": "/səkˈsesfl/",
+        "meaning": "成功的；输入被识别并产生预期结果的",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "interaction",
+        "phonetic": "/.intәr'ækʃәn/",
+        "meaning": "名词：交互作用, 交感",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "preserves",
+        "phonetic": "/按语境朗读/",
+        "meaning": "保留；继续提供访问或能力",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "user",
+        "phonetic": "/ˈjuːzə/",
+        "meaning": "用户；一般授权用户",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "makes",
+        "phonetic": "/meɪks/",
+        "meaning": "使得；让某个界面结果成立",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "predictable",
+        "phonetic": "/prɪˈdɪktəbl/",
+        "meaning": "可预测的；用户能预期其位置或行为",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "leaves",
+        "phonetic": "/liːvz/",
+        "meaning": "名词：叶, 树叶, 花瓣, 页；生叶, 翻书页；在...上长叶, 翻...的页",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "enough",
+        "phonetic": "/i'nʌf/",
+        "meaning": "副词：充足, 够, 很多；充足的, 足够；足够；interj. 够了",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "road",
+        "phonetic": "/rәud/",
+        "meaning": "名词：路, 道路, 公路, 途径, 方法",
+        "example": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "chineseExample": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。"
+      },
+      {
+        "term": "android",
+        "phonetic": "/ˈændrɔɪd/",
+        "meaning": "安卓操作系统",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "automotive",
+        "phonetic": "/ˌɔːtəˈmoʊtɪv/",
+        "meaning": "汽车的",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "capabilities",
+        "phonetic": "/ˌkeɪpəˈbɪlətiz/",
+        "meaning": "功能；能力",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "compatible",
+        "phonetic": "/kəmˈpætəbl/",
+        "meaning": "兼容的",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "conversations",
+        "phonetic": "/ˌkɑːnvərˈseɪʃənz/",
+        "meaning": "会话",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "discover",
+        "phonetic": "/dɪˈskʌvər/",
+        "meaning": "发现",
+        "example": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "chineseExample": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+      },
+      {
+        "term": "distinction",
+        "phonetic": "/dɪˈstɪŋkʃən/",
+        "meaning": "区别",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "exercise",
+        "phonetic": "/ˈeksərsaɪz/",
+        "meaning": "练习",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "handles",
+        "phonetic": "/ˈhændlz/",
+        "meaning": "处理",
+        "example": "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+        "chineseExample": "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+      },
+      {
+        "term": "hear",
+        "phonetic": "/hɪr/",
+        "meaning": "听到",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "identifies",
+        "phonetic": "/aɪˈdentɪfaɪz/",
+        "meaning": "标明；识别",
+        "example": "The first card identifies the sender and offers a short action label for playback.",
+        "chineseExample": "第一张卡片标明发送者，并以简短的操作标签提供朗读入口。"
+      },
+      {
+        "term": "interruptions",
+        "phonetic": "/ˌɪntəˈrʌpʃənz/",
+        "meaning": "打断；中断",
+        "example": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "chineseExample": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
+      },
+      {
+        "term": "muted",
+        "phonetic": "/ˈmjuːtɪd/",
+        "meaning": "已静音的",
+        "example": "The notification center keeps muted messages available for later review.",
+        "chineseExample": "通知中心保留静音消息，供稍后查看。"
+      },
+      {
+        "term": "os",
+        "phonetic": "/ˌoʊ ˈes/",
+        "meaning": "操作系统",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "paragraph",
+        "phonetic": "/ˈpærəɡræf/",
+        "meaning": "段落",
+        "example": "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+        "chineseExample": "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
+      },
+      {
+        "term": "playback",
+        "phonetic": "/ˈpleɪbæk/",
+        "meaning": "播放；在消息场景中指朗读",
+        "example": "Message playback should start only after the driver requests it.",
+        "chineseExample": "只有驾驶员提出请求后，才应开始朗读消息。"
+      },
+      {
+        "term": "project",
+        "phonetic": "/ˈprɑːdʒekt/",
+        "meaning": "项目",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "provides",
+        "phonetic": "/prəˈvaɪdz/",
+        "meaning": "提供",
+        "example": "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+        "chineseExample": "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+      },
+      {
+        "term": "receives",
+        "phonetic": "/rɪˈsiːvz/",
+        "meaning": "收到",
+        "example": "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+        "chineseExample": "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+      },
+      {
+        "term": "receiving",
+        "phonetic": "/rɪˈsiːvɪŋ/",
+        "meaning": "接收",
+        "example": "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+        "chineseExample": "这些功能帮助区分收到信息与选择何时收听信息。"
+      },
+      {
+        "term": "sender",
+        "phonetic": "/ˈsendər/",
+        "meaning": "发送者",
+        "example": "Show the sender identity before offering message playback.",
+        "chineseExample": "提供消息朗读前先显示发送者身份。"
+      },
+      {
+        "term": "those",
+        "phonetic": "/ðoʊz/",
+        "meaning": "那些",
+        "example": "However, the interface should explain where those messages can be found later.",
+        "chineseExample": "不过，界面应说明稍后在哪里找到这些消息。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing a recoverable messaging experience",
+        "text": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task. Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center. These capabilities support a useful distinction between receiving information and choosing when to hear it. Consider an original design exercise in which a driver receives several messages from a project team during a busy journey. The first card identifies the sender and offers a short action label for playback. It does not expose the full conversation on the moving vehicle display. If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow. However, the interface should explain where those messages can be found later. During a design review, ask whether the driver can understand the current state without reading a paragraph. Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked. For a voice reply, test how the assistant handles an unclear name or an interrupted request. A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "translation": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。这些功能帮助区分收到信息与选择何时收听信息。设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。第一张卡片标明发送者，并以简短的操作标签提供朗读入口。车辆行驶时，屏幕不展示完整会话内容。在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。不过，界面应说明稍后在哪里找到这些消息。设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。",
+        "source": {
+          "label": "Android Developers：通知能力参考；本文为原创教学情境，非官方原文",
+          "url": "https://developer.android.com/training/cars/platforms/automotive-os/notifications"
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "A message notification in a vehicle is a request for attention, so its design should begin with the driving task.",
+        "translation": "车载消息通知是在请求注意力，因此设计应从驾驶任务出发。",
+        "points": [
+          "so 连接原因与结果：消息占用注意力，因此从驾驶任务出发。",
+          "begin with 表示以某项任务作为设计起点。"
+        ]
+      },
+      {
+        "sentence": "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+        "translation": "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。",
+        "points": [
+          "If 引导用户选择条件；主句说明预期系统行为。",
+          "in this proposed flow 明确这是待验证的设计方案。"
+        ]
+      },
+      {
+        "sentence": "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+        "translation": "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。",
+        "points": [
+          "Check whether...and whether... 并列提出两项评审问题。",
+          "when parked 限定恢复路径的使用情境。"
+        ]
+      },
+      {
+        "sentence": "A successful interaction preserves user control, makes the next step predictable, and leaves enough attention for the road.",
+        "translation": "成功的交互保留用户控制权，让下一步可以预期，并为道路情况留出足够注意力。",
+        "points": [
+          "preserves、makes、leaves 三个并列谓语描述交互目标。",
+          "enough attention for... 表示为某项任务留出足够注意力。"
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇跟读",
+        "time": "5 分钟",
+        "description": "朗读十个专业短语，分别解释播放、静音与恢复路径。"
+      },
+      {
+        "title": "全文影子跟读",
+        "time": "8 分钟",
+        "description": "跟读长文两遍，注意条件句与并列谓语的停顿。"
+      },
+      {
+        "title": "重点句替换",
+        "time": "6 分钟",
+        "description": "将消息静音场景替换为导航语音提醒，使用 If 与 whether 各造两句。"
+      },
+      {
+        "title": "设计评审口述",
+        "time": "6 分钟",
+        "description": "用英语说明消息到达、用户静音、停车后恢复查看的流程，并指出一个需要测试的问题。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-10-10-calendar-aware-pre-departure-assistance",
     "date": "2026-10-10",
     "title": "Calendar-aware pre-departure assistance in intelligent cockpits",

@@ -291,6 +291,13 @@
     "An action card can show the suggested change without blocking navigation.",
     "动作卡片可以展示建议变更，同时不阻挡导航。"
   ],
+  "action label": [
+    "/ˈækʃən ˈleɪbəl/",
+    "操作标签",
+    "",
+    "Use a short action label that describes the next step.",
+    "使用简短的操作标签描述下一步。"
+  ],
   "action oriented": [
     "/ˈækʃn ˈɔːrientɪd/",
     "面向动作的；直接说明用户下一步应做什么",
@@ -1114,6 +1121,13 @@
     "Visual-manual demand rises when a driver must scan a long menu and tap several controls.",
     "在这句话中，“and”可理解为“与；和；而；又；附加条件；附加细节；而且；及”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "android": [
+    "/ˈændrɔɪd/",
+    "安卓操作系统",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
   ],
   "angle": [
     "/按语境朗读/",
@@ -2142,6 +2156,13 @@
     "",
     "Automation transparency reduces surprise during cabin adjustments.",
     "自动化透明度减少座舱调节中的意外感。"
+  ],
+  "automotive": [
+    "/ˌɔːtəˈmoʊtɪv/",
+    "汽车的",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
   ],
   "autonomy": [
     "/ɔːˈtɑːnəmi/",
@@ -3369,6 +3390,13 @@
     "",
     "The driver cannot evaluate every option at once.",
     "驾驶员无法一次评估所有选项。"
+  ],
+  "capabilities": [
+    "/ˌkeɪpəˈbɪlətiz/",
+    "功能；能力",
+    "",
+    "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+    "这些功能帮助区分收到信息与选择何时收听信息。"
   ],
   "capability": [
     "/ˌkeɪpəˈbɪləti/",
@@ -4773,6 +4801,13 @@
     "A compatibility check prevents the cockpit from installing the wrong build.",
     "兼容性检查可防止座舱安装错误版本。"
   ],
+  "compatible": [
+    "/kəmˈpætəbl/",
+    "兼容的",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+  ],
   "compete": [
     "/kəmˈpiːt/",
     "动词：竞争, 对抗",
@@ -5886,6 +5921,13 @@
     "Conversation history helps the cockpit avoid asking the same question twice.",
     "对话历史帮助座舱避免重复询问同一问题。"
   ],
+  "conversation mute": [
+    "/ˌkɑːnvərˈseɪʃən mjuːt/",
+    "会话静音",
+    "",
+    "Conversation mute gives the driver control over repeated alerts.",
+    "会话静音让驾驶员能够控制重复提醒。"
+  ],
   "conversational": [
     "/ˌkɑːnvərˈseɪʃənl/",
     "对话式的；与多轮交流有关的",
@@ -5899,6 +5941,13 @@
     "",
     "Conversational repair should keep the driver in control when a voice command is ambiguous.",
     "当语音指令存在歧义时，对话修复应让驾驶员保持控制权。"
+  ],
+  "conversations": [
+    "/ˌkɑːnvərˈseɪʃənz/",
+    "会话",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
   ],
   "cooldown period": [
     "/ˈkuːldaʊn ˈpɪriəd/",
@@ -7395,6 +7444,13 @@
     "The word discomfort appears in the comfort recommendation context.",
     "“discomfort”出现在座椅舒适推荐的语境中。"
   ],
+  "discover": [
+    "/dɪˈskʌvər/",
+    "发现",
+    "",
+    "Check whether the mute action has clear feedback and whether the recovery path is easy to discover when parked.",
+    "检查静音操作是否有清晰反馈，以及停车时是否容易发现恢复路径。"
+  ],
   "dislikes": [
     "/dɪsˈlaɪks/",
     "动词：不喜欢；对某方案产生负面偏好。",
@@ -7557,6 +7613,13 @@
     "",
     "The AR lane guidance should keep the cue visually anchored to the road while leaving the instrument cluster free for safety alerts.",
     "AR 车道引导应让提示在视觉上锚定到道路，同时让仪表盘保留给安全警报。"
+  ],
+  "distinction": [
+    "/dɪˈstɪŋkʃən/",
+    "区别",
+    "",
+    "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+    "这些功能帮助区分收到信息与选择何时收听信息。"
   ],
   "distinguish": [
     "/dɪˈstɪŋɡwɪʃ/",
@@ -8845,6 +8908,13 @@
     "",
     "The execution threshold should rise when a command may affect visibility, speed, or driver attention.",
     "当指令可能影响可见性、速度或驾驶员注意力时，执行阈值应提高。"
+  ],
+  "exercise": [
+    "/ˈeksərsaɪz/",
+    "练习",
+    "",
+    "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+    "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
   ],
   "exit": [
     "/ˈeksɪt/",
@@ -10863,6 +10933,13 @@
     "在这句话中，“handle”可理解为“柄, 把手, 把柄, 柄状物, 手感；触摸, 运用, 买卖, 处理, 操作；搬运, 易于操纵；句柄”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "handles": [
+    "/ˈhændlz/",
+    "处理",
+    "",
+    "For a voice reply, test how the assistant handles an unclear name or an interrupted request.",
+    "对于语音回复，应测试助手如何处理不清楚的姓名或被打断的请求。"
+  ],
   "handling": [
     "/ˈhændl̩ɪŋ/",
     "动词：柄, 把手, 把柄, 柄状物, 手感；触摸, 运用, 买卖, 处理, 操作；搬运, 易于操纵；句柄",
@@ -11177,6 +11254,13 @@
     "",
     "Health-sensitive data needs clear consent and short retention.",
     "健康敏感数据需要明确同意和较短保存周期。"
+  ],
+  "hear": [
+    "/hɪr/",
+    "听到",
+    "",
+    "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+    "这些功能帮助区分收到信息与选择何时收听信息。"
   ],
   "heard": [
     "/待查/",
@@ -11717,6 +11801,13 @@
     "",
     "Identified should support clear control in a shared intelligent cockpit.",
     "在这句话中，“identified”用于描述共享智能座舱中的清晰控制。"
+  ],
+  "identifies": [
+    "/aɪˈdentɪfaɪz/",
+    "标明；识别",
+    "",
+    "The first card identifies the sender and offers a short action label for playback.",
+    "第一张卡片标明发送者，并以简短的操作标签提供朗读入口。"
   ],
   "identity": [
     "/aɪˈdentəti/",
@@ -12504,6 +12595,13 @@
     "The interruption budget should shrink during complex merges, school zones, and voice calls.",
     "在复杂并线、学校区域和语音通话中，打扰预算应缩小。"
   ],
+  "interruption cost": [
+    "/ˌɪntəˈrʌpʃən kɔːst/",
+    "打断成本",
+    "",
+    "Review the interruption cost of every new alert.",
+    "评估每条新提醒造成的打断成本。"
+  ],
   "interruption hierarchy": [
     "/ˌɪntəˈrʌpʃn ˈhaɪərɑːrki/",
     "中断层级；根据安全性、紧急性和上下文安排打断优先级的规则",
@@ -12517,6 +12615,13 @@
     "",
     "Interruption risk is higher when a driver is scanning mirrors.",
     "驾驶员观察后视镜时，打断风险更高。"
+  ],
+  "interruptions": [
+    "/ˌɪntəˈrʌpʃənz/",
+    "打断；中断",
+    "",
+    "If the driver chooses mute, later messages should not create repeated interruptions in this proposed flow.",
+    "在这个设计方案中，如果驾驶员选择静音，后续消息就不应造成反复打断。"
   ],
   "interruptive": [
     "/,intә'rʌptiv/",
@@ -14761,6 +14866,20 @@
     "Message hierarchy should put immediate safety information above comfort advice.",
     "信息层级应把即时安全信息置于舒适性建议之上。"
   ],
+  "message playback": [
+    "/ˈmesɪdʒ ˈpleɪbæk/",
+    "消息朗读播放",
+    "",
+    "Message playback should start only after the driver requests it.",
+    "只有驾驶员提出请求后，才应开始朗读消息。"
+  ],
+  "message preview": [
+    "/ˈmesɪdʒ ˈpriːvjuː/",
+    "消息预览",
+    "",
+    "Hide the message preview when the vehicle is moving.",
+    "车辆行驶时隐藏消息预览。"
+  ],
   "message queue": [
     "/message queue/",
     "消息队列",
@@ -15486,6 +15605,13 @@
     "The system can mute a reminder during a phone call.",
     "在这句话中，“mute”可理解为“静音；降低声音提示”。"
   ],
+  "muted": [
+    "/ˈmjuːtɪd/",
+    "已静音的",
+    "",
+    "The notification center keeps muted messages available for later review.",
+    "通知中心保留静音消息，供稍后查看。"
+  ],
   "muted alert": [
     "/muted alert/",
     "静音警报",
@@ -16108,6 +16234,13 @@
     "在这句话中，“notification”可理解为“通知, 通告, 告示”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "notification center": [
+    "/ˌnoʊtɪfɪˈkeɪʃən ˈsentər/",
+    "通知中心",
+    "",
+    "The notification center keeps muted messages available for later review.",
+    "通知中心保留静音消息，供稍后查看。"
+  ],
   "notification priority": [
     "/ˌnoʊtɪfɪˈkeɪʃn praɪˈɔːrəti/",
     "通知优先级；判断消息是否应立即打断用户的等级规则",
@@ -16660,6 +16793,13 @@
     "The original plan should not be defended after the turn is missed.",
     "在这句话中，“original plan”用于描述智能座舱导航提示设计。"
   ],
+  "os": [
+    "/ˌoʊ ˈes/",
+    "操作系统",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
+  ],
   "ota": [
     "/暂无音标/",
     "原文中的英语词汇，可结合 HMI 语境理解。",
@@ -16914,6 +17054,13 @@
     "A drowsiness alert should be clear enough to interrupt, but calm enough to avoid panic.",
     "在这句话中，“panic”可理解为“恐慌, 惊慌；惊慌的, 没有理由的, 恐慌的；使惊慌, 使狂热；惊慌”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "paragraph": [
+    "/ˈpærəɡræf/",
+    "段落",
+    "",
+    "During a design review, ask whether the driver can understand the current state without reading a paragraph.",
+    "设计评审时，应询问驾驶员能否无需阅读一整段文字就理解当前状态。"
   ],
   "parallax": [
     "/ˈpærəlæks/",
@@ -17770,6 +17917,13 @@
     "",
     "When an electric vehicle plans a trip, the intelligent cockpit should explain energy decisions in a way that feels calm, timely, and driver-verifiable.",
     "在这句话中，“plans”可理解为“规划；制定路线或策略”。"
+  ],
+  "playback": [
+    "/ˈpleɪbæk/",
+    "播放；在消息场景中指朗读",
+    "",
+    "Message playback should start only after the driver requests it.",
+    "只有驾驶员提出请求后，才应开始朗读消息。"
   ],
   "playlist": [
     "/'pleilist/",
@@ -18905,6 +19059,13 @@
     "Progressive permission builds trust before deeper automation.",
     "渐进式许可在更深层自动化前建立信任。"
   ],
+  "project": [
+    "/ˈprɑːdʒekt/",
+    "项目",
+    "",
+    "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+    "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+  ],
   "projection": [
     "/prəˈdʒekʃn/",
     "投影；把信息投射到显示平面或视野中的方式",
@@ -19030,6 +19191,13 @@
     "When the confidence score is high and the task is low risk, the system may act directly and provide brief auditory feedback.",
     "在这句话中，“provide”可理解为“提供, 供应, 规定, 预备；作准备, 抚养, 规定”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "provides": [
+    "/prəˈvaɪdz/",
+    "提供",
+    "",
+    "Android Automotive OS provides playback and mute actions for compatible messaging notifications, while muted conversations remain available in the notification center.",
+    "Android Automotive OS 为兼容的消息通知提供播放和静音操作，静音会话仍可在通知中心找到。"
   ],
   "pulling": [
     "/ˈpʊlɪŋ/",
@@ -19695,6 +19863,20 @@
     "",
     "A soft acoustic cue can confirm that the cabin command was received.",
     "在这句话中，“received”可理解为“已接收的；系统已听到或收到输入”。"
+  ],
+  "receives": [
+    "/rɪˈsiːvz/",
+    "收到",
+    "",
+    "Consider an original design exercise in which a driver receives several messages from a project team during a busy journey.",
+    "设想一个原创设计练习：驾驶员在繁忙的行程中收到项目团队的多条消息。"
+  ],
+  "receiving": [
+    "/rɪˈsiːvɪŋ/",
+    "接收",
+    "",
+    "These capabilities support a useful distinction between receiving information and choosing when to hear it.",
+    "这些功能帮助区分收到信息与选择何时收听信息。"
   ],
   "recent": [
     "/按语境朗读/",
@@ -22627,6 +22809,20 @@
     "",
     "The system should not send sensitive cabin data without consent.",
     "系统不应在未经同意时发送敏感座舱数据。"
+  ],
+  "sender": [
+    "/ˈsendər/",
+    "发送者",
+    "",
+    "Show the sender identity before offering message playback.",
+    "提供消息朗读前先显示发送者身份。"
+  ],
+  "sender identity": [
+    "/ˈsendər aɪˈdentəti/",
+    "发送者身份",
+    "",
+    "Show the sender identity before offering message playback.",
+    "提供消息朗读前先显示发送者身份。"
   ],
   "sending": [
     "/ˈsɛndɪŋ/",
@@ -25730,6 +25926,13 @@
     "在这句话中，“this”可理解为“这；这里；这时；(前述二物中的)后者；这；即将来到的；今…；这个；本；这样；这么；此；这位”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "those": [
+    "/ðoʊz/",
+    "那些",
+    "",
+    "However, the interface should explain where those messages can be found later.",
+    "不过，界面应说明稍后在哪里找到这些消息。"
+  ],
   "three": [
     "/θriː/",
     "三；数量词",
@@ -27827,6 +28030,13 @@
     "",
     "A short voice receipt helps the driver stay informed without reading a long screen.",
     "简短语音收据能让驾驶员无需阅读长屏幕也保持知情。"
+  ],
+  "voice reply": [
+    "/vɔɪs rɪˈplaɪ/",
+    "语音回复",
+    "",
+    "A voice reply lets the driver respond without typing.",
+    "语音回复让驾驶员无需打字即可回应。"
   ],
   "voice settings": [
     "/vɔɪs ˈsetɪŋz/",
