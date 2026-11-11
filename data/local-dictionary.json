@@ -110,6 +110,14 @@
     "Accessibility requires more than color coding for critical alerts.",
     "可访问性要求关键警告不能只依赖颜色编码。"
   ],
+  "accessible": [
+    "/əkˈsɛs.ɪ.bəl/",
+    "形容词：可进入的",
+    "adjective",
+    "A dismissible update should remain accessible in the notification inbox.",
+    "在这句话中，“accessible”可理解为“可进入的”。",
+    "https://en.wiktionary.org/wiki/accessible"
+  ],
   "accident": [
     "/ˈæksɪdənt/",
     "意外；非有意发生的错误或事故",
@@ -210,6 +218,14 @@
     "在这句话中，“accurate”可理解为“正确的, 精确的”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "acknowledged": [
+    "/暂无音标/",
+    "形容词：已确认",
+    "adjective",
+    "It can explain why an alert appeared, what action is needed, and whether the driver has already acknowledged it.",
+    "在这句话中，“acknowledged”可理解为“已确认”。",
+    "https://en.wiktionary.org/wiki/acknowledged"
+  ],
   "acknowledgement signal": [
     "/əkˈnɑːlɪdʒmənt ˈsɪɡnəl/",
     "确认信号；表明用户已看到、听到或处理警告的行为或输入",
@@ -223,6 +239,21 @@
     "",
     "Once the driver acknowledges the message, the system should reduce salience quickly.",
     "一旦驾驶员确认信息，系统应快速降低显著性。"
+  ],
+  "acknowledgment": [
+    "/əkˈnɒl.ɪd͡ʒ.mənt/",
+    "名词：承认 公证",
+    "noun",
+    "The acknowledgment state tells the driver that an alert has been seen.",
+    "在这句话中，“acknowledgment”可理解为“承认 公证”。",
+    "https://en.wiktionary.org/wiki/acknowledgment"
+  ],
+  "acknowledgment state": [
+    "/əkˈnɑːlɪdʒmənt steɪt/",
+    "已确认状态",
+    "",
+    "The acknowledgment state tells the driver that an alert has been seen.",
+    "已确认状态告诉驾驶员该提醒已经被查看。"
   ],
   "acoustic": [
     "/əˈkuːstɪk/",
@@ -847,6 +878,13 @@
     "",
     "Alert fatigue increases when every service message uses the same visual weight as a safety warning.",
     "当每条服务消息都使用和安全警告一样的视觉重量时，告警疲劳会增加。"
+  ],
+  "alert prioritization": [
+    "/əˈlɜːrt praɪˌɔːrətəˈzeɪʃn/",
+    "提醒优先级排序",
+    "",
+    "Alert prioritization ensures that safety-critical information is shown first.",
+    "提醒优先级排序确保安全关键的信息最先呈现。"
   ],
   "alert style": [
     "/alert style/",
@@ -7034,6 +7072,14 @@
     "在这句话中，“deserve”可理解为“该得到, 值得；应得报答”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "deserves": [
+    "/暂无音标/",
+    "动词：应得的",
+    "verb",
+    "Not every update deserves the same response.",
+    "在这句话中，“deserves”可理解为“应得的”。",
+    "https://en.wiktionary.org/wiki/deserves"
+  ],
   "design": [
     "/di'zain/",
     "名词：设计, 图样, 方案, 企图；设计, 计划",
@@ -7514,6 +7560,13 @@
     "",
     "A dismissible alert is safer for mild discomfort than a modal warning that blocks navigation.",
     "对于轻微不适，可关闭提醒比阻塞导航的模态警告更安全。"
+  ],
+  "dismissible update": [
+    "/dɪsˈmɪsəbl ʌpˈdeɪt/",
+    "可关闭更新提示",
+    "",
+    "A dismissible update should remain accessible in the notification inbox.",
+    "可关闭更新提示应仍能在通知收件箱中找到。"
   ],
   "display": [
     "/dɪsˈpleɪ/",
@@ -8435,6 +8488,14 @@
     "",
     "Empathetic copy should offer support without judging the driver.",
     "共情文案应提供支持，而不是评判驾驶员。"
+  ],
+  "emphasis": [
+    "/ˈɛmfəsɪs/",
+    "名词：重点",
+    "noun",
+    "The urgency level should determine the visual and auditory emphasis.",
+    "在这句话中，“emphasis”可理解为“重点”。",
+    "https://en.wiktionary.org/wiki/emphasis"
   ],
   "ending": [
     "/ˈendɪŋ/",
@@ -10392,6 +10453,14 @@
     "A general setup screen is not enough for sensitive permission.",
     "在这句话中，“general setup screen”可理解为“通用设置页”。"
   ],
+  "generate": [
+    "/ˈd͡ʒɛn.ə.ɹeɪt/",
+    "动词：生成",
+    "verb",
+    "A vehicle can generate many updates during a trip, but not every update deserves the same response.",
+    "在这句话中，“generate”可理解为“生成”。",
+    "https://en.wiktionary.org/wiki/generate"
+  ],
   "generated": [
     "/ˈdʒenəreɪtɪd/",
     "生成的；由系统或模型产生的",
@@ -12006,6 +12075,14 @@
     "In-cabin sensing can combine motion, sound, and seat data.",
     "舱内感知可以结合动作、声音和座椅数据。"
   ],
+  "inbox": [
+    "/ˈɪnbɒks/",
+    "名词：收件箱",
+    "noun",
+    "The notification inbox keeps non-urgent updates available for later review.",
+    "在这句话中，“inbox”可理解为“收件箱”。",
+    "https://en.wiktionary.org/wiki/inbox"
+  ],
   "include": [
     "/暂无音标/",
     "可结合智能座舱语境理解的英文词：“include”。",
@@ -12579,6 +12656,14 @@
     "",
     "An interruptible flow lets the driver stop automation without losing the destination.",
     "可中断流程让驾驶者停止自动化而不丢失目的地。"
+  ],
+  "interrupting": [
+    "/暂无音标/",
+    "动词：v.中断",
+    "verb",
+    "In contrast, a routine software update or a low-priority service reminder can enter the notification inbox without interrupting the current task.",
+    "在这句话中，“interrupting”可理解为“v.中断”。",
+    "https://en.wiktionary.org/wiki/interrupting"
   ],
   "interruption": [
     "/ˌɪntəˈɹʌpʃən/",
@@ -16241,6 +16326,13 @@
     "The notification center keeps muted messages available for later review.",
     "通知中心保留静音消息，供稍后查看。"
   ],
+  "notification inbox": [
+    "/ˌnoʊtɪfɪˈkeɪʃn ˈɪnbɑːks/",
+    "通知收件箱",
+    "",
+    "The notification inbox keeps non-urgent updates available for later review.",
+    "通知收件箱保留非紧急更新，供用户稍后查看。"
+  ],
   "notification priority": [
     "/ˌnoʊtɪfɪˈkeɪʃn praɪˈɔːrəti/",
     "通知优先级；判断消息是否应立即打断用户的等级规则",
@@ -18569,6 +18661,14 @@
     "",
     "Principle should support a safer and clearer cockpit experience.",
     "在这句话中，“principle”用于描述更安全、更清晰的座舱体验。"
+  ],
+  "prioritization": [
+    "/prʌɪˌɒrətʌɪˈzeɪʃ(ə)n/",
+    "名词：优先顺序",
+    "noun",
+    "Alert prioritization ensures that safety-critical information is shown first.",
+    "在这句话中，“prioritization”可理解为“优先顺序”。",
+    "https://en.wiktionary.org/wiki/prioritization"
   ],
   "priority": [
     "/prai'ɒriti/",
@@ -22754,6 +22854,14 @@
     "The display protects passengers from seeing account details.",
     "显示屏会防止乘客看到账户细节。"
   ],
+  "seen": [
+    "/siːn/",
+    "动词：看",
+    "verb",
+    "The acknowledgment state tells the driver that an alert has been seen.",
+    "在这句话中，“seen”可理解为“看”。",
+    "https://en.wiktionary.org/wiki/seen"
+  ],
   "sees": [
     "/按语境朗读/",
     "语境词：sees；用于理解今天健康状态与舒适建议主题中的英文表达",
@@ -23973,6 +24081,14 @@
     "",
     "The cockpit can soften cabin lighting at night.",
     "座舱可以在夜间柔化座舱灯光。"
+  ],
+  "software": [
+    "/ˈsɒf(t)ˌwɛə/",
+    "名词：软件",
+    "noun",
+    "In contrast, a routine software update or a low-priority service reminder can enter the notification inbox without interrupting the current task.",
+    "在这句话中，“software”可理解为“软件”。",
+    "https://en.wiktionary.org/wiki/software"
   ],
   "software package": [
     "/ˈsɔːftwer ˈpækɪdʒ/",

@@ -1,5 +1,225 @@
 [
   {
+    "id": "2026-11-11-alert-prioritization-and-notification-inbox",
+    "date": "2026-11-11",
+    "title": "Alert prioritization and notification inboxes in intelligent cockpits",
+    "topic": "智能座舱安全提醒优先级与通知收件箱",
+    "suggestedTime": "25 分钟",
+    "summary": "学习如何按照紧急程度分层车载提醒，并通过通知收件箱保留可稍后处理的信息。无可靠视频来源，本日文本为原创。",
+    "words": [
+      {
+        "term": "alert prioritization",
+        "phonetic": "/əˈlɜːrt praɪˌɔːrətəˈzeɪʃn/",
+        "meaning": "提醒优先级排序",
+        "example": "Alert prioritization ensures that safety-critical information is shown first.",
+        "chineseExample": "提醒优先级排序确保安全关键的信息最先呈现。"
+      },
+      {
+        "term": "notification inbox",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn ˈɪnbɑːks/",
+        "meaning": "通知收件箱",
+        "example": "The notification inbox keeps non-urgent updates available for later review.",
+        "chineseExample": "通知收件箱保留非紧急更新，供用户稍后查看。"
+      },
+      {
+        "term": "safety-critical alert",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl əˈlɜːrt/",
+        "meaning": "安全关键提醒",
+        "example": "A safety-critical alert may interrupt media playback when immediate action is needed.",
+        "chineseExample": "当需要立即行动时，安全关键提醒可以打断媒体播放。"
+      },
+      {
+        "term": "urgency level",
+        "phonetic": "/ˈɜːrdʒənsi ˈlevl/",
+        "meaning": "紧急程度",
+        "example": "The urgency level should determine the visual and auditory emphasis.",
+        "chineseExample": "紧急程度应决定视觉和听觉强调的强度。"
+      },
+      {
+        "term": "attention demand",
+        "phonetic": "/əˈtenʃn dɪˈmænd/",
+        "meaning": "注意力需求",
+        "example": "Designers should reduce attention demand for routine vehicle updates.",
+        "chineseExample": "设计师应降低常规车辆更新对注意力的需求。"
+      },
+      {
+        "term": "escalation rule",
+        "phonetic": "/ˌeskəˈleɪʃn ruːl/",
+        "meaning": "升级规则",
+        "example": "An escalation rule increases the alert intensity only when the risk grows.",
+        "chineseExample": "升级规则只在风险增加时提升提醒强度。"
+      },
+      {
+        "term": "dismissible update",
+        "phonetic": "/dɪsˈmɪsəbl ʌpˈdeɪt/",
+        "meaning": "可关闭更新提示",
+        "example": "A dismissible update should remain accessible in the notification inbox.",
+        "chineseExample": "可关闭更新提示应仍能在通知收件箱中找到。"
+      },
+      {
+        "term": "acknowledgment state",
+        "phonetic": "/əkˈnɑːlɪdʒmənt steɪt/",
+        "meaning": "已确认状态",
+        "example": "The acknowledgment state tells the driver that an alert has been seen.",
+        "chineseExample": "已确认状态告诉驾驶员该提醒已经被查看。"
+      },
+      {
+        "term": "interruption budget",
+        "phonetic": "/ˌɪntəˈrʌpʃn ˈbʌdʒɪt/",
+        "meaning": "打断预算",
+        "example": "The interruption budget is limited when traffic conditions are complex.",
+        "chineseExample": "交通状况复杂时，可用的打断预算十分有限。"
+      },
+      {
+        "term": "recovery path",
+        "phonetic": "/rɪˈkʌvəri pæθ/",
+        "meaning": "恢复路径；稍后找回信息的路径",
+        "example": "A clear recovery path lets users return to missed information when parked.",
+        "chineseExample": "清晰的恢复路径让用户在停车后能回到错过的信息。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "alert prioritization",
+        "phonetic": "/əˈlɜːrt praɪˌɔːrətəˈzeɪʃn/",
+        "meaning": "提醒优先级排序",
+        "example": "Alert prioritization ensures that safety-critical information is shown first.",
+        "chineseExample": "提醒优先级排序确保安全关键的信息最先呈现。"
+      },
+      {
+        "term": "notification inbox",
+        "phonetic": "/ˌnoʊtɪfɪˈkeɪʃn ˈɪnbɑːks/",
+        "meaning": "通知收件箱",
+        "example": "The notification inbox keeps non-urgent updates available for later review.",
+        "chineseExample": "通知收件箱保留非紧急更新，供用户稍后查看。"
+      },
+      {
+        "term": "safety-critical alert",
+        "phonetic": "/ˈseɪfti ˈkrɪtɪkl əˈlɜːrt/",
+        "meaning": "安全关键提醒",
+        "example": "A safety-critical alert may interrupt media playback when immediate action is needed.",
+        "chineseExample": "当需要立即行动时，安全关键提醒可以打断媒体播放。"
+      },
+      {
+        "term": "urgency level",
+        "phonetic": "/ˈɜːrdʒənsi ˈlevl/",
+        "meaning": "紧急程度",
+        "example": "The urgency level should determine the visual and auditory emphasis.",
+        "chineseExample": "紧急程度应决定视觉和听觉强调的强度。"
+      },
+      {
+        "term": "attention demand",
+        "phonetic": "/əˈtenʃn dɪˈmænd/",
+        "meaning": "注意力需求",
+        "example": "Designers should reduce attention demand for routine vehicle updates.",
+        "chineseExample": "设计师应降低常规车辆更新对注意力的需求。"
+      },
+      {
+        "term": "escalation rule",
+        "phonetic": "/ˌeskəˈleɪʃn ruːl/",
+        "meaning": "升级规则",
+        "example": "An escalation rule increases the alert intensity only when the risk grows.",
+        "chineseExample": "升级规则只在风险增加时提升提醒强度。"
+      },
+      {
+        "term": "dismissible update",
+        "phonetic": "/dɪsˈmɪsəbl ʌpˈdeɪt/",
+        "meaning": "可关闭更新提示",
+        "example": "A dismissible update should remain accessible in the notification inbox.",
+        "chineseExample": "可关闭更新提示应仍能在通知收件箱中找到。"
+      },
+      {
+        "term": "acknowledgment state",
+        "phonetic": "/əkˈnɑːlɪdʒmənt steɪt/",
+        "meaning": "已确认状态",
+        "example": "The acknowledgment state tells the driver that an alert has been seen.",
+        "chineseExample": "已确认状态告诉驾驶员该提醒已经被查看。"
+      },
+      {
+        "term": "interruption budget",
+        "phonetic": "/ˌɪntəˈrʌpʃn ˈbʌdʒɪt/",
+        "meaning": "打断预算",
+        "example": "The interruption budget is limited when traffic conditions are complex.",
+        "chineseExample": "交通状况复杂时，可用的打断预算十分有限。"
+      },
+      {
+        "term": "recovery path",
+        "phonetic": "/rɪˈkʌvəri pæθ/",
+        "meaning": "恢复路径；稍后找回信息的路径",
+        "example": "A clear recovery path lets users return to missed information when parked.",
+        "chineseExample": "清晰的恢复路径让用户在停车后能回到错过的信息。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing an alert inbox without distracting the driver",
+        "text": "A vehicle can generate many updates during a trip, but not every update deserves the same response. Alert prioritization should begin with the driving task: what does the driver need to know now, and what can wait until the vehicle is parked? A safety-critical alert may use a stronger visual and auditory signal because immediate action is required. In contrast, a routine software update or a low-priority service reminder can enter the notification inbox without interrupting the current task. The interface should make the urgency level understandable. It can explain why an alert appeared, what action is needed, and whether the driver has already acknowledged it. An escalation rule is useful when risk changes over time, but repeated interruptions should never become the default. For dismissible updates, provide a recovery path so users can find the information later. During a design review, ask whether each alert has a clear purpose and whether its attention demand matches the situation. A successful alert system is calm, specific, and reversible. It protects the interruption budget during driving while keeping important information available when the user is ready to review it.",
+        "translation": "车辆在行程中可能产生许多更新，但并非每条更新都应获得同样的响应。提醒优先级应从驾驶任务出发：驾驶员现在必须知道什么，哪些信息可等到停车后再处理？安全关键提醒因需要立即行动，可以使用更强的视觉和听觉信号。相反，常规软件更新或低优先级服务提醒可进入通知收件箱，而不打断当前任务。界面应让用户理解紧急程度，说明提醒为何出现、需要做什么，以及驾驶员是否已确认。风险随时间变化时，升级规则很有用，但反复打断绝不应成为默认方式。对于可关闭更新，应提供恢复路径，让用户稍后找到信息。成功的提醒系统应平静、具体、可逆：行驶中保护打断预算，同时在用户准备查看时保留重要信息。",
+        "source": {
+          "label": "无可靠视频来源，本日文本为原创",
+          "url": ""
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "Not every update deserves the same response.",
+        "translation": "并非每条更新都应获得同样的响应。",
+        "points": [
+          "Not every... 表示“并非每一个……都”。",
+          "可复用：Not every notification deserves the same level of emphasis."
+        ]
+      },
+      {
+        "sentence": "What does the driver need to know now, and what can wait until the vehicle is parked?",
+        "translation": "驾驶员现在必须知道什么，哪些信息可等到车辆停好后再处理？",
+        "points": [
+          "两个并列疑问句用于定义信息优先级。",
+          "can wait until... 表示“可以等到……再处理”。"
+        ]
+      },
+      {
+        "sentence": "The interface should make the urgency level understandable.",
+        "translation": "界面应让紧急程度易于理解。",
+        "points": [
+          "make + 宾语 + 形容词，表示“让……变得……”。",
+          "可复用：The system should make the current state understandable at a glance."
+        ]
+      },
+      {
+        "sentence": "Repeated interruptions should never become the default.",
+        "translation": "反复打断绝不应成为默认方式。",
+        "points": [
+          "should never 表示强烈的设计约束。",
+          "可复用：Complex recovery steps should never become the default path."
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "description": "朗读十个词汇与例句，重点练习 prioritization、acknowledgment 和 escalation。"
+      },
+      {
+        "title": "全文跟读",
+        "time": "8 分钟",
+        "description": "先逐句跟读，再完整朗读一遍，注意问题句和转折句的停顿。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "6 分钟",
+        "description": "将四个重点句替换为你的导航、充电或车辆状态提醒场景。"
+      },
+      {
+        "title": "设计评审口述",
+        "time": "6 分钟",
+        "description": "用英语解释一条提醒为什么应该立即打断，或为什么应进入通知收件箱等待稍后查看。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-10-17-message-playback-and-conversation-mute",
     "date": "2026-10-17",
     "title": "Message playback and conversation mute in intelligent cockpits",
