@@ -1,6 +1,6 @@
-import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey, learningStreak, recordPresentation } from "./review-engine.mjs?v=20261111ux";
+import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey, learningStreak, recordPresentation } from "./review-engine.mjs?v=20261111ui";
 import { createFeedback } from "./feedback.js";
-import { mountLibrary } from "./library.js?v=20261111ux";
+import { mountLibrary } from "./library.js?v=20261111ui";
 
 export function mountReview({ notes, escapeHtml: esc, renderClickableText, speakEnglish, stopSpeaking }) {
   const root = document.querySelector("#reviewPanel");

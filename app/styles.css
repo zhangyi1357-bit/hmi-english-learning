@@ -52,8 +52,9 @@ button, select { touch-action: manipulation; }
 button:focus-visible, select:focus-visible { outline: 3px solid #55a99b; outline-offset: 3px; }
 button:disabled { opacity: .45; cursor: default; }
 .viewTabs { display: flex; gap: 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
-.viewTabs button { border: 0; border-bottom: 3px solid transparent; padding: 12px 0; background: transparent; font: inherit; color: var(--muted); cursor: pointer; }
+.viewTabs button { border: 0; border-bottom: 3px solid transparent; padding: 12px 0 10px; background: transparent; font: inherit; color: var(--muted); cursor: pointer; transition: color 150ms ease, border-color 150ms ease; }
 .viewTabs button[aria-pressed="true"] { color: var(--accent-strong); border-bottom-color: var(--accent); font-weight: 700; }
+.viewTabs button:hover { color: var(--ink); }
 .reviewHeading { display: flex; justify-content: space-between; gap: 20px; align-items: start; }
 .reviewHeading h2 { font-size: 26px; }
 .reviewSub { color: var(--muted); margin-top: 8px; }
@@ -71,7 +72,8 @@ button:disabled { opacity: .45; cursor: default; }
 .modeTabs button { min-height: 40px; padding: 8px 22px; border: 0; background: white; color: var(--muted); font: inherit; cursor: pointer; }
 .modeTabs button[aria-pressed="true"] { background: var(--accent); color: white; }
 #reviewPanel progress { display: block; width: 100%; height: 6px; accent-color: var(--accent); margin: 0 0 20px; }
-.studyCard { border: 1px solid var(--line); border-radius: 8px; padding: 24px; background: white; min-height: 450px; display: flex; flex-direction: column; }
+.studyCard { position: relative; border: 1px solid var(--line); border-radius: 8px; padding: 24px; background: white; min-height: 450px; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(24, 33, 47, 0.045); }
+.studyCard::before { position: absolute; top: 0; left: 24px; right: 24px; height: 3px; border-radius: 0 0 3px 3px; background: var(--accent); content: ""; }
 .studyTop { display: flex; justify-content: space-between; align-items: center; gap: 16px; font-size: 12px; color: var(--muted); }
 .audioControl { width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); background: white; cursor: pointer; }
 .studyQuestion { text-align: center; margin: 32px auto 20px; max-width: 760px; width: 100%; }
@@ -82,9 +84,11 @@ button:disabled { opacity: .45; cursor: default; }
 .answerMeaning { font-size: 18px; }
 .studyExample { margin-bottom: 8px; }
 .studyAnswer .translation { margin-top: 8px; }
-.revealButton { background: var(--accent); border: 0; border-radius: 6px; padding: 12px 28px; min-height: 48px; color: white; font: inherit; cursor: pointer; margin: 20px 0; }
+.revealButton { background: var(--accent); border: 0; border-radius: 6px; padding: 12px 28px; min-height: 48px; color: white; font: inherit; cursor: pointer; margin: 20px 0; box-shadow: 0 5px 12px rgba(15, 118, 110, 0.18); transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease; }
+.revealButton:hover { background: var(--accent-strong); box-shadow: 0 7px 16px rgba(15, 118, 110, 0.24); transform: translateY(-1px); }
 .ratingButtons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-.ratingButtons button { min-height: 70px; border: 1px solid #edc4c9; background: #fff0f2; color: #98213e; border-radius: 6px; font: inherit; font-weight: 700; cursor: pointer; }
+.ratingButtons button { min-height: 70px; border: 1px solid #edc4c9; background: #fff0f2; color: #98213e; border-radius: 6px; font: inherit; font-weight: 700; cursor: pointer; transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease; }
+.ratingButtons button:hover { box-shadow: 0 5px 14px rgba(24, 33, 47, 0.08); transform: translateY(-1px); }
 .ratingButtons button[data-grade="vague"] { border-color: #e5d598; background: #fff9e6; color: #796014; }
 .ratingButtons button[data-grade="known"] { border-color: #abd8c9; background: #eaf7f1; color: #17664a; }
 .ratingButtons small { display: block; font-weight: 400; font-size: 12px; }
@@ -142,8 +146,9 @@ body {
   justify-content: space-between;
   gap: 16px;
   padding: 18px clamp(16px, 4vw, 48px);
-  background: rgba(247, 249, 252, 0.92);
+  background: rgba(247, 249, 252, 0.96);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 3px 14px rgba(24, 33, 47, 0.04);
   backdrop-filter: blur(14px);
 }
 
@@ -228,10 +233,8 @@ select {
   padding: clamp(22px, 4vw, 42px);
   border: 1px solid var(--line);
   border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(180, 83, 9, 0.12)),
-    var(--panel);
-  box-shadow: var(--shadow);
+  background: var(--panel);
+  box-shadow: 0 10px 28px rgba(24, 33, 47, 0.055);
 }
 
 .hero h2 {
@@ -289,7 +292,7 @@ select {
   color: var(--ink);
   text-align: left;
   box-shadow: 0 6px 18px rgba(24, 33, 47, 0.05);
-  cursor: pointer;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
 }
 
 .wordButton:hover,
@@ -297,6 +300,8 @@ select {
   border-color: var(--accent);
   outline: 3px solid rgba(15, 118, 110, 0.16);
 }
+
+.wordButton:hover { box-shadow: 0 10px 22px rgba(24, 33, 47, 0.09); transform: translateY(-2px); }
 
 .wordButton strong {
   display: block;
@@ -311,6 +316,10 @@ select {
   justify-content: space-between;
   gap: 12px;
 }
+
+.wordOpenButton { display: block; min-width: 0; margin: 0; padding: 0; border: 0; background: transparent; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.wordOpenButton:hover strong { color: var(--accent-strong); text-decoration: underline; text-decoration-color: rgba(15, 118, 110, 0.34); text-underline-offset: 4px; }
+.wordOpenButton:focus-visible { border-radius: 3px; outline: 3px solid rgba(15, 118, 110, 0.22); outline-offset: 3px; }
 
 .speakButton {
   min-height: 30px;
@@ -387,6 +396,10 @@ select {
 .inlineWord.phraseWord {
   background: rgba(15, 118, 110, 0.06);
   text-decoration-color: rgba(180, 83, 9, 0.36);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
 
 .readingSection article,

@@ -1,4 +1,4 @@
-import { mountReview } from "./review.js?v=20261111ux";
+import { mountReview } from "./review.js?v=20261111ui";
 
 const state = {
   notes: [],
@@ -78,11 +78,11 @@ function render() {
   note.words.forEach((word) => {
     const card = document.createElement("article");
     card.className = "wordButton";
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
     card.innerHTML = `
       <div class="wordTopline">
-        <strong>${escapeHtml(word.term)}</strong>
+        <button class="wordOpenButton" type="button" data-open-word="true" aria-label="查看 ${escapeHtml(word.term)} 的释义">
+          <strong>${escapeHtml(word.term)}</strong>
+        </button>
         <button class="speakButton" type="button" data-speak="${escapeHtml(word.term)}" title="播放词汇发音">播放</button>
       </div>
       <span>${escapeHtml(word.phonetic)}</span>
@@ -96,17 +96,7 @@ function render() {
         <small>${escapeHtml(word.chineseExample)}</small>
       </div>
     `;
-    card.addEventListener("click", (event) => {
-      if (event.target.closest("[data-speak]")) return;
-      if (event.target.closest(".inlineWord")) return;
-      openWord(word);
-    });
-    card.addEventListener("keydown", (event) => {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openWord(word);
-      }
-    });
+    card.querySelector("[data-open-word]").addEventListener("click", () => openWord(word));
     elements.wordGrid.append(card);
   });
 
