@@ -5,6 +5,20 @@ export function dayKey(now = new Date()) {
   return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).format(now);
 }
 
+export function learningStreak(data, now = new Date()) {
+  let cursor = Date.parse(`${dayKey(now)}T00:00:00+08:00`);
+  let streak = 0;
+
+  while (true) {
+    const key = dayKey(new Date(cursor));
+    if (!(data.history[key]?.completed?.length > 0)) break;
+    streak += 1;
+    cursor -= 86400000;
+  }
+
+  return streak;
+}
+
 export function emptyProgress() {
   return { version: 1, settings: { word: 8, sentence: 2, sound: true }, cards: {}, sessions: {}, history: {}, stats: {} };
 }

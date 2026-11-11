@@ -1,4 +1,4 @@
-import { mountReview } from "./review.js?v=20260905b";
+import { mountReview } from "./review.js?v=20261111ux";
 
 const state = {
   notes: [],

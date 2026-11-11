@@ -1,4 +1,4 @@
-import { dayKey } from "./review-engine.mjs?v=20260905b";
+import { dayKey } from "./review-engine.mjs?v=20261111ux";
 
 export function mountLibrary({ deck, getData, esc }) {
   const root = document.querySelector("#libraryPanel");

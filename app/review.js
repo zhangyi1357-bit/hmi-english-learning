@@ -1,6 +1,6 @@
-import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey, recordPresentation } from "./review-engine.mjs?v=20260905b";
+import { STORAGE_KEY, emptyProgress, parseProgress, buildDeck, ensureSession, rateCard, dayKey, learningStreak, recordPresentation } from "./review-engine.mjs?v=20261111ux";
 import { createFeedback } from "./feedback.js";
-import { mountLibrary } from "./library.js?v=20260905b";
+import { mountLibrary } from "./library.js?v=20261111ux";
 
 export function mountReview({ notes, escapeHtml: esc, renderClickableText, speakEnglish, stopSpeaking }) {
   const root = document.querySelector("#reviewPanel");
@@ -14,6 +14,7 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
   let type = "word";
   let revealed = false;
   let undo = null;
+  let challengeVisible = false;
   let currentDay = dayKey();
   const playFeedback = createFeedback(() => data.settings.sound !== false);
   mountLibrary({ deck, getData: () => data, esc });
@@ -25,7 +26,7 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
   }
 
   function render() {
-    if (currentDay !== dayKey()) { currentDay = dayKey(); revealed = false; undo = null; }
+    if (currentDay !== dayKey()) { currentDay = dayKey(); revealed = false; undo = null; challengeVisible = false; }
     const session = ensureSession(data, deck, type);
     if (!root.hidden) recordPresentation(data, type);
     save();
@@ -33,9 +34,20 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
     const completed = session.ids.length - session.queue.length;
     const learned = data.history[currentDay]?.completed.length || 0;
     const count = deck.filter(item => item.type === type).length;
+    const wordSession = data.sessions.word?.day === currentDay ? data.sessions.word : null;
+    const sentenceSession = data.sessions.sentence?.day === currentDay ? data.sessions.sentence : null;
+    const planned = (wordSession?.ids.length || data.settings.word) + (sentenceSession?.ids.length || data.settings.sentence);
+    const remaining = (wordSession?.queue.length ?? data.settings.word) + (sentenceSession?.queue.length ?? data.settings.sentence);
+    const streak = learningStreak(data);
+    const challenge = buildExpressionChallenge(notes[0]);
     root.innerHTML = `
       <div class="reviewHeading"><div><p class="eyebrow">${currentDay}</p><h2>今天，也记住一点</h2><p class="reviewSub">今日已完成 ${learned} 项 · 累计学习 ${Object.keys(data.cards).length} 项</p></div>
       <label class="goalLabel">每日新${type === "word" ? "词" : "句"}<select id="dailyGoal" aria-label="每日新学习数量">${[2, 5, 8, 10, 15, 20, 30].map(n => `<option value="${n}" ${data.settings[type] === n ? "selected" : ""}>${n} ${type === "word" ? "个" : "句"}</option>`).join("")}</select><small>下次生成任务时生效</small></label></div>
+      <section class="reviewSummary" aria-label="今日学习概览">
+        <div><span>今日进度</span><strong>${learned}/${planned}</strong><small>${remaining ? `还剩 ${remaining} 项` : "今日任务已完成"}</small></div>
+        <div><span>连续学习</span><strong>${streak} 天</strong><small>${streak ? "保持这个节奏" : "完成一项即开始"}</small></div>
+        <div><span>本轮模式</span><strong>${type === "word" ? "词汇" : "句子"}</strong><small>先复习到期内容</small></div>
+      </section>
       <div class="reviewToolbar"><div class="modeTabs" aria-label="复习类型"><button type="button" data-mode="word" aria-pressed="${type === "word"}">单词</button><button type="button" data-mode="sentence" aria-pressed="${type === "sentence"}">句子</button></div><span>词库 ${count} 项 · 本轮剩余 ${session.queue.length}</span></div>
       <progress max="${session.ids.length || 1}" value="${session.ids.length ? completed : 1}" aria-label="本轮学习进度"></progress>
       ${warning ? `<p role="alert" class="storageWarning">${warning}</p>` : ""}
@@ -45,10 +57,12 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
           <div class="studyAnswer">${revealed ? `<p class="answerMeaning">${esc(card.answer)}</p>${card.type === "word" ? `<p class="studyExample">${renderClickableText(card.example)}</p><p class="translation">${esc(card.chineseExample)}</p><button class="iconTextButton" type="button" data-speak="${esc(card.example)}">朗读例句</button>` : ""}` : '<button class="revealButton" id="revealAnswer" type="button">查看答案</button>'}</div>
           ${revealed ? '<div class="ratingButtons"><button type="button" data-grade="forgot">忘记<small>尽快再学</small></button><button type="button" data-grade="vague">模糊<small>本轮再练</small></button><button type="button" data-grade="known">认识<small>下次复习</small></button></div>' : ""}` : `<div class="studyComplete"><p class="eyebrow">今日任务完成</p><h3>${type === "word" ? "单词" : "句子"}复习完成了</h3><p>已完成 ${completed} 项，明天继续。</p><button type="button" class="revealButton" data-mode="${type === "word" ? "sentence" : "word"}">去学${type === "word" ? "句子" : "单词"}</button></div>`}
       </article>
+      ${!card ? `<section class="expressionChallenge" aria-label="设计表达挑战"><div><p class="eyebrow">Design expression</p><h3>用一句英文说出你的设计判断</h3><p>${esc(challenge.prompt)}</p></div><div class="challengeActions"><button class="iconTextButton" type="button" id="challengeAnswer">${challengeVisible ? "隐藏参考表达" : "查看参考表达"}</button>${challengeVisible ? `<button class="iconTextButton" type="button" data-speak="${esc(challenge.answer)}">朗读参考表达</button>` : ""}</div>${challengeVisible ? `<p class="challengeAnswer">${renderClickableText(challenge.answer)}</p><p class="translation">${esc(challenge.translation)}</p>` : ""}</section>` : ""}
       <div class="reviewFooter"><button class="iconTextButton" type="button" id="undoRating" ${undo ? "" : "disabled"}>撤销上次选择</button><label class="soundToggle"><input id="soundToggle" type="checkbox" ${data.settings.sound !== false ? "checked" : ""}>操作音效</label><span>进度仅保存在此浏览器 · 无需登录</span></div>`;
     root.querySelector("#soundToggle").addEventListener("change", event => { data.settings.sound = event.target.checked; save(); if (event.target.checked) playFeedback("reveal"); });
     root.querySelectorAll("[data-mode]").forEach(button => button.addEventListener("click", () => { stopSpeaking(); type = button.dataset.mode; revealed = false; undo = null; render(); }));
     root.querySelector("#dailyGoal").addEventListener("change", event => { data.settings[type] = Number(event.target.value); save(); render(); });
+    root.querySelector("#challengeAnswer")?.addEventListener("click", () => { challengeVisible = !challengeVisible; render(); });
     root.querySelector("#reviewSpeak")?.addEventListener("click", () => speakEnglish(card.text));
     root.querySelector("#revealAnswer")?.addEventListener("click", () => { playFeedback("reveal"); revealed = true; render(); root.querySelector("[data-grade]")?.focus(); });
     root.querySelectorAll("[data-grade]").forEach(button => button.addEventListener("click", () => {
@@ -72,4 +86,20 @@ export function mountReview({ notes, escapeHtml: esc, renderClickableText, speak
   document.addEventListener("visibilitychange", () => { if (!document.hidden && currentDay !== dayKey()) render(); });
   document.querySelector("#reviewTab").addEventListener("click", () => queueMicrotask(render));
   render();
+}
+
+function buildExpressionChallenge(note) {
+  const word = note?.words?.[0];
+  if (!word) {
+    return {
+      prompt: "描述一个你会如何减少驾驶分心的设计决定。",
+      answer: "The interface should keep critical information easy to scan while the vehicle is moving.",
+      translation: "车辆行驶时，界面应让关键内容易于快速扫视。",
+    };
+  }
+  return {
+    prompt: `围绕“${word.term}”，说明你会如何把它用在智能座舱方案中。`,
+    answer: word.example,
+    translation: word.chineseExample,
+  };
 }

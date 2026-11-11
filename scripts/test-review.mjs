@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { buildDeck, dayKey, emptyProgress, ensureSession, parseProgress, rateCard, recordPresentation } from "../app/review-engine.mjs";
+import { buildDeck, dayKey, emptyProgress, ensureSession, learningStreak, parseProgress, rateCard, recordPresentation } from "../app/review-engine.mjs";
 import { readFile } from "node:fs/promises";
 
 const notes = JSON.parse(await readFile(new URL("../data/hmi-notes.json", import.meta.url)));
@@ -27,6 +27,7 @@ const loaded = parseProgress(JSON.stringify(data));
 assert.deepEqual(ensureSession(loaded, deck, "word", now), session);
 while (session.queue.length) rateCard(data, "word", "known", now);
 assert.equal(data.history[dayKey(now)].completed.length, 8);
+assert.equal(learningStreak(data, now), 1);
 assert.equal(ensureSession(data, deck, "word", now).queue.length, 0);
 session = ensureSession(data, deck, "word", new Date("2026-09-06T08:30:00+08:00"));
 assert.equal(session.queue.length, 16);
