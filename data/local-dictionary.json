@@ -822,6 +822,14 @@
     "The vehicle may start aiming for a minimum risk condition.",
     "车辆可能开始朝最低风险状态前进。"
   ],
+  "aims": [
+    "/eɪmz/",
+    "名词：瞄准",
+    "noun",
+    "If the driver does not respond, the system needs a predictable fallback maneuver that aims for a minimal risk condition.",
+    "在这句话中，“aims”可理解为“瞄准”。",
+    "https://en.wiktionary.org/wiki/aims"
+  ],
   "air": [
     "/er/",
     "空气；此处指空调气流或温度",
@@ -4782,6 +4790,14 @@
     "Communicated appears in today's navigation prompt timing lesson.",
     "在这句话中，“communicated”来自今天的导航提示时机学习内容。"
   ],
+  "communicates": [
+    "/暂无音标/",
+    "动词：沟通",
+    "verb",
+    "In a design review, check whether every stage communicates the next action, the remaining time, and the available lane-keeping support.",
+    "在这句话中，“communicates”可理解为“沟通”。",
+    "https://en.wiktionary.org/wiki/communicates"
+  ],
   "communication": [
     "/kəˌmjuːnɪˈkeɪʃn/",
     "语境词：沟通；让用户理解状态、原因和动作的表达过程",
@@ -7261,6 +7277,14 @@
     "The detour preview should be readable at a glance and easy to dismiss.",
     "绕行预览应当一眼可读，并且容易关闭。"
   ],
+  "develops": [
+    "/暂无音标/",
+    "动词：开发\tkāifā",
+    "verb",
+    "It develops during a transition period as attention returns to the road, hands return to the wheel, and situational awareness is rebuilt.",
+    "在这句话中，“develops”可理解为“开发\tkāifā”。",
+    "https://en.wiktionary.org/wiki/develops"
+  ],
   "device": [
     "/dɪˈvaɪs/",
     "名词：装置, 设计, 策略, 发明物, 设备",
@@ -7747,6 +7771,14 @@
     "在这句话中，“does”可理解为“做, 进行, 完成”。",
     "https://github.com/skywind3000/ECDICT"
   ],
+  "domain": [
+    "/ˌdəʊˈmeɪ̯n/",
+    "名词：域",
+    "noun",
+    "The interface should explain when the vehicle is leaving its operational design domain.",
+    "在这句话中，“domain”可理解为“域”。",
+    "https://en.wiktionary.org/wiki/domain"
+  ],
   "door": [
     "/door/",
     "可结合智能座舱数字钥匙与身份切换语境理解的英文单词",
@@ -7978,6 +8010,13 @@
     "",
     "The cockpit uses driver profile to make privacy decisions easier to understand.",
     "座舱使用“driver profile”让隐私决策更容易理解。"
+  ],
+  "driver readiness": [
+    "/ˈdraɪvər ˈredinəs/",
+    "驾驶员准备度；驾驶员是否具备及时、安全接管的状态。",
+    "",
+    "Driver readiness can change when the road situation becomes more complex.",
+    "道路情况变复杂时，驾驶员准备度可能发生变化。"
   ],
   "driver response": [
     "/ˈdraɪvər rɪˈspɑːns/",
@@ -11111,6 +11150,21 @@
     "Hands-free correction lets the driver say “no, the second option” while keeping eyes on the road.",
     "免手动纠错让驾驶员可以说“不，第二个选项”，同时保持视线在道路上。"
   ],
+  "hands-on": [
+    "/ˌhændz ˈɒn/",
+    "形容词：动手实践",
+    "adjective",
+    "Hands-on detection is one signal that the driver is returning to the task.",
+    "在这句话中，“hands-on”可理解为“动手实践”。",
+    "https://en.wiktionary.org/wiki/hands-on"
+  ],
+  "hands-on detection": [
+    "/ˌhændz ɑːn dɪˈtekʃn/",
+    "手部在方向盘检测；识别驾驶员是否握住或触碰方向盘的能力。",
+    "",
+    "Hands-on detection is one signal that the driver is returning to the task.",
+    "手部在方向盘检测是判断驾驶员正在回到驾驶任务的一个信号。"
+  ],
   "happen": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“happen”。",
@@ -13165,6 +13219,21 @@
     "Lane position can help confirm whether distraction is affecting control.",
     "车道位置有助于确认分心是否影响控制。"
   ],
+  "lane-keeping": [
+    "/暂无音标/",
+    "车道保持",
+    "",
+    "Lane-keeping support should communicate its availability before the driver relies on it.",
+    "在这句话中，“lane-keeping”可理解为“车道保持”。",
+    "https://en.wiktionary.org"
+  ],
+  "lane-keeping support": [
+    "/ˈleɪn ˌkiːpɪŋ səˈpɔːrt/",
+    "车道保持支持；帮助车辆维持在车道内的辅助功能。",
+    "",
+    "Lane-keeping support should communicate its availability before the driver relies on it.",
+    "车道保持支持应在驾驶员依赖它之前说明其是否可用。"
+  ],
   "lane-level": [
     "/暂无音标/",
     "可结合智能座舱导航语境理解的英文词：“lane-level”。",
@@ -15099,6 +15168,13 @@
     "A minimal prompt can reduce attention cost.",
     "最小提示可以降低注意力成本。"
   ],
+  "minimal risk condition": [
+    "/ˈmɪnɪməl rɪsk kənˈdɪʃn/",
+    "最小风险状态；系统在无法继续自动行驶时使车辆达到的较安全状态。",
+    "",
+    "The vehicle may enter a minimal risk condition after an unanswered warning.",
+    "未得到响应的警告之后，车辆可能进入最小风险状态。"
+  ],
   "minimal wording": [
     "/ˈmɪnɪməl ˈwɜːrdɪŋ/",
     "最少措辞；以尽量少的词完成提示、确认或反馈",
@@ -16783,6 +16859,13 @@
     "",
     "Glanceable feedback should show the operational state.",
     "可扫视反馈应展示运行状态。"
+  ],
+  "operational design domain": [
+    "/ˌɑːpəˈreɪʃənl dɪˈzaɪn doʊˈmeɪn/",
+    "运行设计域；辅助驾驶功能可安全运行的道路、天气和交通条件范围。",
+    "",
+    "The interface should explain when the vehicle is leaving its operational design domain.",
+    "界面应说明车辆何时正在离开其运行设计域。"
   ],
   "operational state": [
     "/ˌɑːpəˈreɪʃənl steɪt/",
@@ -19673,6 +19756,13 @@
     "A re-engagement cue should point to the driving task, not to a decorative animation.",
     "重新参与线索应指向驾驶任务，而不是装饰性动画。"
   ],
+  "re-engagement prompt": [
+    "/ˌriː ɪnˈɡeɪdʒmənt prɑːmpt/",
+    "重新投入提示；引导驾驶员重新关注道路和驾驶任务的提示。",
+    "",
+    "A re-engagement prompt should guide attention back to the road without causing panic.",
+    "重新投入提示应将注意力引回道路，同时不引发恐慌。"
+  ],
   "re-enter": [
     "/riː ˈentər/",
     "动词：重新输入；再次录入已存在的信息。",
@@ -19935,6 +20025,14 @@
     "",
     "The cockpit interface uses rebuilding in the recommendation context.",
     "在推荐语境中，座舱界面使用“rebuilding”这个表达。"
+  ],
+  "rebuilt": [
+    "/ɹiːˈbɪlt/",
+    "动词：重新生成",
+    "verb",
+    "It develops during a transition period as attention returns to the road, hands return to the wheel, and situational awareness is rebuilt.",
+    "在这句话中，“rebuilt”可理解为“重新生成”。",
+    "https://en.wiktionary.org/wiki/rebuilt"
   ],
   "recall": [
     "/rɪˈkɔːl/",
@@ -20501,6 +20599,14 @@
     "",
     "A reliable trigger combines sensor confidence with driver inattention.",
     "可靠触发条件会结合传感器置信度和驾驶员注意力缺失。"
+  ],
+  "relies": [
+    "/暂无音标/",
+    "动词：依靠",
+    "verb",
+    "Lane-keeping support should communicate its availability before the driver relies on it.",
+    "在这句话中，“relies”可理解为“依靠”。",
+    "https://en.wiktionary.org/wiki/relies"
   ],
   "reload": [
     "/ˌriːˈloʊd/",
@@ -21289,6 +21395,14 @@
     "Shorter glance duration helps drivers return attention to the road more quickly.",
     "在这句话中，“return”可理解为“回来, 返回, 来回票, 归还, 报答, 利润率, 报告书；返回的, 回程的, 报答的, 反向的, 重现的, 复原的；返回, 归还, 回来；归还, 还, 回报, 产生, 反射, 报告, 申报, 退回”。",
     "https://github.com/skywind3000/ECDICT"
+  ],
+  "returning": [
+    "/ɹɪˈtɜːnɪŋ/",
+    "动词：回报",
+    "verb",
+    "Hands-on detection is one signal that the driver is returning to the task.",
+    "在这句话中，“returning”可理解为“回报”。",
+    "https://en.wiktionary.org/wiki/returning"
   ],
   "returns": [
     "/rɪˈtɜːrnz/",
@@ -23905,6 +24019,13 @@
     "A situational constraint may block a complex browsing task while the vehicle is moving.",
     "在这句话中，“situational”可结合车内助手澄清场景理解。"
   ],
+  "situational awareness": [
+    "/ˌsɪtʃuˈeɪʃənl əˈwernəs/",
+    "态势感知；对当前道路、车辆和风险状态的理解。",
+    "",
+    "A short road preview helps rebuild situational awareness before takeover.",
+    "简短的道路预览有助于在接管前重建态势感知。"
+  ],
   "situational constraint": [
     "/ˌsɪtʃuˈeɪʃənl kənˈstreɪnt/",
     "情境约束；由车速、道路、驾驶负荷、乘员和系统状态形成的交互限制",
@@ -24464,6 +24585,14 @@
     "",
     "Stacking prompts can overload the driver.",
     "叠加提示可能让驾驶员过载。"
+  ],
+  "stage": [
+    "/steɪd͡ʒ/",
+    "名词：阶段",
+    "noun",
+    "In a design review, check whether every stage communicates the next action, the remaining time, and the available lane-keeping support.",
+    "在这句话中，“stage”可理解为“阶段”。",
+    "https://en.wiktionary.org/wiki/stage"
   ],
   "staged": [
     "/steɪdʒd/",
@@ -26444,6 +26573,13 @@
     "Consistent transition language prevents mixed messages across displays.",
     "一致的切换语言可防止不同显示之间出现混乱信息。"
   ],
+  "transition period": [
+    "/trænˈzɪʃn ˈpɪriəd/",
+    "过渡时段；从系统控制切换到驾驶员控制之间的时间窗口。",
+    "",
+    "During the transition period, the display should reduce nonessential information.",
+    "在过渡时段，显示区应减少非必要信息。"
+  ],
   "translated": [
     "/trænzˈleɪtɪd/",
     "被转换的；被翻译或转化成另一种表达的",
@@ -26887,6 +27023,14 @@
     "",
     "typing is useful when designing intelligent cockpit fallback experiences.",
     "在这句话中，“typing”可理解为“可结合智能座舱语境理解的英文单词”。"
+  ],
+  "unanswered": [
+    "/暂无音标/",
+    "形容词：未回答",
+    "adjective",
+    "The vehicle may enter a minimal risk condition after an unanswered warning.",
+    "在这句话中，“unanswered”可理解为“未回答”。",
+    "https://en.wiktionary.org/wiki/unanswered"
   ],
   "unavailable": [
     "/ˌʌnəˈveɪləbl/",

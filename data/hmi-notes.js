@@ -1,5 +1,225 @@
 window.HMI_NOTES = [
   {
+    "id": "2026-11-12-assisted-driving-takeover-and-driver-readiness",
+    "date": "2026-11-12",
+    "title": "Assisted-driving takeover and driver readiness",
+    "topic": "辅助驾驶接管与驾驶员准备度",
+    "suggestedTime": "25 分钟",
+    "summary": "学习如何用清晰、分阶段的接管交互帮助驾驶员从辅助驾驶平稳回到手动控制。无可靠视频来源，本日文本为原创。",
+    "words": [
+      {
+        "term": "takeover request",
+        "phonetic": "/ˈteɪkoʊvər rɪˈkwest/",
+        "meaning": "接管请求；系统要求驾驶员重新接管车辆控制的提示。",
+        "example": "A takeover request should state when the driver needs to resume control.",
+        "chineseExample": "接管请求应说明驾驶员何时需要恢复控制。"
+      },
+      {
+        "term": "driver readiness",
+        "phonetic": "/ˈdraɪvər ˈredinəs/",
+        "meaning": "驾驶员准备度；驾驶员是否具备及时、安全接管的状态。",
+        "example": "Driver readiness can change when the road situation becomes more complex.",
+        "chineseExample": "道路情况变复杂时，驾驶员准备度可能发生变化。"
+      },
+      {
+        "term": "fallback maneuver",
+        "phonetic": "/ˈfɔːlbæk məˈnuːvər/",
+        "meaning": "降级处置动作；驾驶员未接管时系统为降低风险采取的动作。",
+        "example": "The system needs a fallback maneuver if the driver does not respond.",
+        "chineseExample": "如果驾驶员没有响应，系统需要降级处置动作。"
+      },
+      {
+        "term": "operational design domain",
+        "phonetic": "/ˌɑːpəˈreɪʃənl dɪˈzaɪn doʊˈmeɪn/",
+        "meaning": "运行设计域；辅助驾驶功能可安全运行的道路、天气和交通条件范围。",
+        "example": "The interface should explain when the vehicle is leaving its operational design domain.",
+        "chineseExample": "界面应说明车辆何时正在离开其运行设计域。"
+      },
+      {
+        "term": "minimal risk condition",
+        "phonetic": "/ˈmɪnɪməl rɪsk kənˈdɪʃn/",
+        "meaning": "最小风险状态；系统在无法继续自动行驶时使车辆达到的较安全状态。",
+        "example": "The vehicle may enter a minimal risk condition after an unanswered warning.",
+        "chineseExample": "未得到响应的警告之后，车辆可能进入最小风险状态。"
+      },
+      {
+        "term": "hands-on detection",
+        "phonetic": "/ˌhændz ɑːn dɪˈtekʃn/",
+        "meaning": "手部在方向盘检测；识别驾驶员是否握住或触碰方向盘的能力。",
+        "example": "Hands-on detection is one signal that the driver is returning to the task.",
+        "chineseExample": "手部在方向盘检测是判断驾驶员正在回到驾驶任务的一个信号。"
+      },
+      {
+        "term": "transition period",
+        "phonetic": "/trænˈzɪʃn ˈpɪriəd/",
+        "meaning": "过渡时段；从系统控制切换到驾驶员控制之间的时间窗口。",
+        "example": "During the transition period, the display should reduce nonessential information.",
+        "chineseExample": "在过渡时段，显示区应减少非必要信息。"
+      },
+      {
+        "term": "re-engagement prompt",
+        "phonetic": "/ˌriː ɪnˈɡeɪdʒmənt prɑːmpt/",
+        "meaning": "重新投入提示；引导驾驶员重新关注道路和驾驶任务的提示。",
+        "example": "A re-engagement prompt should guide attention back to the road without causing panic.",
+        "chineseExample": "重新投入提示应将注意力引回道路，同时不引发恐慌。"
+      },
+      {
+        "term": "situational awareness",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl əˈwernəs/",
+        "meaning": "态势感知；对当前道路、车辆和风险状态的理解。",
+        "example": "A short road preview helps rebuild situational awareness before takeover.",
+        "chineseExample": "简短的道路预览有助于在接管前重建态势感知。"
+      },
+      {
+        "term": "lane-keeping support",
+        "phonetic": "/ˈleɪn ˌkiːpɪŋ səˈpɔːrt/",
+        "meaning": "车道保持支持；帮助车辆维持在车道内的辅助功能。",
+        "example": "Lane-keeping support should communicate its availability before the driver relies on it.",
+        "chineseExample": "车道保持支持应在驾驶员依赖它之前说明其是否可用。"
+      }
+    ],
+    "glossary": [
+      {
+        "term": "takeover request",
+        "phonetic": "/ˈteɪkoʊvər rɪˈkwest/",
+        "meaning": "接管请求；系统要求驾驶员重新接管车辆控制的提示。",
+        "example": "A takeover request should state when the driver needs to resume control.",
+        "chineseExample": "接管请求应说明驾驶员何时需要恢复控制。"
+      },
+      {
+        "term": "driver readiness",
+        "phonetic": "/ˈdraɪvər ˈredinəs/",
+        "meaning": "驾驶员准备度；驾驶员是否具备及时、安全接管的状态。",
+        "example": "Driver readiness can change when the road situation becomes more complex.",
+        "chineseExample": "道路情况变复杂时，驾驶员准备度可能发生变化。"
+      },
+      {
+        "term": "fallback maneuver",
+        "phonetic": "/ˈfɔːlbæk məˈnuːvər/",
+        "meaning": "降级处置动作；驾驶员未接管时系统为降低风险采取的动作。",
+        "example": "The system needs a fallback maneuver if the driver does not respond.",
+        "chineseExample": "如果驾驶员没有响应，系统需要降级处置动作。"
+      },
+      {
+        "term": "operational design domain",
+        "phonetic": "/ˌɑːpəˈreɪʃənl dɪˈzaɪn doʊˈmeɪn/",
+        "meaning": "运行设计域；辅助驾驶功能可安全运行的道路、天气和交通条件范围。",
+        "example": "The interface should explain when the vehicle is leaving its operational design domain.",
+        "chineseExample": "界面应说明车辆何时正在离开其运行设计域。"
+      },
+      {
+        "term": "minimal risk condition",
+        "phonetic": "/ˈmɪnɪməl rɪsk kənˈdɪʃn/",
+        "meaning": "最小风险状态；系统在无法继续自动行驶时使车辆达到的较安全状态。",
+        "example": "The vehicle may enter a minimal risk condition after an unanswered warning.",
+        "chineseExample": "未得到响应的警告之后，车辆可能进入最小风险状态。"
+      },
+      {
+        "term": "hands-on detection",
+        "phonetic": "/ˌhændz ɑːn dɪˈtekʃn/",
+        "meaning": "手部在方向盘检测；识别驾驶员是否握住或触碰方向盘的能力。",
+        "example": "Hands-on detection is one signal that the driver is returning to the task.",
+        "chineseExample": "手部在方向盘检测是判断驾驶员正在回到驾驶任务的一个信号。"
+      },
+      {
+        "term": "transition period",
+        "phonetic": "/trænˈzɪʃn ˈpɪriəd/",
+        "meaning": "过渡时段；从系统控制切换到驾驶员控制之间的时间窗口。",
+        "example": "During the transition period, the display should reduce nonessential information.",
+        "chineseExample": "在过渡时段，显示区应减少非必要信息。"
+      },
+      {
+        "term": "re-engagement prompt",
+        "phonetic": "/ˌriː ɪnˈɡeɪdʒmənt prɑːmpt/",
+        "meaning": "重新投入提示；引导驾驶员重新关注道路和驾驶任务的提示。",
+        "example": "A re-engagement prompt should guide attention back to the road without causing panic.",
+        "chineseExample": "重新投入提示应将注意力引回道路，同时不引发恐慌。"
+      },
+      {
+        "term": "situational awareness",
+        "phonetic": "/ˌsɪtʃuˈeɪʃənl əˈwernəs/",
+        "meaning": "态势感知；对当前道路、车辆和风险状态的理解。",
+        "example": "A short road preview helps rebuild situational awareness before takeover.",
+        "chineseExample": "简短的道路预览有助于在接管前重建态势感知。"
+      },
+      {
+        "term": "lane-keeping support",
+        "phonetic": "/ˈleɪn ˌkiːpɪŋ səˈpɔːrt/",
+        "meaning": "车道保持支持；帮助车辆维持在车道内的辅助功能。",
+        "example": "Lane-keeping support should communicate its availability before the driver relies on it.",
+        "chineseExample": "车道保持支持应在驾驶员依赖它之前说明其是否可用。"
+      }
+    ],
+    "longReadings": [
+      {
+        "title": "Designing a calm transition back to manual driving",
+        "text": "Assisted driving is useful only when drivers understand its limits. When a vehicle is about to leave its operational design domain, the interface must prepare the driver for a takeover request. The first signal should be early, clear, and specific. Instead of simply saying that assistance is unavailable, the system can explain what is changing and when the driver needs to resume control. Driver readiness is not a single switch. It develops during a transition period as attention returns to the road, hands return to the wheel, and situational awareness is rebuilt. A short road preview can help the driver understand the lane, nearby vehicles, and the reason for the request. During this time, reduce nonessential content and keep the re-engagement prompt consistent across display, sound, and steering-wheel feedback. If the driver does not respond, the system needs a predictable fallback maneuver that aims for a minimal risk condition. In a design review, check whether every stage communicates the next action, the remaining time, and the available lane-keeping support. A well-designed takeover flow does not create panic. It gives the driver enough context, time, and confidence to return to control safely.",
+        "translation": "辅助驾驶只有在驾驶员理解其边界时才真正有用。当车辆即将离开运行设计域时，界面必须为驾驶员准备好接管请求。第一个信号应当提前、清晰且具体。系统不应只说辅助功能不可用，还应说明发生了什么变化，以及驾驶员何时需要恢复控制。驾驶员准备度不是一个开关，而是在过渡时段逐步形成：注意力回到道路、双手回到方向盘、态势感知得到重建。简短道路预览可帮助驾驶员理解车道、周边车辆和请求原因。此时应减少非必要内容，并让显示、声音和方向盘反馈中的重新投入提示保持一致。若驾驶员未响应，系统需要可预测的降级处置动作，以达到最小风险状态。好的接管流程不会制造恐慌，而是给驾驶员足够的情境、时间和信心，安全地恢复控制。",
+        "source": {
+          "label": "无可靠视频来源，本日文本为原创",
+          "url": ""
+        }
+      }
+    ],
+    "sentenceBreakdowns": [
+      {
+        "sentence": "The interface must prepare the driver for a takeover request.",
+        "translation": "界面必须让驾驶员为接管请求做好准备。",
+        "points": [
+          "prepare someone for... 表示“让某人为……做准备”。",
+          "可复用：The system should prepare the user for a change in driving mode."
+        ]
+      },
+      {
+        "sentence": "Driver readiness is not a single switch.",
+        "translation": "驾驶员准备度不是一个单一开关。",
+        "points": [
+          "not a single... 用于强调状态不是非黑即白的。",
+          "可复用：Trust is not a single switch; it changes with each system response."
+        ]
+      },
+      {
+        "sentence": "A short road preview can help the driver understand the reason for the request.",
+        "translation": "简短的道路预览可帮助驾驶员理解该请求的原因。",
+        "points": [
+          "help someone + 动词原形，表示“帮助某人做某事”。",
+          "reason for... 表示“……的原因”，适合解释设计依据。"
+        ]
+      },
+      {
+        "sentence": "A well-designed takeover flow does not create panic.",
+        "translation": "设计良好的接管流程不会制造恐慌。",
+        "points": [
+          "well-designed 可用于描述经过充分推敲的方案。",
+          "可复用：A well-designed warning does not compete with the driving task."
+        ]
+      }
+    ],
+    "practiceSteps": [
+      {
+        "title": "词汇朗读",
+        "time": "5 分钟",
+        "description": "朗读十个词组和例句，重点练习 takeover、fallback、operational 的重音。"
+      },
+      {
+        "title": "全文跟读",
+        "time": "8 分钟",
+        "description": "逐句跟读长文，特别注意转折句和 If the driver does not respond 的条件表达。"
+      },
+      {
+        "title": "句子拆解",
+        "time": "6 分钟",
+        "description": "把四个重点句替换成你正在设计的导航、泊车或辅助驾驶场景。"
+      },
+      {
+        "title": "设计评审口述",
+        "time": "6 分钟",
+        "description": "用英语说明：接管提示为什么需要提前出现，以及未接管时系统应如何处理。"
+      }
+    ],
+    "videos": []
+  },
+  {
     "id": "2026-11-11-alert-prioritization-and-notification-inbox",
     "date": "2026-11-11",
     "title": "Alert prioritization and notification inboxes in intelligent cockpits",
